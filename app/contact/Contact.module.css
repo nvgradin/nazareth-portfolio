@@ -1,0 +1,86 @@
+/* ═══════════════════════════════════════════════════════════════
+   CONTACT PAGE — CSS Module
+   ═══════════════════════════════════════════════════════════════ */
+
+.contact {
+  flex: 1;
+  background-color: var(--support-green-600);
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.container {
+  width: 100%;
+  padding: var(--space-64) var(--space-24);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-32);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: var(--space-96) var(--space-64);
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.right {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .right {
+    display: block;
+  }
+}
+
+.contact h1 {
+  font-size: 222px;
+  line-height: 0.85;
+  color: var(--neutral-50);
+}
+
+.contact p {
+  color: var(--neutral-200);
+  max-width: 480px;
+}
+
+.email {
+  font-family: var(--font-base);
+  font-size: 1.125rem;
+  color: var(--neutral-50);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-default);
+}
+
+.email:hover {
+  color: var(--brand-accent-500);
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--neutral-50);
+  transition: color var(--duration-fast) var(--ease-default),
+              transform var(--duration-fast) var(--ease-default);
+}
+
+.social a:hover {
+  color: var(--brand-accent-500);
+  transform: translateY(-2px);
+}
