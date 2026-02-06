@@ -1,0 +1,92 @@
+/* ═══════════════════════════════════════════════════════════════
+   DESIGN TOKENS — Nazareth Portfolio
+   ═══════════════════════════════════════════════════════════════
+
+   Single source of truth for all design decisions.
+   Import this file in globals.css
+
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ─────────────────────────────────────────────
+     BRAND COLORS
+     ───────────────────────────────────────────── */
+  --brand-primary-500: #40394E;
+  --brand-primary-900: #241E33;
+  --brand-accent-500: #E28B00;
+
+  /* ─────────────────────────────────────────────
+     NEUTRALS
+     ───────────────────────────────────────────── */
+  --neutral-300: #E2DDD5;
+  --neutral-200: #EEE9E2;
+  --neutral-300-soft: rgba(226, 221, 213, 0.37);
+  --neutral-100: #FCF3EA;
+  --neutral-50: #FCF7F3;
+
+  /* ─────────────────────────────────────────────
+     SUPPORT COLORS
+     ───────────────────────────────────────────── */
+  --support-green-600: #606E67;
+  --support-green-200: #C2CBC5;
+  --support-terracotta-600: #85402D;
+  --support-wine-600: #7A343E;
+  --support-red-500: #A84633;
+  --support-blue-400: #8EA8C6;
+
+  /* ─────────────────────────────────────────────
+     SPACING SCALE (4-8 system)
+     ───────────────────────────────────────────── */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+
+  /* ─────────────────────────────────────────────
+     LAYOUT (Figma specs)
+     ───────────────────────────────────────────── */
+  --container-max: 1280px;
+  --grid-columns: 12;
+  --grid-gutter: 24px;
+  --text-max-width: 720px;
+  --header-height: 72px;
+
+  /* ─────────────────────────────────────────────
+     SEMANTIC ALIASES
+     ───────────────────────────────────────────── */
+  --color-text-primary: var(--brand-primary-900);
+  --color-text-secondary: var(--brand-primary-500);
+  --color-text-accent: var(--brand-accent-500);
+  --color-bg-primary: var(--neutral-200);
+  --color-bg-secondary: var(--neutral-100);
+  --color-bg-tertiary: var(--neutral-50);
+  --color-border: var(--neutral-300-soft);
+
+  /* ─────────────────────────────────────────────
+     TYPOGRAPHY
+     Note: Font variables are injected by next/font/google in layout.tsx
+     ───────────────────────────────────────────── */
+  --font-base: var(--font-poppins, 'Poppins'), system-ui, sans-serif;
+  --font-heading: var(--font-abhaya, 'Abhaya Libre'), Georgia, serif;
+  --font-accent: var(--font-aboreto, 'Aboreto'), serif;
+
+  /* ─────────────────────────────────────────────
+     TRANSITIONS
+     ───────────────────────────────────────────── */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+
+  /* ─────────────────────────────────────────────
+     BORDERS & RADIUS
+     ───────────────────────────────────────────── */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+}
