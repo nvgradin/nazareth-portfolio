@@ -1,0 +1,111 @@
+/* ═══════════════════════════════════════════════════════════════
+   FOOTER — CSS Module
+   ═══════════════════════════════════════════════════════════════ */
+
+.footer {
+  padding: var(--space-48) 0;
+  background-color: var(--neutral-100);
+  border-top: 1px solid var(--neutral-300-soft);
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: var(--space-24);
+  }
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+@media (min-width: 768px) {
+  .top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.brand p {
+  max-width: 280px;
+  font-size: 0.875rem;
+  margin-top: var(--space-8);
+}
+
+.nav h5,
+.connect h5 {
+  margin-bottom: var(--space-16);
+}
+
+.nav ul,
+.connect ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.nav a,
+.connect a {
+  font-size: 0.875rem;
+  color: var(--brand-primary-500);
+  transition: color var(--duration-fast) var(--ease-default);
+}
+
+.nav a:hover,
+.connect a:hover {
+  color: var(--brand-accent-500);
+}
+
+.bottom {
+  padding-top: var(--space-24);
+  border-top: 1px solid var(--neutral-300-soft);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.bottom p {
+  font-size: 0.75rem;
+  color: var(--brand-primary-500);
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-16);
+  margin-top: var(--space-16);
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-primary-900);
+  transition: color var(--duration-fast) var(--ease-default),
+              transform var(--duration-fast) var(--ease-default);
+}
+
+.social a:hover {
+  color: var(--brand-accent-500);
+  transform: translateY(-2px);
+}
