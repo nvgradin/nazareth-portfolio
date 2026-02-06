@@ -1,0 +1,65 @@
+/* EditorialBlock */
+
+.block {
+  padding: var(--space-64) 0 0;
+}
+
+.top {
+  padding-bottom: var(--space-64);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-24);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-32);
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: 120px 1fr;
+    gap: var(--space-48);
+  }
+}
+
+.label {
+  font-family: var(--font-accent);
+  font-size: 4rem;
+  font-weight: 400;
+  color: var(--neutral-300);
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .label {
+    font-size: 6rem;
+  }
+}
+
+.text {
+  max-width: 720px;
+}
+
+.title {
+  margin: 0 0 var(--space-24);
+}
+
+.content {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21/9;
+  overflow: hidden;
+}
+
+.img {
+  object-fit: cover;
+}

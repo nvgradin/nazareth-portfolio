@@ -1,0 +1,117 @@
+/* BrandingPanel */
+
+.panel {
+  padding: var(--space-64) 0;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .panel {
+    padding: var(--space-96) 0;
+  }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-24);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-48);
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-64);
+  }
+}
+
+.sectionTitle {
+  font-family: var(--font-accent);
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 var(--space-24);
+}
+
+.fonts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.font {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.fontName {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.fontSample {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.fontFamily {
+  font-size: 0.875rem;
+}
+
+.fontWeights {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.colorGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-16);
+}
+
+@media (min-width: 768px) {
+  .colorGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.color {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.colorSwatch {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+}
+
+.colorName {
+  font-size: 0.875rem;
+}
+
+.colorHex {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: monospace;
+}
+
+.mockup {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.mockupImg {
+  object-fit: cover;
+}

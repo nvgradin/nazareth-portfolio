@@ -1,0 +1,28 @@
+/* CenteredHeading */
+
+.heading {
+  padding: var(--space-64) 0;
+}
+
+@media (min-width: 768px) {
+  .heading {
+    padding: var(--space-96) 0;
+  }
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--space-24);
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 var(--space-16);
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}

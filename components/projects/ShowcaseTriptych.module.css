@@ -1,0 +1,79 @@
+/* ShowcaseTriptych
+   Mobile: Grid 2x2
+   Desktop: 3 columnas (izq | centro 2 apiladas | der) */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 250px 250px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-rows: 350px 350px;
+  }
+}
+
+.cell {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Mobile: Grid 2x2 */
+.cell1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.cell2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.cell3 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.cell4 {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* Desktop: 3 columnas con centro apilado */
+@media (min-width: 768px) {
+  .cell1 {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+
+  .cell2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .cell3 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .cell4 {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+}
+
+.img {
+  object-fit: cover;
+}
