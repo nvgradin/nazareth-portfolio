@@ -1,4 +1,4 @@
-/* FeatureCards - 3 columnas */
+/* FeatureCards - 3 columnas centradas */
 
 .section {
   padding: var(--space-48) 0;
@@ -16,7 +16,10 @@
 
 @media (min-width: 768px) {
   .container {
-    padding-inline: var(--space-24);
+    width: 55%;
+    max-width: 55%;
+    margin: 0 auto;
+    padding-inline: 0;
   }
 }
 
@@ -41,10 +44,18 @@
 
 .cardImage {
   position: relative;
-  aspect-ratio: 4/3;
+  aspect-ratio: 2/5;
   overflow: hidden;
-  border-radius: var(--radius-md);
+  border-radius: 0;
   background-color: var(--neutral-300);
+}
+
+.cardImage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+  pointer-events: none;
 }
 
 .cardImg {
