@@ -19,10 +19,14 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
 }
 
 .bgImg {
   object-fit: cover;
+  /* Parallax effect */
+  transform: scale(1.2);
+  transition: transform 0.1s linear;
 }
 
 .overlay {
