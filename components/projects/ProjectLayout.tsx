@@ -24,7 +24,7 @@ export function ProjectLayout({ project }: Props) {
       {/* 1) Hero 2 columnas */}
       <ProjectHero data={layout.hero} tags={tags} />
 
-      {/* 2) Bento Gallery */}
+      {/* 2) Bento Gallery (8 slots = 4x2 grid) */}
       <BentoGallery data={layout.bento} />
 
       {/* 3) Heading centrado */}

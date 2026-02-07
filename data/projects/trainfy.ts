@@ -35,19 +35,76 @@ export const trainfy: ProjectWithLayout = {
       },
     },
 
-    // 2) Bento Gallery
+    // 2) Bento Gallery - Sistema de columnas con ratios de altura
+    // Cada columna puede tener múltiples celdas con alturas personalizadas
     bento: {
-      variant: 'A',
-      backgroundColor: '#354251',
-      images: [
-        { type: 'image', src: '/projects/trainfy/bento-1.jpg', alt: 'Trainfy App Vista 1' },
-        { type: 'image', src: '/projects/trainfy/bento-2.png', alt: 'Trainfy App Vista 2' },
-        { type: 'image', src: '/projects/trainfy/bento-3.jpg', alt: 'Trainfy Branding' },
-        { type: 'image', src: '/projects/trainfy/bento-4.png', alt: 'Trainfy Mockup' },
-        { type: 'image', src: '/projects/trainfy/bento-5.jpg', alt: 'Trainfy Mobile' },
-        { type: 'image', src: '/projects/trainfy/bento-6.jpg', alt: 'Trainfy Dashboard' },
-        { type: 'image', src: '/projects/trainfy/bento-7.jpg', alt: 'Trainfy Profile' },
-        { type: 'image', src: '/projects/trainfy/bento-8.jpg', alt: 'Trainfy Sport' },
+      mode: 'fixed',
+      background: '#354251',
+      columns: [
+        // Columna 1: ancho 1, 2 celdas (65% / 35%)
+        {
+          width: 1,
+          cells: [
+            {
+              src: '/projects/trainfy/bento-1.jpg',
+              alt: 'Pantalla principal de Trainfy mostrando el feed de intercambios deportivos',
+              ratio: 0.65,
+            },
+            {
+              src: '/projects/trainfy/bento-5.jpg',
+              alt: 'Interfaz de búsqueda de compañeros de entrenamiento en Trainfy',
+              ratio: 0.35,
+            },
+          ],
+        },
+        // Columna 2: ancho 1, 1 celda (100%)
+        {
+          width: 1,
+          cells: [
+            {
+              src: '/projects/trainfy/bento-2.png',
+              alt: 'Sistema de identidad visual y logotipo de Trainfy sobre fondo azul',
+              ratio: 0.44,
+            },
+            {
+              src: '/projects/trainfy/bento-6.jpg',
+              alt: 'Mockup de iPhone mostrando la aplicación Trainfy en contexto real',
+              ratio: 0.56,
+            }
+          ],
+        },
+        // Columna 3: ancho 1, 2 celdas (50% / 50%)
+        {
+          width: 1,
+          cells: [
+            {
+              src: '/projects/trainfy/bento-3.jpg',
+              alt: 'Mockup de iPhone mostrando la aplicación Trainfy en contexto real',
+              ratio: 0.6,
+            },
+            {
+              src: '/projects/trainfy/bento-7.jpg',
+              alt: 'Diseño responsive de Trainfy adaptado a pantalla móvil',
+              ratio: 0.4,
+            },
+          ],
+        },
+        // Columna 4: ancho 1, 3 celdas (40% / 30% / 30%)
+        {
+          width: 1,
+          cells: [
+            {
+              src: '/projects/trainfy/bento-4.png',
+              alt: 'Panel de estadísticas y métricas de actividad del usuario',
+              ratio: 0.7,
+            },
+            {
+              src: '/projects/trainfy/bento-8.jpg',
+              alt: 'Selector de categorías deportivas: running, ciclismo, natación',
+              ratio: 0.3,
+            },
+          ],
+        },
       ],
     },
 
