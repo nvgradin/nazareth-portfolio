@@ -141,7 +141,12 @@ export const trainfy: ProjectWithLayout = {
       image: { type: 'image', src: '/projects/trainfy/editorial-full.jpg', alt: 'Trainfy Editorial' },
     },
 
-    // 6) Showcase triptych Branding
+    // 6) Branding Editorial + Showcase Triptych
+    branding: {
+      title: 'Branding',
+      subtitle: 'Identidad visual que conecta',
+      content: 'La identidad de Trainfy refleja dinamismo, comunidad y pasión por el deporte. Colores vibrantes que transmiten energía, tipografías modernas y un sistema visual coherente que se adapta a todos los puntos de contacto.',
+    },
     showcase: {
       left: { type: 'image', src: '/projects/trainfy/showcase-left.jpg', alt: 'Showcase Left' },
       centerTop: { type: 'image', src: '/projects/trainfy/showcase-center-top.jpg', alt: 'Showcase Center Top' },
@@ -149,8 +154,12 @@ export const trainfy: ProjectWithLayout = {
       right: { type: 'image', src: '/projects/trainfy/showcase-right.jpg', alt: 'Showcase Right' },
     },
 
-
-    // 8) Web panel
+    // 7) Web Editorial + WebPanel
+    web: {
+      title: 'Web',
+      subtitle: 'Diseño responsive mobile-first',
+      content: 'La plataforma fue diseñada con un enfoque mobile-first, garantizando una experiencia óptima en todos los dispositivos. Cada componente se adapta fluidamente desde smartphones hasta pantallas de escritorio.',
+    },
     webPanel: {
       title: 'Diseño responsive',
       description: 'La plataforma fue diseñada con un enfoque mobile-first, garantizando una experiencia óptima en todos los dispositivos.',

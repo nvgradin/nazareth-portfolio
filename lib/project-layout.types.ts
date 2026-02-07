@@ -121,16 +121,32 @@ export interface FeatureCard {
 }
 
 /**
- * Bloque de Arquitectura de Información
+ * Sección Editorial base
  * Layout 2 columnas: izquierda título, derecha subtítulo + descripción
- * + imagen full-width con parallax
+ * Se compone con children (ParallaxImage, ShowcaseTriptych, WebPanel, etc.)
  */
-export interface EditorialBlock {
+export interface EditorialSection {
   title: string;       // font-accent, 28px (columna izquierda)
   subtitle: string;    // font-heading, 22px (columna derecha)
   content: string;     // font-base (columna derecha)
-  image: Media;        // imagen full-width con parallax
 }
+
+/**
+ * Bloque Editorial con imagen parallax (Arquitectura de Información)
+ */
+export interface EditorialBlock extends EditorialSection {
+  image?: Media;       // imagen full-width con parallax (opcional)
+}
+
+/**
+ * Bloque Editorial para Branding
+ */
+export interface BrandingEditorial extends EditorialSection {}
+
+/**
+ * Bloque Editorial para Web
+ */
+export interface WebEditorial extends EditorialSection {}
 
 /**
  * Showcase triptych - 3 columnas, centro con 2 imágenes
@@ -215,10 +231,16 @@ export interface ProjectLayout {
   bento: BentoGallery;
   heading?: CenteredHeading;
   features?: FeatureCard[];
-  editorial?: EditorialBlock;
+
+  // Secciones editoriales composables
+  editorial?: EditorialBlock;         // Arquitectura de Información + ParallaxImage
+  branding?: BrandingEditorial;       // Branding + ShowcaseTriptych
+  web?: WebEditorial;                 // Web + WebPanel
+
+  // Componentes visuales (usados como children de los EditorialBlocks)
   showcase?: ShowcaseTriptych;
-  branding?: BrandingPanel;
   webPanel?: WebPanel;
+
   process?: ProcessStep[];
   quoteBanner?: QuoteBanner;
   closing?: ClosingText;

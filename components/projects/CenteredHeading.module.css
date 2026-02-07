@@ -6,7 +6,8 @@
 
 @media (min-width: 768px) {
   .heading {
-    padding: var(--space-96) 0;
+    padding-top: var(--space-96);
+    padding-bottom: var(--space-64);
   }
 }
 

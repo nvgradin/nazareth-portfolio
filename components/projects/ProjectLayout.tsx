@@ -4,6 +4,7 @@ import { BentoGallery } from './BentoGallery';
 import { CenteredHeading } from './CenteredHeading';
 import { FeatureCards } from './FeatureCards';
 import { EditorialBlock } from './EditorialBlock';
+import { ParallaxImage } from './ParallaxImage';
 import { ShowcaseTriptych } from './ShowcaseTriptych';
 import { WebPanel } from './WebPanel';
 import { ProcessSteps } from './ProcessSteps';
@@ -23,7 +24,7 @@ export function ProjectLayout({ project }: Props) {
       {/* 1) Hero 2 columnas */}
       <ProjectHero data={layout.hero} tags={tags} />
 
-      {/* 2) Bento Gallery (8 slots = 4x2 grid) */}
+      {/* 2) Bento Gallery */}
       <BentoGallery data={layout.bento} />
 
       {/* 3) Heading centrado */}
@@ -34,24 +35,61 @@ export function ProjectLayout({ project }: Props) {
         <FeatureCards data={layout.features} />
       )}
 
-      {/* 5) Editorial block */}
-      {layout.editorial && <EditorialBlock data={layout.editorial} />}
+      {/* 5) Editorial: Arquitectura de Información + Parallax Image */}
+      {layout.editorial && (
+        <EditorialBlock
+          title={layout.editorial.title}
+          subtitle={layout.editorial.subtitle}
+          content={layout.editorial.content}
+        >
+          {layout.editorial.image && (
+            <ParallaxImage
+              src={layout.editorial.image.src}
+              alt={layout.editorial.image.alt || layout.editorial.title}
+            />
+          )}
+        </EditorialBlock>
+      )}
 
-      {/* 6) Showcase triptych (Branding) */}
-      {layout.showcase && <ShowcaseTriptych data={layout.showcase} />}
+      {/* 6) Editorial: Branding + Showcase Triptych */}
+      {layout.branding && (
+        <EditorialBlock
+          title={layout.branding.title}
+          subtitle={layout.branding.subtitle}
+          content={layout.branding.content}
+        >
+          {layout.showcase && <ShowcaseTriptych data={layout.showcase} />}
+        </EditorialBlock>
+      )}
 
-      {/* 7) Web panel */}
-      {layout.webPanel && <WebPanel data={layout.webPanel} />}
+      {/* 7) Editorial: Web + WebPanel */}
+      {layout.web && (
+        <EditorialBlock
+          title={layout.web.title}
+          subtitle={layout.web.subtitle}
+          content={layout.web.content}
+        >
+          {layout.webPanel && <WebPanel data={layout.webPanel} />}
+        </EditorialBlock>
+      )}
 
-      {/* 9) Process steps */}
+      {/* Fallback: Showcase sin EditorialBlock de branding */}
+      {layout.showcase && !layout.branding && (
+        <ShowcaseTriptych data={layout.showcase} />
+      )}
+
+      {/* Fallback: WebPanel sin EditorialBlock de web */}
+      {layout.webPanel && !layout.web && <WebPanel data={layout.webPanel} />}
+
+      {/* 8) Process steps */}
       {layout.process && layout.process.length > 0 && (
         <ProcessSteps data={layout.process} />
       )}
 
-      {/* 10) Quote banner */}
+      {/* 9) Quote banner */}
       {layout.quoteBanner && <QuoteBanner data={layout.quoteBanner} />}
 
-      {/* 11) Closing text */}
+      {/* 10) Closing text */}
       {layout.closing && <ClosingText data={layout.closing} />}
     </article>
   );

@@ -1,0 +1,20 @@
+/* ParallaxImage - Imagen full-width con efecto parallax */
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .container {
+    height: 380px;
+  }
+}
+
+.image {
+  object-fit: cover;
+  transform: scale(1.2);
+  transition: transform 0.1s linear;
+}
