@@ -44,7 +44,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <main>
+    <main style={{ backgroundColor: '#e2ddd5', marginTop: 'calc(-1 * var(--header-height, 72px))', paddingTop: 0 }}>
       <ProjectLayout project={project} />
     </main>
   );
