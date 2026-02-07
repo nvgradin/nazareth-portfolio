@@ -24,7 +24,7 @@ export function EditorialBlock({ data }: Props) {
       // Calculate parallax when image is in viewport
       if (rect.top < windowHeight && rect.bottom > 0) {
         const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
-        const translateY = (scrollProgress - 0.5) * 60; // -30 to +30 px movement
+        const translateY = (scrollProgress - 0.5) * 150; // -75 to +75 px movement
         imgRef.current.style.transform = `scale(1.2) translateY(${translateY}px)`;
       }
     };
