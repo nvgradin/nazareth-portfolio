@@ -101,9 +101,9 @@ export interface BentoGallery {
 export interface ProjectHero {
   title: string;
   subtitle?: string;
-  intro: string;
-  logo: string;          // ruta al logotipo, ej: '/projects/trainfy/Logotipo.png'
-  roles: string[];       // categorías tipo 'BACKEND DEV', 'UI/UX DESIGN', etc.
+  intro: string | string[];  // Un párrafo o varios
+  logo: string;              // ruta al logotipo, ej: '/projects/trainfy/Logotipo.png'
+  roles: string[];           // categorías tipo 'BACKEND DEV', 'UI/UX DESIGN', etc.
 }
 
 /**

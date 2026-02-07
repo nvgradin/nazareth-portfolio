@@ -19,8 +19,8 @@ export function ProjectHero({ data }: Props) {
             <Image
               src={logo}
               alt={`${title} logo`}
-              width={80}
-              height={80}
+              width={90}
+              height={90}
               className={styles.logoImage}
             />
           </div>
@@ -38,7 +38,13 @@ export function ProjectHero({ data }: Props) {
         {/* Columna derecha: Subtítulo + Intro */}
         <div className={styles.right}>
           {subtitle && <h2 className={styles.subtitle}>{subtitle}</h2>}
-          <p className={styles.intro}>{intro}</p>
+          {Array.isArray(intro) ? (
+            intro.map((paragraph, i) => (
+              <p key={i} className={styles.intro}>{paragraph}</p>
+            ))
+          ) : (
+            <p className={styles.intro}>{intro}</p>
+          )}
         </div>
       </div>
     </section>
