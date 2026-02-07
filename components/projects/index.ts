@@ -5,6 +5,7 @@ export { CenteredHeading } from './CenteredHeading';
 export { FeatureCards } from './FeatureCards';
 export { EditorialBlock } from './EditorialBlock';
 export { ParallaxImage } from './ParallaxImage';
+export { ImageGallery } from './ImageGallery';
 export { ShowcaseTriptych } from './ShowcaseTriptych';
 export { WebPanel } from './WebPanel';
 export { ProcessSteps } from './ProcessSteps';

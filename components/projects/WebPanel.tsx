@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { WebPanel as WebPanelType } from '@/lib/project-layout.types';
+import { ImageGallery } from './ImageGallery';
 import styles from './WebPanel.module.css';
 
 interface Props {
@@ -7,43 +7,25 @@ interface Props {
 }
 
 export function WebPanel({ data }: Props) {
-  const { title, description, bullets, mockups } = data;
+  const { mockups } = data;
+
+  // Convert mockups to gallery format
+  const galleryImages = mockups.map((mockup, index) => ({
+    src: mockup.src,
+    alt: mockup.alt || `Web mockup ${index + 1}`,
+  }));
 
   return (
     <section className={styles.panel}>
-      <div className={styles.container}>
-        <div className={styles.grid}>
-          {/* Contenido */}
-          <div className={styles.content}>
-            <h2 className={styles.title}>{title}</h2>
-            <p className={styles.description}>{description}</p>
-            {bullets && bullets.length > 0 && (
-              <ul className={styles.bullets}>
-                {bullets.map((bullet, index) => (
-                  <li key={index} className={styles.bullet}>
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-
-          {/* Mockups */}
-          <div className={styles.mockups}>
-            {mockups.map((mockup, index) => (
-              <div key={index} className={styles.mockup}>
-                <Image
-                  src={mockup.src}
-                  alt={mockup.alt || `Web mockup ${index + 1}`}
-                  fill
-                  className={styles.mockupImg}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <ImageGallery
+        images={galleryImages}
+        aspectMode="16:9"
+        listSize={100}
+        gapMain={16}
+        gapList={12}
+        mainRadius={0}
+        listRadius={0}
+      />
     </section>
   );
 }

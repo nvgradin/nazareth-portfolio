@@ -1,0 +1,107 @@
+/* ImageGallery - Galería interactiva con imagen principal y miniaturas */
+
+.gallery {
+  width: 100%;
+}
+
+/* Main Image */
+.mainImageContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--neutral-300);
+}
+
+.mainImage {
+  object-fit: cover;
+  transition: opacity var(--duration-normal) var(--ease-default);
+}
+
+/* Thumbnail List - Base */
+.thumbnailList {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile: Native scroll */
+.mobileScroll {
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mobileScroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Desktop: Drag to scroll */
+.desktopScroll {
+  cursor: grab;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  user-select: none;
+}
+
+.desktopScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.desktopScroll:active {
+  cursor: grabbing;
+}
+
+/* Thumbnail Button */
+.thumbnailButton {
+  position: relative;
+  flex: 1 0 auto;
+  min-width: 0;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity var(--duration-fast) var(--ease-default),
+              transform var(--duration-fast) var(--ease-default);
+}
+
+/* Calculate width so thumbnails fill container */
+.thumbnailList .thumbnailButton {
+  flex: 1;
+  min-width: 0;
+}
+
+.thumbnailButton:hover {
+  opacity: 0.9;
+}
+
+.thumbnailButton.active {
+  opacity: 1;
+}
+
+/* Active indicator */
+.thumbnailButton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  transition: border-color var(--duration-fast) var(--ease-default);
+  pointer-events: none;
+}
+
+.thumbnailButton.active::after {
+  border-color: var(--brand-accent-500);
+}
+
+.thumbnailImage {
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Mobile scroll snap */
+.mobileScroll .thumbnailButton {
+  scroll-snap-align: start;
+}
