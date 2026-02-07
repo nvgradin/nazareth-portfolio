@@ -5,7 +5,6 @@ import { CenteredHeading } from './CenteredHeading';
 import { FeatureCards } from './FeatureCards';
 import { EditorialBlock } from './EditorialBlock';
 import { ShowcaseTriptych } from './ShowcaseTriptych';
-import { BrandingPanel } from './BrandingPanel';
 import { WebPanel } from './WebPanel';
 import { ProcessSteps } from './ProcessSteps';
 import { QuoteBanner } from './QuoteBanner';
@@ -38,13 +37,10 @@ export function ProjectLayout({ project }: Props) {
       {/* 5) Editorial block */}
       {layout.editorial && <EditorialBlock data={layout.editorial} />}
 
-      {/* 6) Showcase triptych */}
+      {/* 6) Showcase triptych (Branding) */}
       {layout.showcase && <ShowcaseTriptych data={layout.showcase} />}
 
-      {/* 7) Branding panel */}
-      {layout.branding && <BrandingPanel data={layout.branding} />}
-
-      {/* 8) Web panel */}
+      {/* 7) Web panel */}
       {layout.webPanel && <WebPanel data={layout.webPanel} />}
 
       {/* 9) Process steps */}
