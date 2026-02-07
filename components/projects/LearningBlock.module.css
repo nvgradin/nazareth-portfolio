@@ -1,12 +1,12 @@
 /* LearningBlock - Bloque de aprendizaje con 3 columnas */
 
 .block {
-  padding: var(--space-48) var(--space-24);
+  padding: var(--space-48) var(--space-16);
 }
 
 @media (min-width: 768px) {
   .block {
-    padding: var(--space-64) var(--space-48);
+    padding: var(--space-64);
   }
 }
 
