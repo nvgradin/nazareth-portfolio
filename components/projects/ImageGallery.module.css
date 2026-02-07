@@ -4,16 +4,27 @@
   width: 100%;
 }
 
+/* Main Image Wrapper - centers the main image */
+.mainWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Full viewport width for main wrapper */
+.mainWrapper.fullWidth {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
 /* Main Image */
 .mainImageContainer {
   position: relative;
-  width: 100%;
   overflow: hidden;
-  background-color: var(--neutral-300);
 }
 
 .mainImage {
-  object-fit: cover;
+  object-fit: contain;
   transition: opacity var(--duration-normal) var(--ease-default);
 }
 
@@ -23,6 +34,12 @@
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+/* Full viewport width thumbnails */
+.thumbnailList.fullWidth {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 /* Mobile: Native scroll */

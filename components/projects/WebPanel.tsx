@@ -4,9 +4,10 @@ import styles from './WebPanel.module.css';
 
 interface Props {
   data: WebPanelType;
+  background?: string;
 }
 
-export function WebPanel({ data }: Props) {
+export function WebPanel({ data, background }: Props) {
   const { mockups } = data;
 
   // Convert mockups to gallery format
@@ -20,11 +21,15 @@ export function WebPanel({ data }: Props) {
       <ImageGallery
         images={galleryImages}
         aspectMode="16:9"
-        listSize={100}
-        gapMain={16}
-        gapList={12}
+        mainWidth="69%"
+        mainBackground={background}
+        mainPadding={64}
+        listSize={200}
+        gapMain={0}
+        gapList={0}
         mainRadius={0}
         listRadius={0}
+        listFullWidth={true}
       />
     </section>
   );

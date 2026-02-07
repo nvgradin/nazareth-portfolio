@@ -20,6 +20,10 @@ interface Props {
   mainRadius?: number;       // Main image border radius (default: 0)
   aspectMode?: AspectMode;   // Main image aspect ratio (default: '16:9')
   scrollSpeed?: number;      // Drag scroll speed multiplier (default: 1.5)
+  mainWidth?: string;        // Main image width (default: '100%')
+  listFullWidth?: boolean;   // Thumbnails full viewport width (default: false)
+  mainBackground?: string;   // Background color for main image section
+  mainPadding?: number;      // Vertical padding for main image section (default: 0)
 }
 
 const aspectRatios: Record<AspectMode, string> = {
@@ -39,6 +43,10 @@ export function ImageGallery({
   mainRadius = 0,
   aspectMode = '16:9',
   scrollSpeed = 1.5,
+  mainWidth = '100%',
+  listFullWidth = false,
+  mainBackground,
+  mainPadding = 0,
 }: Props) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -97,36 +105,45 @@ export function ImageGallery({
 
   return (
     <div className={styles.gallery}>
-      {/* Main Image */}
+      {/* Main Image Wrapper - centered with optional background */}
       <div
-        className={styles.mainImageContainer}
+        className={`${styles.mainWrapper} ${listFullWidth ? styles.fullWidth : ''}`}
         style={{
-          aspectRatio: aspectRatios[aspectMode],
-          borderRadius: mainRadius,
-          marginBottom: gapMain,
+          backgroundColor: mainBackground,
+          padding: mainPadding ? `${mainPadding}px 0` : undefined,
         }}
       >
-        <Image
-          src={selectedImage.src}
-          alt={selectedImage.alt}
-          fill
-          className={styles.mainImage}
-          sizes="(max-width: 768px) 100vw, 80vw"
-          priority
-        />
+        <div
+          className={styles.mainImageContainer}
+          style={{
+            width: mainWidth,
+            aspectRatio: aspectRatios[aspectMode],
+            borderRadius: mainRadius,
+          }}
+        >
+          <Image
+            src={selectedImage.src}
+            alt={selectedImage.alt}
+            fill
+            className={styles.mainImage}
+            sizes="(max-width: 768px) 100vw, (max-width: 1920px) 69vw, 1400px"
+            priority
+          />
+        </div>
       </div>
 
       {/* Thumbnail List */}
       {images.length > 1 && (
         <div
           ref={listRef}
-          className={`${styles.thumbnailList} ${isMobile ? styles.mobileScroll : styles.desktopScroll}`}
+          className={`${styles.thumbnailList} ${listFullWidth ? styles.fullWidth : ''} ${isMobile ? styles.mobileScroll : styles.desktopScroll}`}
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           style={{
             gap: gapList,
+            marginTop: gapMain,
           }}
         >
           {images.map((image, index) => (
@@ -135,7 +152,7 @@ export function ImageGallery({
               className={`${styles.thumbnailButton} ${index === selectedIndex ? styles.active : ''}`}
               onClick={() => handleThumbnailClick(index)}
               style={{
-                height: listSize,
+                minHeight: listSize,
                 borderRadius: listRadius,
               }}
               aria-label={`Ver imagen ${index + 1}`}
@@ -146,7 +163,7 @@ export function ImageGallery({
                 alt={image.alt}
                 fill
                 className={styles.thumbnailImage}
-                sizes={`${listSize * 2}px`}
+                sizes="(max-width: 768px) 50vw, 25vw"
               />
             </button>
           ))}
