@@ -172,33 +172,37 @@ export const trainfy: ProjectWithLayout = {
       mockups: [
         { type: 'image', src: '/projects/trainfy/web-mockup-1.jpg', alt: 'Web Mockup Desktop' },
         { type: 'image', src: '/projects/trainfy/web-mockup-2.jpg', alt: 'Web Mockup Mobile' },
+        { type: 'image', src: '/projects/trainfy/web-mockup-3.jpg', alt: 'Web Mockup Mobile' },
+        { type: 'image', src: '/projects/trainfy/web-mockup-4.jpg', alt: 'Web Mockup Mobile' }
       ],
     },
 
-    // 9) Proceso
-    process: [
-      {
-        number: 1,
-        title: 'Research',
-        description: 'Entrevistas con usuarios, análisis de competencia y definición de personas.',
-      },
-      {
-        number: 2,
-        title: 'Design',
-        description: 'Wireframes, prototipos interactivos y sistema de diseño.',
-      },
-      {
-        number: 3,
-        title: 'Develop',
-        description: 'Desarrollo fullstack, testing y despliegue continuo.',
-      },
-    ],
+    // 9) Learning block
+    learning: {
+      title: 'Una aventura de aprendizaje intenso',
+      intro: 'Trainfy no solo consolidó mis conocimientos en diseño y desarrollo web, sino que también:',
+      columns: [
+        {
+          subtitle: '1. Proporcionó una experiencia funcional',
+          text: 'Permitió realizar las acciones clave necesarias para su propósito (crear cuenta, subir material deportivo creando anuncios, compra, venta, intercambio de material deportivo).',
+        },
+        {
+          subtitle: '2. Crear una experiencia de usuario enriquecida con una marca significativa',
+          text: 'Incorporando mis habilidades previas a la formación, he aportado branding, arquitectura de información, wireframe, análisis inicial del flujo del usuario... Las habilidades del diseño UI/UX que permitió brindar un enfoque profesional que enriquecieron la solución final.',
+        },
+        {
+          subtitle: '3. Fusionó el entendimiento global desde el diseño hasta el desarrollo',
+          text: 'Aplicar y comprender cómo se crea una web compleja es enormemente enriquecedor. Comprender desde el modelo del negocio, el diseño visual, hasta la creación de componentes con React en frontend y ahondar más allá, para saber cómo organizar los datos con backend me permitió expandir y optimizar mi forma de trabajo.',
+        },
+      ],
+    },
 
     // 10) Quote banner
     quoteBanner: {
       quote: 'Simplemente juega. Diviértete. Disfruta el juego.',
       author: 'Michael Jordan',
       backgroundImage: { type: 'image', src: '/projects/trainfy/quote-bg.jpg', alt: 'Quote Background' },
+      imagePosition: 'top',  // Mostrar parte superior de la imagen (rostro visible)
     },
 
     // 11) Closing text
