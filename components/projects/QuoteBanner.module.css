@@ -29,18 +29,14 @@
   transition: transform 0.1s linear;
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-}
+/* Overlay removed - not needed for readability */
 
 .container {
   position: relative;
   z-index: 1;
   max-width: 900px;
   text-align: center;
-  color: #fff;
+  color: #E2DDD5;
 }
 
 .quote {

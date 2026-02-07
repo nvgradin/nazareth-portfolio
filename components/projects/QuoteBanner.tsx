@@ -9,8 +9,14 @@ interface Props {
   data: QuoteBannerType;
 }
 
+const positionMap = {
+  top: 'top',
+  center: 'center',
+  bottom: 'bottom',
+};
+
 export function QuoteBanner({ data }: Props) {
-  const { quote, author, role, backgroundImage } = data;
+  const { quote, author, role, backgroundImage, imagePosition = 'center' } = data;
   const bannerRef = useRef<HTMLElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
 
@@ -46,8 +52,8 @@ export function QuoteBanner({ data }: Props) {
           fill
           className={styles.bgImg}
           sizes="100vw"
+          style={{ objectPosition: `center ${positionMap[imagePosition]}` }}
         />
-        <div className={styles.overlay} />
       </div>
 
       {/* Content */}
