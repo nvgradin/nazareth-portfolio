@@ -1,0 +1,77 @@
+/* LearningBlock - Bloque de aprendizaje con 3 columnas */
+
+.block {
+  padding: var(--space-48) var(--space-24);
+}
+
+@media (min-width: 768px) {
+  .block {
+    padding: var(--space-64) var(--space-48);
+  }
+}
+
+/* Header centrado */
+.header {
+  text-align: center;
+  margin-bottom: var(--space-48);
+}
+
+.title {
+  font-family: var(--font-accent);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  color: var(--neutral-900);
+  margin-bottom: var(--space-16);
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: var(--text-3xl);
+  }
+}
+
+.intro {
+  font-family: var(--font-base);
+  font-size: var(--text-base);
+  color: var(--neutral-700);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Columnas */
+.columns {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .columns {
+    flex-direction: row;
+    width: 77%;
+    gap: var(--space-24);
+  }
+}
+
+.column {
+  flex: 1;
+  text-align: center;
+}
+
+.subtitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--neutral-900);
+  margin-bottom: var(--space-12);
+}
+
+.text {
+  font-family: var(--font-base);
+  font-size: var(--text-sm);
+  color: var(--neutral-600);
+  line-height: 1.7;
+}

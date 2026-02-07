@@ -8,6 +8,7 @@ import { ParallaxImage } from './ParallaxImage';
 import { ShowcaseTriptych } from './ShowcaseTriptych';
 import { WebPanel } from './WebPanel';
 import { ProcessSteps } from './ProcessSteps';
+import { LearningBlock } from './LearningBlock';
 import { QuoteBanner } from './QuoteBanner';
 import { ClosingText } from './ClosingText';
 import styles from './ProjectLayout.module.css';
@@ -69,7 +70,12 @@ export function ProjectLayout({ project }: Props) {
           subtitle={layout.web.subtitle}
           content={layout.web.content}
         >
-          {layout.webPanel && <WebPanel data={layout.webPanel} />}
+          {layout.webPanel && (
+            <WebPanel
+              data={layout.webPanel}
+              background={layout.bento?.background}
+            />
+          )}
         </EditorialBlock>
       )}
 
@@ -79,14 +85,19 @@ export function ProjectLayout({ project }: Props) {
       )}
 
       {/* Fallback: WebPanel sin EditorialBlock de web */}
-      {layout.webPanel && !layout.web && <WebPanel data={layout.webPanel} />}
+      {layout.webPanel && !layout.web && (
+        <WebPanel data={layout.webPanel} background={layout.bento?.background} />
+      )}
 
-      {/* 8) Process steps */}
+      {/* 8) Learning block */}
+      {layout.learning && <LearningBlock data={layout.learning} />}
+
+      {/* 9) Process steps (legacy) */}
       {layout.process && layout.process.length > 0 && (
         <ProcessSteps data={layout.process} />
       )}
 
-      {/* 9) Quote banner */}
+      {/* 10) Quote banner */}
       {layout.quoteBanner && <QuoteBanner data={layout.quoteBanner} />}
 
       {/* 10) Closing text */}

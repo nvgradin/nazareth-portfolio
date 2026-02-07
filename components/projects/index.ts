@@ -9,5 +9,6 @@ export { ImageGallery } from './ImageGallery';
 export { ShowcaseTriptych } from './ShowcaseTriptych';
 export { WebPanel } from './WebPanel';
 export { ProcessSteps } from './ProcessSteps';
+export { LearningBlock } from './LearningBlock';
 export { QuoteBanner } from './QuoteBanner';
 export { ClosingText } from './ClosingText';

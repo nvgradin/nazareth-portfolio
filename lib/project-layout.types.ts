@@ -206,6 +206,28 @@ export interface ProcessStep {
 }
 
 /**
+ * Columna del bloque de aprendizaje
+ */
+export interface LearningColumn {
+  subtitle: string;
+  text: string;
+}
+
+/**
+ * Bloque de aprendizaje con titular, texto y 3 columnas
+ */
+export interface LearningBlock {
+  title: string;
+  intro: string;
+  columns: LearningColumn[];
+}
+
+/**
+ * Posición vertical de imagen
+ */
+export type ImagePosition = 'top' | 'center' | 'bottom';
+
+/**
  * Quote banner full-bleed
  */
 export interface QuoteBanner {
@@ -213,6 +235,7 @@ export interface QuoteBanner {
   author?: string;
   role?: string;
   backgroundImage: Media;
+  imagePosition?: ImagePosition;  // Default: 'center'
 }
 
 /**
@@ -240,6 +263,9 @@ export interface ProjectLayout {
   // Componentes visuales (usados como children de los EditorialBlocks)
   showcase?: ShowcaseTriptych;
   webPanel?: WebPanel;
+
+  // Bloque de aprendizaje
+  learning?: LearningBlock;
 
   process?: ProcessStep[];
   quoteBanner?: QuoteBanner;
