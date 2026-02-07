@@ -118,8 +118,8 @@ export const trainfy: ProjectWithLayout = {
     features: [
       {
         image: { type: 'image', src: '/projects/trainfy/feature-branding.jpg', alt: 'UX Research' },
-        title: 'UX Research',
-        description: 'Investigación de usuarios para entender las necesidades reales de los deportistas amateur y profesionales.',
+        title: 'Branding',
+        description: 'Creación de la identidad, reflejando dinamismo y comunidad.',
       },
       {
         image: { type: 'image', src: '/projects/trainfy/feature-ui-ux.jpg', alt: 'UI Design' },
@@ -133,15 +133,15 @@ export const trainfy: ProjectWithLayout = {
       },
     ],
 
-    // 5) Bloque editorial
+    // 5) Bloque Arquitectura de Información
     editorial: {
-      label: '01',
-      title: 'El reto',
+      title: 'Arquitectura de Información',
+      subtitle: 'Diseño UI/UX centrado en el usuario',
       content: 'Desde el inicio, asumí el reto de transformar esta idea en una experiencia digital real. Mientras el proyecto inicial se centraba en desarrollo puro, decidí ir más allá y diseñar una plataforma intuitiva, funcional y alineada con las necesidades de los usuarios. El 73% de los deportistas amateur abandonan por falta de motivación y comunidad.',
       image: { type: 'image', src: '/projects/trainfy/editorial-full.jpg', alt: 'Trainfy Editorial' },
     },
 
-    // 6) Showcase triptych
+    // 6) Showcase triptych Branding
     showcase: {
       left: { type: 'image', src: '/projects/trainfy/showcase-left.jpg', alt: 'Showcase Left' },
       centerTop: { type: 'image', src: '/projects/trainfy/showcase-center-top.jpg', alt: 'Showcase Center Top' },
@@ -149,22 +149,6 @@ export const trainfy: ProjectWithLayout = {
       right: { type: 'image', src: '/projects/trainfy/showcase-right.jpg', alt: 'Showcase Right' },
     },
 
-    // 7) Branding panel
-    branding: {
-      backgroundColor: '#1E3A5F',
-      typography: [
-        { name: 'Primary', family: 'Poppins', weights: ['400', '500', '600', '700'], sample: 'Aa Bb Cc' },
-        { name: 'Secondary', family: 'Inter', weights: ['400', '500'], sample: 'Aa Bb Cc' },
-      ],
-      colors: [
-        { name: 'Primary', hex: '#1E3A5F' },
-        { name: 'Secondary', hex: '#3D5A80' },
-        { name: 'Accent', hex: '#EE6C4D' },
-        { name: 'Light', hex: '#E0FBFC' },
-        { name: 'Dark', hex: '#293241' },
-      ],
-      mockup: { type: 'image', src: '/projects/trainfy/branding-mockup.jpg', alt: 'Branding Mockup' },
-    },
 
     // 8) Web panel
     webPanel: {

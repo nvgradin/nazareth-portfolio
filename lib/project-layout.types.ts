@@ -121,13 +121,15 @@ export interface FeatureCard {
 }
 
 /**
- * Bloque editorial (label + texto + imagen full)
+ * Bloque de Arquitectura de Información
+ * Layout 2 columnas: izquierda título, derecha subtítulo + descripción
+ * + imagen full-width con parallax
  */
 export interface EditorialBlock {
-  label: string;
-  title: string;
-  content: string;
-  image: Media;
+  title: string;       // font-accent, 28px (columna izquierda)
+  subtitle: string;    // font-heading, 22px (columna derecha)
+  content: string;     // font-base (columna derecha)
+  image: Media;        // imagen full-width con parallax
 }
 
 /**

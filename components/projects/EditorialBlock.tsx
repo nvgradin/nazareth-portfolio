@@ -10,7 +10,7 @@ interface Props {
 }
 
 export function EditorialBlock({ data }: Props) {
-  const { label, title, content, image } = data;
+  const { title, subtitle, content, image } = data;
   const imageRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
 
@@ -37,12 +37,12 @@ export function EditorialBlock({ data }: Props) {
 
   return (
     <section className={styles.block}>
-      {/* Parte superior: Label + Texto */}
+      {/* Layout 2 columnas: título izquierda, subtítulo + texto derecha */}
       <div className={styles.top}>
         <div className={styles.container}>
-          <div className={styles.label}>{label}</div>
+          <h2 className={styles.title}>{title}</h2>
           <div className={styles.text}>
-            <h2 className={styles.title}>{title}</h2>
+            <h3 className={styles.subtitle}>{subtitle}</h3>
             <p className={styles.content}>{content}</p>
           </div>
         </div>
