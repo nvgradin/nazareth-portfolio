@@ -3,4 +3,5 @@
 .layout {
   width: 100%;
   background-color: #e2ddd5;
+  padding-top: var(--header-height, 72px);
 }
