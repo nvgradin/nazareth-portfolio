@@ -40,5 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# local docs
-PROJECT-IMAGES-GUIDE.md
+# local/internal docs
+docs/_internal/
