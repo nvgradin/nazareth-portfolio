@@ -22,17 +22,13 @@ export const trainfy: ProjectWithLayout = {
   },
 
   layout: {
-    // 1) Hero 2 columnas
+    // 1) Hero 2 columnas (40/60)
     hero: {
       title: 'Trainfy',
       subtitle: 'Conectar. Compartir. Moverse. El diseño detrás de Trainfy.',
       intro: 'En el mundo del deporte, el equipo adecuado marca la diferencia. Pero, ¿y si los amantes del deporte pudieron no solo comprar y vender material, sino también intercambiarlo y conectarse entre sí? Esa fue la idea detrás de Trainfy: una plataforma digital que nació con la intención de ser un "Wallapop para deportistas" y evolucionó hacia algo más grande.',
-      meta: {
-        client: 'Proyecto propio',
-        year: '2019-2024',
-        role: ['Product Designer', 'UX/UI Designer', 'Fullstack Developer'],
-        tools: ['Figma', 'React', 'Node.js', 'PostgreSQL'],
-      },
+      logo: '/projects/trainfy/Logotipo.png',
+      roles: ['Backend Dev', 'Desarrollo Web', 'Frontend Dev', 'Fullstack Developer', 'UI/UX Design'],
     },
 
     // 2) Bento Gallery - Sistema de columnas con ratios de altura

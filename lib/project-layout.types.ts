@@ -94,13 +94,16 @@ export interface BentoGallery {
 }
 
 /**
- * Hero de 2 columnas
+ * Hero de 2 columnas (40/60)
+ * Izquierda: logo, link proyectos, nombre proyecto, roles
+ * Derecha: subtítulo (h2) + intro
  */
 export interface ProjectHero {
   title: string;
   subtitle?: string;
   intro: string;
-  meta: ProjectMeta;
+  logo: string;          // ruta al logotipo, ej: '/projects/trainfy/Logotipo.png'
+  roles: string[];       // categorías tipo 'BACKEND DEV', 'UI/UX DESIGN', etc.
 }
 
 /**

@@ -1,4 +1,4 @@
-/* ProjectHero - 2 columnas */
+/* ProjectHero - 2 columnas 40/60 */
 
 .hero {
   padding: var(--space-48) 0;
@@ -21,67 +21,67 @@
 @media (min-width: 768px) {
   .container {
     padding-inline: var(--space-64);
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 2fr 3fr;
     gap: var(--space-64);
   }
 }
 
-.meta {
+/* Columna izquierda */
+.left {
   display: flex;
   flex-direction: column;
-  gap: var(--space-24);
+  gap: var(--space-16);
 }
 
-.metaItem {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
+/* Logo sello */
+.logo {
+  margin-bottom: var(--space-8);
 }
 
-.metaLabel {
+.logoImage {
+  width: auto;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+/* Back link */
+.backLink {
   font-family: var(--font-accent);
   font-size: 0.625rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--color-text-secondary);
+  transition: color var(--duration-fast) var(--ease-default);
 }
 
-.metaValue {
-  font-family: var(--font-base);
-  font-size: 0.875rem;
-  color: var(--color-text-primary);
-  line-height: 1.5;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-24);
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-8);
-}
-
-.tag {
-  font-family: var(--font-accent);
-  font-size: 0.625rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.backLink:hover {
   color: var(--brand-accent-500);
 }
 
+/* Project name */
 .title {
   font-size: clamp(2.5rem, 6vw, 5rem);
   line-height: 1;
   margin: 0;
+}
+
+/* Roles */
+.roles {
+  font-family: var(--font-accent);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Columna derecha */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
 }
 
 .subtitle {

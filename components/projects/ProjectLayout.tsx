@@ -18,12 +18,12 @@ interface Props {
 }
 
 export function ProjectLayout({ project }: Props) {
-  const { layout, tags } = project;
+  const { layout } = project;
 
   return (
     <article className={styles.layout}>
       {/* 1) Hero 2 columnas */}
-      <ProjectHero data={layout.hero} tags={tags} />
+      <ProjectHero data={layout.hero} />
 
       {/* 2) Bento Gallery */}
       <BentoGallery data={layout.bento} />
