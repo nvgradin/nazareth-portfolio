@@ -8,7 +8,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  padding: var(--space-16) 0;
+  padding: 24px 0;
   transition: background-color var(--duration-normal) var(--ease-default),
               backdrop-filter var(--duration-normal) var(--ease-default);
 }
@@ -43,7 +43,7 @@
 
 @media (min-width: 768px) {
   .container {
-    padding-inline: var(--space-64);
+    padding-inline: var(--space-96);
   }
 }
 
@@ -90,7 +90,7 @@
   padding: var(--space-8) var(--space-16);
   font-family: var(--font-accent);
   font-size: 0.75rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--brand-primary-900);
