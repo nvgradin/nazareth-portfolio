@@ -1,6 +1,6 @@
 "use client";
 
-import { InstagramLogo, WhatsappLogo, LinkedinLogo } from '@phosphor-icons/react';
+import { LinkedinLogo } from '@phosphor-icons/react';
 import styles from './Contact.module.css';
 
 export default function ContactPage() {
@@ -19,22 +19,6 @@ export default function ContactPage() {
             hola@nazarethgradin.com
           </a>
           <div className={styles.social}>
-            <a
-              href="https://www.instagram.com/nazarethgradin"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <InstagramLogo size={24} weight="regular" />
-            </a>
-            <a
-              href="https://wa.me/34630156301"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-            >
-              <WhatsappLogo size={24} weight="regular" />
-            </a>
             <a
               href="https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin/"
               target="_blank"
