@@ -206,8 +206,8 @@ export const trainfy: ProjectWithLayout = {
 
     // 11) Closing text
     closing: {
-      title: 'Resultado',
-      content: 'Trainfy representa mi visión de cómo la tecnología puede crear comunidades más fuertes. Desde el branding hasta el código, cada decisión fue tomada pensando en los usuarios y en cómo facilitar conexiones significativas entre deportistas.',
+      title: 'Diseñando para Aprender y Crecer',
+      content: 'Este proyecto me confirmó la importancia de la perseverancia y el aprendizaje continuo. Fue mi primera experiencia en un desarrollo fullstack tan intenso, gracias al cual adquirí nociones que aplico actualmente en proyectos como diseñadora y creadora web en WordPress. Un reto que decidí abordarlo como una oportunidad para explorar el potencial de unir diseño y desarrollo en un entorno lo más realista posible. Trainfy sigue siendo un recordatorio de que cada esfuerzo, por pequeño que parezca, es un paso hacia la excelencia profesional.',
     },
   },
 
