@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { TextContainer } from '@/components/ui';
 import styles from './EditorialBlock.module.css';
 
 interface Props {
@@ -22,13 +23,13 @@ export function EditorialBlock({ title, subtitle, content, children }: Props) {
     <section className={styles.block}>
       {/* Layout 2 columnas: título izquierda, subtítulo + texto derecha */}
       <div className={styles.top}>
-        <div className={styles.container}>
+        <TextContainer className={styles.container}>
           <h2 className={styles.title}>{title}</h2>
           <div className={styles.text}>
             <h3 className={styles.subtitle}>{subtitle}</h3>
             <p className={styles.content}>{content}</p>
           </div>
-        </div>
+        </TextContainer>
       </div>
 
       {/* Contenido adicional (parallax image, triptych, etc.) */}

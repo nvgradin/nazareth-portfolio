@@ -1,4 +1,5 @@
 import { ClosingText as ClosingTextType } from '@/lib/project-layout.types';
+import { TextContainer } from '@/components/ui';
 import styles from './ClosingText.module.css';
 
 interface Props {
@@ -11,8 +12,10 @@ export function ClosingText({ data }: Props) {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        {title && <h2 className={styles.title}>{title}</h2>}
-        <p className={styles.content}>{content}</p>
+        <TextContainer>
+          {title && <h2 className={styles.title}>{title}</h2>}
+          <p className={styles.content}>{content}</p>
+        </TextContainer>
       </div>
     </section>
   );
