@@ -136,21 +136,36 @@ export const trainfy: ProjectWithLayout = {
     editorial: {
       title: 'Arquitectura de Información',
       subtitle: 'Diseño UI/UX centrado en el usuario',
-      content: 'Desde el inicio, asumí el reto de transformar esta idea en una experiencia digital real. Mientras el proyecto inicial se centraba en desarrollo puro, decidí ir más allá y diseñar una plataforma intuitiva, funcional y alineada con las necesidades de los usuarios. El 73% de los deportistas amateur abandonan por falta de motivación y comunidad.',
+      content: {
+        text: 'Dada mi formación anterior como Creativa, he decidido aportar un enfoque integral con diseño, estructurando el proyecto desde sus bases visuales y funcionales de inicio:',
+        bullets: [
+          'Utilicé Adobe XD para desarrollar wireframes detallados que definieran la navegación y el flujo de usuario.',
+          'Creé prototipos interactivos que facilitaron la visualización de la experiencia del usuario antes del desarrollo.',
+          'Diseñé la arquitectura de la información para garantizar una navegación intuitiva, optimizando la experiencia de los usuarios finales.',
+          'He aportado la guía de estilo con todos los componentes necesarios para tener todo a punto de cara a su integración con CSS y React.',
+        ],
+      },
       image: { type: 'image', src: '/projects/trainfy/editorial-full.jpg', alt: 'Trainfy Editorial' },
     },
 
-    // 6) Branding Editorial + Showcase Triptych
-    branding: {
-      title: 'Branding',
-      subtitle: 'Identidad visual que conecta',
-      content: 'La identidad de Trainfy refleja dinamismo, comunidad y pasión por el deporte. Colores vibrantes que transmiten energía, tipografías modernas y un sistema visual coherente que se adapta a todos los puntos de contacto.',
-    },
-    showcase: {
-      left: { type: 'image', src: '/projects/trainfy/showcase-left.jpg', alt: 'Showcase Left' },
-      centerTop: { type: 'image', src: '/projects/trainfy/showcase-center-top.jpg', alt: 'Showcase Center Top' },
-      centerBottom: { type: 'image', src: '/projects/trainfy/showcase-center-bottom.jpg', alt: 'Showcase Center Bottom' },
-      right: { type: 'image', src: '/projects/trainfy/showcase-right.jpg', alt: 'Showcase Right' },
+    // 6) Branding Scroller
+    brandingScroller: {
+      title: 'Identidad visual que conecta',
+      description: 'La identidad de Trainfy refleja dinamismo, comunidad y pasión por el deporte. Colores vibrantes que transmiten energía, tipografías modernas y un sistema visual coherente que se adapta a todos los puntos de contacto.',
+      bullets: [
+        'Un logotipo con energía dinámica inspirando confianza.',
+        'Una gama cromática que evoca pasión y dinamismo con elegancia.',
+        'Un diseño minimalista que mantiene el enfoque en la funcionalidad sin perder atractivo visual.',
+      ],
+      background: '#354251',
+      images: [
+        { src: '/projects/trainfy/showcase-center-top.jpg', alt: 'Logotipo Trainfy' },
+        { src: '/projects/trainfy/showcase-center-bottom.jpg', alt: 'Paleta cromática Trainfy' },
+        { src: '/projects/trainfy/bento-2.png', alt: 'Sistema visual Trainfy' },
+        { src: '/projects/trainfy/bento-7.jpg', alt: 'Mockup Trainfy' },
+        { src: '/projects/trainfy/editorial-full.jpg', alt: 'Editorial Trainfy' },
+        { src: '/projects/trainfy/bento-3.jpg', alt: 'Aplicación Trainfy' },
+      ],
     },
 
     // 7) Web Editorial + WebPanel

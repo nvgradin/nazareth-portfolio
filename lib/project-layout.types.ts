@@ -124,14 +124,22 @@ export interface FeatureCard {
 }
 
 /**
+ * Contenido editorial: párrafo simple o párrafo + bullets
+ */
+export type EditorialContent = string | {
+  text: string;
+  bullets: string[];
+};
+
+/**
  * Sección Editorial base
  * Layout 2 columnas: izquierda título, derecha subtítulo + descripción
  * Se compone con children (ParallaxImage, ShowcaseTriptych, WebPanel, etc.)
  */
 export interface EditorialSection {
-  title: string;       // font-accent, 28px (columna izquierda)
-  subtitle: string;    // font-heading, 22px (columna derecha)
-  content: string;     // font-base (columna derecha)
+  title: string;              // font-accent, 28px (columna izquierda)
+  subtitle: string;           // font-heading, 22px (columna derecha)
+  content: EditorialContent;  // párrafo o párrafo + bullets
 }
 
 /**
@@ -145,6 +153,25 @@ export interface EditorialBlock extends EditorialSection {
  * Bloque Editorial para Branding
  */
 export interface BrandingEditorial extends EditorialSection {}
+
+/**
+ * Imagen del scroller de branding
+ */
+export interface BrandingScrollerImage {
+  src: string;
+  alt?: string;
+}
+
+/**
+ * Branding scroller section: layout 30/70 con scroller horizontal
+ */
+export interface BrandingScroller {
+  title: string;
+  description: string;
+  bullets?: string[];
+  background: string;
+  images: BrandingScrollerImage[];
+}
 
 /**
  * Bloque Editorial para Web
@@ -261,6 +288,7 @@ export interface ProjectLayout {
   // Secciones editoriales composables
   editorial?: EditorialBlock;         // Arquitectura de Información + ParallaxImage
   branding?: BrandingEditorial;       // Branding + ShowcaseTriptych
+  brandingScroller?: BrandingScroller; // Branding con scroller horizontal
   web?: WebEditorial;                 // Web + WebPanel
 
   // Componentes visuales (usados como children de los EditorialBlocks)

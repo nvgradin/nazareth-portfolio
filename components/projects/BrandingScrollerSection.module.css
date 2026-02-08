@@ -1,0 +1,145 @@
+/* BrandingScrollerSection — scroll hijack: vertical → horizontal */
+
+/* Wrapper: altura dinámica = 100vh + scrollWidth (genera recorrido vertical) */
+.wrapper {
+  position: relative;
+}
+
+/* Sticky: se queda fijo mientras el wrapper hace scroll */
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-32);
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: 30fr 70fr;
+    align-items: stretch;
+  }
+}
+
+/* Columna izquierda: texto */
+.textColumn {
+  background-color: var(--color-bg-primary);
+  padding: var(--space-48) var(--space-16);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-16);
+}
+
+@media (min-width: 768px) {
+  .textColumn {
+    padding: var(--space-64);
+    padding-right: var(--space-48);
+  }
+}
+
+.label {
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.description {
+  font-family: var(--font-base);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.bullets li {
+  font-family: var(--font-base);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  padding-left: var(--space-16);
+  position: relative;
+}
+
+.bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-text-secondary);
+}
+
+/* Columna derecha: contenedor del scroller */
+.scrollerColumn {
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Track: fila de cards movida via translateX (no overflow scroll) */
+.track {
+  display: flex;
+  gap: var(--space-24);
+  padding-inline: var(--space-16);
+  width: max-content;
+  will-change: transform;
+}
+
+@media (min-width: 768px) {
+  .track {
+    gap: var(--space-32);
+    padding-left: var(--space-32);
+    padding-right: var(--space-64);
+  }
+}
+
+/* Cards */
+.card {
+  flex-shrink: 0;
+  width: 85vw;
+  aspect-ratio: 16 / 10;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 55vw;
+    border-radius: 32px;
+  }
+}

@@ -6,6 +6,7 @@ import { FeatureCards } from './FeatureCards';
 import { EditorialBlock } from './EditorialBlock';
 import { ParallaxImage } from './ParallaxImage';
 import { ShowcaseTriptych } from './ShowcaseTriptych';
+import { BrandingScrollerSection } from './BrandingScrollerSection';
 import { WebPanel } from './WebPanel';
 import { ProcessSteps } from './ProcessSteps';
 import { LearningBlock } from './LearningBlock';
@@ -52,7 +53,7 @@ export function ProjectLayout({ project }: Props) {
         </EditorialBlock>
       )}
 
-      {/* 6) Editorial: Branding + Showcase Triptych */}
+      {/* 6a) Editorial: Branding + Showcase Triptych */}
       {layout.branding && (
         <EditorialBlock
           title={layout.branding.title}
@@ -61,6 +62,11 @@ export function ProjectLayout({ project }: Props) {
         >
           {layout.showcase && <ShowcaseTriptych data={layout.showcase} />}
         </EditorialBlock>
+      )}
+
+      {/* 6b) Branding Scroller */}
+      {layout.brandingScroller && (
+        <BrandingScrollerSection data={layout.brandingScroller} />
       )}
 
       {/* 7) Editorial: Web + WebPanel */}

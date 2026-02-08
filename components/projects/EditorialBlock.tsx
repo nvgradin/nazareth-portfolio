@@ -1,11 +1,12 @@
 import { ReactNode } from 'react';
+import { EditorialContent } from '@/lib/project-layout.types';
 import { TextContainer } from '@/components/ui';
 import styles from './EditorialBlock.module.css';
 
 interface Props {
   title: string;
   subtitle: string;
-  content: string;
+  content: EditorialContent;
   children?: ReactNode;
 }
 
@@ -19,6 +20,8 @@ interface Props {
  * - Audiovisuales: con video/galería
  */
 export function EditorialBlock({ title, subtitle, content, children }: Props) {
+  const isRich = typeof content !== 'string';
+
   return (
     <section className={styles.block}>
       {/* Layout 2 columnas: título izquierda, subtítulo + texto derecha */}
@@ -27,7 +30,18 @@ export function EditorialBlock({ title, subtitle, content, children }: Props) {
           <h2 className={styles.title}>{title}</h2>
           <div className={styles.text}>
             <h3 className={styles.subtitle}>{subtitle}</h3>
-            <p className={styles.content}>{content}</p>
+            {isRich ? (
+              <>
+                <p className={styles.content}>{content.text}</p>
+                <ul className={styles.bullets}>
+                  {content.bullets.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <p className={styles.content}>{content}</p>
+            )}
           </div>
         </TextContainer>
       </div>
