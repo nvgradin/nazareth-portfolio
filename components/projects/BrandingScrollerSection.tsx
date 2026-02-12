@@ -23,15 +23,24 @@ export function BrandingScrollerSection({ data }: Props) {
     if (!track || !column) return;
 
     const measure = () => {
-      // Con width: max-content, el track tiene su ancho intrínseco total
-      const totalTrackWidth = track.getBoundingClientRect().width;
-      // Ancho visible de la columna contenedora
+      // Sumar anchos reales de cada card + gaps + padding del track
+      const cards = track.children;
+      const trackStyle = getComputedStyle(track);
+      const gap = parseFloat(trackStyle.columnGap) || 0;
+      const paddingLeft = parseFloat(trackStyle.paddingLeft) || 0;
+      const paddingRight = parseFloat(trackStyle.paddingRight) || 0;
+
+      let totalCardsWidth = 0;
+      for (let i = 0; i < cards.length; i++) {
+        totalCardsWidth += (cards[i] as HTMLElement).getBoundingClientRect().width;
+      }
+      const totalTrackWidth = paddingLeft + totalCardsWidth + gap * Math.max(0, cards.length - 1) + paddingRight;
+
       const visibleWidth = column.getBoundingClientRect().width;
       const diff = totalTrackWidth - visibleWidth;
       setOverflow(Math.max(0, diff));
     };
 
-    // Esperar a que las imágenes y el layout se estabilicen
     requestAnimationFrame(measure);
     window.addEventListener('resize', measure);
     return () => window.removeEventListener('resize', measure);
@@ -48,12 +57,9 @@ export function BrandingScrollerSection({ data }: Props) {
       const wrapperHeight = wrapper.offsetHeight;
       const viewportH = window.innerHeight;
 
-      // Distancia scrollable = altura del wrapper menos un viewport
       const scrollableDistance = wrapperHeight - viewportH;
       if (scrollableDistance <= 0) return;
 
-      // Progreso: 0 cuando top del wrapper está en top del viewport,
-      // 1 cuando bottom del wrapper llega al bottom del viewport
       const progress = Math.min(Math.max(-rect.top / scrollableDistance, 0), 1);
       track.style.transform = `translateX(${-progress * overflow}px)`;
     };
@@ -73,7 +79,6 @@ export function BrandingScrollerSection({ data }: Props) {
         <div className={styles.container}>
           {/* Columna izquierda: texto */}
           <div className={styles.textColumn}>
-            <p className={styles.label}>Branding</p>
             <h2 className={styles.title}>{title}</h2>
             <p className={styles.description}>{description}</p>
             {bullets && bullets.length > 0 && (
@@ -89,7 +94,10 @@ export function BrandingScrollerSection({ data }: Props) {
           <div ref={columnRef} className={styles.scrollerColumn}>
             <div ref={trackRef} className={styles.track}>
               {images.map((img, i) => (
-                <div key={i} className={styles.card}>
+                <div
+                  key={i}
+                  className={`${styles.card}${img.orientation === 'vertical' ? ` ${styles.cardVertical}` : ''}`}
+                >
                   <Image
                     src={img.src}
                     alt={img.alt || `Branding ${i + 1}`}

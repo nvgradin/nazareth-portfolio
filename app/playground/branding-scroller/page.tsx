@@ -9,14 +9,12 @@ const mockData: BrandingScroller = {
     'Paleta cromática y tipografía',
     'Sistema de iconografía deportiva',
   ],
-  background: '#354251',
+  background: '#212C3A',
   images: [
     { src: '/projects/trainfy/showcase-center-top.jpg', alt: 'Branding 1' },
-    { src: '/projects/trainfy/showcase-center-bottom.jpg', alt: 'Branding 2' },
-    { src: '/projects/trainfy/bento-2.png', alt: 'Branding 3' },
-    { src: '/projects/trainfy/bento-7.jpg', alt: 'Branding 4' },
-    { src: '/projects/trainfy/editorial-full.jpg', alt: 'Branding 5' },
-    { src: '/projects/trainfy/bento-3.jpg', alt: 'Branding 6' },
+    { src: '/projects/trainfy/showcase-right_horizontal.jpg', alt: 'Branding 2' },
+    { src: '/projects/trainfy/showcase-left.jpg', alt: 'Branding 3', orientation: 'vertical' },
+    { src: '/projects/trainfy/showcase-center-bottom.jpg', alt: 'Branding 4' },
   ],
 };
 
