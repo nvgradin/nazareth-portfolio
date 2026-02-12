@@ -1,0 +1,171 @@
+/* ═══════════════════════════════════════════════════════════════
+   IMAGE COMPARE - Before/After Slider
+   Panel oscuro con slider centrado al ~36% de ancho
+   Pointer capture nativo para drag fluido
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────
+   SECTION (fondo oscuro con márgenes laterales)
+   ───────────────────────────────────────────── */
+
+.section {
+  width: 100%;
+  padding: 0 var(--space-24);
+}
+
+/* ─────────────────────────────────────────────
+   INNER (panel con fondo, centrado con padding)
+   ───────────────────────────────────────────── */
+
+.inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-48) 0;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    padding: var(--space-64) 0;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   CONTAINER (el slider)
+   Mobile: ~80%, Tablet: ~50%, Desktop: ~36%
+   ───────────────────────────────────────────── */
+
+.container {
+  position: relative;
+  width: 80%;
+  aspect-ratio: 9 / 14;
+  overflow: hidden;
+  cursor: ew-resize;
+  user-select: none;
+  touch-action: pan-y pinch-zoom;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 36%;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   IMAGE LAYERS
+   ───────────────────────────────────────────── */
+
+.imageLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.image {
+  object-fit: cover;
+  object-position: top center;
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────────────
+   LABELS — dentro de cada imageLayer
+   "Antes" dentro de la capa before (se recorta con clipPath)
+   "Después" dentro de la capa after (siempre visible en zona derecha)
+   ───────────────────────────────────────────── */
+
+.label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  padding: 4px 10px;
+  font-family: var(--font-accent);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--neutral-50);
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  border-radius: var(--radius-full);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-default);
+}
+
+.container:hover .label {
+  opacity: 1;
+}
+
+.labelBefore {
+  left: 12px;
+}
+
+.labelAfter {
+  right: 12px;
+}
+
+/* ─────────────────────────────────────────────
+   HANDLE (line + knob)
+   ───────────────────────────────────────────── */
+
+.handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0;
+  pointer-events: none;
+  outline: none;
+}
+
+.handle:focus-visible .knob {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6);
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -1px;
+  width: 2px;
+  background-color: var(--neutral-50);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.knob {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background-color: var(--neutral-50);
+  color: var(--brand-primary-900);
+  border: 1px solid var(--neutral-300-soft);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  transition: background-color var(--duration-fast) var(--ease-default),
+              color var(--duration-fast) var(--ease-default);
+}
+
+.knob svg {
+  margin: -2px;
+  flex-shrink: 0;
+}
+
+.container:active .knob {
+  background-color: var(--brand-primary-900);
+  color: var(--neutral-50);
+  border-color: var(--brand-primary-900);
+}

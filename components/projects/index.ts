@@ -12,3 +12,4 @@ export { ProcessSteps } from './ProcessSteps';
 export { LearningBlock } from './LearningBlock';
 export { QuoteBanner } from './QuoteBanner';
 export { ClosingText } from './ClosingText';
+export { ImageCompare } from './ImageCompare';
