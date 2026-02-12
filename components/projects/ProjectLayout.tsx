@@ -7,6 +7,8 @@ import { EditorialBlock } from './EditorialBlock';
 import { ParallaxImage } from './ParallaxImage';
 import { ShowcaseTriptych } from './ShowcaseTriptych';
 import { BrandingScrollerSection } from './BrandingScrollerSection';
+import { ArchitectureWebFlow } from './ArchitectureWebFlow';
+import { ImageCompare } from './ImageCompare';
 import { WebPanel } from './WebPanel';
 import { ProcessSteps } from './ProcessSteps';
 import { LearningBlock } from './LearningBlock';
@@ -35,6 +37,19 @@ export function ProjectLayout({ project }: Props) {
       {/* 4) Feature cards */}
       {layout.features && layout.features.length > 0 && (
         <FeatureCards data={layout.features} />
+      )}
+
+      {/* ═══ SECCIONES VARIABLES (entre features y quote) ═══ */}
+
+      {/* Image Compare (before/after) */}
+      {layout.imageCompare && (
+        <ImageCompare
+          before={{ src: layout.imageCompare.before.src, alt: layout.imageCompare.before.alt || 'Before' }}
+          after={{ src: layout.imageCompare.after.src, alt: layout.imageCompare.after.alt || 'After' }}
+          initial={layout.imageCompare.initial}
+          labels={layout.imageCompare.labels}
+          background={layout.imageCompare.background}
+        />
       )}
 
       {/* 5) Editorial: Arquitectura de Información + Parallax Image */}
@@ -69,7 +84,12 @@ export function ProjectLayout({ project }: Props) {
         <BrandingScrollerSection data={layout.brandingScroller} />
       )}
 
-      {/* 7) Editorial: Web + WebPanel */}
+      {/* 7a) ArchitectureWebFlow: reemplaza editorial+web cuando existe */}
+      {layout.architectureWebFlow && (
+        <ArchitectureWebFlow data={layout.architectureWebFlow} />
+      )}
+
+      {/* 7b) Editorial: Web + WebPanel (fallback) */}
       {layout.web && (
         <EditorialBlock
           title={layout.web.title}
@@ -106,7 +126,7 @@ export function ProjectLayout({ project }: Props) {
       {/* 10) Quote banner */}
       {layout.quoteBanner && <QuoteBanner data={layout.quoteBanner} />}
 
-      {/* 10) Closing text */}
+      {/* 11) Closing text */}
       {layout.closing && <ClosingText data={layout.closing} />}
     </article>
   );
