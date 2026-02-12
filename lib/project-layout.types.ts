@@ -160,6 +160,7 @@ export interface BrandingEditorial extends EditorialSection {}
 export interface BrandingScrollerImage {
   src: string;
   alt?: string;
+  orientation?: 'vertical';
 }
 
 /**
@@ -277,6 +278,35 @@ export interface ClosingText {
 }
 
 /**
+ * Image Compare (before/after slider)
+ */
+export interface ImageCompareData {
+  before: Media;
+  after: Media;
+  initial?: number;
+  labels?: { before?: string; after?: string };
+  background?: string;
+}
+
+/**
+ * ArchitectureWebFlow — sección editorial unificada (Arquitectura + Web)
+ */
+export interface ArchitectureWebFlowModule {
+  layout: 'text-image' | 'image-text' | 'full-image';
+  title?: string;
+  content?: string;
+  bullets?: string[];
+  image: Media;
+}
+
+export interface ArchitectureWebFlow {
+  sectionTitle: string;
+  intro: string;
+  background: string;
+  modules: ArchitectureWebFlowModule[];
+}
+
+/**
  * Layout completo del proyecto (estructura editorial)
  */
 export interface ProjectLayout {
@@ -290,6 +320,7 @@ export interface ProjectLayout {
   branding?: BrandingEditorial;       // Branding + ShowcaseTriptych
   brandingScroller?: BrandingScroller; // Branding con scroller horizontal
   web?: WebEditorial;                 // Web + WebPanel
+  architectureWebFlow?: ArchitectureWebFlow; // Arquitectura + Web unificado
 
   // Componentes visuales (usados como children de los EditorialBlocks)
   showcase?: ShowcaseTriptych;
@@ -297,6 +328,9 @@ export interface ProjectLayout {
 
   // Bloque de aprendizaje
   learning?: LearningBlock;
+
+  // Comparación antes/después
+  imageCompare?: ImageCompareData;
 
   process?: ProcessStep[];
   quoteBanner?: QuoteBanner;

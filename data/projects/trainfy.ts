@@ -132,66 +132,68 @@ export const trainfy: ProjectWithLayout = {
       },
     ],
 
-    // 5) Bloque Arquitectura de Información
-    editorial: {
-      title: 'Arquitectura de Información',
-      subtitle: 'Diseño UI/UX centrado en el usuario',
-      content: {
-        text: 'Dada mi formación anterior como Creativa, he decidido aportar un enfoque integral con diseño, estructurando el proyecto desde sus bases visuales y funcionales de inicio:',
-        bullets: [
-          'Utilicé Adobe XD para desarrollar wireframes detallados que definieran la navegación y el flujo de usuario.',
-          'Creé prototipos interactivos que facilitaron la visualización de la experiencia del usuario antes del desarrollo.',
-          'Diseñé la arquitectura de la información para garantizar una navegación intuitiva, optimizando la experiencia de los usuarios finales.',
-          'He aportado la guía de estilo con todos los componentes necesarios para tener todo a punto de cara a su integración con CSS y React.',
-        ],
-      },
-      image: { type: 'image', src: '/projects/trainfy/editorial-full.jpg', alt: 'Trainfy Editorial' },
+    // 5) Architecture & Web Flow (unifica editorial + web)
+    architectureWebFlow: {
+      sectionTitle: 'Arquitectura & Web',
+      intro: 'Desde wireframes hasta código, una plataforma pensada para la comunidad deportiva con enfoque mobile-first.',
+      background: '#354251',
+      modules: [
+        {
+          layout: 'text-image',
+          title: 'Diseño UI/UX centrado en el usuario',
+          content: 'Dada mi formación como Creativa, aporté un enfoque integral estructurando el proyecto desde sus bases visuales y funcionales.',
+          bullets: [
+            'Wireframes detallados en Adobe XD',
+            'Prototipos interactivos para validar flujos',
+            'Arquitectura de información intuitiva',
+            'Guía de estilo completa para integración',
+          ],
+          image: { type: 'image', src: '/projects/trainfy/editorial-full.jpg', alt: 'Arquitectura de información Trainfy' },
+        },
+        {
+          layout: 'full-image',
+          image: { type: 'image', src: '/projects/trainfy/web-mockup-1.jpg', alt: 'Web Mockup Desktop' },
+        },
+        {
+          layout: 'image-text',
+          title: 'Diseño responsive mobile-first',
+          content: 'La plataforma garantiza una experiencia óptima en todos los dispositivos, con cada componente adaptándose fluidamente.',
+          image: { type: 'image', src: '/projects/trainfy/web-mockup-2.jpg', alt: 'Web Mockup Mobile' },
+        },
+        {
+          layout: 'full-image',
+          image: { type: 'image', src: '/projects/trainfy/web-mockup-4.jpg', alt: 'Web Mockup Trainfy' },
+        },
+      ],
     },
 
-    // 6) Branding Scroller
+    // 6a) Showcase Triptych (standalone, sin EditorialBlock de branding)
+    showcase: {
+      left: { type: 'image', src: '/projects/trainfy/showcase-left.jpg', alt: 'Showcase left' },
+      centerTop: { type: 'image', src: '/projects/trainfy/showcase-center-top.jpg', alt: 'Showcase center top' },
+      centerBottom: { type: 'image', src: '/projects/trainfy/showcase-center-bottom.jpg', alt: 'Showcase center bottom' },
+      right: { type: 'image', src: '/projects/trainfy/showcase-right_horizontal.jpg', alt: 'Showcase right' },
+    },
+
+    // 6b) Branding Scroller
     brandingScroller: {
-      title: 'Identidad visual que conecta',
+      title: 'BRANDING',
       description: 'La identidad de Trainfy refleja dinamismo, comunidad y pasión por el deporte. Colores vibrantes que transmiten energía, tipografías modernas y un sistema visual coherente que se adapta a todos los puntos de contacto.',
       bullets: [
         'Un logotipo con energía dinámica inspirando confianza.',
         'Una gama cromática que evoca pasión y dinamismo con elegancia.',
         'Un diseño minimalista que mantiene el enfoque en la funcionalidad sin perder atractivo visual.',
       ],
-      background: '#354251',
+      background: '#212C3A',
       images: [
-        { src: '/projects/trainfy/showcase-center-top.jpg', alt: 'Logotipo Trainfy' },
-        { src: '/projects/trainfy/showcase-center-bottom.jpg', alt: 'Paleta cromática Trainfy' },
-        { src: '/projects/trainfy/bento-2.png', alt: 'Sistema visual Trainfy' },
-        { src: '/projects/trainfy/bento-7.jpg', alt: 'Mockup Trainfy' },
-        { src: '/projects/trainfy/editorial-full.jpg', alt: 'Editorial Trainfy' },
-        { src: '/projects/trainfy/bento-3.jpg', alt: 'Aplicación Trainfy' },
+        { src: '/projects/trainfy/showcase-center-top.jpg', alt: 'Branding 1' },
+        { src: '/projects/trainfy/showcase-right_horizontal.jpg', alt: 'Branding 2' },
+        { src: '/projects/trainfy/showcase-left.jpg', alt: 'Branding 3', orientation: 'vertical' },
+        { src: '/projects/trainfy/showcase-center-bottom.jpg', alt: 'Branding 4' },
       ],
     },
 
-    // 7) Web Editorial + WebPanel
-    web: {
-      title: 'Web',
-      subtitle: 'Diseño responsive mobile-first',
-      content: 'La plataforma fue diseñada con un enfoque mobile-first, garantizando una experiencia óptima en todos los dispositivos. Cada componente se adapta fluidamente desde smartphones hasta pantallas de escritorio.',
-    },
-    webPanel: {
-      title: 'Diseño responsive',
-      description: 'La plataforma fue diseñada con un enfoque mobile-first, garantizando una experiencia óptima en todos los dispositivos.',
-      bullets: [
-        'Mobile-first approach',
-        'Diseño adaptativo',
-        'Optimizado para conversión',
-        'Accesibilidad WCAG 2.1',
-      ],
-      mockups: [
-        { type: 'image', src: '/projects/trainfy/web-mockup-1.jpg', alt: 'Web Mockup Desktop' },
-        { type: 'image', src: '/projects/trainfy/web-mockup-2.jpg', alt: 'Web Mockup Mobile' },
-        { type: 'image', src: '/projects/trainfy/web-mockup-3.jpg', alt: 'Web Mockup Mobile' },
-        { type: 'image', src: '/projects/trainfy/web-mockup-4.jpg', alt: 'Web Mockup Mobile' }
-      ],
-    },
-
-    // 9) Learning block
+    // 7) Learning block
     learning: {
       title: 'Una aventura de aprendizaje intenso',
       intro: 'Trainfy no solo consolidó mis conocimientos en diseño y desarrollo web, sino que también:',
