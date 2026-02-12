@@ -6,7 +6,7 @@
 
 @media (min-width: 768px) {
   .section {
-    padding: var(--space-8) 0;
+    padding: var(--space-8) 0 var(--space-64);
   }
 }
 

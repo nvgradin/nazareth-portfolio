@@ -1,7 +1,12 @@
+'use client';
+
 import { ReactNode } from 'react';
+import { motion } from 'framer-motion';
 import { EditorialContent } from '@/lib/project-layout.types';
 import { TextContainer } from '@/components/ui';
 import styles from './EditorialBlock.module.css';
+
+const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 interface Props {
   title: string;
@@ -27,8 +32,22 @@ export function EditorialBlock({ title, subtitle, content, children }: Props) {
       {/* Layout 2 columnas: título izquierda, subtítulo + texto derecha */}
       <div className={styles.top}>
         <TextContainer className={styles.container}>
-          <h2 className={styles.title}>{title}</h2>
-          <div className={styles.text}>
+          <motion.h2
+            className={styles.title}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.6, ease }}
+          >
+            {title}
+          </motion.h2>
+          <motion.div
+            className={styles.text}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.5, delay: 0.1, ease }}
+          >
             <h3 className={styles.subtitle}>{subtitle}</h3>
             {isRich ? (
               <>
@@ -42,7 +61,7 @@ export function EditorialBlock({ title, subtitle, content, children }: Props) {
             ) : (
               <p className={styles.content}>{content}</p>
             )}
-          </div>
+          </motion.div>
         </TextContainer>
       </div>
 

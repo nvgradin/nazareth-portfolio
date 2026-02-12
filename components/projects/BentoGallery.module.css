@@ -158,3 +158,73 @@
     grid-column: span min(var(--col-span, 1), 2) !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   LIGHTBOX
+   Overlay fullscreen con flechas minimalistas
+   ═══════════════════════════════════════════════════════════════ */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.lightboxBackdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+
+.lightboxImageWrap {
+  position: relative;
+  z-index: 1;
+  width: 85vw;
+  height: 80vh;
+  max-width: 1200px;
+  cursor: default;
+}
+
+.lightboxImage {
+  object-fit: contain;
+}
+
+.lightboxArrow {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--neutral-300-soft);
+  border-radius: var(--radius-full);
+  background-color: var(--neutral-50);
+  color: var(--brand-primary-900);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-default),
+              color var(--duration-fast) var(--ease-default);
+}
+
+.lightboxArrow:hover {
+  background-color: var(--brand-primary-900);
+  color: var(--neutral-50);
+  border-color: var(--brand-primary-900);
+}
+
+.lightboxArrowLeft {
+  left: var(--space-24);
+}
+
+.lightboxArrowRight {
+  right: var(--space-24);
+}
