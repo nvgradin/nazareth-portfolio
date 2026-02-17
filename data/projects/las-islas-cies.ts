@@ -24,10 +24,10 @@ export const lasIslasCies: ProjectWithLayout = {
   layout: {
     hero: {
       title: 'Las Islas Cíes',
-      subtitle: 'Placeholder subtitle',
-      intro: 'Placeholder intro — contenido pendiente.',
+      subtitle: 'asas',
+      intro: 'Las Islas Cíes, hogar de la icónica Playa de Rodas, reconocida como la mejor playa del mundo por The Guardian, son un destino de gran la belleza natural: un paraíso. Mi misión fue reflejar esta esencia en la web. Por ello propuse convertirla en una guía digital que acompañara a los viajeros desde la planificación hasta la vivencia de su experiencia en este rincón único de Galicia. Dar vida a esta transformación, rediseñando la web completamente para modernizar su aspecto, mejorar la navegación y abrir la puerta a los viajeros para que puedan planificar su visita, descubrir las rutas y sus puntos de interés, para reservar su billete de barco y disfrutar plenamente su experiencia en Las Islas Cíes.',
       logo: '/projects/las-islas-cies/Logo.png',
-      roles: ['Placeholder'],
+      roles: ['Desarrollo Web', 'Product Designer', 'Social Media', 'Estrategia', 'Marketing'],
     },
 
     bento: {
@@ -67,25 +67,26 @@ export const lasIslasCies: ProjectWithLayout = {
 
     // 3) Heading centrado
     heading: {
-      title: 'Placeholder — título del heading',
-      subtitle: 'Placeholder — subtítulo del heading',
+      title: 'La Creación para Las Islas Cíes',
+      subtitle: 'La misión era clara: renovar la web para que fuera tan intuitiva y acogedora como las islas mismas. Desde el inicio, el reto fue diseñar una estructura que no solo organizara la información de manera clara, sino que también invitara a los usuarios a sumergirse en la experiencia que ofrecen las islas. A través de un enfoque creativo y funcional, reestructuré el contenido, optimicé los flujos de usuario y diseñé una interfaz visual inspirada en los colores y texturas del entorno natural. Cada decisión, desde la navegación hasta los elementos visuales, buscó capturar la esencia de las islas, facilitando al mismo tiempo que los visitantes encontraran lo que necesitaban con facilidad.',
     },
 
     // 4) Feature cards (3 columnas)
     features: [
       {
-        image: { type: 'image', src: '/projects/las-islas-cies/feature-1.jpg', alt: 'Placeholder feature 1' },
-        title: 'Placeholder Feature 1',
+        image: { type: 'image', src: '/projects/las-islas-cies/feature-ui-ux.jpg', alt: 'Placeholder feature 1' },
+        title: 'Diseño UI UX',
         description: 'Placeholder — descripción de la primera feature.',
       },
       {
-        image: { type: 'image', src: '/projects/las-islas-cies/feature-2.jpg', alt: 'Placeholder feature 2' },
-        title: 'Placeholder Feature 2',
+        image: { type: 'image', src: '/projects/las-islas-cies/feature-web.jpg', alt: 'Placeholder feature 2' },
+        title: 'Desarrollo Web',
+
         description: 'Placeholder — descripción de la segunda feature.',
       },
       {
-        image: { type: 'image', src: '/projects/las-islas-cies/feature-3.jpg', alt: 'Placeholder feature 3' },
-        title: 'Placeholder Feature 3',
+        image: { type: 'image', src: '/projects/las-islas-cies/feature-marketing.jpg', alt: 'Placeholder feature 3' },
+        title: 'Marketing',
         description: 'Placeholder — descripción de la tercera feature.',
       },
     ],

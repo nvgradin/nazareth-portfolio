@@ -25,9 +25,9 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     hero: {
       title: 'Silvia Fernández De Luna',
       subtitle: 'Placeholder subtitle',
-      intro: 'Placeholder intro — contenido pendiente.',
+      intro: 'Un viaje de creación y colaboración desde hace 3 años en el cual dar vida la presencia digital progresiva hacia una estructura sólida para Silvia Fernández De Luna. Durante los últimos años, he acompañado y guiado a Silvia Fernández De Luna en la creación y consolidación de su Marca personal. Silvia, como guía, terapeuta y mentora holística, tenía una visión clara de lo que quería brindar al mundo. Mi aportación ha sido llevar esa visión a la realidad, dedicándome en consolidar una identidad sólida, desde el diseño visual hasta la estrategia de marketing, para asegurar que cada aspecto de su presencia digital esté alineado con su visión y propósito.',
       logo: '/projects/silvia-fernandez-de-luna/logo.png',
-      roles: ['Placeholder'],
+      roles: ['Audiovisual', 'Automatización de Marketing', 'Desarrollo Web', 'Email Marketing', 'Estrategia de Marketing', 'Social Media'],
     },
 
     bento: {
@@ -67,25 +67,25 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
 
     // 3) Heading centrado
     heading: {
-      title: 'Placeholder — título del heading',
-      subtitle: 'Placeholder — subtítulo del heading',
+      title: 'La Creación para Silvia Fernández De Luna',
+      subtitle: 'Silvia Fernández De Luna es una profesional dedicada a acompañar a las personas en su camino hacia el autoconocimiento y la sanación espiritual. Su labor abarca desde la guía personal y terapéutica hasta la creación de espacios de aprendizaje y desarrollo. A lo largo de los últimos años, hemos trabajado juntos en la creación de una base sólida para su Marca, con impronta de su profundidad y autenticidad, y que ahora incluye una amplia oferta de servicios personalizados, contenidos educativos, eventos, y una comunidad enfocada en el crecimiento personal y espiritual.',
     },
 
     // 4) Feature cards (3 columnas)
     features: [
       {
-        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-1.jpg', alt: 'Placeholder feature 1' },
-        title: 'Placeholder Feature 1',
+        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-marketing.jpg', alt: 'Placeholder feature 1' },
+        title: 'Marketing',
         description: 'Placeholder — descripción de la primera feature.',
       },
       {
-        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-2.jpg', alt: 'Placeholder feature 2' },
-        title: 'Placeholder Feature 2',
+        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-web.jpg', alt: 'Placeholder feature 2' },
+        title: 'Web',
         description: 'Placeholder — descripción de la segunda feature.',
       },
       {
-        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-3.jpg', alt: 'Placeholder feature 3' },
-        title: 'Placeholder Feature 3',
+        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-estrategia.jpg', alt: 'Placeholder feature 3' },
+        title: 'Estrategia',
         description: 'Placeholder — descripción de la tercera feature.',
       },
     ],
