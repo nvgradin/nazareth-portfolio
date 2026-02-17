@@ -18,19 +18,21 @@ export function WebPanel({ data, background }: Props) {
 
   return (
     <section className={styles.panel}>
-      <ImageGallery
-        images={galleryImages}
-        aspectMode="16:9"
-        mainWidth="69%"
-        mainBackground={background}
-        mainPadding={64}
-        listSize={200}
-        gapMain={0}
-        gapList={0}
-        mainRadius={0}
-        listRadius={0}
-        listFullWidth={true}
-      />
+      <div className={styles.inner}>
+        <ImageGallery
+          images={galleryImages}
+          aspectMode="16:9"
+          mainWidth="69%"
+          mainBackground={background}
+          mainPadding={64}
+          listSize={200}
+          gapMain={0}
+          gapList={0}
+          mainRadius={0}
+          listRadius={0}
+          listFullWidth={false}
+        />
+      </div>
     </section>
   );
 }
