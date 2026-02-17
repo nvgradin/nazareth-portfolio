@@ -167,6 +167,29 @@ export const trainfy: ProjectWithLayout = {
       ],
     },
 
+    // Web Editorial + WebPanel (carrusel de mockups)
+    web: {
+      title: 'Web',
+      subtitle: 'Diseño responsive mobile-first',
+      content: 'La plataforma fue diseñada con un enfoque mobile-first, garantizando una experiencia óptima en todos los dispositivos. Cada componente se adapta fluidamente desde smartphones hasta pantallas de escritorio.',
+    },
+    webPanel: {
+      title: 'Diseño responsive',
+      description: 'La plataforma fue diseñada con un enfoque mobile-first, garantizando una experiencia óptima en todos los dispositivos.',
+      bullets: [
+        'Mobile-first approach',
+        'Diseño adaptativo',
+        'Optimizado para conversión',
+        'Accesibilidad WCAG 2.1',
+      ],
+      mockups: [
+        { type: 'image', src: '/projects/trainfy/web-mockup-1.jpg', alt: 'Web Mockup Desktop' },
+        { type: 'image', src: '/projects/trainfy/web-mockup-2.jpg', alt: 'Web Mockup Mobile' },
+        { type: 'image', src: '/projects/trainfy/web-mockup-3.jpg', alt: 'Web Mockup Mobile' },
+        { type: 'image', src: '/projects/trainfy/web-mockup-4.jpg', alt: 'Web Mockup Mobile' },
+      ],
+    },
+
     // 6a) Showcase Triptych (standalone, sin EditorialBlock de branding)
     showcase: {
       left: { type: 'image', src: '/projects/trainfy/showcase-left.jpg', alt: 'Showcase left' },
