@@ -42,3 +42,4 @@ next-env.d.ts
 
 # local/internal docs
 docs/_internal/
+public/projects/trainfy/.next/
