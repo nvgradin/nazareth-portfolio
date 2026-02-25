@@ -40,8 +40,8 @@ export const homeProjects: HomeProject[] = [
     slug: 'amigo-secreto',
     title: 'Amigo Secreto',
     category: 'Próximamente',
-    claim: '',
+    claim: 'Dar y recibir es la danza que nos conecta',
     image: '/projects/amigo-secreto/Bento-1.jpg',
-    ambientColor: '#1a1a1a',
+    ambientColor: '#612A74',
   },
 ];
