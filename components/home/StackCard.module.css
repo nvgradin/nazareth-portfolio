@@ -1,0 +1,87 @@
+/* StackCard */
+
+.card {
+  position: relative;
+  width: 88vw;
+  height: 63vh;
+  border-radius: 54px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3), 0 2px 16px rgba(0, 0, 0, 0.15);
+  will-change: transform;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .image {
+  transform: scale(1.03);
+}
+
+/* Gradiente más pronunciado en la zona inferior para legibilidad del texto */
+.gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.25) 40%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+/* Bloque de texto: anclado al fondo de la card */
+.text {
+  position: absolute;
+  bottom: var(--space-96);
+  left: var(--space-64);
+  right: var(--space-64);
+  pointer-events: none;
+}
+
+/* Título: muy grande, protagonista */
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(111px, 5.5vw, 76px);
+  font-weight: 600;
+  color: var(--neutral-50);
+  margin: 0;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+}
+
+/* Fila inferior: claim a la izquierda, category a la derecha */
+.meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+/* Claim: frase corta, izquierda */
+.claim {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 1.2vw, 16px);
+  font-weight: 400;
+  color: var(--neutral-50);
+  margin: 0;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+/* Category: etiqueta pequeña, derecha */
+.category {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--neutral-50);
+  margin: 0;
+  white-space: nowrap;
+  opacity: 1;
+}
