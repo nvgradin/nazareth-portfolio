@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LogoMark } from '@/components/ui';
+import { useHeaderTheme } from './HeaderThemeContext';
 import styles from './Header.module.css';
 
 const navigation = [
@@ -14,7 +15,8 @@ const navigation = [
 
 export function Header() {
   const pathname = usePathname();
-  const isDarkBackground = pathname === '/contact';
+  const { isDark } = useHeaderTheme();
+  const isDarkBackground = isDark || pathname === '/contact';
 
   const headerClasses = [
     styles.header,

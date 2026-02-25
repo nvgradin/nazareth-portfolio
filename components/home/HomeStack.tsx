@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { HomeProject } from '@/data/home';
+import { useHeaderTheme } from '@/components/layout/HeaderThemeContext';
 import { StackCard } from './StackCard';
 import styles from './HomeStack.module.css';
 
@@ -23,6 +24,13 @@ interface Props {
 
 export function HomeStack({ projects }: Props) {
   const n = projects.length; // 4
+  const { setDark } = useHeaderTheme();
+
+  // Signal dark header on mount, restore on unmount
+  useEffect(() => {
+    setDark(true);
+    return () => setDark(false);
+  }, [setDark]);
 
   // order[slot] = índice de proyecto en ese slot
   const [order, setOrder] = useState<number[]>(() => projects.map((_, i) => i));

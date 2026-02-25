@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Abhaya_Libre, Aboreto } from "next/font/google";
 import "./globals.css";
-import { Header, Footer } from "@/components/layout";
+import { Header, Footer, HeaderThemeProvider } from "@/components/layout";
 
 /* ═══════════════════════════════════════════════════════════════
    FONT CONFIGURATION
@@ -61,8 +61,10 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${abhayaLibre.variable} ${aboreto.variable}`}
       >
-        <Header />
-        {children}
+        <HeaderThemeProvider>
+          <Header />
+          {children}
+        </HeaderThemeProvider>
       </body>
     </html>
   );
