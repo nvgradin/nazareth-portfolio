@@ -17,7 +17,7 @@ export const homeProjects: HomeProject[] = [
     title: 'Trainfy',
     category: 'Product Design · UX/UI · Fullstack',
     claim: 'Conectar. Compartir. Moverse.',
-    image: '/projects/trainfy/bento-1.jpg',
+    image: '/projects/trainfy/quote-bg.jpg',
     ambientColor: '#1E3A5F',
   },
   {
@@ -33,7 +33,7 @@ export const homeProjects: HomeProject[] = [
     title: 'Silvia Fernández De Luna',
     category: 'Branding · Marketing · Web',
     claim: 'Una marca que enseña, inspira y transforma.',
-    image: '/projects/silvia-fernandez-de-luna/bento-1.jpg',
+    image: '/projects/silvia-fernandez-de-luna/Silvia-Fernandez-De-Luna-Academia.webp',
     ambientColor: '#895900',
   },
   {
@@ -41,7 +41,7 @@ export const homeProjects: HomeProject[] = [
     title: 'Amigo Secreto',
     category: 'Próximamente',
     claim: 'Dar y recibir es la danza que nos conecta',
-    image: '/projects/amigo-secreto/Bento-1.jpg',
+    image: '/projects/amigo-secreto/amigosecreto.jpg',
     ambientColor: '#612A74',
   },
 ];
