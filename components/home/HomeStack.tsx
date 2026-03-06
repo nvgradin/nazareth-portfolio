@@ -35,6 +35,7 @@ export function HomeStack({ projects }: Props) {
   // order[slot] = índice de proyecto en ese slot
   const [order, setOrder] = useState<number[]>(() => projects.map((_, i) => i));
   const [bgColor, setBgColor] = useState(projects[0]?.ambientColor ?? '#000');
+  const [bgGradient, setBgGradient] = useState<string | null>(projects[0]?.ambientGradient ?? null);
 
   // Tracking de qué card acaba de entrar (para darle zIndex alto y animarlo desde abajo/arriba)
   const [entering, setEntering] = useState<{ idx: number; from: 'bottom' | 'top' } | null>(null);
@@ -51,19 +52,18 @@ export function HomeStack({ projects }: Props) {
       let enteringIdx: number;
 
       if (dir === 1) {
-        // Scroll down: 0→1, 1→2, 2→3, 3 sale (fade), nuevo frontal = prev[3]
-        // El card en slot 3 desaparece y reaparece como slot 0
         newOrder = [prev[3], prev[0], prev[1], prev[2]];
         enteringIdx = prev[3];
         setEntering({ idx: enteringIdx, from: 'bottom' });
       } else {
-        // Scroll up: 3→2, 2→1, 1→0, 0 sale (baja), nuevo slot 3 = prev[0]
         newOrder = [prev[1], prev[2], prev[3], prev[0]];
         enteringIdx = prev[0];
         setEntering({ idx: enteringIdx, from: 'top' });
       }
 
-      setBgColor(projects[newOrder[0]].ambientColor);
+      const front = projects[newOrder[0]];
+      setBgColor(front.ambientColor);
+      setBgGradient(front.ambientGradient ?? null);
       setEnterKey(k => k + 1);
       return newOrder;
     });
@@ -115,6 +115,15 @@ export function HomeStack({ projects }: Props) {
       className={styles.stage}
       style={{ backgroundColor: bgColor, transition: 'background-color 0.6s ease' }}
     >
+      {/* Capa de gradiente ambient — fade in/out encima del color sólido */}
+      <div
+        className={styles.bgLayer}
+        style={{
+          background: bgGradient ?? 'none',
+          opacity: bgGradient ? 1 : 0,
+        }}
+      />
+
       <div className={styles.grain} />
 
       {order.map((projectIndex, slot) => {

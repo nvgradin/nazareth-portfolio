@@ -21,6 +21,15 @@
   mix-blend-mode: overlay;
 }
 
+/* Capa de gradiente ambient — encima del color sólido, debajo del grano */
+.bgLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
 /*
  * Cada card: absolute, pegada al fondo del stage.
  * transform-origin: center bottom → el scale encoge desde el borde inferior.

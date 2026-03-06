@@ -9,6 +9,7 @@ export interface HomeProject {
   claim: string;          // Frase corta / slogan del proyecto
   image: string;
   ambientColor: string;
+  ambientGradient?: string; // Gradiente opcional, sobreescribe ambientColor
 }
 
 export const homeProjects: HomeProject[] = [
@@ -43,5 +44,6 @@ export const homeProjects: HomeProject[] = [
     claim: 'Dar y recibir es la danza que nos conecta',
     image: '/projects/amigo-secreto/amigosecreto.jpg',
     ambientColor: '#612A74',
+    ambientGradient: 'linear-gradient(135deg, #612A74 0%, #E8A089 100%)',
   },
 ];
