@@ -1,0 +1,97 @@
+/* ═══════════════════════════════════════════════════════════════
+   INTRO OVERLAY
+   ═══════════════════════════════════════════════════════════════ */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+/* Contenedor del zoom — tiene el transform-origin apuntando al cielo */
+.zoomLayer {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 42%;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+/* Atardecer — fuera del zoom, tamaño natural */
+.sunsetLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Contenedor del zoom — encima del atardecer */
+.zoomLayer {
+  z-index: 1;
+}
+
+/* Bosque — dentro del zoom */
+.forestLayer {
+  position: absolute;
+  inset: 0;
+}
+
+/* Skip — esquina inferior derecha, muy discreto */
+.skip {
+  position: absolute;
+  bottom: 32px;
+  right: 36px;
+  z-index: 3;
+  background: none;
+  border: none;
+  font-family: var(--font-accent);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--neutral-50);
+  opacity: 0.45;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: opacity 0.2s ease;
+}
+
+.skip:hover {
+  opacity: 0.85;
+}
+
+/* Logo + nombre — encima de ambas imágenes */
+.logoWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding-bottom: 8vh;
+}
+
+.logo {
+  width: 100px;
+  height: 50px;
+  color: var(--neutral-50);
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 24px rgba(0, 0, 0, 0.4));
+}
+
+.name {
+  font-family: var(--font-accent);
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-text-stroke: 0.6px var(--neutral-50);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--neutral-50);
+  opacity: 0.85;
+  margin: 0;
+  filter: drop-shadow(0 1px 12px rgba(0, 0, 0, 0.5));
+}

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { HomeProject } from '@/data/home';
 import { useHeaderTheme } from '@/components/layout/HeaderThemeContext';
 import { StackCard } from './StackCard';
@@ -42,10 +42,12 @@ export function HomeStack({ projects }: Props) {
   const [enterKey, setEnterKey] = useState(0);
 
   const cooldown = useRef(false);
+  const [showHint, setShowHint] = useState(true);
 
   const rotate = useCallback((dir: 1 | -1) => {
     if (cooldown.current) return;
     cooldown.current = true;
+    setShowHint(false);
 
     setOrder(prev => {
       let newOrder: number[];
@@ -125,6 +127,27 @@ export function HomeStack({ projects }: Props) {
       />
 
       <div className={styles.grain} />
+
+      {/* Hint de scroll — desaparece al primer scroll */}
+      <AnimatePresence>
+        {showHint && (
+          <motion.div
+            className={styles.scrollHint}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ delay: 1.2, duration: 0.8, ease: 'easeIn' }}
+          >
+            <motion.span
+              animate={{ y: [0, 6, 0] }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              ↕
+            </motion.span>
+            <span>scroll</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {order.map((projectIndex, slot) => {
         const project  = projects[projectIndex];

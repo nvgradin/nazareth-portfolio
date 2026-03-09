@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { ProjectsView } from '@/components/home/ProjectsView';
 
 export const metadata: Metadata = {
   title: 'Proyectos | Nazareth',
@@ -6,9 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsPage() {
-  return (
-    <main>
-      {/* Projects page — pending layout */}
-    </main>
-  );
+  return <ProjectsView />;
 }

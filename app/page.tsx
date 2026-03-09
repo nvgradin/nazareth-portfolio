@@ -1,24 +1,20 @@
-import { homeProjects } from '@/data/home';
-import { PortalProvider, HomeStack, PortalTransition } from '@/components/home';
+'use client';
 
-/**
- * Homepage — Project stack
- *
- * Structure:
- *   PortalProvider  → shared portal state (context)
- *     HomeStack     → sticky stacking scroll
- *     PortalTransition → fixed overlay animation on card click
- *
- * PortalTransition sits outside HomeStack so it can render
- * as a fixed fullscreen overlay without being clipped by any parent.
- */
+import { useState } from 'react';
+import { HomeHero, IntroOverlay } from '@/components/home';
+
 export default function Home() {
+  // false → hero montado pero invisible (overlay encima)
+  // true  → overlay hace fade, hero ya visible debajo
+  const [heroReady, setHeroReady] = useState(false);
+
   return (
-    <PortalProvider>
-      {/* HomeStack va fuera del <main> para evitar el padding-top del layout
-          y que el useScroll tenga el offset correcto desde el top del viewport */}
-      <HomeStack projects={homeProjects} />
-      <PortalTransition />
-    </PortalProvider>
+    <>
+      {/* Hero siempre en DOM — imagen precargada, invisible hasta que el overlay hace fade */}
+      <HomeHero animate={heroReady} hidden={!heroReady} />
+
+      {/* Overlay — llama onDone 400ms antes de su fade, así el hero ya está pintado */}
+      <IntroOverlay onDone={() => setHeroReady(true)} />
+    </>
   );
 }
