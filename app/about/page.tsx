@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import AboutHero from '@/components/about/AboutHero';
+import styles from './about.module.css';
 
 export const metadata: Metadata = {
   title: 'Sobre mí | Nazareth',
@@ -7,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main>
-      {/* About page — pending layout */}
+    <main className={styles.page}>
+      <AboutHero />
     </main>
   );
 }
