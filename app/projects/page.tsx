@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { ProjectsView } from '@/components/home/ProjectsView';
+import { ProjectsView } from '@/components/projects-view';
 
 export const metadata: Metadata = {
   title: 'Proyectos | Nazareth',
