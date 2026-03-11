@@ -113,6 +113,11 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     tools: ['Placeholder'],
   },
 
-  status: 'draft',
+  tagline: 'Una marca que enseña, inspira y transforma.',
+  cover: '/projects/silvia-fernandez-de-luna/Silvia-Fernandez-De-Luna-Academia.webp',
+  featured: false,
+  ambientColor: '#895900',
+
+  status: 'published',
   order: 3,
 };

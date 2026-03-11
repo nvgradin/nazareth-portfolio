@@ -1,0 +1,134 @@
+/* ═══════════════════════════════════════════════════════════════
+   EXPLORE GRID — vista Explorar proyectos
+   ═══════════════════════════════════════════════════════════════ */
+
+.section {
+  min-height: 100vh;
+  padding-top: 80px;
+  background-color: var(--color-bg-primary);
+}
+
+/* Cabecera y filtros mantienen el padding lateral */
+.header,
+.filters {
+  padding-inline: var(--space-96);
+}
+
+@media (max-width: 767px) {
+  .header,
+  .filters {
+    padding-inline: var(--space-16);
+  }
+}
+
+/* ── Cabecera ──────────────────────────────────────────────────── */
+.header {
+  padding-top: 48px;
+  margin-bottom: 72px;
+  text-align: center;
+}
+
+.heading {
+  font-family: var(--font-base);
+  font-size: clamp(48px, 7vw, 77px);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--brand-primary-900);
+  line-height: 1;
+  margin: 0 0 16px;
+}
+
+.subtitle {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--brand-primary-900);
+  opacity: 0.45;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* ── Filtros ──────────────────────────────────────────────────── */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 56px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.filter {
+  position: relative;
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 14px 0;
+  font-family: var(--font-accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-primary-900);
+  opacity: 0.45;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  text-align: center;
+}
+
+.filter:hover {
+  opacity: 0.75;
+}
+
+.filterActive {
+  opacity: 1;
+}
+
+/* Indicador animado bajo el filtro activo */
+.filterUnderline {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--brand-primary-900);
+  border-radius: 1px;
+}
+
+/* ── Grid ─────────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: min(360px, 48vh);
+  gap: 16px;
+  padding-inline: var(--space-96);
+  padding-bottom: 80px;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-auto-rows: min(300px, 45vh);
+  }
+}
+
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: min(280px, 45vh);
+    padding-inline: var(--space-16);
+  }
+}
+
+/* Item wrapper — propaga altura de la celda */
+.item {
+  height: 100%;
+}
+
+/* Empty state */
+.empty {
+  grid-column: 1 / -1;
+  padding: 80px 0;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  color: var(--brand-primary-900);
+  opacity: 0.35;
+}

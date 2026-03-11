@@ -260,6 +260,11 @@ export const trainfy: ProjectWithLayout = {
     deliverables: ['Branding completo', 'Design system', 'App web funcional', 'Documentación'],
   },
 
+  tagline: 'Connect. Share. Move.',
+  cover: '/projects/trainfy/quote-bg.jpg',
+  featured: true,
+  ambientColor: '#1E3A5F',
+
   status: 'published',
   order: 1,
 };

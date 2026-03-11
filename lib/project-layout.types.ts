@@ -354,6 +354,11 @@ export interface ProjectWithLayout {
 
   // Visual
   thumbnail: Media;
+  cover?: string;           // Imagen específica para la card del grid (ruta)
+  tagline?: string;         // Frase corta para la card del grid
+  featured?: boolean;
+  ambientColor?: string;    // Color de fondo hover en la card del grid
+  ambientGradient?: string; // Gradiente opcional (sobreescribe ambientColor)
   theme?: ProjectTheme;
 
   // Layout editorial

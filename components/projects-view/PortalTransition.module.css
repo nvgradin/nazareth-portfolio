@@ -1,0 +1,10 @@
+/* PortalTransition — fixed overlay, sits above everything */
+
+.portal {
+  position: fixed;
+  z-index: 9999;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none; /* don't block interaction during animation */
+  will-change: left, top, width, height, border-radius;
+}

@@ -4,19 +4,21 @@ import { ProjectWithLayout } from '@/lib/project-layout.types';
 import { trainfy } from './trainfy';
 import { lasIslasCies } from './las-islas-cies';
 import { silviaFernandezDeLuna } from './silvia-fernandez-de-luna';
+import { amigoSecreto } from './amigo-secreto';
 
 // Registry: map de slug -> proyecto
 export const projectRegistry: Record<string, ProjectWithLayout> = {
   trainfy,
   'las-islas-cies': lasIslasCies,
   'silvia-fernandez-de-luna': silviaFernandezDeLuna,
+  'amigo-secreto': amigoSecreto,
 };
 
 // Array con todos los proyectos
 export const projects: ProjectWithLayout[] = Object.values(projectRegistry);
 
 // Re-exportar proyectos individuales
-export { trainfy, lasIslasCies, silviaFernandezDeLuna };
+export { trainfy, lasIslasCies, silviaFernandezDeLuna, amigoSecreto };
 
 // En desarrollo se muestran todos los proyectos (incluidos drafts)
 const isDev = process.env.NODE_ENV === 'development';

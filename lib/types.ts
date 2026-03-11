@@ -246,7 +246,7 @@ export type ProjectCategory =
 /**
  * Estado del proyecto
  */
-export type ProjectStatus = 'published' | 'draft' | 'archived';
+export type ProjectStatus = 'published' | 'draft' | 'archived' | 'new';
 
 /**
  * Tema/paleta personalizada del proyecto

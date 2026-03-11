@@ -120,6 +120,11 @@ export const lasIslasCies: ProjectWithLayout = {
     tools: ['Placeholder'],
   },
 
-  status: 'draft',
+  tagline: 'Donde el océano se convierte en memoria.',
+  cover: '/projects/las-islas-cies/bento-2.jpg',
+  featured: true,
+  ambientColor: '#252851',
+
+  status: 'published',
   order: 2,
 };

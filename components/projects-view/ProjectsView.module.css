@@ -1,0 +1,70 @@
+/* ProjectsView — toggle + views */
+
+/* Toggle vertical — una línea rotada, centrada en el lateral izquierdo */
+.toggle {
+  position: fixed;
+  left: var(--space-96);
+  top: 20%;
+  z-index: 50;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+  /* Rotar toda la línea: de abajo hacia arriba */
+  writing-mode: vertical-rl;
+  transform: translateY(-50%) rotate(180deg);
+  transform-origin: center center;
+}
+
+@media (max-width: 767px) {
+  .toggle {
+    left: var(--space-16);
+  }
+}
+
+.label {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-accent);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--neutral-50);
+  opacity: 0.35;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.label:hover {
+  opacity: 0.65;
+}
+
+.label.active {
+  opacity: 1;
+}
+
+/* Separador — línea horizontal (que en vertical-rl aparece vertical) */
+.sep {
+  display: block;
+  width: 1px;
+  height: 20px;
+  background: var(--neutral-50);
+  opacity: 0.35;
+  /* margin-inline = arriba/abajo cuando writing-mode es vertical */
+  margin-inline: 12px;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* Toggle sobre fondo claro (vista grid) — color oscuro */
+.toggleDark .label {
+  color: var(--brand-primary-900);
+}
+
+.toggleDark .sep {
+  background: var(--brand-primary-900);
+}
