@@ -43,6 +43,7 @@ export function HomeStack({ projects, disabled, exitingToGrid, enteringFromGrid,
 
   const cooldown = useRef(false);
   const [showHint, setShowHint] = useState(true);
+  const hasLoaded = useRef(false);
 
   // Notify parent of front color on mount and when it changes
   useEffect(() => {
@@ -141,9 +142,9 @@ export function HomeStack({ projects, disabled, exitingToGrid, enteringFromGrid,
       <motion.header
         key={enteringFromGrid ? 'entering' : 'idle'}
         className={styles.header}
-        initial={enteringFromGrid ? { opacity: 0, y: 40 } : { opacity: 1, y: 0 }}
+        initial={enteringFromGrid ? { opacity: 0, y: 40 } : hasLoaded.current ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
         animate={exitingToGrid ? { opacity: 0, y: -40 } : { opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+        transition={{ duration: 0.6, delay: hasLoaded.current ? 0 : 0.25, ease: [0.4, 0, 0.2, 1] }}
       >
         <h2 className={styles.heading}>Proyectos</h2>
         <p className={styles.subtitle}>Diseño de producto, experiencias digitales y marca.</p>
@@ -168,7 +169,7 @@ export function HomeStack({ projects, disabled, exitingToGrid, enteringFromGrid,
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ delay: 1.2, duration: 0.8, ease: 'easeIn' }}
+            transition={{ delay: 1.8, duration: 0.8, ease: 'easeIn' }}
           >
             <motion.span
               animate={{ y: [0, 6, 0] }}
@@ -189,9 +190,21 @@ export function HomeStack({ projects, disabled, exitingToGrid, enteringFromGrid,
 
         // El card que acaba de entrar: key único para forzar remount + initial desde fuera
         const key = isNew ? `new-${enterKey}` : project.slug;
-        const initial = isNew
-          ? { translateY: fromBottom ? 340 : -600, scaleX: fromBottom ? 1.0 : 0.4, scaleY: fromBottom ? 1.0 : 0.4, opacity: fromBottom ? 1 : 0 }
-          : false;
+
+        let initial: object | false;
+        let transition: object;
+        if (isNew) {
+          initial = { translateY: fromBottom ? 340 : -600, scaleX: fromBottom ? 1.0 : 0.4, scaleY: fromBottom ? 1.0 : 0.4, opacity: fromBottom ? 1 : 0 };
+          transition = SPRING;
+        } else if (!hasLoaded.current) {
+          // Primera carga: cada card entra desde abajo con stagger (slot 0 = frontal, sale último)
+          const staggerDelay = (n - 1 - slot) * 0.08 + 0.1;
+          initial = { translateY: ty + 180, scaleX: sx, scaleY: sy, opacity: 0 };
+          transition = { ...SPRING, delay: staggerDelay };
+        } else {
+          initial = false;
+          transition = SPRING;
+        }
 
         // zIndex: el card entrante por delante de todos
         const zIndex = isNew && fromBottom ? n + 2 : n - slot;
@@ -202,8 +215,9 @@ export function HomeStack({ projects, disabled, exitingToGrid, enteringFromGrid,
             className={styles.card}
             initial={initial}
             animate={{ translateY: ty, scaleX: sx, scaleY: sy, opacity: 1 }}
-            transition={SPRING}
+            transition={transition}
             style={{ zIndex }}
+            onAnimationComplete={slot === 0 && !hasLoaded.current ? () => { hasLoaded.current = true; } : undefined}
           >
             <StackCard
               project={project}

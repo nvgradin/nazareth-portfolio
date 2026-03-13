@@ -75,9 +75,9 @@
   gap: 6px;
   pointer-events: none;
   color: var(--neutral-50);
-  opacity: 0.35;
+  opacity: 0.6;
   font-family: var(--font-accent);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }

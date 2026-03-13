@@ -1,7 +1,14 @@
 "use client";
 
+import { motion } from 'framer-motion';
 import { LinkedinLogo } from '@phosphor-icons/react';
 import styles from './Contact.module.css';
+
+const item = (delay: number) => ({
+  initial: { opacity: 0, y: 32 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.7, delay, ease: [0.4, 0, 0.2, 1] },
+});
 
 export default function ContactPage() {
   return (
@@ -9,16 +16,16 @@ export default function ContactPage() {
       <div className={styles.container}>
 
         <div className={styles.left}>
-          <h1>HOLA</h1>
-          <p>
+          <motion.h1 {...item(0)}>HOLA</motion.h1>
+          <motion.p {...item(0.18)}>
             ¿Tienes un proyecto en mente o simplemente quieres saludar?
             Me encantaría escucharte. Estoy disponible para colaboraciones,
             consultoría y nuevas oportunidades.
-          </p>
-          <a href="mailto:hola@nazarethgradin.com" className={styles.email}>
+          </motion.p>
+          <motion.a {...item(0.32)} href="mailto:hola@nazarethgradin.com" className={styles.email}>
             hola@nazarethgradin.com
-          </a>
-          <div className={styles.social}>
+          </motion.a>
+          <motion.div {...item(0.44)} className={styles.social}>
             <a
               href="https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin/"
               target="_blank"
@@ -27,7 +34,7 @@ export default function ContactPage() {
             >
               <LinkedinLogo size={24} weight="regular" />
             </a>
-          </div>
+          </motion.div>
         </div>
         <div className={styles.right}>
           {/* Columna vacía 1/3 */}
