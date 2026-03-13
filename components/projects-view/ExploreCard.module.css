@@ -1,18 +1,19 @@
 /* ═══════════════════════════════════════════════════════════════
-   EXPLORE CARD — imagen full, texto superpuesto, borde redondeado
+   EXPLORE CARD — imagen de fondo, texto superpuesto dentro
    ═══════════════════════════════════════════════════════════════ */
 
 .card {
-  position: relative;
   display: block;
-  height: 100%;
-  border-radius: var(--radius-xl, 20px);
-  overflow: hidden;
+  position: relative;
   text-decoration: none;
   cursor: pointer;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 36px;
+  overflow: hidden;
 }
 
-/* ── Imagen — cubre todo el card ─────────────────────────────── */
+/* ── Imagen de fondo ─────────────────────────────────────────── */
 .image {
   object-fit: cover;
   object-position: center;
@@ -23,23 +24,26 @@
   transform: scale(1.04);
 }
 
-/* ── Overlay ambient — tapa la imagen en hover ───────────────── */
+/* ── Overlay ambient — en hover ──────────────────────────────── */
 .hoverBg {
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ── Gradiente texto — oscurece toda la imagen para legibilidad ── */
+/* ── Gradiente de texto — legibilidad siempre ────────────────── */
 .textGradient {
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: rgba(0, 0, 0, 0.38);
   pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.25) 60%,
+    rgba(0, 0, 0, 0.08) 100%
+  );
 }
 
 /* ── Badge ────────────────────────────────────────────────────── */
@@ -60,7 +64,7 @@
   border-radius: var(--radius-full);
 }
 
-/* ── Info — centrada en el card, sobre el gradiente ─────────── */
+/* ── Info — título centrado, tagline+tags abajo ──────────────── */
 .info {
   position: absolute;
   inset: 0;
@@ -69,39 +73,52 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 24px;
   text-align: center;
+  padding: 20px 24px;
 }
 
-/* Título */
 .title {
   font-family: var(--font-accent);
-  font-size: clamp(16px, 1.3vw, 26px);
+  font-size: clamp(25px, 1.2vw, 33px);
   font-weight: 600;
   color: var(--neutral-50);
   margin: 0;
   line-height: 1.1;
   letter-spacing: -0.01em;
+  transition: opacity 0.2s ease;
 }
 
-/* Tagline / claim */
+.card:hover .title {
+  opacity: 0.8;
+}
+
+/* Tagline + tags — anclados en la parte inferior */
 .tagline {
+  position: absolute;
+  bottom: 38px;
+  left: 0;
+  right: 0;
   font-family: var(--font-heading);
-  font-size: clamp(18px, 0.85vw, 20px);
+  font-size: clamp(22px, 0.8vw, 25px);
   font-weight: 400;
   color: var(--neutral-50);
-  opacity: 0.7;
+  opacity: 0.8;
   margin: 0;
   line-height: 1.4;
+  text-align: center;
 }
 
-/* Tags */
+/* Tags — justo debajo del tagline */
 .tags {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 2px;
+  justify-content: center;
+  gap: 0;
 }
 
 .tag {
@@ -118,5 +135,5 @@
 
 .dot {
   margin: 0 5px;
-  opacity: 0.3;
+  opacity: 0.5;
 }

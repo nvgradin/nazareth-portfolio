@@ -5,7 +5,7 @@ export const lasIslasCies: ProjectWithLayout = {
   title: 'Las Islas Cíes',
   excerpt: 'Proyecto placeholder — contenido pendiente.',
 
-  category: 'digital-experience',
+  categories: ['digital-experience'],
   tags: ['Digital Experience'],
 
   thumbnail: {

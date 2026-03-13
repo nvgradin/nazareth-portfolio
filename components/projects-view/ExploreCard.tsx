@@ -25,7 +25,7 @@ export function ExploreCard({ project }: Props) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Imagen de fondo — cubre todo el card */}
+      {/* Imagen de fondo */}
       <Image
         src={cover}
         alt={project.title}
@@ -38,16 +38,16 @@ export function ExploreCard({ project }: Props) {
       <motion.div
         className={styles.hoverBg}
         style={{ background: hoverBg }}
-        animate={{ opacity: hovered ? 0.72 : 0 }}
+        animate={{ opacity: hovered ? 0.65 : 0 }}
         transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
       />
 
-      {/* Gradiente de texto — garantiza legibilidad siempre */}
+      {/* Gradiente de texto */}
       <div className={styles.textGradient} />
 
       {isNew && <span className={styles.badge}>Nuevo</span>}
 
-      {/* Info superpuesta al fondo */}
+      {/* Info superpuesta */}
       <div className={styles.info}>
         <h3 className={styles.title}>{project.title}</h3>
         {project.tagline && (

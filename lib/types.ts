@@ -241,7 +241,7 @@ export type ProjectCategory =
   | 'web-design'
   | 'digital-experience'
   | 'strategy'
-  | 'personal';
+  | 'marketing';
 
 /**
  * Estado del proyecto
@@ -286,7 +286,7 @@ export interface Project {
   description?: string;    // Descripción más larga
 
   // Categorización
-  category: ProjectCategory;
+  categories: ProjectCategory[];
   tags: string[];
 
   // Visual
@@ -315,5 +315,5 @@ export interface Project {
  */
 export type ProjectPreview = Pick<
   Project,
-  'slug' | 'title' | 'excerpt' | 'category' | 'tags' | 'thumbnail' | 'featured' | 'meta'
+  'slug' | 'title' | 'excerpt' | 'categories' | 'tags' | 'thumbnail' | 'featured' | 'meta'
 >;

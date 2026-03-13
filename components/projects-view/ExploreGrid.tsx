@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ProjectWithLayout } from '@/lib/project-layout.types';
 import { ProjectCategory } from '@/lib/types';
 import { ExploreCard } from './ExploreCard';
 import styles from './ExploreGrid.module.css';
 
-type FilterKey = 'all' | 'product' | 'ux-ui' | 'branding' | 'web' | 'experimentos';
+type FilterKey = 'all' | 'product' | 'ux-ui' | 'branding' | 'web' | 'estrategia' | 'marketing';
 
 interface FilterDef {
   key: FilterKey;
@@ -16,29 +16,51 @@ interface FilterDef {
 }
 
 const FILTERS: FilterDef[] = [
-  { key: 'all',          label: 'Todo',          categories: [] },
-  { key: 'product',      label: 'Producto',       categories: ['product-design'] },
-  { key: 'ux-ui',        label: 'UX/UI',          categories: ['ux-ui'] },
-  { key: 'branding',     label: 'Branding',       categories: ['branding'] },
-  { key: 'web',          label: 'Web',            categories: ['web-design', 'digital-experience'] },
-  { key: 'experimentos', label: 'Experimentos',   categories: ['personal', 'strategy'] },
+  { key: 'all',        label: 'Todo',       categories: [] },
+  { key: 'product',    label: 'Producto',   categories: ['product-design'] },
+  { key: 'ux-ui',      label: 'UX/UI',      categories: ['ux-ui'] },
+  { key: 'branding',   label: 'Branding',   categories: ['branding'] },
+  { key: 'web',        label: 'Web',        categories: ['web-design', 'digital-experience'] },
+  { key: 'estrategia', label: 'Estrategia', categories: ['strategy'] },
+  { key: 'marketing',  label: 'Marketing',  categories: ['marketing'] },
 ];
 
 interface Props {
   projects: ProjectWithLayout[];
+  invisible?: boolean;
+  cardRefsMap?: React.MutableRefObject<Map<string, HTMLElement | null>>;
+  onVisibleSlugs?: (slugs: string[]) => void;
 }
 
-export function ExploreGrid({ projects }: Props) {
+export function ExploreGrid({ projects, invisible, cardRefsMap, onVisibleSlugs }: Props) {
   const [active, setActive] = useState<FilterKey>('all');
+
+  // Reset filter to "all" whenever the grid becomes visible again
+  const prevInvisible = React.useRef(invisible);
+  useEffect(() => {
+    if (prevInvisible.current === true && invisible === false) {
+      setActive('all');
+    }
+    prevInvisible.current = invisible;
+  }, [invisible]);
 
   const filtered = useMemo(() => {
     if (active === 'all') return projects;
     const cats = FILTERS.find(f => f.key === active)?.categories ?? [];
-    return projects.filter(p => cats.includes(p.category));
+    return projects.filter(p => p.categories.some(c => cats.includes(c)));
   }, [active, projects]);
 
+  // Notify parent of currently visible slugs whenever filter changes
+  useEffect(() => {
+    onVisibleSlugs?.(filtered.map(p => p.slug));
+  }, [filtered, onVisibleSlugs]);
+
+  const sectionStyle = invisible
+    ? { opacity: 0, pointerEvents: 'none' as const, position: 'absolute' as const, top: 0, left: 0, width: '100%', zIndex: -1 }
+    : undefined;
+
   return (
-    <section className={styles.section}>
+    <section className={styles.section} style={sectionStyle}>
       {/* Cabecera */}
       <header className={styles.header}>
         <h2 className={styles.heading}>Proyectos</h2>
@@ -86,12 +108,13 @@ export function ExploreGrid({ projects }: Props) {
                 key={project.slug}
                 layout
                 className={styles.item}
-                initial={{ opacity: 0, y: 28 }}
+                ref={(el) => { cardRefsMap?.current.set(project.slug, el); }}
+                initial={{ opacity: invisible ? 1 : 0, y: invisible ? 0 : 28 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.97 }}
                 transition={{
                   duration: 0.42,
-                  delay: index * 0.07,
+                  delay: invisible ? 0 : index * 0.07,
                   ease: [0.4, 0, 0.2, 1],
                 }}
               >

@@ -1,6 +1,6 @@
 /* ProjectsView — toggle + views */
 
-/* Toggle vertical — una línea rotada, centrada en el lateral izquierdo */
+/* Toggle vertical — guardado, no en uso actualmente
 .toggle {
   position: fixed;
   left: var(--space-96);
@@ -10,7 +10,6 @@
   flex-direction: row;
   align-items: center;
   gap: 0;
-  /* Rotar toda la línea: de abajo hacia arriba */
   writing-mode: vertical-rl;
   transform: translateY(-50%) rotate(180deg);
   transform-origin: center center;
@@ -20,6 +19,28 @@
   .toggle {
     left: var(--space-16);
   }
+}
+*/
+
+/* Toggle horizontal — centrado, fijo encima del h1 (vista stack) */
+.toggleH {
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+}
+
+/* Vista grid — el toggle se queda en su sitio, no flota */
+.toggleH.toggleStatic {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .label {
@@ -47,15 +68,14 @@
   opacity: 1;
 }
 
-/* Separador — línea horizontal (que en vertical-rl aparece vertical) */
+/* Separador — línea vertical entre las dos opciones */
 .sep {
   display: block;
   width: 1px;
-  height: 20px;
+  height: 12px;
   background: var(--neutral-50);
   opacity: 0.35;
-  /* margin-inline = arriba/abajo cuando writing-mode es vertical */
-  margin-inline: 12px;
+  margin: 0 12px;
   pointer-events: none;
   flex-shrink: 0;
 }
@@ -67,4 +87,9 @@
 
 .toggleDark .sep {
   background: var(--brand-primary-900);
+}
+
+/* En vista grid el .label inactivo también oscuro */
+.toggleDark .label:not(.active) {
+  color: var(--brand-primary-900);
 }

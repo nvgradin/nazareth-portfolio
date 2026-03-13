@@ -349,7 +349,7 @@ export interface ProjectWithLayout {
   excerpt: string;
 
   // Categorización
-  category: ProjectCategory;
+  categories: ProjectCategory[];
   tags: string[];
 
   // Visual

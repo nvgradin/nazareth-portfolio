@@ -5,12 +5,12 @@ export const trainfy: ProjectWithLayout = {
   title: 'Trainfy',
   excerpt: 'Plataforma de intercambio deportivo que conecta atletas para compartir conocimientos y entrenar juntos.',
 
-  category: 'product-design',
+  categories: ['product-design', 'branding', 'ux-ui'],
   tags: ['Product Design', 'UX/UI', 'Branding', 'Fullstack'],
 
   thumbnail: {
     type: 'image',
-    src: '/projects/trainfy/hero.jpg',
+    src: '/projects/trainfy/portada-trainfy.webp',
     alt: 'Trainfy - Plataforma de intercambio deportivo',
   },
 
@@ -261,7 +261,7 @@ export const trainfy: ProjectWithLayout = {
   },
 
   tagline: 'Connect. Share. Move.',
-  cover: '/projects/trainfy/quote-bg.jpg',
+  cover: '/projects/trainfy/portada_trainfy.webp',
   featured: true,
   ambientColor: '#1E3A5F',
 

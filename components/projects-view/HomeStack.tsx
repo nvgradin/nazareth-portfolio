@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ProjectWithLayout } from '@/lib/project-layout.types';
-import { useHeaderTheme } from '@/components/layout/HeaderThemeContext';
 import { StackCard } from './StackCard';
 import styles from './HomeStack.module.css';
 
@@ -20,22 +19,21 @@ const SPRING = { type: 'spring', stiffness: 300, damping: 36, mass: 1 } as const
 
 interface Props {
   projects: ProjectWithLayout[];
+  disabled?: boolean;
+  onCardRefs?: (refsBySlug: Map<string, HTMLElement | null>) => void;
+  onFrontColor?: (color: string) => void;
+  onOrder?: (order: number[]) => void;
 }
 
-export function HomeStack({ projects }: Props) {
+export function HomeStack({ projects, disabled, onCardRefs, onFrontColor, onOrder }: Props) {
   const n = projects.length; // 4
-  const { setDark } = useHeaderTheme();
-
-  // Signal dark header on mount, restore on unmount
-  useEffect(() => {
-    setDark(true);
-    return () => setDark(false);
-  }, [setDark]);
-
   // order[slot] = índice de proyecto en ese slot
   const [order, setOrder] = useState<number[]>(() => projects.map((_, i) => i));
   const [bgColor, setBgColor] = useState(projects[0]?.ambientColor ?? '#000');
   const [bgGradient, setBgGradient] = useState<string | null>(projects[0]?.ambientGradient ?? null);
+
+  // Refs to the StackCard DOM elements, keyed by slug
+  const cardEls = useRef<Map<string, HTMLElement | null>>(new Map());
 
   // Tracking de qué card acaba de entrar (para darle zIndex alto y animarlo desde abajo/arriba)
   const [entering, setEntering] = useState<{ idx: number; from: 'bottom' | 'top' } | null>(null);
@@ -43,6 +41,24 @@ export function HomeStack({ projects }: Props) {
 
   const cooldown = useRef(false);
   const [showHint, setShowHint] = useState(true);
+
+  // Notify parent of front color on mount and when it changes
+  useEffect(() => {
+    onFrontColor?.(bgColor);
+  }, [bgColor, onFrontColor]);
+
+  // Notify parent of current order whenever it changes
+  useEffect(() => {
+    onOrder?.(order);
+  }, [order, onOrder]);
+
+  // Notify parent of card refs after first render
+  useEffect(() => {
+    if (onCardRefs) {
+      onCardRefs(new Map(cardEls.current));
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [onCardRefs]);
 
   const rotate = useCallback((dir: 1 | -1) => {
     if (cooldown.current) return;
@@ -77,6 +93,8 @@ export function HomeStack({ projects }: Props) {
   }, [projects]);
 
   useEffect(() => {
+    if (disabled) return;
+
     let touchStartY = 0;
     let wheelAccum = 0;
     let wheelTimer: ReturnType<typeof setTimeout> | null = null;
@@ -110,14 +128,14 @@ export function HomeStack({ projects }: Props) {
       window.removeEventListener('touchend',   onTouchEnd);
       if (wheelTimer) clearTimeout(wheelTimer);
     };
-  }, [rotate]);
+  }, [rotate, disabled]);
 
   return (
     <div
       className={styles.stage}
       style={{ backgroundColor: bgColor, transition: 'background-color 0.6s ease' }}
     >
-      {/* Título de sección — crema, igual que ExploreGrid */}
+      {/* Título de sección — crema, encima del stack */}
       <header className={styles.header}>
         <h2 className={styles.heading}>Proyectos</h2>
         <p className={styles.subtitle}>Diseño de producto, experiencias digitales y marca.</p>
@@ -179,7 +197,10 @@ export function HomeStack({ projects }: Props) {
             transition={SPRING}
             style={{ zIndex }}
           >
-            <StackCard project={project} />
+            <StackCard
+              project={project}
+              onRef={(el) => { cardEls.current.set(project.slug, el); }}
+            />
           </motion.div>
         );
       })}

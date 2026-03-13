@@ -8,9 +8,10 @@ import styles from './StackCard.module.css';
 
 interface Props {
   project: ProjectWithLayout;
+  onRef?: (el: HTMLElement | null) => void;
 }
 
-export function StackCard({ project }: Props) {
+export function StackCard({ project, onRef }: Props) {
   const cardRef = useRef<HTMLDivElement>(null);
   const { trigger } = usePortal();
 
@@ -24,7 +25,7 @@ export function StackCard({ project }: Props) {
 
   return (
     <div
-      ref={cardRef}
+      ref={(el) => { cardRef.current = el; onRef?.(el); }}
       className={styles.card}
       onClick={handleClick}
       role="button"
