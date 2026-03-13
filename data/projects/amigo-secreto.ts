@@ -32,19 +32,16 @@ export const amigoSecreto: ProjectWithLayout = {
       title: 'Amigo Secreto',
       subtitle: 'Una app que transforma el intercambio de regalos en un ritual con alma.',
       intro: 'Amigo Secreto nació de una pregunta simple: ¿y si el amigo invisible pudiera sentirse tan especial como el regalo que das? Una experiencia digital pensada para conectar personas a través del gesto de regalar con intención.',
+      logo: '',
       roles: ['Product Design', 'UX/UI', 'Concept'],
     },
     bento: {
       mode: 'fixed',
-      slots: [
-        { type: 'image', src: '/projects/amigo-secreto/amigosecreto.jpg', alt: 'Amigo Secreto' },
-        { type: 'image', src: '/projects/amigo-secreto/amigosecreto.jpg', alt: 'Amigo Secreto' },
-        { type: 'image', src: '/projects/amigo-secreto/amigosecreto.jpg', alt: 'Amigo Secreto' },
-        { type: 'image', src: '/projects/amigo-secreto/amigosecreto.jpg', alt: 'Amigo Secreto' },
-        { type: 'image', src: '/projects/amigo-secreto/amigosecreto.jpg', alt: 'Amigo Secreto' },
-        { type: 'image', src: '/projects/amigo-secreto/amigosecreto.jpg', alt: 'Amigo Secreto' },
-        { type: 'image', src: '/projects/amigo-secreto/amigosecreto.jpg', alt: 'Amigo Secreto' },
-        { type: 'image', src: '/projects/amigo-secreto/amigosecreto.jpg', alt: 'Amigo Secreto' },
+      columns: [
+        { width: 1, cells: [{ src: '/projects/amigo-secreto/amigosecreto.jpg', alt: 'Amigo Secreto', ratio: 1 }] },
+        { width: 1, cells: [{ src: '/projects/amigo-secreto/amigosecreto.jpg', alt: 'Amigo Secreto', ratio: 1 }] },
+        { width: 1, cells: [{ src: '/projects/amigo-secreto/amigosecreto.jpg', alt: 'Amigo Secreto', ratio: 1 }] },
+        { width: 1, cells: [{ src: '/projects/amigo-secreto/amigosecreto.jpg', alt: 'Amigo Secreto', ratio: 1 }] },
       ],
     },
     quoteBanner: {
