@@ -7,39 +7,38 @@
   background-color: var(--color-bg-primary);
 }
 
-/* Cabecera y filtros mantienen el padding lateral */
-.header,
-.filters {
-  padding-inline: var(--space-96);
-}
+/* ── Cabecera + filtros: bloque derecho ────────────────────────── */
+/* Ocupa el mismo ancho y padding que el grid, pero el título
+   y los filtros se alinean en la mitad derecha de esa área.     */
 
-@media (max-width: 767px) {
-  .header,
-  .filters {
-    padding-inline: var(--space-16);
-  }
-}
-
-/* ── Cabecera ──────────────────────────────────────────────────── */
 .header {
-  padding-top: 140px;
-  margin-bottom: 188px;
-  text-align: center;
+  padding-inline: var(--space-96);
+  padding-top: 220px;
+  margin-bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+}
+
+/* h2 + subtitle en columna izquierda */
+.headerContent {
+  grid-column: 1;
+  padding-bottom: 32px;
 }
 
 .heading {
   font-family: var(--font-base);
-  font-size: clamp(55px, 7vw, 88px);
+  font-size: clamp(88px, 5vw, 99px);
   font-weight: 400;
   letter-spacing: 0.08em;
   color: var(--brand-primary-900);
   line-height: 1;
-  margin: 0 0 8px;
+  margin: 0 0 14px;
 }
 
 .subtitle {
   font-family: var(--font-heading);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 300;
   color: var(--brand-primary-900);
   opacity: 0.77;
@@ -47,12 +46,29 @@
   letter-spacing: -0.01em;
 }
 
-/* ── Filtros ──────────────────────────────────────────────────── */
-.filters {
+/* ── Filtros — columna derecha del header ─────────────────────── */
+.filtersInner {
+  grid-column: 2;
   display: flex;
   justify-content: space-between;
+  align-self: end;
+  border-top: 0px solid rgba(0, 0, 0, 0.12);
   margin-bottom: 56px;
-  border-bottom: 0px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding-inline: var(--space-16);
+    grid-template-columns: 1fr;
+  }
+
+  .headerContent {
+    grid-column: 1 / -1;
+  }
+
+  .filtersInner {
+    grid-column: 1 / -1;
+  }
 }
 
 .filter {

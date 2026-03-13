@@ -43,33 +43,55 @@ function makeSnapshot(
   };
 }
 
+// Inline styles for a fixed full-screen layer
+function layerStyle(active: boolean): React.CSSProperties {
+  return {
+    position: 'fixed',
+    inset: 0,
+    width: '100%',
+    height: '100%',
+    zIndex: active ? 1 : -1,
+    opacity: active ? 1 : 0,
+    pointerEvents: active ? 'auto' : 'none',
+  };
+}
+
 export function ProjectsView() {
   const [phase, setPhase] = useState<Phase>('stack');
-  // exitSnapshots: cards that leave the current view
-  // enterSnapshots: cards that arrive at the destination view
-  // For toGrid: both are the same (stack cards morphing to grid positions)
-  // For toStack: exit = filtered grid cards, enter = 4 stack featured cards
   const [exitSnapshots, setExitSnapshots] = useState<CardSnapshot[]>([]);
   const [enterSnapshots, setEnterSnapshots] = useState<CardSnapshot[]>([]);
   const [bgColor, setBgColor] = useState(allProjects[0]?.ambientColor ?? '#1a1a1a');
   const { setDark } = useHeaderTheme();
 
-  const stackCardEls  = useRef<Map<string, HTMLElement | null>>(new Map());
-  const gridCardEls   = useRef<Map<string, HTMLElement | null>>(new Map());
-  const stackOrderRef = useRef<number[]>(allProjects.map((_, i) => i));
+  const stackCardEls        = useRef<Map<string, HTMLElement | null>>(new Map());
+  const gridCardEls         = useRef<Map<string, HTMLElement | null>>(new Map());
+  const stackOrderRef       = useRef<number[]>(allProjects.map((_, i) => i));
   const visibleGridSlugsRef = useRef<string[]>(allProjects.map(p => p.slug));
 
-  const isStack = phase === 'stack' || phase === 'measuring-to-grid' || phase === 'transitioning-to-stack';
-  const isGrid  = phase === 'grid'  || phase === 'measuring-to-stack' || phase === 'transitioning-to-grid';
+  const [textEnter, setTextEnter] = useState<'grid' | 'stack' | null>(null);
+
+  const stackActive = phase === 'stack';
+  const gridActive  = phase === 'grid';
+
+  // Derived: are we in a grid-ish state (for header theme + toggle style)
+  const isGrid  = phase === 'grid' || phase === 'measuring-to-stack'
+               || phase === 'transitioning-to-grid' || phase === 'transitioning-to-stack';
+  const isStack = !isGrid;
 
   useEffect(() => {
     setDark(!isGrid);
   }, [isGrid, setDark]);
 
-  // ── measuring-to-grid: stack → grid ──────────────────────────────
+  // Background color:
+  // stack phases          → bgColor (ambient from front card)
+  // grid phases           → GRID_BG
+  // transitioning-to-stack → animate from GRID_BG to bgColor (Framer Motion handles the ease)
+  // Start animating bg toward stack color as soon as the transition begins
+  const currentBg = (phase === 'grid' || phase === 'measuring-to-stack') ? GRID_BG : bgColor;
+
+  // ── measuring-to-grid ─────────────────────────────────────────────
   useEffect(() => {
     if (phase !== 'measuring-to-grid') return;
-
     const raf1 = requestAnimationFrame(() => {
       const raf2 = requestAnimationFrame(() => {
         const orderedProjects = stackOrderRef.current.map(i => allProjects[i]);
@@ -78,38 +100,28 @@ export function ProjectsView() {
             const stackEl = stackCardEls.current.get(project.slug);
             const gridEl  = gridCardEls.current.get(project.slug);
             if (!stackEl || !gridEl) return null;
-
             const fromRect = stackEl.getBoundingClientRect();
             const toRect   = gridEl.getBoundingClientRect();
             if (fromRect.width === 0 || toRect.width === 0 || toRect.height === 0) return null;
-
             return makeSnapshot(project, fromRect, toRect, 54, 36);
           })
           .filter(Boolean) as CardSnapshot[];
 
-        if (shots.length === 0) {
-          setPhase('grid');
-          return;
-        }
-
-        // toGrid: exit and enter are the same cards
+        if (shots.length === 0) { setPhase('grid'); return; }
         setExitSnapshots(shots);
         setEnterSnapshots(shots);
         setPhase('transitioning-to-grid');
       });
       return () => cancelAnimationFrame(raf2);
     });
-
     return () => cancelAnimationFrame(raf1);
   }, [phase]);
 
-  // ── measuring-to-stack: grid → stack ──────────────────────────────
+  // ── measuring-to-stack ────────────────────────────────────────────
   useEffect(() => {
     if (phase !== 'measuring-to-stack') return;
-
     const raf1 = requestAnimationFrame(() => {
       const raf2 = requestAnimationFrame(() => {
-        // EXIT: only the cards currently visible in the grid (respects filter)
         const visibleSlugs = visibleGridSlugsRef.current;
         const visibleProjects = visibleSlugs
           .map(slug => allProjects.find(p => p.slug === slug))
@@ -119,39 +131,23 @@ export function ProjectsView() {
           .map((project) => {
             const gridEl = gridCardEls.current.get(project.slug);
             if (!gridEl) return null;
-
             const fromRect = gridEl.getBoundingClientRect();
             if (fromRect.width === 0 || fromRect.height === 0) return null;
-
-            // toRect for exit cards: we don't use it for size calculation in exit phase,
-            // but ViewTransition uses it to compute exit aspect ratio — use stack rect if available
             const stackEl = stackCardEls.current.get(project.slug);
-            const toRect = stackEl
-              ? stackEl.getBoundingClientRect()
-              : fromRect; // fallback: same rect (square-ish exit)
-
+            const toRect  = stackEl ? stackEl.getBoundingClientRect() : fromRect;
             return makeSnapshot(project, fromRect, toRect, 36, 54);
           })
           .filter(Boolean) as CardSnapshot[];
 
-        if (exits.length === 0) {
-          setPhase('stack');
-          return;
-        }
+        if (exits.length === 0) { setPhase('stack'); return; }
 
-        // ENTER: always the 4 stack featured cards, in visual order (front first)
         const orderedProjects = stackOrderRef.current.map(i => allProjects[i]);
         const enters: CardSnapshot[] = orderedProjects
           .map((project) => {
             const stackEl = stackCardEls.current.get(project.slug);
             if (!stackEl) return null;
-
             const toRect = stackEl.getBoundingClientRect();
             if (toRect.width === 0 || toRect.height === 0) return null;
-
-            // fromRect for enter phase: enter cards fly in from corner, so fromRect isn't
-            // used as start position — it's only needed for the image/metadata.
-            // We reuse toRect as placeholder (ViewTransition teleports to corner anyway).
             return makeSnapshot(project, toRect, toRect, 8, 54);
           })
           .filter(Boolean) as CardSnapshot[];
@@ -162,7 +158,6 @@ export function ProjectsView() {
       });
       return () => cancelAnimationFrame(raf2);
     });
-
     return () => cancelAnimationFrame(raf1);
   }, [phase]);
 
@@ -174,22 +169,19 @@ export function ProjectsView() {
   const onTransitionComplete = useCallback(() => {
     setPhase(prev => {
       const next = prev === 'transitioning-to-grid' ? 'grid' : 'stack';
-      // Reset visible slugs to all projects when landing on stack,
-      // so the next measuring-to-grid has correct refs to work with
-      if (next === 'stack') {
-        visibleGridSlugsRef.current = allProjects.map(p => p.slug);
-      }
+      if (next === 'stack') visibleGridSlugsRef.current = allProjects.map(p => p.slug);
+      setTextEnter(next);
       return next;
     });
     requestAnimationFrame(() => {
       setExitSnapshots([]);
       setEnterSnapshots([]);
+      setTimeout(() => setTextEnter(null), 600);
     });
   }, []);
 
-  const currentBg = isGrid ? GRID_BG : bgColor;
   const isTransitioning = phase === 'transitioning-to-grid' || phase === 'transitioning-to-stack';
-  const hasOverlay = exitSnapshots.length > 0 || enterSnapshots.length > 0;
+  const hasOverlay      = exitSnapshots.length > 0 || enterSnapshots.length > 0;
 
   return (
     <div style={{ position: 'relative' }}>
@@ -225,12 +217,8 @@ export function ProjectsView() {
         </button>
       </nav>
 
-      {/* Vista Stack */}
-      <div style={
-        (phase === 'stack' || phase === 'measuring-to-grid' || phase === 'measuring-to-stack')
-          ? undefined
-          : { opacity: 0, pointerEvents: 'none', position: 'absolute', top: 0, left: 0, width: '100%' }
-      }>
+      {/* Vista Stack — always in DOM as fixed layer, visibility controlled by opacity */}
+      <div style={layerStyle(stackActive)}>
         <PortalProvider>
           <HomeStack
             projects={allProjects}
@@ -238,26 +226,25 @@ export function ProjectsView() {
             onCardRefs={(map) => { stackCardEls.current = map; }}
             onFrontColor={(c) => setBgColor(c)}
             onOrder={(order) => { stackOrderRef.current = order; }}
+            exitingToGrid={phase === 'transitioning-to-grid'}
+            enteringFromGrid={textEnter === 'stack'}
           />
           <PortalTransition />
         </PortalProvider>
       </div>
 
-      {/* Vista Grid */}
-      <div style={
-        (phase === 'grid' || phase === 'measuring-to-grid' || phase === 'measuring-to-stack')
-          ? undefined
-          : { opacity: 0, pointerEvents: 'none', position: 'absolute', top: 0, left: 0, width: '100%' }
-      }>
+      {/* Vista Grid — always in DOM as fixed layer, visibility controlled by opacity */}
+      <div style={layerStyle(gridActive)}>
         <ExploreGrid
           projects={allProjects}
-          invisible={phase !== 'grid'}
+          exitingToStack={phase === 'transitioning-to-stack'}
+          enteringFromStack={textEnter === 'grid'}
           cardRefsMap={gridCardEls}
           onVisibleSlugs={(slugs) => { visibleGridSlugsRef.current = slugs; }}
         />
       </div>
 
-      {/* Overlay de transición */}
+      {/* Overlay de cards */}
       {hasOverlay && (
         <ViewTransition
           exitCards={exitSnapshots}

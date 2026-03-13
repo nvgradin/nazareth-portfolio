@@ -20,12 +20,14 @@ const SPRING = { type: 'spring', stiffness: 300, damping: 36, mass: 1 } as const
 interface Props {
   projects: ProjectWithLayout[];
   disabled?: boolean;
+  exitingToGrid?: boolean;    // true mientras la transición stack→grid está activa
+  enteringFromGrid?: boolean; // true al llegar al stack desde grid
   onCardRefs?: (refsBySlug: Map<string, HTMLElement | null>) => void;
   onFrontColor?: (color: string) => void;
   onOrder?: (order: number[]) => void;
 }
 
-export function HomeStack({ projects, disabled, onCardRefs, onFrontColor, onOrder }: Props) {
+export function HomeStack({ projects, disabled, exitingToGrid, enteringFromGrid, onCardRefs, onFrontColor, onOrder }: Props) {
   const n = projects.length; // 4
   // order[slot] = índice de proyecto en ese slot
   const [order, setOrder] = useState<number[]>(() => projects.map((_, i) => i));
@@ -135,11 +137,17 @@ export function HomeStack({ projects, disabled, onCardRefs, onFrontColor, onOrde
       className={styles.stage}
       style={{ backgroundColor: bgColor, transition: 'background-color 0.6s ease' }}
     >
-      {/* Título de sección — crema, encima del stack */}
-      <header className={styles.header}>
+      {/* Título de sección — animado al entrar/salir */}
+      <motion.header
+        key={enteringFromGrid ? 'entering' : 'idle'}
+        className={styles.header}
+        initial={enteringFromGrid ? { opacity: 0, y: 40 } : { opacity: 1, y: 0 }}
+        animate={exitingToGrid ? { opacity: 0, y: -40 } : { opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+      >
         <h2 className={styles.heading}>Proyectos</h2>
         <p className={styles.subtitle}>Diseño de producto, experiencias digitales y marca.</p>
-      </header>
+      </motion.header>
 
       {/* Capa de gradiente ambient — fade in/out encima del color sólido */}
       <div
