@@ -4,10 +4,12 @@ import { motion } from 'framer-motion';
 import { LinkedinLogo } from '@phosphor-icons/react';
 import styles from './Contact.module.css';
 
+const ease = [0.4, 0, 0.2, 1] as const;
+
 const item = (delay: number) => ({
   initial: { opacity: 0, y: 32 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, delay, ease: [0.4, 0, 0.2, 1] },
+  transition: { duration: 0.7, delay, ease },
 });
 
 export default function ContactPage() {
