@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Abhaya_Libre, Aboreto } from "next/font/google";
 import "./globals.css";
-import { Header, Footer, HeaderThemeProvider } from "@/components/layout";
+import { Header, HeaderThemeProvider } from "@/components/layout";
 
 /* ═══════════════════════════════════════════════════════════════
    FONT CONFIGURATION

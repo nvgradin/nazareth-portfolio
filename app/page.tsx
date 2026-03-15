@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { HomeHero, IntroOverlay, HomeProjects, HomeBio } from '@/components/home';
+import { HomeHero, IntroOverlay, HomeProjects, HomeBio, HomeCTA } from '@/components/home';
+import { Footer } from '@/components/layout';
 
 export default function Home() {
   // false → hero montado pero invisible (overlay encima)
@@ -29,6 +30,12 @@ export default function Home() {
       {/* Bio — snap section */}
       <div style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always' }}>
         <HomeBio />
+      </div>
+
+      {/* CTA — snap section */}
+      <div style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always' }}>
+        <HomeCTA />
+        <Footer />
       </div>
     </div>
   );
