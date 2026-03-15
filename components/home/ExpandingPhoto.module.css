@@ -1,0 +1,62 @@
+.thumb {
+  position: relative;
+  width: 444px;
+  height: 444px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.thumbImg {
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Fixed panel — rendered via AnimatePresence, left/top/width/height set by Framer Motion */
+.expanded {
+  position: fixed;
+  z-index: 9999;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.expandedImg {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.label {
+  font-family: var(--font-accent);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--neutral-50);
+}
+
+.sub {
+  font-family: var(--font-accent);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--neutral-50);
+  opacity: 0.65;
+}
+
+@media (max-width: 767px) {
+  .thumb {
+    width: min(80vw, 320px);
+    height: min(80vw, 320px);
+  }
+}
