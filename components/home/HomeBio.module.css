@@ -29,8 +29,8 @@
 /* Imagen cuadrada */
 .photoWrap {
   position: relative;
-  width: 444px;
-  height: 444px;
+  width: 320px;
+  height: 320px;
   overflow: hidden;
   flex-shrink: 0;
   border-radius: 0;
@@ -45,9 +45,9 @@
 
 /* Rol */
 .role {
-  margin: 29px 0 0;
+  margin: 20px 0 0;
   font-family: var(--font-accent);
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--neutral-100);
   text-align: center;
@@ -59,7 +59,7 @@
 .name {
   margin: 12px 0 0;
   font-family: var(--font-accent);
-  font-size: 52px;
+  font-size: 30px;
   font-weight: 400;
   color: var(--neutral-100);
   text-align: center;
@@ -71,7 +71,7 @@
 .tagline {
   margin: 20px 0 0;
   font-family: var(--font-heading);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 300;
   color: var(--neutral-100);
   opacity: 0.6;

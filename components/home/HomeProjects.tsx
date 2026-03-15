@@ -24,7 +24,24 @@ const ITEMS = [
 
 export function HomeProjects() {
   return (
-    <div style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden', backgroundColor: 'var(--brand-primary-900)' }}>
+    <div style={{
+      position: 'relative',
+      width: '100%',
+      height: '100vh',
+      overflow: 'visible',
+      marginTop: -120,
+      zIndex: 3,
+    }}>
+      {/* Fondo morado — empieza 120px más abajo para no tapar el fade del hero */}
+      <div style={{
+        position: 'absolute',
+        top: 120,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'var(--brand-primary-900)',
+        zIndex: 0,
+      }} />
 
       {/* Imágenes flotantes */}
       {ITEMS.map((item, i) => (
@@ -38,6 +55,7 @@ export function HomeProjects() {
             borderRadius: 12,
             overflow: 'hidden',
             opacity: 0.55,
+            zIndex: 1,
           }}
           animate={{ y: [0, -22, 0] }}
           transition={{ duration: item.dur, delay: item.delay, repeat: Infinity, ease: 'easeInOut' }}

@@ -10,33 +10,22 @@ export default function Home() {
   const [heroReady, setHeroReady] = useState(false);
 
   return (
-    <div style={{
-      height: '100vh',
-      overflowY: 'scroll',
-      scrollSnapType: 'y mandatory',
-      scrollBehavior: 'smooth',
-    }}>
-      {/* Hero — snap section */}
-      <div style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always', position: 'relative' }}>
+    <>
+      {/* Hero */}
+      <div style={{ position: 'relative' }}>
         <HomeHero animate={heroReady} hidden={!heroReady} />
         <IntroOverlay onDone={() => setHeroReady(true)} />
       </div>
 
-      {/* Proyectos destacados — snap section */}
-      <div style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always' }}>
-        <HomeProjects />
-      </div>
+      {/* Proyectos — sube sobre el hero */}
+      <HomeProjects />
 
-      {/* Bio — snap section */}
-      <div style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always' }}>
-        <HomeBio />
-      </div>
+      {/* Bio */}
+      <HomeBio />
 
-      {/* CTA — snap section */}
-      <div style={{ scrollSnapAlign: 'start', scrollSnapStop: 'always' }}>
-        <HomeCTA />
-        <Footer />
-      </div>
-    </div>
+      {/* CTA + Footer */}
+      <HomeCTA />
+      <Footer />
+    </>
   );
 }
