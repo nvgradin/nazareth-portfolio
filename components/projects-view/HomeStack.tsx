@@ -191,7 +191,7 @@ export function HomeStack({ projects, disabled, exitingToGrid, enteringFromGrid,
         // El card que acaba de entrar: key único para forzar remount + initial desde fuera
         const key = isNew ? `new-${enterKey}` : project.slug;
 
-        let initial: object | false;
+        let initial: boolean | Record<string, number>;
         let transition: object;
         if (isNew) {
           initial = { translateY: fromBottom ? 340 : -600, scaleX: fromBottom ? 1.0 : 0.4, scaleY: fromBottom ? 1.0 : 0.4, opacity: fromBottom ? 1 : 0 };
