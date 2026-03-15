@@ -34,6 +34,7 @@ export const amigoSecreto: ProjectWithLayout = {
       intro: 'Amigo Secreto nació de una pregunta simple: ¿y si el amigo invisible pudiera sentirse tan especial como el regalo que das? Una experiencia digital pensada para conectar personas a través del gesto de regalar con intención.',
       logo: '',
       roles: ['Product Design', 'UX/UI', 'Concept'],
+      year: '2026',
     },
     bento: {
       mode: 'fixed',

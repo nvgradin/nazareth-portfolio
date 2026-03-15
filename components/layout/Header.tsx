@@ -16,7 +16,8 @@ const navigation = [
 export function Header() {
   const pathname = usePathname();
   const { isDark } = useHeaderTheme();
-  const isDarkBackground = isDark || pathname === '/contact';
+  const isLightPage = pathname.startsWith('/projects/');
+  const isDarkBackground = !isLightPage && (isDark || pathname === '/contact');
 
   const headerClasses = [
     styles.header,

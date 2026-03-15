@@ -32,6 +32,7 @@ export const trainfy: ProjectWithLayout = {
       ],
       logo: '/projects/trainfy/Logotipo.png',
       roles: ['Backend Dev', 'Desarrollo Web', 'Frontend Dev', 'Fullstack Developer', 'UI/UX Design'],
+      year: '2019',
     },
 
     // 2) Bento Gallery - Sistema de columnas con ratios de altura

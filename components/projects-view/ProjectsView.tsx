@@ -44,7 +44,7 @@ function makeSnapshot(
 }
 
 // Inline styles for a fixed full-screen layer
-function layerStyle(active: boolean): React.CSSProperties {
+function layerStyle(active: boolean, scrollable = false): React.CSSProperties {
   return {
     position: 'fixed',
     inset: 0,
@@ -53,6 +53,7 @@ function layerStyle(active: boolean): React.CSSProperties {
     zIndex: active ? 1 : -1,
     opacity: active ? 1 : 0,
     pointerEvents: active ? 'auto' : 'none',
+    overflowY: scrollable ? 'auto' : 'hidden',
   };
 }
 
@@ -192,30 +193,26 @@ export function ProjectsView() {
         transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
       />
 
-      {/* Toggle */}
-      <nav
-        className={[
-          styles.toggleH,
-          isGrid ? styles.toggleDark : '',
-          isGrid ? styles.toggleStatic : '',
-        ].join(' ')}
-      >
-        <button
-          className={[styles.label, isStack ? styles.active : ''].join(' ')}
-          onClick={() => handleToggle('stack')}
-          disabled={isTransitioning}
-        >
-          Destacados
-        </button>
-        <span className={styles.sep} aria-hidden="true" />
-        <button
-          className={[styles.label, isGrid ? styles.active : ''].join(' ')}
-          onClick={() => handleToggle('grid')}
-          disabled={isTransitioning}
-        >
-          Explorar
-        </button>
-      </nav>
+      {/* Toggle — fixed en stack, dentro del layer en grid (para que scrollee) */}
+      {isStack && (
+        <nav className={[styles.toggleH].join(' ')}>
+          <button
+            className={[styles.label, isStack ? styles.active : ''].join(' ')}
+            onClick={() => handleToggle('stack')}
+            disabled={isTransitioning}
+          >
+            Destacados
+          </button>
+          <span className={styles.sep} aria-hidden="true" />
+          <button
+            className={[styles.label, isGrid ? styles.active : ''].join(' ')}
+            onClick={() => handleToggle('grid')}
+            disabled={isTransitioning}
+          >
+            Explorar
+          </button>
+        </nav>
+      )}
 
       {/* Vista Stack — always in DOM as fixed layer, visibility controlled by opacity */}
       <div style={layerStyle(stackActive)}>
@@ -234,7 +231,24 @@ export function ProjectsView() {
       </div>
 
       {/* Vista Grid — always in DOM as fixed layer, visibility controlled by opacity */}
-      <div style={layerStyle(gridActive)}>
+      <div style={layerStyle(gridActive, true)}>
+        <nav className={[styles.toggleH, styles.toggleDark, styles.toggleStatic].join(' ')}>
+          <button
+            className={[styles.label].join(' ')}
+            onClick={() => handleToggle('stack')}
+            disabled={isTransitioning}
+          >
+            Destacados
+          </button>
+          <span className={styles.sep} aria-hidden="true" />
+          <button
+            className={[styles.label, styles.active].join(' ')}
+            onClick={() => handleToggle('grid')}
+            disabled={isTransitioning}
+          >
+            Explorar
+          </button>
+        </nav>
         <ExploreGrid
           projects={allProjects}
           exitingToStack={phase === 'transitioning-to-stack'}

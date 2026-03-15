@@ -13,7 +13,7 @@ interface Props {
 }
 
 export function ProjectHero({ data }: Props) {
-  const { title, subtitle, intro, logo, roles } = data;
+  const { title, subtitle, intro, logo, roles, year } = data;
 
   return (
     <section className={styles.hero}>
@@ -59,6 +59,16 @@ export function ProjectHero({ data }: Props) {
               transition={{ duration: 0.5, delay: 0.35, ease }}
             >
               {roles.join(' | ')}
+            </motion.p>
+          )}
+          {year && (
+            <motion.p
+              className={styles.year}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.42, ease }}
+            >
+              {year}
             </motion.p>
           )}
         </div>

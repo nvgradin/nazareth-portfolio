@@ -28,6 +28,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       intro: 'Un viaje de creación y colaboración desde hace 3 años en el cual dar vida la presencia digital progresiva hacia una estructura sólida para Silvia Fernández De Luna. Durante los últimos años, he acompañado y guiado a Silvia Fernández De Luna en la creación y consolidación de su Marca personal. Silvia, como guía, terapeuta y mentora holística, tenía una visión clara de lo que quería brindar al mundo. Mi aportación ha sido llevar esa visión a la realidad, dedicándome en consolidar una identidad sólida, desde el diseño visual hasta la estrategia de marketing, para asegurar que cada aspecto de su presencia digital esté alineado con su visión y propósito.',
       logo: '/projects/silvia-fernandez-de-luna/logo.png',
       roles: ['Audiovisual', 'Marketing', 'Desarrollo Web', 'Email Marketing', 'Estrategia', 'Social Media'],
+      year: '2023',
     },
 
     bento: {
@@ -117,6 +118,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
   cover: '/projects/silvia-fernandez-de-luna/Silvia-Fernandez-De-Luna-Academia.webp',
   featured: false,
   ambientColor: '#895900',
+  ambientGradient: 'linear-gradient(135deg, #4f3a17 0%, #895900 100%)',
 
   status: 'published',
   order: 3,
