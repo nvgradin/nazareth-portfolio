@@ -1,19 +1,35 @@
 /* HomeBioAlt — sección bio con imagen de fondo y bloque central */
 
 .section {
-  position: relative;
+  background-color: var(--neutral-200);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 80px;
-  overflow: hidden;
+  padding: 80px var(--space-16);
 }
 
-.bg {
-  object-fit: cover;
-  object-position: center;
-  z-index: 0;
+@media (min-width: 768px) {
+  .section {
+    padding: 80px var(--space-64);
+  }
+}
+
+.headline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+  text-align: center;
+}
+
+.headlineLine {
+  display: block;
+  font-family: var(--font-accent);
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--brand-primary-900);
 }
 
 /* Bloque central — imagen + rol + nombre */

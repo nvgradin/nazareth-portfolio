@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { LinkedinLogo } from '@phosphor-icons/react';
+import { Footer } from '@/components/layout';
 import styles from './Contact.module.css';
 
 const ease = [0.4, 0, 0.2, 1] as const;
@@ -14,6 +15,7 @@ const item = (delay: number) => ({
 
 export default function ContactPage() {
   return (
+    <>
     <main className={styles.contact}>
       <div className={styles.container}>
 
@@ -43,5 +45,7 @@ export default function ContactPage() {
         </div>
       </div>
     </main>
+    <Footer style={{ backgroundColor: 'var(--support-green-600)' }} />
+    </>
   );
 }

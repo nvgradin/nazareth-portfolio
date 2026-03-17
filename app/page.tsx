@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { HomeHero, IntroOverlay, HomeProjects, HomeBio, HomeCTA } from '@/components/home';
+import { HomeHero, IntroOverlay, HomeProjects, HomeBio, MarqueeDivider, HomeCTA } from '@/components/home';
 import { Footer } from '@/components/layout';
 
 export default function Home() {
@@ -22,6 +22,9 @@ export default function Home() {
 
       {/* Bio */}
       <HomeBio />
+
+      {/* Bisagra cromática */}
+      <MarqueeDivider />
 
       {/* CTA + Footer */}
       <HomeCTA />

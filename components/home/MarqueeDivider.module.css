@@ -1,0 +1,70 @@
+/* ═══════════════════════════════════════════════════════════════
+   MARQUEE DIVIDER — bisagra cromática crema → morado
+   ═══════════════════════════════════════════════════════════════ */
+
+.wrapper {
+  width: 100%;
+  background-color: var(--brand-primary-900);
+  overflow: hidden;
+  user-select: none;
+}
+
+.rule {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.viewport {
+  overflow: hidden;
+  padding: 22px 0;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.set {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.text {
+  font-family: var(--font-accent);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--neutral-100);
+  opacity: 0.38;
+  white-space: nowrap;
+  padding: 0 28px;
+}
+
+.textAccent {
+  font-family: var(--font-accent);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brand-accent-500);
+  opacity: 0.75;
+  white-space: nowrap;
+  padding: 0 28px;
+}
+
+.sep {
+  font-size: 6px;
+  color: var(--neutral-100);
+  opacity: 0.2;
+  flex-shrink: 0;
+}

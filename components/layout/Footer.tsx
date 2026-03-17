@@ -1,11 +1,12 @@
 "use client";
 
+import React from 'react';
 import { InstagramLogo, LinkedinLogo } from '@phosphor-icons/react';
 import styles from './Footer.module.css';
 
-export function Footer() {
+export function Footer({ style }: { style?: React.CSSProperties }) {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} style={style}>
       <p className={styles.copy}>
         Diseñado y construido con intención · Nazareth Gradín · 2026
       </p>

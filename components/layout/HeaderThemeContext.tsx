@@ -13,7 +13,7 @@ const HeaderThemeContext = createContext<HeaderThemeContextValue>({
 });
 
 export function HeaderThemeProvider({ children }: { children: ReactNode }) {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
   const setDark = useCallback((dark: boolean) => setIsDark(dark), []);
   return (
     <HeaderThemeContext.Provider value={{ isDark, setDark }}>

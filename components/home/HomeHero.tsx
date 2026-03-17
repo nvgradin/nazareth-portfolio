@@ -70,7 +70,7 @@ export function HomeHero({ animate = false, hidden = false }: Props) {
           animate={animate ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.75, duration: 0.9, ease: EASE }}
         >
-          Creating digital universes where strategy, design and technology meet.
+          Creo universos digitales desde la estrategia hasta la esencia.
         </motion.p>
 
         {/* 4. CTA */}

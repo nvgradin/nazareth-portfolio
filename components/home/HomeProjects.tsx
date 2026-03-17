@@ -56,6 +56,8 @@ export function HomeProjects() {
             overflow: 'hidden',
             opacity: 0.55,
             zIndex: 1,
+            willChange: 'transform',
+            backfaceVisibility: 'hidden',
           }}
           animate={{ y: [0, -22, 0] }}
           transition={{ duration: item.dur, delay: item.delay, repeat: Infinity, ease: 'easeInOut' }}
