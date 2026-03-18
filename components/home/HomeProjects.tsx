@@ -12,13 +12,13 @@ const ITEMS = [
   { src: '/projects/las-islas-cies/bento-2.jpg',                                     x: '22vw',  y: '58vh',  w: 180, delay: 1.2,  dur: 9   },
   { src: '/projects/silvia-fernandez-de-luna/portada-sfdl.jpg',                      x: '68vw',  y: '6vh',   w: 200, delay: 0.5,  dur: 8   },
   { src: '/projects/amigo-secreto/amigosecreto.jpg',                                 x: '80vw',  y: '55vh',  w: 160, delay: 2,    dur: 10  },
-  { src: '/projects/silvia-fernandez-de-luna/bento-3.jpg',                                            x: '42vw',  y: '72vh',  w: 190, delay: 0.8,  dur: 7.5 },
+  { src: '/projects/silvia-fernandez-de-luna/bento-3.jpg',                                            x: '42vw',  y: '66vh',  w: 190, delay: 0.8,  dur: 7.5 },
   { src: '/projects/las-islas-cies/bento-3.jpg',                                     x: '6vw',   y: '64vh',  w: 150, delay: 1.5,  dur: 9   },
   { src: '/projects/silvia-fernandez-de-luna/Silvia-Fernandez-De-Luna-Academia.webp', x: '55vw', y: '14vh',  w: 170, delay: 0.3,  dur: 8.5 },
   { src: '/projects/silvia-fernandez-de-luna/bento-6.png',                                       x: '76vw',  y: '30vh',  w: 210, delay: 1.8,  dur: 7   },
   { src: '/projects/amigo-secreto/amigosecreto.jpg',                                 x: '30vw',  y: '10vh',  w: 140, delay: 2.2,  dur: 11  },
   { src: '/projects/trainfy/feature-branding.jpg',                                   x: '14vw',  y: '36vh',  w: 165, delay: 0.6,  dur: 8   },
-  { src: '/projects/trainfy/bento-2.png',                                     x: '88vw',  y: '72vh',  w: 145, delay: 1.1,  dur: 9.5 },
+  { src: '/projects/trainfy/bento-2.png',                                     x: '70vw',  y: '76vh',  w: 145, delay: 1.1,  dur: 9.5 },
   { src: '/projects/trainfy/editorial-full.jpg',                                     x: '48vw',  y: '46vh',  w: 155, delay: 2.5,  dur: 7   },
 ];
 

@@ -13,14 +13,14 @@ import styles from './MarqueeDivider.module.css';
 const ITEMS = [
   { text: 'PRODUCT DESIGN', accent: false },
   { text: 'UX / UI', accent: false },
-  { text: 'WEB', accent: true },
+  { text: 'WEB', accent: false },
   { text: 'ESTRATEGIA DIGITAL', accent: false },
   { text: 'BRANDING', accent: false },
-  { text: 'DESARROLLO', accent: true },
+  { text: 'DESARROLLO', accent: false },
 ];
 
 const SEP = '◆';
-const BASE_SPEED = 55; // px/s — lento y elegante
+const BASE_SPEED = 44; // px/s — lento y elegante
 
 export function MarqueeDivider() {
   const trackRef = useRef<HTMLDivElement>(null);

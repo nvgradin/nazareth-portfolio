@@ -30,7 +30,7 @@ export function HomeCTA() {
           color: 'var(--neutral-50)',
           letterSpacing: '0.12em',
           textTransform: 'uppercase',
-          marginBottom: 32,
+          marginBottom: 18,
         }}
       >
         ¿Y si creamos algo juntos?

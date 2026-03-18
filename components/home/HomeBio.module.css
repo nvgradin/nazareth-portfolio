@@ -1,166 +1,121 @@
-/* HomeBioAlt — sección bio con imagen de fondo y bloque central */
+/* ═══════════════════════════════════════════════════════════════
+   HOME BIO
+   ═══════════════════════════════════════════════════════════════ */
 
 .section {
   background-color: var(--neutral-200);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 80px var(--space-16);
+  padding: var(--space-96) var(--space-16);
 }
 
 @media (min-width: 768px) {
   .section {
-    padding: 80px var(--space-64);
+    padding: 120px var(--space-96);
   }
 }
 
-.headline {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1em;
-  text-align: center;
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
-.headlineLine {
-  display: block;
+/* ── 2 columnas ── */
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+@media (min-width: 768px) {
+  .top {
+    grid-template-columns: 55fr 45fr;
+    gap: 80px;
+    align-items: stretch;
+  }
+}
+
+/* Columna izquierda */
+
+.topLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.eyebrow {
   font-family: var(--font-accent);
-  font-size: clamp(36px, 5vw, 72px);
+  font-size: 12px;
   font-weight: 400;
-  line-height: 1.1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-primary-900);
+  opacity: 0.5;
+}
+
+.title {
+  font-family: var(--font-accent);
+  font-size: clamp(28px, 3.2vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
   letter-spacing: -0.01em;
   color: var(--brand-primary-900);
 }
 
-/* Bloque central — imagen + rol + nombre */
-.block {
-  position: relative;
-  z-index: 1;
+.bodyWrap {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0;
+  gap: 16px;
 }
 
-/* Imagen cuadrada */
-.photoWrap {
-  position: relative;
-  width: 320px;
-  height: 320px;
-  overflow: hidden;
-  flex-shrink: 0;
-  border-radius: 0;
-}
-
-.photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-}
-
-/* Rol */
-.role {
-  margin: 20px 0 0;
-  font-family: var(--font-accent);
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--neutral-100);
-  text-align: center;
-  line-height: 1;
-  letter-spacing: 0.04em;
-}
-
-/* Nombre */
-.name {
-  margin: 12px 0 0;
-  font-family: var(--font-accent);
-  font-size: 30px;
-  font-weight: 400;
-  color: var(--neutral-100);
-  text-align: center;
-  line-height: 1;
-  letter-spacing: 0.06em;
-}
-
-/* Frase */
-.tagline {
-  margin: 20px 0 0;
+.intro {
   font-family: var(--font-heading);
-  font-size: 14px;
+  font-size: clamp(15px, 1.1vw, 17px);
   font-weight: 300;
-  color: var(--neutral-100);
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+  color: var(--brand-primary-900);
+  opacity: 0.65;
+  max-width: 500px;
+}
+
+/* CTA */
+
+.cta {
+  display: inline-block;
+  font-family: var(--font-accent);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-primary-900);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 3px;
   opacity: 0.6;
-  text-align: center;
-  line-height: 1.6;
-  letter-spacing: 0.02em;
+  transition: opacity 0.2s ease;
 }
 
-/* Portal de navegación */
-.portal {
-  position: fixed;
-  z-index: 9999;
-  background-image: url('/about/hero_about_2560.webp');
-  background-size: cover;
-  background-position: center top;
-  pointer-events: none;
-}
-
-/* Overlay con invitación — CSS hover puro */
-.hoverOverlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  background: rgba(0, 0, 0, 0.28);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.photoWrap:hover .hoverOverlay {
+.cta:hover {
   opacity: 1;
 }
 
-.hoverLabel {
-  font-family: var(--font-accent);
-  font-size: 28px;
-  font-weight: 400;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--neutral-50);
+/* Columna derecha — imagen */
+
+.topRight {
+  width: 100%;
+  height: 100%;
 }
 
-.hoverSub {
-  font-family: var(--font-accent);
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--neutral-50);
-  opacity: 0.65;
+.imageWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  border-radius: 28px;
+  overflow: hidden;
 }
 
-@media (max-width: 767px) {
-  .photoWrap {
-    width: min(80vw, 320px);
-    height: min(80vw, 320px);
-  }
-
-  .role {
-    font-size: 18px;
-    margin-top: 20px;
-  }
-
-  .name {
-    font-size: clamp(32px, 10vw, 52px);
-  }
-
-  .tagline {
-    font-size: 13px;
-    margin-top: 16px;
-  }
+.image {
+  object-fit: cover;
+  object-position: top center;
 }
