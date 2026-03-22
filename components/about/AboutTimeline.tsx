@@ -5,14 +5,7 @@ import { motion } from 'framer-motion';
 import { useHeaderTheme } from '@/components/layout/HeaderThemeContext';
 import styles from './AboutTimeline.module.css';
 
-const ease = [0.4, 0, 0.2, 1] as const;
-
-const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.1 },
-  transition: { duration: 0.7, delay, ease },
-});
+const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
 const FORMACION = [
   {
@@ -23,7 +16,7 @@ const FORMACION = [
   {
     period: '2008 – 2009',
     title: 'Máster en Creatividad y Publicidad',
-    place: 'Trazos — Escuela de Arte',
+    place: 'Trazos — Escuela Superior de Artes Digitales',
   },
   {
     period: '2019',
@@ -91,13 +84,26 @@ export default function AboutTimeline() {
     <section ref={ref} className={styles.section}>
       <div className={styles.inner}>
 
-        <motion.p className={styles.eyebrow} {...fade(0)}>
+        <motion.p
+          className={styles.eyebrow}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.7, ease: EASE_OUT }}
+        >
           Recorrido
         </motion.p>
 
         <div className={styles.list}>
           {HITOS.map((hito, i) => (
-            <motion.div key={i} className={styles.hito} {...fade(0.05 + i * 0.07)}>
+            <motion.div
+              key={i}
+              className={styles.hito}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 1.1, delay: i * 0.06, ease: EASE_OUT }}
+            >
               <p className={styles.period}>{hito.period}</p>
               <div className={styles.content}>
                 <p className={styles.role}>{hito.role}</p>
@@ -107,13 +113,27 @@ export default function AboutTimeline() {
           ))}
         </div>
 
-        <motion.p className={styles.eyebrow} style={{ marginTop: 80 }} {...fade(0)}>
+        <motion.p
+          className={styles.eyebrow}
+          style={{ marginTop: 80 }}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.7, ease: EASE_OUT }}
+        >
           Formación
         </motion.p>
 
         <div className={styles.list}>
           {FORMACION.map((f, i) => (
-            <motion.div key={i} className={styles.hito} {...fade(0.05 + i * 0.07)}>
+            <motion.div
+              key={i}
+              className={styles.hito}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 1.1, delay: i * 0.06, ease: EASE_OUT }}
+            >
               <p className={styles.period}>{f.period}</p>
               <div className={styles.content}>
                 <p className={styles.role}>{f.title}</p>

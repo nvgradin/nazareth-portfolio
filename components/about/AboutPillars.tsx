@@ -4,20 +4,13 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from './AboutPillars.module.css';
 
-const ease = [0.4, 0, 0.2, 1] as const;
-
-const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.2 },
-  transition: { duration: 0.75, delay, ease },
-});
+const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
 const PILLARS = [
   {
     label: 'Negocio',
     title: 'Entiendo el contexto antes de mover nada.',
-    body: 'Antes de diseñar, pregunto. Qué hace esta empresa, para quién, por qué ahora. Si el problema está mal definido, cualquier solución es ruido.',
+    body: 'Antes de diseñar, pregunto. Qué hace esta empresa, para quién, por qué. Si el problema está mal definido, cualquier solución es ruido.',
     icon: '/icon/NG_Icono_montana.png',
   },
   {
@@ -28,7 +21,7 @@ const PILLARS = [
   },
   {
     label: 'Producto',
-    title: 'Construyo lo que imagino. Sin depender de nadie.',
+    title: 'Construyo lo que imagino.',
     body: 'Aprendí a desarrollar porque quería hacer real lo que diseñaba. Hoy puedo llevar una idea desde la estrategia hasta el código — y eso cambia la conversación con el cliente.',
     icon: '/icon/NG_Icono_solmontana.png',
   },
@@ -38,12 +31,25 @@ export default function AboutPillars() {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        <motion.p className={styles.eyebrow} {...fade(0)}>
+        <motion.p
+          className={styles.eyebrow}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.7, ease: EASE_OUT }}
+        >
           Cómo trabajo
         </motion.p>
         <div className={styles.grid}>
           {PILLARS.map((pillar, i) => (
-            <motion.div key={i} className={styles.pillar} {...fade(0.1 + i * 0.12)}>
+            <motion.div
+              key={i}
+              className={styles.pillar}
+              initial={{ opacity: 0, y: 24, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 1.1, delay: i * 0.15, ease: EASE_OUT }}
+            >
               <div className={styles.iconWrap}>
                 <Image
                   src={pillar.icon}
