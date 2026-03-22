@@ -48,8 +48,8 @@ export function HomeBio() {
             <motion.div className={styles.bodyWrap} {...fade(0.22)}>
               <p className={styles.intro}>
                 Empecé en publicidad — construyendo narrativas para marcas como Reebok,
-                Schweppes o Movistar. Con el tiempo entendí que comunicar no era suficiente:
-                quería diseñar la experiencia completa y construir lo que imaginaba.
+                Schweppes o Movistar. Con el tiempo quise ir más allá:
+                diseñar la experiencia completa y construir lo que imaginaba.
               </p>
               <p className={styles.intro}>
                 Hoy trabajo en la intersección entre estrategia de negocio, diseño de producto

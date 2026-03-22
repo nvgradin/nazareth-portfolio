@@ -33,7 +33,7 @@ export function HomeCTA() {
           marginBottom: 18,
         }}
       >
-        ¿Y si creamos algo juntos?
+        ¿Creamos?
       </motion.p>
 
       <motion.h2
