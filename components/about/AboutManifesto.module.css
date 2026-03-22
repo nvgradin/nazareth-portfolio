@@ -38,6 +38,18 @@
   line-height: 1.05;
   letter-spacing: -0.01em;
   color: var(--brand-primary-900);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25em;
+}
+
+.word {
+  display: inline-block;
+}
+
+.sentence {
+  display: inline;
 }
 
 .body {

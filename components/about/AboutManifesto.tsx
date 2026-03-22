@@ -3,31 +3,64 @@
 import { motion } from 'framer-motion';
 import styles from './AboutManifesto.module.css';
 
-const ease = [0.4, 0, 0.2, 1] as const;
+const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
-const fade = (delay = 0) => ({
+const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.3 },
-  transition: { duration: 0.85, delay, ease },
+  viewport: { once: true, amount: 0.4 },
+  transition: { duration: 1.2, delay, ease: EASE_OUT },
 });
+
+const WORDS = 'Creo sobre el significado.'.split(' ');
+
+const SENTENCES = [
+  'El significante es solo una forma de nombrarlo.',
+  'Lo que me importa es el para qué — de cada proyecto, de cada decisión, de cada píxel.',
+  'Si no llega a la esencia, no debe hacerse.',
+];
 
 export default function AboutManifesto() {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        <motion.p className={styles.eyebrow} {...fade(0)}>
+
+        <motion.p className={styles.eyebrow} {...fadeUp(0)}>
           Manifiesto
         </motion.p>
-        <motion.h2 className={styles.statement} {...fade(0.12)}>
-          Creo sobre el significado.
-        </motion.h2>
-        <motion.p className={styles.body} {...fade(0.25)}>
-          El significante es solo una forma de nombrarlo.
-          Lo que me importa es el para qué — de cada proyecto,
-          de cada decisión, de cada píxel. Si no llega a la esencia,
-          no debe hacerse.
-        </motion.p>
+
+        {/* Título palabra a palabra */}
+        <h2 className={styles.statement} aria-label="Creo sobre el significado.">
+          {WORDS.map((word, i) => (
+            <motion.span
+              key={i}
+              className={styles.word}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 1.1, delay: 0.1 + i * 0.13, ease: EASE_OUT }}
+            >
+              {word}
+            </motion.span>
+          ))}
+        </h2>
+
+        {/* Párrafo frase a frase */}
+        <p className={styles.body}>
+          {SENTENCES.map((sentence, i) => (
+            <motion.span
+              key={i}
+              className={styles.sentence}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 1.1, delay: 0.6 + i * 0.18, ease: EASE_OUT }}
+            >
+              {sentence}{' '}
+            </motion.span>
+          ))}
+        </p>
+
       </div>
     </section>
   );
