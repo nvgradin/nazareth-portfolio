@@ -1,34 +1,89 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { InstagramLogo, LinkedinLogo } from '@phosphor-icons/react';
 import { LogoMark } from '@/components/ui';
 import { useMobileMenu } from './MobileMenuContext';
+import { NavCursorImage } from './NavCursorImage';
 import styles from './MobileMenu.module.css';
 
 const NAV = [
-  { name: 'Inicio',    href: '/' },
-  { name: 'Proyectos', href: '/projects' },
-  { name: 'Sobre mí',  href: '/about' },
-  { name: 'Contacto',  href: '/contact' },
+  {
+    name: 'Inicio',
+    href: '/',
+    images: ['/home/hero_sunset_2560.webp'],
+  },
+  {
+    name: 'Proyectos',
+    href: '/projects',
+    images: [
+      '/projects/trainfy/portada_trainfy.webp',
+      '/projects/las-islas-cies/bento-1.jpg',
+      '/projects/silvia-fernandez-de-luna/portada-sfdl.jpg',
+      '/projects/amigo-secreto/amigosecreto.jpg',
+    ],
+  },
+  {
+    name: 'Sobre mí',
+    href: '/about',
+    images: ['/home/hero_about_2560.webp'],
+  },
+  {
+    name: 'Contacto',
+    href: '/contact',
+    images: ['/home/home-bio-Nazareth-Gradin.jpg'],
+  },
 ];
 
 export function MobileMenu() {
   const { isOpen, close } = useMobileMenu();
   const pathname = usePathname();
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const cursorPos = useRef({ x: 0, y: 0 });
+  const [cursor, setCursor] = useState({ x: 0, y: 0 });
 
   useEffect(() => { close(); }, [pathname, close]);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
+    if (!isOpen) setHoveredIndex(null);
     return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const onMouseMove = (e: MouseEvent) => {
+      setCursor({ x: e.clientX, y: e.clientY });
+    };
+    const onTouchMove = (e: TouchEvent) => {
+      const t = e.touches[0];
+      if (t) setCursor({ x: t.clientX, y: t.clientY });
+    };
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('touchmove', onTouchMove, { passive: true });
+    return () => {
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('touchmove', onTouchMove);
+    };
+  }, [isOpen]);
+
+  const activeImages = hoveredIndex !== null ? NAV[hoveredIndex].images : [];
+
   return (
-    <AnimatePresence>
+    <>
+      {/* Imagen magnética — solo cuando el menú está abierto, fuera del overlay para evitar stacking context del transform */}
+      {isOpen && (
+        <NavCursorImage
+          images={activeImages}
+          visible={hoveredIndex !== null}
+          cursorX={cursor.x}
+          cursorY={cursor.y}
+        />
+      )}
+
+      <AnimatePresence>
       {isOpen && (
         <motion.div
           className={styles.overlay}
@@ -57,6 +112,15 @@ export function MobileMenu() {
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.06 + i * 0.06, ease: [0.4, 0, 0.2, 1] }}
+                    onMouseEnter={() => setHoveredIndex(i)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                    onTouchStart={(e) => {
+                      const t = e.touches[0];
+                      if (t) setCursor({ x: t.clientX, y: t.clientY });
+                      setHoveredIndex(i);
+                    }}
+                    onTouchEnd={() => setHoveredIndex(null)}
+                    onTouchCancel={() => setHoveredIndex(null)}
                   >
                     <Link
                       href={item.href}
@@ -106,8 +170,10 @@ export function MobileMenu() {
           >
             NAZARETH<span className={styles.bigNameGradin}> GRADÍN</span>
           </motion.div>
+
         </motion.div>
       )}
     </AnimatePresence>
+    </>
   );
 }

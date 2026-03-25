@@ -101,7 +101,8 @@
 }
 
 .linkActive .linkName {
-  opacity: 0.35;
+  color: var(--brand-accent);
+  opacity: 1;
 }
 
 /* ── Info de contacto ── */
