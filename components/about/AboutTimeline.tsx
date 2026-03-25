@@ -37,8 +37,8 @@ const HITOS = [
     note: 'Aprendí que una idea bien contada puede cambiar cómo la gente percibe el mundo.',
   },
   {
-    period: '2013 – 2015',
-    role: 'E-learning Designer — Grupo Femxa',
+    period: '2011 – 2015',
+    role: 'E-learning Designer — Grupo Femxa, Ingafor',
     note: 'Vi el problema antes que el mercado: el aprendizaje digital necesitaba experiencia, no solo contenido.',
   },
   {
