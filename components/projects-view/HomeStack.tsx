@@ -31,6 +31,13 @@ const SLOTS_MOBILE_TALL: [number, number, number][] = [
 ];
 
 // Móvil landscape: cards apiladas más juntas (pantalla baja)
+const SLOTS_TABLET: [number, number, number][] = [
+  [0,    1.00, 1.00],
+  [-135, 0.84, 0.86],
+  [-248, 0.70, 0.70],
+  [-345, 0.55, 0.55],
+];
+
 const SLOTS_LANDSCAPE: [number, number, number][] = [
   [0,    1.00, 1.00],
   [-55,  0.88, 0.90],
@@ -55,30 +62,37 @@ export function HomeStack({ projects, disabled, exitingToGrid, enteringFromGrid,
   const [isMobile, setIsMobile] = useState(false);
   const [isTallMobile, setIsTallMobile] = useState(false);
   const [isLandscape, setIsLandscape] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
   useEffect(() => {
     const mqW = window.matchMedia('(max-width: 767px)');
     const mqH = window.matchMedia('(min-height: 750px)');
     const mqL = window.matchMedia('(orientation: landscape) and (max-height: 500px)');
+    const mqT = window.matchMedia('(min-width: 768px) and (min-height: 501px) and (max-width: 1280px)');
     const update = () => {
       setIsMobile(mqW.matches);
       setIsTallMobile(mqW.matches && mqH.matches);
       setIsLandscape(mqL.matches);
+      setIsTablet(mqT.matches);
     };
     update();
     mqW.addEventListener('change', update);
     mqH.addEventListener('change', update);
     mqL.addEventListener('change', update);
+    mqT.addEventListener('change', update);
     return () => {
       mqW.removeEventListener('change', update);
       mqH.removeEventListener('change', update);
       mqL.removeEventListener('change', update);
+      mqT.removeEventListener('change', update);
     };
   }, []);
   const SLOTS = isLandscape
     ? SLOTS_LANDSCAPE
     : isMobile
       ? (isTallMobile ? SLOTS_MOBILE_TALL : SLOTS_MOBILE)
-      : SLOTS_DESKTOP;
+      : isTablet
+        ? SLOTS_TABLET
+        : SLOTS_DESKTOP;
 
   // order[slot] = índice de proyecto en ese slot
   const [order, setOrder] = useState<number[]>(() => projects.map((_, i) => i));
@@ -199,9 +213,9 @@ export function HomeStack({ projects, disabled, exitingToGrid, enteringFromGrid,
       >
         <h2 className={styles.heading}>Proyectos</h2>
         <p className={styles.subtitle}>Diseño de producto, experiencias digitales y marca.</p>
-        {/* Hint inline — solo visible en móvil, debajo del subtítulo */}
+        {/* Hint inline — móvil y tablet, debajo del subtítulo */}
         <AnimatePresence>
-          {showHint && (
+          {showHint && (isMobile || isTablet) && (
             <motion.div
               className={styles.scrollHintInline}
               initial={{ opacity: 0 }}

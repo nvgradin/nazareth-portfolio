@@ -161,10 +161,38 @@
   }
 }
 
+/* Tablet (portrait y landscape) — hint inline centrado bajo el subtítulo */
+@media (min-width: 768px) and (min-height: 501px) and (max-width: 1280px) {
+  .scrollHint {
+    display: none;
+  }
+
+  .scrollHintInline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 28px;
+    color: var(--neutral-50);
+    opacity: 0.5;
+    font-family: var(--font-accent);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+
+  .scrollHintInline span:first-child {
+    font-size: 16px;
+    line-height: 1;
+  }
+}
+
 /* Móvil horizontal */
 @media (orientation: landscape) and (max-height: 500px) {
   .header {
-    padding-top: 111px;
+    padding-top: 72px;
   }
 
   .heading {
