@@ -52,7 +52,7 @@
 /* Móvil horizontal */
 @media (orientation: landscape) and (max-height: 500px) {
   .toggleH {
-    top: 40px;
+    top: 88px;
   }
 }
 

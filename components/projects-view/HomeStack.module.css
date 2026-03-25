@@ -164,7 +164,7 @@
 /* Móvil horizontal */
 @media (orientation: landscape) and (max-height: 500px) {
   .header {
-    padding-top: 72px;
+    padding-top: 111px;
   }
 
   .heading {
@@ -181,28 +181,21 @@
     bottom: -20px;
   }
 
+  /* Hint lateral derecho — igual que desktop */
   .scrollHint {
-    display: none;
-  }
-
-  .scrollHintInline {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    margin-top: 10px;
-    color: var(--neutral-50);
-    opacity: 0.5;
-    font-family: var(--font-accent);
+    bottom: 24px;
+    right: 28px;
     font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    pointer-events: none;
+    gap: 4px;
   }
 
-  .scrollHintInline span:first-child {
+  .scrollHint span:first-child {
     font-size: 13px;
-    line-height: 1;
+  }
+
+  /* Hint inline oculto en landscape */
+  .scrollHintInline {
+    display: none;
   }
 }
