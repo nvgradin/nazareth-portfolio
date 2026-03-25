@@ -13,6 +13,7 @@
     height: auto !important;
     min-height: 480px;
     margin-top: -80px !important;
+    overflow: hidden !important;
   }
 
   .bg {
@@ -135,3 +136,14 @@
   }
 }
 
+@media (orientation: landscape) and (max-height: 500px) {
+  .wrapper {
+    overflow: hidden !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .wrapper {
+    overflow: hidden !important;
+  }
+}

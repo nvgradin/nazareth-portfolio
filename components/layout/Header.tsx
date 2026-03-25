@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LogoMark } from '@/components/ui';
 import { useHeaderTheme } from './HeaderThemeContext';
+import { useMobileMenu } from './MobileMenuContext';
 import styles from './Header.module.css';
 
 const navigation = [
@@ -16,6 +17,7 @@ const navigation = [
 export function Header() {
   const pathname = usePathname();
   const { isDark } = useHeaderTheme();
+  const { open } = useMobileMenu();
   const isLightPage = pathname.startsWith('/projects/');
   const isDarkBackground = !isLightPage && (isDark || pathname === '/contact');
 
@@ -57,12 +59,12 @@ export function Header() {
           </ul>
         </nav>
 
-        {/* Mobile Menu Button — Placeholder for future implementation */}
+        {/* Mobile Menu Button */}
         <button
           className={styles.mobileToggle}
           aria-label="Abrir menú"
-          aria-expanded="false"
           type="button"
+          onClick={open}
         >
           <span className={styles.mobileToggleBar} />
           <span className={styles.mobileToggleBar} />

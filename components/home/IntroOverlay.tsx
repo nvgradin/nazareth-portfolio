@@ -44,9 +44,9 @@ export function IntroOverlay({ onDone }: Props) {
   };
 
   useEffect(() => {
-    // DEV: comentar el bloque de abajo para ver la intro siempre
-    // const seen = localStorage.getItem(STORAGE_KEY);
-    // if (seen) { setPhase('done'); onDone?.(); return; }
+    // Solo mostrar la intro la primera vez
+    const seen = localStorage.getItem(STORAGE_KEY);
+    if (seen) { setPhase('done'); onDone?.(); return; }
 
     document.body.style.backgroundColor = '#0a0a0a';
     setPhase('playing');
