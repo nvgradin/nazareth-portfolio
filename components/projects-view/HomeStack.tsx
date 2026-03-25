@@ -8,11 +8,26 @@ import styles from './HomeStack.module.css';
 
 // 4 slots visibles: [translateY, scaleX, scaleY]
 // slot 0 = frontal (grande, abajo), slot 3 = más al fondo (pequeña, arriba)
-const SLOTS: [number, number, number][] = [
+const SLOTS_DESKTOP: [number, number, number][] = [
   [0,    1.00, 1.00],
   [-160, 0.84, 0.86],
   [-300, 0.70, 0.70],
   [-420, 0.55, 0.55],
+];
+
+const SLOTS_MOBILE: [number, number, number][] = [
+  [0,    1.00, 1.00],
+  [-100, 0.86, 0.88],
+  [-185, 0.72, 0.74],
+  [-255, 0.58, 0.60],
+];
+
+// Para móviles altos (≥750px de alto): stacking ligeramente más abierto
+const SLOTS_MOBILE_TALL: [number, number, number][] = [
+  [0,    1.00, 1.00],
+  [-115, 0.86, 0.88],
+  [-210, 0.72, 0.74],
+  [-290, 0.58, 0.60],
 ];
 
 const SPRING = { type: 'spring', stiffness: 300, damping: 36, mass: 1 } as const;
@@ -29,6 +44,25 @@ interface Props {
 
 export function HomeStack({ projects, disabled, exitingToGrid, enteringFromGrid, onCardRefs, onFrontColor, onOrder }: Props) {
   const n = projects.length; // 4
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTallMobile, setIsTallMobile] = useState(false);
+  useEffect(() => {
+    const mqW = window.matchMedia('(max-width: 767px)');
+    const mqH = window.matchMedia('(min-height: 750px)');
+    const update = () => {
+      setIsMobile(mqW.matches);
+      setIsTallMobile(mqW.matches && mqH.matches);
+    };
+    update();
+    mqW.addEventListener('change', update);
+    mqH.addEventListener('change', update);
+    return () => {
+      mqW.removeEventListener('change', update);
+      mqH.removeEventListener('change', update);
+    };
+  }, []);
+  const SLOTS = isMobile ? (isTallMobile ? SLOTS_MOBILE_TALL : SLOTS_MOBILE) : SLOTS_DESKTOP;
+
   // order[slot] = índice de proyecto en ese slot
   const [order, setOrder] = useState<number[]>(() => projects.map((_, i) => i));
   const [bgColor, setBgColor] = useState(projects[0]?.ambientColor ?? '#000');
@@ -148,6 +182,26 @@ export function HomeStack({ projects, disabled, exitingToGrid, enteringFromGrid,
       >
         <h2 className={styles.heading}>Proyectos</h2>
         <p className={styles.subtitle}>Diseño de producto, experiencias digitales y marca.</p>
+        {/* Hint inline — solo visible en móvil, debajo del subtítulo */}
+        <AnimatePresence>
+          {showHint && (
+            <motion.div
+              className={styles.scrollHintInline}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 1.8, duration: 0.8, ease: 'easeIn' }}
+            >
+              <motion.span
+                animate={{ y: [0, 4, 0] }}
+                transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                ↕
+              </motion.span>
+              <span>swipe</span>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.header>
 
       {/* Capa de gradiente ambient — fade in/out encima del color sólido */}

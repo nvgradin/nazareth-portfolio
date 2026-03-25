@@ -1,6 +1,6 @@
 .section {
   background-color: var(--neutral-200);
-  padding: 140px var(--space-16);
+  padding: 80px var(--space-16);
   display: flex;
   justify-content: center;
 }
@@ -8,6 +8,12 @@
 @media (min-width: 768px) {
   .section {
     padding: 160px var(--space-96);
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .section {
+    padding: 80px var(--space-48);
   }
 }
 

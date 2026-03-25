@@ -1,14 +1,22 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useHeaderTheme } from '@/components/layout/HeaderThemeContext';
 import styles from './AboutHero.module.css';
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
 export default function AboutHero() {
   const ref = useRef<HTMLElement>(null);
+  const { setDark } = useHeaderTheme();
+
+  // En todos los dispositivos: about empieza con header morado
+  useEffect(() => {
+    setDark(false);
+  }, [setDark]);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],

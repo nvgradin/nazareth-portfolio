@@ -1,11 +1,17 @@
 .section {
   background-color: var(--brand-primary-900);
-  padding: 140px var(--space-16);
+  padding: 80px var(--space-16);
 }
 
 @media (min-width: 768px) {
   .section {
     padding: 160px var(--space-96);
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .section {
+    padding: 80px var(--space-48);
   }
 }
 

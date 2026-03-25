@@ -93,11 +93,70 @@
  */
 .card {
   position: absolute;
-  bottom: -80px; /* ← más negativo = más cortada la card frontal */
+  bottom: -80px;
   left: 0;
   right: 0;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   transform-origin: center bottom;
+}
+
+/* Hint inline — solo móvil, debajo del subtítulo */
+.scrollHintInline {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding-top: 116px;
+  }
+
+  .heading {
+    font-size: 32px;
+    margin-top: 6px;
+    margin-bottom: 4px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .card {
+    bottom: -40px;
+  }
+
+  /* Ocultar el hint de esquina en móvil */
+  .scrollHint {
+    display: none;
+  }
+
+  /* Mostrar el hint inline bajo el subtítulo */
+  .scrollHintInline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 32px;
+    color: var(--neutral-50);
+    opacity: 0.5;
+    font-family: var(--font-accent);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+
+  .scrollHintInline span:first-child {
+    font-size: 16px;
+    line-height: 1;
+  }
+}
+
+/* Móviles altos — header proporcional a la altura del viewport */
+@media (max-width: 767px) and (min-height: 750px) {
+  .header {
+    padding-top: 20vh;
+  }
 }

@@ -35,6 +35,20 @@
   gap: 0;
 }
 
+
+@media (max-width: 767px) {
+  .toggleH {
+    top: 100px;
+  }
+}
+
+/* Móviles altos — toggle proporcional a la altura del viewport */
+@media (max-width: 767px) and (min-height: 750px) {
+  .toggleH {
+    top: 14vh;
+  }
+}
+
 /* Vista grid — el toggle se queda en su sitio, no flota */
 .toggleH.toggleStatic {
   position: absolute;

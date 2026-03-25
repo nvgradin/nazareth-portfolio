@@ -5,6 +5,12 @@
   overflow: hidden;
 }
 
+@media (max-width: 767px) and (orientation: portrait) {
+  .hero {
+    height: 70vh;
+  }
+}
+
 .imageWrap {
   position: absolute;
   inset: 0;
@@ -36,7 +42,7 @@
 
 .role {
   font-family: var(--font-accent);
-  font-size: 26px;
+  font-size: clamp(16px, 3.5vw, 26px);
   font-weight: 600;
   color: var(--neutral-300);
   line-height: 1.2;
@@ -46,7 +52,7 @@
 
 .claim {
   font-family: var(--font-heading);
-  font-size: 28px;
+  font-size: clamp(18px, 4vw, 28px);
   color: var(--neutral-300);
   line-height: 1.2;
   margin: 0 0 40px;

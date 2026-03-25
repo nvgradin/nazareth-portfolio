@@ -72,11 +72,11 @@ export default function AboutTimeline() {
     if (!el) return;
     const onScroll = () => {
       const { top } = el.getBoundingClientRect();
-      // crema cuando el borde superior de Timeline cruza el header
+      // Exactamente cuando el borde superior del Timeline cruza el header
       setDark(top <= 80);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    // NO llamar onScroll() al montar — evita conflicto con otros componentes
     return () => window.removeEventListener('scroll', onScroll);
   }, [setDark]);
 
