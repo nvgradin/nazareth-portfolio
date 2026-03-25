@@ -12,6 +12,7 @@
   .wrapper {
     height: auto !important;
     min-height: 480px;
+    margin-top: -80px !important;
   }
 
   .bg {

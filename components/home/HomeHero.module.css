@@ -156,7 +156,7 @@
   }
 
   .cta {
-    margin-top: var(--space-32);
+    margin-top: var(--space-16);
     font-size: 11px;
     padding: 12px 28px;
   }
@@ -168,5 +168,6 @@
   .name {
     white-space: normal;
     font-size: clamp(42px, 13vw, 80px);
+    line-height: 1.05;
   }
 }
