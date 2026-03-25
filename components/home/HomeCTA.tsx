@@ -2,22 +2,13 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import styles from './HomeCTA.module.css';
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 export function HomeCTA() {
   return (
-    <section style={{
-      width: '100%',
-      height: 'calc(100vh - 52px)',
-      backgroundColor: 'var(--brand-primary-900)',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      textAlign: 'center',
-      padding: '80px 24px 40px',
-    }}>
+    <section className={styles.section}>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 0.5, y: 0 }}
@@ -43,7 +34,7 @@ export function HomeCTA() {
         transition={{ duration: 0.8, delay: 0.15, ease }}
         style={{
           fontFamily: 'var(--font-accent)',
-          fontSize: 'clamp(36px, 5vw, 48px)',
+          fontSize: 'clamp(28px, 5vw, 48px)',
           fontWeight: 400,
           color: 'var(--neutral-50)',
           lineHeight: 1.1,

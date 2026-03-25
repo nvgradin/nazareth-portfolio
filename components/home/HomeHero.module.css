@@ -110,6 +110,16 @@
   white-space: nowrap;
 }
 
+@media (max-width: 767px) {
+  .sub {
+    white-space: normal;
+    font-size: 14px;
+    text-align: center;
+    max-width: 280px;
+    margin-top: var(--space-16);
+  }
+}
+
 /* CTA */
 .cta {
   display: inline-block;
@@ -135,8 +145,22 @@
   border-color: rgba(252, 247, 243, 0.75);
 }
 
-/* Ocultar el <br> en mobile si molesta */
-@media (max-width: 480px) {
+@media (max-width: 767px) {
+  .hero {
+    height: 90vh;
+  }
+
+  .content {
+    padding-top: 12vh;
+    padding-inline: var(--space-16);
+  }
+
+  .cta {
+    margin-top: var(--space-32);
+    font-size: 11px;
+    padding: 12px 28px;
+  }
+
   .br {
     display: none;
   }

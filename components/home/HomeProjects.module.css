@@ -1,0 +1,135 @@
+/* ═══════════════════════════════════════════════════════════════
+   HOME PROJECTS
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Desktop: todas visibles */
+.floatingImage {
+  display: block;
+}
+
+/* En móvil altura automática — no 100vh */
+@media (max-width: 767px) {
+  .wrapper {
+    height: auto !important;
+    min-height: 480px;
+  }
+
+  .bg {
+    bottom: -4px !important;
+  }
+
+
+  .center {
+    position: relative !important;
+    inset: unset !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 200px 24px 160px !important;
+    z-index: 10;
+  }
+}
+
+/* Tablet: imágenes al 85% */
+@media (min-width: 768px) and (max-width: 1400px) {
+  .floatingImage {
+    transform: scale(0.85);
+    transform-origin: top left;
+  }
+}
+
+/* Móvil (<768px): ocultar todas las del desktop */
+@media (max-width: 767px) {
+  .floatingImage {
+    display: none;
+  }
+
+  .projectsTitle {
+    font-size: clamp(44px, 13vw, 64px) !important;
+  }
+}
+
+/* Imágenes móvil — collage asimétrico */
+.mobileCorner {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobileCorner {
+    display: block;
+    position: absolute;
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  /* Arriba izquierda — grande, sale del borde */
+  .mobileCornerTL {
+    top: 3%;
+    left: 9vw;
+    width: 44vw;
+    max-width: 170px;
+    opacity: 0.5;
+    z-index: 2;
+  }
+
+  /* Arriba derecha — más pequeña, más adentro, más baja que TL */
+  .mobileCornerTR {
+    top: -2%;
+    right: 8vw;
+    width: 28vw;
+    max-width: 112px;
+    opacity: 0.4;
+  }
+
+  /* Centro izquierda — sale borde izq, a media altura */
+  .mobileCornerML {
+    top: 34%;
+    left: -16px;
+    width: 38vw;
+    max-width: 148px;
+    opacity: 0.46;
+    z-index: 2;
+  }
+
+  /* Centro — ligeramente desplazada al centro */
+  .mobileCornerMC {
+    top: 52%;
+    left: 50%;
+    transform: translateX(-42%);
+    width: 36vw;
+    max-width: 142px;
+    opacity: 0.38;
+    z-index: 1;
+  }
+
+  /* Centro derecha — más pegada al borde */
+  .mobileCornerMR {
+    top: 30%;
+    right: -24px;
+    width: 32vw;
+    max-width: 128px;
+    opacity: 0.5;
+    z-index: 2;
+  }
+
+  /* Abajo izquierda — más adentro, más alta que BR */
+  .mobileCornerBL {
+    bottom: 12%;
+    left: 5vw;
+    width: 34vw;
+    max-width: 136px;
+    opacity: 0.44;
+  }
+
+  /* Abajo derecha — más adentro */
+  .mobileCornerBR {
+    bottom: 3%;
+    right: 10vw;
+    width: 36vw;
+    max-width: 142px;
+    opacity: 0.48;
+  }
+}
+
