@@ -3,8 +3,13 @@
    ═══════════════════════════════════════════════════════════════ */
 
 .section {
-  background-color: var(--neutral-200);
+  background-color: #EEE9E2;
   padding: var(--space-96) var(--space-16);
+  margin-top: -60px;
+  border-radius: 32px 32px 0 0;
+  box-shadow: 0 -16px 60px rgba(36, 30, 51, 0.12);
+  position: relative;
+  z-index: 2;
 }
 
 @media (min-width: 768px) {

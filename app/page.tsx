@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { HomeHero, IntroOverlay, HomeProjects, HomeBio, MarqueeDivider, HomeCTA } from '@/components/home';
+import { HomeHero, IntroOverlay, HomeProjects, HomeBio, ProjectsToBioTransition, MarqueeDivider, HomeCTA } from '@/components/home';
 import { Footer } from '@/components/layout';
 
 export default function Home() {
@@ -19,6 +19,9 @@ export default function Home() {
 
       {/* Proyectos — sube sobre el hero */}
       <HomeProjects />
+
+      {/* Puente narrativo Projects → Bio */}
+      <ProjectsToBioTransition />
 
       {/* Bio */}
       <HomeBio />

@@ -101,7 +101,8 @@ export function HomeProjects() {
           >
             Proyectos
           </motion.a>
-          <motion.p
+          <motion.a
+            href="/projects"
             style={{
               fontFamily: 'var(--font-heading)',
               fontSize: 14,
@@ -110,6 +111,8 @@ export function HomeProjects() {
               textTransform: 'uppercase',
               marginTop: 16,
               cursor: 'pointer',
+              textDecoration: 'none',
+              display: 'block',
             }}
             initial={{ opacity: 0, y: 4 }}
             whileInView={{ opacity: 0.45, y: 0 }}
@@ -118,7 +121,7 @@ export function HomeProjects() {
             transition={{ delay: 0.8, duration: 0.6 }}
           >
             Entrar →
-          </motion.p>
+          </motion.a>
         </motion.div>
       </div>
     </div>
