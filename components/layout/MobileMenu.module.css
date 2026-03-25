@@ -101,7 +101,7 @@
 }
 
 .linkActive .linkName {
-  color: var(--brand-accent);
+  color: var(--brand-accent-500);
   opacity: 1;
 }
 
