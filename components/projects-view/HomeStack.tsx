@@ -30,6 +30,14 @@ const SLOTS_MOBILE_TALL: [number, number, number][] = [
   [-290, 0.58, 0.60],
 ];
 
+// Móvil landscape: cards apiladas más juntas (pantalla baja)
+const SLOTS_LANDSCAPE: [number, number, number][] = [
+  [0,    1.00, 1.00],
+  [-55,  0.88, 0.90],
+  [-100, 0.76, 0.78],
+  [-138, 0.64, 0.66],
+];
+
 const SPRING = { type: 'spring', stiffness: 300, damping: 36, mass: 1 } as const;
 
 interface Props {
@@ -46,22 +54,31 @@ export function HomeStack({ projects, disabled, exitingToGrid, enteringFromGrid,
   const n = projects.length; // 4
   const [isMobile, setIsMobile] = useState(false);
   const [isTallMobile, setIsTallMobile] = useState(false);
+  const [isLandscape, setIsLandscape] = useState(false);
   useEffect(() => {
     const mqW = window.matchMedia('(max-width: 767px)');
     const mqH = window.matchMedia('(min-height: 750px)');
+    const mqL = window.matchMedia('(orientation: landscape) and (max-height: 500px)');
     const update = () => {
       setIsMobile(mqW.matches);
       setIsTallMobile(mqW.matches && mqH.matches);
+      setIsLandscape(mqL.matches);
     };
     update();
     mqW.addEventListener('change', update);
     mqH.addEventListener('change', update);
+    mqL.addEventListener('change', update);
     return () => {
       mqW.removeEventListener('change', update);
       mqH.removeEventListener('change', update);
+      mqL.removeEventListener('change', update);
     };
   }, []);
-  const SLOTS = isMobile ? (isTallMobile ? SLOTS_MOBILE_TALL : SLOTS_MOBILE) : SLOTS_DESKTOP;
+  const SLOTS = isLandscape
+    ? SLOTS_LANDSCAPE
+    : isMobile
+      ? (isTallMobile ? SLOTS_MOBILE_TALL : SLOTS_MOBILE)
+      : SLOTS_DESKTOP;
 
   // order[slot] = índice de proyecto en ese slot
   const [order, setOrder] = useState<number[]>(() => projects.map((_, i) => i));

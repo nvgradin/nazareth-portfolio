@@ -56,19 +56,89 @@
   margin-bottom: 56px;
 }
 
-@media (max-width: 767px) {
+/* ── Móvil vertical ───────────────────────────────────────────── */
+@media (max-width: 767px) and (orientation: portrait) {
   .header {
     padding-inline: var(--space-16);
+    padding-top: 160px;
     grid-template-columns: 1fr;
   }
 
   .headerContent {
     grid-column: 1 / -1;
+    padding-bottom: 20px;
+    text-align: center;
   }
 
+  .heading {
+    font-size: clamp(52px, 14vw, 72px);
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  /* Filtros en scroll horizontal */
   .filtersInner {
     grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 32px;
+    gap: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
+
+  .filtersInner::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter {
+    flex-shrink: 0;
+    padding: 10px 10px;
+  }
+}
+
+/* ── Móvil horizontal ─────────────────────────────────────────── */
+@media (orientation: landscape) and (max-height: 500px) {
+  .header {
+    padding-inline: var(--space-48);
+    padding-top: 160px;
+    grid-template-columns: 1fr;
+  }
+
+  .headerContent {
+    grid-column: 1 / -1;
+    padding-bottom: 16px;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 55px;
+    margin-bottom: 6px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  /* Filtros debajo del subtítulo, scroll horizontal centrado */
+  .filtersInner {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 24px;
+    gap: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .filtersInner::-webkit-scrollbar {
+    display: none;
+  }
+
 }
 
 .filter {
@@ -118,11 +188,19 @@
   padding-bottom: 80px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px) and (orientation: portrait) {
   .grid {
     grid-template-columns: 1fr;
     gap: 32px 0;
     padding-inline: var(--space-16);
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .grid {
+    padding-inline: var(--space-48);
+    padding-top: 0;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
