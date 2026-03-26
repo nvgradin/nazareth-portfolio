@@ -135,7 +135,7 @@ export function MobileMenu() {
                       {isProjects && (
                         <div className={styles.carousel}>
                           <div className={styles.carouselTrack}>
-                            {[...CAROUSEL_IMAGES, ...CAROUSEL_IMAGES].map((src, j) => (
+                            {CAROUSEL_IMAGES.map((src, j) => (
                               <div key={j} className={styles.carouselCard}>
                                 <img src={src} alt="" className={styles.carouselImg} />
                               </div>

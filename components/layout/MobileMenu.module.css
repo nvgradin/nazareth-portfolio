@@ -135,33 +135,30 @@
   border-radius: 14px;
   background-color: var(--neutral-50);
   padding: 8px;
-  overflow: hidden;
 }
 
 .carouselTrack {
   display: flex;
-  gap: 6px;
-  /* card width 200px, 16:9 → height 112px */
-  width: calc(8 * (200px + 6px));
-  animation: carouselScroll 22s linear infinite;
-  will-change: transform;
+  gap: 8px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  padding-bottom: 2px; /* evita que el scroll se corte */
 }
 
-.carousel:hover .carouselTrack {
-  animation-play-state: paused;
-}
-
-@keyframes carouselScroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(calc(-4 * (200px + 6px))); }
+.carouselTrack::-webkit-scrollbar {
+  display: none;
 }
 
 .carouselCard {
   flex-shrink: 0;
-  width: 200px;
-  height: 112px; /* 16:9 */
+  width: 72vw;
+  max-width: 260px;
+  aspect-ratio: 16 / 9;
   border-radius: 8px;
   overflow: hidden;
+  scroll-snap-align: start;
 }
 
 .carouselImg {
