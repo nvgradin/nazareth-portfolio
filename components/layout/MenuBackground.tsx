@@ -13,33 +13,33 @@ interface ThemeConfig {
 }
 
 export const MENU_THEMES: Record<MenuTheme, ThemeConfig> = {
-  // Morado profundo → lila cálido, como el brand primary
+  // Inicio — morado #241E33 / #40394E
   inicio: {
-    base: '#2D2440',
-    halo1: { color: 'rgba(97, 42, 116, 0.60)',  x: '25%',  y: '30%' },
-    halo2: { color: 'rgba(64, 57, 78, 0.70)',   x: '80%',  y: '70%' },
-    halo3: { color: 'rgba(180, 130, 220, 0.22)', x: '55%', y: '55%' },
+    base: '#241E33',
+    halo1: { color: 'rgba(64, 57, 78, 0.90)',   x: '20%',  y: '30%' },
+    halo2: { color: 'rgba(36, 30, 51, 0.95)',   x: '80%',  y: '70%' },
+    halo3: { color: 'rgba(80, 68, 100, 0.55)',  x: '52%',  y: '52%' },
   },
-  // Ámbar dorado → naranja cálido
+  // Proyectos — ámbar #E28B00
   proyectos: {
-    base: '#2A1A08',
-    halo1: { color: 'rgba(226, 139, 0, 0.55)',  x: '20%',  y: '25%' },
-    halo2: { color: 'rgba(180, 90, 20, 0.40)',  x: '75%',  y: '65%' },
-    halo3: { color: 'rgba(226, 160, 60, 0.22)', x: '50%',  y: '80%' },
+    base: '#1E1506',
+    halo1: { color: 'rgba(226, 139, 0, 0.65)',  x: '18%',  y: '28%' },
+    halo2: { color: 'rgba(226, 139, 0, 0.45)',  x: '78%',  y: '65%' },
+    halo3: { color: 'rgba(200, 120, 0, 0.35)',  x: '50%',  y: '80%' },
   },
-  // Terracota → melocotón, inspirado en amigo-secreto #E8A089
+  // Sobre mí — terracota #85402D
   sobre: {
-    base: '#2A1510',
-    halo1: { color: 'rgba(133, 64, 45, 0.65)',  x: '25%',  y: '20%' },
-    halo2: { color: 'rgba(232, 160, 137, 0.30)', x: '72%', y: '68%' },
-    halo3: { color: 'rgba(180, 80, 50, 0.35)',  x: '50%',  y: '50%' },
+    base: '#1C0E09',
+    halo1: { color: 'rgba(133, 64, 45, 0.75)',  x: '22%',  y: '25%' },
+    halo2: { color: 'rgba(133, 64, 45, 0.55)',  x: '74%',  y: '68%' },
+    halo3: { color: 'rgba(160, 80, 50, 0.40)',  x: '50%',  y: '50%' },
   },
-  // Verde salvia → azul gris, más saturado
+  // Contacto — verde salvia #606E67
   contacto: {
-    base: '#111E18',
-    halo1: { color: 'rgba(96, 110, 103, 0.65)', x: '22%',  y: '30%' },
-    halo2: { color: 'rgba(60, 90, 75, 0.50)',   x: '78%',  y: '60%' },
-    halo3: { color: 'rgba(140, 180, 155, 0.22)', x: '48%', y: '75%' },
+    base: '#0E1512',
+    halo1: { color: 'rgba(96, 110, 103, 0.75)', x: '20%',  y: '30%' },
+    halo2: { color: 'rgba(96, 110, 103, 0.55)', x: '76%',  y: '62%' },
+    halo3: { color: 'rgba(120, 140, 130, 0.35)', x: '48%', y: '75%' },
   },
 };
 
