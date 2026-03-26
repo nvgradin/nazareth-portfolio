@@ -129,15 +129,16 @@
   opacity: 0.70;
 }
 
-/* N del logotipo al final del texto activo */
-.linkActive .linkName::after {
-  content: 'N';
-  margin-left: 8px;
-  opacity: 0.55;
-  font-size: 0.55em;
-  font-family: var(--font-accent);
-  letter-spacing: 0;
+.linkLogo {
+  display: inline-block;
+  width: 28px;
+  height: 14px;
+  margin-left: 10px;
   vertical-align: middle;
+  opacity: 0.6;
+  color: var(--neutral-50);
+  position: relative;
+  top: -2px;
 }
 
 /* ── Carrusel de proyectos ── */

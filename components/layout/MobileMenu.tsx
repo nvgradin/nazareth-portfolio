@@ -129,7 +129,10 @@ export function MobileMenu() {
                         className={[styles.link, isActive ? styles.linkActive : ''].join(' ')}
                         onClick={close}
                       >
-                        <span className={styles.linkName}>{item.name}</span>
+                        <span className={styles.linkName}>
+                          {item.name}
+                          {isActive && <LogoMark className={styles.linkLogo} aria-hidden />}
+                        </span>
                         <span className={styles.linkSub}>{item.sub}</span>
                       </Link>
                       {/* Carrusel de proyectos — comentado temporalmente
