@@ -26,6 +26,12 @@ export function ContactForm() {
 
     const fd = new FormData(e.currentTarget);
 
+    // Honeypot — si está relleno es un bot
+    if (fd.get('website')) {
+      setStatus('ok');
+      return;
+    }
+
     const result = await sendContactForm({
       type,
       name:    fd.get('name') as string,
@@ -148,6 +154,11 @@ export function ContactForm() {
         </label>
 
         {/* Consentimiento RGPD */}
+        {/* Honeypot — invisible para humanos, los bots lo rellenan */}
+        <label className={styles.honeypot} aria-hidden="true">
+          <input name="website" type="text" tabIndex={-1} autoComplete="off" />
+        </label>
+
         <label className={styles.consent}>
           <input type="checkbox" required className={styles.checkbox} />
           <span>
