@@ -8,7 +8,7 @@ import styles from './ContactForm.module.css';
 const TYPES: { id: ContactType; label: string; sub: string }[] = [
   { id: 'proyecto',     label: 'Proyecto',     sub: 'Tienes algo en mente y buscas quien lo haga realidad' },
   { id: 'colaboracion', label: 'Colaboración',  sub: 'Quieres explorar si podemos trabajar juntos' },
-  { id: 'conversacion', label: 'Conversación',  sub: 'Tienes una oportunidad que podría interesarme' },
+  { id: 'conversacion', label: 'Oportunidad',   sub: 'Tienes una oportunidad que podría interesarme' },
 ];
 
 const BUDGETS = ['< 1.000 €', '1.000 – 3.000 €', '3.000 – 8.000 €', '+ 8.000 €', 'Por definir'];
