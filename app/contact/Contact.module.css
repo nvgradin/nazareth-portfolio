@@ -111,36 +111,48 @@
   line-height: 1.6;
 }
 
-.email {
+.emailBtn {
+  display: inline-block;
   font-family: var(--font-base);
-  font-size: clamp(14px, 1.8vw, 18px);
+  font-size: clamp(13px, 1.4vw, 16px);
   color: var(--neutral-50);
   text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-default);
-  word-break: break-all;
+  border: 1px solid rgba(252, 247, 243, 0.35);
+  border-radius: var(--radius-full);
+  padding: 8px 20px;
+  opacity: 0.90;
+  transition: border-color var(--duration-fast) var(--ease-default),
+              opacity var(--duration-fast) var(--ease-default);
 }
 
-.email:hover {
-  color: var(--brand-accent-500);
+.emailBtn:hover {
+  border-color: rgba(252, 247, 243, 0.80);
+  opacity: 1;
 }
 
 .social {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: var(--space-16);
+  gap: var(--space-8);
 }
 
-.social a {
+.iconBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(252, 247, 243, 0.30);
+  border-radius: var(--radius-full);
   color: var(--neutral-50);
-  transition: color var(--duration-fast) var(--ease-default),
-              transform var(--duration-fast) var(--ease-default);
+  opacity: 0.75;
+  text-decoration: none;
+  transition: opacity var(--duration-fast) var(--ease-default),
+              border-color var(--duration-fast) var(--ease-default);
 }
 
-.social a:hover {
-  color: var(--brand-accent-500);
-  transform: translateY(-2px);
+.iconBtn:hover {
+  opacity: 1;
+  border-color: rgba(252, 247, 243, 0.70);
 }

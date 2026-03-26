@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { LinkedinLogo } from '@phosphor-icons/react';
+import { InstagramLogo, LinkedinLogo, WhatsappLogo } from '@phosphor-icons/react';
 import { Footer } from '@/components/layout';
 import styles from './Contact.module.css';
 
@@ -26,17 +26,18 @@ export default function ContactPage() {
             Me encantaría escucharte. Estoy disponible para colaboraciones,
             consultoría y nuevas oportunidades.
           </motion.p>
-          <motion.a {...item(0.32)} href="mailto:hola@nazarethgradin.com" className={styles.email}>
+          <motion.a {...item(0.32)} href="mailto:hola@nazarethgradin.com" className={styles.emailBtn}>
             hola@nazarethgradin.com
           </motion.a>
           <motion.div {...item(0.44)} className={styles.social}>
-            <a
-              href="https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <LinkedinLogo size={24} weight="regular" />
+            <a href="https://wa.me/34630156301" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className={styles.iconBtn}>
+              <WhatsappLogo size={20} weight="regular" />
+            </a>
+            <a href="https://www.instagram.com/nazarethgradin" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={styles.iconBtn}>
+              <InstagramLogo size={20} weight="regular" />
+            </a>
+            <a href="https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={styles.iconBtn}>
+              <LinkedinLogo size={20} weight="regular" />
             </a>
           </motion.div>
         </div>
