@@ -70,8 +70,8 @@
 /* proyectos → cielo.jpg */
 .testImg2 { background-image: url('/cielo.jpg'); }
 
-/* sobre + contacto → fondo_espacioazul.jpg */
-.testImg3 { background-image: url('/fondo_espacioazul.jpg'); }
+/* sobre → hero_intro */
+.testImg3 { background-image: url('/home/hero_intro_1024.webp'); }
 
 /* ── Capa 4: noise ── */
 .noise {
