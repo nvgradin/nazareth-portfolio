@@ -13,29 +13,33 @@ interface ThemeConfig {
 }
 
 export const MENU_THEMES: Record<MenuTheme, ThemeConfig> = {
+  // Morado profundo → lila cálido, como el brand primary
   inicio: {
-    base: '#1A1525',
-    halo1: { color: 'rgba(64, 57, 78, 0.55)',  x: '20%',  y: '25%' },
-    halo2: { color: 'rgba(36, 30, 51, 0.40)',  x: '75%',  y: '65%' },
-    halo3: { color: 'rgba(80, 60, 100, 0.20)', x: '50%',  y: '50%' },
+    base: '#2D2440',
+    halo1: { color: 'rgba(97, 42, 116, 0.60)',  x: '25%',  y: '30%' },
+    halo2: { color: 'rgba(64, 57, 78, 0.70)',   x: '80%',  y: '70%' },
+    halo3: { color: 'rgba(180, 130, 220, 0.22)', x: '55%', y: '55%' },
   },
+  // Ámbar dorado → naranja cálido
   proyectos: {
-    base: '#1A1410',
-    halo1: { color: 'rgba(226, 139, 0, 0.22)',  x: '15%',  y: '30%' },
-    halo2: { color: 'rgba(160, 90, 0, 0.15)',   x: '80%',  y: '60%' },
-    halo3: { color: 'rgba(226, 139, 0, 0.10)',  x: '50%',  y: '80%' },
+    base: '#2A1A08',
+    halo1: { color: 'rgba(226, 139, 0, 0.55)',  x: '20%',  y: '25%' },
+    halo2: { color: 'rgba(180, 90, 20, 0.40)',  x: '75%',  y: '65%' },
+    halo3: { color: 'rgba(226, 160, 60, 0.22)', x: '50%',  y: '80%' },
   },
+  // Terracota → melocotón, inspirado en amigo-secreto #E8A089
   sobre: {
-    base: '#160F0C',
-    halo1: { color: 'rgba(133, 64, 45, 0.28)',  x: '25%',  y: '20%' },
-    halo2: { color: 'rgba(100, 45, 28, 0.18)',  x: '70%',  y: '70%' },
-    halo3: { color: 'rgba(160, 80, 50, 0.12)',  x: '55%',  y: '45%' },
+    base: '#2A1510',
+    halo1: { color: 'rgba(133, 64, 45, 0.65)',  x: '25%',  y: '20%' },
+    halo2: { color: 'rgba(232, 160, 137, 0.30)', x: '72%', y: '68%' },
+    halo3: { color: 'rgba(180, 80, 50, 0.35)',  x: '50%',  y: '50%' },
   },
+  // Verde salvia → azul gris, más saturado
   contacto: {
-    base: '#0D1210',
-    halo1: { color: 'rgba(96, 110, 103, 0.30)', x: '20%',  y: '35%' },
-    halo2: { color: 'rgba(70, 85, 78, 0.20)',   x: '75%',  y: '55%' },
-    halo3: { color: 'rgba(96, 110, 103, 0.12)', x: '45%',  y: '75%' },
+    base: '#111E18',
+    halo1: { color: 'rgba(96, 110, 103, 0.65)', x: '22%',  y: '30%' },
+    halo2: { color: 'rgba(60, 90, 75, 0.50)',   x: '78%',  y: '60%' },
+    halo3: { color: 'rgba(140, 180, 155, 0.22)', x: '48%', y: '75%' },
   },
 };
 
