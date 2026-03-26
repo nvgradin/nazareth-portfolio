@@ -129,16 +129,12 @@
   opacity: 0.70;
 }
 
-/* Punto pequeño bajo el nombre del item activo */
+/* Punto al final del texto activo */
 .linkActive .linkName::after {
-  content: '';
-  display: block;
-  width: 18px;
-  height: 1.5px;
-  background-color: var(--neutral-50);
-  border-radius: 1px;
-  margin-top: 4px;
-  opacity: 0.7;
+  content: '·';
+  margin-left: 6px;
+  opacity: 0.6;
+  font-size: 0.8em;
 }
 
 /* ── Carrusel de proyectos ── */
