@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { InstagramLogo, LinkedinLogo, WhatsappLogo } from '@phosphor-icons/react';
 import { Footer } from '@/components/layout';
+import { ContactForm } from './ContactForm';
 import styles from './Contact.module.css';
 
 const ease = [0.4, 0, 0.2, 1] as const;
@@ -42,7 +43,7 @@ export default function ContactPage() {
           </motion.div>
         </div>
         <div className={styles.right}>
-          {/* Columna vacía 1/3 */}
+          <ContactForm />
         </div>
       </div>
     </main>
