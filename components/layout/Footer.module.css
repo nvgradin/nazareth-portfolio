@@ -7,6 +7,12 @@
   background-color: var(--brand-primary-900);
 }
 
+.left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+}
+
 @media (min-width: 768px) {
   .footer {
     padding: 0 var(--space-96);
