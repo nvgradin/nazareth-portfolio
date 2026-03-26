@@ -133,18 +133,17 @@
 .carousel {
   margin-top: var(--space-8);
   border-radius: 14px;
-  overflow: hidden;
   background-color: var(--neutral-50);
-  height: 150px;
+  padding: 8px;
+  overflow: hidden;
 }
 
 .carouselTrack {
   display: flex;
   gap: 6px;
-  padding: 6px;
-  /* 4 cards × (ancho + gap) = ancho total del loop */
-  width: calc(8 * (120px + 6px));
-  animation: carouselScroll 18s linear infinite;
+  /* card width 200px, 16:9 → height 112px */
+  width: calc(8 * (200px + 6px));
+  animation: carouselScroll 22s linear infinite;
   will-change: transform;
 }
 
@@ -154,14 +153,14 @@
 
 @keyframes carouselScroll {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(calc(-4 * (120px + 6px))); }
+  100% { transform: translateX(calc(-4 * (200px + 6px))); }
 }
 
 .carouselCard {
   flex-shrink: 0;
-  width: 120px;
-  height: 138px;
-  border-radius: 10px;
+  width: 200px;
+  height: 112px; /* 16:9 */
+  border-radius: 8px;
   overflow: hidden;
 }
 
