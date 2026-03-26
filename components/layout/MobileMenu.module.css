@@ -100,7 +100,7 @@
   font-weight: 400;
   letter-spacing: -0.01em;
   color: var(--neutral-50);
-  opacity: 0.72;
+  opacity: 0.92;
   line-height: 1.05;
   transition: opacity 0.25s ease;
 }
