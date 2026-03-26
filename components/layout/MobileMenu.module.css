@@ -165,17 +165,6 @@
   opacity: 1;
 }
 
-.phone {
-  font-family: var(--font-base);
-  font-size: 11px;
-  color: var(--neutral-50);
-  opacity: 0.40;
-  text-decoration: none;
-  padding-left: 4px;
-  transition: opacity 0.2s ease;
-}
-
-.phone:hover { opacity: 0.7; }
 
 .socialIcons {
   display: flex;

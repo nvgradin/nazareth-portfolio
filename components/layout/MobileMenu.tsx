@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { InstagramLogo, LinkedinLogo } from '@phosphor-icons/react';
+import { InstagramLogo, LinkedinLogo, WhatsappLogo } from '@phosphor-icons/react';
 import { LogoMark } from '@/components/ui';
 import { useMobileMenu } from './MobileMenuContext';
 import { MenuBackground, themeFromPathname } from './MenuBackground';
@@ -141,11 +141,11 @@ export function MobileMenu() {
                 <a href="mailto:hola@nazarethgradin.com" className={styles.emailBtn}>
                   hola@nazarethgradin.com
                 </a>
-                <a href="tel:+34630156301" className={styles.phone}>
-                  +34 630 156 301
-                </a>
               </div>
               <div className={styles.socialIcons}>
+                <a href="https://wa.me/34630156301" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className={styles.iconBtn}>
+                  <WhatsappLogo size={20} weight="regular" />
+                </a>
                 <a href="https://www.instagram.com/nazarethgradin" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={styles.iconBtn}>
                   <InstagramLogo size={20} weight="regular" />
                 </a>
