@@ -60,8 +60,7 @@
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.22;
-  mix-blend-mode: screen;
+  opacity: 1;
   pointer-events: none;
 }
 
