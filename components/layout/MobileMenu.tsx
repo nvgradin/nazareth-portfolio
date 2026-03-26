@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -41,7 +41,6 @@ export function MobileMenu() {
   const { isOpen, close } = useMobileMenu();
   const pathname = usePathname();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const cursorPos = useRef({ x: 0, y: 0 });
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
 
   useEffect(() => { close(); }, [pathname, close]);
@@ -57,16 +56,8 @@ export function MobileMenu() {
     const onMouseMove = (e: MouseEvent) => {
       setCursor({ x: e.clientX, y: e.clientY });
     };
-    const onTouchMove = (e: TouchEvent) => {
-      const t = e.touches[0];
-      if (t) setCursor({ x: t.clientX, y: t.clientY });
-    };
     window.addEventListener('mousemove', onMouseMove);
-    window.addEventListener('touchmove', onTouchMove, { passive: true });
-    return () => {
-      window.removeEventListener('mousemove', onMouseMove);
-      window.removeEventListener('touchmove', onTouchMove);
-    };
+    return () => window.removeEventListener('mousemove', onMouseMove);
   }, [isOpen]);
 
   const activeImages = hoveredIndex !== null ? NAV[hoveredIndex].images : [];
@@ -114,13 +105,6 @@ export function MobileMenu() {
                     transition={{ duration: 0.4, delay: 0.06 + i * 0.06, ease: [0.4, 0, 0.2, 1] }}
                     onMouseEnter={() => setHoveredIndex(i)}
                     onMouseLeave={() => setHoveredIndex(null)}
-                    onTouchStart={(e) => {
-                      const t = e.touches[0];
-                      if (t) setCursor({ x: t.clientX, y: t.clientY });
-                      setHoveredIndex(i);
-                    }}
-                    onTouchEnd={() => setHoveredIndex(null)}
-                    onTouchCancel={() => setHoveredIndex(null)}
                   >
                     <Link
                       href={item.href}
