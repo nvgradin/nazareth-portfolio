@@ -43,6 +43,13 @@ const NAV = [
   },
 ];
 
+const CAROUSEL_IMAGES = [
+  '/projects/trainfy/portada_trainfy.webp',
+  '/projects/las-islas-cies/bento-1.jpg',
+  '/projects/silvia-fernandez-de-luna/portada-sfdl.jpg',
+  '/projects/amigo-secreto/amigosecreto.jpg',
+];
+
 export function MobileMenu() {
   const { isOpen, close } = useMobileMenu();
   const pathname = usePathname();
@@ -106,6 +113,7 @@ export function MobileMenu() {
               <nav className={styles.nav}>
                 {NAV.map((item, i) => {
                   const isActive = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href);
+                  const isProjects = item.href === '/projects';
                   return (
                     <motion.div
                       key={item.href}
@@ -124,6 +132,17 @@ export function MobileMenu() {
                         <span className={styles.linkName}>{item.name}</span>
                         <span className={styles.linkSub}>{item.sub}</span>
                       </Link>
+                      {isProjects && (
+                        <div className={styles.carousel}>
+                          <div className={styles.carouselTrack}>
+                            {[...CAROUSEL_IMAGES, ...CAROUSEL_IMAGES].map((src, j) => (
+                              <div key={j} className={styles.carouselCard}>
+                                <img src={src} alt="" className={styles.carouselImg} />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </motion.div>
                   );
                 })}
