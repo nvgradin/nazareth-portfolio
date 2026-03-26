@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import { InstagramLogo, LinkedinLogo } from '@phosphor-icons/react';
 import { LogoMark } from '@/components/ui';
 import { useMobileMenu } from './MobileMenuContext';
 import { MenuBackground, themeFromPathname } from './MenuBackground';
@@ -19,7 +20,7 @@ const NAV = [
   },
   {
     name: 'Proyectos',
-    sub: 'Estrategia, diseño y experiencia',
+    sub: 'Una inmersión a creaciones destacados y más',
     href: '/projects',
     images: [
       '/projects/trainfy/portada_trainfy.webp',
@@ -30,13 +31,13 @@ const NAV = [
   },
   {
     name: 'Sobre mí',
-    sub: 'Visión, proceso y sensibilidad',
+    sub: 'Visión, proceso y recorrido',
     href: '/about',
     images: ['/home/hero_about_2560.webp'],
   },
   {
     name: 'Contacto',
-    sub: 'Abrir una conversación',
+    sub: '¿Hablamos?',
     href: '/contact',
     images: ['/home/home-bio-Nazareth-Gradin.jpg'],
   },
@@ -100,7 +101,7 @@ export function MobileMenu() {
               </button>
             </div>
 
-            {/* Contenido: nav + contacto */}
+            {/* Nav — ocupa el espacio central */}
             <div className={styles.content}>
               <nav className={styles.nav}>
                 {NAV.map((item, i) => {
@@ -127,32 +128,32 @@ export function MobileMenu() {
                   );
                 })}
               </nav>
-
-              {/* Info de contacto */}
-              <motion.div
-                className={styles.contactInfo}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.55 }}
-              >
-                <div className={styles.contactCol}>
-                  <a href="mailto:hola@nazarethgradin.com" className={styles.contactLink}>
-                    hola@nazarethgradin.com
-                  </a>
-                  <a href="tel:+34630156301" className={styles.contactLink}>
-                    +34 630 156 301
-                  </a>
-                </div>
-                <div className={styles.contactCol}>
-                  <a href="https://www.instagram.com/nazarethgradin" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
-                    Instagram
-                  </a>
-                  <a href="https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin/" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
-                    LinkedIn
-                  </a>
-                </div>
-              </motion.div>
             </div>
+
+            {/* Contacto — anclado al fondo, encima del bigName */}
+            <motion.div
+              className={styles.contactInfo}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.55 }}
+            >
+              <div className={styles.contactLeft}>
+                <a href="mailto:hola@nazarethgradin.com" className={styles.emailBtn}>
+                  hola@nazarethgradin.com
+                </a>
+                <a href="tel:+34630156301" className={styles.phone}>
+                  +34 630 156 301
+                </a>
+              </div>
+              <div className={styles.socialIcons}>
+                <a href="https://www.instagram.com/nazarethgradin" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={styles.iconBtn}>
+                  <InstagramLogo size={20} weight="regular" />
+                </a>
+                <a href="https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={styles.iconBtn}>
+                  <LinkedinLogo size={20} weight="regular" />
+                </a>
+              </div>
+            </motion.div>
 
             {/* Nombre grande — decorativo */}
             <motion.div

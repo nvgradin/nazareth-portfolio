@@ -128,37 +128,78 @@
   opacity: 0.55;
 }
 
-/* ── Info de contacto ── */
+/* ── Contacto — anclado al fondo ── */
 .contactInfo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-8);
-  padding-top: var(--space-16);
-  border-top: 1px solid rgba(252, 247, 243, 0.10);
-  flex-shrink: 0;
+  position: absolute;
+  bottom: 88px; /* encima del bigName */
+  left: var(--space-24);
+  right: var(--space-24);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-16);
+  z-index: 2;
 }
 
-.contactCol {
+.contactLeft {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
-.contactCol:last-child {
-  text-align: right;
-}
-
-.contactLink {
+.emailBtn {
   font-family: var(--font-base);
   font-size: 13px;
   color: var(--neutral-50);
-  opacity: 0.50;
   text-decoration: none;
+  border: 1px solid rgba(252, 247, 243, 0.30);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  display: inline-block;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+  opacity: 0.85;
+}
+
+.emailBtn:hover {
+  border-color: rgba(252, 247, 243, 0.70);
+  opacity: 1;
+}
+
+.phone {
+  font-family: var(--font-base);
+  font-size: 11px;
+  color: var(--neutral-50);
+  opacity: 0.40;
+  text-decoration: none;
+  padding-left: 4px;
   transition: opacity 0.2s ease;
 }
 
-.contactLink:hover {
-  opacity: 0.9;
+.phone:hover { opacity: 0.7; }
+
+.socialIcons {
+  display: flex;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(252, 247, 243, 0.25);
+  border-radius: var(--radius-full);
+  color: var(--neutral-50);
+  opacity: 0.75;
+  text-decoration: none;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.iconBtn:hover {
+  opacity: 1;
+  border-color: rgba(252, 247, 243, 0.60);
 }
 
 /* ── Nombre grande — decorativo ── */
