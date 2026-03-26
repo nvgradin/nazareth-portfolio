@@ -70,7 +70,13 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.07);
+  /* Morado del portfolio encima, muy suave — da coherencia sin tapar la imagen */
+  background: linear-gradient(
+    160deg,
+    rgba(36, 30, 51, 0.55) 0%,
+    rgba(64, 57, 78, 0.30) 50%,
+    rgba(133, 64, 45, 0.20) 100%
+  );
 }
 
 /* inicio → cielo_2.jpg */
@@ -82,7 +88,7 @@
 /* sobre → hero_intro, posicionada para ver más árboles */
 .testImg3 {
   background-image: url('/home/hero_intro_1024.webp');
-  background-position: left center;
+  background-position: 30% center;
 }
 
 /* ── Capa 4: noise ── */
