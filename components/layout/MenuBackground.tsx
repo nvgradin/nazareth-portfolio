@@ -12,34 +12,31 @@ interface ThemeConfig {
   halo3: { color: string; x: string; y: string };
 }
 
+// Los colores se usan como overlay sobre la imagen — deben oscurecer sin tapar
 export const MENU_THEMES: Record<MenuTheme, ThemeConfig> = {
-  // Inicio — base oscura del propio morado, no negro
   inicio: {
     base: '#241E33',
-    halo1: { color: 'rgba(100, 85, 130, 0.75)',  x: '20%',  y: '30%' },
-    halo2: { color: 'rgba(64, 57, 78, 0.90)',    x: '80%',  y: '70%' },
-    halo3: { color: 'rgba(130, 110, 160, 0.45)', x: '52%',  y: '52%' },
+    halo1: { color: 'rgba(36, 30, 51, 0.52)',   x: '0%',   y: '0%' },
+    halo2: { color: 'rgba(64, 57, 78, 0.38)',   x: '100%', y: '100%' },
+    halo3: { color: 'rgba(36, 30, 51, 0.15)',   x: '50%',  y: '50%' },
   },
-  // Proyectos — ámbar oscuro, no negro
   proyectos: {
     base: '#3A2200',
-    halo1: { color: 'rgba(226, 139, 0, 0.60)',   x: '18%',  y: '28%' },
-    halo2: { color: 'rgba(180, 100, 10, 0.55)',  x: '78%',  y: '65%' },
-    halo3: { color: 'rgba(226, 160, 40, 0.35)',  x: '50%',  y: '80%' },
+    halo1: { color: 'rgba(58, 34, 0, 0.55)',    x: '0%',   y: '0%' },
+    halo2: { color: 'rgba(226, 139, 0, 0.22)',  x: '100%', y: '100%' },
+    halo3: { color: 'rgba(58, 34, 0, 0.15)',    x: '50%',  y: '50%' },
   },
-  // Sobre mí — terracota oscura, no negro
   sobre: {
     base: '#2E1208',
-    halo1: { color: 'rgba(133, 64, 45, 0.75)',   x: '22%',  y: '25%' },
-    halo2: { color: 'rgba(180, 100, 70, 0.55)',  x: '74%',  y: '68%' },
-    halo3: { color: 'rgba(200, 120, 80, 0.35)',  x: '50%',  y: '50%' },
+    halo1: { color: 'rgba(46, 18, 8, 0.50)',    x: '0%',   y: '0%' },
+    halo2: { color: 'rgba(133, 64, 45, 0.28)',  x: '100%', y: '100%' },
+    halo3: { color: 'rgba(46, 18, 8, 0.15)',    x: '50%',  y: '50%' },
   },
-  // Contacto — salvia oscura, no negro
   contacto: {
     base: '#1A2420',
-    halo1: { color: 'rgba(96, 110, 103, 0.75)',  x: '20%',  y: '30%' },
-    halo2: { color: 'rgba(120, 145, 130, 0.55)', x: '76%',  y: '62%' },
-    halo3: { color: 'rgba(150, 175, 160, 0.35)', x: '48%',  y: '75%' },
+    halo1: { color: 'rgba(26, 36, 32, 0.52)',   x: '0%',   y: '0%' },
+    halo2: { color: 'rgba(96, 110, 103, 0.28)', x: '100%', y: '100%' },
+    halo3: { color: 'rgba(26, 36, 32, 0.15)',   x: '50%',  y: '50%' },
   },
 };
 
@@ -66,30 +63,21 @@ export function MenuBackground({ theme }: Props) {
         transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
       />
 
-      {/* Capa 2: halos atmosféricos */}
+      {/* Capa 2: imagen hero_intro — misma para todas las secciones */}
+      <div className={styles.bgImage} />
+
+      {/* Capa 3: overlay de color por sección para legibilidad */}
       <motion.div
-        className={`${styles.halo} ${styles.halo1}`}
-        animate={{ background: `radial-gradient(ellipse 70% 50% at ${t.halo1.x} ${t.halo1.y}, ${t.halo1.color}, transparent 70%)` }}
-        transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
-      />
-      <motion.div
-        className={`${styles.halo} ${styles.halo2}`}
-        animate={{ background: `radial-gradient(ellipse 60% 55% at ${t.halo2.x} ${t.halo2.y}, ${t.halo2.color}, transparent 70%)` }}
-        transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
-      />
-      <motion.div
-        className={`${styles.halo} ${styles.halo3}`}
-        animate={{ background: `radial-gradient(ellipse 80% 60% at ${t.halo3.x} ${t.halo3.y}, ${t.halo3.color}, transparent 70%)` }}
-        transition={{ duration: 1.4, ease: [0.4, 0, 0.2, 1] }}
+        className={styles.colorOverlay}
+        animate={{ background: `linear-gradient(160deg, ${t.halo1.color} 0%, ${t.halo2.color} 60%, ${t.halo3.color} 100%)` }}
+        transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
       />
 
-      {/* Capa 3: noise */}
+      {/* Capa 4: noise */}
       <div className={styles.noise} />
 
-      {/* Capa 4: prueba imágenes — TEMPORAL (comentado)
-      {theme === 'inicio'    && <div className={styles.testImg1} />}
-      {theme === 'proyectos' && <div className={styles.testImg2} />}
-      {(theme === 'sobre' || theme === 'contacto') && <div className={styles.testImg3} />}
+      {/* Halos atmosféricos — comentados
+      <motion.div className={`${styles.halo} ${styles.halo1}`} ... />
       */}
     </div>
   );
