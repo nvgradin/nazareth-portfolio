@@ -52,40 +52,27 @@
 
 /* ── Capa 3: prueba imágenes — TEMPORAL ── */
 
-/* Cada imagen ocupa un tercio vertical */
+/* Una imagen por sección — TEMPORAL */
 .testImg1,
 .testImg2,
 .testImg3 {
   position: absolute;
-  left: 0;
-  right: 0;
+  inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.18;
+  opacity: 0.22;
   mix-blend-mode: screen;
   pointer-events: none;
 }
 
-/* cielo_2.jpg — tercio superior */
-.testImg1 {
-  top: 0;
-  height: 33.33%;
-  background-image: url('/cielo_2.jpg');
-}
+/* inicio → cielo_2.jpg */
+.testImg1 { background-image: url('/cielo_2.jpg'); }
 
-/* cielo.jpg — tercio central */
-.testImg2 {
-  top: 33.33%;
-  height: 33.33%;
-  background-image: url('/cielo.jpg');
-}
+/* proyectos → cielo.jpg */
+.testImg2 { background-image: url('/cielo.jpg'); }
 
-/* fondo_espacioazul.jpg — tercio inferior */
-.testImg3 {
-  top: 66.66%;
-  height: 33.34%;
-  background-image: url('/fondo_espacioazul.jpg');
-}
+/* sobre + contacto → fondo_espacioazul.jpg */
+.testImg3 { background-image: url('/fondo_espacioazul.jpg'); }
 
 /* ── Capa 4: noise ── */
 .noise {

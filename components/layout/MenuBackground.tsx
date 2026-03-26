@@ -84,9 +84,9 @@ export function MenuBackground({ theme }: Props) {
       />
 
       {/* Capa 3: prueba imágenes — TEMPORAL */}
-      <div className={styles.testImg1} />
-      <div className={styles.testImg2} />
-      <div className={styles.testImg3} />
+      {theme === 'inicio'    && <div className={styles.testImg1} />}
+      {theme === 'proyectos' && <div className={styles.testImg2} />}
+      {(theme === 'sobre' || theme === 'contacto') && <div className={styles.testImg3} />}
 
       {/* Capa 4: noise */}
       <div className={styles.noise} />
