@@ -64,6 +64,15 @@
   pointer-events: none;
 }
 
+.testImg1::after,
+.testImg2::after,
+.testImg3::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.18);
+}
+
 /* inicio → cielo_2.jpg */
 .testImg1 { background-image: url('/cielo_2.jpg'); }
 
