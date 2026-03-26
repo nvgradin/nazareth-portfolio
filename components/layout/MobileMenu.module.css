@@ -121,12 +121,24 @@
 
 /* Estado activo */
 .linkActive .linkName {
-  color: var(--brand-accent-500);
+  color: var(--neutral-50);
   opacity: 1;
 }
 
 .linkActive .linkSub {
-  opacity: 0.55;
+  opacity: 0.70;
+}
+
+/* Punto pequeño bajo el nombre del item activo */
+.linkActive .linkName::after {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background-color: var(--neutral-50);
+  border-radius: 1px;
+  margin-top: 4px;
+  opacity: 0.7;
 }
 
 /* ── Carrusel de proyectos ── */
