@@ -63,7 +63,7 @@
   flex-direction: column;
   flex: 1;
   justify-content: flex-start;
-  padding-top: var(--space-16);
+  padding-top: var(--space-32);
   gap: var(--space-40);
   position: relative;
   z-index: 2;
