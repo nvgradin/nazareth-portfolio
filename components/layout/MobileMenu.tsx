@@ -6,17 +6,20 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LogoMark } from '@/components/ui';
 import { useMobileMenu } from './MobileMenuContext';
+import { MenuBackground, themeFromPathname } from './MenuBackground';
 import { NavCursorImage } from './NavCursorImage';
 import styles from './MobileMenu.module.css';
 
 const NAV = [
   {
     name: 'Inicio',
+    sub: 'Volver al origen',
     href: '/',
     images: ['/home/hero_sunset_2560.webp'],
   },
   {
     name: 'Proyectos',
+    sub: 'Estrategia, diseño y experiencia',
     href: '/projects',
     images: [
       '/projects/trainfy/portada_trainfy.webp',
@@ -27,11 +30,13 @@ const NAV = [
   },
   {
     name: 'Sobre mí',
+    sub: 'Visión, proceso y sensibilidad',
     href: '/about',
     images: ['/home/hero_about_2560.webp'],
   },
   {
     name: 'Contacto',
+    sub: 'Abrir una conversación',
     href: '/contact',
     images: ['/home/home-bio-Nazareth-Gradin.jpg'],
   },
@@ -40,6 +45,8 @@ const NAV = [
 export function MobileMenu() {
   const { isOpen, close } = useMobileMenu();
   const pathname = usePathname();
+  const theme = themeFromPathname(pathname);
+
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
 
@@ -53,9 +60,7 @@ export function MobileMenu() {
 
   useEffect(() => {
     if (!isOpen) return;
-    const onMouseMove = (e: MouseEvent) => {
-      setCursor({ x: e.clientX, y: e.clientY });
-    };
+    const onMouseMove = (e: MouseEvent) => setCursor({ x: e.clientX, y: e.clientY });
     window.addEventListener('mousemove', onMouseMove);
     return () => window.removeEventListener('mousemove', onMouseMove);
   }, [isOpen]);
@@ -64,7 +69,7 @@ export function MobileMenu() {
 
   return (
     <>
-      {/* Imagen magnética — solo cuando el menú está abierto, fuera del overlay para evitar stacking context del transform */}
+      {/* Imagen magnética — fuera del overlay para evitar stacking context del transform */}
       {isOpen && (
         <NavCursorImage
           images={activeImages}
@@ -75,89 +80,93 @@ export function MobileMenu() {
       )}
 
       <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          className={styles.overlay}
-          initial={{ y: '-100%' }}
-          animate={{ y: 0 }}
-          exit={{ y: '-100%' }}
-          transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-        >
-          {/* Top bar */}
-          <div className={styles.topBar}>
-            <LogoMark className={styles.logo} />
-            <button className={styles.close} onClick={close} aria-label="Cerrar menú">
-              <span className={styles.closeBar} />
-              <span className={styles.closeBar} />
-            </button>
-          </div>
+        {isOpen && (
+          <motion.div
+            className={styles.overlay}
+            initial={{ clipPath: 'inset(0% 0% 100% 0%)' }}
+            animate={{ clipPath: 'inset(0% 0% 0% 0%)' }}
+            exit={{ clipPath: 'inset(0% 0% 100% 0%)' }}
+            transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+          >
+            {/* Fondo vivo por theme */}
+            <MenuBackground theme={theme} />
 
-          {/* Contenido del menú */}
-          <div className={styles.content}>
-            <nav className={styles.nav}>
-              {NAV.map((item, i) => {
-                const isActive = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href);
-                return (
-                  <motion.div
-                    key={item.href}
-                    initial={{ opacity: 0, y: 24 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.06 + i * 0.06, ease: [0.4, 0, 0.2, 1] }}
-                    onMouseEnter={() => setHoveredIndex(i)}
-                    onMouseLeave={() => setHoveredIndex(null)}
-                  >
-                    <Link
-                      href={item.href}
-                      className={[styles.link, isActive ? styles.linkActive : ''].join(' ')}
-                      onClick={close}
+            {/* Top bar */}
+            <div className={styles.topBar}>
+              <LogoMark className={styles.logo} />
+              <button className={styles.close} onClick={close} aria-label="Cerrar menú">
+                <span className={styles.closeBar} />
+                <span className={styles.closeBar} />
+              </button>
+            </div>
+
+            {/* Contenido: nav + contacto */}
+            <div className={styles.content}>
+              <nav className={styles.nav}>
+                {NAV.map((item, i) => {
+                  const isActive = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href);
+                  return (
+                    <motion.div
+                      key={item.href}
+                      className={styles.navItem}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.15 + i * 0.07, ease: [0.4, 0, 0.2, 1] }}
+                      onMouseEnter={() => setHoveredIndex(i)}
+                      onMouseLeave={() => setHoveredIndex(null)}
                     >
-                      <span className={styles.linkName}>{item.name}</span>
-                    </Link>
-                  </motion.div>
-                );
-              })}
-            </nav>
+                      <Link
+                        href={item.href}
+                        className={[styles.link, isActive ? styles.linkActive : ''].join(' ')}
+                        onClick={close}
+                      >
+                        <span className={styles.linkName}>{item.name}</span>
+                        <span className={styles.linkSub}>{item.sub}</span>
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </nav>
 
-            {/* Info de contacto */}
+              {/* Info de contacto */}
+              <motion.div
+                className={styles.contactInfo}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.55 }}
+              >
+                <div className={styles.contactCol}>
+                  <a href="mailto:hola@nazarethgradin.com" className={styles.contactLink}>
+                    hola@nazarethgradin.com
+                  </a>
+                  <a href="tel:+34630156301" className={styles.contactLink}>
+                    +34 630 156 301
+                  </a>
+                </div>
+                <div className={styles.contactCol}>
+                  <a href="https://www.instagram.com/nazarethgradin" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
+                    Instagram
+                  </a>
+                  <a href="https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin/" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
+                    LinkedIn
+                  </a>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Nombre grande — decorativo */}
             <motion.div
-              className={styles.contactInfo}
+              className={styles.bigName}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.42 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              aria-hidden
             >
-              <div className={styles.contactCol}>
-                <a href="mailto:hola@nazarethgradin.com" className={styles.contactLink}>
-                  hola@nazarethgradin.com
-                </a>
-                <a href="tel:+34630156301" className={styles.contactLink}>
-                  +34 630 156 301
-                </a>
-              </div>
-              <div className={styles.contactCol}>
-                <a href="https://www.instagram.com/nazarethgradin" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
-                  Instagram
-                </a>
-                <a href="https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin/" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
-                  LinkedIn
-                </a>
-              </div>
+              NAZARETH<span className={styles.bigNameGradin}> GRADÍN</span>
             </motion.div>
-          </div>
-
-          {/* Nombre grande */}
-          <motion.div
-            className={styles.bigName}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            aria-hidden
-          >
-            NAZARETH<span className={styles.bigNameGradin}> GRADÍN</span>
           </motion.div>
-
-        </motion.div>
-      )}
-    </AnimatePresence>
+        )}
+      </AnimatePresence>
     </>
   );
 }

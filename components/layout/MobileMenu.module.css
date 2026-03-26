@@ -6,14 +6,13 @@
   position: fixed;
   inset: 0;
   z-index: 200;
-  background-color: var(--brand-primary-900);
   display: flex;
   flex-direction: column;
-  /* Mismo padding-inline que el header en móvil */
-  padding-inline: var(--space-16);
+  padding-inline: var(--space-24);
   padding-top: 0;
-  padding-bottom: 0;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
   overflow: hidden;
+  /* El fondo lo gestiona MenuBackground */
 }
 
 /* ── Top bar: replica exacta del header ── */
@@ -22,12 +21,12 @@
   align-items: center;
   justify-content: space-between;
   flex-shrink: 0;
-  /* Mismo padding vertical que el header */
   padding-block: 24px;
+  position: relative;
+  z-index: 2;
 }
 
 .logo {
-  /* Mismo tamaño que .logoMark en Header */
   width: 84px;
   height: 42px;
   color: var(--neutral-50);
@@ -37,7 +36,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Mismo tamaño que .mobileToggle */
   width: 44px;
   height: 44px;
   background: transparent;
@@ -50,59 +48,84 @@
 .closeBar {
   display: block;
   width: 22px;
-  height: 2px;
+  height: 1.5px;
   background-color: var(--neutral-50);
   border-radius: 1px;
   position: absolute;
 }
 
-.closeBar:first-child {
-  transform: rotate(45deg);
-}
+.closeBar:first-child { transform: rotate(45deg); }
+.closeBar:last-child  { transform: rotate(-45deg); }
 
-.closeBar:last-child {
-  transform: rotate(-45deg);
-}
-
-/* ── Wrapper exterior: links + contacto ── */
+/* ── Contenido: nav + contacto ── */
 .content {
   display: flex;
   flex-direction: column;
-  flex: 0.8;
+  flex: 1;
   justify-content: center;
-  padding-block: var(--space-24);
+  gap: var(--space-40);
+  position: relative;
+  z-index: 2;
+  padding-bottom: var(--space-24);
 }
 
-/* ── Nav — links grandes ── */
+/* ── Nav ── */
 .nav {
   display: flex;
   flex-direction: column;
-  gap: var(--space-24);
-  margin-bottom: var(--space-48);
+  gap: var(--space-8);
+}
+
+.navItem {
+  /* Tap feedback: scale sutil */
+  transition: transform 0.15s ease;
+}
+
+.navItem:active {
+  transform: scale(0.97);
 }
 
 .link {
   text-decoration: none;
-  display: block;
-  line-height: 1.1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-block: var(--space-8);
 }
 
 .linkName {
   font-family: var(--font-accent);
-  font-size: clamp(38px, 10vw, 58px);
+  font-size: clamp(28px, 10vw, 42px);
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.01em;
   color: var(--neutral-50);
-  transition: opacity 0.2s ease;
+  opacity: 0.72;
+  line-height: 1.05;
+  transition: opacity 0.25s ease;
 }
 
-.link:hover .linkName {
-  opacity: 0.45;
+.linkSub {
+  font-family: var(--font-base);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--neutral-50);
+  opacity: 0.35;
+  line-height: 1.4;
+  transition: opacity 0.25s ease;
 }
 
+/* Hover (desktop) */
+.link:hover .linkName { opacity: 0.45; }
+.link:hover .linkSub  { opacity: 0.22; }
+
+/* Estado activo */
 .linkActive .linkName {
   color: var(--brand-accent-500);
   opacity: 1;
+}
+
+.linkActive .linkSub {
+  opacity: 0.55;
 }
 
 /* ── Info de contacto ── */
@@ -111,9 +134,8 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--space-8);
   padding-top: var(--space-16);
-  padding-bottom: var(--space-16);
+  border-top: 1px solid rgba(252, 247, 243, 0.10);
   flex-shrink: 0;
-  border-top: 1px solid rgba(252, 247, 243, 0.12);
 }
 
 .contactCol {
@@ -127,19 +149,19 @@
 }
 
 .contactLink {
-  font-family: var(--font-heading);
-  font-size: 16px;
-  color: var(--neutral-100);
-  opacity: 0.55;
+  font-family: var(--font-base);
+  font-size: 13px;
+  color: var(--neutral-50);
+  opacity: 0.50;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
 
 .contactLink:hover {
-  opacity: 1;
+  opacity: 0.9;
 }
 
-/* GRADÍN oculto por defecto — solo en landscape */
+/* ── Nombre grande — decorativo ── */
 .bigNameGradin {
   display: none;
 }
@@ -152,7 +174,7 @@
   font-family: var(--font-accent);
   font-weight: 400;
   color: var(--neutral-50);
-  opacity: 0.08;
+  opacity: 0.06;
   line-height: 1.15;
   white-space: nowrap;
   pointer-events: none;
@@ -160,6 +182,7 @@
   font-size: 18vw;
   letter-spacing: -0.01em;
   text-align: center;
+  z-index: 1;
 }
 
 /* ── Tablet ── */
@@ -168,18 +191,13 @@
     padding-inline: var(--space-96);
   }
 
+  .linkName {
+    font-size: clamp(40px, 7vw, 72px);
+  }
+
   .bigName {
     font-size: clamp(100px, 16vw, 220px);
     margin-inline: calc(var(--space-96) * -1);
-  }
-
-  .linkName {
-    font-size: clamp(52px, 7vw, 88px);
-  }
-
-  .logo {
-    width: 84px;
-    height: 42px;
   }
 }
 
@@ -190,7 +208,9 @@
   }
 
   .content {
-    padding-block: var(--space-8);
+    gap: var(--space-16);
+    justify-content: flex-start;
+    padding-top: var(--space-8);
   }
 
   .nav {
@@ -198,15 +218,11 @@
   }
 
   .linkName {
-    font-size: clamp(22px, 5.5vh, 34px);
+    font-size: clamp(20px, 5vh, 28px);
   }
 
-  .footer {
-    padding-block: var(--space-8);
-  }
-
-  .footerLink {
-    font-size: 11px;
+  .linkSub {
+    display: none;
   }
 
   .bigName {
