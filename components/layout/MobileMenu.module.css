@@ -132,7 +132,7 @@
 /* ── Carrusel de proyectos ── */
 .carousel {
   margin-top: var(--space-8);
-  border-radius: 14px;
+  border-radius: 22px;
   background-color: var(--neutral-50);
   padding: 8px;
 }
@@ -154,9 +154,9 @@
 .carouselCard {
   flex-shrink: 0;
   width: 72vw;
-  max-width: 260px;
+  max-width: 160px;
   aspect-ratio: 16 / 9;
-  border-radius: 8px;
+  border-radius: 22px;
   overflow: hidden;
   scroll-snap-align: start;
 }

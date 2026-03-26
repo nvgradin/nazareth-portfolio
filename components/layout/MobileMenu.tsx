@@ -24,7 +24,7 @@ const NAV = [
     href: '/projects',
     images: [
       '/projects/trainfy/portada_trainfy.webp',
-      '/projects/las-islas-cies/bento-1.jpg',
+      '/projects/las-islas-cies/bento-2.jpg',
       '/projects/silvia-fernandez-de-luna/portada-sfdl.jpg',
       '/projects/amigo-secreto/amigosecreto.jpg',
     ],
@@ -45,7 +45,7 @@ const NAV = [
 
 const CAROUSEL_IMAGES = [
   '/projects/trainfy/portada_trainfy.webp',
-  '/projects/las-islas-cies/bento-1.jpg',
+  '/projects/las-islas-cies/bento-2.jpg',
   '/projects/silvia-fernandez-de-luna/portada-sfdl.jpg',
   '/projects/amigo-secreto/amigosecreto.jpg',
 ];
