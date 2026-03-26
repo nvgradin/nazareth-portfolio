@@ -57,7 +57,7 @@ export async function sendContactForm(data: ContactFormData): Promise<ActionResu
       'content-type': 'application/json',
     },
     body: JSON.stringify({
-      sender: { name: data.name, email: 'noreply@nazarethgradin.com' },
+      sender: { name: 'Portfolio · Nazareth Gradín', email: 'hola@nazarethgradin.com' },
       to: [{ email: 'hola@nazarethgradin.com', name: 'Nazareth' }],
       replyTo: { email: data.email, name: data.name },
       subject: subjectMap[data.type],
