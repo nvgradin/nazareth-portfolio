@@ -83,7 +83,12 @@ export function MenuBackground({ theme }: Props) {
         transition={{ duration: 1.4, ease: [0.4, 0, 0.2, 1] }}
       />
 
-      {/* Capa 3: noise */}
+      {/* Capa 3: prueba imágenes — TEMPORAL */}
+      <div className={styles.testImg1} />
+      <div className={styles.testImg2} />
+      <div className={styles.testImg3} />
+
+      {/* Capa 4: noise */}
       <div className={styles.noise} />
     </div>
   );
