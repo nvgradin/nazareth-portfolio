@@ -66,10 +66,31 @@ export function MenuBackground({ theme }: Props) {
         transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
       />
 
-      {/* Capa 2: prueba imágenes — TEMPORAL */}
+      {/* Capa 2: halos atmosféricos */}
+      <motion.div
+        className={`${styles.halo} ${styles.halo1}`}
+        animate={{ background: `radial-gradient(ellipse 70% 50% at ${t.halo1.x} ${t.halo1.y}, ${t.halo1.color}, transparent 70%)` }}
+        transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
+      />
+      <motion.div
+        className={`${styles.halo} ${styles.halo2}`}
+        animate={{ background: `radial-gradient(ellipse 60% 55% at ${t.halo2.x} ${t.halo2.y}, ${t.halo2.color}, transparent 70%)` }}
+        transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1] }}
+      />
+      <motion.div
+        className={`${styles.halo} ${styles.halo3}`}
+        animate={{ background: `radial-gradient(ellipse 80% 60% at ${t.halo3.x} ${t.halo3.y}, ${t.halo3.color}, transparent 70%)` }}
+        transition={{ duration: 1.4, ease: [0.4, 0, 0.2, 1] }}
+      />
+
+      {/* Capa 3: noise */}
+      <div className={styles.noise} />
+
+      {/* Capa 4: prueba imágenes — TEMPORAL (comentado)
       {theme === 'inicio'    && <div className={styles.testImg1} />}
       {theme === 'proyectos' && <div className={styles.testImg2} />}
       {(theme === 'sobre' || theme === 'contacto') && <div className={styles.testImg3} />}
+      */}
     </div>
   );
 }
