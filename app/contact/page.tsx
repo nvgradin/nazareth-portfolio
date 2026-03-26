@@ -23,9 +23,8 @@ export default function ContactPage() {
         <div className={styles.left}>
           <motion.h1 {...item(0)}>HOLA</motion.h1>
           <motion.p {...item(0.18)}>
-            ¿Tienes un proyecto en mente o simplemente quieres saludar?
-            Me encantaría escucharte. Estoy disponible para colaboraciones,
-            consultoría y nuevas oportunidades.
+            ¿Tienes un proyecto, una idea o algo que explorar juntos? Cuéntame.
+            Estoy disponible para proyectos, colaboraciones y nuevas oportunidades.
           </motion.p>
           <motion.a {...item(0.32)} href="mailto:hola@nazarethgradin.com" className={styles.emailBtn}>
             hola@nazarethgradin.com
