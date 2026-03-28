@@ -55,8 +55,7 @@
   font-size: 10px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: #241E33;
-  opacity: 0.65;
+  color: rgba(36, 30, 51, 0.65);
 }
 
 .input,
@@ -64,7 +63,7 @@
 .textarea {
   font-family: var(--font-base);
   font-size: 14px;
-  color: #241E33 !important;
+  color: #241E33;
   background: transparent;
   border: none;
   border-bottom: 1px solid rgba(36, 30, 51, 0.18);
@@ -111,7 +110,7 @@
   width: 100%;
   font-family: var(--font-base);
   font-size: 14px;
-  color: #241E33 !important;
+  color: #241E33;
   background: transparent;
   border: none;
   border-bottom: 1px solid rgba(36, 30, 51, 0.18);
