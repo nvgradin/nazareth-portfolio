@@ -37,9 +37,8 @@
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     padding: var(--space-64) var(--space-96) var(--space-96);
-    align-items: start;
   }
 }
 
@@ -55,7 +54,7 @@
   display: contents; /* en móvil los hijos participan directamente en el grid */
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .left {
     display: flex;
     flex-direction: column;
@@ -84,7 +83,7 @@
   order: 2;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .leftTop,
   .leftBottom,
   .right {
@@ -170,7 +169,7 @@
   padding: var(--space-32);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .typeBlock {
     padding: 0 var(--space-8) var(--space-24);
   }
@@ -188,14 +187,24 @@
 
 @media (orientation: landscape) and (max-height: 500px) {
   .contact {
-    align-items: center;
+    align-items: flex-start;
     min-height: auto;
   }
   .container {
-    padding: 24px var(--space-48) 40px;
+    padding: 24px var(--space-32) 40px;
+    grid-template-columns: 1fr;
   }
   .left {
-    gap: 10px;
+    display: contents;
+  }
+  .leftTop {
+    order: 1;
+  }
+  .right {
+    order: 2;
+  }
+  .leftBottom {
+    order: 3;
   }
   .contact h1 {
     font-size: clamp(56px, 12vh, 80px);
@@ -219,19 +228,20 @@
   align-self: flex-start;
   font-family: var(--font-base);
   font-size: clamp(13px, 1.4vw, 16px);
-  color: var(--neutral-50);
+  color: rgba(252, 247, 243, 0.90);
   text-decoration: none;
   border: 1px solid rgba(252, 247, 243, 0.35);
   border-radius: var(--radius-full);
   padding: 8px 20px;
-  opacity: 0.90;
-  transition: border-color var(--duration-fast) var(--ease-default),
-              opacity var(--duration-fast) var(--ease-default);
+  transition: background-color var(--duration-fast) var(--ease-default),
+              border-color var(--duration-fast) var(--ease-default),
+              color var(--duration-fast) var(--ease-default);
 }
 
 .emailBtn:hover {
-  border-color: rgba(252, 247, 243, 0.80);
-  opacity: 1;
+  background-color: rgba(252, 247, 243, 0.92);
+  border-color: rgba(252, 247, 243, 0.92);
+  color: #241E33;
 }
 
 .social {
@@ -249,14 +259,15 @@
   height: 40px;
   border: 1px solid rgba(252, 247, 243, 0.30);
   border-radius: var(--radius-full);
-  color: var(--neutral-50);
-  opacity: 0.75;
+  color: rgba(252, 247, 243, 0.75);
   text-decoration: none;
-  transition: opacity var(--duration-fast) var(--ease-default),
-              border-color var(--duration-fast) var(--ease-default);
+  transition: background-color var(--duration-fast) var(--ease-default),
+              border-color var(--duration-fast) var(--ease-default),
+              color var(--duration-fast) var(--ease-default);
 }
 
 .iconBtn:hover {
-  opacity: 1;
-  border-color: rgba(252, 247, 243, 0.70);
+  background-color: rgba(252, 247, 243, 0.92);
+  border-color: rgba(252, 247, 243, 0.92);
+  color: #241E33;
 }

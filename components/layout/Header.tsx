@@ -19,7 +19,7 @@ export function Header() {
   const { isDark } = useHeaderTheme();
   const { open } = useMobileMenu();
   const isLightPage = pathname.startsWith('/projects/');
-  const isDarkBackground = !isLightPage && (isDark || pathname === '/contact');
+  const isDarkBackground = !isLightPage && isDark;
 
   const headerClasses = [
     styles.header,

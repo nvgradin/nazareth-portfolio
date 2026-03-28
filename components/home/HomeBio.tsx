@@ -23,13 +23,22 @@ export function HomeBio() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const onScroll = () => {
-      const { top, bottom } = el.getBoundingClientRect();
-      setDark(!(top <= 80 && bottom > 80));
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
+
+    const headerH = 52;
+    const bottomMargin = -(window.innerHeight - headerH);
+    // HomeBio tiene fondo claro — cuando entra bajo el header → texto oscuro (setDark false)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setDark(!entry.isIntersecting);
+      },
+      {
+        rootMargin: `-${headerH}px 0px ${bottomMargin}px 0px`,
+        threshold: 0,
+      }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
   }, [setDark]);
 
   return (

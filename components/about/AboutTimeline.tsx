@@ -70,14 +70,22 @@ export default function AboutTimeline() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const onScroll = () => {
-      const { top } = el.getBoundingClientRect();
-      // Exactamente cuando el borde superior del Timeline cruza el header
-      setDark(top <= 80);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    // NO llamar onScroll() al montar — evita conflicto con otros componentes
-    return () => window.removeEventListener('scroll', onScroll);
+
+    const headerH = 52;
+    const bottomMargin = -(window.innerHeight - headerH);
+    // AboutTimeline tiene fondo oscuro — cuando entra bajo el header → texto claro (setDark true)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setDark(entry.isIntersecting);
+      },
+      {
+        rootMargin: `-${headerH}px 0px ${bottomMargin}px 0px`,
+        threshold: 0,
+      }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
   }, [setDark]);
 
   return (

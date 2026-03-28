@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { InstagramLogo, LinkedinLogo, WhatsappLogo } from '@phosphor-icons/react';
 import { Footer } from '@/components/layout';
+import { useHeaderTheme } from '@/components/layout/HeaderThemeContext';
 import { ContactForm, ease } from './ContactForm';
 import { type ContactType } from './actions';
 import styles from './Contact.module.css';
@@ -37,6 +38,34 @@ const item = (delay: number) => ({
 
 export default function ContactPage() {
   const [type, setType] = useState<ContactType>('proyecto');
+  const { setDark } = useHeaderTheme();
+  const formCardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = formCardRef.current;
+    if (!el) return;
+
+    // Inicia con header claro (texto blanco) sobre el fondo verde
+    setDark(true);
+
+    // rootMargin: recorta el viewport para que solo la franja del header (52px) sea la zona de detección
+    // top: -52px (empieza justo donde acaba el header), bottom: -(vh - 52px) (solo esa franja)
+    const headerH = 52;
+    const bottomMargin = -(window.innerHeight - headerH);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Cuando la tarjeta crema intersecta la franja del header → texto oscuro
+        setDark(!entry.isIntersecting);
+      },
+      {
+        rootMargin: `-${headerH}px 0px ${bottomMargin}px 0px`,
+        threshold: 0,
+      }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [setDark]);
 
   return (
     <>
@@ -101,7 +130,7 @@ export default function ContactPage() {
           </div>
 
           {/* Tarjeta crema — solo campos */}
-          <div className={styles.formCard}>
+          <div className={styles.formCard} ref={formCardRef}>
             <ContactForm type={type} />
           </div>
         </div>
