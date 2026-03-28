@@ -100,9 +100,12 @@ function FieldError({ msg }: { msg: string }) {
 export function ContactForm({ type }: { type: ContactType }) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'ok' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
-  const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string; consent?: string }>({});
+  const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({});
   const [consentTouched, setConsentTouched] = useState(false);
   const [consentChecked, setConsentChecked] = useState(false);
+  // Nombre y email se preservan al cambiar de tipo
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
 
   function validateName(v: string) { return v.trim() ? '' : 'El nombre es obligatorio'; }
   function validateEmail(v: string) {
@@ -169,19 +172,21 @@ export function ContactForm({ type }: { type: ContactType }) {
   }
 
   return (
-    <form key={type} className={styles.form} onSubmit={handleSubmit} noValidate>
+    <form className={styles.form} onSubmit={handleSubmit} noValidate>
 
       <div className={styles.fields}>
+        {/* Nombre y email — se preservan al cambiar de tipo */}
         <div className={styles.row}>
           <label className={styles.field}>
             <span className={styles.label}>Nombre</span>
             <input
               name="name"
               type="text"
+              value={name}
               className={[styles.input, errors.name ? styles.inputError : ''].join(' ')}
               placeholder="Tu nombre"
               onBlur={e => handleBlur('name', e.target.value)}
-              onChange={e => errors.name && handleBlur('name', e.target.value)}
+              onChange={e => { setName(e.target.value); if (errors.name) handleBlur('name', e.target.value); }}
             />
             <FieldError msg={errors.name ?? ''} />
           </label>
@@ -190,15 +195,18 @@ export function ContactForm({ type }: { type: ContactType }) {
             <input
               name="email"
               type="email"
+              value={email}
               className={[styles.input, errors.email ? styles.inputError : ''].join(' ')}
               placeholder="tu@email.com"
               onBlur={e => handleBlur('email', e.target.value)}
-              onChange={e => errors.email && handleBlur('email', e.target.value)}
+              onChange={e => { setEmail(e.target.value); if (errors.email) handleBlur('email', e.target.value); }}
             />
             <FieldError msg={errors.email ?? ''} />
           </label>
         </div>
 
+        {/* El resto se resetea al cambiar de tipo via key */}
+        <div key={type} className={styles.typeFields}>
         <label className={styles.field}>
           <span className={styles.label}>
             {type === 'consultoria' ? '¿En qué necesitas ayuda?' : 'Mensaje'}
@@ -213,7 +221,7 @@ export function ContactForm({ type }: { type: ContactType }) {
                                        '¿Qué estás trabajando ahora? ¿Qué te gustaría mejorar?'
             }
             onBlur={e => handleBlur('message', e.target.value)}
-            onChange={e => errors.message && handleBlur('message', e.target.value)}
+            onChange={e => { if (errors.message) handleBlur('message', e.target.value); }}
           />
           <FieldError msg={errors.message ?? ''} />
         </label>
@@ -330,6 +338,7 @@ export function ContactForm({ type }: { type: ContactType }) {
           </span>
         </label>
         <FieldError msg={consentTouched && !consentChecked ? 'Debes aceptar la política de privacidad' : ''} />
+        </div>{/* fin key={type} */}
       </div>
 
       {status === 'error' && (

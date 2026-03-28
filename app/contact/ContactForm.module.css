@@ -15,6 +15,10 @@
 }
 
 /* ── Campos ── */
+.typeFields {
+  display: contents;
+}
+
 .fieldsGroup {
   display: flex;
   flex-direction: column;
