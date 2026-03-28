@@ -148,7 +148,17 @@ export function ContactForm({ type }: { type: ContactType }) {
           <span className={styles.label}>
             {type === 'consultoria' ? '¿En qué necesitas ayuda?' : 'Mensaje'}
           </span>
-          <textarea name="message" required rows={4} className={styles.textarea} placeholder="Cuéntame..." />
+          <textarea
+            name="message"
+            required
+            rows={4}
+            className={styles.textarea}
+            placeholder={
+              type === 'proyecto'     ? '¿Qué quieres crear? (objetivo, contexto, punto actual…)' :
+              type === 'colaboracion' ? '¿Qué tipo de colaboración tienes en mente?' :
+                                       '¿Qué estás trabajando ahora? ¿Qué te gustaría mejorar?'
+            }
+          />
         </label>
 
         {/* Campos dinámicos según tipo */}
