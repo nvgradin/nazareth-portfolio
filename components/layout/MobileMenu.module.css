@@ -283,6 +283,13 @@
   }
 }
 
+/* ── Pantallas muy pequeñas (iPhone SE: 375×667) ── */
+@media (max-height: 680px) and (max-width: 390px) {
+  .contactInfo {
+    display: none;
+  }
+}
+
 /* ── Landscape móvil ── */
 @media (orientation: landscape) and (max-height: 500px) {
   .topBar {

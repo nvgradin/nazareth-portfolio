@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -8,7 +8,6 @@ import { InstagramLogo, LinkedinLogo, WhatsappLogo } from '@phosphor-icons/react
 import { LogoMark } from '@/components/ui';
 import { useMobileMenu } from './MobileMenuContext';
 import { MenuBackground, themeFromPathname } from './MenuBackground';
-import { NavCursorImage } from './NavCursorImage';
 import styles from './MobileMenu.module.css';
 
 const NAV = [
@@ -55,38 +54,15 @@ export function MobileMenu() {
   const pathname = usePathname();
   const theme = themeFromPathname(pathname);
 
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [cursor, setCursor] = useState({ x: 0, y: 0 });
-
   useEffect(() => { close(); }, [pathname, close]);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
-    if (!isOpen) setHoveredIndex(null);
     return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
 
-  useEffect(() => {
-    if (!isOpen) return;
-    const onMouseMove = (e: MouseEvent) => setCursor({ x: e.clientX, y: e.clientY });
-    window.addEventListener('mousemove', onMouseMove);
-    return () => window.removeEventListener('mousemove', onMouseMove);
-  }, [isOpen]);
-
-  const activeImages = hoveredIndex !== null ? NAV[hoveredIndex].images : [];
-
   return (
     <>
-      {/* Imagen magnética — fuera del overlay para evitar stacking context del transform */}
-      {isOpen && (
-        <NavCursorImage
-          images={activeImages}
-          visible={hoveredIndex !== null}
-          cursorX={cursor.x}
-          cursorY={cursor.y}
-        />
-      )}
-
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -121,8 +97,6 @@ export function MobileMenu() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.15 + i * 0.07, ease: [0.4, 0, 0.2, 1] }}
-                      onMouseEnter={() => setHoveredIndex(i)}
-                      onMouseLeave={() => setHoveredIndex(null)}
                     >
                       <Link
                         href={item.href}
