@@ -8,11 +8,25 @@ import { ContactForm, ease } from './ContactForm';
 import { type ContactType } from './actions';
 import styles from './Contact.module.css';
 
-const TYPES: { id: ContactType; label: string; sub: string }[] = [
-  { id: 'proyecto',     label: 'Proyecto',     sub: 'Tienes algo en mente y buscas quien lo haga realidad' },
-  { id: 'colaboracion', label: 'Colaboración', sub: 'Quieres explorar si podemos trabajar juntos' },
-  { id: 'consultoria',  label: 'Consulta',     sub: 'Necesitas orientación estratégica o una segunda opinión experta' },
-  { id: 'otros',        label: 'Otros',        sub: 'Quieres explorar si podemos trabajar juntos de otra manera' },
+const TYPES: { id: ContactType; label: string; sub: string; desc: string }[] = [
+  {
+    id: 'proyecto',
+    label: 'Proyecto',
+    sub: 'Cuéntame tu proyecto',
+    desc: '¿Qué tienes en mente? Veamos cómo hacerlo realidad.',
+  },
+  {
+    id: 'colaboracion',
+    label: 'Colaboración',
+    sub: 'Exploramos cómo trabajar juntos',
+    desc: 'Cuéntame tu idea o propuesta de colaboración.',
+  },
+  {
+    id: 'consultoria',
+    label: 'Mentoría / Consulta',
+    sub: '¿En qué necesitas ayuda?',
+    desc: 'Si buscas claridad, estrategia o una segunda opinión, cuéntame.',
+  },
 ];
 
 const item = (delay: number) => ({
@@ -72,16 +86,17 @@ export default function ContactPage() {
               ))}
             </div>
             <AnimatePresence mode="wait">
-              <motion.p
+              <motion.div
                 key={type}
-                className={styles.typeSub}
+                className={styles.typeTexts}
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}
                 transition={{ duration: 0.25, ease }}
               >
-                {TYPES.find(t => t.id === type)?.sub}
-              </motion.p>
+                <p className={styles.typeSub}>{TYPES.find(t => t.id === type)?.sub}</p>
+                <p className={styles.typeDesc}>{TYPES.find(t => t.id === type)?.desc}</p>
+              </motion.div>
             </AnimatePresence>
           </div>
 

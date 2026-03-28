@@ -1,6 +1,6 @@
 'use server';
 
-export type ContactType = 'proyecto' | 'consultoria' | 'colaboracion' | 'otros';
+export type ContactType = 'proyecto' | 'consultoria' | 'colaboracion';
 
 export interface ContactFormData {
   type: ContactType;
@@ -33,9 +33,8 @@ export async function sendContactForm(data: ContactFormData): Promise<ActionResu
 
   const subjectMap: Record<ContactType, string> = {
     proyecto:    `[Proyecto] ${data.name}`,
-    consultoria: `[Consulta] ${data.name}`,
+    consultoria: `[Mentoría/Consulta] ${data.name}`,
     colaboracion:`[Colaboración] ${data.name}`,
-    otros:       `[Otros] ${data.name}`,
   };
 
   const extraFields =
