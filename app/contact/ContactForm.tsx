@@ -164,17 +164,17 @@ export function ContactForm({ type }: { type: ContactType }) {
               transition={{ duration: 0.35, ease }}
             >
               <label className={styles.field}>
-                <span className={styles.label}>¿Qué necesitas?</span>
+                <span className={styles.label}>Tipo de proyecto</span>
                 <Select name="projectType" placeholder="Web, Estrategia, Branding..." options={PROJECT_TYPES} />
               </label>
               <div className={styles.row}>
                 <label className={styles.field}>
-                  <span className={styles.label}>Empresa <span className={styles.optional}>(opcional)</span></span>
-                  <input name="company" type="text" className={styles.input} placeholder="Nombre de la empresa" />
+                  <span className={styles.label}>Proyecto / Marca / Empresa <span className={styles.optional}>(opcional)</span></span>
+                  <input name="company" type="text" className={styles.input} placeholder="Nombre" />
                 </label>
                 <label className={styles.field}>
                   <span className={styles.label}>URL del proyecto <span className={styles.optional}>(opcional)</span></span>
-                  <input name="projectUrl" type="url" className={styles.input} placeholder="https://..." />
+                  <input name="projectUrl" type="url" className={styles.input} placeholder="ejemplo.com" />
                 </label>
               </div>
             </motion.div>
@@ -191,12 +191,12 @@ export function ContactForm({ type }: { type: ContactType }) {
             >
               <div className={styles.row}>
                 <label className={styles.field}>
-                  <span className={styles.label}>¿En qué punto estás? <span className={styles.optional}>(opcional)</span></span>
+                  <span className={styles.label}>¿En qué punto está el proyecto? <span className={styles.optional}>(opcional)</span></span>
                   <Select name="stage" placeholder="Selecciona una opción" options={STAGES} />
                 </label>
                 <label className={styles.field}>
-                  <span className={styles.label}>URL de referencia <span className={styles.optional}>(opcional)</span></span>
-                  <input name="projectUrl" type="url" className={styles.input} placeholder="https://..." />
+                  <span className={styles.label}>URL de proyecto o referencia <span className={styles.optional}>(opcional)</span></span>
+                  <input name="projectUrl" type="url" className={styles.input} placeholder="ejemplo.com" />
                 </label>
               </div>
             </motion.div>
@@ -212,12 +212,12 @@ export function ContactForm({ type }: { type: ContactType }) {
               transition={{ duration: 0.35, ease }}
             >
               <label className={styles.field}>
-                <span className={styles.label}>Empresa <span className={styles.optional}>(opcional)</span></span>
-                <input name="company" type="text" className={styles.input} placeholder="Nombre de la empresa" />
+                <span className={styles.label}>Proyecto / Marca / Empresa <span className={styles.optional}>(opcional)</span></span>
+                <input name="company" type="text" className={styles.input} placeholder="Nombre" />
               </label>
               <label className={styles.field}>
                 <span className={styles.label}>Rol <span className={styles.optional}>(opcional)</span></span>
-                <input name="role" type="text" className={styles.input} placeholder="Posición o área" />
+                <input name="role" type="text" className={styles.input} placeholder="Tu rol o contexto" />
               </label>
             </motion.div>
           )}
