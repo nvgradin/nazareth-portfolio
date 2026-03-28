@@ -1,71 +1,17 @@
 /* ═══════════════════════════════════════════════════════════════
-   CONTACT FORM
+   CONTACT FORM — tema claro (fondo crema)
    ═══════════════════════════════════════════════════════════════ */
+
+/* Tokens de color para el tema claro del formulario */
+/* texto principal  → #241E33 (--neutral-900 aprox) */
+/* borde sutil      → rgba(36, 30, 51, 0.15) */
+/* borde focus      → rgba(36, 30, 51, 0.55) */
+/* placeholder      → rgba(36, 30, 51, 0.30) */
 
 .form {
   display: flex;
   flex-direction: column;
   gap: var(--space-24);
-}
-
-/* ── Bloque título + pills ── */
-.typeBlock {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-16);
-}
-
-/* ── Título del formulario ── */
-.formTitle {
-  font-family: var(--font-base);
-  font-size: 13px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--neutral-50);
-  opacity: 0.45;
-  margin: 0;
-}
-
-/* ── Selector de tipo ── */
-.typeSelector {
-  display: flex;
-  gap: var(--space-8);
-  flex-wrap: wrap;
-}
-
-.typeBtn {
-  font-family: var(--font-base);
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  color: var(--neutral-50);
-  background: transparent;
-  border: 1px solid rgba(252, 247, 243, 0.25);
-  border-radius: var(--radius-full);
-  padding: 6px 16px;
-  cursor: pointer;
-  opacity: 0.55;
-  transition: opacity 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-}
-
-.typeBtn:hover {
-  opacity: 0.85;
-  border-color: rgba(252, 247, 243, 0.50);
-}
-
-.typeBtnActive {
-  opacity: 1;
-  background: rgba(252, 247, 243, 0.12);
-  border-color: rgba(252, 247, 243, 0.70);
-}
-
-.typeSub {
-  font-family: var(--font-base);
-  font-size: 12px;
-  color: var(--neutral-200);
-  opacity: 0.60;
-  line-height: 1.5;
-  margin: 0;
-  min-height: 1.5em;
 }
 
 /* ── Campos ── */
@@ -76,7 +22,7 @@
 }
 
 .optional {
-  opacity: 0.45;
+  opacity: 0.40;
   font-style: italic;
   text-transform: none;
   letter-spacing: 0;
@@ -106,11 +52,11 @@
 
 .label {
   font-family: var(--font-base);
-  font-size: 11px;
-  letter-spacing: 0.06em;
+  font-size: 10px;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: var(--neutral-50);
-  opacity: 0.50;
+  color: #241E33;
+  opacity: 0.65;
 }
 
 .input,
@@ -118,10 +64,10 @@
 .textarea {
   font-family: var(--font-base);
   font-size: 14px;
-  color: var(--neutral-50);
+  color: #241E33 !important;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(252, 247, 243, 0.20);
+  border-bottom: 1px solid rgba(36, 30, 51, 0.18);
   border-radius: 0;
   padding: 8px 0;
   outline: none;
@@ -132,14 +78,14 @@
 
 .input::placeholder,
 .textarea::placeholder {
-  color: var(--neutral-50);
-  opacity: 0.25;
+  color: #241E33;
+  opacity: 0.35;
 }
 
 .input:focus,
 .select:focus,
 .textarea:focus {
-  border-bottom-color: rgba(252, 247, 243, 0.65);
+  border-bottom-color: rgba(36, 30, 51, 0.60);
 }
 
 .select {
@@ -148,8 +94,8 @@
 }
 
 .select option {
-  background: var(--support-green-600);
-  color: var(--neutral-50);
+  background: var(--neutral-50);
+  color: #241E33;
 }
 
 /* ── Select custom ── */
@@ -165,10 +111,10 @@
   width: 100%;
   font-family: var(--font-base);
   font-size: 14px;
-  color: var(--neutral-50);
+  color: #241E33 !important;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(252, 247, 243, 0.20);
+  border-bottom: 1px solid rgba(36, 30, 51, 0.18);
   border-radius: 0;
   padding: 8px 0;
   cursor: pointer;
@@ -179,27 +125,29 @@
 
 .customSelectTrigger:focus,
 .customSelectOpen {
-  border-bottom-color: rgba(252, 247, 243, 0.65);
+  border-bottom-color: rgba(36, 30, 51, 0.60);
 }
 
 .customSelectPlaceholder {
-  opacity: 0.25;
+  color: #241E33;
+  opacity: 0.35;
 }
 
 .customSelectValue {
-  opacity: 1;
+  color: #241E33;
 }
 
 .customSelectChevron {
   font-size: 11px;
-  opacity: 0.40;
+  color: #241E33;
+  opacity: 0.35;
   transition: transform 0.2s ease, opacity 0.2s ease;
   flex-shrink: 0;
 }
 
 .customSelectChevronUp {
   transform: rotate(180deg);
-  opacity: 0.70;
+  opacity: 0.65;
 }
 
 .customSelectDropdown {
@@ -208,33 +156,33 @@
   left: 0;
   right: 0;
   z-index: 50;
-  background: #1e1a2e;
-  border: 1px solid rgba(252, 247, 243, 0.15);
-  border-radius: 8px;
+  background: var(--neutral-50);
+  border: 1px solid rgba(36, 30, 51, 0.12);
+  border-radius: 10px;
   padding: 4px 0;
   margin: 0;
   list-style: none;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 24px rgba(36, 30, 51, 0.12);
 }
 
 .customSelectOption {
   font-family: var(--font-base);
   font-size: 13px;
-  color: var(--neutral-50);
-  opacity: 0.70;
+  color: #241E33;
+  opacity: 0.65;
   padding: 9px 14px;
   cursor: pointer;
   transition: background 0.15s ease, opacity 0.15s ease;
 }
 
 .customSelectOption:hover {
-  background: rgba(252, 247, 243, 0.07);
+  background: rgba(36, 30, 51, 0.05);
   opacity: 1;
 }
 
 .customSelectOptionActive {
   opacity: 1;
-  background: rgba(252, 247, 243, 0.10);
+  background: rgba(36, 30, 51, 0.07);
 }
 
 .textarea {
@@ -244,7 +192,7 @@
 
 /* ── Detalles opcionales (details/summary) ── */
 .optionalDetails {
-  border-top: 1px solid rgba(252, 247, 243, 0.12);
+  border-top: 1px solid rgba(36, 30, 51, 0.10);
   padding-top: var(--space-16);
 }
 
@@ -256,8 +204,8 @@
   font-family: var(--font-base);
   font-size: 12px;
   letter-spacing: 0.04em;
-  color: var(--neutral-50);
-  opacity: 0.50;
+  color: #241E33;
+  opacity: 0.45;
   cursor: pointer;
   list-style: none;
   display: flex;
@@ -281,7 +229,7 @@
 }
 
 .optionalSummary:hover {
-  opacity: 0.80;
+  opacity: 0.75;
 }
 
 .optionalContent {
@@ -308,8 +256,8 @@
   gap: 10px;
   font-family: var(--font-base);
   font-size: 11px;
-  color: var(--neutral-50);
-  opacity: 0.55;
+  color: #241E33;
+  opacity: 0.65;
   line-height: 1.5;
   cursor: pointer;
 }
@@ -317,12 +265,12 @@
 .checkbox {
   margin-top: 2px;
   flex-shrink: 0;
-  accent-color: var(--neutral-50);
+  accent-color: #241E33;
 }
 
 .consentLink {
-  color: var(--neutral-50);
-  opacity: 0.8;
+  color: #241E33;
+  opacity: 0.75;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -333,30 +281,28 @@
   font-family: var(--font-base);
   font-size: 13px;
   color: var(--neutral-50);
-  background: transparent;
-  border: 1px solid rgba(252, 247, 243, 0.35);
+  background: #241E33;
+  border: 1px solid #241E33;
   border-radius: var(--radius-full);
   padding: 10px 28px;
   cursor: pointer;
-  opacity: 0.90;
-  transition: border-color 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+  opacity: 0.88;
+  transition: opacity 0.2s ease;
 }
 
 .submit:hover:not(:disabled) {
-  border-color: rgba(252, 247, 243, 0.80);
-  background: rgba(252, 247, 243, 0.08);
   opacity: 1;
 }
 
 .submit:disabled {
-  opacity: 0.40;
+  opacity: 0.35;
   cursor: not-allowed;
 }
 
 /* ── Error ── */
 .errorMsg {
   font-size: 12px;
-  color: #E8A089;
+  color: #C0392B;
   margin: 0;
 }
 
@@ -371,14 +317,14 @@
 
 .successIcon {
   font-size: 24px;
-  color: var(--neutral-50);
-  opacity: 0.7;
+  color: #241E33;
+  opacity: 0.55;
 }
 
 .success p {
   font-family: var(--font-base);
   font-size: 16px;
-  color: var(--neutral-50);
-  opacity: 0.85;
+  color: #241E33;
+  opacity: 0.80;
   margin: 0;
 }

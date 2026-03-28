@@ -5,13 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { sendContactForm, type ContactType } from './actions';
 import styles from './ContactForm.module.css';
 
-const TYPES: { id: ContactType; label: string; sub: string }[] = [
-  { id: 'proyecto',     label: 'Proyecto',     sub: 'Tienes algo en mente y buscas quien lo haga realidad' },
-  { id: 'colaboracion', label: 'Colaboración', sub: 'Quieres explorar si podemos trabajar juntos' },
-  { id: 'consultoria',  label: 'Consulta',     sub: 'Necesitas orientación estratégica o una segunda opinión experta' },
-  { id: 'otros',        label: 'Otros',        sub: 'Quieres explorar si podemos trabajar juntos de otra manera' },
-];
-
 // Edita estas opciones para cambiar el selector "¿Qué necesitas?"
 const PROJECT_TYPES = ['Web / Producto digital (UX/UI)', 'Branding e identidad', 'Estrategia digital / Producto', 'Optimización / Rediseño (UX o negocio)', 'Automatización e IA', 'Mentoría / Consultoría', 'Otro'];
 
@@ -24,7 +17,7 @@ const BUDGETS = ['< 1.000 €', '1.000 – 3.000 €', '3.000 – 8.000 €', '+
 // Edita estas opciones para el plazo deseado (proyecto)
 const TIMELINES = ['Lo antes posible', 'En 1–2 meses', 'Sin fecha definida', 'Solo explorando'];
 
-const ease = [0.4, 0, 0.2, 1] as const;
+export const ease = [0.4, 0, 0.2, 1] as const;
 
 /* ── Select custom ── */
 function Select({ name, placeholder, options }: { name: string; placeholder: string; options: string[] }) {
@@ -85,8 +78,7 @@ function Select({ name, placeholder, options }: { name: string; placeholder: str
 }
 
 /* ── Formulario principal ── */
-export function ContactForm() {
-  const [type, setType] = useState<ContactType | null>(null);
+export function ContactForm({ type }: { type: ContactType }) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'ok' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -96,14 +88,13 @@ export function ContactForm() {
 
     const fd = new FormData(e.currentTarget);
 
-    // Honeypot — si está relleno es un bot
     if (fd.get('website')) {
       setStatus('ok');
       return;
     }
 
     const result = await sendContactForm({
-      type:        (type ?? 'otros') as ContactType,
+      type,
       name:        fd.get('name') as string,
       email:       fd.get('email') as string,
       message:     fd.get('message') as string,
@@ -141,40 +132,6 @@ export function ContactForm() {
   return (
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
 
-      {/* Título + pills */}
-      <div className={styles.typeBlock}>
-        <p className={styles.formTitle}>¿En qué puedo ayudarte?</p>
-        <div className={styles.typeSelector}>
-          {TYPES.map(t => (
-            <button
-              key={t.id}
-              type="button"
-              className={[styles.typeBtn, type === t.id ? styles.typeBtnActive : ''].join(' ')}
-              onClick={() => setType(prev => prev === t.id ? null : t.id)}
-            >
-              {t.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Subtítulo — solo si hay tipo seleccionado */}
-        <AnimatePresence mode="wait">
-          {type && (
-            <motion.p
-              key={type}
-              className={styles.typeSub}
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              transition={{ duration: 0.25, ease }}
-            >
-              {TYPES.find(t => t.id === type)?.sub}
-            </motion.p>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Campos base — siempre visibles */}
       <div className={styles.fields}>
         <div className={styles.row}>
           <label className={styles.field}>
@@ -187,7 +144,14 @@ export function ContactForm() {
           </label>
         </div>
 
-        {/* Campos extra — aparecen al elegir pill */}
+        <label className={styles.field}>
+          <span className={styles.label}>
+            {type === 'consultoria' ? '¿En qué necesitas ayuda?' : 'Mensaje'}
+          </span>
+          <textarea name="message" required rows={4} className={styles.textarea} placeholder="Cuéntame..." />
+        </label>
+
+        {/* Campos dinámicos según tipo */}
         <AnimatePresence mode="wait">
 
           {type === 'proyecto' && (
@@ -197,11 +161,11 @@ export function ContactForm() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease }}
+              transition={{ duration: 0.35, ease }}
             >
               <label className={styles.field}>
                 <span className={styles.label}>¿Qué necesitas?</span>
-                <Select name="projectType" placeholder="Selecciona una opción" options={PROJECT_TYPES} />
+                <Select name="projectType" placeholder="Web, Estrategia, Branding..." options={PROJECT_TYPES} />
               </label>
               <div className={styles.row}>
                 <label className={styles.field}>
@@ -223,7 +187,7 @@ export function ContactForm() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease }}
+              transition={{ duration: 0.35, ease }}
             >
               <div className={styles.row}>
                 <label className={styles.field}>
@@ -245,7 +209,7 @@ export function ContactForm() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease }}
+              transition={{ duration: 0.35, ease }}
             >
               <label className={styles.field}>
                 <span className={styles.label}>Empresa <span className={styles.optional}>(opcional)</span></span>
@@ -259,14 +223,6 @@ export function ContactForm() {
           )}
 
         </AnimatePresence>
-
-        {/* Mensaje — siempre visible, label adaptado */}
-        <label className={styles.field}>
-          <span className={styles.label}>
-            {type === 'consultoria' ? '¿En qué necesitas ayuda?' : 'Mensaje'}
-          </span>
-          <textarea name="message" required rows={4} className={styles.textarea} placeholder="Cuéntame..." />
-        </label>
 
         {/* Detalles opcionales — solo para proyecto */}
         {type === 'proyecto' && (
@@ -289,7 +245,7 @@ export function ContactForm() {
           </details>
         )}
 
-        {/* Honeypot — invisible para humanos, los bots lo rellenan */}
+        {/* Honeypot */}
         <label className={styles.honeypot} aria-hidden="true">
           <input name="website" type="text" tabIndex={-1} autoComplete="off" />
         </label>

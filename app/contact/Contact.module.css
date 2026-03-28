@@ -52,19 +52,118 @@
 }
 
 .left {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-24);
+  display: contents; /* en móvil los hijos participan directamente en el grid */
 }
 
 @media (min-width: 768px) {
   .left {
+    display: flex;
+    flex-direction: column;
     gap: var(--space-32);
   }
 }
 
+.leftTop {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  order: 1;
+}
+
+.leftBottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  order: 3;
+}
+
 .right {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  order: 2;
+}
+
+@media (min-width: 768px) {
+  .leftTop,
+  .leftBottom,
+  .right {
+    order: unset;
+  }
+}
+
+/* ── Selector de tipo (sobre la tarjeta, fondo verde) ── */
+.typeBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding: 0 var(--space-8) var(--space-24);
+}
+
+.typeTitle {
+  font-family: var(--font-base);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(252, 247, 243, 0.55) !important;
+  margin: 0;
+}
+
+.typeSelector {
+  display: flex;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.typeBtn {
+  font-family: var(--font-base);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--neutral-50);
+  background: #241E33;
+  border: 1px solid #241E33;
+  border-radius: var(--radius-full);
+  padding: 6px 16px;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.typeBtn:hover {
+  opacity: 0.80;
+}
+
+.typeBtnActive {
+  color: #241E33;
+  background: var(--neutral-50);
+  border-color: var(--neutral-50);
+  opacity: 1;
+}
+
+.typeSub {
+  font-family: var(--font-base);
+  font-size: 12px;
+  color: rgba(252, 247, 243, 0.65) !important;
+  line-height: 1.5;
+  margin: 0;
+  min-height: 1.5em;
+}
+
+/* ── Tarjeta crema del formulario ── */
+.formCard {
+  background: var(--neutral-50);
+  border-radius: 20px;
+  padding: var(--space-32);
+}
+
+@media (min-width: 768px) {
+  .typeBlock {
+    padding: 0 var(--space-8) var(--space-24);
+  }
+  .formCard {
+    padding: var(--space-48);
+    border-radius: 24px;
+  }
 }
 
 .contact h1 {
