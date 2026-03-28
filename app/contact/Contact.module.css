@@ -181,7 +181,7 @@
 }
 
 .contact h1 {
-  font-size: clamp(88px, 16vw, 180px);
+  font-size: clamp(72px, 10vw, 120px);
   line-height: 0.85;
   color: var(--neutral-50);
 }

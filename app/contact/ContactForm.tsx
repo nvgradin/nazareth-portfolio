@@ -77,21 +77,60 @@ function Select({ name, placeholder, options }: { name: string; placeholder: str
   );
 }
 
+/* ── Campo con validación inline ── */
+function FieldError({ msg }: { msg: string }) {
+  return (
+    <AnimatePresence>
+      {msg && (
+        <motion.span
+          className={styles.fieldError}
+          initial={{ opacity: 0, y: -4 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -4 }}
+          transition={{ duration: 0.18, ease }}
+        >
+          {msg}
+        </motion.span>
+      )}
+    </AnimatePresence>
+  );
+}
+
 /* ── Formulario principal ── */
 export function ContactForm({ type }: { type: ContactType }) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'ok' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+  const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string; consent?: string }>({});
+  const [consentTouched, setConsentTouched] = useState(false);
+  const [consentChecked, setConsentChecked] = useState(false);
+
+  function validateName(v: string) { return v.trim() ? '' : 'El nombre es obligatorio'; }
+  function validateEmail(v: string) {
+    if (!v.trim()) return 'El email es obligatorio';
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? '' : 'Introduce un email válido';
+  }
+  function validateMessage(v: string) { return v.trim() ? '' : 'El mensaje no puede estar vacío'; }
+
+  function handleBlur(field: 'name' | 'email' | 'message', value: string) {
+    const msg = field === 'name' ? validateName(value) : field === 'email' ? validateEmail(value) : validateMessage(value);
+    setErrors(prev => ({ ...prev, [field]: msg }));
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus('sending');
-
     const fd = new FormData(e.currentTarget);
 
-    if (fd.get('website')) {
-      setStatus('ok');
-      return;
-    }
+    if (fd.get('website')) { setStatus('ok'); return; }
+
+    const nameErr    = validateName(fd.get('name') as string);
+    const emailErr   = validateEmail(fd.get('email') as string);
+    const messageErr = validateMessage(fd.get('message') as string);
+    setErrors({ name: nameErr, email: emailErr, message: messageErr });
+    setConsentTouched(true);
+
+    if (nameErr || emailErr || messageErr || !consentChecked) return;
+
+    setStatus('sending');
 
     const result = await sendContactForm({
       type,
@@ -130,17 +169,33 @@ export function ContactForm({ type }: { type: ContactType }) {
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit} noValidate>
+    <form key={type} className={styles.form} onSubmit={handleSubmit} noValidate>
 
       <div className={styles.fields}>
         <div className={styles.row}>
           <label className={styles.field}>
             <span className={styles.label}>Nombre</span>
-            <input name="name" type="text" required className={styles.input} placeholder="Tu nombre" />
+            <input
+              name="name"
+              type="text"
+              className={[styles.input, errors.name ? styles.inputError : ''].join(' ')}
+              placeholder="Tu nombre"
+              onBlur={e => handleBlur('name', e.target.value)}
+              onChange={e => errors.name && handleBlur('name', e.target.value)}
+            />
+            <FieldError msg={errors.name ?? ''} />
           </label>
           <label className={styles.field}>
             <span className={styles.label}>Email</span>
-            <input name="email" type="email" required className={styles.input} placeholder="tu@email.com" />
+            <input
+              name="email"
+              type="email"
+              className={[styles.input, errors.email ? styles.inputError : ''].join(' ')}
+              placeholder="tu@email.com"
+              onBlur={e => handleBlur('email', e.target.value)}
+              onChange={e => errors.email && handleBlur('email', e.target.value)}
+            />
+            <FieldError msg={errors.email ?? ''} />
           </label>
         </div>
 
@@ -150,15 +205,17 @@ export function ContactForm({ type }: { type: ContactType }) {
           </span>
           <textarea
             name="message"
-            required
             rows={4}
-            className={styles.textarea}
+            className={[styles.textarea, errors.message ? styles.inputError : ''].join(' ')}
             placeholder={
               type === 'proyecto'     ? '¿Qué quieres crear? (objetivo, contexto, punto actual…)' :
               type === 'colaboracion' ? '¿Qué tipo de colaboración tienes en mente?' :
                                        '¿Qué estás trabajando ahora? ¿Qué te gustaría mejorar?'
             }
+            onBlur={e => handleBlur('message', e.target.value)}
+            onChange={e => errors.message && handleBlur('message', e.target.value)}
           />
+          <FieldError msg={errors.message ?? ''} />
         </label>
 
         {/* Campos dinámicos según tipo */}
@@ -261,12 +318,18 @@ export function ContactForm({ type }: { type: ContactType }) {
         </label>
 
         <label className={styles.consent}>
-          <input type="checkbox" required className={styles.checkbox} />
+          <input
+            type="checkbox"
+            className={styles.checkbox}
+            checked={consentChecked}
+            onChange={e => { setConsentChecked(e.target.checked); setConsentTouched(true); }}
+          />
           <span>
             He leído y acepto la{' '}
             <a href="/privacidad" className={styles.consentLink}>política de privacidad</a>
           </span>
         </label>
+        <FieldError msg={consentTouched && !consentChecked ? 'Debes aceptar la política de privacidad' : ''} />
       </div>
 
       {status === 'error' && (
