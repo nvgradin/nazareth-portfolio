@@ -317,4 +317,8 @@
   .bigName {
     display: none;
   }
+
+  .contactInfo {
+    bottom: var(--space-16);
+  }
 }
