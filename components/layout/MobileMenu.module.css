@@ -63,7 +63,7 @@
   flex-direction: column;
   flex: 1;
   justify-content: flex-start;
-  padding-top: var(--space-32);
+  padding-top: var(--space-24);
   gap: var(--space-40);
   position: relative;
   z-index: 2;
@@ -135,7 +135,7 @@
   height: 14px;
   margin-left: 10px;
   vertical-align: middle;
-  opacity: 0.6;
+  opacity: 0.8;
   color: var(--neutral-50);
   position: relative;
   top: -2px;

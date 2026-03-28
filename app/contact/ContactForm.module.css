@@ -8,6 +8,24 @@
   gap: var(--space-24);
 }
 
+/* ── Bloque título + pills ── */
+.typeBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+/* ── Título del formulario ── */
+.formTitle {
+  font-family: var(--font-base);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--neutral-50);
+  opacity: 0.45;
+  margin: 0;
+}
+
 /* ── Selector de tipo ── */
 .typeSelector {
   display: flex;
@@ -51,6 +69,19 @@
 }
 
 /* ── Campos ── */
+.fieldsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.optional {
+  opacity: 0.45;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
 .fields {
   display: flex;
   flex-direction: column;
@@ -121,9 +152,142 @@
   color: var(--neutral-50);
 }
 
+/* ── Select custom ── */
+.customSelect {
+  position: relative;
+  width: 100%;
+}
+
+.customSelectTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-family: var(--font-base);
+  font-size: 14px;
+  color: var(--neutral-50);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(252, 247, 243, 0.20);
+  border-radius: 0;
+  padding: 8px 0;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.customSelectTrigger:focus,
+.customSelectOpen {
+  border-bottom-color: rgba(252, 247, 243, 0.65);
+}
+
+.customSelectPlaceholder {
+  opacity: 0.25;
+}
+
+.customSelectValue {
+  opacity: 1;
+}
+
+.customSelectChevron {
+  font-size: 11px;
+  opacity: 0.40;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  flex-shrink: 0;
+}
+
+.customSelectChevronUp {
+  transform: rotate(180deg);
+  opacity: 0.70;
+}
+
+.customSelectDropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: #1e1a2e;
+  border: 1px solid rgba(252, 247, 243, 0.15);
+  border-radius: 8px;
+  padding: 4px 0;
+  margin: 0;
+  list-style: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.customSelectOption {
+  font-family: var(--font-base);
+  font-size: 13px;
+  color: var(--neutral-50);
+  opacity: 0.70;
+  padding: 9px 14px;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.customSelectOption:hover {
+  background: rgba(252, 247, 243, 0.07);
+  opacity: 1;
+}
+
+.customSelectOptionActive {
+  opacity: 1;
+  background: rgba(252, 247, 243, 0.10);
+}
+
 .textarea {
   resize: vertical;
   min-height: 100px;
+}
+
+/* ── Detalles opcionales (details/summary) ── */
+.optionalDetails {
+  border-top: 1px solid rgba(252, 247, 243, 0.12);
+  padding-top: var(--space-16);
+}
+
+.optionalDetails[open] .optionalSummary {
+  margin-bottom: var(--space-16);
+}
+
+.optionalSummary {
+  font-family: var(--font-base);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--neutral-50);
+  opacity: 0.50;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+.optionalSummary::-webkit-details-marker { display: none; }
+
+.optionalSummary::before {
+  content: '+';
+  font-size: 14px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.optionalDetails[open] .optionalSummary::before {
+  transform: rotate(45deg);
+}
+
+.optionalSummary:hover {
+  opacity: 0.80;
+}
+
+.optionalContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
 }
 
 /* ── Honeypot — invisible para humanos ── */

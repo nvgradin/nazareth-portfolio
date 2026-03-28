@@ -1,22 +1,92 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { sendContactForm, type ContactType } from './actions';
 import styles from './ContactForm.module.css';
 
 const TYPES: { id: ContactType; label: string; sub: string }[] = [
   { id: 'proyecto',     label: 'Proyecto',     sub: 'Tienes algo en mente y buscas quien lo haga realidad' },
-  { id: 'colaboracion', label: 'Colaboración',  sub: 'Quieres explorar si podemos trabajar juntos' },
-  { id: 'conversacion', label: 'Oportunidad',   sub: 'Tienes una oportunidad que podría interesarme' },
+  { id: 'colaboracion', label: 'Colaboración', sub: 'Quieres explorar si podemos trabajar juntos' },
+  { id: 'consultoria',  label: 'Consulta',     sub: 'Necesitas orientación estratégica o una segunda opinión experta' },
+  { id: 'otros',        label: 'Otros',        sub: 'Quieres explorar si podemos trabajar juntos de otra manera' },
 ];
 
+// Edita estas opciones para cambiar el selector "¿Qué necesitas?"
+const PROJECT_TYPES = ['Web / Producto digital (UX/UI)', 'Branding e identidad', 'Estrategia digital / Producto', 'Optimización / Rediseño (UX o negocio)', 'Automatización e IA', 'Mentoría / Consultoría', 'Otro'];
+
+// Edita estas opciones para el selector "¿En qué punto estás?"
+const STAGES = ['Idea / empezando', 'Proyecto en marcha', 'Negocio validado / creciendo', 'Rediseño / optimización'];
+
+// Edita estas opciones para el presupuesto estimado (proyecto)
 const BUDGETS = ['< 1.000 €', '1.000 – 3.000 €', '3.000 – 8.000 €', '+ 8.000 €', 'Por definir'];
+
+// Edita estas opciones para el plazo deseado (proyecto)
+const TIMELINES = ['Lo antes posible', 'En 1–2 meses', 'Sin fecha definida', 'Solo explorando'];
 
 const ease = [0.4, 0, 0.2, 1] as const;
 
+/* ── Select custom ── */
+function Select({ name, placeholder, options }: { name: string; placeholder: string; options: string[] }) {
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState('');
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onOutside(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener('mousedown', onOutside);
+    return () => document.removeEventListener('mousedown', onOutside);
+  }, []);
+
+  return (
+    <div className={styles.customSelect} ref={ref}>
+      <input type="hidden" name={name} value={value} />
+      <button
+        type="button"
+        className={[styles.customSelectTrigger, open ? styles.customSelectOpen : ''].join(' ')}
+        onClick={() => setOpen(o => !o)}
+        aria-expanded={open}
+      >
+        <span className={value ? styles.customSelectValue : styles.customSelectPlaceholder}>
+          {value || placeholder}
+        </span>
+        <span className={[styles.customSelectChevron, open ? styles.customSelectChevronUp : ''].join(' ')}>
+          ↓
+        </span>
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.ul
+            className={styles.customSelectDropdown}
+            initial={{ opacity: 0, y: -4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -4 }}
+            transition={{ duration: 0.15, ease }}
+            role="listbox"
+          >
+            {options.map(opt => (
+              <li
+                key={opt}
+                role="option"
+                aria-selected={value === opt}
+                className={[styles.customSelectOption, value === opt ? styles.customSelectOptionActive : ''].join(' ')}
+                onClick={() => { setValue(opt); setOpen(false); }}
+              >
+                {opt}
+              </li>
+            ))}
+          </motion.ul>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+/* ── Formulario principal ── */
 export function ContactForm() {
-  const [type, setType] = useState<ContactType>('proyecto');
+  const [type, setType] = useState<ContactType | null>(null);
   const [status, setStatus] = useState<'idle' | 'sending' | 'ok' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -33,13 +103,17 @@ export function ContactForm() {
     }
 
     const result = await sendContactForm({
-      type,
-      name:    fd.get('name') as string,
-      email:   fd.get('email') as string,
-      message: fd.get('message') as string,
-      budget:  fd.get('budget') as string | undefined,
-      company: fd.get('company') as string | undefined,
-      role:    fd.get('role') as string | undefined,
+      type:        (type ?? 'otros') as ContactType,
+      name:        fd.get('name') as string,
+      email:       fd.get('email') as string,
+      message:     fd.get('message') as string,
+      projectType: fd.get('projectType') as string | undefined,
+      company:     fd.get('company') as string | undefined,
+      role:        fd.get('role') as string | undefined,
+      projectUrl:  fd.get('projectUrl') as string | undefined,
+      stage:       fd.get('stage') as string | undefined,
+      budget:      fd.get('budget') as string | undefined,
+      timeline:    fd.get('timeline') as string | undefined,
     });
 
     if (result.ok) {
@@ -59,7 +133,7 @@ export function ContactForm() {
         transition={{ duration: 0.5, ease }}
       >
         <span className={styles.successIcon}>✦</span>
-        <p>Mensaje enviado. Te respondo pronto.</p>
+        <p>Mensaje enviado. Te respondo en 24-48h.</p>
       </motion.div>
     );
   }
@@ -67,35 +141,40 @@ export function ContactForm() {
   return (
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
 
-      {/* Selector de tipo */}
-      <div className={styles.typeSelector}>
-        {TYPES.map(t => (
-          <button
-            key={t.id}
-            type="button"
-            className={[styles.typeBtn, type === t.id ? styles.typeBtnActive : ''].join(' ')}
-            onClick={() => setType(t.id)}
-          >
-            {t.label}
-          </button>
-        ))}
+      {/* Título + pills */}
+      <div className={styles.typeBlock}>
+        <p className={styles.formTitle}>¿En qué puedo ayudarte?</p>
+        <div className={styles.typeSelector}>
+          {TYPES.map(t => (
+            <button
+              key={t.id}
+              type="button"
+              className={[styles.typeBtn, type === t.id ? styles.typeBtnActive : ''].join(' ')}
+              onClick={() => setType(prev => prev === t.id ? null : t.id)}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Subtítulo — solo si hay tipo seleccionado */}
+        <AnimatePresence mode="wait">
+          {type && (
+            <motion.p
+              key={type}
+              className={styles.typeSub}
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.25, ease }}
+            >
+              {TYPES.find(t => t.id === type)?.sub}
+            </motion.p>
+          )}
+        </AnimatePresence>
       </div>
 
-      {/* Subtítulo descriptivo del tipo seleccionado */}
-      <AnimatePresence mode="wait">
-        <motion.p
-          key={type}
-          className={styles.typeSub}
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -6 }}
-          transition={{ duration: 0.25, ease }}
-        >
-          {TYPES.find(t => t.id === type)?.sub}
-        </motion.p>
-      </AnimatePresence>
-
-      {/* Campos base */}
+      {/* Campos base — siempre visibles */}
       <div className={styles.fields}>
         <div className={styles.row}>
           <label className={styles.field}>
@@ -108,28 +187,60 @@ export function ContactForm() {
           </label>
         </div>
 
-        {/* Campos extra según tipo */}
+        {/* Campos extra — aparecen al elegir pill */}
         <AnimatePresence mode="wait">
+
           {type === 'proyecto' && (
-            <motion.label
-              key="budget"
-              className={styles.field}
+            <motion.div
+              key="proyecto-extra"
+              className={styles.fieldsGroup}
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease }}
             >
-              <span className={styles.label}>Presupuesto estimado</span>
-              <select name="budget" className={styles.select}>
-                <option value="">Selecciona un rango</option>
-                {BUDGETS.map(b => <option key={b} value={b}>{b}</option>)}
-              </select>
-            </motion.label>
+              <label className={styles.field}>
+                <span className={styles.label}>¿Qué necesitas?</span>
+                <Select name="projectType" placeholder="Selecciona una opción" options={PROJECT_TYPES} />
+              </label>
+              <div className={styles.row}>
+                <label className={styles.field}>
+                  <span className={styles.label}>Empresa <span className={styles.optional}>(opcional)</span></span>
+                  <input name="company" type="text" className={styles.input} placeholder="Nombre de la empresa" />
+                </label>
+                <label className={styles.field}>
+                  <span className={styles.label}>URL del proyecto <span className={styles.optional}>(opcional)</span></span>
+                  <input name="projectUrl" type="url" className={styles.input} placeholder="https://..." />
+                </label>
+              </div>
+            </motion.div>
           )}
 
-          {type === 'conversacion' && (
+          {type === 'consultoria' && (
             <motion.div
-              key="recruiter"
+              key="consultoria-extra"
+              className={styles.fieldsGroup}
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease }}
+            >
+              <div className={styles.row}>
+                <label className={styles.field}>
+                  <span className={styles.label}>¿En qué punto estás? <span className={styles.optional}>(opcional)</span></span>
+                  <Select name="stage" placeholder="Selecciona una opción" options={STAGES} />
+                </label>
+                <label className={styles.field}>
+                  <span className={styles.label}>URL de referencia <span className={styles.optional}>(opcional)</span></span>
+                  <input name="projectUrl" type="url" className={styles.input} placeholder="https://..." />
+                </label>
+              </div>
+            </motion.div>
+          )}
+
+          {type === 'colaboracion' && (
+            <motion.div
+              key="colaboracion-extra"
               className={styles.row}
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
@@ -137,23 +248,47 @@ export function ContactForm() {
               transition={{ duration: 0.3, ease }}
             >
               <label className={styles.field}>
-                <span className={styles.label}>Empresa</span>
+                <span className={styles.label}>Empresa <span className={styles.optional}>(opcional)</span></span>
                 <input name="company" type="text" className={styles.input} placeholder="Nombre de la empresa" />
               </label>
               <label className={styles.field}>
-                <span className={styles.label}>Rol</span>
+                <span className={styles.label}>Rol <span className={styles.optional}>(opcional)</span></span>
                 <input name="role" type="text" className={styles.input} placeholder="Posición o área" />
               </label>
             </motion.div>
           )}
+
         </AnimatePresence>
 
+        {/* Mensaje — siempre visible, label adaptado */}
         <label className={styles.field}>
-          <span className={styles.label}>Mensaje</span>
+          <span className={styles.label}>
+            {type === 'consultoria' ? '¿En qué necesitas ayuda?' : 'Mensaje'}
+          </span>
           <textarea name="message" required rows={4} className={styles.textarea} placeholder="Cuéntame..." />
         </label>
 
-        {/* Consentimiento RGPD */}
+        {/* Detalles opcionales — solo para proyecto */}
+        {type === 'proyecto' && (
+          <details className={styles.optionalDetails}>
+            <summary className={styles.optionalSummary}>
+              Más detalles <span className={styles.optional}>(opcional)</span>
+            </summary>
+            <div className={styles.optionalContent}>
+              <div className={styles.row}>
+                <label className={styles.field}>
+                  <span className={styles.label}>Presupuesto estimado</span>
+                  <Select name="budget" placeholder="Selecciona un rango" options={BUDGETS} />
+                </label>
+                <label className={styles.field}>
+                  <span className={styles.label}>¿Cuándo te gustaría lanzarlo?</span>
+                  <Select name="timeline" placeholder="Selecciona una opción" options={TIMELINES} />
+                </label>
+              </div>
+            </div>
+          </details>
+        )}
+
         {/* Honeypot — invisible para humanos, los bots lo rellenan */}
         <label className={styles.honeypot} aria-hidden="true">
           <input name="website" type="text" tabIndex={-1} autoComplete="off" />

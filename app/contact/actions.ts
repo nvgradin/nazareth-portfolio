@@ -1,6 +1,6 @@
 'use server';
 
-export type ContactType = 'proyecto' | 'colaboracion' | 'conversacion';
+export type ContactType = 'proyecto' | 'consultoria' | 'colaboracion' | 'otros';
 
 export interface ContactFormData {
   type: ContactType;
@@ -8,9 +8,14 @@ export interface ContactFormData {
   email: string;
   message: string;
   // Proyecto
-  budget?: string;
-  // Conversación (recruiter)
+  projectType?: string;
   company?: string;
+  projectUrl?: string;
+  budget?: string;
+  timeline?: string;
+  // Consultoría
+  stage?: string;
+  // Colaboración
   role?: string;
 }
 
@@ -27,16 +32,34 @@ export async function sendContactForm(data: ContactFormData): Promise<ActionResu
   }
 
   const subjectMap: Record<ContactType, string> = {
-    proyecto:      `[Proyecto] ${data.name}`,
-    colaboracion:  `[Colaboración] ${data.name}`,
-    conversacion:  `[Conversación] ${data.name}`,
+    proyecto:    `[Proyecto] ${data.name}`,
+    consultoria: `[Consulta] ${data.name}`,
+    colaboracion:`[Colaboración] ${data.name}`,
+    otros:       `[Otros] ${data.name}`,
   };
 
-  const extraFields = data.type === 'proyecto'
-    ? `<p><strong>Presupuesto estimado:</strong> ${data.budget || '—'}</p>`
-    : data.type === 'conversacion'
-    ? `<p><strong>Empresa:</strong> ${data.company || '—'}</p><p><strong>Rol:</strong> ${data.role || '—'}</p>`
-    : '';
+  const extraFields =
+    data.type === 'proyecto'
+      ? [
+          data.projectType ? `<p><strong>¿Qué necesitas?</strong> ${data.projectType}</p>` : '',
+          data.company     ? `<p><strong>Empresa:</strong> ${data.company}</p>` : '',
+          data.projectUrl  ? `<p><strong>URL del proyecto:</strong> <a href="${data.projectUrl}">${data.projectUrl}</a></p>` : '',
+          data.budget      ? `<p><strong>Presupuesto estimado:</strong> ${data.budget}</p>` : '',
+          data.timeline    ? `<p><strong>¿Cuándo lanzar?</strong> ${data.timeline}</p>` : '',
+        ].join('')
+      : data.type === 'consultoria'
+      ? [
+          data.stage      ? `<p><strong>¿En qué punto estás?</strong> ${data.stage}</p>` : '',
+          data.projectUrl ? `<p><strong>URL de referencia:</strong> <a href="${data.projectUrl}">${data.projectUrl}</a></p>` : '',
+        ].join('')
+      : data.type === 'colaboracion'
+      ? [
+          data.company ? `<p><strong>Empresa:</strong> ${data.company}</p>` : '',
+          data.role    ? `<p><strong>Rol:</strong> ${data.role}</p>` : '',
+        ].join('')
+      : '';
+
+  const messageLabel = data.type === 'consultoria' ? '¿En qué necesitas ayuda?' : 'Mensaje';
 
   const htmlContent = `
     <div style="font-family: sans-serif; max-width: 600px; color: #241E33;">
@@ -44,7 +67,7 @@ export async function sendContactForm(data: ContactFormData): Promise<ActionResu
       <p style="color: #606E67; margin-top: 0;">${data.email}</p>
       <hr style="border: none; border-top: 1px solid #E2DDD5; margin: 16px 0;" />
       ${extraFields}
-      <p><strong>Mensaje:</strong></p>
+      <p><strong>${messageLabel}:</strong></p>
       <p style="white-space: pre-wrap;">${data.message}</p>
     </div>
   `;
