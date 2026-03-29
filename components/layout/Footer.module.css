@@ -15,6 +15,12 @@
 
 @media (min-width: 768px) {
   .footer {
+    padding: 0 var(--space-64);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer {
     padding: 0 var(--space-96);
   }
 }

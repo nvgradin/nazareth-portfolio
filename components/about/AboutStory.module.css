@@ -5,6 +5,12 @@
 
 @media (min-width: 768px) {
   .section {
+    padding: 0 var(--space-64) 140px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
     padding: 0 var(--space-96) 140px;
   }
 }

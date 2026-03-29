@@ -38,7 +38,7 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   .container {
     grid-template-columns: 1fr;
-    padding: var(--space-64) var(--space-96) var(--space-96);
+    padding: var(--space-64) var(--space-64) var(--space-96);
   }
 }
 

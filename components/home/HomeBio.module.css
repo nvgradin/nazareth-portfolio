@@ -14,6 +14,12 @@
 
 @media (min-width: 768px) {
   .section {
+    padding: 120px var(--space-64);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
     padding: 120px var(--space-96);
   }
 }

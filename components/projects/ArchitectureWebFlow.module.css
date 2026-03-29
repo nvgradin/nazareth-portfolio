@@ -44,6 +44,12 @@
 @media (min-width: 768px) {
   .modules {
     gap: var(--space-96);
+    padding-inline: var(--space-64);
+  }
+}
+
+@media (min-width: 1024px) {
+  .modules {
     padding-inline: var(--space-96);
   }
 }

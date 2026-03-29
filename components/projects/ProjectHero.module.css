@@ -20,9 +20,15 @@
 
 @media (min-width: 768px) {
   .container {
-    padding-inline: var(--space-96);
+    padding-inline: var(--space-64);
     grid-template-columns: 35fr 65fr;
     gap: var(--space-160);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: var(--space-96);
   }
 }
 
