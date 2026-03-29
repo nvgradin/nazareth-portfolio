@@ -175,11 +175,11 @@
 /* Móvil horizontal */
 @media (orientation: landscape) and (max-height: 500px) {
   .hero {
-    height: 100vh;
+    height: 80vh;
   }
 
   .content {
-    padding-top: 10vh;
+    padding-top: 8vh;
     padding-inline: var(--space-24);
   }
 

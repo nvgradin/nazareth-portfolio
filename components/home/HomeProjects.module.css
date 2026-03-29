@@ -8,7 +8,7 @@
 }
 
 /* En móvil altura automática — no 100vh */
-@media (max-width: 767px) {
+@media (max-width: 767px) and (orientation: portrait) {
   .wrapper {
     height: auto !important;
     min-height: 480px;
@@ -50,6 +50,13 @@
 
   .projectsTitle {
     font-size: clamp(44px, 13vw, 64px) !important;
+  }
+}
+
+/* Landscape: ocultar collage móvil — posiciones no están adaptadas a landscape */
+@media (orientation: landscape) and (max-height: 500px) {
+  .mobileCorner {
+    display: none !important;
   }
 }
 
@@ -141,7 +148,7 @@
     height: auto !important;
     min-height: 360px;
     margin-top: -60px !important;
-    overflow: hidden !important;
+    overflow: visible !important;
   }
 
   .bg {
