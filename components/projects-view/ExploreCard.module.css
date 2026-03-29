@@ -220,6 +220,15 @@
   .tag {
     font-size: 8px;
   }
+
+  .textGradient {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(0, 0, 0, 0.4) 60%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+  }
 }
 
 /* ── Móvil horizontal grande (844px+) — más espacio, textos más legibles ── */
