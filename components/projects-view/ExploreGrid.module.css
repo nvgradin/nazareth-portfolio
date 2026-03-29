@@ -47,13 +47,71 @@
 }
 
 /* ── Filtros — columna derecha del header ─────────────────────── */
-.filtersInner {
+.filtersWrapper {
   grid-column: 2;
+  align-self: end;
+  margin-bottom: 56px;
+  /* Sin position:relative ni overflow en desktop — no necesita gradiente */
+}
+
+.filtersInner {
   display: flex;
   justify-content: flex-end;
   gap: 4px;
-  align-self: end;
-  margin-bottom: 56px;
+}
+
+/* ── Tablet vertical (768–1024px portrait) ────────────────────── */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .header {
+    padding-inline: var(--space-64);
+    padding-top: 180px;
+    grid-template-columns: 1fr;
+  }
+
+  .headerContent {
+    grid-column: 1 / -1;
+    padding-bottom: 24px;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: clamp(72px, 10vw, 88px);
+  }
+
+  .subtitle {
+    font-size: 17px;
+  }
+
+  .filtersWrapper {
+    grid-column: 1 / -1;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .filtersWrapper::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 48px;
+    background: linear-gradient(to left, var(--neutral-200) 30%, transparent);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .filtersInner {
+    justify-content: center;
+    gap: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .filtersInner::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* ── Móvil vertical ───────────────────────────────────────────── */
@@ -79,11 +137,31 @@
   }
 
   /* Filtros en scroll horizontal */
-  .filtersInner {
+  .filtersWrapper {
     grid-column: 1 / -1;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden; /* recorta los pseudo-elementos del gradiente */
+  }
+
+  /* Fade derecha — señal principal de "hay más" */
+  .filtersWrapper::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    background: linear-gradient(to left, var(--neutral-200) 30%, transparent);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+
+  .filtersInner {
     flex-direction: row;
     justify-content: flex-start;
-    margin-bottom: 32px;
+    margin-bottom: 0;
     gap: 0;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -124,11 +202,15 @@
   }
 
   /* Filtros debajo del subtítulo, scroll horizontal centrado */
-  .filtersInner {
+  .filtersWrapper {
     grid-column: 1 / -1;
+    margin-bottom: 24px;
+  }
+
+  .filtersInner {
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 24px;
+    margin-bottom: 0;
     gap: 0;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -138,7 +220,20 @@
   .filtersInner::-webkit-scrollbar {
     display: none;
   }
+}
 
+/* Landscape muy pequeño (<667px ancho): padding reducido para más espacio en filtros */
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 667px) {
+  .header {
+    padding-inline: var(--space-24);
+  }
+}
+
+/* Móvil vertical muy estrecho (<414px): fade más pequeño */
+@media (max-width: 413px) and (orientation: portrait) {
+  .filtersWrapper::after {
+    width: 28px;
+  }
 }
 
 .filter {
@@ -188,6 +283,13 @@
   padding-bottom: 80px;
 }
 
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .grid {
+    padding-inline: var(--space-64);
+    gap: 32px;
+  }
+}
+
 @media (max-width: 767px) and (orientation: portrait) {
   .grid {
     grid-template-columns: 1fr;
@@ -201,6 +303,12 @@
     padding-inline: var(--space-48);
     padding-top: 0;
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 667px) {
+  .grid {
+    padding-inline: var(--space-24);
   }
 }
 

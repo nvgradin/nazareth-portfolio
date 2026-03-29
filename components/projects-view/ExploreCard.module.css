@@ -138,22 +138,103 @@
   opacity: 0.5;
 }
 
+/* ── Tablet vertical (768–1024px portrait) — 2 columnas, cards más anchas ── */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .title {
+    font-size: 24px;
+  }
+
+  .tagline {
+    font-size: 16px;
+    bottom: 36px;
+  }
+
+  .tags {
+    bottom: 16px;
+  }
+
+  .tag {
+    font-size: 10px;
+  }
+}
+
+/* ── Móvil vertical (≤767px) — 1 columna, cards muy anchas ── */
+@media (max-width: 767px) and (orientation: portrait) {
+  .title {
+    font-size: 22px;
+  }
+
+  .tagline {
+    font-size: 15px;
+    bottom: 36px;
+  }
+
+  .tags {
+    bottom: 16px;
+  }
+
+  .tag {
+    font-size: 9px;
+  }
+}
+
+/* ── Móvil vertical muy estrecho (≤390px) ── */
+@media (max-width: 390px) and (orientation: portrait) {
+  .title {
+    font-size: 19px;
+  }
+
+  .tagline {
+    font-size: 13px;
+    bottom: 32px;
+  }
+
+  .tags {
+    bottom: 14px;
+  }
+
+  .tag {
+    font-size: 8px;
+  }
+}
+
+/* ── Móvil horizontal landscape ── */
 @media (orientation: landscape) and (max-height: 500px) {
   .info {
     padding: 12px 16px;
   }
 
   .title {
-    font-size: clamp(16px, 2vw, 20px);
+    font-size: 14px;
   }
 
   .tagline {
-    font-size: 16px;
-    bottom: 44px;
+    font-size: 11px;
+    bottom: 30px;
   }
 
   .tags {
-    bottom: 22px;
+    bottom: 14px;
+  }
+
+  .tag {
+    font-size: 8px;
+  }
+}
+
+/* ── Móvil horizontal grande (844px+) — más espacio, textos más legibles ── */
+@media (orientation: landscape) and (max-height: 500px) and (min-width: 844px) {
+  .title {
+    font-size: 18px;
+  }
+
+  .tagline {
+    font-size: 14px;
+    bottom: 34px;
+  }
+
+  .tags {
+    bottom: 16px;
   }
 
   .tag {
