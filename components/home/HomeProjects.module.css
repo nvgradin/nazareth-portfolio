@@ -53,16 +53,21 @@
   }
 }
 
-/* Landscape: ocultar collage móvil — posiciones no están adaptadas a landscape */
-@media (orientation: landscape) and (max-height: 500px) {
-  .mobileCorner {
-    display: none !important;
-  }
-}
 
 /* Imágenes móvil — collage asimétrico */
 .mobileCorner {
   display: none;
+}
+
+/* Mostrar collage también en landscape mobile (anchos >767px que no activan el bloque portrait) */
+@media (orientation: landscape) and (max-height: 500px) and (min-width: 768px) {
+  .mobileCorner {
+    display: block;
+    position: absolute;
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 1;
+  }
 }
 
 @media (max-width: 767px) {
