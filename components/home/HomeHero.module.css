@@ -175,7 +175,7 @@
 /* Móvil horizontal */
 @media (orientation: landscape) and (max-height: 500px) {
   .hero {
-    height: 80vh;
+    height: 100vh;
   }
 
   .content {

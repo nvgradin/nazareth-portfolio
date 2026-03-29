@@ -8,7 +8,7 @@
 }
 
 /* En móvil altura automática — no 100vh */
-@media (max-width: 767px) and (orientation: portrait) {
+@media (max-width: 767px) {
   .wrapper {
     height: auto !important;
     min-height: 480px;
@@ -53,21 +53,9 @@
   }
 }
 
-
 /* Imágenes móvil — collage asimétrico */
 .mobileCorner {
   display: none;
-}
-
-/* Mostrar collage también en landscape mobile (anchos >767px que no activan el bloque portrait) */
-@media (orientation: landscape) and (max-height: 500px) and (min-width: 768px) {
-  .mobileCorner {
-    display: block;
-    position: absolute;
-    border-radius: 12px;
-    overflow: hidden;
-    z-index: 1;
-  }
 }
 
 @media (max-width: 767px) {
@@ -150,34 +138,7 @@
 
 @media (orientation: landscape) and (max-height: 500px) {
   .wrapper {
-    height: auto !important;
-    min-height: 360px;
-    margin-top: -60px !important;
-    overflow: visible !important;
-  }
-
-  .bg {
-    top: 60px !important;
-    bottom: -4px !important;
-  }
-
-  .center {
-    position: relative !important;
-    inset: unset !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 120px 24px 100px !important;
-    z-index: 10;
-  }
-
-  .floatingImage {
-    display: none;
-  }
-
-  .projectsTitle {
-    font-size: clamp(44px, 10vh, 72px) !important;
+    overflow: hidden !important;
   }
 }
 
