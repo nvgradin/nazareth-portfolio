@@ -70,6 +70,7 @@ export function ExploreGrid({ projects, exitingToStack, enteringFromStack, cardR
           <h2 className={styles.heading}>Proyectos</h2>
           <p className={styles.subtitle}>Diseño de producto, experiencias digitales y marca.</p>
         </motion.div>
+        <div className={styles.filtersWrapper}>
         <motion.div
           key={enteringFromStack ? 'filters-entering' : 'filters-idle'}
           className={styles.filtersInner}
@@ -102,6 +103,7 @@ export function ExploreGrid({ projects, exitingToStack, enteringFromStack, cardR
             </button>
           ))}
         </motion.div>
+        </div>
       </header>
 
       {/* Grid */}
