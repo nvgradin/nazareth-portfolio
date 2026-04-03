@@ -193,26 +193,24 @@ export function ProjectsView() {
         transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
       />
 
-      {/* Toggle — fixed en stack, dentro del layer en grid (para que scrollee) */}
-      {isStack && (
-        <nav className={[styles.toggleH].join(' ')}>
-          <button
-            className={[styles.label, isStack ? styles.active : ''].join(' ')}
-            onClick={() => handleToggle('stack')}
-            disabled={isTransitioning}
-          >
-            Destacados
-          </button>
-          <span className={styles.sep} aria-hidden="true" />
-          <button
-            className={[styles.label, isGrid ? styles.active : ''].join(' ')}
-            onClick={() => handleToggle('grid')}
-            disabled={isTransitioning}
-          >
-            Explorar
-          </button>
-        </nav>
-      )}
+      {/* Toggle — siempre fuera de los layers para garantizar z-index por encima del header */}
+      <nav className={[styles.toggleH, isGrid ? styles.toggleDark : ''].join(' ')}>
+        <button
+          className={[styles.label, isStack ? styles.active : ''].join(' ')}
+          onClick={() => handleToggle('stack')}
+          disabled={isTransitioning}
+        >
+          Destacados
+        </button>
+        <span className={styles.sep} aria-hidden="true" />
+        <button
+          className={[styles.label, isGrid ? styles.active : ''].join(' ')}
+          onClick={() => handleToggle('grid')}
+          disabled={isTransitioning}
+        >
+          Explorar
+        </button>
+      </nav>
 
       {/* Vista Stack — always in DOM as fixed layer, visibility controlled by opacity */}
       <div style={layerStyle(stackActive)}>
@@ -232,23 +230,6 @@ export function ProjectsView() {
 
       {/* Vista Grid — always in DOM as fixed layer, visibility controlled by opacity */}
       <div style={layerStyle(gridActive, true)}>
-        <nav className={[styles.toggleH, styles.toggleDark, styles.toggleStatic].join(' ')}>
-          <button
-            className={[styles.label].join(' ')}
-            onClick={() => handleToggle('stack')}
-            disabled={isTransitioning}
-          >
-            Destacados
-          </button>
-          <span className={styles.sep} aria-hidden="true" />
-          <button
-            className={[styles.label, styles.active].join(' ')}
-            onClick={() => handleToggle('grid')}
-            disabled={isTransitioning}
-          >
-            Explorar
-          </button>
-        </nav>
         <ExploreGrid
           projects={allProjects}
           exitingToStack={phase === 'transitioning-to-stack'}

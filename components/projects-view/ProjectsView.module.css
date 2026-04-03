@@ -28,13 +28,12 @@
   top: 120px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 50;
+  z-index: 110;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0;
 }
-
 
 @media (max-width: 767px) {
   .toggleH {
@@ -56,13 +55,6 @@
   }
 }
 
-/* Vista grid — el toggle se queda en su sitio, no flota */
-.toggleH.toggleStatic {
-  position: absolute;
-  top: 120px;
-  left: 50%;
-  transform: translateX(-50%);
-}
 
 .label {
   background: none;
