@@ -24,9 +24,6 @@
   color: var(--neutral-100);
 }
 
-.headerLight .logo:hover {
-  color: var(--brand-accent-500);
-}
 
 .headerLight .mobileToggleBar {
   background-color: var(--neutral-100);
@@ -66,12 +63,21 @@
   display: flex;
   align-items: center;
   color: var(--brand-primary-900);
-  transition: color var(--duration-normal) var(--ease-default);
+  transition: none;
 }
 
-.logo:hover {
-  color: var(--brand-accent-500);
+.logo:hover,
+.logo:active,
+.logo:focus {
+  color: var(--brand-primary-900) !important;
 }
+
+.headerLight .logo:hover,
+.headerLight .logo:active,
+.headerLight .logo:focus {
+  color: var(--neutral-100) !important;
+}
+
 
 .logoMark {
   width: 84px;

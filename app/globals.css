@@ -182,8 +182,10 @@ a {
   transition: color var(--duration-normal) var(--ease-default);
 }
 
-a:hover {
-  color: var(--brand-accent-500);
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    color: var(--brand-accent-500);
+  }
 }
 
 /* ─────────────────────────────────────────────

@@ -30,7 +30,12 @@ export function Header() {
     <header className={headerClasses}>
       <div className={styles.container}>
         {/* Logo */}
-        <Link href="/" className={styles.logo} aria-label="Ir al inicio">
+        <Link
+          href="/"
+          className={styles.logo}
+          aria-label="Ir al inicio"
+          style={{ color: isDarkBackground ? 'var(--neutral-100)' : 'var(--brand-primary-900)' }}
+        >
           <LogoMark className={styles.logoMark} />
         </Link>
 
