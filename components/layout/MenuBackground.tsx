@@ -21,10 +21,10 @@ export const MENU_THEMES: Record<MenuTheme, ThemeConfig> = {
     halo3: { color: 'rgba(36, 30, 51, 0.15)',   x: '50%',  y: '50%' },
   },
   proyectos: {
-    base: '#3A2200',
-    halo1: { color: 'rgba(58, 34, 0, 0.55)',    x: '0%',   y: '0%' },
-    halo2: { color: 'rgba(226, 139, 0, 0.22)',  x: '100%', y: '100%' },
-    halo3: { color: 'rgba(58, 34, 0, 0.15)',    x: '50%',  y: '50%' },
+    base: '#2C2640',
+    halo1: { color: 'rgba(44, 38, 64, 0.55)',   x: '0%',   y: '0%' },
+    halo2: { color: 'rgba(64, 57, 78, 0.30)',   x: '100%', y: '100%' },
+    halo3: { color: 'rgba(44, 38, 64, 0.15)',   x: '50%',  y: '50%' },
   },
   sobre: {
     base: '#2E1208',
