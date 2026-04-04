@@ -97,15 +97,35 @@
   white-space: nowrap;
 }
 
-/* Subheadline */
-.sub {
+/* Propuesta de valor — jerárquicamente entre el nombre y el subheadline */
+.value {
   font-family: var(--font-base);
-  font-size: clamp(14px, 1.2vw, 20px);
+  font-size: clamp(15px, 1.4vw, 22px);
   font-weight: 300;
   color: var(--neutral-50);
-  opacity: 0.72;
-  line-height: 1.55;
+  opacity: 0.88;
+  line-height: 1.5;
   margin-top: var(--space-24);
+  max-width: 640px;
+}
+
+@media (max-width: 767px) {
+  .value {
+    font-size: 15px;
+    max-width: 300px;
+    margin-top: var(--space-16);
+  }
+}
+
+/* Subheadline — secundario, más pequeño y tenue */
+.sub {
+  font-family: var(--font-base);
+  font-size: clamp(12px, 0.95vw, 15px);
+  font-weight: 300;
+  color: var(--neutral-50);
+  opacity: 0.48;
+  line-height: 1.55;
+  margin-top: var(--space-8);
   max-width: 800px;
   white-space: nowrap;
 }
@@ -113,8 +133,30 @@
 @media (max-width: 767px) {
   .sub {
     white-space: normal;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
+    max-width: 260px;
+    margin-top: var(--space-8);
+  }
+}
+
+/* Microinfo — muy sutil, post-CTA */
+.micro {
+  font-family: var(--font-base);
+  font-size: clamp(10px, 0.8vw, 12px);
+  font-weight: 300;
+  color: var(--neutral-50);
+  opacity: 0.38;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  margin-top: var(--space-24);
+  max-width: 480px;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .micro {
+    font-size: 10px;
     max-width: 280px;
     margin-top: var(--space-16);
   }
@@ -193,10 +235,16 @@
     white-space: nowrap;
   }
 
+  .value {
+    display: none;
+  }
+
   .sub {
-    font-size: 12px;
-    margin-top: var(--space-8);
-    white-space: nowrap;
+    display: none;
+  }
+
+  .micro {
+    display: none;
   }
 
   .cta {

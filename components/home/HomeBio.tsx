@@ -52,17 +52,14 @@ export function HomeBio() {
               Sobre mí
             </motion.p>
             <motion.h2 className={styles.title} {...fade(0.1)}>
-              Llegué al producto digital desde las marcas, la comunicación y el código.
-            </motion.h2>
+                De la narrativa de marca a la experiencia digital            </motion.h2>
             <motion.div className={styles.bodyWrap} {...fade(0.22)}>
               <p className={styles.intro}>
-                Empecé en publicidad — construyendo narrativas para marcas como Reebok,
-                Schweppes o Movistar. Con el tiempo quise ir más allá:
-                diseñar la experiencia completa y construir lo que imaginaba.
+                Empecé en comunicación y branding, desarrollando una mirada estratégica para grandes marcas como Movistar, Reebok o Schweppes, y entendiendo cómo conectar ideas con personas.
               </p>
               <p className={styles.intro}>
-                Hoy trabajo en la intersección entre estrategia de negocio, diseño de producto
-                y desarrollo — con la mirada de quien ha estado en todos los lados de la mesa.
+                Con el tiempo, esa mirada evolucionó hacia el producto digital: diseñar experiencias más completas, más útiles y más conectadas con negocio.
+                Hoy trabajo uniendo estrategia, UX/UI y desarrollo para crear productos digitales con sentido.
               </p>
             </motion.div>
             <motion.div {...fade(0.35)}>

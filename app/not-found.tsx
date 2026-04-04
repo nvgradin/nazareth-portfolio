@@ -203,6 +203,30 @@ export default function NotFound() {
         </div>
       </div>
 
+      {/* ─── Vignette arriba ─── */}
+      <div
+        style={{
+          position: 'fixed',
+          top: 0, left: 0, right: 0,
+          height: 220,
+          background: 'linear-gradient(to bottom, #E2DDD5 0%, transparent 100%)',
+          pointerEvents: 'none',
+          zIndex: 9,
+        }}
+      />
+
+      {/* ─── Vignette abajo ─── */}
+      <div
+        style={{
+          position: 'fixed',
+          bottom: 0, left: 0, right: 0,
+          height: 220,
+          background: 'linear-gradient(to top, #E2DDD5 0%, transparent 100%)',
+          pointerEvents: 'none',
+          zIndex: 9,
+        }}
+      />
+
       {/* ─── Hero 404 — fijo sobre el canvas ─── */}
       <div
         className="fixed z-10 text-center pointer-events-none"
@@ -236,7 +260,7 @@ export default function NotFound() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          Esta página no existe, pero el buen diseño sí.
+          Error 404. El caos también es parte del proceso.
         </motion.p>
       </div>
 
@@ -265,11 +289,19 @@ export default function NotFound() {
         </motion.p>
         <Link
           href="/projects"
-          className="inline-block px-8 py-3 rounded-full text-sm tracking-wider uppercase transition-colors pointer-events-auto"
+          className="pointer-events-auto"
           style={{
+            display: 'inline-block',
             fontFamily: 'var(--font-accent)',
-            backgroundColor: 'var(--brand-primary-900, #241E33)',
-            color: 'var(--neutral-50, #FCF7F3)',
+            fontSize: 'clamp(10px, 0.85vw, 12px)',
+            fontWeight: 400,
+            letterSpacing: '0.2em',
+            textTransform: 'uppercase',
+            backgroundColor: 'var(--brand-primary-900)',
+            color: 'var(--neutral-50)',
+            padding: '14px 36px',
+            borderRadius: 'var(--radius-full)',
+            textDecoration: 'none',
           }}
         >
           Ver proyectos

@@ -63,26 +63,46 @@ export function HomeHero({ animate = false, hidden = false }: Props) {
           </motion.h1>
         </div>
 
-        {/* 3. Subheadline */}
+        {/* 3. Propuesta de valor */}
         <motion.p
-          className={styles.sub}
+          className={styles.value}
           initial={{ opacity: 0, y: 18 }}
           animate={animate ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.75, duration: 0.9, ease: EASE }}
         >
+          Conecto estrategia, diseño y desarrollo para crear productos digitales con sentido.
+        </motion.p>
+
+        {/* 4. Subheadline */}
+        <motion.p
+          className={styles.sub}
+          initial={{ opacity: 0, y: 18 }}
+          animate={animate ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.95, duration: 0.9, ease: EASE }}
+        >
           Creo universos digitales desde la estrategia hasta la esencia.
         </motion.p>
 
-        {/* 4. CTA */}
+        {/* 5. CTA */}
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={animate ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 1.05, duration: 0.9, ease: EASE }}
+          transition={{ delay: 1.15, duration: 0.9, ease: EASE }}
         >
           <Link href="/projects" className={styles.cta}>
             Explorar proyectos
           </Link>
         </motion.div>
+
+        {/* 6. Microinfo */}
+        <motion.p
+          className={styles.micro}
+          initial={{ opacity: 0 }}
+          animate={animate ? { opacity: 1 } : {}}
+          transition={{ delay: 1.5, duration: 1.0, ease: EASE }}
+        >
+          Vigo, Galicia&nbsp;·&nbsp;Remote-friendly&nbsp;·&nbsp;Colaborando con agencias, marcas y proyectos digitales
+        </motion.p>
 
       </div>
     </section>
