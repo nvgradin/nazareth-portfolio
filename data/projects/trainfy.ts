@@ -191,14 +191,6 @@ export const trainfy: ProjectWithLayout = {
       ],
     },
 
-    // 6a) Showcase Triptych (standalone, sin EditorialBlock de branding)
-    showcase: {
-      left: { type: 'image', src: '/projects/trainfy/showcase-left.jpg', alt: 'Showcase left' },
-      centerTop: { type: 'image', src: '/projects/trainfy/showcase-center-top.jpg', alt: 'Showcase center top' },
-      centerBottom: { type: 'image', src: '/projects/trainfy/showcase-center-bottom.jpg', alt: 'Showcase center bottom' },
-      right: { type: 'image', src: '/projects/trainfy/showcase-right_horizontal.jpg', alt: 'Showcase right' },
-    },
-
     // 6b) Branding Scroller
     brandingScroller: {
       title: 'BRANDING',

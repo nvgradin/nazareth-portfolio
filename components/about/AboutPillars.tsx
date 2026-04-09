@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from './AboutPillars.module.css';
@@ -27,9 +28,52 @@ const PILLARS = [
   },
 ];
 
+function PillarCard({ pillar, i }: { pillar: typeof PILLARS[0]; i: number }) {
+  return (
+    <motion.div
+      className={styles.card}
+      initial={{ opacity: 0, y: 28, scale: 0.97 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 1.1, delay: i * 0.15, ease: EASE_OUT }}
+    >
+      <p className={styles.label}>{pillar.label}</p>
+      <h3 className={styles.title}>{pillar.title}</h3>
+      <div className={styles.iconWrap}>
+        <Image
+          src={pillar.icon}
+          alt={pillar.label}
+          width={56}
+          height={56}
+          style={{ objectFit: 'contain' }}
+        />
+      </div>
+      <p className={styles.body}>{pillar.body}</p>
+    </motion.div>
+  );
+}
+
 export default function AboutPillars() {
+  const [active, setActive] = useState(1); // start on center card
+
+  const prev = () => setActive((a) => Math.max(0, a - 1));
+  const next = () => setActive((a) => Math.min(PILLARS.length - 1, a + 1));
+
   return (
     <section className={styles.section}>
+      {/* Background image with overlay */}
+      <div className={styles.bg}>
+        <Image
+          src="/about/about_como_trabajo.jpg"
+          alt="Fondo como trabajo"
+          fill
+          sizes="100vw"
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+          priority={false}
+        />
+        <div className={styles.bgOverlay} />
+      </div>
+
       <div className={styles.inner}>
         <motion.p
           className={styles.eyebrow}
@@ -40,32 +84,77 @@ export default function AboutPillars() {
         >
           Cómo trabajo
         </motion.p>
+
+        {/* Desktop: 3 cards side by side */}
         <div className={styles.grid}>
           {PILLARS.map((pillar, i) => (
-            <motion.div
-              key={i}
-              className={styles.pillar}
-              initial={{ opacity: 0, y: 24, scale: 0.97 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 1.1, delay: i * 0.15, ease: EASE_OUT }}
-            >
-              <div className={styles.iconWrap}>
-                <Image
-                  src={pillar.icon}
-                  alt={pillar.label}
-                  width={56}
-                  height={56}
-                  style={{ objectFit: 'contain' }}
-                />
-              </div>
-              <p className={styles.label}>{pillar.label}</p>
-              <h3 className={styles.title}>{pillar.title}</h3>
-              <p className={styles.body}>{pillar.body}</p>
-            </motion.div>
+            <PillarCard key={i} pillar={pillar} i={i} />
           ))}
         </div>
-      </div>
+
+      </div>{/* end .inner */}
+
+      {/* Mobile: 3-up carousel — outside .inner so it spans full width */}
+      <div className={styles.carousel}>
+        <div className={styles.carouselClip}>
+            <div
+              className={styles.track}
+              style={{ transform: `translateX(calc((${active} * -68%) + 16%))` }}
+            >
+              {PILLARS.map((pillar, i) => {
+                // ← arrow lives on the card BEFORE the active one (right edge)
+                const showPrev = i === active - 1 && active > 0;
+                // → arrow lives on the card AFTER the active one (left edge)
+                const showNext = i === active + 1 && active < PILLARS.length - 1;
+
+                return (
+                  <div
+                    key={i}
+                    className={`${styles.slide} ${i === active ? styles.slideActive : styles.slideSide}`}
+                  >
+                    {/* Card */}
+                    <div className={styles.card}>
+                      <p className={styles.label}>{pillar.label}</p>
+                      <h3 className={styles.title}>{pillar.title}</h3>
+                      <div className={styles.iconWrap}>
+                        <Image
+                          src={pillar.icon}
+                          alt={pillar.label}
+                          width={52}
+                          height={52}
+                          style={{ objectFit: 'contain' }}
+                        />
+                      </div>
+                      <p className={styles.body}>{pillar.body}</p>
+                    </div>
+
+                    {/* ← prev arrow: right edge of the card before active */}
+                    {showPrev && (
+                      <button
+                        className={`${styles.arrowBtn} ${styles.arrowRight}`}
+                        onClick={prev}
+                        aria-label="Anterior"
+                      >
+                        ‹
+                      </button>
+                    )}
+
+                    {/* → next arrow: left edge of the card after active */}
+                    {showNext && (
+                      <button
+                        className={`${styles.arrowBtn} ${styles.arrowLeft}`}
+                        onClick={next}
+                        aria-label="Siguiente"
+                      >
+                        ›
+                      </button>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
     </section>
   );
 }

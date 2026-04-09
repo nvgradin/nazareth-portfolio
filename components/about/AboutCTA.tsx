@@ -21,7 +21,7 @@ export default function AboutCTA() {
           ¿Trabajamos juntos?
         </motion.p>
         <motion.h2 className={styles.title} {...fade(0.12)}>
-          Si crees que podemos construir algo con sentido, me alegra que hayas llegado hasta aquí.
+          Si te resuena cómo pienso y trabajo, estaré encantada de escuchar tu idea.
         </motion.h2>
         <motion.div {...fade(0.28)}>
           <Link href="/contact" className={styles.cta}>

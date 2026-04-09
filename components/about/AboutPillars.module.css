@@ -1,32 +1,63 @@
+/* AboutPillars — atmospheric bg + cream cards + mobile carousel */
+
 .section {
-  background-color: var(--neutral-200);
-  padding: 0 var(--space-16) 140px;
+  position: relative;
+  padding-block: 120px 140px;
+  overflow: hidden;
+}
+
+/* Fade into AboutTimeline's dark background */
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent 0%, var(--brand-primary-900) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Background image layer */
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 28, 24, 0.55) 0%,
+    rgba(30, 28, 24, 0.72) 50%,
+    rgba(30, 28, 24, 0.60) 100%
+  );
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-inline: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 
 @media (min-width: 768px) {
-  .section {
-    padding: 0 var(--space-64) 160px;
+  .inner {
+    padding-inline: var(--space-64);
   }
 }
 
 @media (min-width: 1024px) {
-  .section {
-    padding: 0 var(--space-96) 160px;
+  .inner {
+    padding-inline: var(--space-96);
   }
-}
-
-@media (orientation: landscape) and (max-height: 500px) {
-  .section {
-    padding: 0 var(--space-48) 80px;
-  }
-}
-
-.inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
 }
 
 .eyebrow {
@@ -35,32 +66,56 @@
   font-weight: 400;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--brand-primary-900);
-  opacity: 0.45;
+  color: #E8E0D5;
+  opacity: 0.55;
+  text-align: center;
 }
 
+/* ── Desktop grid (hidden on mobile) ── */
 .grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
+  display: none;
 }
 
 @media (min-width: 768px) {
   .grid {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0 64px;
+    gap: 0 32px;
   }
 }
 
-.pillar {
+@media (min-width: 1024px) {
+  .grid {
+    gap: 0 48px;
+  }
+}
+
+/* ── Cream card ── */
+.card {
+  background: #F5EFE6;
+  border-radius: 20px;
+  padding: 36px 28px 32px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  height: 100%;
+}
+
+@media (min-width: 1024px) {
+  .card {
+    border-radius: 24px;
+    padding: 44px 40px 48px;
+  }
 }
 
 .iconWrap {
-  opacity: 0.75;
-  margin-bottom: 4px;
+  opacity: 0.7;
+  padding-block: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .label {
@@ -75,19 +130,118 @@
 
 .title {
   font-family: var(--font-accent);
-  font-size: clamp(18px, 1.6vw, 22px);
+  font-size: clamp(17px, 1.5vw, 21px);
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.22;
   letter-spacing: -0.01em;
   color: var(--brand-primary-900);
 }
 
 .body {
   font-family: var(--font-heading);
-  font-size: clamp(14px, 1vw, 15px);
+  font-size: clamp(13px, 1vw, 15px);
   font-weight: 300;
   line-height: 1.85;
   letter-spacing: 0.01em;
   color: var(--brand-primary-900);
   opacity: 0.6;
+}
+
+/* ── Mobile carousel (hidden on desktop) ── */
+.carousel {
+  display: block;
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .carousel {
+    display: none;
+  }
+}
+
+/* Clip wrapper — hides horizontal overflow, padding so cards don't touch edges */
+.carouselClip {
+  overflow: hidden;
+  padding-inline: var(--space-16);
+}
+
+.track {
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  align-items: stretch;
+}
+
+/* Each slide: 68% wide — wider cards, sides still peek */
+.slide {
+  flex: 0 0 68%;
+  padding-inline: 6px;
+  position: relative;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Active card — full size */
+.slideActive {
+  transform: scale(1);
+}
+
+/* Side cards — same opacity, slightly smaller */
+.slideSide {
+  transform: scale(0.96);
+}
+
+/* ── Arrow buttons — absolute positioned on slide, vertically centered at icon zone ── */
+/* icon zone starts roughly at: label(~20px) + gap(14px) + title(~50px) + gap(14px) = ~98px from top
+   icon is 52px tall + 40px padding = 92px zone, centered ~98 + 46 = 144px from top of card
+   card padding-top = 36px, so from slide top: 36 + 144 = ~180px
+   We use top: 50% as approximation and offset with translateY */
+.arrowBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(245, 239, 230, 0.7);
+  background: #F5EFE6;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--brand-primary-900);
+  line-height: 1;
+  padding: 0;
+  z-index: 10;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+  transition: background 0.2s, transform 0.2s;
+}
+
+/* ← arrow: inside the right visible area of the preceding card, at icon height */
+.arrowRight {
+  right: 16px;
+  top: 42%;
+}
+
+/* → arrow: inside the left visible area of the following card, at icon height */
+.arrowLeft {
+  left: 16px;
+  top: 42%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .arrowBtn:hover {
+    background: #EDE4D8;
+    transform: translateY(-50%) scale(1.08);
+  }
+}
+
+/* Landscape mobile */
+@media (orientation: landscape) and (max-height: 500px) {
+  .section {
+    padding-block: 80px;
+  }
 }
