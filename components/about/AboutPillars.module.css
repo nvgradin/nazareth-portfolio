@@ -118,33 +118,37 @@
   justify-content: center;
 }
 
+/* Label → ahora es el título principal */
 .label {
   font-family: var(--font-accent);
-  font-size: 11px;
+  font-size: clamp(26px, 3vw, 30px);
   font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  text-transform: none;
   color: var(--brand-primary-900);
-  opacity: 0.45;
+  opacity: 1;
+  line-height: 1.1;
 }
 
+/* Title → ahora es subtítulo, la frase */
 .title {
-  font-family: var(--font-accent);
-  font-size: clamp(17px, 1.5vw, 21px);
+  font-family: var(--font-heading);
+  font-size: clamp(15px, 1vw, 16px);
   font-weight: 400;
-  line-height: 1.22;
-  letter-spacing: -0.01em;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
   color: var(--brand-primary-900);
+  opacity: 0.65;
 }
 
 .body {
   font-family: var(--font-heading);
-  font-size: clamp(13px, 1vw, 15px);
+  font-size: clamp(14px, 1.1vw, 16px);
   font-weight: 300;
   line-height: 1.85;
   letter-spacing: 0.01em;
   color: var(--brand-primary-900);
-  opacity: 0.6;
+  opacity: 0.65;
 }
 
 /* ── Mobile carousel (hidden on desktop) ── */
