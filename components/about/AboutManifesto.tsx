@@ -15,9 +15,9 @@ const fadeUp = (delay = 0) => ({
 const WORDS = 'Creo sobre el significado.'.split(' ');
 
 const SENTENCES = [
-  'El significante es solo una forma de nombrarlo.',
-  'Lo que me importa es el para qué — de cada proyecto, de cada decisión, de cada píxel.',
-  'Si no llega a la esencia, no debe hacerse.',
+  'Sobre el para qué y el por qué de lo que hacemos.',
+  'No me interesa solo cómo se ve un proyecto, sino qué propone, a quién se dirige y qué lugar quiere ocupar en la vida de las personas.',
+  'El diseño es el lenguaje; la esencia está en la idea.',
 ];
 
 export default function AboutManifesto() {

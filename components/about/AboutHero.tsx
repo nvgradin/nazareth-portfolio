@@ -63,7 +63,7 @@ export default function AboutHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 0.55, ease: EASE_OUT }}
         >
-          Estrategia. Creatividad. Consciencia.
+          Entiendo el negocio, comunico marca y desarrollo experiencias digitales.
         </motion.p>
 
         <motion.h1
