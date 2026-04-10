@@ -8,23 +8,23 @@ const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 const CHAPTERS = [
   {
     label: 'El origen',
-    title: 'Aprendí a construir narrativas para marcas que el mundo conocía.',
-    body: 'Empecé en publicidad. Pasé por agencias trabajando con marcas como Reebok, Schweppes o Movistar. Aprendí que una buena comunicación no grita — encuentra el ángulo exacto para que conecte de verdad. Con el tiempo empecé a sentir que quería ir más allá.',
+    title: 'Aprendí a construir narrativas para marcas que el mundo ya conocía.',
+    body: 'Empecé en publicidad. Pasé por agencias trabajando con marcas como Reebok, Schweppes o Movistar. Allí entendí el valor de una idea bien enfocada: no la que más ruido hace, sino la que encuentra la forma exacta de conectar.',
   },
   {
     label: 'La pregunta',
-    title: '¿Y si el problema no era cómo se contaba, sino qué se estaba haciendo?',
-    body: 'Trabajando en e-learning vi algo que me inquietó: las plataformas de elearning eran toscas, frías, sin alma. En 2011 diseñé mentalmente lo que sería una red social para el aprendizaje — un espacio donde profesores y alumnos crearan y compartieran contenido juntos y aprender. Lo vi claro. Pero no podía construirlo. Dependía de programadores que no se implicaban, y la idea se quedó en diseño.',
+    title: 'Con el tiempo, empecé a mirar más allá del mensaje.',
+    body: 'En e-learning vi una carencia clara: plataformas funcionales, sí, pero frías, rígidas y poco pensadas para la experiencia real de quienes las usaban. En 2011 imaginé una red social para el aprendizaje, un espacio más natural para crear, compartir y aprender. Lo vi claro antes de poder construirlo.',
   },
   {
     label: 'El giro',
-    title: 'Nueve años después, el mundo necesitó exactamente eso.',
-    body: 'En el covid explotó la venta de cursos online, los webinars, el aprendizaje digital. Lo que vi en 2011 se hizo evidente para todos en 2020. Esa experiencia me marcó de una forma muy concreta: decidí aprender a desarrollar para no volver a depender de nadie. Para poder hacer real lo que imagino.',
+    title: 'Nueve años después, el mercado confirmó lo que aquella intuición ya señalaba.',
+    body: 'En 2020 el aprendizaje digital explotó y muchas de esas necesidades se hicieron evidentes para todos. Para mí fue una confirmación, pero también una decisión: aprender a desarrollar para no volver a depender de otros al hacer real una idea.',
   },
   {
     label: 'La integración',
-    title: 'Hoy trabajo desde la raíz — negocio, experiencia y construcción al mismo tiempo.',
-    body: 'Ahora cuando entro en un proyecto no separo las capas. Entiendo el modelo de negocio, diseño la experiencia y construyo para conectar la solución pensando en quién la busca. Como en Las Islas Cíes: vi un gran dominio mal aprovechado, propuse convertir la web en una guía de viaje real. El cliente no lo había pedido — pero lo vio. Ese cambio de estructura se replicó a cinco islas en dos años.',
+    title: 'Hoy trabajo uniendo negocio, experiencia y desarrollo.',
+    body: 'Ahora, cuando entro en un proyecto, no separo las capas. Entiendo el modelo de negocio, diseño la experiencia y construyo la solución pensando en quien la necesita.',
   },
 ];
 

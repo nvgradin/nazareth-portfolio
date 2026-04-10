@@ -37,10 +37,11 @@ export default function AboutHero() {
         style={{ y: imageY }}
       >
         <Image
-          src="/about/hero_about_2560.webp"
+          src="/about/hero_about_2560.png"
           alt="Nazareth — Digital Product & Experience Designer"
           fill
           priority
+          quality={100}
           className={styles.image}
           sizes="100vw"
         />
