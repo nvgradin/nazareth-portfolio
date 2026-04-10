@@ -1,34 +1,34 @@
+/* AboutStory — Cuaderno Cinematográfico */
+
 .section {
+  position: relative;
   background-color: var(--neutral-200);
-  padding: 0 var(--space-16) 120px;
+  padding-block: 120px 160px;
+  overflow: hidden;
 }
 
-@media (min-width: 768px) {
-  .section {
-    padding: 0 var(--space-64) 140px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .section {
-    padding: 0 var(--space-96) 140px;
-  }
-}
-
-@media (orientation: landscape) and (max-height: 500px) {
-  .section {
-    padding: 0 var(--space-48) 80px;
-  }
-}
 
 .inner {
   max-width: 1280px;
   margin: 0 auto;
+  padding-inline: var(--space-16);
   display: flex;
   flex-direction: column;
-  gap: 40px;
 }
 
+@media (min-width: 768px) {
+  .inner {
+    padding-inline: var(--space-64);
+  }
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    padding-inline: var(--space-96);
+  }
+}
+
+/* Eyebrow */
 .eyebrow {
   font-family: var(--font-accent);
   font-size: 12px;
@@ -36,53 +36,412 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--brand-primary-900);
-  opacity: 0.45;
+  opacity: 0.4;
+  margin-bottom: 80px;
 }
 
+/* ── Chapters container (actos II–IV) ── */
 .chapters {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 0;
 }
 
-@media (min-width: 768px) {
-  .chapters {
-    grid-template-columns: 1fr 1fr;
-    gap: 64px 80px;
+/* Gap acto IV */
+.chapters > :last-child {
+  margin-top: 120px;
+}
+
+@media (max-width: 767px) {
+  .chapters > :last-child {
+    margin-top: 80px;
   }
 }
 
+/* ── Chapter base ── */
 .chapter {
+  display: grid;
+  align-items: center;
+}
+
+/* Split layout: text + image side by side */
+.chapterSplit {
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+/* Reversed: image left, text right */
+.chapterReverse {
+  direction: rtl;
+}
+.chapterReverse > * {
+  direction: ltr;
+}
+
+/* Center layout: acto IV */
+.chapterCenter {
+  grid-template-columns: 1fr;
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+}
+
+.chapterCenter .textBlock {
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .chapterSplit {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .chapterReverse {
+    direction: ltr;
+  }
+  .chapterCenter {
+    max-width: 100%;
+  }
+}
+
+/* ── Text block ── */
+.textBlock {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.chapterLabel {
+.roman {
   font-family: var(--font-accent);
   font-size: 11px;
   font-weight: 400;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.3em;
+  color: var(--brand-primary-900);
+  opacity: 0.28;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.chapterLabel {
+  font-family: var(--font-accent);
+  font-size: clamp(10px, 0.9vw, 12px);
+  font-weight: 500;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--brand-primary-900);
-  opacity: 0.4;
+  opacity: 0.45;
+  margin: 0;
 }
 
 .chapterTitle {
   font-family: var(--font-accent);
-  font-size: clamp(20px, 2vw, 26px);
+  font-size: clamp(22px, 2.2vw, 32px);
   font-weight: 400;
   line-height: 1.2;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   color: var(--brand-primary-900);
+  margin: 0;
 }
 
 .chapterBody {
   font-family: var(--font-heading);
-  font-size: clamp(14px, 1vw, 16px);
+  font-size: clamp(14px, 1.1vw, 16px);
   font-weight: 300;
-  line-height: 1.9;
-  letter-spacing: 0.01em;
+  line-height: 1.85;
   color: var(--brand-primary-900);
-  opacity: 0.6;
+  opacity: 0.65;
+  margin: 0;
+  max-width: 48ch;
+}
+
+.chapterCenter .chapterBody {
+  max-width: 100%;
+}
+
+/* ── Image block ── */
+.imageBlock {
+  width: 100%;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .imageBlock {
+    order: -1;
+  }
+  .chapterCenter .imageBlock {
+    order: 1;
+  }
+}
+
+/* Clip container */
+.imageClip {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.chapterCenter .imageClip {
+  aspect-ratio: 1 / 1;
+  max-width: 380px;
+  margin: 48px auto 48px;
+}
+
+@media (max-width: 767px) {
+  .imageClip {
+    aspect-ratio: 3 / 2;
+  }
+  .chapterCenter .imageClip {
+    aspect-ratio: 1 / 1;
+    max-width: 260px;
+  }
+}
+
+/* Parallax inner */
+.imageInner {
+  position: absolute;
+  inset: -8% 0;
+  width: 100%;
+  height: 116%;
+}
+
+/* ── Acto I — true full-width grid ── */
+.actoI {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 80px var(--space-16) 0;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .actoI {
+    padding: 100px var(--space-64) 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .actoI {
+    padding: 100px var(--space-96) 0;
+  }
+}
+
+/* Grid pattern — full bleed background */
+.actoIGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(120, 105, 90, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 105, 90, 0.13) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+/* Gradient fade from --neutral-200 at the top */
+.actoIFadeTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(to bottom, var(--neutral-200) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Gradient fade to transparent at the bottom — blends into acto II */
+.actoIFadeBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, rgba(10, 12, 18, 0.35) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Content centered */
+.actoIContent {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding-bottom: 100px;
+}
+
+/* Word reveal wrappers */
+.wordRevealBlock {
+  display: block;
+}
+
+.wordRevealInline {
+  display: block;
+}
+
+/* ── Acto II — full-width image background ── */
+.actoII {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  gap: 0;
+}
+
+
+.actoIIBg {
+  position: absolute;
+  inset: 0;
+}
+
+.actoIIOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10, 12, 18, 0.82) 0%,
+    rgba(10, 12, 18, 0.55) 55%,
+    rgba(10, 12, 18, 0.2) 100%
+  );
+}
+
+.actoIIContent {
+  position: relative;
+  z-index: 1;
+  padding: 100px var(--space-16);
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .actoIIContent {
+    padding: 120px var(--space-64);
+  }
+}
+
+@media (min-width: 1024px) {
+  .actoIIContent {
+    padding: 140px var(--space-96);
+  }
+}
+
+/* ── Acto III — full-width image background ── */
+.actoIII {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.actoIIIBg {
+  position: absolute;
+  inset: 0;
+}
+
+.actoIIIOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to left,
+    rgba(10, 12, 18, 0.82) 0%,
+    rgba(10, 12, 18, 0.55) 55%,
+    rgba(10, 12, 18, 0.2) 100%
+  );
+}
+
+.actoIIIContent {
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+  padding: 100px var(--space-16);
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: right;
+}
+
+@media (min-width: 768px) {
+  .actoIIIContent {
+    padding: 120px var(--space-64);
+  }
+}
+
+@media (min-width: 1024px) {
+  .actoIIIContent {
+    padding: 140px var(--space-96);
+  }
+}
+
+/* Light text variants for acto III */
+.romanLight {
+  font-family: var(--font-accent);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  color: #E8E0D5;
+  opacity: 0.4;
+  display: block;
+}
+
+.chapterLabelLight {
+  font-family: var(--font-accent);
+  font-size: clamp(10px, 0.9vw, 12px);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #E8E0D5;
+  opacity: 0.55;
+  margin: 0;
+}
+
+.chapterTitleLight {
+  font-family: var(--font-accent);
+  font-size: clamp(22px, 2.2vw, 32px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #F5EFE6;
+  margin: 0;
+}
+
+.chapterBodyLight {
+  font-family: var(--font-heading);
+  font-size: clamp(14px, 1.1vw, 16px);
+  font-weight: 300;
+  line-height: 1.85;
+  color: #E8E0D5;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Landscape mobile */
+@media (orientation: landscape) and (max-height: 500px) {
+  .section {
+    padding-block: 80px 100px;
+  }
+  .chapters {
+    gap: 80px;
+  }
 }
