@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import AboutHero from '@/components/about/AboutHero';
 import AboutManifesto from '@/components/about/AboutManifesto';
 import AboutStory from '@/components/about/AboutStory';
+import AboutLogos from '@/components/about/AboutLogos';
 import AboutPillars from '@/components/about/AboutPillars';
 import AboutTimeline from '@/components/about/AboutTimeline';
 import AboutCTA from '@/components/about/AboutCTA';
@@ -19,6 +20,7 @@ export default function AboutPage() {
       <AboutHero />
       <AboutManifesto />
       <AboutStory />
+      <AboutLogos />
       <AboutPillars />
       <AboutTimeline />
       <AboutCTA />

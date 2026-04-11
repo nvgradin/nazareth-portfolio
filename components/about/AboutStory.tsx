@@ -11,7 +11,7 @@ const CHAPTERS = [
   {
     roman: 'I',
     label: 'El origen',
-    title: 'Aprendí a construir narrativas para marcas que el mundo ya conocía.',
+    title: 'Aprendí a construir narrativas \npara marcas que el mundo ya conocía.',
     body: 'Empecé en publicidad. Pasé por agencias trabajando con marcas como Reebok, Schweppes o Movistar. Allí entendí el valor de una idea bien enfocada: no la que más ruido hace, sino la que encuentra la forma exacta de conectar.',
     image: null,
     imageAlt: '',
@@ -20,7 +20,7 @@ const CHAPTERS = [
   {
     roman: 'II',
     label: 'La pregunta',
-    title: 'Con el tiempo, empecé a mirar más allá del mensaje.',
+    title: 'Con el tiempo,\nempecé a mirar más allá del mensaje.',
     body: 'En e-learning vi una carencia clara: plataformas funcionales, sí, pero frías, rígidas y poco pensadas para la experiencia real de quienes las usaban. En 2011 imaginé una red social para el aprendizaje, un espacio más natural para crear, compartir y aprender. Lo vi claro antes de poder construirlo.',
     image: '/about/story/puerta_ventana.jpg',
     imageAlt: 'La pregunta',
@@ -38,33 +38,44 @@ const CHAPTERS = [
   {
     roman: 'IV',
     label: 'La integración',
-    title: 'Hoy trabajo uniendo negocio, experiencia y desarrollo.',
-    body: 'Ahora, cuando entro en un proyecto, no separo las capas. Entiendo el modelo de negocio, diseño la experiencia y construyo la solución pensando en quien la necesita.',
+    title: 'Hoy trabajo uniendo\nnegocio, experiencia y desarrollo.',
+    body: 'Ahora, cuando entro en un proyecto, no separo las capas.\nEntiendo el modelo de negocio, diseño la experiencia\ny construyo la solución pensando en quien la necesita.',
     image: '/about/story/aurea.jpg',
     imageAlt: 'Proporción áurea — la integración',
     imageSide: 'center' as const,
   },
 ];
 
-// Word-by-word reveal
-function WordReveal({ text, className, delay = 0 }: { text: string; className: string; delay?: number }) {
+// Split text into lines: manual \n is always a line break, auto-split only when no \n present
+function splitIntoLines(text: string, wordsPerLine = 7): string[] {
+  if (text.includes('\n')) {
+    // User defined the breaks — respect them exactly
+    return text.split('\n');
+  }
+  // No manual breaks — auto-split every wordsPerLine words
   const words = text.split(' ');
+  const lines: string[] = [];
+  for (let i = 0; i < words.length; i += wordsPerLine) {
+    lines.push(words.slice(i, i + wordsPerLine).join(' '));
+  }
+  return lines;
+}
+
+// Line-by-line reveal
+function WordReveal({ text, className, delay = 0, wordsPerLine = 7 }: { text: string; className: string; delay?: number; wordsPerLine?: number }) {
+  const lines = splitIntoLines(text, wordsPerLine);
   return (
     <span className={className} aria-label={text}>
-      {words.map((word, i) => (
+      {lines.map((line, i) => (
         <motion.span
           key={i}
-          style={{ display: 'inline-block', marginRight: '0.25em' }}
-          initial={{ opacity: 0, y: 8 }}
+          style={{ display: 'block' }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{
-            duration: 0.8,
-            delay: delay + i * 0.18,
-            ease: EASE_OUT,
-          }}
+          transition={{ duration: 0.9, delay: delay + i * 0.3, ease: EASE_OUT }}
         >
-          {word}
+          {line}
         </motion.span>
       ))}
     </span>
@@ -132,7 +143,7 @@ function ActoI({ ch }: { ch: typeof CHAPTERS[0] }) {
         </motion.p>
 
         <h3 className={styles.chapterTitle}>
-          <WordReveal text={ch.title} className={styles.wordRevealBlock} delay={delayTitle} />
+          <WordReveal text={ch.title} className={styles.wordRevealBlock} delay={delayTitle} wordsPerLine={5} />
         </h3>
 
         <p className={styles.chapterBody}>
@@ -183,7 +194,7 @@ function ActoII({ ch }: { ch: typeof CHAPTERS[0] }) {
           {ch.label}
         </motion.p>
         <h3 className={styles.chapterTitleLight}>
-          <WordReveal text={ch.title} className={styles.wordRevealBlock} delay={delayTitle} />
+          <WordReveal text={ch.title} className={styles.wordRevealBlock} delay={delayTitle} wordsPerLine={5} />
         </h3>
         <p className={styles.chapterBodyLight}>
           <WordReveal text={ch.body} className={styles.wordRevealInline} delay={delayBody} />
@@ -228,7 +239,7 @@ function ActoIII({ ch }: { ch: typeof CHAPTERS[0] }) {
           {ch.label}
         </motion.p>
         <h3 className={styles.chapterTitleLight}>
-          <WordReveal text={ch.title} className={styles.wordRevealBlock} delay={delayTitle} />
+          <WordReveal text={ch.title} className={styles.wordRevealBlock} delay={delayTitle} wordsPerLine={5} />
         </h3>
         <p className={styles.chapterBodyLight}>
           <WordReveal text={ch.body} className={styles.wordRevealInline} delay={delayBody} />
@@ -242,12 +253,9 @@ type Chapter = typeof CHAPTERS[0] & { imageSide: 'right' | 'left' | 'center' | '
 
 // Acto IV
 function ChapterAct({ ch }: { ch: Chapter }) {
-  const isLeft = ch.imageSide === 'left';
-  const isCenter = ch.imageSide === 'center';
-
   return (
     <motion.article
-      className={`${styles.chapter} ${isCenter ? styles.chapterCenter : styles.chapterSplit} ${isLeft ? styles.chapterReverse : ''}`}
+      className={`${styles.chapter} ${styles.chapterCenter}`}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.12 }}
@@ -281,7 +289,7 @@ function ChapterAct({ ch }: { ch: Chapter }) {
                 {ch.label}
               </motion.p>
               <h3 className={styles.chapterTitle}>
-                <WordReveal text={ch.title} className={styles.wordRevealBlock} delay={delayTitle} />
+                <WordReveal text={ch.title} className={styles.wordRevealBlock} delay={delayTitle} wordsPerLine={5} />
               </h3>
             </div>
 

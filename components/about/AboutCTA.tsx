@@ -18,14 +18,14 @@ export default function AboutCTA() {
     <section className={styles.section}>
       <div className={styles.inner}>
         <motion.p className={styles.eyebrow} {...fade(0)}>
-          ¿Trabajamos juntos?
+          ¿Creamos?
         </motion.p>
         <motion.h2 className={styles.title} {...fade(0.12)}>
           Si te resuena cómo pienso y trabajo, estaré encantada de escuchar tu idea.
         </motion.h2>
         <motion.div {...fade(0.28)}>
           <Link href="/contact" className={styles.cta}>
-            Hablemos →
+            ¿Hablamos? →
           </Link>
         </motion.div>
       </div>

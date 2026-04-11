@@ -37,7 +37,8 @@
   text-transform: uppercase;
   color: var(--brand-primary-900);
   opacity: 0.4;
-  margin-bottom: 80px;
+  margin-bottom: 48px;
+  text-align: center;
 }
 
 /* ── Chapters container (actos II–IV) ── */
@@ -86,6 +87,13 @@
   margin: 0 auto;
   text-align: center;
   align-items: center;
+}
+
+.chapterCenter .chapterTitle,
+.chapterCenter .chapterBody {
+  white-space: pre-line;
+  text-align: center;
+  max-width: 100%;
 }
 
 .chapterCenter .textBlock {
@@ -213,9 +221,12 @@
   width: 100vw;
   left: 50%;
   transform: translateX(-50%);
+  min-height: 90vh;
   padding: 80px var(--space-16) 0;
   overflow: hidden;
   margin-bottom: 0;
+  display: flex;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
@@ -294,7 +305,7 @@
   width: 100vw;
   left: 50%;
   transform: translateX(-50%);
-  min-height: 70vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -347,7 +358,7 @@
   width: 100vw;
   left: 50%;
   transform: translateX(-50%);
-  min-height: 70vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -428,7 +439,7 @@
 
 .chapterBodyLight {
   font-family: var(--font-heading);
-  font-size: clamp(14px, 1.1vw, 16px);
+  font-size: clamp(16px, 1.1vw, 18px);
   font-weight: 300;
   line-height: 1.85;
   color: #E8E0D5;
