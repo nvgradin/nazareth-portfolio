@@ -172,9 +172,9 @@ export const panDoPorrino: ProjectWithLayout = {
 
   tagline: 'Tradición con diseño.',
   cover: '/projects/pan-do-porrino/portada_pan_do_porrino_2560.jpg',
-  featured: true,
+  featured: false,
   ambientColor: '#2C1A0E',
 
-  status: 'draft',
+  status: 'published',
   order: 5,
 };

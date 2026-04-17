@@ -19,7 +19,8 @@ type Phase =
   | 'measuring-to-stack'
   | 'transitioning-to-stack';
 
-const allProjects = getPublishedProjects();
+const allProjects      = getPublishedProjects();
+const featuredProjects = allProjects.filter(p => p.featured);
 const GRID_BG = '#F5F0E8';
 
 function makeSnapshot(
@@ -61,12 +62,12 @@ export function ProjectsView() {
   const [phase, setPhase] = useState<Phase>('stack');
   const [exitSnapshots, setExitSnapshots] = useState<CardSnapshot[]>([]);
   const [enterSnapshots, setEnterSnapshots] = useState<CardSnapshot[]>([]);
-  const [bgColor, setBgColor] = useState(allProjects[0]?.ambientColor ?? '#1a1a1a');
+  const [bgColor, setBgColor] = useState(featuredProjects[0]?.ambientColor ?? '#1a1a1a');
   const { setDark } = useHeaderTheme();
 
   const stackCardEls        = useRef<Map<string, HTMLElement | null>>(new Map());
   const gridCardEls         = useRef<Map<string, HTMLElement | null>>(new Map());
-  const stackOrderRef       = useRef<number[]>(allProjects.map((_, i) => i));
+  const stackOrderRef       = useRef<number[]>(featuredProjects.map((_, i) => i));
   const visibleGridSlugsRef = useRef<string[]>(allProjects.map(p => p.slug));
 
   const [textEnter, setTextEnter] = useState<'grid' | 'stack' | null>(null);
@@ -95,7 +96,7 @@ export function ProjectsView() {
     if (phase !== 'measuring-to-grid') return;
     const raf1 = requestAnimationFrame(() => {
       const raf2 = requestAnimationFrame(() => {
-        const orderedProjects = stackOrderRef.current.map(i => allProjects[i]);
+        const orderedProjects = stackOrderRef.current.map(i => featuredProjects[i]);
         const shots: CardSnapshot[] = orderedProjects
           .map((project) => {
             const stackEl = stackCardEls.current.get(project.slug);
@@ -124,9 +125,10 @@ export function ProjectsView() {
     const raf1 = requestAnimationFrame(() => {
       const raf2 = requestAnimationFrame(() => {
         const visibleSlugs = visibleGridSlugsRef.current;
+        // Solo animamos los featured (los que tienen stackEl). Los no-featured quedan en grid sin transición.
         const visibleProjects = visibleSlugs
-          .map(slug => allProjects.find(p => p.slug === slug))
-          .filter(Boolean) as typeof allProjects;
+          .map(slug => featuredProjects.find(p => p.slug === slug))
+          .filter(Boolean) as typeof featuredProjects;
 
         const exits: CardSnapshot[] = visibleProjects
           .map((project) => {
@@ -142,7 +144,7 @@ export function ProjectsView() {
 
         if (exits.length === 0) { setPhase('stack'); return; }
 
-        const orderedProjects = stackOrderRef.current.map(i => allProjects[i]);
+        const orderedProjects = stackOrderRef.current.map(i => featuredProjects[i]);
         const enters: CardSnapshot[] = orderedProjects
           .map((project) => {
             const stackEl = stackCardEls.current.get(project.slug);
@@ -170,7 +172,7 @@ export function ProjectsView() {
   const onTransitionComplete = useCallback(() => {
     setPhase(prev => {
       const next = prev === 'transitioning-to-grid' ? 'grid' : 'stack';
-      if (next === 'stack') visibleGridSlugsRef.current = allProjects.map(p => p.slug);
+      if (next === 'stack') visibleGridSlugsRef.current = allProjects.map(p => p.slug); // todos, no solo featured
       setTextEnter(next);
       return next;
     });
@@ -216,7 +218,7 @@ export function ProjectsView() {
       <div style={layerStyle(stackActive)}>
         <PortalProvider>
           <HomeStack
-            projects={allProjects}
+            projects={featuredProjects}
             disabled={phase !== 'stack'}
             onCardRefs={(map) => { stackCardEls.current = map; }}
             onFrontColor={(c) => setBgColor(c)}

@@ -23,7 +23,7 @@ export const amigoSecreto: ProjectWithLayout = {
 
   tagline: 'Dar y recibir es la danza que nos conecta.',
   cover: '/projects/amigo-secreto/amigosecreto.jpg',
-  featured: false,
+  featured: true,
   ambientColor: '#612A74',
   ambientGradient: 'linear-gradient(135deg, #612A74 0%, #E8A089 100%)',
 
