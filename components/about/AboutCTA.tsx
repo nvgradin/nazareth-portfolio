@@ -28,6 +28,9 @@ export default function AboutCTA() {
             ¿Hablamos? →
           </Link>
         </motion.div>
+        <motion.p className={styles.micro} {...fade(0.42)}>
+          Vigo, Galicia · Remote-friendly · Colaborando con agencias, marcas y proyectos digitales
+        </motion.p>
       </div>
     </section>
   );
