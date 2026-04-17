@@ -1,14 +1,9 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from './HomeLogos.module.css';
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
-
-// Todos los logos son 260×160px
-const W = 260;
-const H = 160;
 
 const ALL_LOGOS = [
   { src: '/logos/Movistar.png', alt: 'Movistar' },
@@ -52,13 +47,11 @@ export function HomeLogos() {
         <div className={styles.strip}>
           {DOUBLED.map((logo, i) => (
             <div key={i} className={styles.logoWrap}>
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={logo.src}
                 alt={logo.alt}
-                width={W}
-                height={H}
                 className={styles.logo}
-                style={{ width: 'auto', height: '77px' }}
               />
             </div>
           ))}

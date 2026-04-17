@@ -1,11 +1,6 @@
 'use client';
 
-import Image from 'next/image';
 import styles from './AboutLogosMobile.module.css';
-
-// Todos los logos son 260×160px
-const W = 260;
-const H = 160;
 
 interface Logo {
   src: string;
@@ -56,13 +51,11 @@ function MarqueeRow({
         <div className={`${styles.strip} ${direction === 'right' ? styles.stripReverse : ''}`}>
           {doubled.map((logo, i) => (
             <div key={i} className={styles.logoWrap}>
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={logo.src}
                 alt={logo.alt}
-                width={W}
-                height={H}
                 className={styles.logo}
-                style={{ width: 'auto', height: '55px' }}
               />
             </div>
           ))}
