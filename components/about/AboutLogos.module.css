@@ -77,9 +77,8 @@
 }
 
 .logo {
+  height: 77px;
   width: auto;
-  height: auto;
-  max-height: 80px;
   object-fit: contain;
   opacity: 0.35;
   filter: grayscale(1);
@@ -112,6 +111,7 @@
   }
 
   .logo {
-    height: 28px;
+    height: 44px;
+    width: auto;
   }
 }

@@ -57,12 +57,12 @@
   flex-shrink: 0;
   display: flex;
   align-items: center;
+  padding-inline: 24px;
 }
 
 .logo {
+  height: 55px;
   width: auto;
-  height: auto;
-  max-height: 80px;
   object-fit: contain;
   /* En móvil: color directo, sin gris */
   opacity: 1;

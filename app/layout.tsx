@@ -40,10 +40,6 @@ export const metadata: Metadata = {
   description: "Digital Product & Experience Designer. UX/UI, estrategia y visión de negocio. Conectando marca, producto y negocio en proyectos digitales.",
   keywords: ["Product Designer", "UX Designer", "UI Designer", "Digital Experience", "Estrategia Digital"],
   authors: [{ name: "Nazareth" }],
-  icons: {
-    icon: "/brand/favicon.png",
-    apple: "/brand/favicon.png",
-  },
   openGraph: {
     title: "Nazareth | Product & Experience Designer",
     description: "Digital Product & Experience Designer. UX/UI, estrategia y visión de negocio.",
@@ -59,6 +55,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        {/* Favicon claro (sin fondo, oscuro) */}
+        <link rel="icon" href="/brand/favicon.png" media="(prefers-color-scheme: light)" />
+        {/* Favicon oscuro (fondo morado, icono crema) */}
+        <link rel="icon" href="/brand/favicon_ng.png" media="(prefers-color-scheme: dark)" />
+      </head>
       <body
         className={`${poppins.variable} ${abhayaLibre.variable} ${aboreto.variable}`}
       >
