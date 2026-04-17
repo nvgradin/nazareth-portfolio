@@ -63,6 +63,8 @@ const HITOS = [
   },
 ];
 
+/* ─── Desktop: horizontal ─── */
+
 function FormacionTimeline() {
   return (
     <div className={styles.fScroll}>
@@ -123,6 +125,66 @@ function ExperienciaTimeline() {
   );
 }
 
+/* ─── Móvil/tablet portrait: lista vertical ─── */
+
+function ExperienciaVertical() {
+  return (
+    <div className={styles.vList}>
+      <div className={styles.vLine} />
+      {HITOS.map((hito, i) => {
+        const isLast = i === HITOS.length - 1;
+        return (
+          <motion.div
+            key={i}
+            className={styles.vItem}
+            initial={{ opacity: 0, x: -12 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: i * 0.07, ease: EASE_OUT }}
+          >
+            <div className={`${styles.vDot} ${isLast ? styles.vDotActive : ''}`} />
+            <div className={styles.vContent}>
+              <p className={styles.ePeriod}>{hito.period}</p>
+              <p className={styles.eRole}>{hito.role}</p>
+              <p className={styles.eNote}>{hito.note}</p>
+            </div>
+          </motion.div>
+        );
+      })}
+    </div>
+  );
+}
+
+function FormacionVertical() {
+  return (
+    <div className={styles.vList}>
+      <div className={styles.vLine} />
+      {FORMACION.map((f, i) => {
+        const isLast = i === FORMACION.length - 1;
+        return (
+          <motion.div
+            key={i}
+            className={styles.vItem}
+            initial={{ opacity: 0, x: -12 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: i * 0.07, ease: EASE_OUT }}
+          >
+            <div className={`${styles.vDot} ${isLast ? styles.vDotActive : ''}`} />
+            <div className={styles.vContent}>
+              <p className={styles.fPeriod}>{f.period}</p>
+              <p className={styles.fTitle}>{f.title}</p>
+              <p className={styles.fPlace}>{f.place}</p>
+            </div>
+          </motion.div>
+        );
+      })}
+    </div>
+  );
+}
+
+/* ─── Componente principal ─── */
+
 export default function AboutTimeline() {
   const { setDark } = useHeaderTheme();
   const ref = useRef<HTMLElement>(null);
@@ -154,7 +216,15 @@ export default function AboutTimeline() {
           Recorrido
         </motion.p>
 
-        <ExperienciaTimeline />
+        {/* Desktop / tablet landscape */}
+        <div className={styles.desktopOnly}>
+          <ExperienciaTimeline />
+        </div>
+
+        {/* Móvil / tablet portrait */}
+        <div className={styles.mobileOnly}>
+          <ExperienciaVertical />
+        </div>
 
         <motion.p
           className={styles.eyebrow}
@@ -167,7 +237,15 @@ export default function AboutTimeline() {
           Formación
         </motion.p>
 
-        <FormacionTimeline />
+        {/* Desktop / tablet landscape */}
+        <div className={styles.desktopOnly}>
+          <FormacionTimeline />
+        </div>
+
+        {/* Móvil / tablet portrait */}
+        <div className={styles.mobileOnly}>
+          <FormacionVertical />
+        </div>
 
         <motion.div
           className={styles.links}

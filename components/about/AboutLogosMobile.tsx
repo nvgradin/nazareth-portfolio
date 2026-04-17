@@ -62,6 +62,7 @@ function MarqueeRow({
                 width={W}
                 height={H}
                 className={styles.logo}
+                style={{ width: 'auto', height: '55px' }}
               />
             </div>
           ))}

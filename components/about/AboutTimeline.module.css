@@ -123,12 +123,6 @@
   margin: 0;
 }
 
-@media (max-width: 767px) {
-  .fTrack {
-    grid-template-columns: repeat(4, 72vw);
-    padding-inline: var(--space-16);
-  }
-}
 
 
 /* ══════════════════════════════════════════
@@ -246,9 +240,86 @@
   margin: 0;
 }
 
-@media (max-width: 767px) {
-  .eOuter { height: 300px; }
-  .eItem { min-width: 72vw; }
+
+
+/* ══════════════════════════════════════════
+   VISIBILITY HELPERS
+   desktop = ≥1024px O landscape en cualquier ancho
+   mobile  = <1024px portrait + todo móvil
+   ══════════════════════════════════════════ */
+
+.desktopOnly {
+  display: none;
+}
+
+.mobileOnly {
+  display: block;
+}
+
+/* Tablet landscape y desktop */
+@media (min-width: 1024px) {
+  .desktopOnly { display: block; }
+  .mobileOnly  { display: none; }
+}
+
+@media (orientation: landscape) and (min-width: 768px) {
+  .desktopOnly { display: block; }
+  .mobileOnly  { display: none; }
+}
+
+
+/* ══════════════════════════════════════════
+   LISTA VERTICAL — móvil / tablet portrait
+   ══════════════════════════════════════════ */
+
+.vList {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-left: 20px;
+}
+
+/* Línea vertical continua */
+.vLine {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 0;
+  width: 1px;
+  background: rgba(238, 233, 226, 0.15);
+}
+
+.vItem {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-block: 20px;
+}
+
+.vDot {
+  position: absolute;
+  left: -24px;
+  top: 26px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid rgba(238, 233, 226, 0.4);
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.vDotActive {
+  border-color: var(--neutral-200);
+  background: var(--neutral-200);
+  box-shadow: 0 0 10px rgba(238, 233, 226, 0.25);
+}
+
+.vContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 

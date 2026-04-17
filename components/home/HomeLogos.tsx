@@ -58,6 +58,7 @@ export function HomeLogos() {
                 width={W}
                 height={H}
                 className={styles.logo}
+                style={{ width: 'auto', height: '77px' }}
               />
             </div>
           ))}
