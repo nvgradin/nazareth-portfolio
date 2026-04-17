@@ -11,16 +11,15 @@ import {
 import styles from './MarqueeDivider.module.css';
 
 const ITEMS = [
-  { text: 'PRODUCT DESIGN', accent: false },
-  { text: 'UX / UI', accent: false },
-  { text: 'WEB', accent: false },
-  { text: 'ESTRATEGIA DIGITAL', accent: false },
+  { text: 'PRODUCT DESIGN & UX', accent: false },
   { text: 'BRANDING', accent: false },
-  { text: 'DESARROLLO', accent: false },
+  { text: 'WEB DEVELOPMENT', accent: false },
+  { text: 'ESTRATEGIA DIGITAL', accent: false },
+  { text: 'AI-POWERED PRODUCTS', accent: false },
 ];
 
 const SEP = '◆';
-const BASE_SPEED = 44; // px/s — lento y elegante
+const BASE_SPEED = 28; // px/s — lento y elegante
 
 export function MarqueeDivider() {
   const trackRef = useRef<HTMLDivElement>(null);
