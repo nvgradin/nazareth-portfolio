@@ -69,7 +69,7 @@ export default function AboutLogosMobile() {
   return (
     <div className={styles.root}>
       <MarqueeRow logos={AGENCIA} direction="left" label="En agencia" />
-      <MarqueeRow logos={FREELANCE} direction="right" label="Freelance" />
+      <MarqueeRow logos={FREELANCE} direction="right" label="En Nazareth Gradín" />
     </div>
   );
 }

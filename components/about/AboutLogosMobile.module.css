@@ -22,6 +22,7 @@
   opacity: 0.35;
   margin: 0;
   padding-inline: var(--space-16);
+  text-align: center;
 }
 
 /* ── Track: clip del overflow ── */
