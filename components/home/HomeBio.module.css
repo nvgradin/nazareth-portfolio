@@ -143,3 +143,25 @@
   object-fit: cover;
   object-position: top center;
 }
+
+/* ── Micro info — solo visible cuando el hero la oculta ── */
+.micro {
+  font-family: var(--font-base);
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--brand-primary-900);
+  opacity: 0.4;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  /* visible por defecto en móvil portrait */
+  display: block;
+}
+
+/* En desktop y landscape el hero ya la muestra — la ocultamos aquí */
+@media (min-width: 1024px) {
+  .micro { display: none; }
+}
+
+@media (orientation: landscape) {
+  .micro { display: none; }
+}

@@ -67,6 +67,10 @@ export function HomeBio() {
                 Conoce mi recorrido →
               </Link>
             </motion.div>
+
+            <motion.p className={styles.micro} {...fade(0.45)}>
+              Vigo, Galicia · Remote-friendly · Colaborando con agencias, marcas y proyectos digitales
+            </motion.p>
           </div>
 
           {/* Columna derecha — imagen */}
