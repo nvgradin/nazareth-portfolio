@@ -20,6 +20,10 @@ type Phase =
   | 'measuring-to-stack'
   | 'transitioning-to-stack';
 
+// allProjects → ExploreGrid (todos los publicados)
+// stackProjects → HomeStack (solo featured, máx 4 para caber en SLOTS)
+const allProjects   = getPublishedProjects();
+const stackProjects = allProjects.filter(p => p.featured);
 const GRID_BG = '#F5F0E8';
 
 function makeSnapshot(
@@ -58,26 +62,23 @@ function layerStyle(active: boolean, scrollable = false): React.CSSProperties {
 }
 
 export function ProjectsView() {
-  const allProjects = getPublishedProjects();
-  const featuredProjects = allProjects.filter(p => p.featured);
-
   const [phase, setPhase] = useState<Phase>('stack');
   const [exitSnapshots, setExitSnapshots] = useState<CardSnapshot[]>([]);
   const [enterSnapshots, setEnterSnapshots] = useState<CardSnapshot[]>([]);
-  const [bgColor, setBgColor] = useState(() => featuredProjects[0]?.ambientColor ?? '#1a1a1a');
+  const [bgColor, setBgColor] = useState(stackProjects[0]?.ambientColor ?? '#1a1a1a');
   const { setDark } = useHeaderTheme();
 
   const stackCardEls        = useRef<Map<string, HTMLElement | null>>(new Map());
   const gridCardEls         = useRef<Map<string, HTMLElement | null>>(new Map());
-  const stackOrderRef       = useRef<number[]>(featuredProjects.map((_, i) => i));
-  const visibleGridSlugsRef = useRef<string[]>(featuredProjects.map(p => p.slug));
+  // stackOrderRef indexa sobre stackProjects (no allProjects)
+  const stackOrderRef       = useRef<number[]>(stackProjects.map((_, i) => i));
+  const visibleGridSlugsRef = useRef<string[]>(allProjects.map(p => p.slug));
 
   const [textEnter, setTextEnter] = useState<'grid' | 'stack' | null>(null);
 
   const stackActive = phase === 'stack';
   const gridActive  = phase === 'grid';
 
-  // Derived: are we in a grid-ish state (for header theme + toggle style)
   const isGrid  = phase === 'grid' || phase === 'measuring-to-stack'
                || phase === 'transitioning-to-grid' || phase === 'transitioning-to-stack';
   const isStack = !isGrid;
@@ -86,11 +87,6 @@ export function ProjectsView() {
     setDark(!isGrid);
   }, [isGrid, setDark]);
 
-  // Background color:
-  // stack phases          → bgColor (ambient from front card)
-  // grid phases           → GRID_BG
-  // transitioning-to-stack → animate from GRID_BG to bgColor (Framer Motion handles the ease)
-  // Start animating bg toward stack color as soon as the transition begins
   const currentBg = (phase === 'grid' || phase === 'measuring-to-stack') ? GRID_BG : bgColor;
 
   // ── measuring-to-grid ─────────────────────────────────────────────
@@ -98,7 +94,8 @@ export function ProjectsView() {
     if (phase !== 'measuring-to-grid') return;
     const raf1 = requestAnimationFrame(() => {
       const raf2 = requestAnimationFrame(() => {
-        const orderedProjects = stackOrderRef.current.map(i => featuredProjects[i]);
+        // La transición anima solo los stackProjects (los que están en el stack)
+        const orderedProjects = stackOrderRef.current.map(i => stackProjects[i]);
         const shots: CardSnapshot[] = orderedProjects
           .map((project) => {
             const stackEl = stackCardEls.current.get(project.slug);
@@ -126,12 +123,13 @@ export function ProjectsView() {
     if (phase !== 'measuring-to-stack') return;
     const raf1 = requestAnimationFrame(() => {
       const raf2 = requestAnimationFrame(() => {
+        // Solo animamos los stackProjects visibles en el grid
         const visibleSlugs = visibleGridSlugsRef.current;
-        const visibleProjects = visibleSlugs
-          .map(slug => featuredProjects.find(p => p.slug === slug))
-          .filter(Boolean) as typeof featuredProjects;
+        const visibleStackProjects = visibleSlugs
+          .map(slug => stackProjects.find(p => p.slug === slug))
+          .filter(Boolean) as ProjectWithLayout[];
 
-        const exits: CardSnapshot[] = visibleProjects
+        const exits: CardSnapshot[] = visibleStackProjects
           .map((project) => {
             const gridEl = gridCardEls.current.get(project.slug);
             if (!gridEl) return null;
@@ -145,7 +143,7 @@ export function ProjectsView() {
 
         if (exits.length === 0) { setPhase('stack'); return; }
 
-        const orderedProjects = stackOrderRef.current.map(i => featuredProjects[i]);
+        const orderedProjects = stackOrderRef.current.map(i => stackProjects[i]);
         const enters: CardSnapshot[] = orderedProjects
           .map((project) => {
             const stackEl = stackCardEls.current.get(project.slug);
@@ -173,7 +171,7 @@ export function ProjectsView() {
   const onTransitionComplete = useCallback(() => {
     setPhase(prev => {
       const next = prev === 'transitioning-to-grid' ? 'grid' : 'stack';
-      if (next === 'stack') visibleGridSlugsRef.current = featuredProjects.map(p => p.slug);
+      if (next === 'stack') visibleGridSlugsRef.current = allProjects.map(p => p.slug);
       setTextEnter(next);
       return next;
     });
@@ -196,7 +194,6 @@ export function ProjectsView() {
         transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
       />
 
-      {/* Toggle — siempre fuera de los layers para garantizar z-index por encima del header */}
       <nav className={[styles.toggleH, isGrid ? styles.toggleDark : ''].join(' ')}>
         <button
           className={[styles.label, isStack ? styles.active : ''].join(' ')}
@@ -215,11 +212,11 @@ export function ProjectsView() {
         </button>
       </nav>
 
-      {/* Vista Stack — always in DOM as fixed layer, visibility controlled by opacity */}
+      {/* Vista Stack — solo stackProjects (featured) */}
       <div style={layerStyle(stackActive)}>
         <PortalProvider>
           <HomeStack
-            projects={featuredProjects}
+            projects={stackProjects}
             disabled={phase !== 'stack'}
             onCardRefs={(map) => { stackCardEls.current = map; }}
             onFrontColor={(c) => setBgColor(c)}
@@ -231,7 +228,7 @@ export function ProjectsView() {
         </PortalProvider>
       </div>
 
-      {/* Vista Grid — always in DOM as fixed layer, visibility controlled by opacity */}
+      {/* Vista Grid — todos los proyectos publicados */}
       <div style={layerStyle(gridActive, true)}>
         <ExploreGrid
           projects={allProjects}
@@ -242,7 +239,6 @@ export function ProjectsView() {
         />
       </div>
 
-      {/* Overlay de cards */}
       {hasOverlay && (
         <ViewTransition
           exitCards={exitSnapshots}
