@@ -3,6 +3,7 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { getPublishedProjects } from '@/data/projects';
+import { ProjectWithLayout } from '@/lib/project-layout.types';
 import { PortalProvider } from './PortalContext';
 import { HomeStack } from './HomeStack';
 import { PortalTransition } from './PortalTransition';
@@ -19,12 +20,10 @@ type Phase =
   | 'measuring-to-stack'
   | 'transitioning-to-stack';
 
-const allProjects = getPublishedProjects();
-const featuredProjects = allProjects.filter(p => p.featured);
 const GRID_BG = '#F5F0E8';
 
 function makeSnapshot(
-  project: (typeof allProjects)[0],
+  project: ProjectWithLayout,
   fromRect: DOMRect,
   toRect: DOMRect,
   fromRadius: number,
@@ -59,16 +58,19 @@ function layerStyle(active: boolean, scrollable = false): React.CSSProperties {
 }
 
 export function ProjectsView() {
+  const allProjects = getPublishedProjects();
+  const featuredProjects = allProjects.filter(p => p.featured);
+
   const [phase, setPhase] = useState<Phase>('stack');
   const [exitSnapshots, setExitSnapshots] = useState<CardSnapshot[]>([]);
   const [enterSnapshots, setEnterSnapshots] = useState<CardSnapshot[]>([]);
-  const [bgColor, setBgColor] = useState(featuredProjects[0]?.ambientColor ?? '#1a1a1a');
+  const [bgColor, setBgColor] = useState(() => featuredProjects[0]?.ambientColor ?? '#1a1a1a');
   const { setDark } = useHeaderTheme();
 
   const stackCardEls        = useRef<Map<string, HTMLElement | null>>(new Map());
   const gridCardEls         = useRef<Map<string, HTMLElement | null>>(new Map());
   const stackOrderRef       = useRef<number[]>(featuredProjects.map((_, i) => i));
-  const visibleGridSlugsRef = useRef<string[]>(allProjects.map(p => p.slug));
+  const visibleGridSlugsRef = useRef<string[]>(featuredProjects.map(p => p.slug));
 
   const [textEnter, setTextEnter] = useState<'grid' | 'stack' | null>(null);
 
