@@ -4,20 +4,34 @@
   padding-block: 80px 100px;
 }
 
-.inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 72px;
+/* ── Desktop: visible ≥768px ── */
+.desktopInner {
+  display: none;
+}
+
+/* ── Móvil: visible <768px ── */
+.mobileInner {
+  display: block;
 }
 
 @media (min-width: 768px) {
-  .inner { padding-inline: var(--space-64); }
+  .desktopInner {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-inline: var(--space-64);
+  }
+  .mobileInner {
+    display: none;
+  }
 }
 
 @media (min-width: 1024px) {
-  .inner { padding-inline: var(--space-96); }
+  .desktopInner {
+    padding-inline: var(--space-96);
+  }
 }
 
 /* ── Group ── */
@@ -36,31 +50,14 @@
   color: var(--brand-primary-900);
   opacity: 0.35;
   margin: 0;
-  padding-inline: var(--space-16);
-  text-align: center;
 }
 
-@media (min-width: 768px) {
-  .label {
-    padding-inline: 0;
-    text-align: left;
-  }
-}
-
-/* ── Agencia: fila estática centrada ── */
+/* ── Agencia: fila estática ── */
 .agenciaRow {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  gap: 32px 48px;
-}
-
-@media (min-width: 768px) {
-  .agenciaRow {
-    justify-content: flex-start;
-    gap: 40px 72px;
-  }
+  gap: 40px 72px;
 }
 
 /* ── Marquee freelance ── */
@@ -102,32 +99,4 @@
 .logoWrap:hover .logo {
   opacity: 0.8;
   filter: grayscale(0);
-}
-
-/* Móvil */
-@media (max-width: 767px) {
-  .section {
-    padding-block: 56px 80px;
-  }
-
-  .logoWrap {
-    width: 120px;
-  }
-
-  .logo {
-    height: 55px;
-    max-width: 120px;
-  }
-
-  /* Agencia en móvil: grid 2 columnas centrado */
-  .agenciaRow {
-    display: grid;
-    grid-template-columns: repeat(2, 120px);
-    justify-content: center;
-    gap: 24px;
-  }
-
-  .strip {
-    animation-duration: 45s;
-  }
 }

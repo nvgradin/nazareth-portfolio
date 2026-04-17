@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from './AboutLogos.module.css';
+import AboutLogosMobile from './AboutLogosMobile';
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
@@ -38,9 +39,10 @@ const FREELANCE_DOUBLED = [...FREELANCE, ...FREELANCE];
 export default function AboutLogos() {
   return (
     <section className={styles.section}>
-      <div className={styles.inner}>
 
-        {/* ── Agencia: fila estática centrada ── */}
+      {/* ── Desktop: agencia estática + freelance marquee ── */}
+      <div className={styles.desktopInner}>
+
         <div className={styles.group}>
           <motion.p
             className={styles.label}
@@ -72,7 +74,6 @@ export default function AboutLogos() {
           </motion.div>
         </div>
 
-        {/* ── Freelance: marquee ── */}
         <div className={styles.group}>
           <motion.p
             className={styles.label}
@@ -94,11 +95,7 @@ export default function AboutLogos() {
                 {FREELANCE_DOUBLED.map((logo, i) => (
                   <div key={i} className={styles.logoWrap}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={logo.src}
-                      alt={logo.alt}
-                      className={styles.logo}
-                    />
+                    <img src={logo.src} alt={logo.alt} className={styles.logo} />
                   </div>
                 ))}
               </div>
@@ -107,6 +104,12 @@ export default function AboutLogos() {
         </div>
 
       </div>
+
+      {/* ── Móvil: dos marquees (AboutLogosMobile) ── */}
+      <div className={styles.mobileInner}>
+        <AboutLogosMobile />
+      </div>
+
     </section>
   );
 }
