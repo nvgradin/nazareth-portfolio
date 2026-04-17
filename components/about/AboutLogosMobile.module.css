@@ -1,0 +1,74 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-block: 16px;
+}
+
+/* ── Grupo: label + fila ── */
+.marqueeGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.label {
+  font-family: var(--font-accent);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brand-primary-900);
+  opacity: 0.35;
+  margin: 0;
+  padding-inline: var(--space-16);
+}
+
+/* ── Track: clip del overflow ── */
+.track {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* ── Strip animado ── */
+.strip {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marqueeLeft 38s linear infinite;
+}
+
+.stripReverse {
+  animation: marqueeRight 90s linear infinite;
+}
+
+@keyframes marqueeLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* ── Logo individual ── */
+.logoWrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: auto;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+  /* En móvil: color directo, sin gris */
+  opacity: 1;
+  filter: none;
+}
+
+.multiply {
+  mix-blend-mode: multiply;
+}

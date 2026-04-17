@@ -32,17 +32,17 @@ const FORMACION = [
 
 const HITOS = [
   {
-    period: '2009 – 2013',
+    period: '2009 – 2010',
     role: 'Creativa Junior — Atrevia',
     note: 'Aprendí que una idea bien contada puede cambiar cómo la gente percibe el mundo.',
   },
   {
-    period: '2011 – 2015',
+    period: '2010 – 2012',
     role: 'E-learning Designer — Grupo Femxa, Ingafor',
     note: 'Vi el problema antes que el mercado: el aprendizaje digital necesitaba experiencia, no solo contenido.',
   },
   {
-    period: '2011 – 2013',
+    period: '2012 – 2015',
     role: 'Emprendimiento — Facebook del e-learning',
     note: 'Diseñé un modelo de negocio que el mundo necesitaría nueve años después.',
   },

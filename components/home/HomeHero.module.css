@@ -113,7 +113,7 @@
   .value {
     font-size: 15px;
     max-width: 300px;
-    margin-top: var(--space-16);
+    margin-top: var(--space-8);
   }
 }
 
@@ -211,6 +211,10 @@
     white-space: normal;
     font-size: clamp(42px, 13vw, 80px);
     line-height: 1.05;
+  }
+
+  .micro {
+    display: none;
   }
 }
 

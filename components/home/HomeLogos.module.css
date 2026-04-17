@@ -1,0 +1,95 @@
+.section {
+  background-color: #EEE9E2;
+  padding-block: 0 80px;
+  position: relative;
+  z-index: 3;
+}
+
+/* Label centrado */
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding-inline: var(--space-16);
+}
+
+.eyebrow {
+  font-family: var(--font-accent);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brand-primary-900);
+  opacity: 0.35;
+  margin: 0;
+}
+
+/* Track — clip del overflow */
+.track {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Strip — una sola fila, scroll continuo a la izquierda */
+.strip {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  /* 19 logos × 2 = 38 items — duración proporcional a freelance (~90s) */
+  animation: marqueeLeft 90s linear infinite;
+}
+
+@keyframes marqueeLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Logo individual */
+.logoWrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: auto;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+  /* Desktop: gris sutil con hover en color */
+  opacity: 0.3;
+  filter: grayscale(1);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.logoWrap:hover .logo {
+  opacity: 0.75;
+  filter: grayscale(0);
+}
+
+.multiply {
+  mix-blend-mode: multiply;
+  filter: none !important;
+  opacity: 0.5;
+}
+
+.logoWrap:hover .multiply {
+  opacity: 1;
+}
+
+/* Móvil: color directo, sin gris */
+@media (max-width: 767px) {
+  .logo {
+    opacity: 1;
+    filter: none;
+  }
+
+  .strip {
+    /* En móvil un poco más rápido — menos distancia visual */
+    animation-duration: 70s;
+  }
+
+  .section {
+    padding-block: 0 56px;
+  }
+}

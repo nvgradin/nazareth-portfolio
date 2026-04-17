@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { HomeHero, IntroOverlay, HomeProjects, HomeBio, ProjectsToBioTransition, MarqueeDivider, HomeCTA } from '@/components/home';
+import { HomeLogos } from '@/components/home/HomeLogos';
 import { Footer } from '@/components/layout';
 
 export default function Home() {
@@ -26,11 +27,14 @@ export default function Home() {
       {/* Bio */}
       <HomeBio />
 
-      {/* Bisagra cromática */}
-      <MarqueeDivider />
+      {/* Prueba social — mismo fondo crema, sin corte */}
+      <HomeLogos />
 
-      {/* CTA + Footer */}
+      {/* CTA */}
       <HomeCTA />
+
+      {/* Bisagra cromática — firma antes del footer */}
+      <MarqueeDivider />
       <Footer />
     </>
   );
