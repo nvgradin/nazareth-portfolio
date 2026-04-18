@@ -58,10 +58,24 @@ export function QuoteBanner({ data }: Props) {
 
       {/* Content */}
       <div className={styles.container}>
-        <blockquote className={styles.quote}>{quote}</blockquote>
+        <blockquote className={[styles.quote, !Array.isArray(quote) ? styles.quoteSimple : ''].join(' ')}>
+          {Array.isArray(quote)
+            ? quote.map((line, i) => (
+                <span key={i} className={styles.quoteLine}>
+                  {i === 0 ? '\u201C' : ''}{line}{i === quote.length - 1 ? '\u201D' : ''}
+                </span>
+              ))
+            : quote}
+        </blockquote>
         {(author || role) && (
           <div className={styles.attribution}>
-            {author && <span className={styles.author}>{author}</span>}
+            {author && (
+              <span className={styles.author}>
+                {Array.isArray(author)
+                  ? author.map((line, i) => <span key={i} className={styles.authorLine}>{line}</span>)
+                  : author}
+              </span>
+            )}
             {author && role && <span className={styles.separator}>—</span>}
             {role && <span className={styles.role}>{role}</span>}
           </div>

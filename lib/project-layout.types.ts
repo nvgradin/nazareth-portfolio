@@ -263,8 +263,8 @@ export type ImagePosition = 'top' | 'center' | 'bottom';
  * Quote banner full-bleed
  */
 export interface QuoteBanner {
-  quote: string;
-  author?: string;
+  quote: string | string[];
+  author?: string | string[];
   role?: string;
   backgroundImage: Media;
   imagePosition?: ImagePosition;  // Default: 'center'
@@ -334,6 +334,7 @@ export interface ProjectLayout {
   imageCompare?: ImageCompareData;
 
   process?: ProcessStep[];
+  clientLogos?: { src: string; alt: string }[];
   quoteBanner?: QuoteBanner;
   closing?: ClosingText;
 }

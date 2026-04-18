@@ -145,10 +145,33 @@ export const panDoPorrino: ProjectWithLayout = {
       ],
     },
 
-    // 6) Quote banner
+    // 6) Client logos
+    clientLogos: [
+      { src: '/projects/pan-do-porrino/client-logos/Concello_de_porrino.png', alt: 'Concello de Porriño' },
+      { src: '/projects/pan-do-porrino/client-logos/logotipo_acipor.png', alt: 'ACIPOR' },
+      { src: '/projects/pan-do-porrino/client-logos/logotipo_diputacion_pontevedra.png', alt: 'Deputación de Pontevedra' },
+      { src: '/projects/pan-do-porrino/client-logos/logotipo_ccap_morea.png', alt: 'CCAP Morea' },
+      { src: '/projects/pan-do-porrino/client-logos/logotipo_milagros.png', alt: 'Panadería Milagros' },
+      { src: '/projects/pan-do-porrino/client-logos/panaderias_amaquia.png', alt: 'Panaderías Amaquia' },
+      { src: '/projects/pan-do-porrino/client-logos/panaderias_argibay.png', alt: 'Panaderías Argibay' },
+      { src: '/projects/pan-do-porrino/client-logos/panaderias_chinchina.png', alt: 'Panaderías Chinchiña' },
+      { src: '/projects/pan-do-porrino/client-logos/panaderias_erundina.png', alt: 'Panaderías Erundina' },
+      { src: '/projects/pan-do-porrino/client-logos/panaderias_ofornodemosende.png', alt: 'O Forno de Mosende' },
+      { src: '/projects/pan-do-porrino/client-logos/panaderias_oprogreso.png', alt: 'O Progreso' },
+      { src: '/projects/pan-do-porrino/client-logos/panaderias_torneiros.png', alt: 'Panaderías Torneiros' },
+    ],
+
+    // 7) Quote banner
     quoteBanner: {
-      quote: 'Peregrino do Camiño, leva unha botella de vino e unha bolla de Pan do Porriño...',
-      author: 'Cantigo popular - Traducción: "Peregrino del Camino, lleva una botella de vino y una bolla de Pan do Porriño..."',
+      quote: [
+        'Peregrino do Camiño,',
+        'leva unha botella de vino',
+        'e unha bolla de Pan do Porriño...',
+      ],
+      author: [
+        'Cantiga popular',
+        'Traducción: "Peregrino del Camino, lleva una botella de vino y una bolla de Pan do Porriño..."',
+      ],
       backgroundImage: { type: 'image', src: '/projects/pan-do-porrino/quota-bg.jpg', alt: 'Quote background Pan do Porriño' },
       imagePosition: 'center',
     },

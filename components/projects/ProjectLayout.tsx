@@ -14,6 +14,7 @@ import { ProcessSteps } from './ProcessSteps';
 import { LearningBlock } from './LearningBlock';
 import { QuoteBanner } from './QuoteBanner';
 import { ClosingText } from './ClosingText';
+import { ProjectLogos } from './ProjectLogos';
 import styles from './ProjectLayout.module.css';
 
 interface Props {
@@ -123,10 +124,15 @@ export function ProjectLayout({ project }: Props) {
         <ProcessSteps data={layout.process} />
       )}
 
-      {/* 10) Quote banner */}
+      {/* 10) Client logos marquee */}
+      {layout.clientLogos && layout.clientLogos.length > 0 && (
+        <ProjectLogos logos={layout.clientLogos} />
+      )}
+
+      {/* 11) Quote banner */}
       {layout.quoteBanner && <QuoteBanner data={layout.quoteBanner} />}
 
-      {/* 11) Closing text */}
+      {/* 12) Closing text */}
       {layout.closing && <ClosingText data={layout.closing} />}
     </article>
   );
