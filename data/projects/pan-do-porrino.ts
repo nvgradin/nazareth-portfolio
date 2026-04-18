@@ -5,7 +5,7 @@ export const panDoPorrino: ProjectWithLayout = {
   title: 'Pan do Porriño',
   excerpt: 'Identidad visual y comunicación para una marca de panadería artesanal con raíces gallegas.',
 
-  categories: ['branding', 'web-design'],
+  categories: ['branding', 'marketing'],
   tags: ['Branding', 'Identidad Visual', 'Editorial', 'Packaging'],
 
   thumbnail: {
