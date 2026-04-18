@@ -71,6 +71,8 @@ export function ProjectsView() {
   const visibleGridSlugsRef = useRef<string[]>(allProjects.map(p => p.slug));
 
   const [textEnter, setTextEnter] = useState<'grid' | 'stack' | null>(null);
+  const [gridScrolled, setGridScrolled] = useState(false);
+  const gridLayerRef = useRef<HTMLDivElement>(null);
 
   const stackActive = phase === 'stack';
   const gridActive  = phase === 'grid';
@@ -83,6 +85,19 @@ export function ProjectsView() {
   useEffect(() => {
     setDark(!isGrid);
   }, [isGrid, setDark]);
+
+  // Reset scroll state when leaving grid
+  useEffect(() => {
+    if (!isGrid) setGridScrolled(false);
+  }, [isGrid]);
+
+  useEffect(() => {
+    const el = gridLayerRef.current;
+    if (!el) return;
+    const onScroll = () => setGridScrolled(el.scrollTop > 40);
+    el.addEventListener('scroll', onScroll, { passive: true });
+    return () => el.removeEventListener('scroll', onScroll);
+  }, []);
 
   // Background color:
   // stack phases          → bgColor (ambient from front card)
@@ -195,8 +210,15 @@ export function ProjectsView() {
         transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
       />
 
-      {/* Toggle — siempre fuera de los layers para garantizar z-index por encima del header */}
-      <nav className={[styles.toggleH, isGrid ? styles.toggleDark : ''].join(' ')}>
+      {/* Toggle — oculto al hacer scroll en grid para no superponerse con contenido */}
+      <nav
+        className={[styles.toggleH, isGrid ? styles.toggleDark : ''].join(' ')}
+        style={{
+          opacity: gridScrolled ? 0 : 1,
+          pointerEvents: gridScrolled ? 'none' : 'auto',
+          transition: 'opacity 0.25s ease',
+        }}
+      >
         <button
           className={[styles.label, isStack ? styles.active : ''].join(' ')}
           onClick={() => handleToggle('stack')}
@@ -231,7 +253,7 @@ export function ProjectsView() {
       </div>
 
       {/* Vista Grid — always in DOM as fixed layer, visibility controlled by opacity */}
-      <div style={layerStyle(gridActive, true)}>
+      <div ref={gridLayerRef} style={layerStyle(gridActive, true)}>
         <ExploreGrid
           projects={allProjects}
           exitingToStack={phase === 'transitioning-to-stack'}

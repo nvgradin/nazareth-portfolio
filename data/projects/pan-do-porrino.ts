@@ -27,11 +27,10 @@ export const panDoPorrino: ProjectWithLayout = {
       title: 'Pan do Porriño',
       subtitle: 'Identidad con raíces. Diseño con alma.',
       intro: [
-        'Pan do Porriño es una panadería artesanal con identidad propia. El encargo fue crear una marca que transmitiera la autenticidad del oficio, el arraigo al territorio y la calidez del producto hecho a mano.',
-        'Desde el logotipo hasta los materiales de comunicación, cada decisión de diseño busca conectar con la tradición sin renunciar a una estética contemporánea.',
+        'Ser parte de la creación de la Marca del Pan do Porriño, mi tierra natal, fue todo un honor. Conocido desde hace más de 400 años por su calidad, el Pan de Porriño es un símbolo de nuestra historia, un legado y una comunidad.',
       ],
       logo: '/projects/pan-do-porrino/Logotipo.png',
-      roles: ['Branding', 'Identidad Visual', 'Diseño Editorial', 'Packaging'],
+      roles: ['Branding', 'Identidad Visual', 'Packaging'],
       year: '2023',
     },
 
@@ -112,18 +111,18 @@ export const panDoPorrino: ProjectWithLayout = {
     // 4) Features
     features: [
       {
-        image: { type: 'image', src: '/projects/pan-do-porrino/Logotipo.png', alt: 'Logotipo Pan do Porriño' },
-        title: 'Identidad Visual',
+        image: { type: 'image', src: '/projects/pan-do-porrino/showcase-center-bottom.jpg', alt: 'Logotipo Pan do Porriño' },
+        title: 'Branding',
         description: 'Logotipo y sistema de marca que transmite autenticidad y arraigo al territorio gallego.',
       },
       {
-        image: { type: 'image', src: '/projects/pan-do-porrino/Mockup_diptico_pandoporrino.jpg', alt: 'Editorial Pan do Porriño' },
-        title: 'Editorial & Print',
+        image: { type: 'image', src: '/projects/pan-do-porrino/bento-8.webp', alt: 'Editorial Pan do Porriño' },
+        title: 'Publicidad & Promoción',
         description: 'Materiales impresos diseñados con coherencia de marca: dípticos, invitaciones y señalética.',
       },
       {
-        image: { type: 'image', src: '/projects/pan-do-porrino/Mockup_lona2_pandoporrino.jpeg', alt: 'Publicidad exterior Pan do Porriño' },
-        title: 'Comunicación',
+        image: { type: 'image', src: '/projects/pan-do-porrino/bento-6.jpg', alt: 'Packaging Especial Pan do Porriño' },
+        title: 'Packaging',
         description: 'Adaptación de la identidad a soportes publicitarios exteriores y materiales promocionales.',
       },
     ],
@@ -148,8 +147,8 @@ export const panDoPorrino: ProjectWithLayout = {
 
     // 6) Quote banner
     quoteBanner: {
-      quote: 'El buen diseño cuenta una historia sin necesidad de palabras.',
-      author: 'Nazareth Gradín',
+      quote: 'Peregrino do Camiño, leva unha botella de vino e unha bolla de Pan do Porriño...',
+      author: 'Cantigo popular - Traducción: "Peregrino del Camino, lleva una botella de vino y una bolla de Pan do Porriño..."',
       backgroundImage: { type: 'image', src: '/projects/pan-do-porrino/quota-bg.jpg', alt: 'Quote background Pan do Porriño' },
       imagePosition: 'center',
     },
