@@ -73,17 +73,25 @@ export function HomeBio() {
             </motion.p>
           </div>
 
-          {/* Columna derecha — imagen */}
+          {/* Columna derecha — imagen con hover crossfade → about */}
           <motion.div className={styles.topRight} {...fade(0.18)}>
-            <div className={styles.imageWrap}>
+            <Link href="/about" className={styles.imageWrap} aria-label="Conocer más sobre Nazareth">
               <Image
-                src="/about/hero_about_2560.webp"
+                src="/home/home-bio-NG.jpg"
+                alt=""
+                fill
+                sizes="(max-width: 768px) 100vw, 45vw"
+                className={styles.imageBase}
+              />
+              <Image
+                src="/home/home-bio-Nazareth.jpg"
                 alt="Nazareth Gradín"
                 fill
                 sizes="(max-width: 768px) 100vw, 45vw"
-                className={styles.image}
+                className={styles.imageHover}
               />
-            </div>
+              <div className={styles.imageOverlay} />
+            </Link>
           </motion.div>
 
         </div>
