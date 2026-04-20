@@ -1,23 +1,22 @@
+import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { getProjectBySlug, getAllProjectSlugs } from '@/data/projects';
 import { ProjectLayout } from '@/components/projects';
+import { BackToProjectsPill } from '@/components/projects/BackToProjectsPill';
+import { NextProjectSection } from '@/components/projects/NextProjectSection';
+import { getNextProject, ProjectOrigin } from '@/lib/getNextProject';
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ from?: string; filter?: string }>;
 }
 
-/**
- * Genera las rutas estáticas para todos los proyectos
- */
 export async function generateStaticParams() {
   const slugs = getAllProjectSlugs();
   return slugs.map((slug) => ({ slug }));
 }
 
-/**
- * Genera metadata dinámica para SEO
- */
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
@@ -32,20 +31,29 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   };
 }
 
-/**
- * Página dinámica de proyecto
- */
-export default async function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage({ params, searchParams }: ProjectPageProps) {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const { from: rawFrom, filter } = await searchParams;
 
-  if (!project) {
-    notFound();
-  }
+  const from: ProjectOrigin =
+    rawFrom === 'explorar' ? 'explorar' : 'destacados';
+
+  const project = getProjectBySlug(slug);
+  if (!project) notFound();
+
+  const { project: nextProject, href: nextHref } = getNextProject(slug, from, filter);
 
   return (
     <main style={{ backgroundColor: '#e2ddd5', minHeight: '100vh' }}>
+      <Suspense>
+        <BackToProjectsPill />
+      </Suspense>
       <ProjectLayout project={project} />
+      <NextProjectSection
+        nextProject={nextProject}
+        href={nextHref}
+        from={from}
+      />
     </main>
   );
 }
