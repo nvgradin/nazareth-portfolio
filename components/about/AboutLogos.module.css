@@ -84,6 +84,15 @@
   align-items: center;
   justify-content: center;
   width: 160px;
+  transition: transform 0.3s ease;
+}
+
+.logoWrap:hover {
+  transform: scale(1.08);
+}
+
+.strip:has(.logoWrap:hover) {
+  animation-play-state: paused;
 }
 
 .logo {
@@ -97,6 +106,6 @@
 }
 
 .logoWrap:hover .logo {
-  opacity: 0.8;
+  opacity: 1;
   filter: grayscale(0);
 }

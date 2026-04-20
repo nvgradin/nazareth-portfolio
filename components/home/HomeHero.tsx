@@ -73,15 +73,7 @@ export function HomeHero({ animate = false, hidden = false }: Props) {
           Conecto estrategia, diseño y desarrollo para crear productos digitales con sentido.
         </motion.p>
 
-        {/* 4. Subheadline */}
-        <motion.p
-          className={styles.sub}
-          initial={{ opacity: 0, y: 18 }}
-          animate={animate ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.95, duration: 0.9, ease: EASE }}
-        >
-          Creo universos digitales desde la estrategia hasta la esencia.
-        </motion.p>
+        {/* 4. Subheadline — oculto */}
 
         {/* 5. CTA */}
         <motion.div

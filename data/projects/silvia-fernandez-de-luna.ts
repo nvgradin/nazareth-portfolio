@@ -3,7 +3,7 @@ import { ProjectWithLayout } from '@/lib/project-layout.types';
 export const silviaFernandezDeLuna: ProjectWithLayout = {
   slug: 'silvia-fernandez-de-luna',
   title: 'Silvia Fernández De Luna',
-  excerpt: 'Proyecto placeholder — contenido pendiente.',
+  excerpt: 'Una marca que enseña, inspira y transforma.',
 
   categories: ['branding', 'web-design', 'ux-ui', 'strategy', 'marketing'],
   tags: ['Branding'],
@@ -108,10 +108,10 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
   },
 
   meta: {
-    client: 'Placeholder',
-    year: 'Placeholder',
-    role: ['Placeholder'],
-    tools: ['Placeholder'],
+    client: 'Silvia Fernández De Luna',
+    year: '2023',
+    role: ['Branding', 'Marketing'],
+    tools: ['Wordpress', 'Woocommerce', 'LMS','Illustrator', 'After Effects', 'Premiere Pro', 'Brevo', 'Metricool'],
   },
 
   tagline: 'Una marca que enseña, inspira y transforma.',

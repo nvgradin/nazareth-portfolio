@@ -60,6 +60,16 @@
   align-items: center;
   justify-content: center;
   width: 120px;
+  transition: transform 0.3s ease;
+}
+
+.logoWrap:hover {
+  transform: scale(1.08);
+}
+
+.strip:has(.logoWrap:hover),
+.stripReverse:has(.logoWrap:hover) {
+  animation-play-state: paused;
 }
 
 .logo {

@@ -24,22 +24,26 @@ const BASE_SPEED = 28; // px/s — lento y elegante
 export function MarqueeDivider() {
   const trackRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
+  const isHovered = useRef(false);
 
   // Velocidad reactiva al scroll
   const { scrollY } = useScroll();
   const scrollSpeed = useTransform(scrollY, [0, 300], [0, 1]);
 
   useAnimationFrame((_, delta) => {
-    const boost = 1 + scrollSpeed.get() * 1.8; // scroll acelera hasta ~3x
+    if (isHovered.current) return;
+    const boost = 1 + scrollSpeed.get() * 1.8;
     const next = x.get() - BASE_SPEED * boost * (delta / 1000);
     const half = trackRef.current ? trackRef.current.offsetWidth / 2 : 0;
-
-    // reset imperceptible cuando llega a -50%
     x.set(half > 0 && next < -half ? 0 : next);
   });
 
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={styles.wrapper}
+      onMouseEnter={() => { isHovered.current = true; }}
+      onMouseLeave={() => { isHovered.current = false; }}
+    >
       {/* línea sutil superior */}
       <div className={styles.rule} />
 

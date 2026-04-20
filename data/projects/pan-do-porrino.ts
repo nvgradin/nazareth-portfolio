@@ -3,15 +3,15 @@ import { ProjectWithLayout } from '@/lib/project-layout.types';
 export const panDoPorrino: ProjectWithLayout = {
   slug: 'pan-do-porrino',
   title: 'Pan do Porriño',
-  excerpt: 'Identidad visual y comunicación para una marca de panadería artesanal con raíces gallegas.',
+  excerpt: 'Un legado de al menos 400 años que logró ser Marca Protegida con Denominación de Origen',
 
   categories: ['branding', 'marketing'],
-  tags: ['Branding', 'Identidad Visual', 'Editorial', 'Packaging'],
+  tags: ['Branding'],
 
   thumbnail: {
     type: 'image',
     src: '/projects/pan-do-porrino/portada_pan_do_porrino_2560.jpg',
-    alt: 'Pan do Porriño — Identidad visual',
+    alt: 'Pan do Porriño',
   },
 
   theme: {
@@ -25,13 +25,13 @@ export const panDoPorrino: ProjectWithLayout = {
     // 1) Hero
     hero: {
       title: 'Pan do Porriño',
-      subtitle: 'Identidad con raíces. Diseño con alma.',
+      subtitle: 'El Camino del Pan do Porriño hacia la Denominación de Origen',
       intro: [
-        'Ser parte de la creación de la Marca del Pan do Porriño, mi tierra natal, fue todo un honor. Conocido desde hace más de 400 años por su calidad, el Pan de Porriño es un símbolo de nuestra historia, un legado y una comunidad.',
+        'En 2017 nació la iniciativa de dar reconocimiento al Pan do Porriño, un pan  artesanal hecho de masa madre con propia receta, preservada durante los siglos y reconocido por su calidad desde 1600, siglo XVI. Entre varios impulsores, Galipad, Acipor, el Concello de O Porriño y los panaderos que cada día nos hornean la mejor Bolla de Pan del mundo, iniciaron su camino para lograr su objetivo: dar reconocimiento que merece. En ese camino, tuve el honor de colaborar creando la Identidad de Marca con la cual el Pan do Porriño logró convertirse en Marca Protegida y obtener la Denominación de Origen de su Bolla de Pan do Porriño. ',
       ],
       logo: '/projects/pan-do-porrino/Logotipo.png',
-      roles: ['Branding', 'Identidad Visual', 'Packaging'],
-      year: '2023',
+      roles: ['Branding', 'Marketing'],
+      year: '2017',
     },
 
     // 2) Bento Gallery
@@ -104,7 +104,7 @@ export const panDoPorrino: ProjectWithLayout = {
 
     // 3) Heading centrado
     heading: {
-      title: 'Una marca con raíces gallegas',
+      title: 'Identidad Corporativa para un pan artesanal con legado',
       subtitle: 'Tradición artesanal con diseño contemporáneo',
     },
 
@@ -113,28 +113,28 @@ export const panDoPorrino: ProjectWithLayout = {
       {
         image: { type: 'image', src: '/projects/pan-do-porrino/showcase-center-bottom.jpg', alt: 'Logotipo Pan do Porriño' },
         title: 'Branding',
-        description: 'Logotipo y sistema de marca que transmite autenticidad y arraigo al territorio gallego.',
+        description: 'Logotipo y sistema de marca que transmite autenticidad.',
       },
       {
         image: { type: 'image', src: '/projects/pan-do-porrino/bento-8.webp', alt: 'Editorial Pan do Porriño' },
         title: 'Publicidad & Promoción',
-        description: 'Materiales impresos diseñados con coherencia de marca: dípticos, invitaciones y señalética.',
+        description: 'Creación de Campaña Creativa para la campaña creativa de lanzamiento de la II Feira do Pan do Porriño, diseñando materiales impresos con coherencia de marca: dípticos, invitaciones y señalética.',
       },
       {
         image: { type: 'image', src: '/projects/pan-do-porrino/bento-6.jpg', alt: 'Packaging Especial Pan do Porriño' },
         title: 'Packaging',
-        description: 'Adaptación de la identidad a soportes publicitarios exteriores y materiales promocionales.',
+        description: 'Adaptación de la identidad a un packaging especial para la Bolla de Pan do Porriño.',
       },
     ],
 
     // 5) Branding Scroller
     brandingScroller: {
       title: 'BRANDING',
-      description: 'La identidad de Pan do Porriño nace del territorio. Colores cálidos que evocan la tierra gallega, tipografías con carácter y un sistema visual que respira autenticidad en cada punto de contacto.',
+      description: 'La identidad de Pan do Porriño nace de la iniciativa de dar el reconomiento de la Denominación de origen del Pan do Porriño, una producto artesanal que logró ser Marca Protegida',
       bullets: [
-        'Un logotipo que honra la tradición artesanal con trazo contemporáneo.',
-        'Una paleta cromática cálida y orgánica, anclada en la tierra gallega.',
-        'Un sistema visual coherente que se adapta desde el packaging hasta la comunicación exterior.',
+        'Pan do Porriño es un pan artesanal con más de 400 años de historia, conocido por su calidad y sabor único. La marca necesitaba reflejar esta tradición y autenticidad, al mismo tiempo que se adaptaba a las necesidades de comunicación contemporáneas.',
+        'Una paleta cromática anclada en el color Púrpura, utilizada desde la antigüedad como un color premium por la escasez de su producción.',
+        'La identidad combina el toque artesanal con sus trazos y tipografía, junto al toque de exclusivo con su gama cromática. Un sistema coherente que se adapta desde el packaging hasta la comunicación exterior.',
       ],
       background: '#1A0F07',
       images: [
@@ -185,14 +185,14 @@ export const panDoPorrino: ProjectWithLayout = {
 
   meta: {
     client: 'Pan do Porriño',
-    year: '2023',
+    year: '2017',
     duration: 'Por definir',
     role: ['Brand Designer', 'Art Director'],
-    tools: ['Figma', 'Illustrator', 'Photoshop'],
-    deliverables: ['Identidad visual', 'Sistema de marca', 'Materiales impresos', 'Comunicación exterior'],
+    tools: [ 'Illustrator', 'Photoshop'],
+    deliverables: ['Identidad visual', 'Sistema de marca', 'Materiales impresos', 'Comunicación exterior', 'Publicidad', 'Packaging'],
   },
 
-  tagline: 'Tradición con diseño.',
+  tagline: 'Pan do Porriño, Denominación de Origen.',
   cover: '/projects/pan-do-porrino/portada_pan_do_porrino_2560.jpg',
   featured: false,
   ambientColor: '#2C1A0E',
