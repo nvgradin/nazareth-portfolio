@@ -20,20 +20,22 @@ export function ProjectHero({ data }: Props) {
       <div className={styles.container}>
         {/* Columna izquierda: Logo + Proyectos + Nombre + Roles */}
         <div className={styles.left}>
-          <motion.div
-            className={styles.logo}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease }}
-          >
-            <Image
-              src={logo}
-              alt={`${title} logo`}
-              width={90}
-              height={90}
-              className={styles.logoImage}
-            />
-          </motion.div>
+          {logo && (
+            <motion.div
+              className={styles.logo}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, ease }}
+            >
+              <Image
+                src={logo}
+                alt={`${title} logo`}
+                width={90}
+                height={90}
+                className={styles.logoImage}
+              />
+            </motion.div>
+          )}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}

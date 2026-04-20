@@ -1,42 +1,52 @@
 .pill {
   position: fixed;
-  top: 24px;
-  left: 24px;
+  /* Justo debajo del header (~90px) + margen del hero en mobile */
+  top: 90px;
+  left: var(--space-16);
   z-index: 200;
 
   display: inline-flex;
   align-items: center;
+  gap: 6px;
 
-  padding: 8px 16px;
-  border-radius: 999px;
-
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  /* Rotado 90° antihorario — texto sube, flecha apunta arriba */
+  transform: rotate(-90deg);
+  transform-origin: top left;
 
   font-family: var(--font-accent);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 400;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--neutral-50);
+  color: var(--brand-primary-900);
   text-decoration: none;
 
-  opacity: 0.75;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
 }
 
 .pill:hover {
   opacity: 1;
-  transform: scale(1.02);
 }
 
-@media (max-width: 767px) {
+/* Tablet */
+@media (min-width: 768px) {
   .pill {
-    top: 16px;
-    left: 16px;
-    font-size: 10px;
-    padding: 6px 12px;
+    left: var(--space-64);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .pill {
+    left: var(--space-96);
+  }
+}
+
+/* Landscape mobile */
+@media (orientation: landscape) and (max-height: 500px) {
+  .pill {
+    top: 70px;
+    left: var(--space-48);
   }
 }

@@ -23,16 +23,17 @@ export function BackToProjectsPill() {
       ? `/projects?view=explorar${filter ? `&filter=${filter}` : ''}`
       : '/projects?view=destacados';
 
-  const label =
+  const text =
     from === 'explorar' && filter
-      ? `← Explorar · ${FILTER_LABELS[filter] ?? filter}`
+      ? `Explorar · ${FILTER_LABELS[filter] ?? filter}`
       : from === 'explorar'
-        ? '← Explorar'
-        : '← Destacados';
+        ? 'Explorar'
+        : 'Destacados';
 
   return (
-    <Link href={backHref} className={styles.pill} aria-label={label}>
-      {label}
+    <Link href={backHref} className={styles.pill} aria-label={`Volver a ${text}`}>
+      <span aria-hidden="true">↑</span>
+      {text}
     </Link>
   );
 }
