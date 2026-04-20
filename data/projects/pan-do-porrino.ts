@@ -6,7 +6,7 @@ export const panDoPorrino: ProjectWithLayout = {
   excerpt: 'Un legado de al menos 400 años que logró ser Marca Protegida con Denominación de Origen',
 
   categories: ['branding', 'marketing'],
-  tags: ['Branding'],
+  tags: ['Branding', 'Marketing'],
 
   thumbnail: {
     type: 'image',
