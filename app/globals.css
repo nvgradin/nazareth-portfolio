@@ -17,6 +17,17 @@
   padding: 0;
 }
 
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--brand-accent-500);
+  outline-offset: 4px;
+  border-radius: 4px;
+  transition: outline-offset 0.15s ease;
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
