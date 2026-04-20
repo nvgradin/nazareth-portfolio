@@ -1,10 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { usePathname } from 'next/navigation';
 import { LogoMark } from '@/components/ui';
 import { useHeaderTheme } from './HeaderThemeContext';
 import { useMobileMenu } from './MobileMenuContext';
+import { HeaderBreadcrumb } from './HeaderBreadcrumb';
 import styles from './Header.module.css';
 
 const navigation = [
@@ -18,7 +20,8 @@ export function Header() {
   const pathname = usePathname();
   const { isDark } = useHeaderTheme();
   const { open } = useMobileMenu();
-  const isLightPage = pathname.startsWith('/projects/');
+  const isProjectPage = /^\/projects\/[^/]+/.test(pathname);
+  const isLightPage = isProjectPage;
   const isDarkBackground = !isLightPage && isDark;
 
   const headerClasses = [
@@ -29,15 +32,22 @@ export function Header() {
   return (
     <header className={headerClasses}>
       <div className={styles.container}>
-        {/* Logo */}
-        <Link
-          href="/"
-          className={styles.logo}
-          aria-label="Ir al inicio"
-          style={{ color: isDarkBackground ? 'var(--neutral-100)' : 'var(--brand-primary-900)' }}
-        >
-          <LogoMark className={styles.logoMark} />
-        </Link>
+        {/* Logo + breadcrumb block */}
+        <div className={styles.logoBlock}>
+          <Link
+            href="/"
+            className={styles.logo}
+            aria-label="Ir al inicio"
+            style={{ color: isDarkBackground ? 'var(--neutral-100)' : 'var(--brand-primary-900)' }}
+          >
+            <LogoMark className={styles.logoMark} />
+          </Link>
+          {isProjectPage && (
+            <Suspense>
+              <HeaderBreadcrumb />
+            </Suspense>
+          )}
+        </div>
 
         {/* Desktop Navigation — Pill style */}
         <nav className={styles.nav} aria-label="Navegación principal">

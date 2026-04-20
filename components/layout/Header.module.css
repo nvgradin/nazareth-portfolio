@@ -59,6 +59,13 @@
   /* Pill oculto, hamburguesa visible — ya gestionado por min-height en las queries base */
 }
 
+.logoBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
 .logo {
   display: flex;
   align-items: center;

@@ -20,7 +20,6 @@ const imageVariants: Variants = {
 
 const imageTransition: Transition = { duration: 0.9, ease: [0.4, 0, 0.2, 1] as [number, number, number, number] };
 
-const arrowTransition: Transition = { type: 'spring', stiffness: 300, damping: 24 };
 
 export function NextProjectSection({ nextProject, href }: Props) {
   const prefersReduced = useReducedMotion();
@@ -61,14 +60,9 @@ export function NextProjectSection({ nextProject, href }: Props) {
           <p className={styles.categories}>
             {nextProject.tags.join(' · ')}
           </p>
-          <motion.span
-            className={styles.arrow}
-            whileHover={prefersReduced ? undefined : { x: 8 }}
-            transition={prefersReduced ? undefined : arrowTransition}
-            aria-hidden="true"
-          >
-            →
-          </motion.span>
+          <span className={styles.cta} aria-hidden="true">
+            Ver proyecto
+          </span>
         </div>
       </Link>
     </section>

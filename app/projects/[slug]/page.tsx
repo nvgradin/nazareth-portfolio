@@ -1,9 +1,7 @@
-import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { getProjectBySlug, getAllProjectSlugs } from '@/data/projects';
 import { ProjectLayout } from '@/components/projects';
-import { BackToProjectsPill } from '@/components/projects/BackToProjectsPill';
 import { NextProjectSection } from '@/components/projects/NextProjectSection';
 import { getNextProject, ProjectOrigin } from '@/lib/getNextProject';
 
@@ -45,9 +43,6 @@ export default async function ProjectPage({ params, searchParams }: ProjectPageP
 
   return (
     <main style={{ backgroundColor: '#e2ddd5', minHeight: '100vh' }}>
-      <Suspense>
-        <BackToProjectsPill />
-      </Suspense>
       <ProjectLayout project={project} />
       <NextProjectSection
         nextProject={nextProject}
