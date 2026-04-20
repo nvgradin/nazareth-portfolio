@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback, useRef, useEffect } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { getPublishedProjects } from '@/data/projects';
 import { PortalProvider } from './PortalContext';
@@ -18,6 +19,8 @@ type Phase =
   | 'grid'
   | 'measuring-to-stack'
   | 'transitioning-to-stack';
+
+export type FilterKey = 'all' | 'product' | 'ux-ui' | 'branding' | 'web' | 'estrategia' | 'marketing';
 
 const allProjects      = getPublishedProjects();
 const featuredProjects = allProjects.filter(p => p.featured);
@@ -59,7 +62,14 @@ function layerStyle(active: boolean, scrollable = false): React.CSSProperties {
 }
 
 export function ProjectsView() {
-  const [phase, setPhase] = useState<Phase>('stack');
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const initialView = searchParams.get('view') ?? 'destacados';
+  const initialFilter = (searchParams.get('filter') ?? 'all') as FilterKey;
+
+  const [phase, setPhase] = useState<Phase>(initialView === 'explorar' ? 'grid' : 'stack');
+  const [activeFilter, setActiveFilter] = useState<FilterKey>(initialFilter);
   const [exitSnapshots, setExitSnapshots] = useState<CardSnapshot[]>([]);
   const [enterSnapshots, setEnterSnapshots] = useState<CardSnapshot[]>([]);
   const [bgColor, setBgColor] = useState(featuredProjects[0]?.ambientColor ?? '#1a1a1a');
@@ -180,9 +190,26 @@ export function ProjectsView() {
   }, [phase]);
 
   const handleToggle = (target: 'stack' | 'grid') => {
-    if (target === 'grid'  && phase === 'stack') setPhase('measuring-to-grid');
-    if (target === 'stack' && phase === 'grid')  setPhase('measuring-to-stack');
+    if (target === 'grid' && phase === 'stack') {
+      setPhase('measuring-to-grid');
+      const params = new URLSearchParams(searchParams.toString());
+      params.set('view', 'explorar');
+      if (activeFilter !== 'all') params.set('filter', activeFilter);
+      router.replace(`/projects?${params.toString()}`, { scroll: false });
+    }
+    if (target === 'stack' && phase === 'grid') {
+      setPhase('measuring-to-stack');
+      router.replace('/projects?view=destacados', { scroll: false });
+    }
   };
+
+  const handleFilterChange = useCallback((filter: FilterKey) => {
+    setActiveFilter(filter);
+    const params = new URLSearchParams();
+    params.set('view', 'explorar');
+    if (filter !== 'all') params.set('filter', filter);
+    router.replace(`/projects?${params.toString()}`, { scroll: false });
+  }, [router]);
 
   const onTransitionComplete = useCallback(() => {
     setPhase(prev => {
@@ -260,6 +287,8 @@ export function ProjectsView() {
           enteringFromStack={textEnter === 'grid'}
           cardRefsMap={gridCardEls}
           onVisibleSlugs={(slugs) => { visibleGridSlugsRef.current = slugs; }}
+          activeFilter={activeFilter}
+          onFilterChange={handleFilterChange}
         />
       </div>
 

@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Metadata } from 'next';
 import { ProjectsView } from '@/components/projects-view';
 
@@ -7,5 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsPage() {
-  return <ProjectsView />;
+  return (
+    <Suspense>
+      <ProjectsView />
+    </Suspense>
+  );
 }

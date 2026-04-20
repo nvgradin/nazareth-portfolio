@@ -5,22 +5,26 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ProjectWithLayout } from '@/lib/project-layout.types';
+import { FilterKey } from './ProjectsView';
 import styles from './ExploreCard.module.css';
 
 interface Props {
   project: ProjectWithLayout;
+  activeFilter?: FilterKey;
 }
 
-export function ExploreCard({ project }: Props) {
+export function ExploreCard({ project, activeFilter }: Props) {
   const [hovered, setHovered] = useState(false);
   const isNew = project.status === 'new';
   const cover = project.cover ?? project.thumbnail.src;
 
   const hoverBg = project.ambientGradient ?? project.ambientColor ?? 'rgba(0,0,0,0.4)';
+  const filterParam = activeFilter && activeFilter !== 'all' ? `&filter=${activeFilter}` : '';
+  const href = `/projects/${project.slug}?from=explorar${filterParam}`;
 
   return (
     <Link
-      href={`/projects/${project.slug}`}
+      href={href}
       className={styles.card}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}

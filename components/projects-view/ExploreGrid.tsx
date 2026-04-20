@@ -5,9 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ProjectWithLayout } from '@/lib/project-layout.types';
 import { ProjectCategory } from '@/lib/types';
 import { ExploreCard } from './ExploreCard';
+import { FilterKey } from './ProjectsView';
 import styles from './ExploreGrid.module.css';
-
-type FilterKey = 'all' | 'product' | 'ux-ui' | 'branding' | 'web' | 'estrategia' | 'marketing';
 
 interface FilterDef {
   key: FilterKey;
@@ -27,14 +26,22 @@ const FILTERS: FilterDef[] = [
 
 interface Props {
   projects: ProjectWithLayout[];
-  exitingToStack?: boolean;    // true mientras transición grid→stack activa
-  enteringFromStack?: boolean; // true al llegar al grid desde stack
+  exitingToStack?: boolean;
+  enteringFromStack?: boolean;
   cardRefsMap?: React.MutableRefObject<Map<string, HTMLElement | null>>;
   onVisibleSlugs?: (slugs: string[]) => void;
+  activeFilter?: FilterKey;
+  onFilterChange?: (filter: FilterKey) => void;
 }
 
-export function ExploreGrid({ projects, exitingToStack, enteringFromStack, cardRefsMap, onVisibleSlugs }: Props) {
-  const [active, setActive] = useState<FilterKey>('all');
+export function ExploreGrid({ projects, exitingToStack, enteringFromStack, cardRefsMap, onVisibleSlugs, activeFilter, onFilterChange }: Props) {
+  const [localActive, setLocalActive] = useState<FilterKey>(activeFilter ?? 'all');
+  const active = activeFilter ?? localActive;
+
+  const setActive = (f: FilterKey) => {
+    setLocalActive(f);
+    onFilterChange?.(f);
+  };
 
   // Reset filter to "all" whenever the grid becomes active again (entering from stack)
   const prevEntering = useRef(enteringFromStack);
@@ -43,6 +50,7 @@ export function ExploreGrid({ projects, exitingToStack, enteringFromStack, cardR
       setActive('all');
     }
     prevEntering.current = enteringFromStack;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enteringFromStack]);
 
   const filtered = useMemo(() => {
@@ -135,7 +143,7 @@ export function ExploreGrid({ projects, exitingToStack, enteringFromStack, cardR
                   ease: [0.4, 0, 0.2, 1],
                 }}
               >
-                <ExploreCard project={project} />
+                <ExploreCard project={project} activeFilter={active} />
               </motion.div>
             ))
           )}
