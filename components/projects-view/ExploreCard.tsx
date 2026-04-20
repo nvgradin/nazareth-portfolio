@@ -19,8 +19,9 @@ export function ExploreCard({ project, activeFilter }: Props) {
   const cover = project.cover ?? project.thumbnail.src;
 
   const hoverBg = project.ambientGradient ?? project.ambientColor ?? 'rgba(0,0,0,0.4)';
-  const filterParam = activeFilter && activeFilter !== 'all' ? `&filter=${activeFilter}` : '';
-  const href = `/projects/${project.slug}?from=explorar${filterParam}`;
+  const params = new URLSearchParams({ from: 'explorar' });
+  if (activeFilter && activeFilter !== 'all') params.set('filter', activeFilter);
+  const href = `/projects/${project.slug}?${params.toString()}`;
 
   return (
     <Link

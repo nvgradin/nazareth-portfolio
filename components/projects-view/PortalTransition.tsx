@@ -21,7 +21,7 @@ import styles from './PortalTransition.module.css';
 export function PortalTransition() {
   const { state, reset } = usePortal();
   const router = useRouter();
-  const { active, rect, image, slug } = state;
+  const { active, rect, image, slug, searchParams } = state;
 
   // Prefetch the target route when a card is hovered (called from StackCard)
   useEffect(() => {
@@ -63,9 +63,10 @@ export function PortalTransition() {
           }}
           style={{ backgroundImage: `url(${image})` }}
           onAnimationComplete={() => {
-            router.push(`/projects/${slug}`);
-            // reset() is called on the project page's mount via unmount of this page
-            // For safety, reset after a delay so the new page has time to load
+            const href = searchParams
+              ? `/projects/${slug}?${searchParams}`
+              : `/projects/${slug}`;
+            router.push(href);
             setTimeout(reset, 1000);
           }}
         />

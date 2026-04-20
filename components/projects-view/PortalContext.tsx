@@ -15,14 +15,15 @@ import { createContext, useContext, useState, useCallback } from 'react';
 
 export interface PortalState {
   active: boolean;
-  rect: DOMRect | null;   // Bounding box of the clicked card
-  image: string;          // Background image of the card
-  slug: string;           // Target route slug
+  rect: DOMRect | null;
+  image: string;
+  slug: string;
+  searchParams?: string;
 }
 
 interface PortalContextValue {
   state: PortalState;
-  trigger: (rect: DOMRect, image: string, slug: string) => void;
+  trigger: (rect: DOMRect, image: string, slug: string, searchParams?: string) => void;
   reset: () => void;
 }
 
@@ -37,8 +38,8 @@ export const PortalContext = createContext<PortalContextValue>({
 export function PortalProvider({ children }: { children: React.ReactNode }) {
   const [state, setState] = useState<PortalState>(initial);
 
-  const trigger = useCallback((rect: DOMRect, image: string, slug: string) => {
-    setState({ active: true, rect, image, slug });
+  const trigger = useCallback((rect: DOMRect, image: string, slug: string, searchParams?: string) => {
+    setState({ active: true, rect, image, slug, searchParams });
   }, []);
 
   const reset = useCallback(() => {

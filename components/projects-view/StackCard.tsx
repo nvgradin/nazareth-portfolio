@@ -20,7 +20,8 @@ export function StackCard({ project, onRef }: Props) {
   const handleClick = () => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
-    trigger(rect, cover, project.slug);
+    const params = new URLSearchParams({ from: 'destacados' });
+    trigger(rect, cover, project.slug, params.toString());
   };
 
   return (
