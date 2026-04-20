@@ -5,6 +5,7 @@ import AboutStory from '@/components/about/AboutStory';
 import AboutLogos from '@/components/about/AboutLogos';
 import AboutPillars from '@/components/about/AboutPillars';
 import AboutTimeline from '@/components/about/AboutTimeline';
+import AboutPersonal from '@/components/about/AboutPersonal';
 import AboutCTA from '@/components/about/AboutCTA';
 import { Footer } from '@/components/layout';
 import styles from './about.module.css';
@@ -23,6 +24,7 @@ export default function AboutPage() {
       <AboutLogos />
       <AboutPillars />
       <AboutTimeline />
+      <AboutPersonal />
       <AboutCTA />
       <Footer />
     </main>

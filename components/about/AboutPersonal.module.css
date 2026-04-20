@@ -1,0 +1,85 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: 80px var(--space-16);
+}
+
+.bg {
+  position: absolute;
+  inset: -20%;
+  background-image: url('/about/home-bio-NG.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  will-change: transform;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(36, 30, 51, 0.72);
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 120px var(--space-64);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 120px var(--space-96);
+  }
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    grid-template-columns: 55fr 45fr;
+    gap: 48px;
+    align-items: center;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.prose {
+  font-family: var(--font-heading);
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--neutral-200);
+  opacity: 0.75;
+  margin: 0;
+}
+
+.embed {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.label {
+  font-family: var(--font-accent);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--neutral-200);
+  opacity: 0.6;
+  margin: 0 0 10px;
+}
