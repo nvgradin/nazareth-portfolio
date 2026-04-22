@@ -2,8 +2,8 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { getProjectBySlug, getAllProjectSlugs } from '@/data/projects';
 import { ProjectLayout } from '@/components/projects';
-import { NextProjectSection } from '@/components/projects/NextProjectSection';
-import { getNextProject, ProjectOrigin } from '@/lib/getNextProject';
+import { ProjectEnd } from '@/components/projects/ProjectEnd';
+import { getNextProjects, ProjectOrigin } from '@/lib/getNextProject';
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -39,16 +39,12 @@ export default async function ProjectPage({ params, searchParams }: ProjectPageP
   const project = getProjectBySlug(slug);
   if (!project) notFound();
 
-  const { project: nextProject, href: nextHref } = getNextProject(slug, from, filter);
+  const stackProjects = getNextProjects(slug, from, filter, 3);
 
   return (
     <main style={{ backgroundColor: '#e2ddd5', minHeight: '100vh' }}>
       <ProjectLayout project={project} />
-      <NextProjectSection
-        nextProject={nextProject}
-        href={nextHref}
-        from={from}
-      />
+      <ProjectEnd stackProjects={stackProjects} from={from} />
     </main>
   );
 }
