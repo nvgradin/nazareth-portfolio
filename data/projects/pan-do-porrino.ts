@@ -46,6 +46,7 @@ export const panDoPorrino: ProjectWithLayout = {
               src: '/projects/pan-do-porrino/bento-1.png',
               alt: 'Identidad visual Pan do Porriño',
               ratio: 0.6,
+              objectPosition: 'right center',
             },
             {
               src: '/projects/pan-do-porrino/bento-5.png',
@@ -61,6 +62,7 @@ export const panDoPorrino: ProjectWithLayout = {
               src: '/projects/pan-do-porrino/bento-2.png',
               alt: 'Aplicación de marca Pan do Porriño',
               ratio: 0.45,
+              objectPosition: 'center bottom',
             },
             {
               src: '/projects/pan-do-porrino/bento-6.png',
@@ -111,7 +113,7 @@ export const panDoPorrino: ProjectWithLayout = {
     // 4) Features
     features: [
       {
-        image: { type: 'image', src: '/projects/pan-do-porrino/showcase-center-top.jpg', alt: 'Logotipo Pan do Porriño' },
+        image: { type: 'image', src: '/projects/pan-do-porrino/showcase-center-bottom.jpg', alt: 'Logotipo Pan do Porriño' },
         title: 'Branding',
         description: 'Logotipo y sistema de marca que transmite autenticidad.',
       },
@@ -138,10 +140,10 @@ export const panDoPorrino: ProjectWithLayout = {
       ],
       background: '#1A0F07',
       images: [
-        { src: '/projects/pan-do-porrino/showcase-center-bottom.jpg', alt: 'Branding Pan do Porriño — vista principal' },
+        { src: '/projects/pan-do-porrino/showcase-center-bottom.jpg', alt: 'Branding Pan do Porriño — logo' },
         { src: '/projects/pan-do-porrino/showcase-left.webp', alt: 'Branding Pan do Porriño — vertical', orientation: 'vertical' },
+        { src: '/projects/pan-do-porrino/PandoPorrino_branding_versionsecundaria.jpg', alt: 'Branding Pan do Porriño — version secundaria' },
         { src: '/projects/pan-do-porrino/showcase-center-top.jpg', alt: 'Branding Pan do Porriño — detalle' },
-                { src: '/projects/pan-do-porrino/showcase-right_horizontal.jpg', alt: 'Branding Pan do Porriño — horizontal' },
       ],
     },
 
@@ -160,6 +162,22 @@ export const panDoPorrino: ProjectWithLayout = {
       { src: '/projects/pan-do-porrino/client-logos/panaderias_oprogreso.png', alt: 'O Progreso' },
       { src: '/projects/pan-do-porrino/client-logos/panaderias_torneiros.png', alt: 'Panaderías Torneiros' },
     ],
+
+    // Publicidad & Design Graphic
+    mediaGrid: {
+      title: 'Publicidad & Design Graphic',
+      subtitle: 'Campaña creativa para la II Feira do Pan do Porriño',
+      body: 'Con la identidad consolidada, el siguiente paso fue trasladarla a los materiales de comunicación para el lanzamiento de la II Feira do Pan do Porriño. Desde la lona exterior hasta el packaging especial, cada pieza mantiene la coherencia de marca: artesanal, auténtica y con carácter propio.',
+      row1: [
+        { src: '/projects/pan-do-porrino/rollup.jpeg', alt: 'Roll-up Pan do Porriño' },
+        { src: '/projects/pan-do-porrino/diptico.jpg', alt: 'Díptico II Feira do Pan do Porriño' },
+      ],
+      row2: [
+        { src: '/projects/pan-do-porrino/packaging2.jpg', alt: 'Packaging Bolla de Pan do Porriño' },
+        { src: '/projects/pan-do-porrino/pegatinas.jpeg', alt: 'Pegatinas Pan do Porriño' },
+        { src: '/projects/pan-do-porrino/diptico1.jpg', alt: 'Interior díptico Pan do Porriño' },
+      ],
+    },
 
     // 7) Quote banner
     quoteBanner: {

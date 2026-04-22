@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -9,6 +9,7 @@ import {
   BentoCell,
   BentoFreeItem,
 } from '@/lib/project-layout.types';
+import { Lightbox } from '@/components/ui/Lightbox';
 import styles from './BentoGallery.module.css';
 
 // ============================================
@@ -101,94 +102,6 @@ export function BentoGallery({ data }: Props) {
 }
 
 // ============================================
-// LIGHTBOX
-// ============================================
-
-function Lightbox({
-  image,
-  onClose,
-  onPrev,
-  onNext,
-}: {
-  image: FlatImage;
-  onClose: () => void;
-  onPrev: () => void;
-  onNext: () => void;
-}) {
-  useEffect(() => {
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-      if (e.key === 'ArrowLeft') onPrev();
-      if (e.key === 'ArrowRight') onNext();
-    };
-    window.addEventListener('keydown', handleKey);
-    document.body.style.overflow = 'hidden';
-    return () => {
-      window.removeEventListener('keydown', handleKey);
-      document.body.style.overflow = '';
-    };
-  }, [onClose, onPrev, onNext]);
-
-  return (
-    <motion.div
-      className={styles.lightbox}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.25 }}
-      onClick={onClose}
-    >
-      <div className={styles.lightboxBackdrop} />
-
-      {/* Prev */}
-      <button
-        className={`${styles.lightboxArrow} ${styles.lightboxArrowLeft}`}
-        onClick={(e) => { e.stopPropagation(); onPrev(); }}
-        aria-label="Anterior"
-      >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
-      </button>
-
-      {/* Image */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={image.src}
-          className={styles.lightboxImageWrap}
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ duration: 0.2, ease }}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            priority
-            className={styles.lightboxImage}
-            sizes="90vw"
-          />
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Next */}
-      <button
-        className={`${styles.lightboxArrow} ${styles.lightboxArrowRight}`}
-        onClick={(e) => { e.stopPropagation(); onNext(); }}
-        aria-label="Siguiente"
-      >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="9 18 15 12 9 6" />
-        </svg>
-      </button>
-
-    </motion.div>
-  );
-}
-
-// ============================================
 // FIXED LAYOUT (COLUMNAS CON RATIOS)
 // ============================================
 
@@ -258,6 +171,7 @@ function CellComponent({ cell, totalCells, delay, onImageClick }: { cell: BentoC
         fill
         className={styles.image}
         sizes="(max-width: 768px) 100vw, 25vw"
+        style={cell.objectPosition ? { objectPosition: cell.objectPosition } : undefined}
       />
     </motion.div>
   );

@@ -48,6 +48,7 @@ export interface BentoCell {
   src: string;
   alt: string;
   ratio: number;  // 0.65 = 65% de la altura de la columna
+  objectPosition?: string; // e.g. 'bottom', 'right center', '80% 50%'
 }
 
 /**
@@ -333,10 +334,27 @@ export interface ProjectLayout {
   // Comparación antes/después
   imageCompare?: ImageCompareData;
 
+  // Galería editorial full-bleed (2col + 3col) con header 2 columnas
+  mediaGrid?: MediaGrid;
+
   process?: ProcessStep[];
   clientLogos?: { src: string; alt: string }[];
   quoteBanner?: QuoteBanner;
   closing?: ClosingText;
+}
+
+export interface MediaGridImage {
+  src: string;
+  alt: string;
+}
+
+export interface MediaGrid {
+  title: string;       // Columna izquierda del header (uppercase, font-accent)
+  subtitle: string;    // Columna derecha, título grande
+  body: string;        // Columna derecha, párrafo
+  row1: [MediaGridImage, MediaGridImage];          // 2 columnas
+  row2: [MediaGridImage, MediaGridImage, MediaGridImage]; // 3 columnas
+  background?: string; // Fondo de la sección (default: transparent)
 }
 
 /**
