@@ -37,35 +37,35 @@ export const panDoPorrino: ProjectWithLayout = {
     // 2) Bento Gallery
     bento: {
       mode: 'fixed',
-      background: '#2C1A0E',
+      background: '#2c1a0e',
       columns: [
         {
           width: 1,
           cells: [
             {
-              src: '/projects/pan-do-porrino/bento-1.webp',
+              src: '/projects/pan-do-porrino/bento-1.png',
               alt: 'Identidad visual Pan do Porriño',
-              ratio: 0.55,
+              ratio: 0.6,
             },
             {
-              src: '/projects/pan-do-porrino/bento-2.jpg',
+              src: '/projects/pan-do-porrino/bento-5.png',
               alt: 'Detalle de branding Pan do Porriño',
+              ratio: 0.4,
+            },
+          ],
+        },
+        {
+          width: 1,
+          cells: [
+            {
+              src: '/projects/pan-do-porrino/bento-2.png',
+              alt: 'Aplicación de marca Pan do Porriño',
               ratio: 0.45,
             },
-          ],
-        },
-        {
-          width: 1,
-          cells: [
             {
-              src: '/projects/pan-do-porrino/bento-3.jpg',
-              alt: 'Aplicación de marca Pan do Porriño',
-              ratio: 0.5,
-            },
-            {
-              src: '/projects/pan-do-porrino/bento-4.jpg',
+              src: '/projects/pan-do-porrino/bento-6.png',
               alt: 'Sistema tipográfico Pan do Porriño',
-              ratio: 0.5,
+              ratio: 0.55,
             },
           ],
         },
@@ -73,12 +73,12 @@ export const panDoPorrino: ProjectWithLayout = {
           width: 1,
           cells: [
             {
-              src: '/projects/pan-do-porrino/bento-5.jpg',
+              src: '/projects/pan-do-porrino/bento-3.png',
               alt: 'Paleta cromática Pan do Porriño',
               ratio: 0.6,
             },
             {
-              src: '/projects/pan-do-porrino/bento-6.jpg',
+              src: '/projects/pan-do-porrino/bento-7.png',
               alt: 'Material de comunicación Pan do Porriño',
               ratio: 0.4,
             },
@@ -88,14 +88,14 @@ export const panDoPorrino: ProjectWithLayout = {
           width: 1,
           cells: [
             {
-              src: '/projects/pan-do-porrino/bento-7.jpeg',
+              src: '/projects/pan-do-porrino/bento-4.png',
               alt: 'Packaging Pan do Porriño',
-              ratio: 0.45,
+              ratio: 0.6,
             },
             {
-              src: '/projects/pan-do-porrino/bento-8.webp',
+              src: '/projects/pan-do-porrino/bento-8.jpg',
               alt: 'Aplicaciones de marca Pan do Porriño',
-              ratio: 0.55,
+              ratio: 0.4,
             },
           ],
         },
@@ -111,17 +111,17 @@ export const panDoPorrino: ProjectWithLayout = {
     // 4) Features
     features: [
       {
-        image: { type: 'image', src: '/projects/pan-do-porrino/showcase-center-bottom.jpg', alt: 'Logotipo Pan do Porriño' },
+        image: { type: 'image', src: '/projects/pan-do-porrino/showcase-center-top.jpg', alt: 'Logotipo Pan do Porriño' },
         title: 'Branding',
         description: 'Logotipo y sistema de marca que transmite autenticidad.',
       },
       {
-        image: { type: 'image', src: '/projects/pan-do-porrino/bento-8.webp', alt: 'Editorial Pan do Porriño' },
+        image: { type: 'image', src: '/projects/pan-do-porrino/bento-4.png', alt: 'Editorial Pan do Porriño' },
         title: 'Publicidad & Promoción',
         description: 'Creación de Campaña Creativa para la campaña creativa de lanzamiento de la II Feira do Pan do Porriño, diseñando materiales impresos con coherencia de marca: dípticos, invitaciones y señalética.',
       },
       {
-        image: { type: 'image', src: '/projects/pan-do-porrino/bento-6.jpg', alt: 'Packaging Especial Pan do Porriño' },
+        image: { type: 'image', src: '/projects/pan-do-porrino/bento-6.png', alt: 'Packaging Especial Pan do Porriño' },
         title: 'Packaging',
         description: 'Adaptación de la identidad a un packaging especial para la Bolla de Pan do Porriño.',
       },
@@ -138,10 +138,10 @@ export const panDoPorrino: ProjectWithLayout = {
       ],
       background: '#1A0F07',
       images: [
-        { src: '/projects/pan-do-porrino/showcase-center-top.jpg', alt: 'Branding Pan do Porriño — vista principal' },
-        { src: '/projects/pan-do-porrino/showcase-right_horizontal.jpg', alt: 'Branding Pan do Porriño — horizontal' },
+        { src: '/projects/pan-do-porrino/showcase-center-bottom.jpg', alt: 'Branding Pan do Porriño — vista principal' },
         { src: '/projects/pan-do-porrino/showcase-left.webp', alt: 'Branding Pan do Porriño — vertical', orientation: 'vertical' },
-        { src: '/projects/pan-do-porrino/showcase-center-bottom.jpg', alt: 'Branding Pan do Porriño — detalle' },
+        { src: '/projects/pan-do-porrino/showcase-center-top.jpg', alt: 'Branding Pan do Porriño — detalle' },
+                { src: '/projects/pan-do-porrino/showcase-right_horizontal.jpg', alt: 'Branding Pan do Porriño — horizontal' },
       ],
     },
 
