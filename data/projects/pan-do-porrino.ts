@@ -138,7 +138,7 @@ export const panDoPorrino: ProjectWithLayout = {
         'La tipografía REIS introduce el contrapunto artesanal. Su trazo irregular y sus transparencias evocan la materia, la harina y el carácter manual del proceso panadero, aportando una textura visual que equilibra la síntesis del símbolo.',
         'La paleta cromática se construye alrededor del púrpura, no solo como un recurso diferenciador, sino como una alusión sutil a la noción de valor, prestigio y excepcionalidad. Es un código implícito que ayuda a elevar la percepción de un producto profundamente popular, pero históricamente reconocido por su calidad desde al menos 1600.',
       ],
-      background: '#1A0F07',
+      background: '#241E33',
       images: [
         { src: '/projects/pan-do-porrino/showcase-center-bottom.jpg', alt: 'Branding Pan do Porriño — logo' },
         { src: '/projects/pan-do-porrino/showcase-left.webp', alt: 'Branding Pan do Porriño — vertical', orientation: 'vertical' },
