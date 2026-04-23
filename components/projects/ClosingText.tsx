@@ -12,10 +12,11 @@ interface Props {
 }
 
 export function ClosingText({ data }: Props) {
-  const { title, content } = data;
+  const { title, content, background } = data;
+  const paragraphs = Array.isArray(content) ? content : [content];
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} style={background ? { backgroundColor: background } : undefined}>
       <div className={styles.container}>
         <TextContainer>
           {title && (
@@ -29,15 +30,18 @@ export function ClosingText({ data }: Props) {
               {title}
             </motion.h2>
           )}
-          <motion.p
-            className={styles.content}
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.5, delay: title ? 0.1 : 0, ease }}
-          >
-            {content}
-          </motion.p>
+          {paragraphs.map((p, i) => (
+            <motion.p
+              key={i}
+              className={styles.content}
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.5, delay: (title ? 0.1 : 0) + i * 0.08, ease }}
+            >
+              {p}
+            </motion.p>
+          ))}
         </TextContainer>
       </div>
     </section>

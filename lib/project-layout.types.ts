@@ -276,7 +276,8 @@ export interface QuoteBanner {
  */
 export interface ClosingText {
   title?: string;
-  content: string;
+  content: string | string[]; // string único o array de párrafos
+  background?: string;        // color de fondo opcional
 }
 
 /**

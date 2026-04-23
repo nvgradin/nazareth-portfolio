@@ -133,11 +133,11 @@ export function ProjectLayout({ project }: Props) {
         <ProjectLogos logos={layout.clientLogos} />
       )}
 
-      {/* 11) Quote banner */}
-      {layout.quoteBanner && <QuoteBanner data={layout.quoteBanner} />}
-
-      {/* 12) Closing text */}
+      {/* 11) Closing text — después de logos, antes del quote */}
       {layout.closing && <ClosingText data={layout.closing} />}
+
+      {/* 12) Quote banner */}
+      {layout.quoteBanner && <QuoteBanner data={layout.quoteBanner} />}
     </article>
   );
 }
