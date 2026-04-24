@@ -33,7 +33,7 @@ const securityHeaders = [
       "frame-src https://open.spotify.com",
       // Spotify embed JS/assets
       "connect-src 'self' https://open.spotify.com",
-      "media-src 'none'",
+      "media-src 'self'",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",

@@ -18,21 +18,15 @@
 
 .title {
   font-family: var(--font-accent);
-  font-size: var(--text-2xl);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight: 500;
   color: var(--neutral-900);
   margin-bottom: var(--space-16);
 }
 
-@media (min-width: 768px) {
-  .title {
-    font-size: var(--text-3xl);
-  }
-}
-
 .intro {
   font-family: var(--font-base);
-  font-size: var(--text-base);
+  font-size: clamp(0.9375rem, 1.5vw, 1rem);
   color: var(--neutral-700);
   max-width: 720px;
   margin: 0 auto;
@@ -63,15 +57,15 @@
 
 .subtitle {
   font-family: var(--font-heading);
-  font-size: var(--text-lg);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
   font-weight: 600;
   color: var(--neutral-900);
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-16);
 }
 
 .text {
   font-family: var(--font-base);
-  font-size: var(--text-sm);
+  font-size: clamp(0.875rem, 1.2vw, 0.9375rem);
   color: var(--neutral-600);
   line-height: 1.7;
 }

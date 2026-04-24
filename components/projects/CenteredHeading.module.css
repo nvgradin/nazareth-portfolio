@@ -27,7 +27,7 @@
 }
 
 .subtitle {
-  font-size: 1.125rem;
+  font-size: clamp(0.9375rem, 1.5vw, 1.125rem);
   color: var(--color-text-secondary);
   margin: 0;
 }

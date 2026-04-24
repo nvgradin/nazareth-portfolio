@@ -335,6 +335,9 @@ export interface ProjectLayout {
   // Comparación antes/después
   imageCompare?: ImageCompareData;
 
+  // Reels deck (InfiniteVideoDeck)
+  reelsDeck?: ReelsDeck;
+
   // Galería editorial full-bleed (2col + 3col) con header 2 columnas
   mediaGrid?: MediaGrid;
 
@@ -342,6 +345,20 @@ export interface ProjectLayout {
   clientLogos?: { src: string; alt: string }[];
   quoteBanner?: QuoteBanner;
   closing?: ClosingText;
+}
+
+export interface ReelsDeckItem {
+  id: string;
+  type: 'video' | 'image';
+  src: string;
+  poster?: string;
+  title?: string;
+}
+
+export interface ReelsDeck {
+  items: ReelsDeckItem[];
+  background?: string;
+  title?: string;
 }
 
 export interface MediaGridImage {

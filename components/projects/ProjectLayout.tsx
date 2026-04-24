@@ -3,6 +3,7 @@ import { ProjectHero } from './ProjectHero';
 import { BentoGallery } from './BentoGallery';
 import { CenteredHeading } from './CenteredHeading';
 import { FeatureCards } from './FeatureCards';
+import { ProjectReelsDeck } from './ProjectReelsDeck';
 import { EditorialBlock } from './EditorialBlock';
 import { ParallaxImage } from './ParallaxImage';
 import { ShowcaseTriptych } from './ShowcaseTriptych';
@@ -40,6 +41,9 @@ export function ProjectLayout({ project }: Props) {
       {layout.features && layout.features.length > 0 && (
         <FeatureCards data={layout.features} />
       )}
+
+      {/* Reels deck */}
+      {layout.reelsDeck && <ProjectReelsDeck data={layout.reelsDeck} />}
 
       {/* ═══ SECCIONES VARIABLES (entre features y quote) ═══ */}
 
