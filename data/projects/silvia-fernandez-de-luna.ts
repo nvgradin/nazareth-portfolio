@@ -152,11 +152,6 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       imagePosition: 'center',
     },
 
-    // 11) Closing text
-    closing: {
-      title: 'Placeholder — título de cierre',
-      content: 'Placeholder — texto de cierre del proyecto. Reflexión final sobre el proceso y los aprendizajes.',
-    },
   },
 
   meta: {
