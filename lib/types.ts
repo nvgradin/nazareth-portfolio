@@ -238,10 +238,10 @@ export type ProjectCategory =
   | 'product-design'
   | 'ux-ui'
   | 'branding'
-  | 'web-design'
-  | 'digital-experience'
+  | 'web-dev'
   | 'strategy'
-  | 'marketing';
+  | 'marketing'
+  | 'ai';
 
 /**
  * Estado del proyecto

@@ -6,7 +6,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
   excerpt: 'Estrategia creativa para una campaña de lanzamiento que conecta la cultura gallega con los jóvenes de 18 a 30 años.',
 
   categories: ['marketing', 'strategy'],
-  tags: ['Estrategia', 'Marketing'],
+  tags: ['Marketing', 'Estrategia'],
 
   thumbnail: {
     type: 'image',

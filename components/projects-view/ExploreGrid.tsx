@@ -16,10 +16,10 @@ interface FilterDef {
 
 const FILTERS: FilterDef[] = [
   { key: 'all',        label: 'Todo',       categories: [] },
-  { key: 'product',    label: 'Producto',   categories: ['product-design'] },
+  { key: 'product',    label: 'Producto',   categories: ['product-design', 'ux-ui'] },
   { key: 'ux-ui',      label: 'UX/UI',      categories: ['ux-ui'] },
   { key: 'branding',   label: 'Branding',   categories: ['branding'] },
-  { key: 'web',        label: 'Web',        categories: ['web-design', 'digital-experience'] },
+  { key: 'web',        label: 'Web',        categories: ['web-dev'] },
   { key: 'estrategia', label: 'Estrategia', categories: ['strategy'] },
   { key: 'marketing',  label: 'Marketing',  categories: ['marketing'] },
 ];
