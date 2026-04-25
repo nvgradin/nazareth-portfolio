@@ -36,6 +36,7 @@ export function NextProjectStack({ stackProjects, from }: Props) {
   const rawLayers = [stackProjects[2], stackProjects[1], stackProjects[0]];
   const seen = new Set<string>();
   const layers = rawLayers.filter(item => {
+    if (!item) return false;
     if (seen.has(item.project.slug)) return false;
     seen.add(item.project.slug);
     return true;
