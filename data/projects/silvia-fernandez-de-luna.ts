@@ -141,7 +141,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
         content: 'Placeholder — descripción del trabajo audiovisual para Silvia Fernández De Luna.',
       },
       src: 'https://silviafernandezdeluna.com/wp-content/uploads/2022/03/Silvia_Fernandez_De_Luna_Quien_Eres.mp4',
-      background: 'linear-gradient(135deg, #1a0e00, #895900, #4f3a17)',
+      background: 'linear-gradient(135deg, #1a2e2a, #4e6862, #2a3d39)',
     },
 
     quoteBanner: {
