@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ProjectWithLayout } from '@/lib/project-layout.types';
@@ -104,7 +103,7 @@ export function NextProjectStack({ stackProjects, from }: Props) {
 
       {/* Overlay + content — renders on top once image is fullscreen */}
       {showContent && (
-        <Link href={real.href} className={styles.contentLink} aria-label={`Siguiente proyecto: ${real.project.title}`}>
+        <a href={real.href} className={styles.contentLink} aria-label={`Siguiente proyecto: ${real.project.title}`}>
           <div className={styles.overlay} />
           <div className={styles.content}>
             <motion.p
@@ -151,7 +150,7 @@ export function NextProjectStack({ stackProjects, from }: Props) {
               Ver proyecto
             </motion.span>
           </div>
-        </Link>
+        </a>
       )}
     </div>
   );
