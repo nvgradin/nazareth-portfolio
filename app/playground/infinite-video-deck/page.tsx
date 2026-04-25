@@ -13,31 +13,31 @@ const items: DeckItem[] = [
     id: 'reel-2',
     type: 'video',
     src: '/projects/silvia-fernandez-de-luna/reels/sfdl-reel-camminus.mp4',
-    title: 'Reel Camminus',
+    title: 'Camminus Silvia Fernández de Luna',
   },
   {
     id: 'reel-3',
     type: 'video',
-    src: '/projects/silvia-fernandez-de-luna/reels/sfdl-cmr-roles-violencia.mp4',
-    title: 'CMR Roles Violencia',
+    src: '/projects/silvia-fernandez-de-luna/reels/sfdl-academia-de-luna-reel.mp4',
+    title: 'Academia De Luna',
   },
   {
     id: 'reel-4',
     type: 'video',
     src: '/projects/silvia-fernandez-de-luna/reels/sfdl-story-calendario-eventum-abril15.mp4',
-    title: 'Story Calendario Eventum',
+    title: 'Eventum',
   },
   {
     id: 'reel-5',
     type: 'video',
     src: '/projects/silvia-fernandez-de-luna/reels/reel-maestria-ra-programa.mp4',
-    title: 'Maestría RA Programa',
+    title: 'Maestría Registros Akáshicos',
   },
     {
     id: 'reel-6',
     type: 'video',
-    src: '/projects/silvia-fernandez-de-luna/reels/sfdl-academia-de-luna-reel.mp4',
-    title: 'Maestría RA Programa',
+    src: '/projects/silvia-fernandez-de-luna/reels/sfdl-cmr-roles-violencia.mp4',
+    title: 'Comunidad Mujer Raíz - Roles y Violencia',
   },
 ];
 
