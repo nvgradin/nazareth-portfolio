@@ -43,6 +43,11 @@ export function ProjectLayout({ project }: Props) {
         <FeatureCards data={layout.features} />
       )}
 
+      {/* Parallax image — separador visual */}
+      {layout.introParallax && (
+        <ParallaxImage src={layout.introParallax.src} alt={layout.introParallax.alt} />
+      )}
+
       {/* 7a) ArchitectureWebFlow: reemplaza editorial+web cuando existe */}
       {layout.architectureWebFlow && (
         <ArchitectureWebFlow data={layout.architectureWebFlow} />
@@ -62,11 +67,6 @@ export function ProjectLayout({ project }: Props) {
             />
           )}
         </EditorialBlock>
-      )}
-
-      {/* Parallax image — separador visual */}
-      {layout.introParallax && (
-        <ParallaxImage src={layout.introParallax.src} alt={layout.introParallax.alt} />
       )}
 
       {/* Media grid: 2col + 3col full-bleed con header editorial */}
