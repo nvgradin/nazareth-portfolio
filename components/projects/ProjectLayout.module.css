@@ -3,4 +3,7 @@
 .layout {
   width: 100%;
   background-color: #e2ddd5;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
