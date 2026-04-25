@@ -335,6 +335,13 @@ export interface ProjectLayout {
   // Comparación antes/después
   imageCompare?: ImageCompareData;
 
+  // Editorial previo al reelsDeck (título izq + texto der, fondo crema)
+  reelsEditorial?: {
+    title: string;
+    subtitle: string;
+    content: string;
+  };
+
   // Reels deck (InfiniteVideoDeck)
   reelsDeck?: ReelsDeck;
 

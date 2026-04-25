@@ -91,6 +91,12 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       },
     ],
 
+    reelsEditorial: {
+      title: 'Estrategia & Marketing',
+      subtitle: 'Contenido que conecta con su comunidad',
+      content: 'Placeholder — descripción de la estrategia de contenido, redes sociales, reels y carruseles para Silvia Fernández De Luna.',
+    },
+
     reelsDeck: {
       background: 'linear-gradient(135deg, #1a0e00, #895900, #4f3a17, #87776a, #2d1f0a, #895900)',
       items: [

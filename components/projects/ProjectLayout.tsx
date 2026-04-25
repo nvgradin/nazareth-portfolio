@@ -42,6 +42,15 @@ export function ProjectLayout({ project }: Props) {
         <FeatureCards data={layout.features} />
       )}
 
+      {/* Editorial previo a reels */}
+      {layout.reelsEditorial && (
+        <EditorialBlock
+          title={layout.reelsEditorial.title}
+          subtitle={layout.reelsEditorial.subtitle}
+          content={layout.reelsEditorial.content}
+        />
+      )}
+
       {/* Reels deck */}
       {layout.reelsDeck && <ProjectReelsDeck data={layout.reelsDeck} />}
 
