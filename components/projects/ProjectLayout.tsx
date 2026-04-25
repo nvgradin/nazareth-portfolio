@@ -43,7 +43,28 @@ export function ProjectLayout({ project }: Props) {
         <FeatureCards data={layout.features} />
       )}
 
-      {/* Parallax image — separador visual entre features y contenido */}
+      {/* 7a) ArchitectureWebFlow: reemplaza editorial+web cuando existe */}
+      {layout.architectureWebFlow && (
+        <ArchitectureWebFlow data={layout.architectureWebFlow} />
+      )}
+
+      {/* 7b) Editorial: Web + WebPanel */}
+      {layout.web && (
+        <EditorialBlock
+          title={layout.web.title}
+          subtitle={layout.web.subtitle}
+          content={layout.web.content}
+        >
+          {layout.webPanel && (
+            <WebPanel
+              data={layout.webPanel}
+              background={layout.bento?.background}
+            />
+          )}
+        </EditorialBlock>
+      )}
+
+      {/* Parallax image — separador visual */}
       {layout.introParallax && (
         <ParallaxImage src={layout.introParallax.src} alt={layout.introParallax.alt} />
       )}
@@ -108,26 +129,6 @@ export function ProjectLayout({ project }: Props) {
         <BrandingScrollerSection data={layout.brandingScroller} />
       )}
 
-      {/* 7a) ArchitectureWebFlow: reemplaza editorial+web cuando existe */}
-      {layout.architectureWebFlow && (
-        <ArchitectureWebFlow data={layout.architectureWebFlow} />
-      )}
-
-      {/* 7b) Editorial: Web + WebPanel (fallback) */}
-      {layout.web && (
-        <EditorialBlock
-          title={layout.web.title}
-          subtitle={layout.web.subtitle}
-          content={layout.web.content}
-        >
-          {layout.webPanel && (
-            <WebPanel
-              data={layout.webPanel}
-              background={layout.bento?.background}
-            />
-          )}
-        </EditorialBlock>
-      )}
 
       {/* Fallback: Showcase sin EditorialBlock de branding */}
       {layout.showcase && !layout.branding && (
