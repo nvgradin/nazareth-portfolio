@@ -44,7 +44,7 @@ export default async function ProjectPage({ params, searchParams }: ProjectPageP
   const stackProjects = getNextProjects(slug, from, filter, 3);
 
   return (
-    <main style={{ backgroundColor: '#e2ddd5', minHeight: '100vh' }}>
+    <main style={{ backgroundColor: '#e2ddd5' }}>
       <ProjectLayout project={project} />
       <ProjectEnd stackProjects={stackProjects} from={from} />
       <Suspense>
