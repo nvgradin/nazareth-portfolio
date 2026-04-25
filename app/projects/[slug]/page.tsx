@@ -6,6 +6,7 @@ import { ProjectLayout } from '@/components/projects';
 import { ProjectEnd } from '@/components/projects/ProjectEnd';
 import { ProjectNav } from '@/components/layout/ProjectNav';
 import { getNextProjects, ProjectOrigin } from '@/lib/getNextProject';
+import { ScrollReset } from '@/components/layout/ScrollReset';
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -45,6 +46,7 @@ export default async function ProjectPage({ params, searchParams }: ProjectPageP
 
   return (
     <main style={{ backgroundColor: '#e2ddd5', overscrollBehavior: 'none' }}>
+      <ScrollReset />
       <ProjectLayout project={project} />
       <ProjectEnd stackProjects={stackProjects} from={from} />
       <Suspense>
