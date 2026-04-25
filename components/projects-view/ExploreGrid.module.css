@@ -7,28 +7,24 @@
   background-color: var(--color-bg-primary);
 }
 
-/* ── Cabecera + filtros: bloque derecho ────────────────────────── */
-/* Ocupa el mismo ancho y padding que el grid, pero el título
-   y los filtros se alinean en la mitad derecha de esa área.     */
-
+/* ── Header: 1 columna por defecto (<1420px) ────────────────── */
 .header {
   padding-inline: var(--space-96);
   padding-top: 220px;
   margin-bottom: 0;
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  grid-template-columns: 1fr;
   align-items: end;
 }
 
-/* h2 + subtitle en columna izquierda */
 .headerContent {
   grid-column: 1;
-  padding-bottom: 32px;
+  padding-bottom: 24px;
 }
 
 .heading {
   font-family: var(--font-base);
-  font-size: clamp(52px, 5vw, 99px);
+  font-size: clamp(88px, 5vw, 99px);
   font-weight: 400;
   letter-spacing: 0.08em;
   color: var(--brand-primary-900);
@@ -46,18 +42,64 @@
   letter-spacing: -0.01em;
 }
 
-/* ── Filtros — columna derecha del header ─────────────────────── */
+/* Filtros en scroll horizontal por defecto */
 .filtersWrapper {
-  grid-column: 2;
+  grid-column: 1;
   align-self: end;
   margin-bottom: 56px;
-  /* Sin position:relative ni overflow en desktop — no necesita gradiente */
+  position: relative;
+  overflow: hidden;
+}
+
+.filtersWrapper::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 48px;
+  background: linear-gradient(to left, var(--neutral-200) 30%, transparent);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .filtersInner {
   display: flex;
-  justify-content: flex-end;
-  gap: 4px;
+  justify-content: flex-start;
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.filtersInner::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Desktop grande (≥1420px): 2 columnas, filtros a la derecha ── */
+@media (min-width: 1420px) {
+  .header {
+    grid-template-columns: 2fr 3fr;
+  }
+
+  .headerContent {
+    padding-bottom: 32px;
+  }
+
+  .filtersWrapper {
+    grid-column: 2;
+    overflow: visible;
+  }
+
+  .filtersWrapper::after {
+    display: none;
+  }
+
+  .filtersInner {
+    justify-content: flex-end;
+    overflow-x: visible;
+    gap: 4px;
+  }
 }
 
 /* ── Tablet vertical (768–1024px portrait) ────────────────────── */
@@ -65,11 +107,9 @@
   .header {
     padding-inline: var(--space-64);
     padding-top: 180px;
-    grid-template-columns: 1fr;
   }
 
   .headerContent {
-    grid-column: 1 / -1;
     padding-bottom: 24px;
     text-align: center;
   }
@@ -83,34 +123,11 @@
   }
 
   .filtersWrapper {
-    grid-column: 1 / -1;
     margin-bottom: 40px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .filtersWrapper::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 48px;
-    background: linear-gradient(to left, var(--neutral-200) 30%, transparent);
-    pointer-events: none;
-    z-index: 1;
   }
 
   .filtersInner {
     justify-content: center;
-    gap: 0;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .filtersInner::-webkit-scrollbar {
-    display: none;
   }
 }
 
@@ -119,11 +136,9 @@
   .header {
     padding-inline: var(--space-16);
     padding-top: 160px;
-    grid-template-columns: 1fr;
   }
 
   .headerContent {
-    grid-column: 1 / -1;
     padding-bottom: 20px;
     text-align: center;
   }
@@ -136,40 +151,16 @@
     font-size: 15px;
   }
 
-  /* Filtros en scroll horizontal */
   .filtersWrapper {
-    grid-column: 1 / -1;
     margin-bottom: 32px;
-    position: relative;
-    overflow: hidden; /* recorta los pseudo-elementos del gradiente */
   }
 
-  /* Fade derecha — señal principal de "hay más" */
   .filtersWrapper::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
     width: 40px;
-    background: linear-gradient(to left, var(--neutral-200) 30%, transparent);
-    pointer-events: none;
-    z-index: 1;
   }
-
 
   .filtersInner {
-    flex-direction: row;
     justify-content: flex-start;
-    margin-bottom: 0;
-    gap: 0;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .filtersInner::-webkit-scrollbar {
-    display: none;
   }
 
   .filter {
@@ -183,11 +174,9 @@
   .header {
     padding-inline: var(--space-48);
     padding-top: 160px;
-    grid-template-columns: 1fr;
   }
 
   .headerContent {
-    grid-column: 1 / -1;
     padding-bottom: 16px;
     text-align: center;
   }
@@ -201,41 +190,28 @@
     font-size: 13px;
   }
 
-  /* Filtros debajo del subtítulo, scroll horizontal centrado */
   .filtersWrapper {
-    grid-column: 1 / -1;
     margin-bottom: 24px;
   }
 
   .filtersInner {
-    flex-direction: row;
     justify-content: center;
-    margin-bottom: 0;
-    gap: 0;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .filtersInner::-webkit-scrollbar {
-    display: none;
   }
 }
 
-/* Landscape muy pequeño (<667px ancho): padding reducido para más espacio en filtros */
 @media (orientation: landscape) and (max-height: 500px) and (max-width: 667px) {
   .header {
     padding-inline: var(--space-24);
   }
 }
 
-/* Móvil vertical muy estrecho (<414px): fade más pequeño */
 @media (max-width: 413px) and (orientation: portrait) {
   .filtersWrapper::after {
     width: 28px;
   }
 }
 
+/* ── Filtro pill ──────────────────────────────────────────────── */
 .filter {
   position: relative;
   flex: 0 0 auto;
@@ -263,7 +239,6 @@
   opacity: 1;
 }
 
-/* Indicador animado bajo el filtro activo */
 .filterUnderline {
   position: absolute;
   bottom: -1px;
@@ -274,7 +249,7 @@
   border-radius: 1px;
 }
 
-/* ── Grid ─────────────────────────────────────────────────────── */
+/* ── Grid de proyectos ────────────────────────────────────────── */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -312,10 +287,8 @@
   }
 }
 
-/* Item wrapper */
 .item {}
 
-/* Empty state */
 .empty {
   grid-column: 1 / -1;
   padding: 80px 0;
