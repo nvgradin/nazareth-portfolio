@@ -5,8 +5,8 @@ export const lasIslasCies: ProjectWithLayout = {
   title: 'Las Islas Cíes',
   excerpt: 'Proyecto placeholder — contenido pendiente.',
 
-  categories: ['product-design', 'web-dev', 'strategy'],
-  tags: ['Product Design', 'Web Development', 'Estrategia'],
+  categories: ['product-design', 'web-dev', 'ux-ui','strategy'],
+  tags: ['Product Design & UX', 'Web Development', 'Estrategia'],
 
   thumbnail: {
     type: 'image',

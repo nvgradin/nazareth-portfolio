@@ -6,7 +6,7 @@ export const trainfy: ProjectWithLayout = {
   excerpt: 'Plataforma de intercambio deportivo que conecta atletas para compartir conocimientos y entrenar juntos.',
 
   categories: ['product-design', 'ux-ui', 'branding'],
-  tags: ['Product Design', 'UX/UI', 'Branding'],
+  tags: ['Product Design & UX', 'Branding'],
 
   thumbnail: {
     type: 'image',
