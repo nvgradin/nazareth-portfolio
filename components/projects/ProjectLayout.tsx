@@ -42,6 +42,9 @@ export function ProjectLayout({ project }: Props) {
         <FeatureCards data={layout.features} />
       )}
 
+      {/* Quote banner intermedio — separador visual entre features y contenido */}
+      {layout.introQuote && <QuoteBanner data={layout.introQuote} />}
+
       {/* Media grid: 2col + 3col full-bleed con header editorial */}
       {layout.mediaGrid && <MediaGrid data={layout.mediaGrid} />}
 

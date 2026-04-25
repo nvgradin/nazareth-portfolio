@@ -335,6 +335,9 @@ export interface ProjectLayout {
   // Comparación antes/después
   imageCompare?: ImageCompareData;
 
+  // Quote banner intermedio (entre features y mediaGrid)
+  introQuote?: QuoteBanner;
+
   // Editorial previo al reelsDeck (título izq + texto der, fondo crema)
   reelsEditorial?: {
     title: string;

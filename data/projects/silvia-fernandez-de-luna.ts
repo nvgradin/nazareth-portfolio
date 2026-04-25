@@ -91,6 +91,13 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       },
     ],
 
+    introQuote: {
+      quote: 'Placeholder — una frase de Silvia que resuma su esencia o propósito.',
+      author: 'Silvia Fernández De Luna',
+      backgroundImage: { type: 'image', src: '/projects/silvia-fernandez-de-luna/portada-sfdl.jpg', alt: 'Silvia Fernández De Luna' },
+      imagePosition: 'center',
+    },
+
     mediaGrid: {
       title: 'Web',
       subtitle: 'Placeholder — título de la sección web',
