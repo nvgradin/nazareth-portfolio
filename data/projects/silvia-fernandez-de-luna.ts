@@ -22,6 +22,8 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
   },
 
   layout: {
+
+    // 1) HERO
     hero: {
       title: 'Silvia Fernández De Luna',
       subtitle: 'Placeholder subtitle',
@@ -31,6 +33,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       year: '2023',
     },
 
+    // 2) BENTO — se añade después del hero automáticamente
     bento: {
       mode: 'fixed',
       background: '#895900',
@@ -66,36 +69,38 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       ],
     },
 
-    // 3) Heading centrado
+    // 3) HEADING
     heading: {
       title: 'La Creación para Silvia Fernández De Luna',
       subtitle: 'Silvia Fernández De Luna es una profesional dedicada a acompañar a las personas en su camino hacia el autoconocimiento y la sanación espiritual. Su labor abarca desde la guía personal y terapéutica hasta la creación de espacios de aprendizaje y desarrollo. A lo largo de los últimos años, hemos trabajado juntos en la creación de una base sólida para su Marca, con impronta de su profundidad y autenticidad, y que ahora incluye una amplia oferta de servicios personalizados, contenidos educativos, eventos, y una comunidad enfocada en el crecimiento personal y espiritual.',
     },
 
-    // 4) Feature cards (3 columnas)
+    // 4) FEATURES
     features: [
       {
-        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-marketing.jpg', alt: 'Placeholder feature 1' },
+        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-marketing.jpg', alt: 'Marketing' },
         title: 'Marketing',
         description: 'Placeholder — descripción de la primera feature.',
       },
       {
-        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-web.jpg', alt: 'Placeholder feature 2' },
+        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-web.jpg', alt: 'Web' },
         title: 'Web',
         description: 'Placeholder — descripción de la segunda feature.',
       },
       {
-        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-estrategia.jpg', alt: 'Placeholder feature 3' },
+        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-estrategia.jpg', alt: 'Estrategia' },
         title: 'Estrategia',
         description: 'Placeholder — descripción de la tercera feature.',
       },
     ],
 
+    // 5) INTRO PARALLAX
     introParallax: {
       src: '/projects/silvia-fernandez-de-luna/portada-sfdl.jpg',
       alt: 'Silvia Fernández De Luna',
     },
 
+    // 6) WEB + WEBPANEL — editorial izquierda + carrusel mockups
     web: {
       title: 'Web',
       subtitle: 'Placeholder — título de la sección web',
@@ -114,6 +119,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       ],
     },
 
+    // 7) REELS EDITORIAL + REELS DECK
     reelsEditorial: {
       title: 'Estrategia & Marketing',
       subtitle: 'Contenido que conecta con su comunidad',
@@ -132,8 +138,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       ],
     },
 
-    // — Secciones variables van aquí (imageCompare, editorial, branding, etc.) —
-
+    // 8) VIDEO SECTION
     videoSection: {
       editorial: {
         title: 'Audiovisual',
@@ -145,6 +150,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       background: 'linear-gradient(135deg, #1a2e2a, #4e6862, #2a3d39)',
     },
 
+    // 9) QUOTE BANNER
     quoteBanner: {
       quote: 'Acompañar a las personas en su camino hacia el autoconocimiento es la labor más hermosa que existe.',
       author: 'Silvia Fernández De Luna',
@@ -158,7 +164,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     client: 'Silvia Fernández De Luna',
     year: '2023',
     role: ['Branding', 'Marketing'],
-    tools: ['Wordpress', 'Woocommerce', 'LMS','Illustrator', 'After Effects', 'Premiere Pro', 'Brevo', 'Metricool'],
+    tools: ['Wordpress', 'Woocommerce', 'LMS', 'Illustrator', 'After Effects', 'Premiere Pro', 'Brevo', 'Metricool'],
   },
 
   tagline: 'Una marca que enseña, inspira y transforma.',

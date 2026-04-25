@@ -304,26 +304,24 @@ export function InfiniteVideoDeck({
   );
 
   return (
-    <>
-      <style>{`
-        @keyframes deckHintFade {
-          0%   { opacity: 0; transform: translateY(4px); }
-          20%  { opacity: 1; transform: translateY(0); }
-          70%  { opacity: 1; }
-          100% { opacity: 0; }
-        }
-        @keyframes deckHintBounce {
-          0%, 100% { transform: translateY(0); }
-          50%      { transform: translateY(-4px); }
-        }
-        .deck-ctrl { transition: opacity 0.3s; }
-      `}</style>
-
       <div
         ref={containerRef}
         className={className}
         style={{ position: 'relative', width: '100%', height: '100%', ...deckStyle }}
       >
+        <style>{`
+          @keyframes deckHintFade {
+            0%   { opacity: 0; transform: translateY(4px); }
+            20%  { opacity: 1; transform: translateY(0); }
+            70%  { opacity: 1; }
+            100% { opacity: 0; }
+          }
+          @keyframes deckHintBounce {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(-4px); }
+          }
+          .deck-ctrl { transition: opacity 0.3s; }
+        `}</style>
         {/* Drag hint — positioned absolutely at top, doesn't affect layout flow */}
         {showHint && (
           <div style={{
@@ -513,6 +511,5 @@ export function InfiniteVideoDeck({
           })}
         </motion.div>
       </div>
-    </>
   );
 }
