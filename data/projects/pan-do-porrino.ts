@@ -129,6 +129,11 @@ export const panDoPorrino: ProjectWithLayout = {
       },
     ],
 
+    introParallax: {
+      src: '/projects/pan-do-porrino/Bolla Pan do Porrino.png',
+      alt: 'Bolla de Pan do Porriño',
+    },
+
     // 5) Branding Scroller
     brandingScroller: {
       title: 'BRANDING',
