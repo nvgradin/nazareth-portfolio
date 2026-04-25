@@ -149,12 +149,12 @@ export function ProjectLayout({ project }: Props) {
       {layout.videoSection && <ProjectVideoSection data={layout.videoSection} />}
 
       {/* 10) Client logos marquee */}
+      {/* Media grid: 2col + 3col full-bleed con header editorial */}
+      {layout.mediaGrid && <MediaGrid data={layout.mediaGrid} />}
+
       {layout.clientLogos && layout.clientLogos.length > 0 && (
         <ProjectLogos logos={layout.clientLogos} />
       )}
-
-      {/* Media grid: 2col + 3col full-bleed con header editorial */}
-      {layout.mediaGrid && <MediaGrid data={layout.mediaGrid} />}
 
       {/* 11) Closing text — después de logos, antes del quote */}
       {layout.closing && <ClosingText data={layout.closing} />}
