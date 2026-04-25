@@ -17,6 +17,7 @@ import { MediaGrid } from './MediaGrid';
 import { QuoteBanner } from './QuoteBanner';
 import { ClosingText } from './ClosingText';
 import { ProjectLogos } from './ProjectLogos';
+import { ProjectVideoSection } from './ProjectVideoSection';
 import styles from './ProjectLayout.module.css';
 
 interface Props {
@@ -145,6 +146,9 @@ export function ProjectLayout({ project }: Props) {
       {layout.process && layout.process.length > 0 && (
         <ProcessSteps data={layout.process} />
       )}
+
+      {/* Sección audiovisual: editorial + vídeo con play overlay */}
+      {layout.videoSection && <ProjectVideoSection data={layout.videoSection} />}
 
       {/* 10) Client logos marquee */}
       {layout.clientLogos && layout.clientLogos.length > 0 && (

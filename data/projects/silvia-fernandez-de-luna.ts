@@ -134,6 +134,17 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
 
     // — Secciones variables van aquí (imageCompare, editorial, branding, etc.) —
 
+    videoSection: {
+      editorial: {
+        title: 'Audiovisual',
+        subtitle: 'Placeholder — título de la sección audiovisual',
+        content: 'Placeholder — descripción del trabajo audiovisual para Silvia Fernández De Luna.',
+      },
+      src: '/projects/silvia-fernandez-de-luna/audiovisual/La-Historia-Almica-de-Silvia-Fernandez-De-Luna.mp4',
+      poster: '/projects/silvia-fernandez-de-luna/audiovisual/La-Historia-Almica-de-Silvia-Fernandez-De-Luna.webp',
+      background: 'linear-gradient(135deg, #1a0e00, #895900, #4f3a17)',
+    },
+
     quoteBanner: {
       quote: 'Acompañar a las personas en su camino hacia el autoconocimiento es la labor más hermosa que existe.',
       author: 'Silvia Fernández De Luna',

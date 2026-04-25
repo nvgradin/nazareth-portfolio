@@ -338,6 +338,14 @@ export interface ProjectLayout {
   // Parallax image intermedia (entre features y mediaGrid)
   introParallax?: { src: string; alt: string };
 
+  // Sección audiovisual: editorial + vídeo centrado con play overlay
+  videoSection?: {
+    editorial: { title: string; subtitle: string; content: string };
+    src: string;
+    poster?: string;
+    background?: string;
+  };
+
   // Editorial previo al reelsDeck (título izq + texto der, fondo crema)
   reelsEditorial?: {
     title: string;
