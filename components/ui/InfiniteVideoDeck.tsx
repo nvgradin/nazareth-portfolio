@@ -29,12 +29,15 @@ interface Props {
   depthShadow?: boolean;
   background?: React.ReactNode;
   className?: string;
+  deckStyle?: React.CSSProperties;
 }
+
+type DeckState = 'browse' | 'watch';
 
 export function InfiniteVideoDeck({
   items,
   autoPlay = true,
-  autoPlayInterval = 4000,
+  autoPlayInterval = 3500,
   showTitle = false,
   cardRadius = 24,
   cardWidth = 260,
@@ -49,6 +52,7 @@ export function InfiniteVideoDeck({
   depthShadow = true,
   background,
   className = '',
+  deckStyle,
 }: Props) {
   const n = items.length;
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -56,11 +60,16 @@ export function InfiniteVideoDeck({
   const reduceMotion = useReducedMotion();
 
   const [activeIndex, setActiveIndex] = React.useState(0);
-  const [isHovered, setIsHovered] = React.useState(false);
+  const [deckState, setDeckState] = React.useState<DeckState>('browse');
   const [muted, setMuted] = React.useState(true);
+  const [videoProgress, setVideoProgress] = React.useState(0);
+  const [showHint, setShowHint] = React.useState(true);
+  const [controlsVisible, setControlsVisible] = React.useState(false);
+  const controlsTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
   const videoRefs = React.useRef<Map<string, HTMLVideoElement>>(new Map());
+  const rafRef = React.useRef<number | null>(null);
 
-  const progress = React.useMemo(() => motionValue(0), []);
+  const springProgress = React.useMemo(() => motionValue(0), []);
 
   const clamp = React.useCallback((v: number, a: number, b: number) => Math.min(b, Math.max(a, v)), []);
 
@@ -84,7 +93,6 @@ export function InfiniteVideoDeck({
     return { min: -half - 0.5, max: behind - half + 0.5 };
   }, [effectiveDepth]);
 
-  // motionValues per card
   const animatedValues = React.useMemo(() =>
     items.map(() => ({
       transform: motionValue('translate3d(0px, 0px, 0px) scale(1)'),
@@ -96,46 +104,94 @@ export function InfiniteVideoDeck({
     [items.length]
   );
 
-  // Autoplay
+  const currentFront = ((activeIndex % n) + n) % n;
+
+  const advanceTo = React.useCallback((next: number) => {
+    setActiveIndex(next);
+  }, []);
+
+  // Hide drag hint after 2.5s
   React.useEffect(() => {
-    if (!autoPlay || !inView || isHovered || n <= 1) return;
+    const t = setTimeout(() => setShowHint(false), 2500);
+    return () => clearTimeout(t);
+  }, []);
+
+  // Hide controls timer cleanup
+  React.useEffect(() => {
+    return () => { if (controlsTimerRef.current) clearTimeout(controlsTimerRef.current); };
+  }, []);
+
+  const showControlsBriefly = React.useCallback(() => {
+    setControlsVisible(true);
+    if (controlsTimerRef.current) clearTimeout(controlsTimerRef.current);
+    controlsTimerRef.current = setTimeout(() => setControlsVisible(false), 2500);
+  }, []);
+
+  // Browse autoplay timer
+  React.useEffect(() => {
+    if (!autoPlay || !inView || deckState !== 'browse' || n <= 1) return;
     const timer = setInterval(() => {
       setActiveIndex(prev => prev + 1);
     }, autoPlayInterval);
     return () => clearInterval(timer);
-  }, [autoPlay, autoPlayInterval, inView, isHovered, n]);
+  }, [autoPlay, autoPlayInterval, inView, deckState, n]);
 
-  // Spring animate progress → activeIndex
+  // Spring animate springProgress → activeIndex
   React.useEffect(() => {
-    const controls = animate(progress, activeIndex, {
+    const controls = animate(springProgress, activeIndex, {
       type: 'spring',
       stiffness: 200,
       damping: 25,
     });
     return controls.stop;
-  }, [activeIndex, progress]);
+  }, [activeIndex, springProgress]);
 
-  // Sync video play/pause/mute based on which card is front
+  // Video progress RAF (watch state only)
   React.useEffect(() => {
-    const currentFront = ((activeIndex % n) + n) % n;
+    if (deckState !== 'watch') {
+      setVideoProgress(0);
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+      return;
+    }
+    const tick = () => {
+      const frontItem = items[currentFront];
+      if (frontItem?.type === 'video') {
+        const video = videoRefs.current.get(frontItem.id);
+        if (video && video.duration > 0) {
+          setVideoProgress(video.currentTime / video.duration);
+        }
+      }
+      rafRef.current = requestAnimationFrame(tick);
+    };
+    rafRef.current = requestAnimationFrame(tick);
+    return () => {
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    };
+  }, [deckState, currentFront, items]);
+
+  // Sync video play/pause/mute/loop based on state and front card
+  React.useEffect(() => {
     items.forEach((item, i) => {
       if (item.type !== 'video') return;
       const video = videoRefs.current.get(item.id);
       if (!video) return;
-      video.muted = muted;
+
       if (i === currentFront) {
+        video.muted = muted;
+        video.loop = deckState === 'browse';
         video.play().catch(() => {});
       } else {
         video.pause();
         video.currentTime = 0;
+        video.loop = true;
       }
     });
-  }, [activeIndex, muted, items, n]);
+  }, [activeIndex, deckState, muted, items]);
 
   // Per-frame layout update
   useAnimationFrame(() => {
     if (reduceMotion || !inView || n <= 1) return;
-    const p = progress.get();
+    const p = springProgress.get();
     for (let i = 0; i < n; i++) {
       const v = animatedValues[i];
       if (!v) continue;
@@ -169,25 +225,62 @@ export function InfiniteVideoDeck({
   });
 
   const setVideoRef = (id: string) => (el: HTMLVideoElement | null) => {
-    if (el) videoRefs.current.set(id, el);
-    else videoRefs.current.delete(id);
+    if (el) {
+      el.muted = muted; // set initial muted state; effect owns it from here
+      videoRefs.current.set(id, el);
+    } else {
+      videoRefs.current.delete(id);
+    }
   };
 
   const toggleMute = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setMuted(m => {
-      const next = !m;
-      videoRefs.current.forEach(v => { v.muted = next; });
-      return next;
-    });
+    setMuted(m => !m);
+  };
+
+  const handleFrontClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (deckState === 'browse') {
+      setDeckState('watch');
+      setMuted(m => m ? false : m); // unmute only if currently muted
+      showControlsBriefly();
+      const frontItem = items[currentFront];
+      if (frontItem?.type === 'video') {
+        const video = videoRefs.current.get(frontItem.id);
+        if (video) {
+          video.currentTime = 0;
+        }
+      }
+    } else {
+      setDeckState('browse');
+      setMuted(true);
+      setControlsVisible(false);
+    }
+  };
+
+  const handleVideoEnded = () => {
+    if (deckState !== 'watch') return;
+    // Advance and stay in watch state
+    setActiveIndex(prev => prev + 1);
+    // Next video will be unmuted/no-loop via the sync effect
   };
 
   const handlePanEnd = (_: unknown, info: { offset: { y: number } }) => {
-    if (info.offset.y < -50) setActiveIndex(p => p + 1);
-    else if (info.offset.y > 50) setActiveIndex(p => p - 1);
+    const threshold = 50;
+    if (info.offset.y < -threshold || info.offset.y > threshold) {
+      setShowHint(false);
+      if (deckState === 'watch') setDeckState('browse');
+      if (info.offset.y < -threshold) advanceTo(activeIndex + 1);
+      else advanceTo(activeIndex - 1);
+    }
   };
 
-  const currentFront = ((activeIndex % n) + n) % n;
+  const handleWheel = (e: React.WheelEvent) => {
+    if (Math.abs(e.deltaY) < 30) return;
+    if (deckState === 'watch') setDeckState('browse');
+    if (e.deltaY > 0) advanceTo(activeIndex + 1);
+    else advanceTo(activeIndex - 1);
+  };
 
   const cardBase: React.CSSProperties = {
     position: 'absolute',
@@ -200,118 +293,223 @@ export function InfiniteVideoDeck({
     boxShadow: depthShadow ? '0 8px 32px rgba(0,0,0,0.25)' : undefined,
   };
 
+  const MuteIcon = () => muted ? (
+    <svg width={18} height={18} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M16.5 12A4.5 4.5 0 0 0 14 7.97V10.18L16.45 12.63C16.48 12.43 16.5 12.22 16.5 12ZM19 12C19 12.94 18.8 13.82 18.46 14.64L19.97 16.15C20.63 14.91 21 13.5 21 12C21 7.72 18.01 4.14 14 3.23V5.29C16.89 6.17 19 8.83 19 12ZM4.27 3L3 4.27L7.73 9H3V15H7L12 20V13.27L16.25 17.52C15.58 18.04 14.83 18.45 14 18.7V20.76C15.38 20.45 16.63 19.82 17.68 18.96L19.73 21L21 19.73L12 10.73L4.27 3ZM12 4L9.91 6.09L12 8.18V4Z"/>
+    </svg>
+  ) : (
+    <svg width={18} height={18} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M3 9V15H7L12 20V4L7 9H3ZM16.5 12C16.5 10.23 15.48 8.71 14 7.97V16.02C15.48 15.29 16.5 13.77 16.5 12ZM14 3.23V5.29C16.89 6.17 19 8.83 19 12C19 15.17 16.89 17.83 14 18.71V20.77C18.01 19.86 21 16.28 21 12C21 7.72 18.01 4.14 14 3.23Z"/>
+    </svg>
+  );
+
   return (
-    <div
-      ref={containerRef}
-      className={className}
-      style={{ position: 'relative', width: '100%', height: '100%' }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      {background && (
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden' }}>
-          {background}
+    <>
+      <style>{`
+        @keyframes deckHintFade {
+          0%   { opacity: 0; transform: translateY(4px); }
+          20%  { opacity: 1; transform: translateY(0); }
+          70%  { opacity: 1; }
+          100% { opacity: 0; }
+        }
+        @keyframes deckHintBounce {
+          0%, 100% { transform: translateY(0); }
+          50%      { transform: translateY(-4px); }
+        }
+        .deck-ctrl { transition: opacity 0.3s; }
+      `}</style>
+
+      {/* Drag hint — outside the card, between title and deck */}
+      {showHint && (
+        <div style={{
+          display: 'flex', alignItems: 'center', gap: 8,
+          pointerEvents: 'none',
+          animation: 'deckHintFade 2.5s ease forwards',
+          marginBottom: 4,
+        }}>
+          <svg style={{ animation: 'deckHintBounce 1s ease infinite' }} width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+            <path d="M8 7l4-4 4 4M8 17l4 4 4-4"/>
+          </svg>
+          <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.6875rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+            Drag to browse
+          </span>
         </div>
       )}
-      <motion.div
-        style={{
-          position: 'relative',
-          zIndex: 1,
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          perspective: 900,
-          cursor: 'grab',
-        }}
-        onPanEnd={handlePanEnd}
+
+      <div
+        ref={containerRef}
+        className={className}
+        style={{ position: 'relative', width: '100%', height: '100%', ...deckStyle }}
       >
-        {items.map((item, i) => {
-          const v = animatedValues[i];
-          const isFront = i === currentFront;
+        {background && (
+          <div style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden' }}>
+            {background}
+          </div>
+        )}
+        <motion.div
+          style={{
+            position: 'relative',
+            zIndex: 1,
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            perspective: 900,
+            cursor: 'grab',
+          }}
+          onPanEnd={handlePanEnd}
+          onWheel={handleWheel}
+        >
+          {items.map((item, i) => {
+            const v = animatedValues[i];
+            const isFront = i === currentFront;
+            const isWatch = deckState === 'watch';
 
-          return (
-            <motion.div
-              key={item.id}
-              style={{
-                ...cardBase,
-                transform: v?.transform,
-                opacity: v?.opacity,
-                filter: v?.filter,
-                zIndex: v?.zIndex,
-              }}
-              onClick={() => setActiveIndex(p => p + 1)}
-            >
-              {/* Media */}
-              {item.type === 'video' ? (
-                <video
-                  ref={setVideoRef(item.id)}
-                  src={item.src}
-                  poster={item.poster}
-                  muted={muted}
-                  playsInline
-                  loop
-                  autoPlay={isFront}
-                  preload="metadata"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                />
-              ) : (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={item.src}
-                  alt={item.title ?? ''}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                />
-              )}
+            return (
+              <motion.div
+                key={item.id}
+                style={{
+                  ...cardBase,
+                  transform: v?.transform,
+                  opacity: v?.opacity,
+                  filter: v?.filter,
+                  zIndex: v?.zIndex,
+                }}
+                onHoverStart={() => { if (isFront && isWatch) showControlsBriefly(); }}
+                onTouchStart={() => { if (isFront && isWatch) showControlsBriefly(); }}
+              >
+                {/* Media */}
+                {item.type === 'video' ? (
+                  <video
+                    ref={setVideoRef(item.id)}
+                    src={item.src}
+                    poster={item.poster}
+                    playsInline
+                    preload="metadata"
+                    onEnded={isFront ? handleVideoEnded : undefined}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
+                ) : (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={item.src}
+                    alt={item.title ?? ''}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
+                )}
 
-              {/* Gradient overlay */}
-              <div style={{
-                position: 'absolute', inset: 0,
-                background: 'linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%)',
-                pointerEvents: 'none',
-              }} />
-
-              {/* Title */}
-              {showTitle && item.title && isFront && (
+                {/* Gradient overlay — deeper in watch to help controls visibility */}
                 <div style={{
-                  position: 'absolute', bottom: 52, left: 16, right: 16,
-                  color: '#fff', fontSize: '0.9375rem', fontWeight: 500,
-                  lineHeight: 1.4, pointerEvents: 'none',
-                  textShadow: '0 2px 8px rgba(0,0,0,0.4)',
-                }}>
-                  {item.title}
-                </div>
-              )}
+                  position: 'absolute', inset: 0,
+                  background: isWatch && isFront
+                    ? 'linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 100%)'
+                    : 'linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%)',
+                  pointerEvents: 'none',
+                  transition: 'background 0.3s',
+                }} />
 
-              {/* Mute button — front only, video only */}
-              {isFront && item.type === 'video' && (
-                <button
-                  onClick={toggleMute}
-                  aria-label={muted ? 'Activar audio' : 'Silenciar'}
-                  style={{
-                    position: 'absolute', bottom: 14, left: 14, zIndex: 10,
-                    background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(4px)',
-                    border: 'none', borderRadius: '50%', width: 36, height: 36,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    color: '#fff', cursor: 'pointer',
-                  }}
-                >
-                  {muted ? (
-                    <svg width={18} height={18} viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M16.5 12A4.5 4.5 0 0 0 14 7.97V10.18L16.45 12.63C16.48 12.43 16.5 12.22 16.5 12ZM19 12C19 12.94 18.8 13.82 18.46 14.64L19.97 16.15C20.63 14.91 21 13.5 21 12C21 7.72 18.01 4.14 14 3.23V5.29C16.89 6.17 19 8.83 19 12ZM4.27 3L3 4.27L7.73 9H3V15H7L12 20V13.27L16.25 17.52C15.58 18.04 14.83 18.45 14 18.7V20.76C15.38 20.45 16.63 19.82 17.68 18.96L19.73 21L21 19.73L12 10.73L4.27 3ZM12 4L9.91 6.09L12 8.18V4Z"/>
+                {/* Browse: big centered play button */}
+                {isFront && !isWatch && (
+                  <button
+                    onClick={handleFrontClick}
+                    aria-label="Ver completo"
+                    style={{
+                      position: 'absolute', inset: 0, zIndex: 9,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      background: 'none', border: 'none', cursor: 'pointer',
+                      opacity: 0.4,
+                      transition: 'opacity 0.2s',
+                    }}
+                    onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
+                    onMouseLeave={e => (e.currentTarget.style.opacity = '0.4')}
+                  >
+                    <svg width={52} height={52} viewBox="0 0 24 24" fill="rgba(255,255,255,0.95)" style={{ filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.6))' }}>
+                      <polygon points="5,3 19,12 5,21"/>
                     </svg>
-                  ) : (
-                    <svg width={18} height={18} viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M3 9V15H7L12 20V4L7 9H3ZM16.5 12C16.5 10.23 15.48 8.71 14 7.97V16.02C15.48 15.29 16.5 13.77 16.5 12ZM14 3.23V5.29C16.89 6.17 19 8.83 19 12C19 15.17 16.89 17.83 14 18.71V20.77C18.01 19.86 21 16.28 21 12C21 7.72 18.01 4.14 14 3.23Z"/>
-                    </svg>
-                  )}
-                </button>
-              )}
-            </motion.div>
-          );
-        })}
-      </motion.div>
-    </div>
+                  </button>
+                )}
+
+                {/* Title */}
+                {showTitle && item.title && isFront && (
+                  <div style={{
+                    position: 'absolute', left: 16, right: 64,
+                    bottom: isWatch ? 52 : 52,
+                    color: '#fff', fontSize: '0.9375rem', fontWeight: 500,
+                    lineHeight: 1.4, pointerEvents: 'none',
+                    textShadow: '0 2px 8px rgba(0,0,0,0.4)',
+                    zIndex: 11,
+                  }}>
+                    {item.title}
+                  </div>
+                )}
+
+                {/* Controls bar — always visible on front card */}
+                {isFront && (
+                  <div
+                    className="deck-ctrl"
+                    style={{
+                      position: 'absolute', bottom: 0, left: 0, right: 0,
+                      zIndex: 12,
+                      display: 'flex', alignItems: 'center', gap: 8,
+                      padding: '0 12px 12px',
+                      opacity: isWatch ? (controlsVisible ? 1 : 0) : 1,
+                      pointerEvents: isWatch ? (controlsVisible ? 'auto' : 'none') : 'auto',
+                    }}
+                  >
+                    {/* Pause (watch) or invisible spacer (browse keeps layout stable) */}
+                    {isWatch && (
+                      <button
+                        onClick={handleFrontClick}
+                        aria-label="Volver a browse"
+                        style={{
+                          flexShrink: 0,
+                          background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(4px)',
+                          border: 'none', borderRadius: '50%', width: 30, height: 30,
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          color: '#fff', cursor: 'pointer',
+                        }}
+                      >
+                        <svg width={14} height={14} viewBox="0 0 24 24" fill="currentColor">
+                          <rect x="6" y="4" width="4" height="16" rx="1"/>
+                          <rect x="14" y="4" width="4" height="16" rx="1"/>
+                        </svg>
+                      </button>
+                    )}
+
+                    {/* Progress track — only in watch */}
+                    {isWatch && (
+                      <div style={{ flex: 1, height: 3, background: 'rgba(255,255,255,0.25)', borderRadius: 2, overflow: 'hidden' }}>
+                        <div style={{ height: '100%', width: `${videoProgress * 100}%`, background: '#E28B00', borderRadius: 2, transition: 'none' }} />
+                      </div>
+                    )}
+
+                    {/* Spacer so mute stays right when no progress bar (browse) */}
+                    {!isWatch && <div style={{ flex: 1 }} />}
+
+                    {/* Mute — always visible, right side */}
+                    {item.type === 'video' && (
+                      <button
+                        onClick={toggleMute}
+                        aria-label={muted ? 'Activar audio' : 'Silenciar'}
+                        style={{
+                          flexShrink: 0,
+                          background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(4px)',
+                          border: 'none', borderRadius: '50%', width: 30, height: 30,
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          color: '#fff', cursor: 'pointer',
+                        }}
+                      >
+                        <MuteIcon />
+                      </button>
+                    )}
+                  </div>
+                )}
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </div>
+    </>
   );
 }
