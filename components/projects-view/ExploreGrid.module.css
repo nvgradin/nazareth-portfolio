@@ -28,7 +28,7 @@
 
 .heading {
   font-family: var(--font-base);
-  font-size: clamp(88px, 5vw, 99px);
+  font-size: clamp(52px, 5vw, 99px);
   font-weight: 400;
   letter-spacing: 0.08em;
   color: var(--brand-primary-900);
