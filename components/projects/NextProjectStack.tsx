@@ -33,7 +33,13 @@ export function NextProjectStack({ stackProjects, from }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const timersRef    = useRef<ReturnType<typeof setTimeout>[]>([]);
 
-  const layers = [stackProjects[2], stackProjects[1], stackProjects[0]];
+  const rawLayers = [stackProjects[2], stackProjects[1], stackProjects[0]];
+  const seen = new Set<string>();
+  const layers = rawLayers.filter(item => {
+    if (seen.has(item.project.slug)) return false;
+    seen.add(item.project.slug);
+    return true;
+  });
   const real   = stackProjects[0];
   const bgColor = real.project.ambientColor ?? '#111';
   const cover   = real.project.cover ?? real.project.thumbnail.src;

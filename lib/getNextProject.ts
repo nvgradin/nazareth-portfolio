@@ -46,13 +46,17 @@ export function getNextProjects(
   );
   const safeStart = startInPool >= 0 ? startInPool : 0;
 
-  return Array.from({ length: count }, (_, i) => {
+  const results: NextProjectResult[] = [];
+  const usedSlugs = new Set<string>();
+  for (let i = 0; results.length < count; i++) {
     const p = pool[(safeStart + i) % pool.length];
-    return {
-      project: p,
-      href: `/projects/${p.slug}?from=${from}${filterParam}`,
-    };
-  });
+    if (!usedSlugs.has(p.slug)) {
+      usedSlugs.add(p.slug);
+      results.push({ project: p, href: `/projects/${p.slug}?from=${from}${filterParam}` });
+    }
+    if (i >= pool.length) break; // pool exhausted
+  }
+  return results;
 }
 
 /**
