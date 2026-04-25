@@ -140,8 +140,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
         subtitle: 'Placeholder — título de la sección audiovisual',
         content: 'Placeholder — descripción del trabajo audiovisual para Silvia Fernández De Luna.',
       },
-      src: '/projects/silvia-fernandez-de-luna/audiovisual/La-Historia-Almica-de-Silvia-Fernandez-De-Luna.mp4',
-      poster: '/projects/silvia-fernandez-de-luna/audiovisual/La-Historia-Almica-de-Silvia-Fernandez-De-Luna.webp',
+      src: 'https://silviafernandezdeluna.com/wp-content/uploads/2022/03/Silvia_Fernandez_De_Luna_Quien_Eres.mp4',
       background: 'linear-gradient(135deg, #1a0e00, #895900, #4f3a17)',
     },
 
