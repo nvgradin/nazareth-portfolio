@@ -42,6 +42,9 @@ export function ProjectLayout({ project }: Props) {
         <FeatureCards data={layout.features} />
       )}
 
+      {/* Media grid: 2col + 3col full-bleed con header editorial */}
+      {layout.mediaGrid && <MediaGrid data={layout.mediaGrid} />}
+
       {/* Editorial previo a reels */}
       {layout.reelsEditorial && (
         <EditorialBlock
@@ -137,9 +140,6 @@ export function ProjectLayout({ project }: Props) {
       {layout.process && layout.process.length > 0 && (
         <ProcessSteps data={layout.process} />
       )}
-
-      {/* Media grid: 2col + 3col full-bleed con header editorial */}
-      {layout.mediaGrid && <MediaGrid data={layout.mediaGrid} />}
 
       {/* 10) Client logos marquee */}
       {layout.clientLogos && layout.clientLogos.length > 0 && (

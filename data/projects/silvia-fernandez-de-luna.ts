@@ -91,6 +91,21 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       },
     ],
 
+    mediaGrid: {
+      title: 'Web',
+      subtitle: 'Placeholder — título de la sección web',
+      body: 'Placeholder — descripción del trabajo web para Silvia Fernández De Luna.',
+      row1: [
+        { src: '/projects/silvia-fernandez-de-luna/MockupWeb_Portada_SFDL.jpg', alt: 'Mockup web portada Silvia Fernández De Luna' },
+        { src: '/projects/silvia-fernandez-de-luna/bento-2.jpg', alt: 'Web Silvia Fernández De Luna' },
+      ],
+      row2: [
+        { src: '/projects/silvia-fernandez-de-luna/bento-3.jpg', alt: 'Web Silvia Fernández De Luna' },
+        { src: '/projects/silvia-fernandez-de-luna/bento-6.png', alt: 'Web Silvia Fernández De Luna' },
+        { src: '/projects/silvia-fernandez-de-luna/bento-8.jpg', alt: 'Web Silvia Fernández De Luna' },
+      ],
+    },
+
     reelsEditorial: {
       title: 'Estrategia & Marketing',
       subtitle: 'Contenido que conecta con su comunidad',
