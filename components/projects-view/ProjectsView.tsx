@@ -20,7 +20,7 @@ type Phase =
   | 'measuring-to-stack'
   | 'transitioning-to-stack';
 
-export type FilterKey = 'all' | 'product' | 'branding' | 'web' | 'estrategia' | 'marketing';
+export type FilterKey = 'all' | 'product' | 'branding' | 'web' | 'estrategia' | 'marketing' | 'ai-automation';
 
 const allProjects      = getPublishedProjects();
 const featuredProjects = allProjects.filter(p => p.featured);

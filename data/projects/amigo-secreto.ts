@@ -5,8 +5,8 @@ export const amigoSecreto: ProjectWithLayout = {
   title: 'Amigo Secreto',
   excerpt: 'Una app que convierte el ritual del amigo invisible en una experiencia digital llena de intención y magia.',
 
-  categories: ['product-design', 'ux-ui', 'web-dev', 'strategy','branding'],
-  tags: ['Product Design & UX', 'Web Development', 'Estrategia', 'Branding'],
+  categories: ['product-design', 'ux-ui', 'web-dev', 'strategy', 'branding', 'ai-automation'],
+  tags: ['Product Design & UX', 'Web Development', 'Branding', 'Automatización & IA'],
 
   thumbnail: {
     type: 'image',

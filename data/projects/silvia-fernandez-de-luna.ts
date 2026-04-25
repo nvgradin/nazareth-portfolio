@@ -5,8 +5,8 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
   title: 'Silvia Fernández De Luna',
   excerpt: 'Una marca que enseña, inspira y transforma.',
 
-  categories: ['branding', 'web-dev', 'marketing', 'strategy', 'ux-ui'],
-  tags: ['Branding', 'Web Development', 'Marketing', 'Estrategia'],
+  categories: ['branding', 'web-dev', 'marketing', 'strategy', 'ux-ui', 'ai-automation'],
+  tags: ['Branding', 'Web Development', 'Marketing', 'Automatización & IA'],
 
   thumbnail: {
     type: 'image',

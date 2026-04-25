@@ -20,7 +20,8 @@ const FILTERS: FilterDef[] = [
   { key: 'branding',   label: 'Branding',   categories: ['branding'] },
   { key: 'web',        label: 'Web',        categories: ['web-dev'] },
   { key: 'estrategia', label: 'Estrategia', categories: ['strategy'] },
-  { key: 'marketing',  label: 'Marketing',  categories: ['marketing'] },
+  { key: 'marketing',     label: 'Marketing',      categories: ['marketing'] },
+  { key: 'ai-automation', label: 'AI & Automation', categories: ['ai-automation'] },
 ];
 
 interface Props {

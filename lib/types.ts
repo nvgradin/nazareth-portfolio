@@ -241,7 +241,7 @@ export type ProjectCategory =
   | 'web-dev'
   | 'strategy'
   | 'marketing'
-  | 'ai';
+  | 'ai-automation';
 
 /**
  * Estado del proyecto

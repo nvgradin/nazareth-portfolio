@@ -16,7 +16,7 @@ const ITEMS = [
   { text: 'WEB DEVELOPMENT', accent: false },
   { text: 'ESTRATEGIA DIGITAL', accent: false },
   { text: 'MARKETING', accent: false },
-  { text: 'AI-POWERED PRODUCTS', accent: false },
+  { text: 'AUTOMATIZACIÓN CON IA', accent: false },
 ];
 
 const SEP = '◆';
