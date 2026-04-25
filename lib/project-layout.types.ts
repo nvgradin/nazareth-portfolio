@@ -428,6 +428,9 @@ export interface ProjectWithLayout {
   status: ProjectStatus;
   order?: number;
 
+  // Siguiente stack manual (3 slugs: [next, next+1, next+2])
+  nextStack?: [string, string, string];
+
   // SEO
   seoTitle?: string;
   seoDescription?: string;

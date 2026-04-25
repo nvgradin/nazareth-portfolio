@@ -260,4 +260,5 @@ export const trainfy: ProjectWithLayout = {
 
   status: 'published',
   order: 1,
+  nextStack: ['las-islas-cies', 'silvia-fernandez-de-luna', 'amigo-secreto'],
 };

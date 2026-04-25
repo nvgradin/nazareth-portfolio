@@ -21,6 +21,18 @@ export function getNextProjects(
 ): NextProjectResult[] {
   const all = getPublishedProjects();
 
+  // Si el proyecto tiene nextStack manual, usarlo directamente
+  const current = all.find(p => p.slug === currentSlug);
+  if (current?.nextStack) {
+    const results: NextProjectResult[] = [];
+    for (const slug of current.nextStack) {
+      const p = all.find(pr => pr.slug === slug);
+      if (p) results.push({ project: p, href: `/projects/${p.slug}?from=${from}` });
+      if (results.length >= count) break;
+    }
+    if (results.length > 0) return results;
+  }
+
   const list =
     from === 'destacados'
       ? all.filter((p) => p.featured)

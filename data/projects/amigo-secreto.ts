@@ -63,4 +63,5 @@ export const amigoSecreto: ProjectWithLayout = {
 
   status: 'published',
   order: 4,
+  nextStack: ['trainfy', 'las-islas-cies', 'silvia-fernandez-de-luna'],
 };

@@ -169,4 +169,5 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
 
   status: 'published',
   order: 3,
+  nextStack: ['amigo-secreto', 'trainfy', 'las-islas-cies'],
 };
