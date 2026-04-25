@@ -96,18 +96,21 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       alt: 'Silvia Fernández De Luna',
     },
 
-    mediaGrid: {
+    web: {
       title: 'Web',
       subtitle: 'Placeholder — título de la sección web',
-      body: 'Placeholder — descripción del trabajo web para Silvia Fernández De Luna.',
-      row1: [
-        { src: '/projects/silvia-fernandez-de-luna/MockupWeb_Portada_SFDL.jpg', alt: 'Mockup web portada Silvia Fernández De Luna' },
-        { src: '/projects/silvia-fernandez-de-luna/bento-2.jpg', alt: 'Web Silvia Fernández De Luna' },
-      ],
-      row2: [
-        { src: '/projects/silvia-fernandez-de-luna/bento-3.jpg', alt: 'Web Silvia Fernández De Luna' },
-        { src: '/projects/silvia-fernandez-de-luna/bento-6.png', alt: 'Web Silvia Fernández De Luna' },
-        { src: '/projects/silvia-fernandez-de-luna/bento-8.jpg', alt: 'Web Silvia Fernández De Luna' },
+      content: 'Placeholder — descripción del trabajo web para Silvia Fernández De Luna.',
+    },
+
+    webPanel: {
+      title: 'Placeholder — título del panel web',
+      description: 'Placeholder — descripción del panel web.',
+      mockups: [
+        { type: 'image', src: '/projects/silvia-fernandez-de-luna/MockupWeb_Portada_SFDL.jpg', alt: 'Mockup web portada Silvia Fernández De Luna' },
+        { type: 'image', src: '/projects/silvia-fernandez-de-luna/bento-2.jpg', alt: 'Web Silvia Fernández De Luna' },
+        { type: 'image', src: '/projects/silvia-fernandez-de-luna/bento-3.jpg', alt: 'Web Silvia Fernández De Luna' },
+        { type: 'image', src: '/projects/silvia-fernandez-de-luna/bento-6.png', alt: 'Web Silvia Fernández De Luna' },
+        { type: 'image', src: '/projects/silvia-fernandez-de-luna/bento-8.jpg', alt: 'Web Silvia Fernández De Luna' },
       ],
     },
 
