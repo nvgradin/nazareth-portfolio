@@ -160,4 +160,5 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
 
   status: 'published',
   order: 6,
+  nextStack: ['trainfy', 'las-islas-cies', 'silvia-fernandez-de-luna'],
 };

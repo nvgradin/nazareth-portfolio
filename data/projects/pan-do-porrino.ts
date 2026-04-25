@@ -217,4 +217,5 @@ export const panDoPorrino: ProjectWithLayout = {
 
   status: 'published',
   order: 5,
+  nextStack: ['tarxeta-cultura-galega', 'trainfy', 'las-islas-cies'],
 };
