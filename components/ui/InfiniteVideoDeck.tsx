@@ -319,28 +319,31 @@ export function InfiniteVideoDeck({
         .deck-ctrl { transition: opacity 0.3s; }
       `}</style>
 
-      {/* Drag hint — outside the card, between title and deck */}
-      {showHint && (
-        <div style={{
-          display: 'flex', alignItems: 'center', gap: 8,
-          pointerEvents: 'none',
-          animation: 'deckHintFade 2.5s ease forwards',
-          marginBottom: 4,
-        }}>
-          <svg style={{ animation: 'deckHintBounce 1s ease infinite' }} width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
-            <path d="M8 7l4-4 4 4M8 17l4 4 4-4"/>
-          </svg>
-          <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.6875rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-            Drag to browse
-          </span>
-        </div>
-      )}
-
       <div
         ref={containerRef}
         className={className}
         style={{ position: 'relative', width: '100%', height: '100%', ...deckStyle }}
       >
+        {/* Drag hint — positioned absolutely at top, doesn't affect layout flow */}
+        {showHint && (
+          <div style={{
+            position: 'absolute',
+            top: -36,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            display: 'flex', alignItems: 'center', gap: 8,
+            pointerEvents: 'none',
+            animation: 'deckHintFade 2.5s ease forwards',
+            zIndex: 10,
+          }}>
+            <svg style={{ animation: 'deckHintBounce 1s ease infinite' }} width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+              <path d="M8 7l4-4 4 4M8 17l4 4 4-4"/>
+            </svg>
+            <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.6875rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              Drag to browse
+            </span>
+          </div>
+        )}
         {background && (
           <div style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden' }}>
             {background}
