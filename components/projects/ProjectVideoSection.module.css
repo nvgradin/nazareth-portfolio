@@ -4,52 +4,133 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #1a0e00;
 }
 
-.videoWrapper {
+.previewBtn {
   position: relative;
   width: 100%;
   max-width: 900px;
   aspect-ratio: 16 / 9;
+  border: none;
+  padding: 0;
   cursor: pointer;
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+  background: #000;
+  display: block;
 }
 
-.video {
+.previewPoster {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease;
 }
 
-.playBtn {
+.previewBtn:hover .previewPoster {
+  transform: scale(1.03);
+}
+
+.playOverlay {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.35);
-  border: none;
-  cursor: pointer;
-  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
   transition: background 0.2s ease;
 }
 
-.playBtn:hover {
-  background: rgba(0, 0, 0, 0.5);
+.previewBtn:hover .playOverlay {
+  background: rgba(0, 0, 0, 0.45);
 }
 
-.playBtn svg {
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
-  width: 56px;
-  height: 56px;
+.playIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  backdrop-filter: blur(4px);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.previewBtn:hover .playIcon {
+  transform: scale(1.08);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 @media (min-width: 768px) {
   .stage {
     padding: var(--space-96) var(--space-64);
   }
+}
+
+/* ── Lightbox — mismos estilos que Lightbox.module.css ── */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.lightboxBackdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+
+.lightboxVideoWrap {
+  position: relative;
+  z-index: 1;
+  width: 85vw;
+  height: 80vh;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+}
+
+.lightboxVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.closeBtn {
+  position: absolute;
+  z-index: 2;
+  top: var(--space-24);
+  right: var(--space-24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--neutral-300-soft);
+  border-radius: var(--radius-full);
+  background-color: var(--neutral-50);
+  color: var(--brand-primary-900);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-default),
+              color var(--duration-fast) var(--ease-default);
+}
+
+.closeBtn:hover {
+  background-color: var(--brand-primary-900);
+  color: var(--neutral-50);
+  border-color: var(--brand-primary-900);
 }
