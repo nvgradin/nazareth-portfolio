@@ -42,8 +42,10 @@ export function ProjectLayout({ project }: Props) {
         <FeatureCards data={layout.features} />
       )}
 
-      {/* Quote banner intermedio — separador visual entre features y contenido */}
-      {layout.introQuote && <QuoteBanner data={layout.introQuote} />}
+      {/* Parallax image — separador visual entre features y contenido */}
+      {layout.introParallax && (
+        <ParallaxImage src={layout.introParallax.src} alt={layout.introParallax.alt} />
+      )}
 
       {/* Media grid: 2col + 3col full-bleed con header editorial */}
       {layout.mediaGrid && <MediaGrid data={layout.mediaGrid} />}

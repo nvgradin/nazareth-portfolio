@@ -91,11 +91,9 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       },
     ],
 
-    introQuote: {
-      quote: 'Placeholder — una frase de Silvia que resuma su esencia o propósito.',
-      author: 'Silvia Fernández De Luna',
-      backgroundImage: { type: 'image', src: '/projects/silvia-fernandez-de-luna/portada-sfdl.jpg', alt: 'Silvia Fernández De Luna' },
-      imagePosition: 'center',
+    introParallax: {
+      src: '/projects/silvia-fernandez-de-luna/portada-sfdl.jpg',
+      alt: 'Silvia Fernández De Luna',
     },
 
     mediaGrid: {
@@ -133,11 +131,11 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
 
     // — Secciones variables van aquí (imageCompare, editorial, branding, etc.) —
 
-    // 10) Quote banner
     quoteBanner: {
-      quote: 'Placeholder — cita inspiradora del proyecto.',
-      author: 'Placeholder Author',
-      backgroundImage: { type: 'image', src: '/projects/silvia-fernandez-de-luna/quote-bg.jpg', alt: 'Quote Background' },
+      quote: 'Acompañar a las personas en su camino hacia el autoconocimiento es la labor más hermosa que existe.',
+      author: 'Silvia Fernández De Luna',
+      backgroundImage: { type: 'image', src: '/projects/silvia-fernandez-de-luna/portada-sfdl.jpg', alt: 'Silvia Fernández De Luna' },
+      imagePosition: 'center',
     },
 
     // 11) Closing text
