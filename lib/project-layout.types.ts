@@ -360,7 +360,8 @@ export interface ProjectLayout {
   mediaGrid?: MediaGrid;
 
   process?: ProcessStep[];
-  clientLogos?: { src: string; alt: string }[];
+  clientLogos?: { src: string; alt: string; staticOnDesktop?: boolean }[];
+  clientLogosStatic?: boolean;
   quoteBanner?: QuoteBanner;
   closing?: ClosingText;
 }

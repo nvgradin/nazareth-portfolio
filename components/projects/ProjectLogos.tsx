@@ -11,11 +11,12 @@ interface Logo {
 interface Props {
   logos: Logo[];
   label?: string;
+  staticOnDesktop?: boolean;
 }
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
-export function ProjectLogos({ logos, label = 'Con el apoyo de' }: Props) {
+export function ProjectLogos({ logos, label = 'Con el apoyo de', staticOnDesktop = false }: Props) {
   const doubled = [...logos, ...logos];
 
   return (
@@ -34,8 +35,20 @@ export function ProjectLogos({ logos, label = 'Con el apoyo de' }: Props) {
         </div>
       )}
 
-      <div className={styles.track}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
+      {/* Desktop estático */}
+      {staticOnDesktop && (
+        <div className={styles.staticRow}>
+          {logos.map((logo, i) => (
+            <div key={i} className={styles.logoWrap}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={logo.src} alt={logo.alt} className={styles.logo} />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Marquee — siempre en móvil/tablet, solo cuando !staticOnDesktop en desktop */}
+      <div className={[styles.track, staticOnDesktop ? styles.trackMobileOnly : ''].join(' ')}>
         <div className={styles.strip}>
           {doubled.map((logo, i) => (
             <div key={i} className={styles.logoWrap}>

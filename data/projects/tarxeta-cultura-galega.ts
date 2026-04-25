@@ -15,10 +15,10 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
   },
 
   theme: {
-    primary: '#1B3A5C',
+    primary: '#476a6b',
     secondary: '#2E6B8A',
     accent: '#E8A44A',
-    background: '#f8f9fa',
+    background: '#476a6b',
   },
 
   layout: {
@@ -33,7 +33,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
 
     bento: {
       mode: 'fixed',
-      background: '#2E6B8A',
+      background: '#364A4A',
       columns: [
         {
           width: 1,
@@ -73,17 +73,17 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
 
     features: [
       {
-        image: { type: 'image', src: '/projects/tarxetaculturagalega/bento-3.jpg', alt: 'Ilustración' },
+        image: { type: 'image', src: '/projects/tarxetaculturagalega/bento-7.jpg', alt: 'Ilustración' },
         title: 'Ilustración',
         description: 'Placeholder — descripción de la ilustración.',
       },
       {
-        image: { type: 'image', src: '/projects/tarxetaculturagalega/bento-1.jpg', alt: 'Publicidad & Design' },
+        image: { type: 'image', src: '/projects/tarxetaculturagalega/bento-3.jpg', alt: 'Publicidad & Design' },
         title: 'Publicidad & Design',
         description: 'Placeholder — descripción de publicidad y diseño.',
       },
       {
-        image: { type: 'image', src: '/projects/tarxetaculturagalega/Mockup_TCG_Tarjetas_Horizontal3.jpg', alt: 'Estrategia' },
+        image: { type: 'image', src: '/projects/tarxetaculturagalega/bento-6.jpg', alt: 'Estrategia' },
         title: 'Estrategia',
         description: 'Placeholder — descripción de la estrategia.',
       },
@@ -101,7 +101,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
         '¿Cómo sería Castelao si viviera ahora? ¿Sería Castelao, también graffitero? ¿Cómo sería Rosalía de Castro? ¿Iría en bicicleta a Compostela? ¿Se harían selfies? ¿Serían Hipsters? ¿Quienes hoy están creando cultura gallega? Porque los Castelaos y Rosalías de ahora, están aquí. ¿Te las vas a perder?',
         'Un movimiento que despierta la atención, que habla en el actual idioma para dar valor a la cultura presente, la creación de íconos de la futura cultura gallega.',
       ],
-      background: '#1B3A5C',
+      background: '#364A4A',
       images: [
         { src: '/projects/tarxetaculturagalega/bento-2.jpg', alt: 'Tarxeta Cultura Galega — concepto' },
         { src: '/projects/tarxetaculturagalega/bento-4.jpg', alt: 'Tarxeta Cultura Galega — ilustración' },
@@ -124,6 +124,8 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
         { src: '/projects/tarxetaculturagalega/bento-1.jpg', alt: 'Tarxeta Cultura Galega — piezas' },
       ],
     },
+
+    clientLogosStatic: true,
 
     clientLogos: [
       { src: '/projects/tarxetaculturagalega/client-logos/logotipo_agadic.png', alt: 'AGADIC' },

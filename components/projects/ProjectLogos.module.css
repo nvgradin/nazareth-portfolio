@@ -67,6 +67,30 @@
   opacity: 1;
 }
 
+/* Fila estática para desktop (staticOnDesktop=true) */
+.staticRow {
+  display: none;
+}
+
+.trackMobileOnly {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .staticRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 48px;
+    padding-inline: var(--space-96);
+  }
+
+  .trackMobileOnly {
+    display: none;
+  }
+}
+
 @media (max-width: 767px) {
   .section {
     padding-block: 56px;

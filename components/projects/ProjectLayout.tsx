@@ -153,7 +153,7 @@ export function ProjectLayout({ project }: Props) {
       {layout.mediaGrid && <MediaGrid data={layout.mediaGrid} />}
 
       {layout.clientLogos && layout.clientLogos.length > 0 && (
-        <ProjectLogos logos={layout.clientLogos} />
+        <ProjectLogos logos={layout.clientLogos} staticOnDesktop={layout.clientLogosStatic} />
       )}
 
       {/* 11) Closing text — después de logos, antes del quote */}
