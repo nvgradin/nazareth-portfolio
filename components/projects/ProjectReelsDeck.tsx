@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ReelsDeck } from '@/lib/project-layout.types';
 import { InfiniteVideoDeck, DeckItem } from '@/components/ui/InfiniteVideoDeck';
@@ -20,14 +20,27 @@ export function ProjectReelsDeck({ data }: Props) {
   }));
 
   const [showHint, setShowHint] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const hintShown = useRef(false);
+
   useEffect(() => {
-    const t1 = setTimeout(() => setShowHint(true), 1800);
-    const t2 = setTimeout(() => setShowHint(false), 5800);
-    return () => { clearTimeout(t1); clearTimeout(t2); };
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !hintShown.current) {
+        hintShown.current = true;
+        const t1 = setTimeout(() => setShowHint(true), 800);
+        const t2 = setTimeout(() => setShowHint(false), 4800);
+        return () => { clearTimeout(t1); clearTimeout(t2); };
+      }
+    }, { threshold: 0.4 });
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   return (
     <section
+      ref={sectionRef}
       className={styles.section}
       style={data.background ? { background: data.background } : undefined}
     >
