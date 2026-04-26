@@ -33,6 +33,7 @@
   flex-direction: row;
   align-items: center;
   gap: 0;
+  overflow: visible;
 }
 
 @media (max-width: 767px) {
@@ -105,4 +106,18 @@
 /* En vista grid el .label inactivo también oscuro */
 .toggleDark .label:not(.active) {
   color: var(--brand-primary-900);
+}
+
+/* Underline hint de Explorar */
+.exploreUnderline {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--neutral-50);
+  transform-origin: left;
+  display: block;
+  opacity: 0.8;
+  pointer-events: none;
 }

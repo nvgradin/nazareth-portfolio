@@ -83,6 +83,8 @@ export function ProjectsView() {
   const [textEnter, setTextEnter] = useState<'grid' | 'stack' | null>(null);
   const [gridScrolled, setGridScrolled] = useState(false);
   const gridLayerRef = useRef<HTMLDivElement>(null);
+  const [showExploreHint, setShowExploreHint] = useState(false);
+  const exploreHintDone = useRef(false);
 
   const stackActive = phase === 'stack';
   const gridActive  = phase === 'grid';
@@ -100,6 +102,17 @@ export function ProjectsView() {
   useEffect(() => {
     if (!isGrid) setGridScrolled(false);
   }, [isGrid]);
+
+  // Explorar hint — aparece una sola vez, 4s después de entrar en stack
+  useEffect(() => {
+    if (!isStack || exploreHintDone.current) return;
+    const t = setTimeout(() => {
+      setShowExploreHint(true);
+      exploreHintDone.current = true;
+      setTimeout(() => setShowExploreHint(false), 2200);
+    }, 4000);
+    return () => clearTimeout(t);
+  }, [isStack]);
 
   useEffect(() => {
     const el = gridLayerRef.current;
@@ -258,8 +271,16 @@ export function ProjectsView() {
           className={[styles.label, isGrid ? styles.active : ''].join(' ')}
           onClick={() => handleToggle('grid')}
           disabled={isTransitioning}
+          onMouseEnter={() => { if (!exploreHintDone.current) { exploreHintDone.current = true; setShowExploreHint(false); } }}
+          style={{ position: 'relative' }}
         >
           Explorar
+          <motion.span
+            className={styles.exploreUnderline}
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: showExploreHint ? 1 : 0 }}
+            transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+          />
         </button>
       </nav>
 
