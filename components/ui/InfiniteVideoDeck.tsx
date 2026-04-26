@@ -244,7 +244,7 @@ export function InfiniteVideoDeck({
     e.stopPropagation();
     if (deckState === 'browse') {
       setDeckState('watch');
-      setMuted(m => m ? false : m); // unmute only if currently muted
+      setMuted(false); // al dar play siempre desmutea
       showControlsBriefly();
       const frontItem = items[currentFront];
       if (frontItem?.type === 'video') {
@@ -255,7 +255,7 @@ export function InfiniteVideoDeck({
       }
     } else {
       setDeckState('browse');
-      setMuted(true);
+      // NO resetear muted — el usuario controla el mute de forma independiente
       setControlsVisible(false);
     }
   };
