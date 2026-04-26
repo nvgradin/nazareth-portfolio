@@ -49,6 +49,11 @@ export function ProjectLayout({ project }: Props) {
         <ParallaxImage src={layout.introParallax.src} alt={layout.introParallax.alt} />
       )}
 
+      {/* Branding Scroller — después de introParallax, antes de web */}
+      {layout.brandingScroller && !layout.branding && (
+        <BrandingScrollerSection data={layout.brandingScroller} />
+      )}
+
       {/* 7a) ArchitectureWebFlow: reemplaza editorial+web cuando existe */}
       {layout.architectureWebFlow && (
         <ArchitectureWebFlow data={layout.architectureWebFlow} />
@@ -123,8 +128,8 @@ export function ProjectLayout({ project }: Props) {
         </EditorialBlock>
       )}
 
-      {/* 6b) Branding Scroller */}
-      {layout.brandingScroller && (
+      {/* 6b) Branding Scroller — solo si va acompañado de branding editorial */}
+      {layout.brandingScroller && layout.branding && (
         <BrandingScrollerSection data={layout.brandingScroller} />
       )}
 
