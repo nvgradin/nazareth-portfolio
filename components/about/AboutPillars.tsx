@@ -103,6 +103,7 @@ export default function AboutPillars() {
 
   const onPointerDown = (e: React.PointerEvent) => {
     dragStartX.current = e.clientX;
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
   };
 
   const onPointerUp = (e: React.PointerEvent) => {

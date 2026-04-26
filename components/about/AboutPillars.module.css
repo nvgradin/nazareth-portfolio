@@ -188,6 +188,7 @@
 .carouselClip {
   overflow: hidden;
   padding-inline: var(--space-16);
+  touch-action: pan-y;
 }
 
 .track {
