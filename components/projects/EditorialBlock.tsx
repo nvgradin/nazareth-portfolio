@@ -3,7 +3,6 @@
 import { ReactNode, CSSProperties } from 'react';
 import { motion } from 'framer-motion';
 import { EditorialContent } from '@/lib/project-layout.types';
-import { TextContainer } from '@/components/ui';
 import styles from './EditorialBlock.module.css';
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
@@ -33,7 +32,7 @@ export function EditorialBlock({ title, subtitle, content, children, className, 
     <section className={[styles.block, className].filter(Boolean).join(' ')} style={style}>
       {/* Layout 2 columnas: título izquierda, subtítulo + texto derecha */}
       <div className={styles.top}>
-        <TextContainer className={styles.container}>
+        <div className={styles.container}>
           <motion.h2
             className={styles.title}
             initial={{ opacity: 0, x: -20 }}
@@ -64,7 +63,7 @@ export function EditorialBlock({ title, subtitle, content, children, className, 
               <p className={styles.content}>{content}</p>
             )}
           </motion.div>
-        </TextContainer>
+        </div>
       </div>
 
       {/* Contenido adicional (parallax image, triptych, etc.) */}

@@ -41,9 +41,7 @@
 }
 
 /* Columna derecha: Subtítulo + Texto */
-.text {
-  max-width: 720px;
-}
+.text {}
 
 .subtitle {
   font-family: var(--font-heading);
