@@ -18,6 +18,7 @@ import { QuoteBanner } from './QuoteBanner';
 import { ClosingText } from './ClosingText';
 import { ProjectLogos } from './ProjectLogos';
 import { ProjectVideoSection } from './ProjectVideoSection';
+import { FunnelFlow } from './FunnelFlow';
 import styles from './ProjectLayout.module.css';
 
 interface Props {
@@ -70,6 +71,8 @@ export function ProjectLayout({ project }: Props) {
       )}
 
       {/* Editorial previo a reels */}
+      {layout.funnelFlow && <FunnelFlow data={layout.funnelFlow} />}
+
       {layout.reelsEditorial && (
         <EditorialBlock
           title={layout.reelsEditorial.title}

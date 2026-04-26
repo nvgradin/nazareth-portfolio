@@ -346,6 +346,9 @@ export interface ProjectLayout {
     background?: string;
   };
 
+  // Funnel flow — 3 pasos con imagen vertical, conector → y texto
+  funnelFlow?: FunnelFlow;
+
   // Editorial previo al reelsDeck (título izq + texto der, fondo crema)
   reelsEditorial?: {
     title: string;
@@ -392,6 +395,27 @@ export interface MediaGrid {
   row1: [MediaGridImage, MediaGridImage];          // 2 columnas
   row2: [MediaGridImage, MediaGridImage, MediaGridImage]; // 3 columnas
   background?: string; // Fondo de la sección (default: transparent)
+}
+
+/**
+ * Funnel Flow — 3 pasos con imagen vertical, título, descripción y conectores →
+ */
+export interface FunnelFlowStep {
+  image: string;
+  imageAlt: string;
+  step: number;
+  title: string;
+  description: string;
+}
+
+export interface FunnelFlow {
+  editorial: {
+    title: string;
+    subtitle: string;
+    content: string;
+  };
+  steps: [FunnelFlowStep, FunnelFlowStep, FunnelFlowStep];
+  background?: string;
 }
 
 /**

@@ -119,7 +119,39 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       ],
     },
 
-    // 7) REELS EDITORIAL + REELS DECK
+    // 7) FUNNEL FLOW — Sistemas de Captación
+    funnelFlow: {
+      editorial: {
+        title: 'Sistemas de Captación',
+        subtitle: 'Del primer impacto a la conversión',
+        content: 'Cada lanzamiento de Masterclass sigue un flujo diseñado para acompañar al cliente potencial desde el descubrimiento hasta la inscripción, con coherencia visual y de mensaje en cada punto de contacto.',
+      },
+      steps: [
+        {
+          step: 1,
+          image: '/projects/silvia-fernandez-de-luna/Mockup_SFDL_CMR-Invitacion-Masterclass_Reel.png',
+          imageAlt: 'Pieza de Social Media — Reel invitación Masterclass',
+          title: 'Social Media',
+          description: 'Piezas para redes sociales que generan awareness e interés: reels, stories y carruseles diseñados para captar la atención y dirigir al usuario hacia la inscripción.',
+        },
+        {
+          step: 2,
+          image: '/projects/silvia-fernandez-de-luna/SFDL_CMR-Invitacion-Masterclass.png',
+          imageAlt: 'Landing page — Inscripción Masterclass Silvia',
+          title: 'Landing Page',
+          description: 'Página de aterrizaje diseñada para la Masterclass: clara, con propósito y orientada a la conversión. Cada elemento guía al visitante hacia un único objetivo: inscribirse.',
+        },
+        {
+          step: 3,
+          image: '/projects/silvia-fernandez-de-luna/mockup_vistaalargada_emailmarketing.jpg',
+          imageAlt: 'Email Marketing — Secuencia de acompañamiento',
+          title: 'Email Marketing',
+          description: 'Secuencia de emails que acompaña al inscrito: confirmación de plaza, recordatorio previo, aviso de inicio, seguimiento post-evento y reactivación para quienes no pudieron asistir.',
+        },
+      ],
+    },
+
+    // 8) REELS EDITORIAL + REELS DECK
     reelsEditorial: {
       title: 'Estrategia & Marketing',
       subtitle: 'Contenido que conecta con su comunidad',
@@ -142,8 +174,8 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     videoSection: {
       editorial: {
         title: 'Audiovisual',
-        subtitle: 'Placeholder — título de la sección audiovisual',
-        content: 'Placeholder — descripción del trabajo audiovisual para Silvia Fernández De Luna.',
+        subtitle: 'La Historia Álmica de Silvia Fernández De Luna',
+        content: 'La Historia Álmica de Silvia Fernández De Luna, es una pieza audiovisual con un guión creado en sinergía con Silvia, y dirigida, grabada y editada. Como co-guionista, trabajé estrechamente con Silvia para dar vida a su historia de evolución, asegurándome de capturar la esencia de su viaje interior. Una narrativa afinada para dar retrato del proceso y viaje que hizo nacer a Silvia Fernández De Luna. Desde la grabación hasta la postproducción, este es el fruto de la colaboración creativa intensa y cuidadosa, donde mi objetivo fue crear un retrato cinematográfico de la esencia misma del alma de Silvia y su viaje.',
       },
       src: 'https://silviafernandezdeluna.com/wp-content/uploads/2022/03/Silvia_Fernandez_De_Luna_Quien_Eres.mp4',
       poster: '/projects/silvia-fernandez-de-luna/La-Historia-Almica-de-Silvia-Fernandez-De-Luna.webp',
