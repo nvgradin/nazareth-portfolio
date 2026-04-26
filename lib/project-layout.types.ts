@@ -404,10 +404,8 @@ export interface FunnelFlowStep {
   image: string;
   imageAlt: string;
   step: number;
-  label?: string;   // etiqueta corta junto al número, ej: 'Reel'
   title: string;
   description: string;
-  tool?: string;    // badge herramienta opcional, ej: 'Brevo'
 }
 
 export interface FunnelFlow {

@@ -23,67 +23,47 @@ export function FunnelFlow({ data }: Props) {
       className={styles.section}
       style={background ? { background } : undefined}
     >
-      <div className={styles.cards}>
-        {steps.map((step, i) => (
-          <div key={i} className={styles.cardRow}>
-            {/* Card */}
+      <div className={styles.flow}>
+        {/* Fila imágenes — full bleed, sin gap ni padding */}
+        <div className={styles.images}>
+          {steps.map((step, i) => (
             <motion.div
-              className={styles.card}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.65, delay: i * 0.12, ease: EASE }}
+              key={i}
+              className={styles.imageWrap}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, delay: i * 0.1, ease: EASE }}
             >
-              {/* Card header: número + label + título */}
-              <div className={styles.cardHeader}>
-                <span className={styles.stepMeta}>
-                  <span className={styles.stepNumber}>{String(step.step).padStart(2, '0')}</span>
-                  {step.label && (
-                    <>
-                      <span className={styles.stepDash}>—</span>
-                      <span className={styles.stepLabel}>{step.label}</span>
-                    </>
-                  )}
-                </span>
-                <h3 className={styles.stepTitle}>{step.title}</h3>
-              </div>
-
-              {/* Imagen */}
-              <div className={styles.imageWrap}>
-                <Image
-                  src={step.image}
-                  alt={step.imageAlt}
-                  fill
-                  className={styles.image}
-                  sizes="(max-width: 767px) 90vw, 30vw"
-                  quality={90}
-                />
-              </div>
-
-              {/* Descripción */}
-              <p className={styles.stepDesc}>{step.description}</p>
-
-              {/* Badge herramienta — opcional */}
-              {step.tool && (
-                <span className={styles.toolBadge}>{step.tool}</span>
-              )}
+              <Image
+                src={step.image}
+                alt={step.imageAlt}
+                fill
+                className={styles.image}
+                sizes="(max-width: 639px) 100vw, 33vw"
+                quality={90}
+              />
             </motion.div>
+          ))}
+        </div>
 
-            {/* Flecha conectora entre cards (no tras la última) */}
-            {i < steps.length - 1 && (
-              <motion.div
-                className={styles.arrow}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.4, delay: i * 0.12 + 0.4, ease: EASE }}
-                aria-hidden
-              >
-                →
-              </motion.div>
-            )}
-          </div>
-        ))}
+        {/* Fila textos — con padding lateral */}
+        <div className={styles.texts}>
+          {steps.map((step, i) => (
+            <motion.div
+              key={i}
+              className={styles.stepText}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: i * 0.12, ease: EASE }}
+            >
+              <span className={styles.stepNumber}>{String(step.step).padStart(2, '0')}</span>
+              <h3 className={styles.stepTitle}>{step.title}</h3>
+              <p className={styles.stepDesc}>{step.description}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </EditorialBlock>
   );
