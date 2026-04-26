@@ -46,39 +46,19 @@ const CHAPTERS = [
   },
 ];
 
-// Split text into lines: manual \n is always a line break, auto-split only when no \n present
-function splitIntoLines(text: string, wordsPerLine = 7): string[] {
-  if (text.includes('\n')) {
-    // User defined the breaks — respect them exactly
-    return text.split('\n');
-  }
-  // No manual breaks — auto-split every wordsPerLine words
-  const words = text.split(' ');
-  const lines: string[] = [];
-  for (let i = 0; i < words.length; i += wordsPerLine) {
-    lines.push(words.slice(i, i + wordsPerLine).join(' '));
-  }
-  return lines;
-}
-
-// Line-by-line reveal
-function WordReveal({ text, className, delay = 0, wordsPerLine = 7 }: { text: string; className: string; delay?: number; wordsPerLine?: number }) {
-  const lines = splitIntoLines(text, wordsPerLine);
+// Simple fade-up reveal — todo el bloque de texto entra junto
+function Reveal({ children, className, delay = 0, as: Tag = 'span' }: { children: React.ReactNode; className?: string; delay?: number; as?: React.ElementType }) {
   return (
-    <span className={className} aria-label={text}>
-      {lines.map((line, i) => (
-        <motion.span
-          key={i}
-          style={{ display: 'block' }}
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.9, delay: delay + i * 0.3, ease: EASE_OUT }}
-        >
-          {line}
-        </motion.span>
-      ))}
-    </span>
+    <motion.span
+      className={className}
+      initial={{ opacity: 0, y: 14 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.65, delay, ease: EASE_OUT }}
+      style={{ display: Tag === 'span' ? 'block' : undefined }}
+    >
+      {children}
+    </motion.span>
   );
 }
 
@@ -107,15 +87,8 @@ function ParallaxImage({ src, alt }: { src: string; alt: string }) {
   );
 }
 
-// Acto I — full-width grid, centered text, sequential word reveal
+// Acto I — full-width grid, centered text
 function ActoI({ ch }: { ch: typeof CHAPTERS[0] }) {
-  // Each block waits for the previous to finish before starting
-  const delayRoman = 0;
-  const delayLabel = delayRoman + 0.9;
-  const delayTitle = delayLabel + 1.0;
-  const titleWords = ch.title.split(' ').length;
-  const delayBody = delayTitle + titleWords * 0.18 + 0.5;
-
   return (
     <div className={styles.actoI}>
       <div className={styles.actoIGrid} />
@@ -127,7 +100,7 @@ function ActoI({ ch }: { ch: typeof CHAPTERS[0] }) {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.7, delay: delayRoman, ease: EASE_OUT }}
+          transition={{ duration: 0.6, delay: 0, ease: EASE_OUT }}
         >
           {ch.roman}
         </motion.span>
@@ -137,17 +110,17 @@ function ActoI({ ch }: { ch: typeof CHAPTERS[0] }) {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, delay: delayLabel, ease: EASE_OUT }}
+          transition={{ duration: 0.5, delay: 0.1, ease: EASE_OUT }}
         >
           {ch.label}
         </motion.p>
 
         <h3 className={styles.chapterTitle}>
-          <WordReveal text={ch.title} className={styles.wordRevealBlock} delay={delayTitle} wordsPerLine={5} />
+          <Reveal className={styles.wordRevealBlock} delay={0.2}>{ch.title}</Reveal>
         </h3>
 
         <p className={styles.chapterBody}>
-          <WordReveal text={ch.body} className={styles.wordRevealInline} delay={delayBody} />
+          <Reveal className={styles.wordRevealInline} delay={0.35}>{ch.body}</Reveal>
         </p>
       </div>
     </div>
@@ -159,12 +132,6 @@ function ActoII({ ch }: { ch: typeof CHAPTERS[0] }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], ['8%', '-8%']);
-
-  const delayRoman = 0;
-  const delayLabel = delayRoman + 0.9;
-  const delayTitle = delayLabel + 1.0;
-  const titleWords = ch.title.split(' ').length;
-  const delayBody = delayTitle + titleWords * 0.18 + 0.5;
 
   return (
     <div ref={ref} className={styles.actoII}>
@@ -180,7 +147,7 @@ function ActoII({ ch }: { ch: typeof CHAPTERS[0] }) {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.7, delay: delayRoman, ease: EASE_OUT }}
+          transition={{ duration: 0.6, delay: 0, ease: EASE_OUT }}
         >
           {ch.roman}
         </motion.span>
@@ -189,15 +156,15 @@ function ActoII({ ch }: { ch: typeof CHAPTERS[0] }) {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, delay: delayLabel, ease: EASE_OUT }}
+          transition={{ duration: 0.5, delay: 0.1, ease: EASE_OUT }}
         >
           {ch.label}
         </motion.p>
         <h3 className={styles.chapterTitleLight}>
-          <WordReveal text={ch.title} className={styles.wordRevealBlock} delay={delayTitle} wordsPerLine={5} />
+          <Reveal className={styles.wordRevealBlock} delay={0.2}>{ch.title}</Reveal>
         </h3>
         <p className={styles.chapterBodyLight}>
-          <WordReveal text={ch.body} className={styles.wordRevealInline} delay={delayBody} />
+          <Reveal className={styles.wordRevealInline} delay={0.35}>{ch.body}</Reveal>
         </p>
       </div>
     </div>
@@ -206,12 +173,6 @@ function ActoII({ ch }: { ch: typeof CHAPTERS[0] }) {
 
 // Acto III — full-width image as background
 function ActoIII({ ch }: { ch: typeof CHAPTERS[0] }) {
-  const delayRoman = 0;
-  const delayLabel = delayRoman + 0.9;
-  const delayTitle = delayLabel + 1.0;
-  const titleWords = ch.title.split(' ').length;
-  const delayBody = delayTitle + titleWords * 0.18 + 0.5;
-
   return (
     <div className={styles.actoIII}>
       <div className={styles.actoIIIBg}>
@@ -225,7 +186,7 @@ function ActoIII({ ch }: { ch: typeof CHAPTERS[0] }) {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.7, delay: delayRoman, ease: EASE_OUT }}
+          transition={{ duration: 0.6, delay: 0, ease: EASE_OUT }}
         >
           {ch.roman}
         </motion.span>
@@ -234,15 +195,15 @@ function ActoIII({ ch }: { ch: typeof CHAPTERS[0] }) {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, delay: delayLabel, ease: EASE_OUT }}
+          transition={{ duration: 0.5, delay: 0.1, ease: EASE_OUT }}
         >
           {ch.label}
         </motion.p>
         <h3 className={styles.chapterTitleLight}>
-          <WordReveal text={ch.title} className={styles.wordRevealBlock} delay={delayTitle} wordsPerLine={5} />
+          <Reveal className={styles.wordRevealBlock} delay={0.2}>{ch.title}</Reveal>
         </h3>
         <p className={styles.chapterBodyLight}>
-          <WordReveal text={ch.body} className={styles.wordRevealInline} delay={delayBody} />
+          <Reveal className={styles.wordRevealInline} delay={0.35}>{ch.body}</Reveal>
         </p>
       </div>
     </div>
@@ -261,56 +222,47 @@ function ChapterAct({ ch }: { ch: Chapter }) {
       viewport={{ once: true, amount: 0.12 }}
       transition={{ duration: 1.1, ease: EASE_OUT }}
     >
-      {(() => {
-        const delayRoman = 0;
-        const delayLabel = delayRoman + 0.9;
-        const delayTitle = delayLabel + 1.0;
-        const titleWords = ch.title.split(' ').length;
-        const delayBody = delayTitle + titleWords * 0.18 + 0.5;
-        return (
-          <>
-            <div className={styles.textBlock}>
-              <motion.span
-                className={styles.roman}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.7, delay: delayRoman, ease: EASE_OUT }}
-              >
-                {ch.roman}
-              </motion.span>
-              <motion.p
-                className={styles.chapterLabel}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.6, delay: delayLabel, ease: EASE_OUT }}
-              >
-                {ch.label}
-              </motion.p>
-              <h3 className={styles.chapterTitle}>
-                <WordReveal text={ch.title} className={styles.wordRevealBlock} delay={delayTitle} wordsPerLine={5} />
-              </h3>
-            </div>
+      <>
+        <div className={styles.textBlock}>
+          <motion.span
+            className={styles.roman}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: 0, ease: EASE_OUT }}
+          >
+            {ch.roman}
+          </motion.span>
+          <motion.p
+            className={styles.chapterLabel}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: EASE_OUT }}
+          >
+            {ch.label}
+          </motion.p>
+          <h3 className={styles.chapterTitle}>
+            <Reveal className={styles.wordRevealBlock} delay={0.2}>{ch.title}</Reveal>
+          </h3>
+        </div>
 
-            {ch.image && (
-              <motion.div
-                className={styles.imageBlock}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.1, delay: 0.2, ease: EASE_OUT }}
-              >
-                <ParallaxImage src={ch.image} alt={ch.imageAlt} />
-              </motion.div>
-            )}
+        {ch.image && (
+          <motion.div
+            className={styles.imageBlock}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2, ease: EASE_OUT }}
+          >
+            <ParallaxImage src={ch.image} alt={ch.imageAlt} />
+          </motion.div>
+        )}
 
-            <p className={styles.chapterBody}>
-              <WordReveal text={ch.body} className={styles.wordRevealInline} delay={delayBody} />
-            </p>
-          </>
-        );
-      })()}
+        <p className={styles.chapterBody}>
+          <Reveal className={styles.wordRevealInline} delay={0.35}>{ch.body}</Reveal>
+        </p>
+      </>
     </motion.article>
   );
 }
