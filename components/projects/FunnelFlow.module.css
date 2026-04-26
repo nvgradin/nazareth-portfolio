@@ -1,33 +1,120 @@
-/* FunnelFlow — override EditorialBlock section */
+/* FunnelFlow — override EditorialBlock section padding bottom */
 .section {
   padding-bottom: 0;
 }
 
-/* Contenedor oscuro que agrupa imágenes + textos */
-.flow {
+/* ── Wrapper oscuro que contiene todas las cards ── */
+.cards {
   background: #2E1404;
-}
-
-/* ── Fila imágenes: 3 columnas full bleed, sin gap ni padding ── */
-.images {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 0;
+  padding: var(--space-48) var(--space-16) var(--space-64);
 }
 
-/* En móvil apiladas */
-@media (max-width: 639px) {
-  .images {
-    grid-template-columns: 1fr;
+@media (min-width: 768px) {
+  .cards {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--space-64);
   }
 }
 
+@media (min-width: 1024px) {
+  .cards {
+    padding: var(--space-64) var(--space-96) var(--space-96);
+  }
+}
+
+/* ── cardRow: card + flecha como unidad ── */
+.cardRow {
+  display: contents;
+}
+
+@media (min-width: 768px) {
+  .cardRow {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+/* ── Card individual ── */
+.card {
+  flex: 1;
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+/* En móvil: margen inferior entre cards */
+@media (max-width: 767px) {
+  .card {
+    margin-bottom: var(--space-16);
+  }
+  .card:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* ── Header de card ── */
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* Número + label */
+.stepMeta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-accent);
+}
+
+.stepNumber {
+  color: var(--color-text-accent);
+}
+
+.stepDash {
+  color: var(--color-text-accent);
+  opacity: 0.6;
+}
+
+.stepLabel {
+  color: var(--color-text-accent);
+}
+
+/* Título */
+.stepTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ── Imagen dentro de la card ── */
 .imageWrap {
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #1a0a00;
+  border-radius: var(--radius-md);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .image {
@@ -35,58 +122,43 @@
   object-position: top;
 }
 
-/* ── Fila textos: misma cuadrícula de 3, con padding lateral ── */
-.texts {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-32);
-  padding: var(--space-48) var(--space-16) var(--space-64);
-}
-
-@media (min-width: 640px) {
-  .texts {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-16);
-    padding: var(--space-48) var(--space-64) var(--space-64);
-  }
-}
-
-@media (min-width: 1024px) {
-  .texts {
-    padding: var(--space-48) var(--space-96) var(--space-96);
-  }
-}
-
-/* Texto del paso */
-.stepText {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.stepNumber {
-  font-family: var(--font-accent);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #fff;
-  opacity: 0.35;
-}
-
-.stepTitle {
-  font-family: var(--font-accent);
-  font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: #fff;
-  margin: 0;
-}
-
+/* ── Descripción ── */
 .stepDesc {
   font-family: var(--font-base);
   font-size: clamp(0.8125rem, 1vw, 0.9375rem);
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.55);
   margin: 0;
+  flex: 1;
+}
+
+/* ── Badge herramienta ── */
+.toolBadge {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-accent);
+  border: 1px solid rgba(201, 169, 110, 0.35);
+  border-radius: var(--radius-full);
+  padding: 4px 12px;
+}
+
+/* ── Flecha conectora ── */
+.arrow {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  color: var(--color-text-accent);
+  opacity: 0.7;
+  padding: 0 var(--space-8);
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .arrow {
+    display: block;
+  }
 }
