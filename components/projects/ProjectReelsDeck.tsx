@@ -1,5 +1,7 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ReelsDeck } from '@/lib/project-layout.types';
 import { InfiniteVideoDeck, DeckItem } from '@/components/ui/InfiniteVideoDeck';
 import styles from './ProjectReelsDeck.module.css';
@@ -16,6 +18,13 @@ export function ProjectReelsDeck({ data }: Props) {
     poster: item.poster,
     title: item.title,
   }));
+
+  const [showHint, setShowHint] = useState(false);
+  useEffect(() => {
+    const t1 = setTimeout(() => setShowHint(true), 1800);
+    const t2 = setTimeout(() => setShowHint(false), 5800);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
+  }, []);
 
   return (
     <section
@@ -41,6 +50,27 @@ export function ProjectReelsDeck({ data }: Props) {
           depthShadow
         />
       </div>
+
+      <AnimatePresence>
+        {showHint && (
+          <motion.div
+            className={styles.dragHint}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: 'easeIn' }}
+          >
+            <motion.span
+              animate={{ y: [0, 6, 0] }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+              className={styles.dragHintIcon}
+            >
+              ↕
+            </motion.span>
+            <span>arrastra</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
