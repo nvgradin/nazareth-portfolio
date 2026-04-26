@@ -162,7 +162,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
         },
         {
           step: 3,
-          image: '/projects/silvia-fernandez-de-luna/mockup_vistaalargada_emailmarketing.jpg',
+          image: '/projects/silvia-fernandez-de-luna/Mockup_SFDL_CMR-EmailMarketing.png',
           imageAlt: 'Email Marketing — Secuencia de acompañamiento',
           title: 'Email Marketing',
           description: 'Secuencia de emails que acompaña al inscrito: confirmación de plaza, recordatorio previo, aviso de inicio, seguimiento post-evento y reactivación para quienes no pudieron asistir.',
