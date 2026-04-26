@@ -70,9 +70,6 @@ export function ProjectLayout({ project }: Props) {
         </EditorialBlock>
       )}
 
-      {/* Editorial previo a reels */}
-      {layout.funnelFlow && <FunnelFlow data={layout.funnelFlow} />}
-
       {layout.reelsEditorial && (
         <EditorialBlock
           title={layout.reelsEditorial.title}
@@ -83,6 +80,8 @@ export function ProjectLayout({ project }: Props) {
 
       {/* Reels deck */}
       {layout.reelsDeck && <ProjectReelsDeck data={layout.reelsDeck} />}
+
+      {layout.funnelFlow && <FunnelFlow data={layout.funnelFlow} />}
 
       {/* ═══ SECCIONES VARIABLES (entre features y quote) ═══ */}
 
