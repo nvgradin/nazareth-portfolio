@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FunnelFlow as FunnelFlowType } from '@/lib/project-layout.types';
+import { EditorialBlock } from './EditorialBlock';
 import styles from './FunnelFlow.module.css';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -15,43 +16,13 @@ export function FunnelFlow({ data }: Props) {
   const { editorial, steps, background } = data;
 
   return (
-    <section
+    <EditorialBlock
+      title={editorial.title}
+      subtitle={editorial.subtitle}
+      content={editorial.content}
       className={styles.section}
       style={background ? { background } : undefined}
     >
-      {/* Editorial header — mismo patrón que EditorialBlock */}
-      <div className={styles.editorial}>
-        <motion.h2
-          className={styles.editorialTitle}
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6, ease: EASE }}
-        >
-          {editorial.title}
-        </motion.h2>
-        <div className={styles.editorialRight}>
-          <motion.p
-            className={styles.editorialSubtitle}
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: EASE }}
-          >
-            {editorial.subtitle}
-          </motion.p>
-          <motion.p
-            className={styles.editorialContent}
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: EASE }}
-          >
-            {editorial.content}
-          </motion.p>
-        </div>
-      </div>
-
       {/* Steps */}
       <div className={styles.flow}>
         {steps.map((step, i) => (
@@ -63,7 +34,7 @@ export function FunnelFlow({ data }: Props) {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.65, delay: i * 0.12, ease: EASE }}
             >
-              {/* Imagen vertical */}
+              {/* Imagen horizontal */}
               <div className={styles.imageWrap}>
                 <Image
                   src={step.image}
@@ -82,29 +53,9 @@ export function FunnelFlow({ data }: Props) {
                 <p className={styles.stepDesc}>{step.description}</p>
               </div>
             </motion.div>
-
-            {/* Conector → entre pasos (solo en desktop, no tras el último) */}
-            {i < steps.length - 1 && (
-              <motion.div
-                className={styles.connector}
-                initial={{ opacity: 0, x: -8 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.5, delay: i * 0.12 + 0.3, ease: EASE }}
-                aria-hidden
-              >
-                <motion.span
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-                  className={styles.connectorArrow}
-                >
-                  →
-                </motion.span>
-              </motion.div>
-            )}
           </div>
         ))}
       </div>
-    </section>
+    </EditorialBlock>
   );
 }

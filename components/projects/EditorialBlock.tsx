@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { ReactNode, CSSProperties } from 'react';
 import { motion } from 'framer-motion';
 import { EditorialContent } from '@/lib/project-layout.types';
 import { TextContainer } from '@/components/ui';
@@ -13,6 +13,8 @@ interface Props {
   subtitle: string;
   content: EditorialContent;
   children?: ReactNode;
+  className?: string;
+  style?: CSSProperties;
 }
 
 /**
@@ -24,11 +26,11 @@ interface Props {
  * - Web: con WebPanel/mockups
  * - Audiovisuales: con video/galería
  */
-export function EditorialBlock({ title, subtitle, content, children }: Props) {
+export function EditorialBlock({ title, subtitle, content, children, className, style }: Props) {
   const isRich = typeof content !== 'string';
 
   return (
-    <section className={styles.block}>
+    <section className={[styles.block, className].filter(Boolean).join(' ')} style={style}>
       {/* Layout 2 columnas: título izquierda, subtítulo + texto derecha */}
       <div className={styles.top}>
         <TextContainer className={styles.container}>
