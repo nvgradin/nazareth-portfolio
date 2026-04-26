@@ -1,27 +1,17 @@
 .section {
-  padding: var(--space-96) var(--space-16);
   display: flex;
   flex-direction: column;
   gap: var(--space-64);
+  /* Mismo padding top/bottom que EditorialBlock, sin padding lateral — igual que WebPanel */
+  padding: var(--space-96) 0;
 }
 
-@media (min-width: 768px) {
-  .section {
-    padding: var(--space-96) var(--space-64);
-  }
-}
-
-@media (min-width: 1024px) {
-  .section {
-    padding: var(--space-96) var(--space-96);
-  }
-}
-
-/* ── Editorial header — mismo patrón que EditorialBlock ── */
+/* ── Editorial header — mismo patrón que EditorialBlock, con padding lateral ── */
 .editorial {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-24);
+  padding-inline: var(--space-16);
 }
 
 @media (min-width: 768px) {
@@ -29,6 +19,13 @@
     grid-template-columns: 1fr 2fr;
     gap: var(--space-48);
     align-items: start;
+    padding-inline: var(--space-64);
+  }
+}
+
+@media (min-width: 1024px) {
+  .editorial {
+    padding-inline: var(--space-96);
   }
 }
 
@@ -65,61 +62,41 @@
   margin: 0;
 }
 
-/* ── Flow — 3 pasos con conectores ── */
+/* ── Flow — grid de 3 columnas, padding igual que WebPanel ── */
 .flow {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-48);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-32);
+  padding-inline: var(--space-24);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .flow {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-16);
   }
 }
 
-/* Wrapper paso + conector */
+/* stepWrapper es solo el paso — sin lógica de conector */
 .stepWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-24);
-  flex: 1;
-}
-
-@media (min-width: 768px) {
-  .stepWrapper {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 0;
-  }
+  display: contents;
 }
 
 /* Paso individual */
 .step {
   display: flex;
   flex-direction: column;
-  gap: var(--space-20);
-  flex: 1;
-  width: 100%;
+  gap: var(--space-16);
 }
 
-/* Imagen vertical — ratio de mockup móvil */
+/* Imagen horizontal */
 .imageWrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 8px;
   background: var(--neutral-200);
-}
-
-@media (min-width: 768px) {
-  .imageWrap {
-    border-radius: 16px;
-  }
 }
 
 .image {
@@ -131,8 +108,8 @@
 .stepText {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding-inline: 4px;
+  gap: 6px;
+  padding-inline: 2px;
 }
 
 .stepNumber {
@@ -162,36 +139,11 @@
   margin: 0;
 }
 
-/* ── Conector → ── */
+/* Conector — oculto por ahora */
 .connector {
   display: none;
 }
 
-@media (min-width: 768px) {
-  .connector {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-inline: 12px;
-    flex-shrink: 0;
-    width: 40px;
-    /* Centrado verticalmente con la imagen (aspect-ratio 9/16 ≈ 56% del ancho del step) */
-    padding-bottom: 30%;
-  }
-}
-
 .connectorArrow {
-  font-family: var(--font-accent);
-  font-size: 18px;
-  color: var(--color-text-primary);
-  opacity: 0.3;
-  display: block;
-  line-height: 1;
-}
-
-/* Landscape mobile */
-@media (orientation: landscape) and (max-height: 500px) {
-  .section {
-    padding: var(--space-64) var(--space-48);
-  }
+  display: none;
 }
