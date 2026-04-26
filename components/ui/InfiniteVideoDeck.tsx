@@ -338,7 +338,7 @@ export function InfiniteVideoDeck({
               transition={{ delay: 1.8, duration: 0.8, ease: 'easeIn' }}
               style={{
                 position: 'absolute',
-                bottom: -40,
+                bottom: 16,
                 left: '50%',
                 transform: 'translateX(-50%)',
                 display: 'flex',
