@@ -57,35 +57,36 @@ export function ProjectVideoSection({ data }: Props) {
   }, [lightbox]);
 
   return (
-    <section>
+    <>
       <EditorialBlock
         title={editorial.title}
         subtitle={editorial.subtitle}
         content={editorial.content}
-      />
-
-      <div
-        className={styles.stage}
-        style={background ? { background } : undefined}
+        className={styles.section}
       >
-        <button
-          className={styles.previewBtn}
-          onClick={openLightbox}
-          aria-label="Reproducir vídeo"
+        <div
+          className={styles.stage}
+          style={background ? { background } : undefined}
         >
-          {poster && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={poster} alt="" className={styles.previewPoster} />
-          )}
-          <span className={styles.playOverlay}>
-            <span className={styles.playIcon}>
-              <svg viewBox="0 0 28 28" fill="none" width="28" height="28">
-                <polygon points="8,4 24,14 8,24" fill="currentColor" />
-              </svg>
+          <button
+            className={styles.previewBtn}
+            onClick={openLightbox}
+            aria-label="Reproducir vídeo"
+          >
+            {poster && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={poster} alt="" className={styles.previewPoster} />
+            )}
+            <span className={styles.playOverlay}>
+              <span className={styles.playIcon}>
+                <svg viewBox="0 0 28 28" fill="none" width="28" height="28">
+                  <polygon points="8,4 24,14 8,24" fill="currentColor" />
+                </svg>
+              </span>
             </span>
-          </span>
-        </button>
-      </div>
+          </button>
+        </div>
+      </EditorialBlock>
 
       <AnimatePresence>
         {lightbox && (
@@ -130,6 +131,6 @@ export function ProjectVideoSection({ data }: Props) {
           </motion.div>
         )}
       </AnimatePresence>
-    </section>
+    </>
   );
 }
