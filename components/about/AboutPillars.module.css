@@ -78,6 +78,12 @@
   .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 0 16px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid {
     gap: 0 32px;
   }
 }
