@@ -258,7 +258,8 @@ export function InfiniteVideoDeck({
       }
     } else {
       setDeckState('browse');
-      // NO resetear muted — el usuario controla el mute de forma independiente
+      setMuted(true);           // al pausar siempre mutea
+      userSetMute.current = false; // reset: el próximo play volverá a desmutear
       setControlsVisible(false);
     }
   };
