@@ -2,11 +2,12 @@
 /* Uso: Arquitectura de Información, Branding, Web, Audiovisuales, etc. */
 
 .block {
-  padding: var(--space-96) 0;
+  padding-top: var(--space-96);
+  padding-bottom: var(--space-48);
 }
 
 .top {
-  padding-bottom: var(--space-64);
+  padding-bottom: var(--space-48);
 }
 
 .container {
