@@ -133,6 +133,11 @@ export const trainfy: ProjectWithLayout = {
       },
     ],
 
+    introParallax: {
+      src: '/projects/trainfy/web-mockup-1.jpg',
+      alt: 'Web Trainfy — diseño responsive mobile-first',
+    },
+
     // Web Editorial + WebPanel (carrusel de mockups)
     web: {
       title: 'Web',
@@ -167,10 +172,10 @@ export const trainfy: ProjectWithLayout = {
       ],
       background: '#212C3A',
       images: [
-        { src: '/projects/trainfy/showcase-center-top.jpg', alt: 'Branding 1' },
+        { src: '/projects/trainfy/showcase-center-bottom.jpg', alt: 'Logotipo Trainfy' },
         { src: '/projects/trainfy/showcase-right_horizontal.jpg', alt: 'Branding 2' },
         { src: '/projects/trainfy/showcase-left.jpg', alt: 'Branding 3', orientation: 'vertical' },
-        { src: '/projects/trainfy/showcase-center-bottom.jpg', alt: 'Branding 4' },
+        { src: '/projects/trainfy/showcase-center-top.jpg', alt: 'Branding 4' },
       ],
     },
 
