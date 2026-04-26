@@ -70,6 +70,7 @@ export function InfiniteVideoDeck({
   const controlsTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
   const videoRefs = React.useRef<Map<string, HTMLVideoElement>>(new Map());
   const rafRef = React.useRef<number | null>(null);
+  const userSetMute = React.useRef(false); // true cuando el usuario tocó el icono manualmente
 
   const springProgress = React.useMemo(() => motionValue(0), []);
 
@@ -237,6 +238,7 @@ export function InfiniteVideoDeck({
 
   const toggleMute = (e: React.MouseEvent) => {
     e.stopPropagation();
+    userSetMute.current = true;
     setMuted(m => !m);
   };
 
@@ -244,7 +246,8 @@ export function InfiniteVideoDeck({
     e.stopPropagation();
     if (deckState === 'browse') {
       setDeckState('watch');
-      setMuted(false); // al dar play siempre desmutea
+      // Solo desmutea si el usuario no ha tocado el icono manualmente
+      if (!userSetMute.current) setMuted(false);
       showControlsBriefly();
       const frontItem = items[currentFront];
       if (frontItem?.type === 'video') {
