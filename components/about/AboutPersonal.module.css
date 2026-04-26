@@ -59,7 +59,7 @@
 
 .prose {
   font-family: var(--font-heading);
-  font-size: clamp(18px, 2vw, 22px);
+  font-size: clamp(16px, 1.5vw, 18px);
   font-weight: 300;
   line-height: 1.7;
   color: var(--neutral-200);
