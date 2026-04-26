@@ -110,7 +110,7 @@ export function ProjectsView() {
       setShowExploreHint(true);
       exploreHintDone.current = true;
       setTimeout(() => setShowExploreHint(false), 2200);
-    }, 4000);
+    }, 8000);
     return () => clearTimeout(t);
   }, [isStack]);
 
