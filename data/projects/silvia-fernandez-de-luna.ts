@@ -96,7 +96,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
 
     // 5) INTRO PARALLAX
     introParallax: {
-      src: '/projects/silvia-fernandez-de-luna/portada-sfdl.jpg',
+      src: '/projects/silvia-fernandez-de-luna/Silvia Fernández De Luna El Alma.jpg',
       alt: 'Silvia Fernández De Luna',
     },
 
@@ -186,7 +186,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     quoteBanner: {
       quote: 'Acompañar a las personas en su camino hacia el autoconocimiento es la labor más hermosa que existe.',
       author: 'Silvia Fernández De Luna',
-      backgroundImage: { type: 'image', src: '/projects/silvia-fernandez-de-luna/portada-sfdl.jpg', alt: 'Silvia Fernández De Luna' },
+      backgroundImage: { type: 'image', src: '/projects/silvia-fernandez-de-luna/fondo_SFDL_oroviejo_1920x2000.jpeg', alt: 'Silvia Fernández De Luna' },
       imagePosition: 'center',
     },
 
