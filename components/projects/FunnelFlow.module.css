@@ -3,32 +3,51 @@
   padding-bottom: 0;
 }
 
-/* Contenedor oscuro que agrupa imágenes + textos */
+/* Contenedor oscuro */
 .flow {
   background: #2E1404;
   padding: var(--space-24) var(--space-16) 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .flow {
     padding: var(--space-24) var(--space-24) 0;
   }
 }
 
-/* ── Fila imágenes: 3 columnas full bleed, sin gap ni padding ── */
-.images {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+/* ── MÓVIL: pasos intercalados imagen + texto (oculto en desktop) ── */
+.mobileSteps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
 }
 
-/* En móvil apiladas */
-@media (max-width: 639px) {
-  .images {
-    grid-template-columns: 1fr;
+@media (min-width: 640px) {
+  .mobileSteps {
+    display: none;
   }
 }
 
+.mobileStep {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+/* ── DESKTOP: fila imágenes full bleed (oculto en móvil) ── */
+.desktopImages {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .desktopImages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+}
+
+/* ── Imagen compartida móvil + desktop ── */
 .imageWrap {
   position: relative;
   width: 100%;
@@ -42,16 +61,14 @@
   object-position: top;
 }
 
-/* ── Fila textos: misma cuadrícula de 3, con padding lateral ── */
+/* ── Fila textos desktop (oculta en móvil, los textos van dentro de mobileStep) ── */
 .texts {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-32);
-  padding: var(--space-48) var(--space-16) var(--space-64);
+  display: none;
 }
 
 @media (min-width: 640px) {
   .texts {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-48);
     padding: var(--space-48) var(--space-64) var(--space-64);
@@ -64,11 +81,18 @@
   }
 }
 
-/* Texto del paso */
+/* ── Texto del paso ── */
 .stepText {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  padding-bottom: var(--space-24);
+}
+
+@media (min-width: 640px) {
+  .stepText {
+    padding-bottom: 0;
+  }
 }
 
 .stepNumber {

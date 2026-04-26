@@ -24,8 +24,39 @@ export function FunnelFlow({ data }: Props) {
       style={background ? { background } : undefined}
     >
       <div className={styles.flow}>
-        {/* Fila imágenes — full bleed, sin gap ni padding */}
-        <div className={styles.images}>
+
+        {/* MÓVIL: imagen + texto por paso */}
+        <div className={styles.mobileSteps}>
+          {steps.map((step, i) => (
+            <motion.div
+              key={i}
+              className={styles.mobileStep}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.6, delay: i * 0.1, ease: EASE }}
+            >
+              <div className={styles.imageWrap}>
+                <Image
+                  src={step.image}
+                  alt={step.imageAlt}
+                  fill
+                  className={styles.image}
+                  sizes="100vw"
+                  quality={90}
+                />
+              </div>
+              <div className={styles.stepText}>
+                <span className={styles.stepNumber}>{String(step.step).padStart(2, '0')}</span>
+                <h3 className={styles.stepTitle}>{step.title}</h3>
+                <p className={styles.stepDesc}>{step.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* DESKTOP: fila imágenes full bleed + fila textos */}
+        <div className={styles.desktopImages}>
           {steps.map((step, i) => (
             <motion.div
               key={i}
@@ -40,14 +71,13 @@ export function FunnelFlow({ data }: Props) {
                 alt={step.imageAlt}
                 fill
                 className={styles.image}
-                sizes="(max-width: 639px) 100vw, 33vw"
+                sizes="33vw"
                 quality={90}
               />
             </motion.div>
           ))}
         </div>
 
-        {/* Fila textos — con padding lateral */}
         <div className={styles.texts}>
           {steps.map((step, i) => (
             <motion.div
@@ -64,6 +94,7 @@ export function FunnelFlow({ data }: Props) {
             </motion.div>
           ))}
         </div>
+
       </div>
     </EditorialBlock>
   );
