@@ -379,6 +379,7 @@ export function InfiniteVideoDeck({
             justifyContent: 'center',
             perspective: 900,
             cursor: 'grab',
+            touchAction: 'none',
           }}
           onPanEnd={handlePanEnd}
           onWheel={handleWheel}
