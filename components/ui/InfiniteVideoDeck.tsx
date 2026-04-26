@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { motion, useAnimationFrame, useInView, motionValue, useReducedMotion, animate } from 'framer-motion';
+import { motion, AnimatePresence, useAnimationFrame, useInView, motionValue, useReducedMotion, animate } from 'framer-motion';
 
 export interface DeckItem {
   id: string;
@@ -110,9 +110,9 @@ export function InfiniteVideoDeck({
     setActiveIndex(next);
   }, []);
 
-  // Hide drag hint after 2.5s
+  // Hide drag hint after 4s o al primer drag
   React.useEffect(() => {
-    const t = setTimeout(() => setShowHint(false), 2500);
+    const t = setTimeout(() => setShowHint(false), 4000);
     return () => clearTimeout(t);
   }, []);
 
@@ -322,26 +322,45 @@ export function InfiniteVideoDeck({
           }
           .deck-ctrl { transition: opacity 0.3s; }
         `}</style>
-        {/* Drag hint — positioned absolutely at top, doesn't affect layout flow */}
-        {showHint && (
-          <div style={{
-            position: 'absolute',
-            top: -36,
-            left: '50%',
-            transform: 'translateX(-50%)',
-            display: 'flex', alignItems: 'center', gap: 8,
-            pointerEvents: 'none',
-            animation: 'deckHintFade 2.5s ease forwards',
-            zIndex: 10,
-          }}>
-            <svg style={{ animation: 'deckHintBounce 1s ease infinite' }} width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
-              <path d="M8 7l4-4 4 4M8 17l4 4 4-4"/>
-            </svg>
-            <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.6875rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-              Drag to browse
-            </span>
-          </div>
-        )}
+        {/* Drag hint */}
+        <AnimatePresence>
+          {showHint && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 1.8, duration: 0.8, ease: 'easeIn' }}
+              style={{
+                position: 'absolute',
+                bottom: -40,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: 6,
+                pointerEvents: 'none',
+                color: 'var(--neutral-50)',
+                opacity: 0.6,
+                fontFamily: 'var(--font-accent)',
+                fontSize: 11,
+                letterSpacing: '0.2em',
+                textTransform: 'uppercase',
+                whiteSpace: 'nowrap',
+                zIndex: 10,
+              }}
+            >
+              <motion.span
+                animate={{ y: [0, 6, 0] }}
+                transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+                style={{ fontSize: 16, lineHeight: 1 }}
+              >
+                ↕
+              </motion.span>
+              <span>arrastra</span>
+            </motion.div>
+          )}
+        </AnimatePresence>
         {background && (
           <div style={{ position: 'absolute', inset: 0, zIndex: 0, overflow: 'hidden' }}>
             {background}
