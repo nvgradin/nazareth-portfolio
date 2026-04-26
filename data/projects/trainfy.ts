@@ -134,8 +134,8 @@ export const trainfy: ProjectWithLayout = {
     ],
 
     introParallax: {
-      src: '/projects/trainfy/web-mockup-1.jpg',
-      alt: 'Web Trainfy — diseño responsive mobile-first',
+      src: '/projects/trainfy/portada_trainfy_2560.png',
+      alt: 'Trainfy — portada',
     },
 
     // Web Editorial + WebPanel (carrusel de mockups)
