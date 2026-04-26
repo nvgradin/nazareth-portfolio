@@ -61,6 +61,7 @@ export function ProjectReelsDeck({ data }: Props) {
           dimOpacity={1}
           dimBlur={0}
           depthShadow
+          hideDragHint
         />
       </div>
 

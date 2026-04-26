@@ -30,6 +30,7 @@ interface Props {
   background?: React.ReactNode;
   className?: string;
   deckStyle?: React.CSSProperties;
+  hideDragHint?: boolean;
 }
 
 type DeckState = 'browse' | 'watch';
@@ -53,6 +54,7 @@ export function InfiniteVideoDeck({
   background,
   className = '',
   deckStyle,
+  hideDragHint = false,
 }: Props) {
   const n = items.length;
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -324,7 +326,7 @@ export function InfiniteVideoDeck({
         `}</style>
         {/* Drag hint */}
         <AnimatePresence>
-          {showHint && (
+          {showHint && !hideDragHint && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
