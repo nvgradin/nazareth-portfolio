@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { InstagramLogo, LinkedinLogo, WhatsappLogo } from '@phosphor-icons/react';
+import { LinkedinLogo } from '@phosphor-icons/react';
 import { LogoMark } from '@/components/ui';
 import { useMobileMenu } from './MobileMenuContext';
 import { MenuBackground, themeFromPathname } from './MenuBackground';
@@ -141,14 +141,11 @@ export function MobileMenu() {
                 </a>
               </div>
               <div className={styles.socialIcons}>
-                <a href="https://wa.me/34630156301" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className={styles.iconBtn}>
-                  <WhatsappLogo size={20} weight="regular" />
-                </a>
-                <a href="https://www.instagram.com/nazarethgradin" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={styles.iconBtn}>
-                  <InstagramLogo size={20} weight="regular" />
-                </a>
                 <a href="https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={styles.iconBtn}>
                   <LinkedinLogo size={20} weight="regular" />
+                </a>
+                <a href="/CV_Nazareth_A_VAQUEIRO_GRADIN.pdf" download aria-label="Descargar CV" className={styles.cvBtn}>
+                  CV
                 </a>
               </div>
             </motion.div>

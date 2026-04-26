@@ -97,3 +97,23 @@
 .social a:hover {
   opacity: 1;
 }
+
+.cvBtn {
+  font-family: var(--font-accent);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--neutral-50);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-full);
+  padding: 4px 10px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.cvBtn:hover {
+  opacity: 1;
+  border-color: rgba(255, 255, 255, 0.7);
+}

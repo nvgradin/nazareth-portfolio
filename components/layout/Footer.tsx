@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { InstagramLogo, LinkedinLogo } from '@phosphor-icons/react';
+import { LinkedinLogo } from '@phosphor-icons/react';
 import styles from './Footer.module.css';
 
 export function Footer({ style }: { style?: React.CSSProperties }) {
@@ -18,20 +18,20 @@ export function Footer({ style }: { style?: React.CSSProperties }) {
       </div>
       <div className={styles.social}>
         <a
-          href="https://www.instagram.com/nazarethgradin/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-        >
-          <InstagramLogo size={18} weight="regular" />
-        </a>
-        <a
           href="https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
         >
           <LinkedinLogo size={18} weight="regular" />
+        </a>
+        <a
+          href="/CV_Nazareth_A_VAQUEIRO_GRADIN.pdf"
+          download
+          aria-label="Descargar CV"
+          className={styles.cvBtn}
+        >
+          CV
         </a>
       </div>
     </footer>
