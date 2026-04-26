@@ -100,7 +100,22 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       alt: 'Silvia Fernández De Luna',
     },
 
-    // 6) WEB + WEBPANEL — editorial izquierda + carrusel mockups
+    // 6) BRANDING SCROLLER
+    brandingScroller: {
+      title: 'Branding',
+      description: 'Placeholder — descripción del branding de Silvia Fernández De Luna.',
+      background: '#2E1404',
+      images: [
+        { src: '/projects/silvia-fernandez-de-luna/bento-1.jpg', alt: 'Branding Silvia Fernández De Luna' },
+        { src: '/projects/silvia-fernandez-de-luna/bento-4.png', alt: 'Branding Silvia Fernández De Luna' },
+        { src: '/projects/silvia-fernandez-de-luna/bento-6.png', alt: 'Branding Silvia Fernández De Luna', orientation: 'vertical' },
+        { src: '/projects/silvia-fernandez-de-luna/bento-3.jpg', alt: 'Branding Silvia Fernández De Luna' },
+        { src: '/projects/silvia-fernandez-de-luna/bento-7.png', alt: 'Branding Silvia Fernández De Luna', orientation: 'vertical' },
+        { src: '/projects/silvia-fernandez-de-luna/bento-2.jpg', alt: 'Branding Silvia Fernández De Luna' },
+      ],
+    },
+
+    // 7) WEB + WEBPANEL — editorial izquierda + carrusel mockups
     web: {
       title: 'Web',
       subtitle: 'Placeholder — título de la sección web',
