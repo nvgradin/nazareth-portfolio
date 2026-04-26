@@ -1,51 +1,33 @@
-/* FunnelFlow — override EditorialBlock's section to add padding-bottom for the flow grid */
+/* FunnelFlow — override EditorialBlock section */
 .section {
-  padding-bottom: var(--space-96);
+  padding-bottom: 0;
 }
 
-/* ── Flow — grid de 3 columnas con fondo oscuro ── */
+/* Contenedor oscuro que agrupa imágenes + textos */
 .flow {
+  background: #2E1404;
+}
+
+/* ── Fila imágenes: 3 columnas full bleed, sin gap ni padding ── */
+.images {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-32);
-  padding: var(--space-64) var(--space-16);
-  background: #0c0101;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
 }
 
-@media (min-width: 640px) {
-  .flow {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-16);
-    padding: var(--space-64);
+/* En móvil apiladas */
+@media (max-width: 639px) {
+  .images {
+    grid-template-columns: 1fr;
   }
 }
 
-@media (min-width: 1024px) {
-  .flow {
-    padding: var(--space-96);
-  }
-}
-
-/* stepWrapper es solo el paso — sin lógica de conector */
-.stepWrapper {
-  display: contents;
-}
-
-/* Paso individual */
-.step {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-16);
-}
-
-/* Imagen horizontal */
 .imageWrap {
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  border-radius: 0;
-  background: var(--neutral-200);
+  background: #1a0a00;
 }
 
 .image {
@@ -53,12 +35,33 @@
   object-position: top;
 }
 
+/* ── Fila textos: misma cuadrícula de 3, con padding lateral ── */
+.texts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-32);
+  padding: var(--space-48) var(--space-16) var(--space-64);
+}
+
+@media (min-width: 640px) {
+  .texts {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-16);
+    padding: var(--space-48) var(--space-64) var(--space-64);
+  }
+}
+
+@media (min-width: 1024px) {
+  .texts {
+    padding: var(--space-48) var(--space-96) var(--space-96);
+  }
+}
+
 /* Texto del paso */
 .stepText {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding-inline: 2px;
 }
 
 .stepNumber {
