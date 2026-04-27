@@ -8,7 +8,8 @@ export interface HeroImageData {
   src: string;
   alt: string;
   background: string;
-  borderRadius?: number;  // px, default 16
+  borderRadius?: number;
+  caption?: string;
 }
 
 interface Props {
@@ -16,28 +17,32 @@ interface Props {
 }
 
 export function HeroImage({ data }: Props) {
-  const { src, alt, background, borderRadius = 16 } = data;
+  const { src, alt, background, borderRadius = 16, caption } = data;
 
   return (
     <section className={styles.section} style={{ background }}>
-      <motion.div
-        className={styles.imageWrap}
-        style={{ borderRadius }}
+      <motion.figure
+        className={styles.figure}
         initial={{ opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
       >
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          className={styles.image}
-          sizes="(max-width: 768px) 92vw, 80vw"
-          quality={95}
-          style={{ borderRadius }}
-        />
-      </motion.div>
+        <div className={styles.imageWrap} style={{ borderRadius }}>
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            className={styles.image}
+            sizes="(max-width: 768px) 92vw, 80vw"
+            quality={95}
+            style={{ borderRadius }}
+          />
+        </div>
+        {caption && (
+          <figcaption className={styles.caption}>{caption}</figcaption>
+        )}
+      </motion.figure>
     </section>
   );
 }

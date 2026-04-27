@@ -41,6 +41,7 @@ export const trainfy: ProjectWithLayout = {
       alt: 'Trainfy — Login Design',
       background: '#212C3A',
       borderRadius: 16,
+      caption: 'Primera aproximación a una experiencia donde los deportistas no solo compran y venden, sino que se conectan.',
     },
 
     // 2) Bento Gallery - Sistema de columnas con ratios de altura
