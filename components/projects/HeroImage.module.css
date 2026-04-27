@@ -20,7 +20,7 @@
 
 .imageWrap {
   position: relative;
-  width: 100%;
+  width: 80%;
   aspect-ratio: 16 / 10;
   overflow: hidden;
   box-shadow: 0 40px 120px rgba(0, 0, 0, 0.4);
