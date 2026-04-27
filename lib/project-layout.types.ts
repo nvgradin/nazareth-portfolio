@@ -103,9 +103,11 @@ export interface ProjectHero {
   title: string;
   subtitle?: string;
   intro: string | string[];  // Un párrafo o varios
+  result?: string;           // Resultado destacado, aparece bajo la intro con →
   logo: string;              // ruta al logotipo, ej: '/projects/trainfy/Logotipo.png'
   roles: string[];           // categorías tipo 'BACKEND DEV', 'UI/UX DESIGN', etc.
   context?: string;          // texto libre bajo roles, ej: 'Proyecto final Bootcamp'
+  team?: string;             // equipo o colaboración, ej: 'Equipo de 3'
   year?: string;             // ej: '2023' o '2022–2024'
 }
 

@@ -12,7 +12,7 @@ interface Props {
 }
 
 export function ProjectHero({ data }: Props) {
-  const { title, subtitle, intro, logo, roles, year, context } = data;
+  const { title, subtitle, intro, result, logo, roles, year, context, team } = data;
 
   return (
     <section className={styles.hero}>
@@ -53,15 +53,29 @@ export function ProjectHero({ data }: Props) {
               {roles.join(' | ')}
             </motion.p>
           )}
-          {context && (
-            <motion.p
-              className={styles.context}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.33, ease }}
-            >
-              {context}
-            </motion.p>
+          {(context || team) && (
+            <div className={styles.contextBlock}>
+              {context && (
+                <motion.p
+                  className={styles.context}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.33, ease }}
+                >
+                  {context}
+                </motion.p>
+              )}
+              {team && (
+                <motion.p
+                  className={styles.team}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.38, ease }}
+                >
+                  {team}
+                </motion.p>
+              )}
+            </div>
           )}
           {year && (
             <motion.p
@@ -107,6 +121,17 @@ export function ProjectHero({ data }: Props) {
               transition={{ duration: 0.5, delay: 0.4, ease }}
             >
               {intro}
+            </motion.p>
+          )}
+          {result && (
+            <motion.p
+              className={styles.result}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.55, ease }}
+            >
+              <span className={styles.resultArrow}>→</span>
+              {result}
             </motion.p>
           )}
         </div>
