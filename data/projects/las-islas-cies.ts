@@ -28,6 +28,7 @@ export const lasIslasCies: ProjectWithLayout = {
       intro: 'Las Islas Cíes, hogar de la icónica Playa de Rodas, reconocida como la mejor playa del mundo por The Guardian, son un destino de gran la belleza natural: un paraíso. Mi misión fue reflejar esta esencia en la web. Por ello propuse convertirla en una guía digital que acompañara a los viajeros desde la planificación hasta la vivencia de su experiencia en este rincón único de Galicia. Dar vida a esta transformación, rediseñando la web completamente para modernizar su aspecto, mejorar la navegación y abrir la puerta a los viajeros para que puedan planificar su visita, descubrir las rutas y sus puntos de interés, para reservar su billete de barco y disfrutar plenamente su experiencia en Las Islas Cíes.',
       logo: '/projects/las-islas-cies/Logo.png',
       roles: ['Desarrollo Web', 'Product Designer', 'Social Media', 'Estrategia', 'Marketing'],
+      context: 'Proyecto freelance',
       year: '2024',
     },
 
