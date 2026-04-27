@@ -29,8 +29,8 @@ export function ProjectHero({ data }: Props) {
               <Image
                 src={logo}
                 alt={`${title} logo`}
-                width={120}
-                height={120}
+                width={160}
+                height={160}
                 className={styles.logoImage}
               />
             </motion.div>
