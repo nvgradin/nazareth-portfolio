@@ -335,6 +335,9 @@ export interface ProjectLayout {
   // Comparación antes/después
   imageCompare?: ImageCompareData;
 
+  // Imagen destacada a ancho completo con fondo de color
+  heroImage?: { src: string; alt: string; background: string; borderRadius?: number };
+
   // Parallax image intermedia (entre features y mediaGrid)
   introParallax?: { src: string; alt: string };
 

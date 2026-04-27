@@ -1,0 +1,32 @@
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-48) var(--space-24);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--space-64) var(--space-64);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--space-96) var(--space-96);
+  }
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.4);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center top;
+}

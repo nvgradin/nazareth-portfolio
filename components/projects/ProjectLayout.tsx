@@ -19,6 +19,7 @@ import { ClosingText } from './ClosingText';
 import { ProjectLogos } from './ProjectLogos';
 import { ProjectVideoSection } from './ProjectVideoSection';
 import { FunnelFlow } from './FunnelFlow';
+import { HeroImage } from './HeroImage';
 import styles from './ProjectLayout.module.css';
 
 interface Props {
@@ -32,6 +33,9 @@ export function ProjectLayout({ project }: Props) {
     <article className={styles.layout}>
       {/* 1) Hero 2 columnas */}
       <ProjectHero data={layout.hero} />
+
+      {/* Hero Image — imagen destacada antes del bento */}
+      {layout.heroImage && <HeroImage data={layout.heroImage} />}
 
       {/* 2) Bento Gallery */}
       <BentoGallery data={layout.bento} />
