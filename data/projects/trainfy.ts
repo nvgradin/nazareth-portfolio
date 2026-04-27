@@ -26,12 +26,10 @@ export const trainfy: ProjectWithLayout = {
     hero: {
       title: 'Trainfy',
       subtitle: 'De marketplace deportivo a comunidad.',
-      intro: [
-        'En el mundo del deporte, el equipo adecuado marca la diferencia. Pero, ¿y si los amantes del deporte pudieron no solo comprar y vender material, sino también intercambiarlo y conectarse entre sí? Esa fue la idea detrás de Trainfy: una plataforma digital que nació con la intención de ser un "Wallapop para deportistas" y evolucionó hacia algo más grande: un espacio para facilitar el acceso al equipamiento deportivo de forma flexible y colaborativa.',
-        'Desde el inicio, asumí el reto de transformar esta idea en una experiencia digital real. Mientras el proyecto inicial se centraba en desarrollo puro, decidí ir más allá y diseñar una plataforma intuitiva, funcional y alineada con las necesidades de los usuarios.',
-      ],
+      intro: 'Redefiní un encargo técnico para convertirlo en una plataforma centrada en la conexión entre deportistas.',
       logo: '/projects/trainfy/Logotipo.png',
       roles: ['Fullstack Developer', 'UI/UX Design'],
+      context: 'Proyecto final Bootcamp Fullstack Developer',
       year: '2019',
     },
 

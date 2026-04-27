@@ -47,29 +47,14 @@
 .logoImage {
   width: auto;
   height: auto;
-  max-height: 100px;
+  max-height: 120px;
   object-fit: contain;
-}
-
-/* Back link */
-.backLink {
-  font-family: var(--font-accent);
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: underline;
-  text-transform: uppercase;
-  color: var(--color-text-secondary);
-  transition: color var(--duration-fast) var(--ease-default);
-}
-
-.backLink:hover {
-  color: var(--brand-accent-500);
 }
 
 /* Project name */
 .title {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1;
   margin: 0;
 }
@@ -83,6 +68,18 @@
   color: var(--color-text-secondary);
   line-height: 1.8;
   margin: 0;
+}
+
+/* Context — texto libre bajo roles */
+.context {
+  font-family: var(--font-accent);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+  margin: 0;
+  line-height: 1.5;
 }
 
 /* Year */
