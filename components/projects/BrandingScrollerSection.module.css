@@ -212,3 +212,22 @@
   width: 50vw;
   height: 380px;
 }
+
+/* Landscape mobile: cards más bajas para caber en pantalla corta */
+@media (orientation: landscape) and (max-height: 500px) {
+  .mobileCard {
+    width: 55vw;
+    height: calc(100vh - 80px);
+    border-radius: 16px;
+  }
+  .mobileCardVertical {
+    width: 35vw;
+    height: calc(100vh - 80px);
+  }
+  .mobileScrollSticky {
+    height: 100vh;
+  }
+  .mobileTextBlock {
+    padding: var(--space-32) var(--space-48);
+  }
+}

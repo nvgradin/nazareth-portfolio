@@ -12,9 +12,10 @@
 
 /* ── Mobile portrait: scroll horizontal con peek ── */
 .container {
-  padding-left: var(--space-16);
-  padding-right: 0;
-  /* sin overflow:hidden — permite ver el peek de la siguiente card */
+  width: 100%;
+  padding: 0;
+  /* clip corta el overflow visual sin bloquear el scroll interno del grid */
+  overflow: clip;
 }
 
 .grid {
@@ -25,7 +26,9 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  /* padding-right deja espacio visual para el peek */
+  /* padding izq para alinearse con el resto del contenido */
+  padding-left: var(--space-16);
+  /* padding-right para que la última card no quede pegada al borde */
   padding-right: var(--space-16);
   padding-bottom: 4px;
 }

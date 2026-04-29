@@ -16,7 +16,11 @@ export function BrandingScrollerSection({ data }: Props) {
 
   useEffect(() => {
     setMounted(true);
-    const check = () => setIsMobile(window.innerWidth < 768);
+    const check = () => {
+      const isPortraitMobile = window.innerWidth < 768;
+      const isLandscapeMobile = window.innerHeight <= 500 && window.innerWidth < 1024;
+      setIsMobile(isPortraitMobile || isLandscapeMobile);
+    };
     check();
     window.addEventListener('resize', check);
     return () => window.removeEventListener('resize', check);
