@@ -28,23 +28,8 @@ export function ProjectHero({ data }: Props) {
             priority
           />
           <div className={styles.mobileBgGradient} />
-          {/* Logo + título anclados abajo sobre el gradiente */}
+          {/* Título anclado abajo sobre el gradiente */}
           <div className={styles.mobileBgContent}>
-            {logo && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease }}
-              >
-                <Image
-                  src={logo}
-                  alt={`${title} logo`}
-                  width={80}
-                  height={80}
-                  className={styles.mobileBgLogo}
-                />
-              </motion.div>
-            )}
             <motion.h1
               className={styles.mobileBgTitle}
               initial={{ opacity: 0, y: 12 }}
@@ -153,6 +138,23 @@ export function ProjectHero({ data }: Props) {
 
         {/* Columna derecha: Subtítulo + Intro */}
         <div className={styles.right}>
+          {/* Logo en mobile — solo visible cuando hay heroBg */}
+          {heroBg && logo && (
+            <motion.div
+              className={styles.mobileLogoBlock}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease }}
+            >
+              <Image
+                src={logo}
+                alt={`${title} logo`}
+                width={120}
+                height={120}
+                className={styles.mobileLogoImage}
+              />
+            </motion.div>
+          )}
           {subtitle && (
             <motion.h2
               className={styles.subtitle}

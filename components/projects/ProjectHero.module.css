@@ -46,10 +46,22 @@
   gap: var(--space-8);
 }
 
-.mobileBgLogo {
+/* Logo en el bloque crema — solo mobile */
+.mobileLogoBlock {
+  display: none;
+  margin-bottom: var(--space-8);
+}
+
+@media (max-width: 1023px) {
+  .mobileLogoBlock {
+    display: block;
+  }
+}
+
+.mobileLogoImage {
   width: auto;
   height: auto;
-  max-height: 56px;
+  max-height: 48px;
   object-fit: contain;
   object-position: left;
 }
