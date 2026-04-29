@@ -49,7 +49,6 @@
 /* Logo en el bloque crema — solo mobile */
 .mobileLogoBlock {
   display: none;
-  margin-bottom: var(--space-8);
 }
 
 @media (max-width: 1023px) {
@@ -61,30 +60,29 @@
 .mobileLogoImage {
   width: auto;
   height: auto;
-  max-height: 48px;
+  max-height: 72px;
   object-fit: contain;
-  object-position: left;
 }
 
-/* Portrait: logo centrado y más grande */
+/* ── Portrait: 1 columna, logo centrado ── */
 @media (max-width: 1023px) and (orientation: portrait) {
   .mobileLogoBlock {
     text-align: center;
     margin-bottom: var(--space-16);
   }
   .mobileLogoImage {
-    max-height: 72px;
     object-position: center;
+    display: block;
+    margin: 0 auto;
+  }
+  /* wrappers invisibles — flujo normal de columna */
+  .mobileColLeft,
+  .mobileColRight {
+    display: contents;
   }
 }
 
-/* Columnas landscape dentro de .right */
-.mobileColLeft,
-.mobileColRight {
-  display: contents; /* portrait: flujo normal, sin wrapper visual */
-}
-
-/* Landscape: .right se convierte en 2 columnas, .mobileColLeft e .right son celdas */
+/* ── Landscape: 2 columnas en .right ── */
 @media (max-width: 1023px) and (orientation: landscape) {
   .right {
     display: grid;
@@ -92,11 +90,22 @@
     gap: var(--space-32);
     align-items: start;
   }
-  .mobileColLeft,
+  .mobileColLeft {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+  }
   .mobileColRight {
     display: flex;
     flex-direction: column;
     gap: var(--space-16);
+  }
+  .mobileLogoBlock {
+    margin-bottom: 0;
+  }
+  .mobileLogoImage {
+    object-position: left;
+    max-height: 72px;
   }
 }
 
