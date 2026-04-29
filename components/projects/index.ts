@@ -14,3 +14,4 @@ export { QuoteBanner } from './QuoteBanner';
 export { ClosingText } from './ClosingText';
 export { ImageCompare } from './ImageCompare';
 export { HeroImage } from './HeroImage';
+export { StaggeredProcess } from './StaggeredProcess';

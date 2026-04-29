@@ -154,7 +154,7 @@ export const panDoPorrino: ProjectWithLayout = {
 
     // Publicidad & Design Graphic
     mediaGrid: {
-      title: 'Publicidad & Design Graphic',
+      title: 'Publicidad & Comunicación',
       subtitle: 'Campaña creativa para la II Feira do Pan do Porriño',
       body: 'Con la identidad ya definida, el siguiente reto fue llevarla al terreno de la comunicación. Para la II Feira do Pan do Porriño desarrollé un conjunto de piezas promocionales y editoriales pensadas para dar visibilidad al evento y consolidar una imagen de marca coherente en todos los puntos de contacto. Desde soportes expositivos hasta piezas impresas y packaging especial, el sistema visual mantiene un mismo tono: artesanal, reconocible y contemporáneo. Más que adaptar un logo, el objetivo fue convertir la identidad en una presencia pública consistente.',
       row1: [

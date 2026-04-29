@@ -12,31 +12,57 @@ interface Props {
 }
 
 export function CenteredHeading({ data }: Props) {
-  const { title, subtitle } = data;
+  const { label, title, subtitle } = data;
 
   return (
     <section className={styles.heading}>
       <div className={styles.container}>
         <TextContainer>
+          {label && (
+            <motion.p
+              className={styles.label}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.5, ease }}
+            >
+              {label}
+            </motion.p>
+          )}
           <motion.h2
             className={styles.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, ease }}
+            transition={{ duration: 0.6, delay: label ? 0.1 : 0, ease }}
           >
             {title}
           </motion.h2>
           {subtitle && (
-            <motion.p
-              className={styles.subtitle}
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.5, delay: 0.1, ease }}
-            >
-              {subtitle}
-            </motion.p>
+            Array.isArray(subtitle) ? (
+              subtitle.map((paragraph, i) => (
+                <motion.p
+                  key={i}
+                  className={styles.subtitle}
+                  initial={{ opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ duration: 0.5, delay: 0.1 + i * 0.08, ease }}
+                >
+                  {paragraph}
+                </motion.p>
+              ))
+            ) : (
+              <motion.p
+                className={styles.subtitle}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.5, delay: 0.1, ease }}
+              >
+                {subtitle}
+              </motion.p>
+            )
           )}
         </TextContainer>
       </div>

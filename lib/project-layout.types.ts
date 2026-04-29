@@ -115,8 +115,9 @@ export interface ProjectHero {
  * Heading centrado
  */
 export interface CenteredHeading {
+  label?: string;            // etiqueta tipo CONTEXTO, Aboreto, encima del título
   title: string;
-  subtitle?: string;
+  subtitle?: string | string[];  // un párrafo o varios
 }
 
 /**
@@ -233,12 +234,29 @@ export interface WebPanel {
 }
 
 /**
- * Paso del proceso
+ * Paso del proceso (legacy ProcessSteps)
  */
 export interface ProcessStep {
   number: number;
   title: string;
   description: string;
+}
+
+/**
+ * Paso del StaggeredProcess — descripción puede ser 1 o 2 párrafos
+ */
+export interface StaggeredProcessStep {
+  number: number;
+  title: string;
+  description: string | string[];
+}
+
+/**
+ * StaggeredProcess — 3 columnas en escalera con animación parallax
+ */
+export interface StaggeredProcessData {
+  label?: string;
+  steps: [StaggeredProcessStep, StaggeredProcessStep, StaggeredProcessStep];
 }
 
 /**
@@ -369,6 +387,7 @@ export interface ProjectLayout {
   mediaGrid?: MediaGrid;
 
   process?: ProcessStep[];
+  staggeredProcess?: StaggeredProcessData;
   clientLogos?: { src: string; alt: string; staticOnDesktop?: boolean }[];
   clientLogosStatic?: boolean;
   quoteBanner?: QuoteBanner;

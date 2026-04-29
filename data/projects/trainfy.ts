@@ -26,22 +26,13 @@ export const trainfy: ProjectWithLayout = {
     hero: {
       title: 'Trainfy',
       subtitle: 'De marketplace deportivo a comunidad.',
-      intro: 'Redefiní un encargo técnico para convertirlo en una plataforma centrada en la conexión entre deportistas.',
+      intro: 'Transformé la propuesta de hacer una plataforma de compraventa de nicho en una experiencia centrada en la conexión entre los deportistas.',
       result: 'Derivó en oportunidades reales de incorporación tras la presentación final del bootcamp.',
       logo: '/projects/trainfy/Logotipo.png',
       roles: ['Fullstack Developer', 'UI/UX Design'],
       context: 'Proyecto final Bootcamp Fullstack Developer',
       team: 'Equipo de 3',
       year: '2019',
-    },
-
-    // 1b) Hero Image — imagen destacada antes del bento
-    heroImage: {
-      src: '/projects/trainfy/Trainfy_Login.png',
-      alt: 'Trainfy — Login Design',
-      background: '#212C3A',
-      borderRadius: 16,
-      caption: 'Primera aproximación a una experiencia donde los deportistas no solo compran y venden, sino que se conectan.',
     },
 
     // 2) Bento Gallery - Sistema de columnas con ratios de altura
@@ -119,26 +110,32 @@ export const trainfy: ProjectWithLayout = {
 
     // 3) Heading centrado
     heading: {
-      title: 'La Creación para Trainfy',
-      subtitle: 'Una plataforma pensada para la comunidad deportiva',
+      label: 'El reto',
+      title: 'De marketplace deportivo a comunidad.',
+      subtitle: [
+        'Trainfy nace como propuesta para el proyecto final del Bootcamp Fullstack in JS, con un objetivo claro: demostrar las habilidades adquiridas desarrollando un marketplace tipo Wallapop enfocado a deportistas.',
+        'El planteamiento inicial respondía a una lógica puramente funcional: permitir a los usuarios publicar, buscar y comprar productos de segunda mano relacionados con el deporte.',
+        'Desde el inicio, asumí el reto de transformar esa propuesta en una experiencia digital real e ir más allá creando un Branding propio, aportando UI & UX, wireframe, prototipo y sistema de diseño para ayudarnos a la hora de desarrollar.',
+        'Sin embargo, ya existen plataformas de compra y venta como Wallapop, Milanuncios… ¿es realmente valioso crear una plataforma nueva solo por dirigirse a un segmento? ¿Y si los amantes del deporte pudieran, no solo comprar y vender material, sino también intercambiarlo y conectarse, entrenar juntos, crear comunidad?',
+      ],
     },
 
     // 4) 3 cards en columnas
     features: [
       {
         image: { type: 'image', src: '/projects/trainfy/feature-branding.jpg', alt: 'UX Research' },
-        title: 'Branding',
-        description: 'Creación de la identidad, reflejando dinamismo y comunidad.',
+        title: 'Redefinir el brief',
+        description: 'El encargo original era un marketplace de compra-venta. Lo reconvertí en una plataforma de comunidad — porque la conexión entre deportistas era el valor real, no la transacción.',
       },
       {
         image: { type: 'image', src: '/projects/trainfy/feature-ui-ux.jpg', alt: 'UI Design' },
-        title: 'UI Design',
-        description: 'Diseño de interfaces intuitivas que facilitan el intercambio y la conexión entre atletas.',
+        title: 'Diseño antes que código',
+        description: 'Apliqué arquitectura de información, wireframes y sistema de identidad antes de escribir una línea de React. El diseño y la experiencia del usuario fueron la base de todo.',
       },
       {
         image: { type: 'image', src: '/projects/trainfy/feature-dev.jpg', alt: 'Development' },
-        title: 'Fullstack Dev',
-        description: 'Desarrollo completo de la plataforma con React, Node.js y PostgreSQL.',
+        title: 'De la marca al backend',
+        description: 'Ownership completo: identidad visual, componentes en React, base de datos en PostgreSQL. Por primera vez cree un producto digital end-to-end.',
       },
     ],
 
@@ -147,7 +144,7 @@ export const trainfy: ProjectWithLayout = {
       alt: 'Trainfy — portada',
     },
 
-    // Web Editorial + WebPanel (carrusel de mockups)
+    // 5) Web Editorial + WebPanel (carrusel de mockups)
     web: {
       title: 'Web',
       subtitle: 'Diseño responsive mobile-first',
@@ -170,7 +167,16 @@ export const trainfy: ProjectWithLayout = {
       ],
     },
 
-    // 6b) Branding Scroller
+    // 6) Hero Image — pantalla de login a ancho completo
+    heroImage: {
+      src: '/projects/trainfy/Trainfy_Login.png',
+      alt: 'Trainfy — Login Design',
+      background: '#212C3A',
+      borderRadius: 16,
+      caption: 'Primera aproximación a una experiencia donde los deportistas no solo compran y venden, sino que se conectan.',
+    },
+
+    // 7) Branding Scroller
     brandingScroller: {
       title: 'BRANDING',
       description: 'La identidad de Trainfy refleja dinamismo, comunidad y pasión por el deporte. Colores vibrantes que transmiten energía, tipografías modernas y un sistema visual coherente que se adapta a todos los puntos de contacto.',
@@ -188,7 +194,7 @@ export const trainfy: ProjectWithLayout = {
       ],
     },
 
-    // 7) Learning block
+    // 8) Learning block
     learning: {
       title: 'Una aventura de aprendizaje intenso',
       intro: 'Trainfy no solo consolidó mis conocimientos en diseño y desarrollo web, sino que también:',
@@ -208,7 +214,7 @@ export const trainfy: ProjectWithLayout = {
       ],
     },
 
-    // 10) Quote banner
+    // 9) Quote banner
     quoteBanner: {
       quote: 'Simplemente juega. Diviértete. Disfruta el juego.',
       author: 'Michael Jordan',
@@ -216,7 +222,7 @@ export const trainfy: ProjectWithLayout = {
       imagePosition: 'top',  // Mostrar parte superior de la imagen (rostro visible)
     },
 
-    // 11) Closing text
+    // 10) Closing text
     closing: {
       title: 'Diseñando para Aprender y Crecer',
       content: 'Este proyecto me confirmó la importancia de la perseverancia y el aprendizaje continuo. Fue mi primera experiencia en un desarrollo fullstack tan intenso, gracias al cual adquirí nociones que aplico actualmente en proyectos como diseñadora y creadora web en WordPress. Un reto que decidí abordarlo como una oportunidad para explorar el potencial de unir diseño y desarrollo en un entorno lo más realista posible. Trainfy sigue siendo un recordatorio de que cada esfuerzo, por pequeño que parezca, es un paso hacia la excelencia profesional.',

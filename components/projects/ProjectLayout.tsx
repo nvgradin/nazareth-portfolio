@@ -20,6 +20,7 @@ import { ProjectLogos } from './ProjectLogos';
 import { ProjectVideoSection } from './ProjectVideoSection';
 import { FunnelFlow } from './FunnelFlow';
 import { HeroImage } from './HeroImage';
+import { StaggeredProcess } from './StaggeredProcess';
 import styles from './ProjectLayout.module.css';
 
 interface Props {
@@ -34,9 +35,6 @@ export function ProjectLayout({ project }: Props) {
       {/* 1) Hero 2 columnas */}
       <ProjectHero data={layout.hero} />
 
-      {/* Hero Image — imagen destacada antes del bento */}
-      {layout.heroImage && <HeroImage data={layout.heroImage} />}
-
       {/* 2) Bento Gallery */}
       <BentoGallery data={layout.bento} />
 
@@ -48,22 +46,17 @@ export function ProjectLayout({ project }: Props) {
         <FeatureCards data={layout.features} />
       )}
 
-      {/* Parallax image — separador visual */}
+      {/* Parallax image — separador visual tras features */}
       {layout.introParallax && (
         <ParallaxImage src={layout.introParallax.src} alt={layout.introParallax.alt} />
       )}
 
-      {/* Branding Scroller — después de introParallax, antes de web */}
-      {layout.brandingScroller && !layout.branding && (
-        <BrandingScrollerSection data={layout.brandingScroller} />
-      )}
-
-      {/* 7a) ArchitectureWebFlow: reemplaza editorial+web cuando existe */}
+      {/* 5a) ArchitectureWebFlow: reemplaza editorial+web cuando existe */}
       {layout.architectureWebFlow && (
         <ArchitectureWebFlow data={layout.architectureWebFlow} />
       )}
 
-      {/* 7b) Editorial: Web + WebPanel */}
+      {/* 5b) Editorial: Web + WebPanel */}
       {layout.web && (
         <EditorialBlock
           title={layout.web.title}
@@ -79,33 +72,20 @@ export function ProjectLayout({ project }: Props) {
         </EditorialBlock>
       )}
 
-      {layout.reelsEditorial && (
-        <EditorialBlock
-          title={layout.reelsEditorial.title}
-          subtitle={layout.reelsEditorial.subtitle}
-          content={layout.reelsEditorial.content}
-        />
+      {/* Fallback: WebPanel sin EditorialBlock de web */}
+      {layout.webPanel && !layout.web && (
+        <WebPanel data={layout.webPanel} background={layout.bento?.background} />
       )}
 
-      {/* Reels deck */}
-      {layout.reelsDeck && <ProjectReelsDeck data={layout.reelsDeck} />}
+      {/* 6) Hero Image — imagen destacada a ancho completo */}
+      {layout.heroImage && <HeroImage data={layout.heroImage} />}
 
-      {layout.funnelFlow && <FunnelFlow data={layout.funnelFlow} />}
-
-      {/* ═══ SECCIONES VARIABLES (entre features y quote) ═══ */}
-
-      {/* Image Compare (before/after) */}
-      {layout.imageCompare && (
-        <ImageCompare
-          before={{ src: layout.imageCompare.before.src, alt: layout.imageCompare.before.alt || 'Before' }}
-          after={{ src: layout.imageCompare.after.src, alt: layout.imageCompare.after.alt || 'After' }}
-          initial={layout.imageCompare.initial}
-          labels={layout.imageCompare.labels}
-          background={layout.imageCompare.background}
-        />
+      {/* 7) Branding Scroller */}
+      {layout.brandingScroller && !layout.branding && (
+        <BrandingScrollerSection data={layout.brandingScroller} />
       )}
 
-      {/* 5) Editorial: Arquitectura de Información + Parallax Image */}
+      {/* Editorial: Arquitectura de Información + Parallax Image */}
       {layout.editorial && (
         <EditorialBlock
           title={layout.editorial.title}
@@ -121,7 +101,7 @@ export function ProjectLayout({ project }: Props) {
         </EditorialBlock>
       )}
 
-      {/* 6a) Editorial: Branding + Showcase Triptych */}
+      {/* Editorial: Branding + Showcase Triptych */}
       {layout.branding && (
         <EditorialBlock
           title={layout.branding.title}
@@ -132,26 +112,47 @@ export function ProjectLayout({ project }: Props) {
         </EditorialBlock>
       )}
 
-      {/* 6b) Branding Scroller — solo si va acompañado de branding editorial */}
+      {/* Branding Scroller — solo si va acompañado de branding editorial */}
       {layout.brandingScroller && layout.branding && (
         <BrandingScrollerSection data={layout.brandingScroller} />
       )}
-
 
       {/* Fallback: Showcase sin EditorialBlock de branding */}
       {layout.showcase && !layout.branding && (
         <ShowcaseTriptych data={layout.showcase} />
       )}
 
-      {/* Fallback: WebPanel sin EditorialBlock de web */}
-      {layout.webPanel && !layout.web && (
-        <WebPanel data={layout.webPanel} background={layout.bento?.background} />
+      {layout.reelsEditorial && (
+        <EditorialBlock
+          title={layout.reelsEditorial.title}
+          subtitle={layout.reelsEditorial.subtitle}
+          content={layout.reelsEditorial.content}
+        />
       )}
+
+      {/* Reels deck */}
+      {layout.reelsDeck && <ProjectReelsDeck data={layout.reelsDeck} />}
+
+      {layout.funnelFlow && <FunnelFlow data={layout.funnelFlow} />}
+
+      {/* Image Compare (before/after) */}
+      {layout.imageCompare && (
+        <ImageCompare
+          before={{ src: layout.imageCompare.before.src, alt: layout.imageCompare.before.alt || 'Before' }}
+          after={{ src: layout.imageCompare.after.src, alt: layout.imageCompare.after.alt || 'After' }}
+          initial={layout.imageCompare.initial}
+          labels={layout.imageCompare.labels}
+          background={layout.imageCompare.background}
+        />
+      )}
+
+      {/* Staggered process (reservado para playground) */}
+      {layout.staggeredProcess && <StaggeredProcess data={layout.staggeredProcess} />}
 
       {/* 8) Learning block */}
       {layout.learning && <LearningBlock data={layout.learning} />}
 
-      {/* 9) Process steps (legacy) */}
+      {/* Process steps (legacy) */}
       {layout.process && layout.process.length > 0 && (
         <ProcessSteps data={layout.process} />
       )}
@@ -159,7 +160,6 @@ export function ProjectLayout({ project }: Props) {
       {/* Sección audiovisual: editorial + vídeo con play overlay */}
       {layout.videoSection && <ProjectVideoSection data={layout.videoSection} />}
 
-      {/* 10) Client logos marquee */}
       {/* Media grid: 2col + 3col full-bleed con header editorial */}
       {layout.mediaGrid && <MediaGrid data={layout.mediaGrid} />}
 
@@ -167,11 +167,11 @@ export function ProjectLayout({ project }: Props) {
         <ProjectLogos logos={layout.clientLogos} staticOnDesktop={layout.clientLogosStatic} />
       )}
 
-      {/* 11) Closing text — después de logos, antes del quote */}
-      {layout.closing && <ClosingText data={layout.closing} />}
-
-      {/* 12) Quote banner */}
+      {/* 9) Quote banner */}
       {layout.quoteBanner && <QuoteBanner data={layout.quoteBanner} />}
+
+      {/* 10) Closing text */}
+      {layout.closing && <ClosingText data={layout.closing} />}
     </article>
   );
 }
