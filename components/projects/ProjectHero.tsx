@@ -63,6 +63,16 @@ export function ProjectHero({ data }: Props) {
                 {roles.join(' · ')}
               </motion.p>
             )}
+            {(context || year) && (
+              <motion.p
+                className={styles.mobileBgMeta}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.28, ease }}
+              >
+                {[context, year].filter(Boolean).join(' — ')}
+              </motion.p>
+            )}
           </div>
         </div>
       )}
