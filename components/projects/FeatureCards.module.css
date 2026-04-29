@@ -10,12 +10,11 @@
   }
 }
 
-/* ── Mobile / tablet vertical: scroll horizontal ── */
+/* ── Mobile portrait: scroll horizontal con peek ── */
 .container {
-  /* padding-inline solo a la izquierda para que las cards lleguen al borde derecho */
   padding-left: var(--space-16);
   padding-right: 0;
-  overflow: hidden;
+  /* sin overflow:hidden — permite ver el peek de la siguiente card */
 }
 
 .grid {
@@ -25,10 +24,10 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  /* ocultar scrollbar manteniendo funcionalidad */
   scrollbar-width: none;
+  /* padding-right deja espacio visual para el peek */
   padding-right: var(--space-16);
-  padding-bottom: 4px; /* evita que box-shadow se corte */
+  padding-bottom: 4px;
 }
 
 .grid::-webkit-scrollbar {
@@ -39,9 +38,31 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-16);
-  /* ancho fijo: 75vw muestra el peek de la siguiente */
+  /* 75vw: deja ~25vw de peek de la siguiente */
   flex: 0 0 75vw;
   scroll-snap-align: start;
+}
+
+/* ── Mobile landscape: 3 columnas que caben ── */
+@media (orientation: landscape) and (max-height: 500px) {
+  .container {
+    padding-inline: var(--space-48);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-16);
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding-right: 0;
+  }
+  .card {
+    flex: unset;
+    scroll-snap-align: unset;
+  }
+  .cardImage {
+    aspect-ratio: 3/4;
+  }
 }
 
 /* ── Desktop (landscape tablet en adelante) ── */
