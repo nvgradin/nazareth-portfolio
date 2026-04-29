@@ -92,6 +92,9 @@
   .result {
     justify-content: center;
   }
+  .resultArrow {
+    display: none;
+  }
 }
 
 /* ── Landscape: 2 columnas en .right ── */
