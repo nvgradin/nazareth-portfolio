@@ -70,7 +70,7 @@
   object-fit: contain;
 }
 
-/* ── Portrait: 1 columna, logo centrado ── */
+/* ── Portrait: 1 columna, todo centrado ── */
 @media (max-width: 1023px) and (orientation: portrait) {
   .mobileLogoBlock {
     text-align: center;
@@ -85,6 +85,12 @@
   .mobileColLeft,
   .mobileColRight {
     display: contents;
+  }
+  .right {
+    text-align: center;
+  }
+  .result {
+    justify-content: center;
   }
 }
 
