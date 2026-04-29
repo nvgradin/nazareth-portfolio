@@ -4,7 +4,9 @@
 .mobileBgWrapper {
   position: relative;
   width: 100%;
-  height: 88vh;
+  /* cancela el padding-top del main global (--header-height: 72px) */
+  margin-top: calc(-1 * var(--header-height, 72px));
+  height: calc(88vh + var(--header-height, 72px));
   overflow: hidden;
   display: none;
 }
