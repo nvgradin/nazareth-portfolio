@@ -138,66 +138,72 @@ export function ProjectHero({ data }: Props) {
 
         {/* Columna derecha: Subtítulo + Intro */}
         <div className={styles.right}>
-          {/* Logo en mobile — solo visible cuando hay heroBg */}
-          {heroBg && logo && (
-            <motion.div
-              className={styles.mobileLogoBlock}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease }}
-            >
-              <Image
-                src={logo}
-                alt={`${title} logo`}
-                width={120}
-                height={120}
-                className={styles.mobileLogoImage}
-              />
-            </motion.div>
-          )}
-          {subtitle && (
-            <motion.h2
-              className={styles.subtitle}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3, ease }}
-            >
-              {subtitle}
-            </motion.h2>
-          )}
-          {Array.isArray(intro) ? (
-            intro.map((paragraph, i) => (
+          {/* Columna izquierda mobile landscape: logo + subtitle */}
+          <div className={styles.mobileColLeft}>
+            {heroBg && logo && (
+              <motion.div
+                className={styles.mobileLogoBlock}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease }}
+              >
+                <Image
+                  src={logo}
+                  alt={`${title} logo`}
+                  width={120}
+                  height={120}
+                  className={styles.mobileLogoImage}
+                />
+              </motion.div>
+            )}
+            {subtitle && (
+              <motion.h2
+                className={styles.subtitle}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3, ease }}
+              >
+                {subtitle}
+              </motion.h2>
+            )}
+          </div>
+
+          {/* Columna derecha mobile landscape: intro + result */}
+          <div className={styles.mobileColRight}>
+            {Array.isArray(intro) ? (
+              intro.map((paragraph, i) => (
+                <motion.p
+                  key={i}
+                  className={styles.intro}
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 + i * 0.1, ease }}
+                >
+                  {paragraph}
+                </motion.p>
+              ))
+            ) : (
               <motion.p
-                key={i}
                 className={styles.intro}
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 + i * 0.1, ease }}
+                transition={{ duration: 0.5, delay: 0.4, ease }}
               >
-                {paragraph}
+                {intro}
               </motion.p>
-            ))
-          ) : (
-            <motion.p
-              className={styles.intro}
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4, ease }}
-            >
-              {intro}
-            </motion.p>
-          )}
-          {result && (
-            <motion.p
-              className={styles.result}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.55, ease }}
-            >
-              <span className={styles.resultArrow}>→</span>
-              {result}
-            </motion.p>
-          )}
+            )}
+            {result && (
+              <motion.p
+                className={styles.result}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.55, ease }}
+              >
+                <span className={styles.resultArrow}>→</span>
+                {result}
+              </motion.p>
+            )}
+          </div>
         </div>
       </div>
     </section>

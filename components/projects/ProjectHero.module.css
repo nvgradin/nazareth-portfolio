@@ -66,6 +66,40 @@
   object-position: left;
 }
 
+/* Portrait: logo centrado y más grande */
+@media (max-width: 1023px) and (orientation: portrait) {
+  .mobileLogoBlock {
+    text-align: center;
+    margin-bottom: var(--space-16);
+  }
+  .mobileLogoImage {
+    max-height: 72px;
+    object-position: center;
+  }
+}
+
+/* Columnas landscape dentro de .right */
+.mobileColLeft,
+.mobileColRight {
+  display: contents; /* portrait: flujo normal, sin wrapper visual */
+}
+
+/* Landscape: .right se convierte en 2 columnas, .mobileColLeft e .right son celdas */
+@media (max-width: 1023px) and (orientation: landscape) {
+  .right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-32);
+    align-items: start;
+  }
+  .mobileColLeft,
+  .mobileColRight {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+}
+
 .mobileBgTitle {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 8vw, 2.8rem);
@@ -130,17 +164,11 @@
   gap: var(--space-32);
 }
 
-@media (min-width: 768px) {
-  .container {
-    padding-inline: var(--space-64);
-    grid-template-columns: 35fr 65fr;
-    gap: var(--space-160);
-  }
-}
-
 @media (min-width: 1024px) {
   .container {
     padding-inline: var(--space-96);
+    grid-template-columns: 35fr 65fr;
+    gap: var(--space-160);
   }
 }
 
