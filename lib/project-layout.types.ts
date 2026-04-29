@@ -109,6 +109,7 @@ export interface ProjectHero {
   context?: string;          // texto libre bajo roles, ej: 'Proyecto final Bootcamp'
   team?: string;             // equipo o colaboración, ej: 'Equipo de 3'
   year?: string;             // ej: '2023' o '2022–2024'
+  heroBg?: string;           // imagen de fondo para el hero en mobile
 }
 
 /**

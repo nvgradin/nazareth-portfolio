@@ -33,6 +33,7 @@ export const trainfy: ProjectWithLayout = {
       context: 'Proyecto final Bootcamp Fullstack Developer',
       team: 'Equipo de 3',
       year: '2019',
+      heroBg: '/projects/trainfy/portada_trainfy_2560.png',
     },
 
     // 2) Bento Gallery - Sistema de columnas con ratios de altura

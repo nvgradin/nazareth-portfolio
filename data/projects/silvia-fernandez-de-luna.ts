@@ -32,6 +32,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       roles: ['Audiovisual', 'Marketing', 'Desarrollo Web', 'Email Marketing', 'Estrategia', 'Social Media'],
       context: 'Proyecto freelance — 3 años de colaboración',
       year: '2023',
+      heroBg: '/projects/silvia-fernandez-de-luna/fondo_SFDL_oroviejo_1920x2000.jpeg',
     },
 
     // 2) BENTO — se añade después del hero automáticamente

@@ -1,6 +1,7 @@
 import { StaggeredProcess } from '@/components/projects/StaggeredProcess';
+import { StaggeredProcessData } from '@/lib/project-layout.types';
 
-const DEMO_DATA = {
+const DEMO_DATA: StaggeredProcessData = {
   label: 'Proceso',
   steps: [
     {
@@ -19,7 +20,7 @@ const DEMO_DATA = {
       description: 'La estructura de base de datos se planteó en paralelo al diseño de la experiencia, asegurando consistencia entre producto y tecnología.',
     },
   ],
-} as const;
+};
 
 export default function StaggeredProcessPlayground() {
   return (

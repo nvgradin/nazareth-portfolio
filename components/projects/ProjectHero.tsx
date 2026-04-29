@@ -12,16 +12,68 @@ interface Props {
 }
 
 export function ProjectHero({ data }: Props) {
-  const { title, subtitle, intro, result, logo, roles, year, context, team } = data;
+  const { title, subtitle, intro, result, logo, roles, year, context, team, heroBg } = data;
 
   return (
+    <>
+      {/* Mobile: imagen de fondo con gradiente — solo visible en < 1024px */}
+      {heroBg && (
+        <div className={styles.mobileBgWrapper}>
+          <Image
+            src={heroBg}
+            alt={`${title} — imagen de portada`}
+            fill
+            className={styles.mobileBgImage}
+            sizes="100vw"
+            priority
+          />
+          <div className={styles.mobileBgGradient} />
+          {/* Logo + título anclados abajo sobre el gradiente */}
+          <div className={styles.mobileBgContent}>
+            {logo && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease }}
+              >
+                <Image
+                  src={logo}
+                  alt={`${title} logo`}
+                  width={80}
+                  height={80}
+                  className={styles.mobileBgLogo}
+                />
+              </motion.div>
+            )}
+            <motion.h1
+              className={styles.mobileBgTitle}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1, ease }}
+            >
+              {title}
+            </motion.h1>
+            {roles.length > 0 && (
+              <motion.p
+                className={styles.mobileBgRoles}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2, ease }}
+              >
+                {roles.join(' · ')}
+              </motion.p>
+            )}
+          </div>
+        </div>
+      )}
+
     <section className={styles.hero}>
       <div className={styles.container}>
         {/* Columna izquierda: Logo + Nombre + Roles + Context */}
         <div className={styles.left}>
           {logo && (
             <motion.div
-              className={styles.logo}
+              className={`${styles.logo} ${heroBg ? styles.hiddenMobile : ''}`}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, ease }}
@@ -36,7 +88,7 @@ export function ProjectHero({ data }: Props) {
             </motion.div>
           )}
           <motion.h1
-            className={styles.title}
+            className={`${styles.title} ${heroBg ? styles.hiddenMobile : ''}`}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15, ease }}
@@ -45,7 +97,7 @@ export function ProjectHero({ data }: Props) {
           </motion.h1>
           {roles.length > 0 && (
             <motion.p
-              className={styles.roles}
+              className={`${styles.roles} ${heroBg ? styles.hiddenMobile : ''}`}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.25, ease }}
@@ -137,5 +189,6 @@ export function ProjectHero({ data }: Props) {
         </div>
       </div>
     </section>
+    </>
   );
 }

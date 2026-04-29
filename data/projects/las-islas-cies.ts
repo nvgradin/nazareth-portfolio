@@ -30,6 +30,7 @@ export const lasIslasCies: ProjectWithLayout = {
       roles: ['Desarrollo Web', 'Product Designer', 'Social Media', 'Estrategia', 'Marketing'],
       context: 'Proyecto freelance',
       year: '2024',
+      heroBg: '/projects/las-islas-cies/bento-1.jpg',
     },
 
     bento: {

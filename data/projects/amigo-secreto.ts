@@ -36,6 +36,7 @@ export const amigoSecreto: ProjectWithLayout = {
       roles: ['Product Design', 'UX/UI', 'Web Development', 'Estrategia', 'Branding'],
       context: 'Proyecto propio',
       year: '2026',
+      heroBg: '/projects/amigo-secreto/amigosecreto.jpg',
     },
     bento: {
       mode: 'fixed',

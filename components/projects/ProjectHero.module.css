@@ -1,7 +1,100 @@
 /* ProjectHero - 2 columnas 30/70 */
 
+/* ── Mobile bg: imagen de portada + gradiente ── */
+.mobileBgWrapper {
+  position: relative;
+  width: 100%;
+  height: 82vh;
+  overflow: hidden;
+  display: none; /* oculto en desktop */
+}
+
+@media (max-width: 1023px) {
+  .mobileBgWrapper {
+    display: block;
+  }
+}
+
+.mobileBgImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Gradiente: transparente arriba, oscuro abajo */
+.mobileBgGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.15) 40%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+}
+
+/* Contenido anclado abajo */
+.mobileBgContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-32) var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.mobileBgLogo {
+  width: auto;
+  height: auto;
+  max-height: 56px;
+  object-fit: contain;
+  object-position: left;
+  /* logo oscuro → invertir en fondo oscuro */
+  filter: brightness(0) invert(1);
+  opacity: 0.92;
+}
+
+.mobileBgTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 8vw, 2.8rem);
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  line-height: 1;
+}
+
+.mobileBgRoles {
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+/* Ocultar en mobile los elementos ya mostrados sobre la imagen */
+@media (max-width: 1023px) {
+  .hiddenMobile {
+    display: none;
+  }
+}
+
+/* ── Hero crema: sube por encima de la imagen en mobile ── */
 .hero {
   padding: var(--space-48) 0;
+}
+
+@media (max-width: 1023px) {
+  .hero {
+    position: relative;
+    z-index: 2;
+    background-color: var(--color-bg-primary);
+    padding-top: var(--space-32);
+    /* sombra sutil en la parte superior para el efecto de superposición */
+    box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.08);
+  }
 }
 
 @media (min-width: 768px) {
