@@ -4,11 +4,9 @@
 .mobileBgWrapper {
   position: relative;
   width: 100%;
-  /* empieza justo bajo el header fixed (~90px) */
-  margin-top: 90px;
-  height: calc(82vh - 90px);
+  height: 88vh;
   overflow: hidden;
-  display: none; /* oculto en desktop */
+  display: none;
 }
 
 @media (max-width: 1023px) {
