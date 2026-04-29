@@ -1,54 +1,88 @@
-/* FeatureCards - 3 columnas centradas */
+/* FeatureCards - scroll horizontal en mobile/tablet, 3 columnas en desktop */
 
 .section {
   padding: var(--space-24) 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .section {
     padding: var(--space-8) 0 var(--space-64);
   }
 }
 
+/* ── Mobile / tablet vertical: scroll horizontal ── */
 .container {
-  padding-inline: var(--space-16);
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 55%;
-    max-width: 55%;
-    margin: 0 auto;
-    padding-inline: 0;
-  }
+  /* padding-inline solo a la izquierda para que las cards lleguen al borde derecho */
+  padding-left: var(--space-16);
+  padding-right: 0;
+  overflow: hidden;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-32);
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-16);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  /* ocultar scrollbar manteniendo funcionalidad */
+  scrollbar-width: none;
+  padding-right: var(--space-16);
+  padding-bottom: 4px; /* evita que box-shadow se corte */
 }
 
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-24);
-  }
+.grid::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   gap: var(--space-16);
+  /* ancho fijo: 75vw muestra el peek de la siguiente */
+  flex: 0 0 75vw;
+  scroll-snap-align: start;
+}
+
+/* ── Desktop (landscape tablet en adelante) ── */
+@media (min-width: 1024px) {
+  .container {
+    width: 55%;
+    max-width: 55%;
+    margin: 0 auto;
+    padding-inline: 0;
+    overflow: visible;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-24);
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  .card {
+    flex: unset;
+    scroll-snap-align: unset;
+  }
 }
 
 .cardImage {
   position: relative;
-  aspect-ratio: 3/6;
-  max-height: 400px;
+  aspect-ratio: 3/4;
   overflow: hidden;
   border-radius: 0;
   background-color: var(--neutral-300);
+}
+
+@media (min-width: 1024px) {
+  .cardImage {
+    aspect-ratio: 3/6;
+    max-height: 400px;
+  }
 }
 
 .cardImage::after {

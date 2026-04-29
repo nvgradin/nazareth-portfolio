@@ -31,7 +31,7 @@ export function FeatureCards({ data }: Props) {
                   alt={card.image.alt || card.title}
                   fill
                   className={styles.cardImg}
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 1023px) 75vw, 33vw"
                 />
               </div>
               <div className={styles.cardContent}>

@@ -17,6 +17,17 @@
   margin-left: calc(-50vw + 50%);
 }
 
+/* Mobile: anula mainWidth y mainPadding inline — imagen ocupa todo el fondo */
+@media (max-width: 1023px) {
+  .mainWrapper {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+  .mainImageContainer {
+    width: 90% !important;
+  }
+}
+
 /* Main Image */
 .mainImageContainer {
   position: relative;
@@ -121,4 +132,12 @@
 /* Mobile scroll snap */
 .mobileScroll .thumbnailButton {
   scroll-snap-align: start;
+}
+
+/* Mobile: minHeight override — proporciones anchas, no altas */
+@media (max-width: 1023px) {
+  .thumbnailButton {
+    min-height: 0 !important;
+    aspect-ratio: 4/3;
+  }
 }
