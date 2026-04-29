@@ -46,6 +46,12 @@
   gap: var(--space-8);
 }
 
+@media (orientation: landscape) and (max-height: 500px) {
+  .mobileBgContent {
+    padding-inline: var(--space-48);
+  }
+}
+
 /* Logo en el bloque crema — solo mobile */
 .mobileLogoBlock {
   display: none;
@@ -171,6 +177,13 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-32);
+}
+
+/* Landscape mobile — mismo padding que el header en landscape */
+@media (orientation: landscape) and (max-height: 500px) {
+  .container {
+    padding-inline: var(--space-48);
+  }
 }
 
 @media (min-width: 1024px) {
