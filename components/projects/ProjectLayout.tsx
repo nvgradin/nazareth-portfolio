@@ -55,6 +55,7 @@ export function ProjectLayout({ project }: Props) {
       {/* Statement block — frase de impacto tras introParallax */}
       {layout.statementBlock && (
         <StatementBlock
+          label={layout.statementBlock.label}
           setup={layout.statementBlock.setup}
           statement={layout.statementBlock.statement}
           accentColor={layout.statementBlock.accentColor}
