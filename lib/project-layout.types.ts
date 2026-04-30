@@ -363,6 +363,9 @@ export interface ProjectLayout {
   // Parallax image intermedia (entre features y mediaGrid)
   introParallax?: { src: string; alt: string };
 
+  // Statement block — frase de impacto a pantalla completa
+  statementBlock?: { setup: string; statement: string; accentColor?: string };
+
   // Sección audiovisual: editorial + vídeo centrado con play overlay
   videoSection?: {
     editorial: { title: string; subtitle: string; content: string };

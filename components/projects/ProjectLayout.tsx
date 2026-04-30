@@ -21,6 +21,7 @@ import { ProjectVideoSection } from './ProjectVideoSection';
 import { FunnelFlow } from './FunnelFlow';
 import { HeroImage } from './HeroImage';
 import { StaggeredProcess } from './StaggeredProcess';
+import { StatementBlock } from './StatementBlock';
 import styles from './ProjectLayout.module.css';
 
 interface Props {
@@ -49,6 +50,15 @@ export function ProjectLayout({ project }: Props) {
       {/* Parallax image — separador visual tras features */}
       {layout.introParallax && (
         <ParallaxImage src={layout.introParallax.src} alt={layout.introParallax.alt} />
+      )}
+
+      {/* Statement block — frase de impacto tras introParallax */}
+      {layout.statementBlock && (
+        <StatementBlock
+          setup={layout.statementBlock.setup}
+          statement={layout.statementBlock.statement}
+          accentColor={layout.statementBlock.accentColor}
+        />
       )}
 
       {/* 5a) ArchitectureWebFlow: reemplaza editorial+web cuando existe */}

@@ -145,6 +145,12 @@ export const trainfy: ProjectWithLayout = {
       alt: 'Trainfy — signup background',
     },
 
+    statementBlock: {
+      setup: 'El problema no era crear otro marketplace segmentado.',
+      statement: 'Era que no existía una plataforma que conectara a los deportistas entre sí.',
+      accentColor: '#1E3A5F',
+    },
+
     // 5) Web Editorial + WebPanel (carrusel de mockups)
     web: {
       title: 'Web',
