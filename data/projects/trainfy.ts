@@ -27,7 +27,7 @@ export const trainfy: ProjectWithLayout = {
       title: 'Trainfy',
       subtitle: 'De marketplace deportivo a comunidad.',
       intro: 'Transformé la propuesta de hacer una plataforma de compraventa de nicho en una experiencia centrada en la conexión entre los deportistas.',
-      result: 'De una promoción de ~20 alumnos, solo 2 salieron contratados directamente desde la presentación final.',
+      result: 'La presentación final del bootcamp de Trainfy con empresas del sector me permitió conseguir varias oportunidades de incorporación.',
       logo: '/projects/trainfy/Logotipo.png',
       roles: ['Fullstack Developer', 'UI/UX Design'],
       context: 'Proyecto final Bootcamp Fullstack Developer',
@@ -155,7 +155,7 @@ export const trainfy: ProjectWithLayout = {
 
     // 5) Hero Image — pantalla de login a ancho completo
     heroImage: {
-      src: '/projects/trainfy/Trainfy_Login.png',
+      src: '/projects/trainfy/Trainfy_login.png',
       alt: 'Trainfy — Login Design',
       background: '#212C3A',
       borderRadius: 16,
