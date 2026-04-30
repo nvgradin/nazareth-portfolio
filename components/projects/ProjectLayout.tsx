@@ -161,9 +161,6 @@ export function ProjectLayout({ project }: Props) {
       {/* Staggered process (reservado para playground) */}
       {layout.staggeredProcess && <StaggeredProcess data={layout.staggeredProcess} />}
 
-      {/* 8) Learning block */}
-      {layout.learning && <LearningBlock data={layout.learning} />}
-
       {/* Process steps (legacy) */}
       {layout.process && layout.process.length > 0 && (
         <ProcessSteps data={layout.process} />
@@ -171,6 +168,9 @@ export function ProjectLayout({ project }: Props) {
 
       {/* Sección audiovisual: editorial + vídeo con play overlay */}
       {layout.videoSection && <ProjectVideoSection data={layout.videoSection} />}
+
+      {/* 8) Learning block */}
+      {layout.learning && <LearningBlock data={layout.learning} />}
 
       {/* Media grid: 2col + 3col full-bleed con header editorial */}
       {layout.mediaGrid && <MediaGrid data={layout.mediaGrid} />}

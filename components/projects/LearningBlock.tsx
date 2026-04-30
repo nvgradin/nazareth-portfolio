@@ -14,11 +14,53 @@ interface Props {
 export function LearningBlock({ data }: Props) {
   const { label, title, intro, columns } = data;
   const isParagraphMode = columns.every(c => !c.subtitle);
+  const isMultiColumn = isParagraphMode && columns.length > 1;
 
   return (
     <section className={styles.block}>
       {isParagraphMode ? (
-        /* Modo editorial: título izq + párrafos der */
+        isMultiColumn ? (
+          /* Modo multi-columna: label + título arriba, columnas debajo */
+          <div className={styles.multiColumnWrapper}>
+            <div className={styles.multiColumnHeader}>
+              {label && (
+                <motion.span
+                  className={styles.label}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ duration: 0.5, ease }}
+                >
+                  {label}
+                </motion.span>
+              )}
+              <motion.h2
+                className={styles.editorialTitle}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.6, ease }}
+              >
+                {title}
+              </motion.h2>
+            </div>
+            <div className={styles.multiColumnGrid}>
+              {columns.map((column, index) => (
+                <motion.p
+                  key={index}
+                  className={styles.columnText}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ duration: 0.5, delay: 0.1 + index * 0.08, ease }}
+                >
+                  {column.text}
+                </motion.p>
+              ))}
+            </div>
+          </div>
+        ) : (
+        /* Modo editorial: título izq + 1 párrafo der */
         <div className={styles.editorialWrapper}>
           {label && (
             <motion.span
@@ -55,6 +97,7 @@ export function LearningBlock({ data }: Props) {
             ))}
           </div>
         </div>
+        )
       ) : (
         /* Modo columnas legacy */
         <TextContainer>
