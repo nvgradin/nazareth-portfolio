@@ -45,6 +45,7 @@
   line-height: 1.75;
   color: var(--color-text-secondary);
   margin: 0 0 var(--space-16);
+  text-align: justify;
 }
 
 .subtitle:last-child {
