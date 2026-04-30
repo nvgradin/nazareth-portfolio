@@ -112,7 +112,7 @@ export const trainfy: ProjectWithLayout = {
     // 3) Heading centrado
     heading: {
       label: 'El reto',
-      title: 'De marketplace deportivo a comunidad.',
+      title: 'Enfoque y alcance del proyecto',
       subtitle: [
         'Trainfy nace como propuesta para el proyecto final del Bootcamp Fullstack in JS, con un objetivo claro: demostrar las habilidades adquiridas desarrollando un marketplace tipo Wallapop enfocado a deportistas.',
         'El planteamiento inicial respondía a una lógica puramente funcional: permitir a los usuarios publicar, buscar y comprar productos de segunda mano relacionados con el deporte.',
@@ -126,39 +126,39 @@ export const trainfy: ProjectWithLayout = {
       {
         image: { type: 'image', src: '/projects/trainfy/feature-branding.jpg', alt: 'UX Research' },
         title: 'Redefinir el brief',
-        description: 'El encargo original era un marketplace de compra-venta. Lo reconvertí en una plataforma de comunidad — porque la conexión entre deportistas era el valor real, no la transacción.',
+        description: 'El encargo original era un marketplace de compra-venta con el cual mostrar las habilidades adquiridas. Y decidimos llevarlo más allá: redefinimos la plataforma de compra-venta a una plataforma que potencia la comunidad — porque la conexión entre deportistas era la propuesta de valor diferencial, no la transacción.',
       },
       {
         image: { type: 'image', src: '/projects/trainfy/feature-ui-ux.jpg', alt: 'UI Design' },
         title: 'Diseño antes que código',
-        description: 'Apliqué arquitectura de información, wireframes y sistema de identidad antes de escribir una línea de React. El diseño y la experiencia del usuario fueron la base de todo.',
+        description: 'Para dar coherencia y acelerar el desarrollo, definí un sistema visual reutilizable que estructuraba componentes, estilos y patrones, con hincapié en la experiencia del usuario. Y ello en paralelo con la creación de la base de datos.',
       },
       {
         image: { type: 'image', src: '/projects/trainfy/feature-dev.jpg', alt: 'Development' },
-        title: 'De la marca al backend',
+        title: 'De la marca al producto digital',
         description: 'Ownership completo: identidad visual, componentes en React, base de datos en PostgreSQL. Por primera vez cree un producto digital end-to-end.',
       },
     ],
 
     introParallax: {
-      src: '/projects/trainfy/portada_trainfy_2560.png',
-      alt: 'Trainfy — portada',
+      src: '/projects/trainfy/trainfy-signup-bg.jpg',
+      alt: 'Trainfy — signup background',
     },
 
     // 5) Web Editorial + WebPanel (carrusel de mockups)
     web: {
       title: 'Web',
-      subtitle: 'Diseño responsive mobile-first',
-      content: 'La plataforma fue diseñada con un enfoque mobile-first, garantizando una experiencia óptima en todos los dispositivos. Cada componente se adapta fluidamente desde smartphones hasta pantallas de escritorio.',
+      subtitle: 'aqui definir pendiente: Decisión de producto, Arquitectura (cómo se organiza), UX (cómo se usa), Implementación (cómo se construye) ',
+      content: '......',
     },
     webPanel: {
-      title: 'Diseño responsive',
-      description: 'La plataforma fue diseñada con un enfoque mobile-first, garantizando una experiencia óptima en todos los dispositivos.',
+      title: 'web',
+      description: '...',
       bullets: [
-        'Mobile-first approach',
-        'Diseño adaptativo',
-        'Optimizado para conversión',
-        'Accesibilidad WCAG 2.1',
+        '...',
+        '...',
+        '...',
+        '...',
       ],
       mockups: [
         { type: 'image', src: '/projects/trainfy/web-mockup-1.jpg', alt: 'Web Mockup Desktop' },
@@ -179,7 +179,7 @@ export const trainfy: ProjectWithLayout = {
 
     // 7) Branding Scroller
     brandingScroller: {
-      title: 'BRANDING',
+      title: 'Por qué empezamos por la identidad',
       description: 'La identidad de Trainfy refleja dinamismo, comunidad y pasión por el deporte. Colores vibrantes que transmiten energía, tipografías modernas y un sistema visual coherente que se adapta a todos los puntos de contacto.',
       bullets: [
         'Un logotipo con energía dinámica inspirando confianza.',
@@ -197,7 +197,7 @@ export const trainfy: ProjectWithLayout = {
 
     // 8) Learning block
     learning: {
-      title: 'Una aventura de aprendizaje intenso',
+      title: 'Resultado...',
       intro: 'Trainfy no solo consolidó mis conocimientos en diseño y desarrollo web, sino que también:',
       columns: [
         {

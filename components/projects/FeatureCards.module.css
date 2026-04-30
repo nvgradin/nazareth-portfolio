@@ -14,8 +14,6 @@
 .container {
   width: 100%;
   padding: 0;
-  /* clip corta el overflow visual sin bloquear el scroll interno del grid */
-  overflow: clip;
 }
 
 .grid {
@@ -26,11 +24,11 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  /* padding izq para alinearse con el resto del contenido */
-  padding-left: var(--space-16);
-  /* padding-right para que la última card no quede pegada al borde */
-  padding-right: var(--space-16);
   padding-bottom: 4px;
+  padding-left: var(--space-16);
+  padding-right: var(--space-16);
+  /* scroll-padding alinea el snap con el padding, no con el borde 0 */
+  scroll-padding-left: var(--space-16);
 }
 
 .grid::-webkit-scrollbar {
@@ -59,6 +57,10 @@
     scroll-snap-type: none;
     padding-right: 0;
   }
+  .grid::before,
+  .grid::after {
+    display: none;
+  }
   .card {
     flex: unset;
     scroll-snap-align: unset;
@@ -86,6 +88,11 @@
     scroll-snap-type: none;
     padding-right: 0;
     padding-bottom: 0;
+  }
+
+  .grid::before,
+  .grid::after {
+    display: none;
   }
 
   .card {
