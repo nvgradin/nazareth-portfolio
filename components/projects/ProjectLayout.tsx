@@ -13,6 +13,7 @@ import { ImageCompare } from './ImageCompare';
 import { WebPanel } from './WebPanel';
 import { ProcessSteps } from './ProcessSteps';
 import { LearningBlock } from './LearningBlock';
+import { TextBlock } from './TextBlock';
 import { MediaGrid } from './MediaGrid';
 import { QuoteBanner } from './QuoteBanner';
 import { ClosingText } from './ClosingText';
@@ -169,8 +170,9 @@ export function ProjectLayout({ project }: Props) {
       {/* Sección audiovisual: editorial + vídeo con play overlay */}
       {layout.videoSection && <ProjectVideoSection data={layout.videoSection} />}
 
-      {/* 8) Learning block */}
-      {layout.learning && <LearningBlock data={layout.learning} />}
+      {/* 8) TextBlock (nuevo) o learning (legacy) */}
+      {layout.textBlock && <TextBlock data={layout.textBlock} />}
+      {!layout.textBlock && layout.learning && <LearningBlock data={layout.learning} />}
 
       {/* Media grid: 2col + 3col full-bleed con header editorial */}
       {layout.mediaGrid && <MediaGrid data={layout.mediaGrid} />}

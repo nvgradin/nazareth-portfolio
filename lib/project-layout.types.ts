@@ -263,22 +263,31 @@ export interface StaggeredProcessData {
 }
 
 /**
- * Columna del bloque de aprendizaje
+ * Columna de TextBlock
  */
-export interface LearningColumn {
+export interface TextBlockColumn {
   subtitle?: string;
   text: string;
 }
 
 /**
- * Bloque de aprendizaje con titular, texto y columnas (o párrafos en 1 columna)
+ * Bloque de texto con variantes de layout:
+ * - 'editorial': título izq + columnas apiladas en columna derecha
+ * - 'grid': label + título arriba + N columnas horizontales
+ * - 'legacy': columnas centradas con subtitle (h3 + texto)
  */
-export interface LearningBlock {
+export interface TextBlock {
+  variant: 'editorial' | 'grid' | 'legacy';
   label?: string;
   title: string;
   intro?: string;
-  columns: LearningColumn[];
+  columns: TextBlockColumn[];
 }
+
+/** @deprecated Use TextBlock */
+export type LearningBlock = TextBlock;
+/** @deprecated Use TextBlockColumn */
+export type LearningColumn = TextBlockColumn;
 
 /**
  * Posición vertical de imagen
@@ -354,8 +363,10 @@ export interface ProjectLayout {
   showcase?: ShowcaseTriptych;
   webPanel?: WebPanel;
 
-  // Bloque de aprendizaje
-  learning?: LearningBlock;
+  // Bloque de texto con variantes de layout
+  textBlock?: TextBlock;
+  /** @deprecated Use textBlock */
+  learning?: TextBlock;
 
   // Comparación antes/después
   imageCompare?: ImageCompareData;

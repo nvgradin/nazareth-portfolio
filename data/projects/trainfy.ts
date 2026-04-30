@@ -207,14 +207,16 @@ export const trainfy: ProjectWithLayout = {
     },
 
     // 8) Resultados
-    learning: {
+    textBlock: {
+      variant: 'editorial',
+      label: 'Resultados',
       title: 'Resultados',
       columns: [
         {
           text: 'Trainfy no llegó a producción. Es un proyecto final de bootcamp, y así es como debe leerse: como una demostración de capacidad, no como un producto en el mercado.',
         },
         {
-          text: 'Lo que sí fue real: la presentación final generó oportunidades de incorporación. Empecé a trabajar en el sector. Y algo más difícil de medir — entender que diseñar bien y programar bien buscan exactamente lo mismo: que algo funcione para alguien.',
+          text: 'Lo que sí fue real: de una promoción de ~20 alumnos, solo 2 salieron contratados directamente desde la presentación final. Empecé a trabajar en una de esas empresas.',
         },
         {
           text: 'Desde entonces no puedo diseñar sin pensar en la implementación, ni implementar sin pensar en la experiencia. Trainfy me enseñó que esa tensión no es un problema. Es exactamente donde quiero trabajar.',

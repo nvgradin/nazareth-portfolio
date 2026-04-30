@@ -1,0 +1,161 @@
+/* TextBlock — variantes: editorial | grid | legacy */
+
+.block {
+  padding: var(--space-48) var(--space-16);
+}
+
+@media (min-width: 768px) {
+  .block {
+    padding: var(--space-64);
+  }
+}
+
+@media (min-width: 1024px) {
+  .block {
+    padding: var(--space-96);
+  }
+}
+
+/* ── Shared ── */
+.label {
+  display: block;
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-primary);
+  opacity: 0.5;
+  margin-bottom: var(--space-8);
+}
+
+.editorialTitle {
+  font-family: var(--font-accent);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.paragraphText {
+  font-family: var(--font-base);
+  font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* ── Variante editorial: título izq + párrafos apilados der ── */
+.editorialWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-32);
+}
+
+@media (min-width: 768px) {
+  .editorialWrapper {
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-48);
+    align-items: start;
+  }
+}
+
+.editorialLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+/* ── Variante grid: label + título arriba + N columnas ── */
+.gridWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+}
+
+.gridHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.gridColumns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-24);
+}
+
+@media (min-width: 768px) {
+  .gridColumns {
+    grid-template-columns: repeat(var(--col-count, 3), 1fr);
+    gap: var(--space-32);
+  }
+}
+
+.gridText {
+  font-family: var(--font-base);
+  font-size: clamp(0.875rem, 1.2vw, 0.9375rem);
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  margin: 0;
+  text-align: justify;
+}
+
+/* ── Variante legacy: header centrado + columnas ── */
+.legacyHeader {
+  text-align: center;
+  margin-bottom: var(--space-48);
+}
+
+.legacyTitle {
+  font-family: var(--font-accent);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.intro {
+  font-family: var(--font-base);
+  font-size: clamp(0.9375rem, 1.5vw, 1rem);
+  color: var(--neutral-700);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.legacyColumns {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .legacyColumns {
+    flex-direction: row;
+    width: 77%;
+    gap: var(--space-24);
+  }
+}
+
+.legacyColumn {
+  flex: 1;
+  text-align: center;
+}
+
+.subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 600;
+  color: var(--neutral-900);
+  margin-bottom: var(--space-16);
+}

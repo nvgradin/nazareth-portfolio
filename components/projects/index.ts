@@ -10,6 +10,7 @@ export { ShowcaseTriptych } from './ShowcaseTriptych';
 export { WebPanel } from './WebPanel';
 export { ProcessSteps } from './ProcessSteps';
 export { LearningBlock } from './LearningBlock';
+export { TextBlock } from './TextBlock';
 export { QuoteBanner } from './QuoteBanner';
 export { ClosingText } from './ClosingText';
 export { ImageCompare } from './ImageCompare';
