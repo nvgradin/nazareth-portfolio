@@ -62,8 +62,10 @@ export function ProjectLayout({ project }: Props) {
         />
       )}
 
-      {/* 5) Hero Image — imagen destacada a ancho completo */}
-      {layout.heroImage && <HeroImage data={layout.heroImage} />}
+      {/* 5) Branding Scroller */}
+      {layout.brandingScroller && !layout.branding && (
+        <BrandingScrollerSection data={layout.brandingScroller} />
+      )}
 
       {/* 6a) ArchitectureWebFlow: reemplaza editorial+web cuando existe */}
       {layout.architectureWebFlow && (
@@ -91,10 +93,8 @@ export function ProjectLayout({ project }: Props) {
         <WebPanel data={layout.webPanel} background={layout.bento?.background} />
       )}
 
-      {/* 7) Branding Scroller */}
-      {layout.brandingScroller && !layout.branding && (
-        <BrandingScrollerSection data={layout.brandingScroller} />
-      )}
+      {/* 7) Hero Image — imagen destacada a ancho completo */}
+      {layout.heroImage && <HeroImage data={layout.heroImage} />}
 
       {/* Editorial: Arquitectura de Información + Parallax Image */}
       {layout.editorial && (
