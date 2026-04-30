@@ -27,7 +27,7 @@ export const trainfy: ProjectWithLayout = {
       title: 'Trainfy',
       subtitle: 'De marketplace deportivo a comunidad.',
       intro: 'Transformé la propuesta de hacer una plataforma de compraventa de nicho en una experiencia centrada en la conexión entre los deportistas.',
-      result: 'Derivó en oportunidades reales de incorporación tras la presentación final del bootcamp.',
+      result: 'De los 30+ alumnos del bootcamp, solo 2 salimos con trabajo directo tras la presentación final. Yo fui una de ellas.',
       logo: '/projects/trainfy/Logotipo.png',
       roles: ['Fullstack Developer', 'UI/UX Design'],
       context: 'Proyecto final Bootcamp Fullstack Developer',
@@ -166,7 +166,7 @@ export const trainfy: ProjectWithLayout = {
     web: {
       title: 'Lo que Trainfy\nLlegó a Hacer',
       subtitle: 'Una plataforma funcional\nconstruida en tres semanas.',
-      content: '',
+      content: 'Cuatro meses de bootcamp intensivo. Tres semanas de proyecto final. Equipo de tres personas. El resultado fue una plataforma real, no una demo vacía.',
       columns: [
         'Cuatro meses de bootcamp intensivo. Tres semanas de proyecto final. Equipo de tres personas. El resultado fue una plataforma real, no una demo vacía.',
         'Trainfy permitía crear cuenta y perfil deportivo, publicar anuncios de compra, venta e intercambio de material, insertar espacios publicitarios y conectar con otros deportistas a través de un sistema de mensajería. No era perfecta — era la primera vez que construía algo así de cero — pero funcionaba.',
@@ -211,10 +211,10 @@ export const trainfy: ProjectWithLayout = {
       title: 'Resultados',
       columns: [
         {
-          text: 'Trainfy no llegó a producción. Es un proyecto de bootcamp, y así es como debe leerse: como una demostración de capacidad, no como un producto en el mercado.',
+          text: 'Trainfy no llegó a producción. Es un proyecto final de bootcamp, y así es como debe leerse: como una demostración de capacidad, no como un producto en el mercado.',
         },
         {
-          text: 'Lo que sí fue real: la presentación final generó conversaciones de incorporación. Y algo más difícil de medir — entender que diseñar bien y programar bien buscan exactamente lo mismo: que algo funcione para alguien.',
+          text: 'Lo que sí fue real: de más de 30 alumnos, solo 2 salimos con trabajo directo desde la presentación final. Empecé a trabajar en una de esas empresas. No meses después — ese mismo día abrieron la conversación.',
         },
         {
           text: 'Desde entonces no puedo diseñar sin pensar en la implementación, ni implementar sin pensar en la experiencia. Trainfy me enseñó que esa tensión no es un problema. Es exactamente donde quiero trabajar.',
