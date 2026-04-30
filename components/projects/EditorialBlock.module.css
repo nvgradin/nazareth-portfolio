@@ -98,7 +98,7 @@
 @media (min-width: 768px) {
   .containerSplit {
     padding: 0 var(--space-64);
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     gap: var(--space-48);
   }
 }
