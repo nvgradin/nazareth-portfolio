@@ -164,8 +164,8 @@ export const trainfy: ProjectWithLayout = {
 
     // 6) Web Editorial + WebPanel (carrusel de mockups)
     web: {
-      title: 'Web',
-      subtitle: 'Una plataforma real construida en cuatro meses de bootcamp.',
+      title: 'Lo que Trainfy\nLlegó a Hacer',
+      subtitle: 'Una plataforma funcional construida en tres semanas.',
       content: '',
       columns: [
         'Cuatro meses de bootcamp intensivo. Tres semanas de proyecto final. Equipo de tres personas. El resultado fue una plataforma real, no una demo vacía.',

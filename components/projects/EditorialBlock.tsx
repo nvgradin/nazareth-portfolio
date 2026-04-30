@@ -28,43 +28,69 @@ interface Props {
  */
 export function EditorialBlock({ title, subtitle, content, columns, children, className, style }: Props) {
   const isRich = typeof content !== 'string';
+  const hasColumns = columns && columns.length > 0;
 
   return (
     <section className={[styles.block, className].filter(Boolean).join(' ')} style={style}>
-      {/* Layout 2 columnas: título izquierda, subtítulo + texto derecha */}
       <div className={styles.top}>
-        <div className={styles.container}>
-          <motion.h2
-            className={styles.title}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, ease }}
-          >
-            {title}
-          </motion.h2>
-          <motion.div
-            className={styles.text}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.5, delay: 0.1, ease }}
-          >
-            <h3 className={styles.subtitle}>{subtitle}</h3>
-            {isRich ? (
-              <>
-                <p className={styles.content}>{content.text}</p>
-                <ul className={styles.bullets}>
-                  {content.bullets.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </>
-            ) : (
-              <p className={styles.content}>{content}</p>
-            )}
-          </motion.div>
-        </div>
+        {/* Modo columnas: header apilado (título + subtitle en 1 col) */}
+        {hasColumns ? (
+          <div className={styles.containerStacked}>
+            <motion.h2
+              className={styles.title}
+              style={{ whiteSpace: 'pre-line' }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.6, ease }}
+            >
+              {title}
+            </motion.h2>
+            <motion.h3
+              className={styles.subtitleStacked}
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.5, delay: 0.1, ease }}
+            >
+              {subtitle}
+            </motion.h3>
+          </div>
+        ) : (
+          /* Modo legacy: 2 columnas título izq + subtitle/content der */
+          <div className={styles.container}>
+            <motion.h2
+              className={styles.title}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.6, ease }}
+            >
+              {title}
+            </motion.h2>
+            <motion.div
+              className={styles.text}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.5, delay: 0.1, ease }}
+            >
+              <h3 className={styles.subtitle}>{subtitle}</h3>
+              {isRich ? (
+                <>
+                  <p className={styles.content}>{content.text}</p>
+                  <ul className={styles.bullets}>
+                    {content.bullets.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
+                <p className={styles.content}>{content}</p>
+              )}
+            </motion.div>
+          </div>
+        )}
       </div>
 
       {/* Columnas de texto opcionales (modo 3 columnas justificadas) */}
