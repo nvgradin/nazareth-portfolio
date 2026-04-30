@@ -48,6 +48,7 @@ export function EditorialBlock({ title, subtitle, content, columns, children, cl
             </motion.h2>
             <motion.h3
               className={styles.subtitleAnchor}
+              style={{ whiteSpace: 'pre-line' }}
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-80px' }}
