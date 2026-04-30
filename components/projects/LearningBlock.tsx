@@ -13,6 +13,7 @@ interface Props {
 
 export function LearningBlock({ data }: Props) {
   const { title, intro, columns } = data;
+  const isSingleColumn = columns.length === 1;
 
   return (
     <section className={styles.block}>
@@ -27,28 +28,30 @@ export function LearningBlock({ data }: Props) {
           >
             {title}
           </motion.h2>
-          <motion.p
-            className={styles.intro}
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.5, delay: 0.1, ease }}
-          >
-            {intro}
-          </motion.p>
+          {intro && (
+            <motion.p
+              className={styles.intro}
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.5, delay: 0.1, ease }}
+            >
+              {intro}
+            </motion.p>
+          )}
         </div>
 
-        <div className={styles.columns}>
+        <div className={isSingleColumn ? styles.paragraphs : styles.columns}>
           {columns.map((column, index) => (
             <motion.div
               key={index}
-              className={styles.column}
+              className={isSingleColumn ? styles.paragraph : styles.column}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.5, delay: 0.15 + index * 0.1, ease }}
             >
-              <h3 className={styles.subtitle}>{column.subtitle}</h3>
+              {column.subtitle && <h3 className={styles.subtitle}>{column.subtitle}</h3>}
               <p className={styles.text}>{column.text}</p>
             </motion.div>
           ))}

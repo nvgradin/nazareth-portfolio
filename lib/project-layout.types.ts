@@ -264,16 +264,16 @@ export interface StaggeredProcessData {
  * Columna del bloque de aprendizaje
  */
 export interface LearningColumn {
-  subtitle: string;
+  subtitle?: string;
   text: string;
 }
 
 /**
- * Bloque de aprendizaje con titular, texto y 3 columnas
+ * Bloque de aprendizaje con titular, texto y columnas (o párrafos en 1 columna)
  */
 export interface LearningBlock {
   title: string;
-  intro: string;
+  intro?: string;
   columns: LearningColumn[];
 }
 

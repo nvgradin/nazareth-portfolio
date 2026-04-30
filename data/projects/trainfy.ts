@@ -164,18 +164,17 @@ export const trainfy: ProjectWithLayout = {
 
     // 6) Web Editorial + WebPanel (carrusel de mockups)
     web: {
-      title: 'Web',
-      subtitle: 'aqui definir pendiente: Decisión de producto, Arquitectura (cómo se organiza), UX (cómo se usa), Implementación (cómo se construye) ',
+      title: 'Lo que Trainfy llegó a hacer',
+      subtitle: 'Una plataforma funcional construida en tres semanas.',
       content: '......',
     },
     webPanel: {
-      title: 'web',
-      description: '...',
+      title: 'Lo que Trainfy llegó a hacer',
+      description: 'Una plataforma funcional construida en tres semanas.',
       bullets: [
-        '...',
-        '...',
-        '...',
-        '...',
+        'Cuatro meses de bootcamp intensivo. Tres semanas de proyecto final. Equipo de tres personas. El resultado fue una plataforma real, no una demo vacía.',
+        'Trainfy permitía crear cuenta y perfil deportivo, publicar anuncios de compra, venta e intercambio de material, insertar espacios publicitarios y conectar con otros deportistas a través de un sistema de mensajería. No era perfecta — era la primera vez que construía algo así de cero — pero funcionaba.',
+        'Técnicamente se apoyó en React en el frontend, Node.js y PostgreSQL en el backend, y librerías como Redux para el estado, Axios para las peticiones HTTP, Bcrypt para la seguridad de contraseñas y Cloudinary para la gestión de imágenes. Cada decisión técnica tenía una razón de UX detrás.',
       ],
       mockups: [
         { type: 'image', src: '/projects/trainfy/web-mockup-1.jpg', alt: 'Web Mockup Desktop' },
@@ -202,22 +201,18 @@ export const trainfy: ProjectWithLayout = {
       ],
     },
 
-    // 8) Learning block
+    // 8) Resultados
     learning: {
-      title: 'Resultado',
-      intro: 'Trainfy no solo consolidó mis conocimientos en diseño y desarrollo web, sino que también:',
+      title: 'Resultados',
       columns: [
         {
-          subtitle: '1. Proporcionó una experiencia funcional',
-          text: 'Permitió realizar las acciones clave necesarias para su propósito (crear cuenta, subir material deportivo creando anuncios, compra, venta, intercambio de material deportivo).',
+          text: 'Trainfy no llegó a producción. Es un proyecto de bootcamp, y así es como debe leerse: como una demostración de capacidad, no como un producto en el mercado.',
         },
         {
-          subtitle: '2. Crear una experiencia de usuario enriquecida con una marca significativa',
-          text: 'Incorporando mis habilidades previas a la formación, he aportado branding, arquitectura de información, wireframe, análisis inicial del flujo del usuario... Las habilidades del diseño UI/UX que permitió brindar un enfoque profesional que enriquecieron la solución final.',
+          text: 'Lo que sí fue real: la presentación final generó conversaciones de incorporación. Y algo más difícil de medir — entender que diseñar bien y programar bien buscan exactamente lo mismo: que algo funcione para alguien.',
         },
         {
-          subtitle: '3. Fusionó el entendimiento global desde el diseño hasta el desarrollo',
-          text: 'Aplicar y comprender cómo se crea una web compleja es enormemente enriquecedor. Comprender desde el modelo del negocio, el diseño visual, hasta la creación de componentes con React en frontend y ahondar más allá, para saber cómo organizar los datos con backend me permitió expandir y optimizar mi forma de trabajo.',
+          text: 'Desde entonces no puedo diseñar sin pensar en la implementación, ni implementar sin pensar en la experiencia. Trainfy me enseñó que esa tensión no es un problema. Es exactamente donde quiero trabajar.',
         },
       ],
     },
@@ -227,13 +222,7 @@ export const trainfy: ProjectWithLayout = {
       quote: 'Fue el primer proyecto en el que entendí que el diseño y el código no son disciplinas distintas. Son la misma pregunta hecha de dos formas.',
       author: 'Nazareth, sobre Trainfy',
       backgroundImage: { type: 'image', src: '/projects/trainfy/quote-bg.jpg', alt: 'Quote Background' },
-      imagePosition: 'top',  // Mostrar parte superior de la imagen (rostro visible)
-    },
-
-    // 10) Closing text
-    closing: {
-      title: 'Diseñando para Aprender y Crecer',
-      content: 'Este proyecto me confirmó la importancia de la perseverancia y el aprendizaje continuo. Fue mi primera experiencia en un desarrollo fullstack tan intenso, gracias al cual adquirí nociones que aplico actualmente en proyectos como diseñadora y creadora web en WordPress. Un reto que decidí abordarlo como una oportunidad para explorar el potencial de unir diseño y desarrollo en un entorno lo más realista posible. Trainfy sigue siendo un recordatorio de que cada esfuerzo, por pequeño que parezca, es un paso hacia la excelencia profesional.',
+      imagePosition: 'top',
     },
   },
 
