@@ -147,7 +147,10 @@ export const trainfy: ProjectWithLayout = {
 
     statementBlock: {
       setup: 'El problema no era crear otro marketplace segmentado.',
-      statement: 'Era que no existía una plataforma que conectara a los deportistas entre sí.',
+      statement: [
+        'Era que no existía un marketplace que',
+        'también conectara a los deportistas entre sí.',
+      ],
       accentColor: '#1E3A5F',
     },
 

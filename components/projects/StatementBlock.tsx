@@ -5,7 +5,7 @@ import styles from './StatementBlock.module.css';
 
 interface Props {
   setup: string;
-  statement: string;
+  statement: string | string[];
   accentColor?: string;
 }
 
@@ -32,7 +32,11 @@ export function StatementBlock({ setup, statement, accentColor = '#1E3A5F' }: Pr
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.9, delay: 0.45, ease }}
         >
-          {statement}
+          {Array.isArray(statement)
+            ? statement.map((line, i) => (
+                <span key={i}>{line}{i < statement.length - 1 && <br />}</span>
+              ))
+            : statement}
         </motion.p>
       </div>
     </section>
