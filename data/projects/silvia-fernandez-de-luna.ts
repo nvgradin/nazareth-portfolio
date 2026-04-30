@@ -215,7 +215,13 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       title: 'Lo que se construyó',
       columns: [
         {
-          text: 'Silvia Fernández De Luna acompaña a las personas en su camino hacia el autoconocimiento — desde sesiones terapéuticas individuales hasta retiros, masterclasses, una academia online y una comunidad propia. Un universo de trabajo profundo, muy real offline. El problema era que nada de eso existía digitalmente. Lo que construimos juntas durante tres años no fue solo una web o una estrategia de contenido — fue la infraestructura completa de una marca personal que necesitaba sostenerse, crecer y escalar sin perder su esencia.',
+          text: 'Silvia Fernández De Luna acompaña a las personas en su camino hacia el autoconocimiento — desde sesiones terapéuticas individuales hasta retiros, masterclasses, una academia online y una comunidad propia. Un universo de trabajo profundo, muy real offline.',
+        },
+        {  
+          text: 'Lo que construimos juntas durante tres años no fue solo una web o una estrategia de contenido — fue la infraestructura completa de una marca personal que permite sostener, crecer y escalar con esencia.',
+        },
+        {  
+          text: 'Una marca personal en un nicho difícil — el bienestar espiritual — que logró ser tomada en serio. Silvia Fernández De Luna conseguió pasar de no tener presencia digital a aparecer en el TOP 10 de búsquedas en Google para términos como alquimia opus magnum sólo con el trabajo orgánico. ',
         },
       ],
     },
