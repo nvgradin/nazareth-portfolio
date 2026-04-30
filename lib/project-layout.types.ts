@@ -274,6 +274,7 @@ export interface LearningColumn {
  * Bloque de aprendizaje con titular, texto y columnas (o párrafos en 1 columna)
  */
 export interface LearningBlock {
+  label?: string;
   title: string;
   intro?: string;
   columns: LearningColumn[];

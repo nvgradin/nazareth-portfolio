@@ -12,7 +12,7 @@ interface Props {
 }
 
 export function LearningBlock({ data }: Props) {
-  const { title, intro, columns } = data;
+  const { label, title, intro, columns } = data;
   const isParagraphMode = columns.every(c => !c.subtitle);
 
   return (
@@ -20,6 +20,17 @@ export function LearningBlock({ data }: Props) {
       {isParagraphMode ? (
         /* Modo editorial: título izq + párrafos der */
         <div className={styles.editorialWrapper}>
+          {label && (
+            <motion.span
+              className={styles.label}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.5, ease }}
+            >
+              {label}
+            </motion.span>
+          )}
           <motion.h2
             className={styles.editorialTitle}
             initial={{ opacity: 0, x: -20 }}

@@ -105,7 +105,12 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     // 6) BRANDING SCROLLER
     brandingScroller: {
       title: 'Crear el Universo de Marca',
-      description: 'La ilustración original ya existía — la había encargado a una ilustradora. Lo que faltaba era convertirla en un sistema de marca real: vectoricé la ilustración, construí el logotipo completo con tipografía, definí la gama cromática, creé todas las versiones necesarias. El resultado fue una identidad visual con coherencia y carácter propio — reconocible, distinta, y alineada con lo que queríamos transmitir: crear un Universo de Marca',
+      description: 'Una identidad que habla el mismo idioma que Silvia',
+      bullets: [
+        'Completé y sistematicé la identidad visual: tipografía, gama cromática, logotipo y todas sus versiones. Pero el verdadero trabajo fue más profundo — crear un lenguaje de marca propio que se extendiera a cada rincón del proyecto.',
+        'La web no tiene secciones estándar. Tiene El Templo (inicio), Camminus (servicios), El Alma (biografía), El Ágora (blog), Eventum (eventos), Contactus. La Academia de Luna tiene logo propio. Cada nombre es una decisión simbólica consciente que traduce el universo interior de Silvia en arquitectura digital.',
+        'Esa coherencia llegó hasta el último detalle: en El Ágora, cada categoría del blog tiene su propia paleta — negro para alquimia, oro viejo para aromaterapia, verde para salud... Lo que empezó como un blog simple se convirtió en un magazine visual con carácter propio. No porque lo exigiera la tecnología, sino porque la coherencia de marca comunica a nivel inconsciente.',
+      ],
       background: '#2E1404',
       images: [
         { src: '/projects/silvia-fernandez-de-luna/bento-1.jpg', alt: 'Branding Silvia Fernández De Luna' },
@@ -119,7 +124,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
 
     // 7) WEB + WEBPANEL — editorial izquierda + carrusel mockups
     web: {
-      title: 'Título\nde la Sección',
+      title: 'Un Templo digital que creció\ncon Silvia Fernández De Luna',
       subtitle: 'Subtítulo de\nla sección web.',
       content: '',
       columns: [
@@ -204,7 +209,18 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       background: 'linear-gradient(135deg, #1a2e2a, #4e6862, #2a3d39)',
     },
 
-    // 9) QUOTE BANNER
+    // 10) LEARNING — Resultados
+    learning: {
+      label: 'Resultado',
+      title: 'Lo que se construyó',
+      columns: [
+        {
+          text: 'Silvia Fernández De Luna acompaña a las personas en su camino hacia el autoconocimiento — desde sesiones terapéuticas individuales hasta retiros, masterclasses, una academia online y una comunidad propia. Un universo de trabajo profundo, muy real offline. El problema era que nada de eso existía digitalmente. Lo que construimos juntas durante tres años no fue solo una web o una estrategia de contenido — fue la infraestructura completa de una marca personal que necesitaba sostenerse, crecer y escalar sin perder su esencia.',
+        },
+      ],
+    },
+
+    // 11) QUOTE BANNER
     quoteBanner: {
       quote: 'Acompañar a las personas en su camino hacia el autoconocimiento es la labor más hermosa que existe.',
       author: 'Silvia Fernández De Luna',
