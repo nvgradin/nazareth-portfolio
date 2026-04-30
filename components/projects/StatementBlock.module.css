@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: var(--space-48);
-  background-color: var(--color-bg-primary);
+  background-color: var( --neutral-300);
 }
 
 @media (min-width: 1024px) {
