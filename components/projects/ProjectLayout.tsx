@@ -78,6 +78,7 @@ export function ProjectLayout({ project }: Props) {
           title={layout.web.title}
           subtitle={layout.web.subtitle}
           content={layout.web.content}
+          columns={layout.web.columns}
         >
           {layout.webPanel && (
             <WebPanel

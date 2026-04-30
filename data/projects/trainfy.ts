@@ -164,9 +164,14 @@ export const trainfy: ProjectWithLayout = {
 
     // 6) Web Editorial + WebPanel (carrusel de mockups)
     web: {
-      title: 'Lo que Trainfy llegó a hacer',
-      subtitle: 'Una plataforma funcional construida en tres semanas.',
-      content: '......',
+      title: 'Web',
+      subtitle: 'Una plataforma real construida en cuatro meses de bootcamp.',
+      content: '',
+      columns: [
+        'Cuatro meses de bootcamp intensivo. Tres semanas de proyecto final. Equipo de tres personas. El resultado fue una plataforma real, no una demo vacía.',
+        'Trainfy permitía crear cuenta y perfil deportivo, publicar anuncios de compra, venta e intercambio de material, insertar espacios publicitarios y conectar con otros deportistas a través de un sistema de mensajería. No era perfecta — era la primera vez que construía algo así de cero — pero funcionaba.',
+        'Técnicamente se apoyó en React en el frontend, Node.js y PostgreSQL en el backend, y librerías como Redux para el estado, Axios para las peticiones HTTP, Bcrypt para la seguridad de contraseñas y Cloudinary para la gestión de imágenes. Cada decisión técnica tenía una razón de UX detrás.',
+      ],
     },
     webPanel: {
       title: 'Lo que Trainfy llegó a hacer',

@@ -184,7 +184,9 @@ export interface BrandingScroller {
 /**
  * Bloque Editorial para Web
  */
-export interface WebEditorial extends EditorialSection {}
+export interface WebEditorial extends EditorialSection {
+  columns?: string[]; // Si existe, renderiza 3 columnas en lugar del content
+}
 
 /**
  * Showcase triptych - 3 columnas, centro con 2 imágenes

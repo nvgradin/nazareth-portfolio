@@ -11,6 +11,7 @@ interface Props {
   title: string;
   subtitle: string;
   content: EditorialContent;
+  columns?: string[];
   children?: ReactNode;
   className?: string;
   style?: CSSProperties;
@@ -25,7 +26,7 @@ interface Props {
  * - Web: con WebPanel/mockups
  * - Audiovisuales: con video/galería
  */
-export function EditorialBlock({ title, subtitle, content, children, className, style }: Props) {
+export function EditorialBlock({ title, subtitle, content, columns, children, className, style }: Props) {
   const isRich = typeof content !== 'string';
 
   return (
@@ -65,6 +66,26 @@ export function EditorialBlock({ title, subtitle, content, children, className, 
           </motion.div>
         </div>
       </div>
+
+      {/* Columnas de texto opcionales (modo 3 columnas justificadas) */}
+      {columns && columns.length > 0 && (
+        <div className={styles.columnsWrapper}>
+          <div className={styles.columnsGrid}>
+            {columns.map((text, i) => (
+              <motion.p
+                key={i}
+                className={styles.columnText}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.5, delay: 0.1 + i * 0.1, ease }}
+              >
+                {text}
+              </motion.p>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Contenido adicional (parallax image, triptych, etc.) */}
       {children}
