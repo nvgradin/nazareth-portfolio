@@ -364,7 +364,7 @@ export interface ProjectLayout {
   introParallax?: { src: string; alt: string };
 
   // Statement block — frase de impacto a pantalla completa
-  statementBlock?: { setup: string; statement: string | string[]; accentColor?: string };
+  statementBlock?: { label?: string; setup: string; statement: string | string[]; accentColor?: string };
 
   // Sección audiovisual: editorial + vídeo centrado con play overlay
   videoSection?: {
