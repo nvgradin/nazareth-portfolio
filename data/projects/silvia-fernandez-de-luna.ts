@@ -26,8 +26,8 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     // 1) HERO
     hero: {
       title: 'Silvia Fernández De Luna',
-      subtitle: 'Placeholder subtitle',
-      intro: 'Un viaje de creación y colaboración desde hace 3 años en el cual dar vida la presencia digital progresiva hacia una estructura sólida para Silvia Fernández De Luna. Durante los últimos años, he acompañado y guiado a Silvia Fernández De Luna en la creación y consolidación de su Marca personal. Silvia, como guía, terapeuta y mentora holística, tenía una visión clara de lo que quería brindar al mundo. Mi aportación ha sido llevar esa visión a la realidad, dedicándome en consolidar una identidad sólida, desde el diseño visual hasta la estrategia de marketing, para asegurar que cada aspecto de su presencia digital esté alineado con su visión y propósito.',
+      subtitle: 'De una visión espiritual a una marca reconocida. Tres años construyendo el universo de Silvia Fernández De Luna.',
+      intro: 'Silvia llegó con un nombre, una visión y un logotipo a medio hacer. Tenía claro quién era — guía, terapeuta, mentora holística — pero no cómo hacer que el mundo lo entendiera con la misma profundidad con la que ella lo vivía. El reto no era técnico. Era de traducción: convertir un universo interior en una marca que conectara, que perdurara y que creciera.',
       logo: '/projects/silvia-fernandez-de-luna/logo.png',
       roles: ['Audiovisual', 'Marketing', 'Desarrollo Web', 'Email Marketing', 'Estrategia', 'Social Media'],
       context: 'Proyecto freelance — 3 años de colaboración',
@@ -73,26 +73,26 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
 
     // 3) HEADING
     heading: {
-      title: 'La Creación para Silvia Fernández De Luna',
-      subtitle: 'Silvia Fernández De Luna es una profesional dedicada a acompañar a las personas en su camino hacia el autoconocimiento y la sanación espiritual. Su labor abarca desde la guía personal y terapéutica hasta la creación de espacios de aprendizaje y desarrollo. A lo largo de los últimos años, hemos trabajado juntos en la creación de una base sólida para su Marca, con impronta de su profundidad y autenticidad, y que ahora incluye una amplia oferta de servicios personalizados, contenidos educativos, eventos, y una comunidad enfocada en el crecimiento personal y espiritual.',
+      title: 'El reto de partir de cero con un valor intangible',
+      subtitle: 'Silvia Fernández De Luna es guía espiritual, terapeuta holística y mentora. Silvia Conecta con las personas de forma natural, transmite autoridad y genera confianza desde el primer momento. Inspira, desafía y nos acompaña en nuestros procesos. Mi reto fue acompañar la creación digital del valor de la propuesta de Silvia, desde cero. Tomar algo tan sutil como la activación kundalini, los registros akáshicos, la aromaterapia terapéutica o el acompañamiento energético, y convertirlo en una marca digital que lo transmitiera con la misma autenticidad con la que Silvia lo vivía.',
     },
 
     // 4) FEATURES
     features: [
       {
         image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-marketing.jpg', alt: 'Marketing' },
-        title: 'Marketing',
-        description: 'Placeholder — descripción de la primera feature.',
+        title: ' Construir un universo de marca',
+        description: 'Desde el primer día propuse ir más allá del diseño. Las secciones de la web no se llaman Inicio o Servicios — se llaman El Templo, Camminus, El Alma, El Ágora. Cada nombre es parte de un sistema simbólico que traduce el mundo de Silvia en arquitectura digital.',
       },
       {
         image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-web.jpg', alt: 'Web' },
-        title: 'Web',
-        description: 'Placeholder — descripción de la segunda feature.',
+        title: 'Primero la identidad, luego todo lo demás',
+        description: 'Antes del lanzamiento web, completé el sistema de marca (la ilustradora original no tenía base de branding) y co-creé con Silvia una pieza audiovisual cinematográfica — su historia como punto de partida. La marca necesitaba voz y alma antes de tener web.',
       },
       {
         image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-estrategia.jpg', alt: 'Estrategia' },
-        title: 'Estrategia',
-        description: 'Placeholder — descripción de la tercera feature.',
+        title: 'Estrategia de crecimiento desde el modelo de negocio',
+        description: 'No solo ejecuté — propuse. La Academia de Luna, la Comunidad Mujer Raíz, los funnels de conversión para masterclasses, el sistema de email marketing: muchas de esas decisiones nacieron de conversaciones estratégicas sobre cómo escalar lo que Silvia hacía offline al mundo digital.',
       },
     ],
 
@@ -104,8 +104,8 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
 
     // 6) BRANDING SCROLLER
     brandingScroller: {
-      title: 'Branding',
-      description: 'Placeholder — descripción del branding de Silvia Fernández De Luna.',
+      title: 'Crear el Universo de Marca',
+      description: 'La ilustración original ya existía — la había encargado a una ilustradora. Lo que faltaba era convertirla en un sistema de marca real: vectoricé la ilustración, construí el logotipo completo con tipografía, definí la gama cromática, creé todas las versiones necesarias. El resultado fue una identidad visual con coherencia y carácter propio — reconocible, distinta, y alineada con lo que queríamos transmitir: crear un Universo de Marca',
       background: '#2E1404',
       images: [
         { src: '/projects/silvia-fernandez-de-luna/bento-1.jpg', alt: 'Branding Silvia Fernández De Luna' },
@@ -119,9 +119,14 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
 
     // 7) WEB + WEBPANEL — editorial izquierda + carrusel mockups
     web: {
-      title: 'Web',
-      subtitle: 'Placeholder — título de la sección web',
-      content: 'Placeholder — descripción del trabajo web para Silvia Fernández De Luna.',
+      title: 'Título\nde la Sección',
+      subtitle: 'Subtítulo de\nla sección web.',
+      content: '',
+      columns: [
+        'La web de Silvia no sigue la arquitectura estándar. Sus secciones tienen nombres propios: El Templo es el inicio, Camminus es el camino de servicios, El Alma es su historia, El Ágora es el espacio de conocimiento compartido. Cada nombre es una decisión consciente de universo de marca',
+        'El sistema de identidad llegó hasta el último rincón. En El Ágora — el espacio editorial de Silvia — cada categoría del blog tiene su propia paleta: negro para alquimia, oro viejo para aromaterapia, verde para salud... Lo que empezó como un blog simple evolucionó hasta convertirse en un magazine visual con carácter propio. No porque lo exigiera la tecnología, sino porque la coherencia de marca comunica a nivel inconsciente.',
+        'El crecimiento fue 100% orgánico. Sin inversión en publicidad de pago, trabajamos el SEO desde la estructura y el contenido. El resultado: Silvia aparece en el TOP 10 de Google para búsquedas como opus magnum alquimia — por detrás de la Wikipedia, por delante de todo lo demás.',
+      ],
     },
 
     webPanel: {
@@ -140,7 +145,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     reelsEditorial: {
       title: 'Estrategia & Marketing',
       subtitle: 'Contenido que conecta con su comunidad',
-      content: 'Placeholder — descripción de la estrategia de contenido, redes sociales, reels y carruseles para Silvia Fernández De Luna.',
+      content: 'Acompañé a Silvia en la creación del contenido para redes sociales con estrategia y en co-creación con Silvia. Mensualmente analizábamos qué funcionaba, qué comunidad estaba creciendo y hacia dónde mover la siguiente publicación. Yo creaba reels, piezas y carruseles; ella aportaba su conocimiento y su presencia. Una coordinación que se fue afinando durante tres años.',
     },
 
     reelsDeck: {
@@ -160,7 +165,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       editorial: {
         title: 'Sistemas de Captación',
         subtitle: 'Del primer impacto a la conversión',
-        content: 'Cada lanzamiento de Masterclass sigue un flujo diseñado para acompañar al cliente potencial desde el descubrimiento hasta la inscripción, con coherencia visual y de mensaje en cada punto de contacto.',
+        content: 'Cada lanzamiento de Masterclass o programa nuevo seguía el mismo principio: acompañar al usuario desde el primer impacto hasta la conversión, con coherencia en cada punto de contacto. Reel de awareness → landing de inscripción → secuencia de email. Un sistema que diseñé, implementé y optimicé con cada iteración.',
       },
       steps: [
         {
@@ -192,7 +197,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       editorial: {
         title: 'Audiovisual',
         subtitle: 'La Historia Álmica de Silvia Fernández De Luna',
-        content: 'La Historia Álmica de Silvia Fernández De Luna, es una pieza audiovisual con un guión creado en sinergía con Silvia, y dirigida, grabada y editada. Como co-guionista, trabajé estrechamente con Silvia para dar vida a su historia de evolución, asegurándome de capturar la esencia de su viaje interior. Una narrativa afinada para dar retrato del proceso y viaje que hizo nacer a Silvia Fernández De Luna. Desde la grabación hasta la postproducción, este es el fruto de la colaboración creativa intensa y cuidadosa, donde mi objetivo fue crear un retrato cinematográfico de la esencia misma del alma de Silvia y su viaje.',
+        content: 'Antes de lanzar la web, necesitábamos que el mundo entendiera quién es Silvia. No sus servicios — ella. Co-escribí el guion junto a ella, diseñé la estructura narrativa, busqué localizaciones, grabé y edité. El resultado fue una pieza cinematográfica que sigue siendo el núcleo emocional de toda su presencia digital.',
       },
       src: 'https://silviafernandezdeluna.com/wp-content/uploads/2022/03/Silvia_Fernandez_De_Luna_Quien_Eres.mp4',
       poster: '/projects/silvia-fernandez-de-luna/La-Historia-Almica-de-Silvia-Fernandez-De-Luna.webp',
