@@ -13,7 +13,7 @@ interface Props {
 
 export function LearningBlock({ data }: Props) {
   const { title, intro, columns } = data;
-  const isSingleColumn = columns.length === 1;
+  const isSingleColumn = columns.every(c => !c.subtitle);
 
   return (
     <section className={styles.block}>
