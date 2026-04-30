@@ -33,9 +33,9 @@ export function EditorialBlock({ title, subtitle, content, columns, children, cl
   return (
     <section className={[styles.block, className].filter(Boolean).join(' ')} style={style}>
       <div className={styles.top}>
-        {/* Modo columnas: header apilado (título + subtitle en 1 col) */}
+        {/* Modo columnas: title izq + subtitle ancla derecha alineado abajo */}
         {hasColumns ? (
-          <div className={styles.containerStacked}>
+          <div className={styles.containerSplit}>
             <motion.h2
               className={styles.title}
               style={{ whiteSpace: 'pre-line' }}
@@ -47,11 +47,12 @@ export function EditorialBlock({ title, subtitle, content, columns, children, cl
               {title}
             </motion.h2>
             <motion.h3
-              className={styles.subtitleStacked}
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              className={styles.subtitleAnchor}
+              style={{ whiteSpace: 'pre-line' }}
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.5, delay: 0.1, ease }}
+              transition={{ duration: 0.6, delay: 0.1, ease }}
             >
               {subtitle}
             </motion.h3>

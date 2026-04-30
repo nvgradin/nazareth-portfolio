@@ -86,34 +86,43 @@
   color: var(--color-text-accent);
 }
 
-/* ── Modo apilado (cuando hay columns) ── */
-.containerStacked {
+/* ── Modo split (cuando hay columns): title izq + subtitle ancla der ── */
+.containerSplit {
   padding: 0 var(--space-16);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-12);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  align-items: end;
 }
 
 @media (min-width: 768px) {
-  .containerStacked {
+  .containerSplit {
     padding: 0 var(--space-64);
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-48);
   }
 }
 
 @media (min-width: 1024px) {
-  .containerStacked {
+  .containerSplit {
     padding: 0 var(--space-96);
   }
 }
 
-.subtitleStacked {
+.subtitleAnchor {
   font-family: var(--font-heading);
-  font-size: clamp(1.0625rem, 1.5vw, 1.375rem);
+  font-size: clamp(1.25rem, 2.2vw, 2rem);
   font-weight: 500;
-  color: var(--color-text-secondary);
+  color: var(--color-text-primary);
   margin: 0;
-  line-height: 1.4;
-  opacity: 0.75;
+  line-height: 1.3;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .subtitleAnchor {
+    text-align: right;
+  }
 }
 
 /* ── Modo columnas de texto ── */
