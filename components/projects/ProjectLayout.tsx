@@ -62,12 +62,15 @@ export function ProjectLayout({ project }: Props) {
         />
       )}
 
-      {/* 5a) ArchitectureWebFlow: reemplaza editorial+web cuando existe */}
+      {/* 5) Hero Image — imagen destacada a ancho completo */}
+      {layout.heroImage && <HeroImage data={layout.heroImage} />}
+
+      {/* 6a) ArchitectureWebFlow: reemplaza editorial+web cuando existe */}
       {layout.architectureWebFlow && (
         <ArchitectureWebFlow data={layout.architectureWebFlow} />
       )}
 
-      {/* 5b) Editorial: Web + WebPanel */}
+      {/* 6b) Editorial: Web + WebPanel */}
       {layout.web && (
         <EditorialBlock
           title={layout.web.title}
@@ -87,9 +90,6 @@ export function ProjectLayout({ project }: Props) {
       {layout.webPanel && !layout.web && (
         <WebPanel data={layout.webPanel} background={layout.bento?.background} />
       )}
-
-      {/* 6) Hero Image — imagen destacada a ancho completo */}
-      {layout.heroImage && <HeroImage data={layout.heroImage} />}
 
       {/* 7) Branding Scroller */}
       {layout.brandingScroller && !layout.branding && (

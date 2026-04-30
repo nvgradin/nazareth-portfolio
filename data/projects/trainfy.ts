@@ -155,7 +155,16 @@ export const trainfy: ProjectWithLayout = {
       accentColor: '#1E3A5F',
     },
 
-    // 5) Web Editorial + WebPanel (carrusel de mockups)
+    // 5) Hero Image — pantalla de login a ancho completo
+    heroImage: {
+      src: '/projects/trainfy/Trainfy_Login.png',
+      alt: 'Trainfy — Login Design',
+      background: '#212C3A',
+      borderRadius: 16,
+      caption: 'Primera aproximación a una experiencia donde los deportistas no solo compran y venden, sino que se conectan.',
+    },
+
+    // 6) Web Editorial + WebPanel (carrusel de mockups)
     web: {
       title: 'Web',
       subtitle: 'aqui definir pendiente: Decisión de producto, Arquitectura (cómo se organiza), UX (cómo se usa), Implementación (cómo se construye) ',
@@ -176,15 +185,6 @@ export const trainfy: ProjectWithLayout = {
         { type: 'image', src: '/projects/trainfy/web-mockup-3.jpg', alt: 'Web Mockup Mobile' },
         { type: 'image', src: '/projects/trainfy/web-mockup-4.jpg', alt: 'Web Mockup Mobile' },
       ],
-    },
-
-    // 6) Hero Image — pantalla de login a ancho completo
-    heroImage: {
-      src: '/projects/trainfy/Trainfy_Login.png',
-      alt: 'Trainfy — Login Design',
-      background: '#212C3A',
-      borderRadius: 16,
-      caption: 'Primera aproximación a una experiencia donde los deportistas no solo compran y venden, sino que se conectan.',
     },
 
     // 7) Branding Scroller
