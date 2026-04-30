@@ -27,7 +27,7 @@ export const trainfy: ProjectWithLayout = {
       title: 'Trainfy',
       subtitle: 'De marketplace deportivo a comunidad.',
       intro: 'Transformé la propuesta de hacer una plataforma de compraventa de nicho en una experiencia centrada en la conexión entre los deportistas.',
-      result: 'De los 30+ alumnos del bootcamp, solo 2 salimos con trabajo directo tras la presentación final. Yo fui una de ellas.',
+      result: 'De una promoción de ~20 alumnos, solo 2 salieron contratados directamente desde la presentación final.',
       logo: '/projects/trainfy/Logotipo.png',
       roles: ['Fullstack Developer', 'UI/UX Design'],
       context: 'Proyecto final Bootcamp Fullstack Developer',
@@ -214,7 +214,7 @@ export const trainfy: ProjectWithLayout = {
           text: 'Trainfy no llegó a producción. Es un proyecto final de bootcamp, y así es como debe leerse: como una demostración de capacidad, no como un producto en el mercado.',
         },
         {
-          text: 'Lo que sí fue real: de más de 30 alumnos, solo 2 salimos con trabajo directo desde la presentación final. Empecé a trabajar en una de esas empresas. No meses después — ese mismo día abrieron la conversación.',
+          text: 'Lo que sí fue real: de una promoción de ~20 alumnos, solo 2 salieron contratados directamente desde la presentación final. Empecé a trabajar en una de esas empresas.',
         },
         {
           text: 'Desde entonces no puedo diseñar sin pensar en la implementación, ni implementar sin pensar en la experiencia. Trainfy me enseñó que esa tensión no es un problema. Es exactamente donde quiero trabajar.',
