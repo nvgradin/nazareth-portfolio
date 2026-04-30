@@ -114,29 +114,27 @@ export const trainfy: ProjectWithLayout = {
       label: 'El reto',
       title: 'Enfoque y alcance del proyecto',
       subtitle: [
-        'Trainfy nace como propuesta para el proyecto final del Bootcamp Fullstack in JS, con un objetivo claro: demostrar las habilidades adquiridas desarrollando un marketplace tipo Wallapop enfocado a deportistas.',
-        'El planteamiento inicial respondía a una lógica puramente funcional: permitir a los usuarios publicar, buscar y comprar productos de segunda mano relacionados con el deporte.',
-        'Desde el inicio, asumí el reto de transformar esa propuesta en una experiencia digital real e ir más allá creando un Branding propio, aportando UI & UX, wireframe, prototipo y sistema de diseño para ayudarnos a la hora de desarrollar.',
-        'Sin embargo, ya existen plataformas de compra y venta como Wallapop, Milanuncios… ¿es realmente valioso crear una plataforma nueva solo por dirigirse a un segmento? ¿Y si los amantes del deporte pudieran, no solo comprar y vender material, sino también intercambiarlo y conectarse, entrenar juntos, crear comunidad?',
+        'Trainfy nació como proyecto final del bootcamp fullstack. El brief era técnico: una plataforma de compra-venta de material deportivo. Pero queríamos hacerlo lo más real posible y, algo no hacía click. Ya existen Wallapop, Milanuncios… ¿tiene sentido crear otra plataforma igual, solo enfocada en deporte?',
+        'La respuesta llegó cambiando la pregunta: ¿y si los amantes del deporte pudieran no solo comprar y vender material, sino también intercambiarlo, entrenar juntos, crear comunidad? Eso es lo que construimos.',
       ],
     },
 
     // 4) 3 cards en columnas
     features: [
       {
-        image: { type: 'image', src: '/projects/trainfy/feature-branding.jpg', alt: 'UX Research' },
+        image: { type: 'image', src: '/projects/trainfy/feature-ui-ux.jpg', alt: 'UX Research' },
         title: 'Redefinir el brief',
-        description: 'El encargo original era un marketplace de compra-venta con el cual mostrar las habilidades adquiridas. Y decidimos llevarlo más allá: redefinimos la plataforma de compra-venta a una plataforma que potencia la comunidad — porque la conexión entre deportistas era la propuesta de valor diferencial, no la transacción.',
+        description: 'El encargo pedía un marketplace. Nosotros lo elevamos a una comunidad deportiva. Esa decisión cambió la arquitectura, el diseño y el stack desde el primer día.',
       },
       {
-        image: { type: 'image', src: '/projects/trainfy/feature-ui-ux.jpg', alt: 'UI Design' },
+        image: { type: 'image', src: '/projects/trainfy/feature-branding.jpg', alt: 'UI Design' },
         title: 'Diseño antes que código',
-        description: 'Para dar coherencia y acelerar el desarrollo, definí un sistema visual reutilizable que estructuraba componentes, estilos y patrones, con hincapié en la experiencia del usuario. Y ello en paralelo con la creación de la base de datos.',
+        description: 'Venía de publicidad y creatividad, no de desarrollo. Eso me dio ventaja: apliqué arquitectura de información, flujos de usuario e identidad visual antes de escribir una línea de código. El diseño no decoró el producto — lo definió.',
       },
       {
         image: { type: 'image', src: '/projects/trainfy/feature-dev.jpg', alt: 'Development' },
         title: 'De la marca al producto digital',
-        description: 'Ownership completo: identidad visual, componentes en React, base de datos en PostgreSQL. Por primera vez cree un producto digital end-to-end.',
+        description: 'Primer proyecto fullstack real: branding, UI, componentes en React, base de datos en PostgreSQL. Por primera vez entendí un producto digital end-to-end. Eso cambió para siempre cómo diseño.',
       },
     ],
 
@@ -190,11 +188,10 @@ export const trainfy: ProjectWithLayout = {
     // 7) Branding Scroller
     brandingScroller: {
       title: 'Por qué empezamos por la identidad',
-      description: 'La identidad de Trainfy refleja dinamismo, comunidad y pasión por el deporte. Colores vibrantes que transmiten energía, tipografías modernas y un sistema visual coherente que se adapta a todos los puntos de contacto.',
+      description: 'En un bootcamp la presión es entregar funcionalidad. El código manda, el diseño espera. Decidí invertir ese orden.',
       bullets: [
-        'Un logotipo con energía dinámica inspirando confianza.',
-        'Una gama cromática que evoca pasión y dinamismo con elegancia.',
-        'Un diseño minimalista que mantiene el enfoque en la funcionalidad sin perder atractivo visual.',
+        'Antes de tocar React, definí la identidad de Trainfy: qué comunicaba, a quién hablaba, cómo debía sentirse. No como ejercicio estético, sino como brújula. Una vez que la marca tenía dirección, cada decisión de interfaz fue más rápida y más coherente.',
+        'El nombre, el logo, la paleta — todo apuntaba a lo mismo: energía, movimiento, comunidad. No un catálogo deportivo. Un punto de encuentro.',
       ],
       background: '#212C3A',
       images: [
@@ -207,7 +204,7 @@ export const trainfy: ProjectWithLayout = {
 
     // 8) Learning block
     learning: {
-      title: 'Resultado...',
+      title: 'Resultado',
       intro: 'Trainfy no solo consolidó mis conocimientos en diseño y desarrollo web, sino que también:',
       columns: [
         {
@@ -227,8 +224,8 @@ export const trainfy: ProjectWithLayout = {
 
     // 9) Quote banner
     quoteBanner: {
-      quote: 'Simplemente juega. Diviértete. Disfruta el juego.',
-      author: 'Michael Jordan',
+      quote: 'Fue el primer proyecto en el que entendí que el diseño y el código no son disciplinas distintas. Son la misma pregunta hecha de dos formas.',
+      author: 'Nazareth, sobre Trainfy',
       backgroundImage: { type: 'image', src: '/projects/trainfy/quote-bg.jpg', alt: 'Quote Background' },
       imagePosition: 'top',  // Mostrar parte superior de la imagen (rostro visible)
     },
