@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { CenteredHeading as CenteredHeadingType } from '@/lib/project-layout.types';
+import { TextContainer } from '@/components/ui';
 import styles from './CenteredHeading.module.css';
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
@@ -16,7 +17,7 @@ export function CenteredHeading({ data }: Props) {
   return (
     <section className={styles.heading}>
       <div className={styles.container}>
-        <div className={styles.titleGroup}>
+        <TextContainer>
           {label && (
             <motion.p
               className={styles.label}
@@ -37,10 +38,8 @@ export function CenteredHeading({ data }: Props) {
           >
             {title}
           </motion.h2>
-        </div>
-        {subtitle && (
-          <div className={styles.subtitleGroup}>
-            {Array.isArray(subtitle) ? (
+          {subtitle && (
+            Array.isArray(subtitle) ? (
               subtitle.map((paragraph, i) => (
                 <motion.p
                   key={i}
@@ -63,9 +62,9 @@ export function CenteredHeading({ data }: Props) {
               >
                 {subtitle}
               </motion.p>
-            )}
-          </div>
-        )}
+            )
+          )}
+        </TextContainer>
       </div>
     </section>
   );
