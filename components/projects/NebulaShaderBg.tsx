@@ -100,7 +100,7 @@ export function NebulaShaderBg({
   tunnelSize = 2.1,
   stepSize = 0.045,
   fractalScale = 0.7,
-  fogDensity = 2.8,
+  fogDensity = 2,
   pixelRatio = 0.5,
   className,
   style,
