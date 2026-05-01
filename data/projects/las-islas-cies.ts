@@ -145,9 +145,10 @@ export const lasIslasCies: ProjectWithLayout = {
         content: 'Desde el primer día lo diseñé como sistema replicable. La prueba llegó en menos de un año. Cada portal adaptado a su destino, manteniendo la arquitectura de contenido, el sistema de fichas y la integración con navieras locales. Un modelo de portal turístico insular que sigue siendo referencia.',
       },
       logos: [
+        { src: '/logos/Las_Islas_Cies.png', alt: 'Las Islas Cíes' },
         { src: '/logos/EU_ONS.png', alt: 'Isla de Ons' },
-        { src: '/logos/EU_ONS.png', alt: 'Isla de Lobos — placeholder' },
-        { src: '/logos/EU_ONS.png', alt: 'Isla de la Graciosa — placeholder' },
+        { src: '/logos/I_LOVE_LOBOS.png', alt: 'Isla de Lobos' },
+        { src: '/logos/I_LOVE_LA_GRACIOSA.png', alt: 'Isla de la Graciosa' },
       ],
       background: '#252851',
       steps: [
@@ -193,6 +194,14 @@ export const lasIslasCies: ProjectWithLayout = {
         { text: 'Columna 3 — rellena aquí.' },
       ],
     },
+
+    // Logos de las 4 islas
+    clientLogos: [
+      { src: '/logos/Las_Islas_Cies.png', alt: 'Las Islas Cíes' },
+      { src: '/logos/EU_ONS.png', alt: 'Isla de Ons' },
+      { src: '/logos/I_LOVE_LOBOS.png', alt: 'Isla de Lobos' },
+      { src: '/logos/I_LOVE_LA_GRACIOSA.png', alt: 'Isla de la Graciosa' },
+    ],
 
     // Quote cierre
     quoteBanner: {
