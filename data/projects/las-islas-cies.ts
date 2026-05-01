@@ -144,6 +144,11 @@ export const lasIslasCies: ProjectWithLayout = {
         subtitle: 'Cuatro islas. Ocho meses. Una arquitectura.',
         content: 'Desde el primer día lo diseñé como sistema replicable. La prueba llegó en menos de un año. Cada portal adaptado a su destino, manteniendo la arquitectura de contenido, el sistema de fichas y la integración con navieras locales. Un modelo de portal turístico insular que sigue siendo referencia.',
       },
+      logos: [
+        { src: '/logos/EU_ONS.png', alt: 'Isla de Ons' },
+        { src: '/logos/EU_ONS.png', alt: 'Isla de Lobos — placeholder' },
+        { src: '/logos/EU_ONS.png', alt: 'Isla de la Graciosa — placeholder' },
+      ],
       background: '#252851',
       steps: [
         {
@@ -152,8 +157,6 @@ export const lasIslasCies: ProjectWithLayout = {
           imageAlt: 'Web Las Islas Cíes',
           title: 'Las Islas Cíes',
           description: 'Lanzamiento octubre 2024',
-          logo: '/projects/las-islas-cies/Logo.png',
-          logoAlt: 'Las Islas Cíes',
         },
         {
           step: 2,
@@ -161,8 +164,6 @@ export const lasIslasCies: ProjectWithLayout = {
           imageAlt: 'Web Isla de Ons — placeholder',
           title: 'Isla de Ons',
           description: 'Lanzamiento diciembre 2024',
-          logo: '/logos/EU_ONS.png',
-          logoAlt: 'Isla de Ons',
         },
         {
           step: 3,

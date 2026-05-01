@@ -451,8 +451,6 @@ export interface FunnelFlowStep {
   step: number;
   title: string;
   description: string;
-  logo?: string;
-  logoAlt?: string;
 }
 
 export interface FunnelFlow {
@@ -462,6 +460,7 @@ export interface FunnelFlow {
     content: string;
   };
   steps: FunnelFlowStep[];
+  logos?: { src: string; alt: string }[];
   background?: string;
 }
 

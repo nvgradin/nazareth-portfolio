@@ -15,7 +15,7 @@ interface Props {
 }
 
 export function FunnelFlow({ data }: Props) {
-  const { editorial, steps, background } = data;
+  const { editorial, steps, logos, background } = data;
 
   return (
     <EditorialBlock
@@ -24,6 +24,24 @@ export function FunnelFlow({ data }: Props) {
       content={editorial.content}
       className={styles.section}
     >
+      {/* Logos — sobre fondo crema, debajo del content editorial */}
+      {logos && logos.length > 0 && (
+        <div className={styles.editorialLogos}>
+          {logos.map((logo, i) => (
+            <div key={i} className={styles.editorialLogoWrap}>
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                fill
+                className={styles.editorialLogo}
+                sizes="160px"
+              />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Pasos — fondo oscuro/color del proyecto */}
       <div
         className={styles.flow}
         style={{
@@ -53,11 +71,6 @@ export function FunnelFlow({ data }: Props) {
                   quality={90}
                 />
               </div>
-              {step.logo && (
-                <div className={styles.logoWrap}>
-                  <Image src={step.logo} alt={step.logoAlt ?? step.title} fill className={styles.logo} sizes="160px" />
-                </div>
-              )}
               <div className={styles.stepText}>
                 <span className={styles.stepNumber}>{String(step.step).padStart(2, '0')}</span>
                 <h3 className={styles.stepTitle}>{step.title}</h3>
@@ -89,20 +102,6 @@ export function FunnelFlow({ data }: Props) {
             </motion.div>
           ))}
         </div>
-
-        {steps.some(s => s.logo) && (
-          <div className={styles.logos}>
-            {steps.map((step, i) => (
-              <div key={i} className={styles.logoCell}>
-                {step.logo && (
-                  <div className={styles.logoWrap}>
-                    <Image src={step.logo} alt={step.logoAlt ?? step.title} fill className={styles.logo} sizes="160px" />
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
 
         <div className={styles.texts}>
           {steps.map((step, i) => (
