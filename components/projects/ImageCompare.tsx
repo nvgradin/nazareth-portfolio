@@ -156,29 +156,30 @@ export function ImageCompare({
             </div>
           </div>
 
-          {/* Hint de drag — desaparece al primer toque */}
-          <AnimatePresence>
-            {showHint && (
-              <motion.div
-                className={styles.hint}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ delay: 1.2, duration: 0.8, ease: 'easeIn' }}
-              >
-                <motion.span
-                  animate={{ x: [-4, 4, -4] }}
-                  transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
-                >
-                  ↔
-                </motion.span>
-                <span>drag</span>
-              </motion.div>
-            )}
-          </AnimatePresence>
         </div>
 
-        {/* Caption dentro del panel, bajo el slider */}
+        {/* Hint de drag — sobre el fondo, bajo el slider */}
+        <AnimatePresence>
+          {showHint && (
+            <motion.div
+              className={styles.hint}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 1.2, duration: 0.8, ease: 'easeIn' }}
+            >
+              <motion.span
+                animate={{ x: [-4, 4, -4] }}
+                transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                ↔
+              </motion.span>
+              <span>drag</span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Caption dentro del panel, bajo el hint */}
         {caption && (
           <p className={styles.caption}>{caption}</p>
         )}
