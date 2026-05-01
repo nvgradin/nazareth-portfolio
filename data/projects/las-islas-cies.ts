@@ -137,8 +137,8 @@ export const lasIslasCies: ProjectWithLayout = {
       afterBranding: true,
     },
 
-    // Modelo escalable — 4 islas (FunnelFlow con 4 columnas)
-    funnelFlow: {
+    // Modelo escalable — 4 islas
+    islandPortals: {
       editorial: {
         title: 'Un sistema que escaló',
         subtitle: 'Cuatro islas. Ocho meses. Una arquitectura.',

@@ -1,0 +1,157 @@
+/* FunnelFlow — override EditorialBlock section */
+.section {
+  padding-bottom: 0;
+  background: var(--color-bg, #FAF6F0);
+}
+
+/* Contenedor de pasos — fondo propio definido por el proyecto */
+.flow {
+  background: var(--funnel-bg, #2E1404);
+  padding: var(--space-24) var(--space-16) 0;
+}
+
+@media (min-width: 640px) {
+  .flow {
+    padding: var(--space-24) var(--space-24) 0;
+  }
+}
+
+/* ── MÓVIL: pasos intercalados imagen + texto (oculto en desktop) ── */
+.mobileSteps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+@media (min-width: 640px) {
+  .mobileSteps {
+    display: none;
+  }
+}
+
+.mobileStep {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+/* ── DESKTOP: fila imágenes full bleed (oculto en móvil) ── */
+.desktopImages {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .desktopImages {
+    display: grid;
+    grid-template-columns: repeat(var(--funnel-cols, 3), 1fr);
+    gap: 0;
+  }
+}
+
+/* ── Imagen compartida móvil + desktop ── */
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #1a0a00;
+}
+
+.image {
+  object-fit: cover;
+  object-position: top;
+}
+
+/* ── Fila textos desktop (oculta en móvil, los textos van dentro de mobileStep) ── */
+.texts {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .texts {
+    display: grid;
+    grid-template-columns: repeat(var(--funnel-cols, 3), 1fr);
+    gap: var(--space-48);
+    padding: var(--space-48) var(--space-64) var(--space-64);
+  }
+}
+
+@media (min-width: 1024px) {
+  .texts {
+    padding: var(--space-48) var(--space-96) var(--space-96);
+  }
+}
+
+/* ── Logos sobre fondo crema (dentro del editorial, antes del flow) ── */
+.editorialLogos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-32);
+  padding: var(--space-32) var(--space-16) var(--space-16);
+}
+
+@media (min-width: 768px) {
+  .editorialLogos {
+    padding: var(--space-32) var(--space-64) var(--space-16);
+  }
+}
+
+@media (min-width: 1024px) {
+  .editorialLogos {
+    padding: var(--space-32) var(--space-96) var(--space-16);
+  }
+}
+
+.editorialLogoWrap {
+  position: relative;
+  width: 180px;
+  height: 64px;
+  flex-shrink: 0;
+}
+
+.editorialLogo {
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* ── Texto del paso ── */
+.stepText {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: var(--space-24);
+}
+
+@media (min-width: 640px) {
+  .stepText {
+    padding-bottom: 0;
+  }
+}
+
+.stepNumber {
+  font-family: var(--font-accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.35;
+}
+
+.stepTitle {
+  font-family: var(--font-accent);
+  font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin: 0;
+}
+
+.stepDesc {
+  font-family: var(--font-base);
+  font-size: clamp(0.8125rem, 1vw, 0.9375rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
