@@ -23,7 +23,7 @@ import { FunnelFlow } from './FunnelFlow';
 import { HeroImage } from './HeroImage';
 import { StaggeredProcess } from './StaggeredProcess';
 import { StatementBlock } from './StatementBlock';
-import { IslandPortalsSection } from './IslandPortalsSection';
+import { SistemScaled } from './SistemScaled';
 import styles from './ProjectLayout.module.css';
 
 interface Props {
@@ -171,7 +171,7 @@ export function ProjectLayout({ project }: Props) {
 
       {layout.funnelFlow && <FunnelFlow data={layout.funnelFlow} />}
 
-      {layout.islandPortals && <IslandPortalsSection data={layout.islandPortals} />}
+      {layout.sistemScaled && <SistemScaled data={layout.sistemScaled} />}
 
       {/* Staggered process (reservado para playground) */}
       {layout.staggeredProcess && <StaggeredProcess data={layout.staggeredProcess} />}

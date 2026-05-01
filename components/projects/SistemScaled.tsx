@@ -2,19 +2,19 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { IslandPortalsSection as IslandPortalsSectionType } from '@/lib/project-layout.types';
+import { SistemScaled as SistemScaledType } from '@/lib/project-layout.types';
 import { EditorialBlock } from './EditorialBlock';
-import styles from './IslandPortalsSection.module.css';
+import styles from './SistemScaled.module.css';
 
 const DEFAULT_FLOW_BG = '#252851';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 interface Props {
-  data: IslandPortalsSectionType;
+  data: SistemScaledType;
 }
 
-export function IslandPortalsSection({ data }: Props) {
+export function SistemScaled({ data }: Props) {
   const { editorial, steps, logos, background } = data;
 
   return (

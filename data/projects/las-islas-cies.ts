@@ -138,7 +138,7 @@ export const lasIslasCies: ProjectWithLayout = {
     },
 
     // Modelo escalable — 4 islas
-    islandPortals: {
+    sistemScaled: {
       editorial: {
         title: 'Un sistema que escaló',
         subtitle: 'Cuatro islas. Ocho meses. Una arquitectura.',

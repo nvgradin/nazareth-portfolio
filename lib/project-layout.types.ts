@@ -406,8 +406,8 @@ export interface ProjectLayout {
   // Galería editorial full-bleed (2col + 3col) con header 2 columnas
   mediaGrid?: MediaGrid;
 
-  // Portales insulares — fork de FunnelFlow para Las Islas Cíes
-  islandPortals?: IslandPortalsSection;
+  // Sistema escalable — fork de FunnelFlow para Las Islas Cíes
+  sistemScaled?: SistemScaled;
 
   process?: ProcessStep[];
   staggeredProcess?: StaggeredProcessData;
@@ -468,9 +468,9 @@ export interface FunnelFlow {
 }
 
 /**
- * IslandPortalsSection — fork de FunnelFlow para Las Islas Cíes (modificable independientemente)
+ * SistemScaled — fork de FunnelFlow para Las Islas Cíes (modificable independientemente)
  */
-export type IslandPortalsSection = FunnelFlow;
+export type SistemScaled = FunnelFlow;
 
 /**
  * Proyecto con layout editorial
