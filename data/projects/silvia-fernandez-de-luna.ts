@@ -74,7 +74,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     // 3) HEADING
     heading: {
       title: 'El reto de partir de cero con un valor intangible',
-      subtitle: 'Silvia Fernández De Luna es guía espiritual, terapeuta holística y mentora. Silvia Conecta con las personas de forma natural, transmite autoridad y genera confianza desde el primer momento. Inspira, desafía y nos acompaña en nuestros procesos. Mi reto fue acompañar la creación digital del valor de la propuesta de Silvia, desde cero. Tomar algo tan sutil como la activación kundalini, los registros akáshicos, la aromaterapia terapéutica o el acompañamiento energético, y convertirlo en una marca digital que lo transmitiera con la misma autenticidad con la que Silvia lo vivía.',
+      subtitle: 'Silvia Fernández De Luna es guía espiritual, terapeuta holística y mentora. Silvia Conecta con las personas de forma natural, transmite autoridad y genera confianza desde el primer momento. Inspira, desafía y nos acompaña en nuestros procesos. Mi reto fue acompañar la creación digital del valor de la propuesta de Silvia, desde cero. Tomar algo tan sutil como la activación kundalini, los registros akáshicos, la aromaterapia terapéutica o el acompañamiento energético, y convertirlo en una marca digital que lo transmitiera con la misma autenticidad con la que Silvia lo vivía. Y crear el Universo de Silvia Fernández De Luna.',
     },
 
     // 4) FEATURES
@@ -109,7 +109,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       bullets: [
         'Completé y sistematicé la identidad visual: tipografía, gama cromática, logotipo y todas sus versiones. Pero el verdadero trabajo fue más profundo — crear un lenguaje de marca propio que se extendiera a cada rincón del proyecto.',
         'La web no tiene secciones estándar. Tiene El Templo (inicio), Camminus (servicios), El Alma (biografía), El Ágora (blog), Eventum (eventos), Contactus. La Academia de Luna tiene logo propio. Cada nombre es una decisión simbólica consciente que traduce el universo interior de Silvia en arquitectura digital.',
-        'Esa coherencia llegó hasta el último detalle: en El Ágora, cada categoría del blog tiene su propia paleta — negro para alquimia, oro viejo para aromaterapia, verde para salud... Lo que empezó como un blog simple se convirtió en un magazine visual con carácter propio. No porque lo exigiera la tecnología, sino porque la coherencia de marca comunica a nivel inconsciente.',
+        'Esa coherencia llegó hasta el último detalle: en El Ágora, cada categoría del blog tiene su propia paleta — negro para alquimia, oro viejo para aromaterapia, verde para salud... Lo que empezó como un blog simple se convirtió en un magazine visual con carácter propio y con coherencia de marca que comunica a nivel inconsciente.',
       ],
       background: '#2E1404',
       images: [
@@ -150,7 +150,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     reelsEditorial: {
       title: 'Estrategia & Marketing',
       subtitle: 'Contenido que conecta con su comunidad',
-      content: 'Acompañé a Silvia en la creación del contenido para redes sociales con estrategia y en co-creación con Silvia. Mensualmente analizábamos qué funcionaba, qué comunidad estaba creciendo y hacia dónde mover la siguiente publicación. Yo creaba reels, piezas y carruseles; ella aportaba su conocimiento y su presencia. Una coordinación que se fue afinando durante tres años.',
+      content: 'Acompañé a Silvia en la creación del contenido para redes sociales con estrategia en sinergía. Mensualmente analizábamos qué funcionaba, afinar la escucha social de la comunidad y cómo comunicar las propuestas de valor. Coordinamos nuestras acciones y co-creamos contenido. Silvia aporta su conocimiento y su presencia, yo acompañaba con estrategia y creación. Una colaboración que se fue afinando durante tres años.',
     },
 
     reelsDeck: {
@@ -222,7 +222,10 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
           text: 'Lo que construimos juntas durante tres años no fue solo una web o una estrategia de contenido — fue la infraestructura completa de una marca personal que permite sostener, crecer y escalar con esencia.',
         },
         {
-          text: 'Una marca personal en un nicho difícil — el bienestar espiritual — que logró ser tomada en serio. Silvia Fernández De Luna pasó de no tener presencia digital a aparecer en el TOP 10 de búsquedas en Google para términos como alquimia opus magnum solo con trabajo orgánico.',
+          text: 'Una marca personal en un nicho difícil — el bienestar espiritual — que logró ser tomada en serio. Silvia Fernández De Luna pasó de no tener presencia digital a aparecer en el TOP 10 de búsquedas en Google para términos como alquimia opus magnum — por detrás de la Wikipedia, por delante de todo lo demás - solo con trabajo orgánico.',
+        },
+        {
+          text: 'La coherencia de marca se refleja en cada detalle, dando paso a colaborar con ayuntamientos, hacer eco en prensa y generar una comunidad activa. El Regreso al Templo en el Monasterio de Carboeiro llegó a las páginas de Faro de Vigo. Esta consistencia ha permitido que Silvia Fernández De Luna se destaque en un mercado competitivo y construya una comunidad fiel y comprometida.',
         },
       ],
     },
