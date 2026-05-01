@@ -252,8 +252,8 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
   meta: {
     client: 'Silvia Fernández De Luna',
     year: '2023 - 2026',
-    role: ['Branding', 'Marketing'],
-    tools: ['Wordpress', 'Woocommerce', 'LMS', 'Clarity', 'Google Analytics','Illustrator', 'After Effects', 'Premiere Pro', 'Brevo', 'Metricool'],
+    role: ['Brand Designer', 'Estratega Digital', 'Web Designer', 'Art Director', 'Email Marketing', 'Content Strategist'],
+    tools: ['Wordpress', 'Woocommerce', 'LMS', 'Clarity', 'Google Analytics', 'Illustrator', 'After Effects', 'Premiere Pro', 'Brevo', 'Metricool'],
   },
 
   tagline: 'Una marca que enseña, inspira y transforma.',

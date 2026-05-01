@@ -26,9 +26,7 @@ export const panDoPorrino: ProjectWithLayout = {
     hero: {
       title: 'Pan do Porriño',
       subtitle: 'El Camino del Pan do Porriño hacia la Denominación de Origen',
-      intro: [
-        'En 2017 nació la iniciativa de dar reconocimiento al Pan do Porriño, un pan  artesanal hecho de masa madre con propia receta, preservada durante los siglos y reconocido por su calidad desde 1600, siglo XVI. Entre varios impulsores, Galipad, Acipor, el Concello de O Porriño y los panaderos que cada día nos hornean la mejor Bolla de Pan del mundo, iniciaron su camino para lograr su objetivo: dar reconocimiento que merece. En ese camino, tuve el honor de colaborar creando la Identidad de Marca con la cual el Pan do Porriño logró convertirse en Marca Protegida y obtener la Denominación de Origen de su Bolla de Pan do Porriño. ',
-      ],
+      intro: 'En 2017 nació la iniciativa de dar reconocimiento al Pan do Porriño, un pan artesanal hecho de masa madre con propia receta, preservada durante los siglos y reconocido por su calidad desde 1600. Entre varios impulsores — Galipad, Acipor, el Concello de O Porriño y los panaderos — iniciaron su camino para lograr el reconocimiento que merecía. Tuve el honor de colaborar creando la Identidad de Marca con la cual el Pan do Porriño logró convertirse en Marca Protegida y obtener la Denominación de Origen de su Bolla.',
       logo: '/projects/pan-do-porrino/Logotipo.png',
       roles: ['Branding', 'Marketing'],
       year: '2017',
@@ -158,13 +156,13 @@ export const panDoPorrino: ProjectWithLayout = {
       subtitle: 'Campaña creativa para la II Feira do Pan do Porriño',
       body: 'Con la identidad ya definida, el siguiente reto fue llevarla al terreno de la comunicación. Para la II Feira do Pan do Porriño desarrollé un conjunto de piezas promocionales y editoriales pensadas para dar visibilidad al evento y consolidar una imagen de marca coherente en todos los puntos de contacto. Desde soportes expositivos hasta piezas impresas y packaging especial, el sistema visual mantiene un mismo tono: artesanal, reconocible y contemporáneo. Más que adaptar un logo, el objetivo fue convertir la identidad en una presencia pública consistente.',
       row1: [
-        { src: '/projects/pan-do-porrino/rollup.jpeg', alt: 'Roll-up Pan do Porriño' },
-        { src: '/projects/pan-do-porrino/diptico.jpg', alt: 'Díptico II Feira do Pan do Porriño' },
+        { src: '/projects/pan-do-porrino/Mockup_anuncio_pandoporrino.jpg', alt: 'Mockup anuncio Pan do Porriño' },
+        { src: '/projects/pan-do-porrino/Mockup_diptico_pandoporrino.jpg', alt: 'Mockup díptico II Feira do Pan do Porriño' },
       ],
       row2: [
-        { src: '/projects/pan-do-porrino/packaging2.jpg', alt: 'Packaging Bolla de Pan do Porriño' },
-        { src: '/projects/pan-do-porrino/pegatinas.jpeg', alt: 'Pegatinas Pan do Porriño' },
-        { src: '/projects/pan-do-porrino/diptico1.jpg', alt: 'Interior díptico Pan do Porriño' },
+        { src: '/projects/pan-do-porrino/packaging_new.png', alt: 'Packaging Bolla de Pan do Porriño' },
+        { src: '/projects/pan-do-porrino/Mockup_pegatina1_pandoporrino.jpeg', alt: 'Mockup pegatina Pan do Porriño' },
+        { src: '/projects/pan-do-porrino/Mockup_invitacion_pandoporrino.jpeg', alt: 'Mockup invitación II Feira do Pan do Porriño' },
       ],
     },
 
@@ -204,9 +202,8 @@ export const panDoPorrino: ProjectWithLayout = {
   meta: {
     client: 'Pan do Porriño',
     year: '2017',
-    duration: 'Por definir',
     role: ['Brand Designer', 'Art Director'],
-    tools: [ 'Illustrator', 'Photoshop'],
+    tools: ['Illustrator', 'Photoshop'],
     deliverables: ['Identidad visual', 'Sistema de marca', 'Materiales impresos', 'Comunicación exterior', 'Publicidad', 'Packaging'],
   },
 
