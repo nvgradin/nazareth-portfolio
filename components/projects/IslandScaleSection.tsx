@@ -69,6 +69,25 @@ export function IslandScaleSection({ data }: Props) {
         <p className={styles.body}>{body}</p>
       </motion.div>
 
+      {/* Logos en fila — debajo del body */}
+      <div className={styles.logos}>
+        {items.map((item, i) => (
+          <div
+            key={i}
+            className={styles.logoWrap}
+            style={item.logo.scale ? { width: `${180 * item.logo.scale}px`, height: `${64 * item.logo.scale}px` } : undefined}
+          >
+            <Image
+              src={item.logo.src}
+              alt={item.logo.alt}
+              fill
+              className={styles.logoImg}
+              sizes="240px"
+            />
+          </div>
+        ))}
+      </div>
+
       {/* Cards */}
       <div className={styles.grid}>
         {/* Línea punteada conectora */}
@@ -83,25 +102,9 @@ export function IslandScaleSection({ data }: Props) {
             animate={inView ? 'visible' : 'hidden'}
             className={styles.card}
           >
-            {/* Zona logo */}
-            <div className={styles.logoZone}>
-              <div
-                className={styles.logoWrap}
-                style={item.logo.scale ? { transform: `scale(${item.logo.scale})` } : undefined}
-              >
-                <Image
-                  src={item.logo.src}
-                  alt={item.logo.alt}
-                  fill
-                  className={styles.logoImg}
-                  sizes="120px"
-                />
-              </div>
-              <div className={styles.badge}>{item.number}</div>
-            </div>
-
             {/* Mockup */}
             <div className={styles.mockupWrap}>
+              <div className={styles.badge}>{item.number}</div>
               <div className={styles.mockupInner}>
                 <Image
                   src={item.mockup}
