@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ReelsDeck } from '@/lib/project-layout.types';
 import { InfiniteVideoDeck, DeckItem } from '@/components/ui/InfiniteVideoDeck';
+import { NebulaShaderBg } from './NebulaShaderBg';
 import styles from './ProjectReelsDeck.module.css';
 
 interface Props {
@@ -38,12 +39,17 @@ export function ProjectReelsDeck({ data }: Props) {
     return () => observer.disconnect();
   }, []);
 
+  // Fallback background color while shader loads (or if WebGL unavailable)
+  // Previous gradient: data.background ?? 'transparent'
+  // e.g. 'linear-gradient(135deg, #1a0e00, #895900, #4f3a17, #87776a, #2d1f0a, #895900)'
+
   return (
     <section
       ref={sectionRef}
       className={styles.section}
-      style={data.background ? { background: data.background } : undefined}
+      style={{ background: '#1a0e00' }}
     >
+      <NebulaShaderBg />
       {data.title && <p className={styles.eyebrow}>{data.title}</p>}
       <div className={styles.deckWrapper}>
         <InfiniteVideoDeck

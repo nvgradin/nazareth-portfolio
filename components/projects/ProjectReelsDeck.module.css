@@ -9,6 +9,8 @@
 }
 
 .eyebrow {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-accent);
   font-size: clamp(1.25rem, 2vw, 1.75rem);
   font-weight: 500;
@@ -20,6 +22,8 @@
 }
 
 .deckWrapper {
+  position: relative;
+  z-index: 1;
   width: 360px;
   height: 700px;
   overflow: hidden;
@@ -33,6 +37,7 @@
 }
 
 .dragHint {
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
