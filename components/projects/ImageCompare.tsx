@@ -158,7 +158,7 @@ export function ImageCompare({
 
         </div>
 
-        {/* Hint de drag — sobre el fondo, bajo el slider */}
+        {/* Hint de drag — izquierda del slider, centrado vertical */}
         <AnimatePresence>
           {showHint && (
             <motion.div
@@ -178,6 +178,7 @@ export function ImageCompare({
             </motion.div>
           )}
         </AnimatePresence>
+
 
         {/* Caption dentro del panel, bajo el hint */}
         {caption && (

@@ -18,6 +18,7 @@
    ───────────────────────────────────────────── */
 
 .inner {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -179,8 +180,12 @@
    ───────────────────────────────────────────── */
 
 .hint {
+  position: absolute;
+  left: calc(50% - 36% / 2 - var(--space-16));
+  top: 50%;
+  transform: translate(-100%, -50%);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   gap: 6px;
   pointer-events: none;
@@ -191,6 +196,18 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+@media (max-width: 1023px) {
+  .hint {
+    left: calc(50% - 50% / 2 - var(--space-16));
+  }
+}
+
+@media (max-width: 767px) {
+  .hint {
+    left: calc(50% - 80% / 2 - var(--space-12));
+  }
 }
 
 .hint span:first-child {
