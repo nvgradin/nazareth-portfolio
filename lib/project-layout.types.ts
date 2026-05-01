@@ -460,7 +460,7 @@ export interface FunnelFlow {
     content: string;
   };
   steps: FunnelFlowStep[];
-  logos?: { src: string; alt: string }[];
+  logos?: { src: string; alt: string; scale?: number }[];
   background?: string;
 }
 

@@ -28,13 +28,17 @@ export function FunnelFlow({ data }: Props) {
       {logos && logos.length > 0 && (
         <div className={styles.editorialLogos}>
           {logos.map((logo, i) => (
-            <div key={i} className={styles.editorialLogoWrap}>
+            <div
+                key={i}
+                className={styles.editorialLogoWrap}
+                style={logo.scale ? { width: `${180 * logo.scale}px`, height: `${64 * logo.scale}px` } : undefined}
+              >
               <Image
                 src={logo.src}
                 alt={logo.alt}
                 fill
                 className={styles.editorialLogo}
-                sizes="160px"
+                sizes="240px"
               />
             </div>
           ))}

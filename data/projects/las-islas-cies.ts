@@ -148,7 +148,7 @@ export const lasIslasCies: ProjectWithLayout = {
         { src: '/logos/Las_Islas_Cies.png', alt: 'Las Islas Cíes' },
         { src: '/logos/EU_ONS.png', alt: 'Isla de Ons' },
         { src: '/logos/I_LOVE_LOBOS.png', alt: 'Isla de Lobos' },
-        { src: '/logos/I_LOVE_LA_GRACIOSA.png', alt: 'Isla de la Graciosa' },
+        { src: '/logos/I_LOVE_LA_GRACIOSA.png', alt: 'Isla de la Graciosa', scale: 1.3 },
       ],
       background: '#252851',
       steps: [
