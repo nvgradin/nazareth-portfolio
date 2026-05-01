@@ -1,0 +1,205 @@
+/* ScalableModel — timeline horizontal con stagger */
+
+.section {
+  padding: var(--space-96) var(--space-24);
+  background: #f8f9fa;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--space-96) var(--space-64);
+  }
+}
+
+/* ── Header 2 columnas ── */
+.header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-24);
+  margin-bottom: var(--space-64);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .header {
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-48);
+    margin-bottom: var(--space-80);
+  }
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.label {
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--neutral-900);
+  margin: 0;
+}
+
+.headerRight {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding-top: 4px;
+}
+
+.subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  font-weight: 500;
+  color: var(--neutral-700);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.body {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--neutral-600);
+  margin: 0;
+  max-width: 620px;
+}
+
+/* ── Timeline ── */
+.timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-48);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .timeline {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-32);
+    align-items: start;
+  }
+}
+
+/* Línea horizontal — solo desktop */
+.connector {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .connector {
+    display: block;
+    position: absolute;
+    top: 24px;
+    left: calc(12.5% );
+    right: calc(12.5%);
+    height: 1px;
+    background: var(--neutral-300);
+    z-index: 0;
+  }
+}
+
+/* ── Card ── */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+/* Dot encima de la línea — solo desktop */
+.dot {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .dot {
+    display: block;
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Screenshot */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--neutral-200);
+  margin-top: var(--space-48);
+}
+
+@media (max-width: 767px) {
+  .imageWrapper {
+    margin-top: 0;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.image {
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.03);
+}
+
+/* Footer de card */
+.cardFooter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.logoWrapper {
+  position: relative;
+  width: 120px;
+  height: 36px;
+}
+
+.logo {
+  object-fit: contain;
+  object-position: left center;
+}
+
+.logoPlaceholder {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--neutral-800);
+}
+
+.date {
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
+}

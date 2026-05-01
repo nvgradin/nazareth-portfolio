@@ -346,6 +346,31 @@ export interface ArchitectureWebFlow {
 }
 
 /**
+ * Item del modelo escalable (timeline de portales/islas)
+ */
+export interface ScalableModelItem {
+  name: string;
+  date: string;
+  image: string;
+  imageAlt: string;
+  logo?: string;
+  logoAlt?: string;
+}
+
+/**
+ * Sección modelo escalable — timeline horizontal con stagger
+ */
+export interface ScalableModel {
+  label?: string;
+  title: string;
+  subtitle: string;
+  body: string;
+  items: ScalableModelItem[];
+  background?: string;
+  accentColor?: string;
+}
+
+/**
  * Layout completo del proyecto (estructura editorial)
  */
 export interface ProjectLayout {
@@ -405,6 +430,9 @@ export interface ProjectLayout {
 
   // Galería editorial full-bleed (2col + 3col) con header 2 columnas
   mediaGrid?: MediaGrid;
+
+  // Modelo escalable — timeline de islas/portales
+  scalableModel?: ScalableModel;
 
   process?: ProcessStep[];
   staggeredProcess?: StaggeredProcessData;
