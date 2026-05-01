@@ -210,7 +210,7 @@ export const trainfy: ProjectWithLayout = {
     textBlock: {
       variant: 'editorial',
       label: 'Resultados',
-      title: 'Resultados',
+      title: 'Lo que se construyó en 3 semanas',
       columns: [
         {
           text: 'Trainfy no llegó a producción. Es un proyecto final de bootcamp, y así es como debe leerse: como una demostración de capacidad, no como un producto en el mercado.',

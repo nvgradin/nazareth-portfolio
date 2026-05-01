@@ -101,7 +101,7 @@ export const lasIslasCies: ProjectWithLayout = {
       after: { type: 'image', src: '/projects/las-islas-cies/after.jpg', alt: 'Rediseño Las Islas Cíes' },
       labels: { before: 'Antes', after: 'Después' },
       background: '#252851',
-      caption: 'Placeholder — descripción del antes y después del rediseño.',
+      caption: 'La web original acumulaba información sin jerarquía ni propósito. El rediseño convirtió las Islas Cíes en una guía digital: clara, navegable y a la altura del destino.',
     },
 
     // Web editorial + galería

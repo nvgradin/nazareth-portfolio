@@ -3,7 +3,7 @@ import { ProjectWithLayout } from '@/lib/project-layout.types';
 export const silviaFernandezDeLuna: ProjectWithLayout = {
   slug: 'silvia-fernandez-de-luna',
   title: 'Silvia Fernández De Luna',
-  excerpt: 'Una marca que enseña, inspira y transforma.',
+  excerpt: 'Las mejores marcas no se diseñan. Se habitan.',
 
   categories: ['strategy', 'branding', 'web-dev', 'marketing', 'ux-ui', 'ai-automation'],
   tags: ['Estrategia', 'Branding', 'Web', 'Marketing', 'Automatización & IA'],
@@ -31,8 +31,8 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       result: 'Prensa, ayuntamientos y TOP 10 de Google. Una marca construida desde cero, sin invertir un solo euro en SEM.',
       logo: '/projects/silvia-fernandez-de-luna/logo.png',
       roles: ['Estrategia', 'Branding', 'Web', 'Marketing'],
-      context: 'Proyecto freelance — 3 años de colaboración',
-      year: '2023',
+      context: 'Proyecto freelance · 3 años de colaboración',
+      year: '2023 - 2026',
       heroBg: '/projects/silvia-fernandez-de-luna/fondo_SFDL_oroviejo_1920x2000.jpeg',
     },
 
@@ -251,9 +251,9 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
 
   meta: {
     client: 'Silvia Fernández De Luna',
-    year: '2023',
+    year: '2023 - 2026',
     role: ['Branding', 'Marketing'],
-    tools: ['Wordpress', 'Woocommerce', 'LMS', 'Illustrator', 'After Effects', 'Premiere Pro', 'Brevo', 'Metricool'],
+    tools: ['Wordpress', 'Woocommerce', 'LMS', 'Clarity', 'Google Analytics','Illustrator', 'After Effects', 'Premiere Pro', 'Brevo', 'Metricool'],
   },
 
   tagline: 'Una marca que enseña, inspira y transforma.',
