@@ -323,6 +323,7 @@ export interface ImageCompareData {
   initial?: number;
   labels?: { before?: string; after?: string };
   background?: string;
+  caption?: string;
 }
 
 /**

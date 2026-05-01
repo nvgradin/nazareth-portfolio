@@ -169,3 +169,48 @@
   color: var(--neutral-50);
   border-color: var(--brand-primary-900);
 }
+
+/* ─────────────────────────────────────────────
+   HINT — centrado abajo, desaparece al drag
+   ───────────────────────────────────────────── */
+
+.hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+  color: var(--neutral-50);
+  opacity: 0.6;
+  font-family: var(--font-accent);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hint span:first-child {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ─────────────────────────────────────────────
+   CAPTION — bajo el panel, mismo estilo HeroImage
+   ───────────────────────────────────────────── */
+
+.caption {
+  font-family: var(--font-base);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  opacity: 0.45;
+  text-align: center;
+  margin: var(--space-16) auto 0;
+  max-width: 480px;
+  letter-spacing: 0.01em;
+}

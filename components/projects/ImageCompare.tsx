@@ -2,6 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './ImageCompare.module.css';
 
 interface ImageData {
@@ -20,6 +21,7 @@ interface Props {
   initial?: number;
   labels?: Labels;
   background?: string;
+  caption?: string;
   className?: string;
 }
 
@@ -29,11 +31,13 @@ export function ImageCompare({
   initial = 0.5,
   labels = { before: 'Antes', after: 'Después' },
   background,
+  caption,
   className,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
   const [position, setPosition] = useState(initial);
+  const [showHint, setShowHint] = useState(true);
 
   const clamp = (val: number) => Math.min(1, Math.max(0, val));
 
@@ -46,6 +50,7 @@ export function ImageCompare({
 
   const onPointerDown = useCallback((e: React.PointerEvent) => {
     isDragging.current = true;
+    setShowHint(false);
     (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
     updatePosition(e.clientX);
   }, [updatePosition]);
@@ -150,8 +155,34 @@ export function ImageCompare({
               </svg>
             </div>
           </div>
+
+          {/* Hint de drag — desaparece al primer toque */}
+          <AnimatePresence>
+            {showHint && (
+              <motion.div
+                className={styles.hint}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ delay: 1.2, duration: 0.8, ease: 'easeIn' }}
+              >
+                <motion.span
+                  animate={{ x: [-4, 4, -4] }}
+                  transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                  ↔
+                </motion.span>
+                <span>drag</span>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
+
+      {/* Caption debajo del panel */}
+      {caption && (
+        <p className={styles.caption}>{caption}</p>
+      )}
     </section>
   );
 }

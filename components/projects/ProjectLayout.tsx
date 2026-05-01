@@ -61,6 +61,7 @@ export function ProjectLayout({ project }: Props) {
           initial={layout.imageCompare.initial}
           labels={layout.imageCompare.labels}
           background={layout.imageCompare.background}
+          caption={layout.imageCompare.caption}
         />
       )}
 
