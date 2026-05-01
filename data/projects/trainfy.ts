@@ -236,7 +236,7 @@ export const trainfy: ProjectWithLayout = {
   meta: {
     client: 'Proyecto propio',
     year: '2019',
-    duration: '4 meses',
+    duration: '3 semanas',
     role: ['Product Designer', 'UX/UI Designer', 'Fullstack Developer'],
     tools: ['Adobe XD', 'Figma', 'React', 'Node.js', 'PostgreSQL', 'Redux'],
     deliverables: ['Branding completo', 'Design system', 'App web funcional', 'Documentación'],
