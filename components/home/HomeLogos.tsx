@@ -24,6 +24,8 @@ const ALL_LOGOS = [
   { src: '/logos/Concello_de_porrino.png', alt: 'Concello de Porriño' },
   { src: '/logos/Deputacion_de_Pontevedra.png', alt: 'Deputación de Pontevedra' },
   { src: '/logos/EU_ONS.png', alt: 'EU ONS' },
+  { src: '/logos/I_LOVE_LOBOS.png', alt: 'Isla de Lobos' },
+  { src: '/logos/I_LOVE_LA_GRACIOSA.png', alt: 'Isla de la Graciosa' },
 ];
 
 const DOUBLED = [...ALL_LOGOS, ...ALL_LOGOS];
