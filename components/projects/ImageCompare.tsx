@@ -177,12 +177,12 @@ export function ImageCompare({
             )}
           </AnimatePresence>
         </div>
-      </div>
 
-      {/* Caption debajo del panel */}
-      {caption && (
-        <p className={styles.caption}>{caption}</p>
-      )}
+        {/* Caption dentro del panel, bajo el slider */}
+        {caption && (
+          <p className={styles.caption}>{caption}</p>
+        )}
+      </div>
     </section>
   );
 }
