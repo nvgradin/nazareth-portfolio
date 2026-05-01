@@ -16,7 +16,7 @@ const positionMap = {
 };
 
 export function QuoteBanner({ data }: Props) {
-  const { quote, author, role, backgroundImage, imagePosition = 'center' } = data;
+  const { quote, author, role, backgroundImage, imagePosition = 'center', overlay } = data;
   const bannerRef = useRef<HTMLElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
 
@@ -54,6 +54,7 @@ export function QuoteBanner({ data }: Props) {
           sizes="100vw"
           style={{ objectPosition: `center ${positionMap[imagePosition]}` }}
         />
+        {overlay && <div className={styles.overlay} />}
       </div>
 
       {/* Content */}

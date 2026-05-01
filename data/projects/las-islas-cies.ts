@@ -31,7 +31,7 @@ export const lasIslasCies: ProjectWithLayout = {
       roles: ['Product Design & UX', 'Web', 'Estrategia', 'SEO', 'Contenido'],
       context: 'Proyecto freelance',
       year: '2024 - 2025',
-      heroBg: '/projects/las-islas-cies/bento-1.jpg',
+      heroBg: '/projects/las-islas-cies/bento-2.jpg',
     },
 
     bento: {
@@ -154,6 +154,7 @@ export const lasIslasCies: ProjectWithLayout = {
       quote: 'El mejor SEO es tener algo que merezca la pena encontrar.',
       author: 'Nazareth, sobre Las Islas Cíes',
       backgroundImage: { type: 'image', src: '/projects/las-islas-cies/bento-8.webp', alt: 'Quote Background' },
+      overlay: true,
     },
   },
 

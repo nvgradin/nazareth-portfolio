@@ -303,6 +303,7 @@ export interface QuoteBanner {
   role?: string;
   backgroundImage: Media;
   imagePosition?: ImagePosition;  // Default: 'center'
+  overlay?: boolean;
 }
 
 /**

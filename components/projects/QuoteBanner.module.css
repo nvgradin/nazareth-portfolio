@@ -29,7 +29,11 @@
   transition: transform 0.1s linear;
 }
 
-/* Overlay removed - not needed for readability */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
 
 .container {
   position: relative;
