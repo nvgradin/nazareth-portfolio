@@ -25,9 +25,24 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
     return { title: 'Project not found' };
   }
 
+  const ogImage = project.cover || project.thumbnail.src;
+
   return {
     title: project.seoTitle || `${project.title} | Nazareth`,
     description: project.seoDescription || project.excerpt,
+    openGraph: {
+      title: project.seoTitle || `${project.title} | Nazareth`,
+      description: project.seoDescription || project.excerpt,
+      type: 'article',
+      locale: 'es_ES',
+      images: [{ url: ogImage, alt: project.thumbnail.alt }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: project.seoTitle || `${project.title} | Nazareth`,
+      description: project.seoDescription || project.excerpt,
+      images: [ogImage],
+    },
   };
 }
 

@@ -82,6 +82,51 @@
   }
 }
 
+/* ── Stats animadas ── */
+.stats {
+  display: flex;
+  align-items: center;
+  gap: var(--space-48);
+  padding: var(--space-32) var(--space-16) var(--space-16);
+}
+
+@media (min-width: 768px) {
+  .stats {
+    padding: var(--space-32) var(--space-64) var(--space-16);
+  }
+}
+
+@media (min-width: 1024px) {
+  .stats {
+    padding: var(--space-32) var(--space-96) var(--space-16);
+  }
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.statValue {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--neutral-900, #1a1a1a);
+  font-variant-numeric: tabular-nums;
+}
+
+.statLabel {
+  font-family: var(--font-accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--neutral-500, #888);
+}
+
 /* ── Logos sobre fondo crema (dentro del editorial, antes del flow) ── */
 .editorialLogos {
   display: flex;

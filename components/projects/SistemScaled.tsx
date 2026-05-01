@@ -1,10 +1,41 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useInView, animate } from 'framer-motion';
+import { useRef, useEffect, useState } from 'react';
 import { SistemScaled as SistemScaledType } from '@/lib/project-layout.types';
 import { EditorialBlock } from './EditorialBlock';
 import styles from './SistemScaled.module.css';
+
+const STATS = [
+  { value: 4, label: 'portales' },
+  { value: 8, label: 'meses' },
+  { value: 1, label: 'arquitectura' },
+];
+
+function AnimatedStat({ value, label, delay }: { value: number; label: string; delay: number }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: '-80px' });
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+    const controls = animate(0, value, {
+      duration: 1.4,
+      delay,
+      ease: [0.16, 1, 0.3, 1],
+      onUpdate: (v) => setDisplay(Math.round(v)),
+    });
+    return () => controls.stop();
+  }, [inView, value, delay]);
+
+  return (
+    <div className={styles.stat}>
+      <span ref={ref} className={styles.statValue}>{display}</span>
+      <span className={styles.statLabel}>{label}</span>
+    </div>
+  );
+}
 
 const DEFAULT_FLOW_BG = '#252851';
 
@@ -44,6 +75,13 @@ export function SistemScaled({ data }: Props) {
           ))}
         </div>
       )}
+
+      {/* Stats animadas — sobre fondo crema */}
+      <div className={styles.stats}>
+        {STATS.map((s, i) => (
+          <AnimatedStat key={s.label} value={s.value} label={s.label} delay={i * 0.15} />
+        ))}
+      </div>
 
       {/* Pasos — fondo azul Cíes */}
       <div

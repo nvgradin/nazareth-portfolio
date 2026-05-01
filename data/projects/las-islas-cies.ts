@@ -154,21 +154,21 @@ export const lasIslasCies: ProjectWithLayout = {
       steps: [
         {
           step: 1,
-          image: '/projects/las-islas-cies/MockupWeb1_LasIslasCies.jpg',
+          image: '/projects/las-islas-cies/bento-2.jpg',
           imageAlt: 'Web Las Islas Cíes',
           title: 'Las Islas Cíes',
           description: 'Lanzamiento octubre 2024',
         },
         {
           step: 2,
-          image: '/projects/las-islas-cies/MockupWeb1_LasIslasCies.jpg',
+          image: '/projects/las-islas-cies/bento-4.jpg',
           imageAlt: 'Web Isla de Ons — placeholder',
           title: 'Isla de Ons',
           description: 'Lanzamiento diciembre 2024',
         },
         {
           step: 3,
-          image: '/projects/las-islas-cies/MockupWeb1_LasIslasCies.jpg',
+          image: '/projects/las-islas-cies/bento-3.jpg',
           imageAlt: 'Web Isla de Lobos — placeholder',
           title: 'Isla de Lobos',
           description: 'Lanzamiento enero 2025',

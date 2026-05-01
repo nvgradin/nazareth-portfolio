@@ -3,7 +3,7 @@ import { ProjectWithLayout } from '@/lib/project-layout.types';
 export const trainfy: ProjectWithLayout = {
   slug: 'trainfy',
   title: 'Trainfy',
-  excerpt: 'Plataforma de intercambio deportivo que conecta atletas para compartir conocimientos y entrenar juntos.',
+  excerpt: 'Redefiní el brief de un marketplace deportivo para construir una comunidad. Diseño, branding y desarrollo fullstack en tres semanas — y una oferta de trabajo desde la presentación final.',
 
   categories: ['product-design', 'ux-ui', 'branding'],
   tags: ['Product Design & UX', 'Branding'],
@@ -11,7 +11,7 @@ export const trainfy: ProjectWithLayout = {
   thumbnail: {
     type: 'image',
     src: '/projects/trainfy/portada-trainfy.webp',
-    alt: 'Trainfy - Plataforma de intercambio deportivo',
+    alt: 'Portada del proyecto Trainfy — plataforma de comunidad deportiva',
   },
 
   theme: {
@@ -42,66 +42,62 @@ export const trainfy: ProjectWithLayout = {
       mode: 'fixed',
       background: '#354251',
       columns: [
-        // Columna 1: ancho 1, 2 celdas (65% / 35%)
         {
           width: 1,
           cells: [
             {
               src: '/projects/trainfy/bento-1.jpg',
-              alt: 'Pantalla principal de Trainfy mostrando el feed de intercambios deportivos',
+              alt: 'Vista del feed principal de Trainfy con publicaciones de intercambio deportivo',
               ratio: 0.65,
             },
             {
               src: '/projects/trainfy/bento-5.jpg',
-              alt: 'Interfaz de búsqueda de compañeros de entrenamiento en Trainfy',
+              alt: 'Pantalla de exploración de perfiles deportivos en Trainfy',
               ratio: 0.35,
             },
           ],
         },
-        // Columna 2: ancho 1, 1 celda (100%)
         {
           width: 1,
           cells: [
             {
               src: '/projects/trainfy/bento-2.png',
-              alt: 'Sistema de identidad visual y logotipo de Trainfy sobre fondo azul',
+              alt: 'Logotipo e identidad visual de Trainfy sobre fondo azul corporativo',
               ratio: 0.44,
             },
             {
               src: '/projects/trainfy/bento-6.jpg',
-              alt: 'Mockup de iPhone mostrando la aplicación Trainfy en contexto real',
+              alt: 'Detalle de tarjeta de anuncio deportivo en la interfaz de Trainfy',
               ratio: 0.56,
             }
           ],
         },
-        // Columna 3: ancho 1, 2 celdas (50% / 50%)
         {
           width: 1,
           cells: [
             {
               src: '/projects/trainfy/bento-3.jpg',
-              alt: 'Mockup de iPhone mostrando la aplicación Trainfy en contexto real',
+              alt: 'Mockup del perfil de usuario con historial de actividad e intercambios',
               ratio: 0.6,
             },
             {
               src: '/projects/trainfy/bento-7.jpg',
-              alt: 'Diseño responsive de Trainfy adaptado a pantalla móvil',
+              alt: 'Flujo de publicación de anuncio paso a paso en Trainfy',
               ratio: 0.4,
             },
           ],
         },
-        // Columna 4: ancho 1, 3 celdas (40% / 30% / 30%)
         {
           width: 1,
           cells: [
             {
               src: '/projects/trainfy/bento-4.png',
-              alt: 'Panel de estadísticas y métricas de actividad del usuario',
+              alt: 'Sistema de diseño de Trainfy — componentes, paleta y tipografía',
               ratio: 0.7,
             },
             {
               src: '/projects/trainfy/bento-8.jpg',
-              alt: 'Selector de categorías deportivas: running, ciclismo, natación',
+              alt: 'Selector de disciplinas deportivas en el onboarding de Trainfy',
               ratio: 0.3,
             },
           ],
@@ -122,17 +118,17 @@ export const trainfy: ProjectWithLayout = {
     // 4) 3 cards en columnas
     features: [
       {
-        image: { type: 'image', src: '/projects/trainfy/feature-ui-ux.jpg', alt: 'UX Research' },
+        image: { type: 'image', src: '/projects/trainfy/feature-ui-ux.jpg', alt: 'Proceso de redefinición del brief — de marketplace a comunidad deportiva' },
         title: 'Redefinir el brief',
         description: 'El encargo pedía un marketplace. Nosotros lo elevamos a una comunidad deportiva. Esa decisión cambió la arquitectura, el diseño y el stack desde el primer día.',
       },
       {
-        image: { type: 'image', src: '/projects/trainfy/feature-branding.jpg', alt: 'UI Design' },
+        image: { type: 'image', src: '/projects/trainfy/feature-branding.jpg', alt: 'Exploración de identidad visual para Trainfy — naming, paleta y sistema tipográfico' },
         title: 'Diseño antes que código',
         description: 'Venía de publicidad y creatividad, no de desarrollo. Eso me dio ventaja: apliqué arquitectura de información, flujos de usuario e identidad visual antes de escribir una línea de código. El diseño no decoró el producto — lo definió.',
       },
       {
-        image: { type: 'image', src: '/projects/trainfy/feature-dev.jpg', alt: 'Development' },
+        image: { type: 'image', src: '/projects/trainfy/feature-dev.jpg', alt: 'Stack técnico de Trainfy — React, Node.js y PostgreSQL en producción' },
         title: 'De la marca al producto digital',
         description: 'Primer proyecto fullstack real: branding, UI, componentes en React, base de datos en PostgreSQL. Por primera vez entendí un producto digital end-to-end. Eso cambió para siempre cómo diseño.',
       },
@@ -140,7 +136,7 @@ export const trainfy: ProjectWithLayout = {
 
     introParallax: {
       src: '/projects/trainfy/trainfy-signup-bg.jpg',
-      alt: 'Trainfy — signup background',
+      alt: 'Pantalla de registro de Trainfy — primer punto de contacto con la comunidad deportiva',
     },
 
     statementBlock: {
@@ -156,17 +152,17 @@ export const trainfy: ProjectWithLayout = {
     // 5) Hero Image — pantalla de login a ancho completo
     heroImage: {
       src: '/projects/trainfy/Trainfy_login.png',
-      alt: 'Trainfy — Login Design',
+      alt: 'Diseño de la pantalla de login de Trainfy — acceso a la comunidad deportiva',
       background: '#212C3A',
       borderRadius: 16,
-      caption: 'Primera aproximación a una experiencia donde los deportistas no solo compran y venden, sino que se conectan.',
+      caption: 'La pantalla de acceso marcaba el tono: una plataforma donde los deportistas no solo compran y venden material, sino que se encuentran.',
     },
 
     // 6) Web Editorial + WebPanel (carrusel de mockups)
     web: {
       title: 'Lo que Trainfy\nLlegó a Hacer',
       subtitle: 'Una plataforma funcional\nconstruida en tres semanas.',
-      content: 'Cuatro meses de bootcamp intensivo. Tres semanas de proyecto final. Equipo de tres personas. El resultado fue una plataforma real, no una demo vacía.',
+      content: '',
       columns: [
         'Cuatro meses de bootcamp intensivo. Tres semanas de proyecto final. Equipo de tres personas. El resultado fue una plataforma real, no una demo vacía.',
         'Trainfy permitía crear cuenta y perfil deportivo, publicar anuncios de compra, venta e intercambio de material, insertar espacios publicitarios y conectar con otros deportistas a través de un sistema de mensajería. No era perfecta — era la primera vez que construía algo así de cero — pero funcionaba.',
@@ -182,10 +178,10 @@ export const trainfy: ProjectWithLayout = {
         'Técnicamente se apoyó en React en el frontend, Node.js y PostgreSQL en el backend, y librerías como Redux para el estado, Axios para las peticiones HTTP, Bcrypt para la seguridad de contraseñas y Cloudinary para la gestión de imágenes. Cada decisión técnica tenía una razón de UX detrás.',
       ],
       mockups: [
-        { type: 'image', src: '/projects/trainfy/web-mockup-1.jpg', alt: 'Web Mockup Desktop' },
-        { type: 'image', src: '/projects/trainfy/web-mockup-2.jpg', alt: 'Web Mockup Mobile' },
-        { type: 'image', src: '/projects/trainfy/web-mockup-3.jpg', alt: 'Web Mockup Mobile' },
-        { type: 'image', src: '/projects/trainfy/web-mockup-4.jpg', alt: 'Web Mockup Mobile' },
+        { type: 'image', src: '/projects/trainfy/web-mockup-1.jpg', alt: 'Vista de escritorio de Trainfy — página de inicio con feed de intercambios' },
+        { type: 'image', src: '/projects/trainfy/web-mockup-2.jpg', alt: 'Vista móvil de Trainfy — navegación principal y categorías deportivas' },
+        { type: 'image', src: '/projects/trainfy/web-mockup-3.jpg', alt: 'Vista móvil de Trainfy — detalle de anuncio con opciones de contacto' },
+        { type: 'image', src: '/projects/trainfy/web-mockup-4.jpg', alt: 'Vista móvil de Trainfy — perfil de usuario y actividad reciente' },
       ],
     },
 
@@ -199,10 +195,10 @@ export const trainfy: ProjectWithLayout = {
       ],
       background: '#212C3A',
       images: [
-        { src: '/projects/trainfy/showcase-center-bottom.jpg', alt: 'Logotipo Trainfy' },
-        { src: '/projects/trainfy/showcase-right_horizontal.jpg', alt: 'Branding 2' },
-        { src: '/projects/trainfy/showcase-left.jpg', alt: 'Branding 3', orientation: 'vertical' },
-        { src: '/projects/trainfy/showcase-center-top.jpg', alt: 'Branding 4' },
+        { src: '/projects/trainfy/showcase-center-bottom.jpg', alt: 'Construcción del logotipo de Trainfy — geometría y proporciones de marca' },
+        { src: '/projects/trainfy/showcase-right_horizontal.jpg', alt: 'Aplicación del sistema de color de Trainfy — azul corporativo y naranja de acción' },
+        { src: '/projects/trainfy/showcase-left.jpg', alt: 'Tipografía y jerarquía visual del sistema de diseño de Trainfy', orientation: 'vertical' },
+        { src: '/projects/trainfy/showcase-center-top.jpg', alt: 'Composición de marca completa — logotipo, color y tipografía en conjunto' },
       ],
     },
 
@@ -228,7 +224,7 @@ export const trainfy: ProjectWithLayout = {
     quoteBanner: {
       quote: 'Fue el primer proyecto en el que entendí que el diseño y el código no son disciplinas distintas. Son la misma pregunta hecha de dos formas.',
       author: 'Nazareth, sobre Trainfy',
-      backgroundImage: { type: 'image', src: '/projects/trainfy/quote-bg.jpg', alt: 'Quote Background' },
+      backgroundImage: { type: 'image', src: '/projects/trainfy/quote-bg.jpg', alt: 'Imagen de fondo de la cita final — atleta en movimiento' },
       imagePosition: 'top',
     },
   },
@@ -246,6 +242,9 @@ export const trainfy: ProjectWithLayout = {
   cover: '/projects/trainfy/portada_trainfy.webp',
   featured: true,
   ambientColor: '#1E3A5F',
+
+  seoTitle: 'Trainfy — Product Design & Fullstack Dev | Nazareth',
+  seoDescription: 'Cómo redefiní el brief de un marketplace deportivo, diseñé la identidad y construí la plataforma fullstack en tres semanas. Proyecto de Nazareth, Product Designer.',
 
   status: 'published',
   order: 1,
