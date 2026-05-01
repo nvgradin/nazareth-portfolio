@@ -346,6 +346,31 @@ export interface ArchitectureWebFlow {
 }
 
 /**
+ * Card de isla para IslandScaleSection
+ */
+export interface IslandScaleItem {
+  number: string;
+  name: string;
+  date: string;
+  description: string;
+  logo: { src: string; alt: string; scale?: number };
+  mockup: string;
+}
+
+/**
+ * Sección modelo escalable — 4 islas con stats animados
+ */
+export interface IslandScaleSection {
+  label?: string;
+  title: string;
+  subtitle: string;
+  body: string;
+  items: IslandScaleItem[];
+  stats: { id: string; target: number; label: string }[];
+  background?: string;
+}
+
+/**
  * Layout completo del proyecto (estructura editorial)
  */
 export interface ProjectLayout {
@@ -405,6 +430,9 @@ export interface ProjectLayout {
 
   // Galería editorial full-bleed (2col + 3col) con header 2 columnas
   mediaGrid?: MediaGrid;
+
+  // Sección modelo escalable — 4 islas con stats
+  islandScale?: IslandScaleSection;
 
   process?: ProcessStep[];
   staggeredProcess?: StaggeredProcessData;
