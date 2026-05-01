@@ -53,6 +53,17 @@ export function ProjectLayout({ project }: Props) {
         <ParallaxImage src={layout.introParallax.src} alt={layout.introParallax.alt} />
       )}
 
+      {/* Image Compare (before/after) — tras features o introParallax */}
+      {layout.imageCompare && (
+        <ImageCompare
+          before={{ src: layout.imageCompare.before.src, alt: layout.imageCompare.before.alt || 'Before' }}
+          after={{ src: layout.imageCompare.after.src, alt: layout.imageCompare.after.alt || 'After' }}
+          initial={layout.imageCompare.initial}
+          labels={layout.imageCompare.labels}
+          background={layout.imageCompare.background}
+        />
+      )}
+
       {/* Statement block — posición A: antes del brandingScroller (por defecto) */}
       {layout.statementBlock && !layout.statementBlock.afterBranding && (
         <StatementBlock
@@ -157,17 +168,6 @@ export function ProjectLayout({ project }: Props) {
       {layout.reelsDeck && <ProjectReelsDeck data={layout.reelsDeck} />}
 
       {layout.funnelFlow && <FunnelFlow data={layout.funnelFlow} />}
-
-      {/* Image Compare (before/after) */}
-      {layout.imageCompare && (
-        <ImageCompare
-          before={{ src: layout.imageCompare.before.src, alt: layout.imageCompare.before.alt || 'Before' }}
-          after={{ src: layout.imageCompare.after.src, alt: layout.imageCompare.after.alt || 'After' }}
-          initial={layout.imageCompare.initial}
-          labels={layout.imageCompare.labels}
-          background={layout.imageCompare.background}
-        />
-      )}
 
       {/* Staggered process (reservado para playground) */}
       {layout.staggeredProcess && <StaggeredProcess data={layout.staggeredProcess} />}

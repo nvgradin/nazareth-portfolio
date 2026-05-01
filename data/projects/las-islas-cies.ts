@@ -26,6 +26,7 @@ export const lasIslasCies: ProjectWithLayout = {
       title: 'Las Islas Cíes',
       subtitle: 'asas',
       intro: 'Las Islas Cíes, hogar de la icónica Playa de Rodas, reconocida como la mejor playa del mundo por The Guardian, son un destino de gran la belleza natural: un paraíso. Mi misión fue reflejar esta esencia en la web. Por ello propuse convertirla en una guía digital que acompañara a los viajeros desde la planificación hasta la vivencia de su experiencia en este rincón único de Galicia. Dar vida a esta transformación, rediseñando la web completamente para modernizar su aspecto, mejorar la navegación y abrir la puerta a los viajeros para que puedan planificar su visita, descubrir las rutas y sus puntos de interés, para reservar su billete de barco y disfrutar plenamente su experiencia en Las Islas Cíes.',
+      result: '4 portales insulares lanzados en 8 meses. Un modelo que sigue siendo referencia para nuevos destinos.',
       logo: '/projects/las-islas-cies/Logo.png',
       roles: ['Desarrollo Web', 'Product Designer', 'Social Media', 'Estrategia', 'Marketing'],
       context: 'Proyecto freelance',
@@ -94,7 +95,7 @@ export const lasIslasCies: ProjectWithLayout = {
       },
     ],
 
-    // Image Compare (before/after) — sección variable entre features y quote
+    // Before/After
     imageCompare: {
       before: { type: 'image', src: '/projects/las-islas-cies/before.jpg', alt: 'Diseño original Las Islas Cíes' },
       after: { type: 'image', src: '/projects/las-islas-cies/after.jpg', alt: 'Rediseño Las Islas Cíes' },
@@ -102,17 +103,55 @@ export const lasIslasCies: ProjectWithLayout = {
       background: '#252851',
     },
 
-    // 10) Quote banner
+    // Web editorial + galería
+    web: {
+      title: 'Título\nde la Sección',
+      subtitle: 'Subtítulo de\nla sección web.',
+      content: '',
+      columns: [
+        'Columna 1 — rellena aquí.',
+        'Columna 2 — rellena aquí.',
+        'Columna 3 — rellena aquí.',
+      ],
+    },
+
+    webPanel: {
+      title: 'Placeholder título webPanel',
+      description: 'Placeholder descripción webPanel.',
+      mockups: [
+        { type: 'image', src: '/projects/las-islas-cies/bento-1.jpg', alt: 'Mockup Las Islas Cíes' },
+        { type: 'image', src: '/projects/las-islas-cies/bento-2.jpg', alt: 'Mockup Las Islas Cíes' },
+        { type: 'image', src: '/projects/las-islas-cies/bento-3.jpg', alt: 'Mockup Las Islas Cíes' },
+        { type: 'image', src: '/projects/las-islas-cies/bento-4.jpg', alt: 'Mockup Las Islas Cíes' },
+      ],
+    },
+
+    // Statement — frase de impacto
+    statementBlock: {
+      label: 'Insight',
+      setup: 'Placeholder — frase pequeña de contexto.',
+      statement: 'Placeholder — frase grande de impacto.',
+      accentColor: '#252851',
+      afterBranding: true,
+    },
+
+    // Bloque resultado
+    textBlock: {
+      variant: 'editorial',
+      label: 'Resultado',
+      title: 'Resultado',
+      columns: [
+        { text: 'Columna 1 — rellena aquí.' },
+        { text: 'Columna 2 — rellena aquí.' },
+        { text: 'Columna 3 — rellena aquí.' },
+      ],
+    },
+
+    // Quote cierre
     quoteBanner: {
       quote: 'Placeholder — cita inspiradora del proyecto.',
       author: 'Placeholder Author',
-      backgroundImage: { type: 'image', src: '/projects/las-islas-cies/quote-bg.jpg', alt: 'Quote Background' },
-    },
-
-    // 11) Closing text
-    closing: {
-      title: 'Placeholder — título de cierre',
-      content: 'Placeholder — texto de cierre del proyecto. Reflexión final sobre el proceso y los aprendizajes.',
+      backgroundImage: { type: 'image', src: '/projects/las-islas-cies/bento-1.jpg', alt: 'Quote Background' },
     },
   },
 
