@@ -5,8 +5,8 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
   title: 'Silvia Fernández De Luna',
   excerpt: 'Una marca que enseña, inspira y transforma.',
 
-  categories: ['branding', 'web-dev', 'marketing', 'strategy', 'ux-ui', 'ai-automation'],
-  tags: ['Branding', 'Web Development', 'Marketing', 'Automatización & IA'],
+  categories: ['strategy', 'branding', 'web-dev', 'marketing', 'ux-ui', 'ai-automation'],
+  tags: ['Estrategia', 'Branding', 'Web', 'Marketing', 'Automatización & IA'],
 
   thumbnail: {
     type: 'image',
@@ -28,8 +28,9 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       title: 'Silvia Fernández De Luna',
       subtitle: 'De una visión espiritual a una marca reconocida. Tres años construyendo el universo de Silvia Fernández De Luna.',
       intro: 'Silvia llegó con un nombre, una visión y un logotipo a medio hacer. Tenía claro quién era — guía, terapeuta, mentora holística — pero no cómo hacer que el mundo lo entendiera con la misma profundidad con la que ella lo vivía. El reto no era técnico. Era de traducción: convertir un universo interior en una marca que conectara, que perdurara y que creciera.',
+      result: 'Prensa, ayuntamientos y TOP 10 de Google. Una marca construida desde cero, sin invertir un solo euro en SEM.',
       logo: '/projects/silvia-fernandez-de-luna/logo.png',
-      roles: ['Audiovisual', 'Marketing', 'Desarrollo Web', 'Email Marketing', 'Estrategia', 'Social Media'],
+      roles: ['Estrategia', 'Branding', 'Web', 'Marketing'],
       context: 'Proyecto freelance — 3 años de colaboración',
       year: '2023',
       heroBg: '/projects/silvia-fernandez-de-luna/fondo_SFDL_oroviejo_1920x2000.jpeg',
@@ -123,6 +124,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     },
 
     statementBlock: {
+      label: 'Insight',
       setup: 'Llevar algo profundamente interno — una visión espiritual, un mundo intangible — y convertirlo en algo navegable, coherente y buscable en Google. Ese fue el verdadero reto. Y el verdadero resultado.',
       statement: 'Las mejores marcas no se diseñan. Se habitan.',
       accentColor: '#895900',
@@ -132,7 +134,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     // 7) WEB + WEBPANEL — editorial izquierda + carrusel mockups
     web: {
       title: 'Un Templo digital que creció\ncon Silvia Fernández De Luna',
-      subtitle: 'Subtítulo de\nla sección web.',
+      subtitle: 'De web de presentación a ecosistema digital completo\n— construido por fases, durante tres años.',
       content: '',
       columns: [
         'La web de Silvia no sigue la arquitectura estándar. Sus secciones tienen nombres propios: El Templo es el inicio, Camminus es el camino de servicios, El Alma es su historia, El Ágora es el espacio de conocimiento compartido. Cada nombre es una decisión consciente de universo de marca',
