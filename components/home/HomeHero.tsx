@@ -48,7 +48,7 @@ export function HomeHero({ animate = false, hidden = false }: Props) {
           animate={animate ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.1, duration: 0.9, ease: EASE }}
         >
-          Digital Product &amp; Experience Designer
+          Digital Product Designer
         </motion.p>
 
         {/* 2. Nombre — reveal desde abajo de su línea base */}
@@ -70,7 +70,7 @@ export function HomeHero({ animate = false, hidden = false }: Props) {
           animate={animate ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.75, duration: 0.9, ease: EASE }}
         >
-          Conecto estrategia, diseño y desarrollo para crear productos digitales con sentido.
+          Diseño productos digitales desde la idea hasta su lanzamiento, conectando estrategia, experiencia y tecnología.
         </motion.p>
 
         {/* 4. Subheadline — oculto */}
