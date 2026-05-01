@@ -122,6 +122,12 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       ],
     },
 
+    statementBlock: {
+      statement: 'Las mejores marcas no se diseñan. Se habitan.',
+      accentColor: '#895900',
+      afterBranding: true,
+    },
+
     // 7) WEB + WEBPANEL — editorial izquierda + carrusel mockups
     web: {
       title: 'Un Templo digital que creció\ncon Silvia Fernández De Luna',

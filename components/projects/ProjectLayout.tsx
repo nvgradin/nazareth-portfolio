@@ -53,8 +53,8 @@ export function ProjectLayout({ project }: Props) {
         <ParallaxImage src={layout.introParallax.src} alt={layout.introParallax.alt} />
       )}
 
-      {/* Statement block — frase de impacto tras introParallax */}
-      {layout.statementBlock && (
+      {/* Statement block — posición A: antes del brandingScroller (por defecto) */}
+      {layout.statementBlock && !layout.statementBlock.afterBranding && (
         <StatementBlock
           label={layout.statementBlock.label}
           setup={layout.statementBlock.setup}
@@ -66,6 +66,16 @@ export function ProjectLayout({ project }: Props) {
       {/* 5) Branding Scroller */}
       {layout.brandingScroller && !layout.branding && (
         <BrandingScrollerSection data={layout.brandingScroller} />
+      )}
+
+      {/* Statement block — posición B: después del brandingScroller */}
+      {layout.statementBlock && layout.statementBlock.afterBranding && (
+        <StatementBlock
+          label={layout.statementBlock.label}
+          setup={layout.statementBlock.setup}
+          statement={layout.statementBlock.statement}
+          accentColor={layout.statementBlock.accentColor}
+        />
       )}
 
       {/* 6a) ArchitectureWebFlow: reemplaza editorial+web cuando existe */}

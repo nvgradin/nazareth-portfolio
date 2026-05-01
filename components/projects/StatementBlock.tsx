@@ -5,7 +5,7 @@ import styles from './StatementBlock.module.css';
 
 interface Props {
   label?: string;
-  setup: string;
+  setup?: string;
   statement: string | string[];
   accentColor?: string;
 }
@@ -27,15 +27,17 @@ export function StatementBlock({ label, setup, statement, accentColor = '#1E3A5F
             {label}
           </motion.p>
         )}
-        <motion.p
-          className={styles.setup}
-          initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
-          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.8, ease }}
-        >
-          {setup}
-        </motion.p>
+        {setup && (
+          <motion.p
+            className={styles.setup}
+            initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.8, ease }}
+          >
+            {setup}
+          </motion.p>
+        )}
         <motion.p
           className={styles.statement}
           style={{ color: accentColor }}
