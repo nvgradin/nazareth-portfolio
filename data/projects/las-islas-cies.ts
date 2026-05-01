@@ -137,42 +137,42 @@ export const lasIslasCies: ProjectWithLayout = {
       afterBranding: true,
     },
 
-    // Modelo escalable — 4 islas
-    scalableModel: {
-      label: 'Modelo escalable',
-      title: 'Un sistema que escaló',
-      subtitle: 'Cuatro islas. Ocho meses. Una arquitectura.',
-      body: 'Desde el primer día lo diseñé como sistema replicable. La prueba llegó en menos de un año. Cada portal adaptado a su destino, manteniendo la arquitectura de contenido, el sistema de fichas y la integración con navieras locales. Un modelo de portal turístico insular que sigue siendo referencia.',
-      background: '#f8f9fa',
-      accentColor: '#252851',
-      items: [
+    // Modelo escalable — 4 islas (FunnelFlow reutilizado con 4 columnas)
+    funnelFlow: {
+      editorial: {
+        title: 'Un sistema que escaló',
+        subtitle: 'Cuatro islas. Ocho meses. Una arquitectura.',
+        content: 'Desde el primer día lo diseñé como sistema replicable. La prueba llegó en menos de un año. Cada portal adaptado a su destino, manteniendo la arquitectura de contenido, el sistema de fichas y la integración con navieras locales. Un modelo de portal turístico insular que sigue siendo referencia.',
+      },
+      background: '#252851',
+      steps: [
         {
-          name: 'Las Islas Cíes',
-          date: 'Lanzamiento octubre 2024',
+          step: 1,
           image: '/projects/las-islas-cies/MockupWeb1_LasIslasCies.jpg',
           imageAlt: 'Web Las Islas Cíes',
-          logo: '/projects/las-islas-cies/Logo.png',
-          logoAlt: 'Las Islas Cíes',
+          title: 'Las Islas Cíes',
+          description: 'Lanzamiento octubre 2024',
         },
         {
-          name: 'Isla de Ons',
-          date: 'Lanzamiento diciembre 2024',
+          step: 2,
           image: '/projects/las-islas-cies/MockupWeb1_LasIslasCies.jpg',
           imageAlt: 'Web Isla de Ons — placeholder',
-          logo: '/logos/EU_ONS.png',
-          logoAlt: 'Isla de Ons',
+          title: 'Isla de Ons',
+          description: 'Lanzamiento diciembre 2024',
         },
         {
-          name: 'Isla de Lobos',
-          date: 'Lanzamiento enero 2025',
+          step: 3,
           image: '/projects/las-islas-cies/MockupWeb1_LasIslasCies.jpg',
           imageAlt: 'Web Isla de Lobos — placeholder',
+          title: 'Isla de Lobos',
+          description: 'Lanzamiento enero 2025',
         },
         {
-          name: 'Isla de la Graciosa',
-          date: 'Lanzamiento abril 2025',
+          step: 4,
           image: '/projects/las-islas-cies/MockupWeb1_LasIslasCies.jpg',
           imageAlt: 'Web Isla de la Graciosa — placeholder',
+          title: 'Isla de la Graciosa',
+          description: 'Lanzamiento abril 2025',
         },
       ],
     },

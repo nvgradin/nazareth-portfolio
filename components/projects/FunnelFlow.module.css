@@ -42,7 +42,7 @@
 @media (min-width: 640px) {
   .desktopImages {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(var(--funnel-cols, 3), 1fr);
     gap: 0;
   }
 }
@@ -69,7 +69,7 @@
 @media (min-width: 640px) {
   .texts {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(var(--funnel-cols, 3), 1fr);
     gap: var(--space-48);
     padding: var(--space-48) var(--space-64) var(--space-64);
   }

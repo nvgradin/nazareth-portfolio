@@ -23,7 +23,7 @@ export function FunnelFlow({ data }: Props) {
       className={styles.section}
       style={background ? { background } : undefined}
     >
-      <div className={styles.flow}>
+      <div className={styles.flow} style={{ '--funnel-cols': steps.length } as React.CSSProperties}>
 
         {/* MÓVIL: imagen + texto por paso */}
         <div className={styles.mobileSteps}>

@@ -18,4 +18,3 @@ export { HeroImage } from './HeroImage';
 export { StaggeredProcess } from './StaggeredProcess';
 export { StatementBlock } from './StatementBlock';
 export { NebulaShaderBg } from './NebulaShaderBg';
-export { ScalableModel } from './ScalableModel';

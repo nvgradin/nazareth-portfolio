@@ -23,7 +23,6 @@ import { FunnelFlow } from './FunnelFlow';
 import { HeroImage } from './HeroImage';
 import { StaggeredProcess } from './StaggeredProcess';
 import { StatementBlock } from './StatementBlock';
-import { ScalableModel } from './ScalableModel';
 import styles from './ProjectLayout.module.css';
 
 interface Props {
@@ -90,9 +89,6 @@ export function ProjectLayout({ project }: Props) {
           accentColor={layout.statementBlock.accentColor}
         />
       )}
-
-      {/* Modelo escalable — timeline de portales/islas */}
-      {layout.scalableModel && <ScalableModel data={layout.scalableModel} />}
 
       {/* 6a) ArchitectureWebFlow: reemplaza editorial+web cuando existe */}
       {layout.architectureWebFlow && (
