@@ -152,6 +152,8 @@ export const lasIslasCies: ProjectWithLayout = {
           imageAlt: 'Web Las Islas Cíes',
           title: 'Las Islas Cíes',
           description: 'Lanzamiento octubre 2024',
+          logo: '/projects/las-islas-cies/Logo.png',
+          logoAlt: 'Las Islas Cíes',
         },
         {
           step: 2,
@@ -159,6 +161,8 @@ export const lasIslasCies: ProjectWithLayout = {
           imageAlt: 'Web Isla de Ons — placeholder',
           title: 'Isla de Ons',
           description: 'Lanzamiento diciembre 2024',
+          logo: '/logos/EU_ONS.png',
+          logoAlt: 'Isla de Ons',
         },
         {
           step: 3,

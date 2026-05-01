@@ -6,6 +6,8 @@ import { FunnelFlow as FunnelFlowType } from '@/lib/project-layout.types';
 import { EditorialBlock } from './EditorialBlock';
 import styles from './FunnelFlow.module.css';
 
+const DEFAULT_FLOW_BG = '#2E1404';
+
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 interface Props {
@@ -21,9 +23,14 @@ export function FunnelFlow({ data }: Props) {
       subtitle={editorial.subtitle}
       content={editorial.content}
       className={styles.section}
-      style={background ? { background } : undefined}
     >
-      <div className={styles.flow} style={{ '--funnel-cols': steps.length } as React.CSSProperties}>
+      <div
+        className={styles.flow}
+        style={{
+          '--funnel-cols': steps.length,
+          '--funnel-bg': background ?? DEFAULT_FLOW_BG,
+        } as React.CSSProperties}
+      >
 
         {/* MÓVIL: imagen + texto por paso */}
         <div className={styles.mobileSteps}>
@@ -46,6 +53,11 @@ export function FunnelFlow({ data }: Props) {
                   quality={90}
                 />
               </div>
+              {step.logo && (
+                <div className={styles.logoWrap}>
+                  <Image src={step.logo} alt={step.logoAlt ?? step.title} fill className={styles.logo} sizes="160px" />
+                </div>
+              )}
               <div className={styles.stepText}>
                 <span className={styles.stepNumber}>{String(step.step).padStart(2, '0')}</span>
                 <h3 className={styles.stepTitle}>{step.title}</h3>
@@ -77,6 +89,20 @@ export function FunnelFlow({ data }: Props) {
             </motion.div>
           ))}
         </div>
+
+        {steps.some(s => s.logo) && (
+          <div className={styles.logos}>
+            {steps.map((step, i) => (
+              <div key={i} className={styles.logoCell}>
+                {step.logo && (
+                  <div className={styles.logoWrap}>
+                    <Image src={step.logo} alt={step.logoAlt ?? step.title} fill className={styles.logo} sizes="160px" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
 
         <div className={styles.texts}>
           {steps.map((step, i) => (

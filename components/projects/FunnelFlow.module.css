@@ -1,11 +1,12 @@
 /* FunnelFlow — override EditorialBlock section */
 .section {
   padding-bottom: 0;
+  background: var(--color-bg, #FAF6F0);
 }
 
-/* Contenedor oscuro */
+/* Contenedor de pasos — fondo propio definido por el proyecto */
 .flow {
-  background: #2E1404;
+  background: var(--funnel-bg, #2E1404);
   padding: var(--space-24) var(--space-16) 0;
 }
 
@@ -79,6 +80,47 @@
   .texts {
     padding: var(--space-48) var(--space-96) var(--space-96);
   }
+}
+
+/* ── Fila logos desktop (entre imágenes y textos) ── */
+.logos {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .logos {
+    display: grid;
+    grid-template-columns: repeat(var(--funnel-cols, 3), 1fr);
+    gap: 0;
+    padding: var(--space-24) var(--space-64) 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logos {
+    padding-left: var(--space-96);
+    padding-right: var(--space-96);
+  }
+}
+
+.logoCell {
+  display: flex;
+  align-items: center;
+  padding: var(--space-16) var(--space-8);
+}
+
+.logoWrap {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.logo {
+  object-fit: contain;
+  object-position: left center;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
 }
 
 /* ── Texto del paso ── */
