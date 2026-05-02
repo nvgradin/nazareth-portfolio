@@ -134,7 +134,6 @@ export const lasIslasCies: ProjectWithLayout = {
       setup: 'El mejor activo de un destino no es su belleza.',
       statement: 'Es cómo te invitan a descubrirlo.',
       accentColor: '#252851',
-      afterWeb: true,
     },
 
     // Modelo escalable — 4 islas
@@ -191,6 +190,18 @@ export const lasIslasCies: ProjectWithLayout = {
       backgroundImage: { type: 'image', src: '/projects/las-islas-cies/bento-8.webp', alt: 'Quote Background' },
       overlay: true,
     },
+
+    layoutOrder: [
+      'hero',
+      'bento',
+      'heading',
+      'features',
+      'imageCompare',
+      'web',
+      'statementBlock',
+      'sistemScaled',
+      'quoteBanner',
+    ],
   },
 
   meta: {

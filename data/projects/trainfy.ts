@@ -30,7 +30,7 @@ export const trainfy: ProjectWithLayout = {
       result: 'La presentación final del bootcamp de Trainfy con empresas del sector me permitió conseguir varias oportunidades de incorporación.',
       logo: '/projects/trainfy/Logotipo.png',
       roles: ['Fullstack Developer', 'UI/UX Design'],
-      context: 'Proyecto final Bootcamp Fullstack Developer',
+      context: 'Proyecto final Bootcamp Fullstack Developer de Hack a Boss',
       team: 'Equipo de 3',
       year: '2019',
       heroBg: '/projects/trainfy/portada_trainfy_2560.png',
@@ -200,13 +200,10 @@ export const trainfy: ProjectWithLayout = {
       title: 'Lo que se construyó en 3 semanas',
       columns: [
         {
-          text: 'Trainfy no llegó a producción. Es un proyecto final de bootcamp, y así es como debe leerse: *como una demostración de capacidad*, no como un producto en el mercado.',
+          text: 'Trainfy no llegó a producción, pero sí cumplió su objetivo: demostrar que podía construir un producto digital completo. Poco después de presentarlo, empecé a trabajar en desarrollo y diseño de producto.',
         },
         {
-          text: 'De una promoción de unas 20 personas, solo 2 salimos contratadas directamente tras la presentación final. Yo empecé a trabajar en una de esas empresas.',
-        },
-        {
-          text: 'Desde entonces no puedo diseñar sin pensar en la implementación, ni implementar sin pensar en la experiencia. Trainfy me enseñó que **esa tensión no es un problema**. Es exactamente donde quiero trabajar.',
+          text: 'Ahí entendí que mi valor estaba en la intersección entre negocio, experiencia y tecnología.',
         },
       ],
     },
@@ -218,6 +215,19 @@ export const trainfy: ProjectWithLayout = {
       backgroundImage: { type: 'image', src: '/projects/trainfy/quote-bg.jpg', alt: 'Imagen de fondo de la cita final — atleta en movimiento' },
       imagePosition: 'top',
     },
+
+    layoutOrder: [
+      'hero',
+      'bento',
+      'heading',
+      'features',
+      'introParallax',
+      'statementBlock',
+      'web',
+      'brandingScroller',
+      'textBlock',
+      'quoteBanner',
+    ],
   },
 
   meta: {

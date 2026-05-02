@@ -247,6 +247,22 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       imagePosition: 'center',
     },
 
+    layoutOrder: [
+      'hero',
+      'bento',
+      'heading',
+      'features',
+      'introParallax',
+      'brandingScroller',
+      'statementBlock',
+      'web',
+      'reelsEditorial',
+      'reelsDeck',
+      'funnelFlow',
+      'videoSection',
+      'textBlock',
+      'quoteBanner',
+    ],
   },
 
   meta: {

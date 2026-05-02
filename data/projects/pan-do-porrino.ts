@@ -26,7 +26,7 @@ export const panDoPorrino: ProjectWithLayout = {
     hero: {
       title: 'Pan do Porriño',
       subtitle: 'El Camino del Pan do Porriño hacia la Denominación de Origen',
-      intro: 'En 2017 nació una iniciativa colectiva para dar reconocimiento al Pan do Porriño, un pan artesanal hecho de masa madre con propia receta, preservada durante los siglos y *reconocido por su calidad desde 1600* que logró ser considerada como **Marca Protegida** y obtener la **Denominación de Origen** de su Bolla.',
+      intro: 'En 2017 nació una iniciativa colectiva para dar reconocimiento al Pan do Porriño, un pan artesanal hecho de masa madre con receta propia, preservada durante siglos y *reconocido por su calidad desde 1600*. Dentro de ese camino, el producto logró consolidarse como **Marca Protegida** y obtener la **Denominación de Origen** de su Bolla.',
       logo: '/projects/pan-do-porrino/Logotipo.png',
       roles: ['Branding', 'Marketing'],
       year: '2017',
@@ -105,7 +105,7 @@ export const panDoPorrino: ProjectWithLayout = {
     // 3) Heading centrado
     heading: {
       title: 'Una identidad corporativa para un pan con siglos de legado',
-      subtitle: 'Entre varios impulsores — Galipad, Acipor, el Concello de O Porriño y los panaderos locales — iniciaron su camino para lograr el reconocimiento que merecía. *Mi labor: colaborar creando la Identidad de Marca del Pan do Porriño.*',
+      subtitle: 'Impulsado por Galipad, Acipor, el Concello de O Porriño y los panaderos locales, el proyecto inició un camino colectivo para reforzar el reconocimiento que este producto merecía. Mi aportación fue *colaborar en el diseño de su identidad de marca*.',
     },
 
     // 4) Features
@@ -144,7 +144,7 @@ export const panDoPorrino: ProjectWithLayout = {
       background: '#241E33',
       images: [
         { src: '/projects/pan-do-porrino/showcase-center-bottom.jpg', alt: 'Logotipo de Pan do Porriño — símbolo y wordmark sobre fondo oscuro' },
-        { src: '/projects/pan-do-porrino/showcase-left.webp', alt: 'Aplicación vertical del sistema de marca de Pan do Porriño', orientation: 'vertical' },
+        { src: '/projects/pan-do-porrino/showcase-left.webp', alt: 'Aplicación de marca de Pan do Porriño', orientation: 'vertical' },
         { src: '/projects/pan-do-porrino/PandoPorrino_branding_versionsecundaria.jpg', alt: 'Versión secundaria del logotipo de Pan do Porriño — variante horizontal con tagline' },
         { src: '/projects/pan-do-porrino/showcase-center-top.jpg', alt: 'Detalle del símbolo de Pan do Porriño — silueta de la Bolla en positivo y negativo' },
       ],
@@ -156,13 +156,13 @@ export const panDoPorrino: ProjectWithLayout = {
       subtitle: 'Campaña creativa para la II Feira do Pan do Porriño',
       body: 'Con la identidad definida, el sistema se aplicó a piezas promocionales, editoriales y expositivas para la **II Feira do Pan do Porriño**, manteniendo *una presencia de marca coherente en todos los soportes*.',
       row1: [
-        { src: '/projects/pan-do-porrino/Mockup_anuncio_pandoporrino.jpg', alt: 'Mockup de anuncio publicitario de Pan do Porriño — aplicación de marca en prensa' },
-        { src: '/projects/pan-do-porrino/Mockup_diptico_pandoporrino.jpg', alt: 'Mockup del díptico oficial de la II Feira do Pan do Porriño' },
+        { src: '/projects/pan-do-porrino/Mockup_anuncio_pandoporrino.jpg', alt: 'Aplicación de marca en prensa' },
+        { src: '/projects/pan-do-porrino/Mockup_diptico_pandoporrino.jpg', alt: 'Díptico oficial de la II Feira do Pan do Porriño' },
       ],
       row2: [
         { src: '/projects/pan-do-porrino/packaging_new.png', alt: 'Packaging de la Bolla de Pan do Porriño — diseño final con sistema de marca aplicado' },
-        { src: '/projects/pan-do-porrino/Mockup_pegatina1_pandoporrino.jpeg', alt: 'Mockup de pegatina promocional de Pan do Porriño para la Feira' },
-        { src: '/projects/pan-do-porrino/Mockup_invitacion_pandoporrino.jpeg', alt: 'Mockup de invitación oficial a la II Feira do Pan do Porriño' },
+        { src: '/projects/pan-do-porrino/Mockup_pegatina1_pandoporrino.jpeg', alt: 'Aplicación promocional de Pan do Porriño para la Feira' },
+        { src: '/projects/pan-do-porrino/Mockup_invitacion_pandoporrino.jpeg', alt: 'Invitación oficial a la II Feira do Pan do Porriño' },
       ],
     },
 
@@ -190,7 +190,7 @@ export const panDoPorrino: ProjectWithLayout = {
       background: '#FAF6F0',
       columns: [
         { text: 'La identidad visual formó parte de una *iniciativa más amplia* de puesta en valor del Pan do Porriño, acompañando su visibilidad pública y su consolidación como producto singular del territorio.' },
-        { text: 'Dentro de ese proceso colectivo, Pan do Porriño logró ser **Marca Protegida** y obtener la **Denominación de Origen** de su Bolla.' },
+        { text: 'Dentro de ese proceso colectivo, el Pan do Porriño logró consolidarse como **Marca Protegida** y obtener la **Denominación de Origen** de su Bolla.' },
         { text: '' },
       ],
     },
@@ -206,10 +206,22 @@ export const panDoPorrino: ProjectWithLayout = {
         'Cantiga popular',
         'Traducción: "Peregrino del Camino, lleva una botella de vino y una bolla de Pan do Porriño..."',
       ],
-      backgroundImage: { type: 'image', src: '/projects/pan-do-porrino/quota-bg.jpg', alt: 'Imagen de fondo de la cita — el Pan do Porriño en su contexto tradicional gallego' },
+      backgroundImage: { type: 'image', src: '/projects/pan-do-porrino/quota-bg.jpg', alt: 'El Pan do Porriño en su contexto tradicional gallego' },
       imagePosition: 'center',
     },
 
+    layoutOrder: [
+      'hero',
+      'bento',
+      'heading',
+      'features',
+      'introParallax',
+      'brandingScroller',
+      'textBlock',
+      'mediaGrid',
+      'clientLogos',
+      'quoteBanner',
+    ],
   },
 
   meta: {

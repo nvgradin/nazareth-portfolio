@@ -382,7 +382,7 @@ export interface ProjectLayout {
   introParallax?: { src: string; alt: string };
 
   // Statement block — frase de impacto a pantalla completa
-  statementBlock?: { label?: string; setup?: string; statement: string | string[]; accentColor?: string; afterBranding?: boolean; afterWeb?: boolean };
+  statementBlock?: { label?: string; setup?: string; statement: string | string[]; accentColor?: string };
 
   // Sección audiovisual: editorial + vídeo centrado con play overlay
   videoSection?: {
@@ -417,7 +417,37 @@ export interface ProjectLayout {
   clientLogosStatic?: boolean;
   quoteBanner?: QuoteBanner;
   closing?: ClosingText;
+
+  // Orden declarativo de secciones — si se omite, usa el orden por defecto de ProjectLayout
+  layoutOrder?: LayoutSectionKey[];
 }
+
+export type LayoutSectionKey =
+  | 'hero'
+  | 'bento'
+  | 'heading'
+  | 'features'
+  | 'introParallax'
+  | 'imageCompare'
+  | 'heroImage'
+  | 'statementBlock'
+  | 'brandingScroller'
+  | 'architectureWebFlow'
+  | 'web'
+  | 'editorial'
+  | 'branding'
+  | 'reelsEditorial'
+  | 'reelsDeck'
+  | 'funnelFlow'
+  | 'sistemScaled'
+  | 'staggeredProcess'
+  | 'process'
+  | 'videoSection'
+  | 'mediaGrid'
+  | 'textBlock'
+  | 'clientLogos'
+  | 'quoteBanner'
+  | 'closing';
 
 export interface ReelsDeckItem {
   id: string;
