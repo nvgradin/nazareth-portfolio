@@ -140,6 +140,7 @@ export const lasIslasCies: ProjectWithLayout = {
     // Modelo escalable — 4 islas
     sistemScaled: {
       editorial: {
+        label: 'Resultado',
         title: 'Un sistema que escaló',
         subtitle: 'Cuatro islas. Ocho meses. Una arquitectura.',
         content: 'Desde el primer día lo diseñé como sistema replicable. La prueba llegó en menos de un año. Cada portal adaptado a su destino, manteniendo la arquitectura de contenido, el sistema de fichas y la integración con navieras locales. Un modelo de portal turístico insular que sigue siendo referencia.',

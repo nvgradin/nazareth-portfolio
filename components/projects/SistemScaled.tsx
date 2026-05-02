@@ -50,6 +50,7 @@ export function SistemScaled({ data }: Props) {
 
   return (
     <EditorialBlock
+      label={editorial.label}
       title={editorial.title}
       subtitle={editorial.subtitle}
       content={editorial.content}

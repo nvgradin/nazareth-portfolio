@@ -9,6 +9,7 @@ import styles from './EditorialBlock.module.css';
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 interface Props {
+  label?: string;
   title: string;
   subtitle: string;
   content: EditorialContent;
@@ -27,7 +28,7 @@ interface Props {
  * - Web: con WebPanel/mockups
  * - Audiovisuales: con video/galería
  */
-export function EditorialBlock({ title, subtitle, content, columns, children, className, style }: Props) {
+export function EditorialBlock({ label, title, subtitle, content, columns, children, className, style }: Props) {
   const isRich = typeof content !== 'string';
   const hasColumns = columns && columns.length > 0;
 
@@ -37,16 +38,19 @@ export function EditorialBlock({ title, subtitle, content, columns, children, cl
         {/* Modo columnas: title izq + subtitle ancla derecha alineado abajo */}
         {hasColumns ? (
           <div className={styles.containerSplit}>
-            <motion.h2
-              className={styles.title}
-              style={{ whiteSpace: 'pre-line' }}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.6, ease }}
-            >
-              {title}
-            </motion.h2>
+            <div>
+              {label && <span className={styles.label}>{label}</span>}
+              <motion.h2
+                className={styles.title}
+                style={{ whiteSpace: 'pre-line' }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.6, ease }}
+              >
+                {title}
+              </motion.h2>
+            </div>
             <motion.h3
               className={styles.subtitleAnchor}
               style={{ whiteSpace: 'pre-line' }}
@@ -61,15 +65,18 @@ export function EditorialBlock({ title, subtitle, content, columns, children, cl
         ) : (
           /* Modo legacy: 2 columnas título izq + subtitle/content der */
           <div className={styles.container}>
-            <motion.h2
-              className={styles.title}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.6, ease }}
-            >
-              {title}
-            </motion.h2>
+            <div>
+              {label && <span className={styles.label}>{label}</span>}
+              <motion.h2
+                className={styles.title}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.6, ease }}
+              >
+                {title}
+              </motion.h2>
+            </div>
             <motion.div
               className={styles.text}
               initial={{ opacity: 0, y: 20 }}

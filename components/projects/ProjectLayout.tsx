@@ -67,7 +67,7 @@ export function ProjectLayout({ project }: Props) {
       )}
 
       {/* Statement block — posición A: antes del brandingScroller (por defecto) */}
-      {layout.statementBlock && !layout.statementBlock.afterBranding && (
+      {layout.statementBlock && !layout.statementBlock.afterBranding && !layout.statementBlock.afterWeb && (
         <StatementBlock
           label={layout.statementBlock.label}
           setup={layout.statementBlock.setup}

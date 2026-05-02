@@ -460,6 +460,7 @@ export interface FunnelFlowStep {
 
 export interface FunnelFlow {
   editorial: {
+    label?: string;
     title: string;
     subtitle: string;
     content: string;
