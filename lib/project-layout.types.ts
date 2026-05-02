@@ -177,6 +177,7 @@ export interface BrandingScroller {
   title: string;
   description: string;
   bullets?: string[];
+  paragraphs?: string[];
   background: string;
   images: BrandingScrollerImage[];
 }

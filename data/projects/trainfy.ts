@@ -26,7 +26,7 @@ export const trainfy: ProjectWithLayout = {
     hero: {
       title: 'Trainfy',
       subtitle: 'De marketplace deportivo a comunidad.',
-      intro: 'Transformé la propuesta de hacer una plataforma de compraventa de nicho en una experiencia centrada en la conexión entre los deportistas.',
+      intro: 'Partiendo de un brief técnico para una plataforma de compraventa deportiva, ayudé a convertir Trainfy en una experiencia más relacional, pensada para intercambiar material, conectar y crear comunidad.',
       result: 'La presentación final del bootcamp de Trainfy con empresas del sector me permitió conseguir varias oportunidades de incorporación.',
       logo: '/projects/trainfy/Logotipo.png',
       roles: ['Fullstack Developer', 'UI/UX Design'],
@@ -110,7 +110,7 @@ export const trainfy: ProjectWithLayout = {
       label: 'El reto',
       title: 'Enfoque y alcance del proyecto',
       subtitle: [
-        'Trainfy nació como proyecto final del bootcamp fullstack. El brief era técnico: una plataforma de compra-venta de material deportivo. Pero queríamos hacerlo lo más real posible y, algo no hacía click. Ya existen Wallapop, Milanuncios… ¿tiene sentido crear otra plataforma igual, solo enfocada en deporte?',
+        'Trainfy nació como proyecto final del bootcamp fullstack. El brief era técnico: una plataforma de compra-venta de material deportivo. Pero al llevar la idea al terreno real aparecía una duda evidente: Ya existen Wallapop, Milanuncios…¿tenía sentido construir otro marketplace de nicho?',
         'La respuesta llegó cambiando la pregunta: ¿y si los amantes del deporte pudieran no solo comprar y vender material, sino también intercambiarlo, entrenar juntos, crear comunidad? Eso es lo que construimos.',
       ],
     },
@@ -130,7 +130,7 @@ export const trainfy: ProjectWithLayout = {
       {
         image: { type: 'image', src: '/projects/trainfy/feature-dev.jpg', alt: 'Stack técnico de Trainfy — React, Node.js y PostgreSQL en producción' },
         title: 'De la marca al producto digital',
-        description: 'Primer proyecto fullstack real: branding, UI, componentes en **React**, base de datos en **PostgreSQL**. Por primera vez entendí un producto digital *end-to-end*. Eso cambió para siempre cómo diseño.',
+        description: 'Fue mi primer proyecto fullstack real y el primero en el que **conecté branding, interfaz y desarrollo dentro de una misma lógica de producto**. Ahí entendí por primera vez un producto digital de extremo a extremo.',
       },
     ],
 
@@ -141,10 +141,10 @@ export const trainfy: ProjectWithLayout = {
 
     statementBlock: {
       label: 'Insight',
-      setup: 'El problema no era crear otro marketplace segmentado.',
+      setup: 'El valor no estaba en segmentar un marketplace existente,',
       statement: [
-        'Era que no existía un marketplace que, además,',
-        'conectara a los deportistas entre sí.',
+        'sino en convertir el intercambio',
+        'en una forma de conexión entre deportistas.',
       ],
       accentColor: '#1E3A5F',
     },
@@ -188,10 +188,10 @@ export const trainfy: ProjectWithLayout = {
     // 7) Branding Scroller
     brandingScroller: {
       title: 'Por qué empezamos por la identidad',
-      description: 'En un bootcamp la presión es entregar funcionalidad. El código manda, el diseño espera. Decidí invertir ese orden.',
-      bullets: [
-        'Antes de tocar React, definí la identidad de Trainfy: qué comunicaba, a quién hablaba, cómo debía sentirse. No como ejercicio estético, sino como brújula. Una vez que la marca tenía dirección, cada decisión de interfaz fue más rápida y más coherente.',
-        'El nombre, el logo, la paleta — todo apuntaba a lo mismo: energía, movimiento, comunidad. No un catálogo deportivo. Un punto de encuentro.',
+      description: 'En un contexto donde la presión estaba en entregar funcionalidad, decidí invertir ese orden.',
+      paragraphs: [
+        'Antes de tocar React, definí qué debía comunicar Trainfy, a quién hablaba y cómo tenía que sentirse. Esa base hizo que cada decisión de interfaz y producto fuera más coherente.',
+        '*El objetivo no era construir un catálogo deportivo, sino **un punto de encuentro**.*',
       ],
       background: '#212C3A',
       images: [

@@ -11,7 +11,7 @@ interface Props {
 }
 
 export function BrandingScrollerSection({ data }: Props) {
-  const { title, description, bullets, background, images } = data;
+  const { title, description, bullets, paragraphs, background, images } = data;
   const [isMobile, setIsMobile] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -36,7 +36,7 @@ export function BrandingScrollerSection({ data }: Props) {
 
 /* ── DESKTOP: lógica original intacta ─────────────────────── */
 function DesktopLayout({ data }: { data: BrandingScroller }) {
-  const { title, description, bullets, background, images } = data;
+  const { title, description, bullets, paragraphs, background, images } = data;
   const wrapperRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const columnRef = useRef<HTMLDivElement>(null);
@@ -106,6 +106,13 @@ function DesktopLayout({ data }: { data: BrandingScroller }) {
                 ))}
               </ul>
             )}
+            {paragraphs && paragraphs.length > 0 && (
+              <div className={styles.paragraphsBlock}>
+                {paragraphs.map((p, i) => (
+                  <p key={i} className={styles.paragraph}>{parseInline(p)}</p>
+                ))}
+              </div>
+            )}
           </div>
           <div ref={columnRef} className={styles.scrollerColumn}>
             <div ref={trackRef} className={styles.track}>
@@ -133,7 +140,7 @@ function DesktopLayout({ data }: { data: BrandingScroller }) {
 
 /* ── MOBILE: scroll hijack solo sobre el bloque de imágenes ── */
 function MobileLayout({ data }: { data: BrandingScroller }) {
-  const { title, description, bullets, background, images } = data;
+  const { title, description, bullets, paragraphs, background, images } = data;
   const outerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [overflow, setOverflow] = useState(0);
@@ -183,6 +190,13 @@ function MobileLayout({ data }: { data: BrandingScroller }) {
               <li key={i}>{parseInline(item)}</li>
             ))}
           </ul>
+        )}
+        {paragraphs && paragraphs.length > 0 && (
+          <div className={styles.paragraphsBlock}>
+            {paragraphs.map((p, i) => (
+              <p key={i} className={styles.paragraph}>{parseInline(p)}</p>
+            ))}
+          </div>
         )}
       </div>
 
