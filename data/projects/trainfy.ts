@@ -157,7 +157,7 @@ export const trainfy: ProjectWithLayout = {
       columns: [
         '**Cuatro meses** de bootcamp intensivo. **Tres semanas** de proyecto final. Equipo de tres personas.',
         'Construimos un MVP con autenticación, perfiles de usuario, publicaciones de compra, venta e intercambio, mensajería entre deportistas y una estructura de base de datos pensada para sostener el producto desde su lógica interna.',
-        '**Stack**\nReact · Node.js · PostgreSQL · Redux · Axios · Bcrypt · Cloudinary',
+        '**Stack**\n`React` `Node.js` `PostgreSQL` `Redux` `Axios` `Bcrypt` `Cloudinary`',
       ],
     },
     webPanel: {
