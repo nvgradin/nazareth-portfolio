@@ -12,12 +12,12 @@ import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 const REAL_IMAGES = ['01', '04', '05', '07', '09'];
 
 const PLACEHOLDER_POOL = [
+  // Trainfy
   '/projects/trainfy/bento-1.jpg',
   '/projects/trainfy/bento-3.jpg',
   '/projects/trainfy/bento-5.jpg',
   '/projects/trainfy/bento-7.jpg',
   '/projects/trainfy/bento-8.jpg',
-  '/projects/trainfy/editorial-full.jpg',
   '/projects/trainfy/feature-branding.jpg',
   '/projects/trainfy/feature-dev.jpg',
   '/projects/trainfy/feature-ui-ux.jpg',
@@ -29,13 +29,42 @@ const PLACEHOLDER_POOL = [
   '/projects/trainfy/web-mockup-2.jpg',
   '/projects/trainfy/web-mockup-4.jpg',
   '/projects/trainfy/quote-bg.jpg',
+  // Las Islas Cíes
+  '/projects/las-islas-cies/bento-1.jpg',
+  '/projects/las-islas-cies/bento-2.jpg',
+  '/projects/las-islas-cies/bento-3.jpg',
+  '/projects/las-islas-cies/bento-4.jpg',
+  '/projects/las-islas-cies/bento-5.jpg',
+  '/projects/las-islas-cies/bento-6.jpg',
+  '/projects/las-islas-cies/bento-7.jpg',
+  '/projects/las-islas-cies/feature-marketing.jpg',
+  '/projects/las-islas-cies/feature-ui-ux.jpg',
+  '/projects/las-islas-cies/feature-web.jpg',
+  // Silvia Fernández De Luna
+  '/projects/silvia-fernandez-de-luna/bento-1.jpg',
+  '/projects/silvia-fernandez-de-luna/bento-2.jpg',
+  '/projects/silvia-fernandez-de-luna/bento-3.jpg',
+  '/projects/silvia-fernandez-de-luna/bento-5.jpg',
+  '/projects/silvia-fernandez-de-luna/bento-8.jpg',
+  '/projects/silvia-fernandez-de-luna/feature-estrategia.jpg',
+  '/projects/silvia-fernandez-de-luna/feature-marketing.jpg',
+  '/projects/silvia-fernandez-de-luna/feature-web.jpg',
+  '/projects/silvia-fernandez-de-luna/fondo_SFDL_oroviejo_1920x2000.jpeg',
+  // Pan do Porriño
+  '/projects/pan-do-porrino/bento-1.png',
+  '/projects/pan-do-porrino/bento-2.png',
+  '/projects/pan-do-porrino/bento-3.png',
+  '/projects/pan-do-porrino/bento-5.png',
+  '/projects/pan-do-porrino/bento-8.jpg',
+  '/projects/pan-do-porrino/Mockup_anuncio_pandoporrino.jpg',
+  '/projects/pan-do-porrino/Mockup_diptico_pandoporrino.jpg',
+  '/projects/pan-do-porrino/PandoPorrino_branding_versionsecundaria.jpg',
 ];
 
 const NUM_COLS = 9;
 const IMAGES_PER_COL = 6;
 const TOTAL_IMAGES = NUM_COLS * IMAGES_PER_COL;
 
-/* Tamaño de cada columna del grid en px — controla el ancho de las imágenes */
 const COL_WIDTH = 280;
 
 const IMAGES: { id: string; src: string; alt: string }[] = Array.from(
@@ -53,7 +82,6 @@ const IMAGES: { id: string; src: string; alt: string }[] = Array.from(
   }
 );
 
-/* Canvas padding: espacio extra alrededor del grid para permitir scroll */
 const CANVAS_PAD = 400;
 
 /* ═══════════════════════════════════════════════════════════════
@@ -85,7 +113,6 @@ function Lightbox({
       onClick={onClose}
     >
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
-
       <motion.div
         layoutId={`img-${image.id}`}
         className="relative z-10 w-[90vw] h-[80vh] max-w-5xl"
@@ -114,7 +141,6 @@ export default function NotFound() {
 
   const handleClose = useCallback(() => setSelectedIndex(null), []);
 
-  // Centrar el scroll en el centro del canvas al montar
   useEffect(() => {
     const el = canvasRef.current;
     if (!el) return;
@@ -125,13 +151,12 @@ export default function NotFound() {
     });
   }, []);
 
-  // Distribute images into columns
   const columns: (typeof IMAGES)[] = Array.from({ length: NUM_COLS }, () => []);
   IMAGES.forEach((img, i) => columns[i % NUM_COLS].push(img));
 
   return (
     <LayoutGroup>
-      {/* Canvas: viewport fijo, scroll en las 4 direcciones */}
+      {/* Canvas */}
       <div
         ref={canvasRef}
         style={{
@@ -141,7 +166,6 @@ export default function NotFound() {
           backgroundColor: '#E2DDD5',
         }}
       >
-        {/* Contenido del canvas: grid + padding generoso */}
         <div
           style={{
             display: 'flex',
@@ -158,11 +182,7 @@ export default function NotFound() {
             }}
           >
             {columns.map((col, colIdx) => (
-              <div
-                key={colIdx}
-                className="flex flex-col"
-                style={{ gap: '128px' }}
-              >
+              <div key={colIdx} className="flex flex-col" style={{ gap: '128px' }}>
                 {col.map((img, i) => {
                   const globalIdx = IMAGES.findIndex((im) => im.id === img.id);
                   return (
@@ -203,7 +223,7 @@ export default function NotFound() {
         </div>
       </div>
 
-      {/* ─── Vignette arriba ─── */}
+      {/* Vignette top */}
       <div
         style={{
           position: 'fixed',
@@ -215,7 +235,7 @@ export default function NotFound() {
         }}
       />
 
-      {/* ─── Vignette abajo ─── */}
+      {/* Vignette bottom */}
       <div
         style={{
           position: 'fixed',
@@ -227,88 +247,141 @@ export default function NotFound() {
         }}
       />
 
-      {/* ─── Hero 404 — fijo sobre el canvas ─── */}
+      {/* Hero 404 — centrado verticalmente, cápsula backdrop */}
       <div
-        className="fixed z-10 text-center pointer-events-none"
         style={{
-          top: 0,
-          left: 0,
-          right: 0,
-          paddingTop: '10vh',
-          paddingBottom: '4vh',
+          position: 'fixed',
+          inset: 0,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 10,
+          pointerEvents: 'none',
         }}
       >
-        <motion.h1
-          className="text-6xl sm:text-8xl lg:text-9xl font-light tracking-tight leading-none"
+        <motion.div
           style={{
-            fontFamily: 'var(--font-accent)',
-            color: 'var(--brand-primary-900, #241E33)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '12px',
+            padding: '40px 56px 48px',
+            borderRadius: '32px',
+            background: 'rgba(226, 221, 213, 0.72)',
+            backdropFilter: 'blur(16px)',
+            WebkitBackdropFilter: 'blur(16px)',
           }}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          404
-        </motion.h1>
-        <motion.p
-          className="mt-4 text-lg sm:text-xl max-w-md mx-auto"
-          style={{
-            fontFamily: 'var(--font-base)',
-            color: 'var(--brand-primary-500, #40394E)',
-          }}
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
-          Error 404. El caos también es parte del proceso.
-        </motion.p>
+          <motion.h1
+            style={{
+              fontFamily: 'var(--font-accent)',
+              fontSize: 'clamp(5rem, 12vw, 9rem)',
+              fontWeight: 300,
+              lineHeight: 1,
+              letterSpacing: '-0.02em',
+              color: 'var(--brand-primary-900, #241E33)',
+              margin: 0,
+            }}
+          >
+            404
+          </motion.h1>
+
+          <motion.p
+            style={{
+              fontFamily: 'var(--font-base)',
+              fontSize: 'clamp(0.95rem, 1.5vw, 1.125rem)',
+              color: 'var(--brand-primary-500, #40394E)',
+              margin: 0,
+              textAlign: 'center',
+              maxWidth: '320px',
+              lineHeight: 1.5,
+            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            El caos también es parte del proceso.
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            style={{
+              display: 'flex',
+              gap: '12px',
+              marginTop: '20px',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              pointerEvents: 'auto',
+            }}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.35 }}
+          >
+            <Link
+              href="/projects"
+              style={{
+                display: 'inline-block',
+                fontFamily: 'var(--font-accent)',
+                fontSize: 'clamp(10px, 0.85vw, 12px)',
+                fontWeight: 400,
+                letterSpacing: '0.2em',
+                textTransform: 'uppercase',
+                backgroundColor: 'var(--brand-primary-900)',
+                color: 'var(--neutral-50)',
+                padding: '14px 32px',
+                borderRadius: 'var(--radius-full)',
+                textDecoration: 'none',
+              }}
+            >
+              Proyectos
+            </Link>
+            <Link
+              href="/about"
+              style={{
+                display: 'inline-block',
+                fontFamily: 'var(--font-accent)',
+                fontSize: 'clamp(10px, 0.85vw, 12px)',
+                fontWeight: 400,
+                letterSpacing: '0.2em',
+                textTransform: 'uppercase',
+                backgroundColor: 'transparent',
+                color: 'var(--brand-primary-900)',
+                padding: '13px 32px',
+                borderRadius: 'var(--radius-full)',
+                textDecoration: 'none',
+                border: '1px solid var(--brand-primary-900)',
+              }}
+            >
+              Sobre mí
+            </Link>
+            <Link
+              href="/contact"
+              style={{
+                display: 'inline-block',
+                fontFamily: 'var(--font-accent)',
+                fontSize: 'clamp(10px, 0.85vw, 12px)',
+                fontWeight: 400,
+                letterSpacing: '0.2em',
+                textTransform: 'uppercase',
+                backgroundColor: 'transparent',
+                color: 'var(--brand-primary-900)',
+                padding: '13px 32px',
+                borderRadius: 'var(--radius-full)',
+                textDecoration: 'none',
+                border: '1px solid var(--brand-primary-900)',
+              }}
+            >
+              Contacto
+            </Link>
+          </motion.div>
+        </motion.div>
       </div>
 
-      {/* ─── CTA — fijo abajo ─── */}
-      <div
-        className="fixed z-10 text-center pointer-events-none"
-        style={{
-          bottom: 0,
-          left: 0,
-          right: 0,
-          paddingTop: '4vh',
-          paddingBottom: '6vh',
-        }}
-      >
-        <motion.p
-          className="text-base sm:text-lg mb-4"
-          style={{
-            fontFamily: 'var(--font-base)',
-            color: 'var(--brand-primary-500, #40394E)',
-          }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          ¿Buscabas algo en particular?
-        </motion.p>
-        <Link
-          href="/projects"
-          className="pointer-events-auto"
-          style={{
-            display: 'inline-block',
-            fontFamily: 'var(--font-accent)',
-            fontSize: 'clamp(10px, 0.85vw, 12px)',
-            fontWeight: 400,
-            letterSpacing: '0.2em',
-            textTransform: 'uppercase',
-            backgroundColor: 'var(--brand-primary-900)',
-            color: 'var(--neutral-50)',
-            padding: '14px 36px',
-            borderRadius: 'var(--radius-full)',
-            textDecoration: 'none',
-          }}
-        >
-          Ver proyectos
-        </Link>
-      </div>
-
-      {/* ─── Lightbox ─── */}
+      {/* Lightbox */}
       <AnimatePresence>
         {selectedIndex !== null && (
           <Lightbox
