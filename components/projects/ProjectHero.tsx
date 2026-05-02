@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ProjectHero as ProjectHeroType } from '@/lib/project-layout.types';
+import { parseInline } from '@/components/ui';
 import styles from './ProjectHero.module.css';
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
@@ -163,7 +164,7 @@ export function ProjectHero({ data }: Props) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3, ease }}
               >
-                {subtitle}
+                {parseInline(subtitle)}
               </motion.h2>
             )}
           </div>
@@ -179,7 +180,7 @@ export function ProjectHero({ data }: Props) {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 + i * 0.1, ease }}
                 >
-                  {paragraph}
+                  {parseInline(paragraph)}
                 </motion.p>
               ))
             ) : (
@@ -189,7 +190,7 @@ export function ProjectHero({ data }: Props) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4, ease }}
               >
-                {intro}
+                {parseInline(intro as string)}
               </motion.p>
             )}
             {result && (
@@ -200,7 +201,7 @@ export function ProjectHero({ data }: Props) {
                 transition={{ duration: 0.5, delay: 0.55, ease }}
               >
                 <span className={styles.resultArrow}>→</span>
-                {result}
+                {parseInline(result)}
               </motion.p>
             )}
           </div>
