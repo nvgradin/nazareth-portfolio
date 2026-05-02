@@ -51,7 +51,7 @@ const ALL_IMAGES = [
   { src: '/projects/pan-do-porrino/bento-5.png', alt: 'Pan do Porriño' },
   { src: '/projects/pan-do-porrino/Mockup_diptico_pandoporrino.jpg', alt: 'Pan do Porriño' },
   { src: '/projects/pan-do-porrino/PandoPorrino_branding_versionsecundaria.jpg', alt: 'Pan do Porriño' },
-  { src: '/projects/pan-do-porrino/packaging.jpg', alt: 'Pan do Porriño' },
+  { src: '/projects/pan-do-porrino/packaging_new.png', alt: 'Pan do Porriño' },
 ];
 
 // 6 columnas × 6 filas = 36 slots — llenamos con las 36 primeras (sin repetir)
@@ -155,13 +155,15 @@ export default function NotFound() {
                       transition={{ duration: 0.5, delay: ri * 0.05, ease: [0.25, 0.46, 0.45, 0.94] }}
                       whileHover={{ y: -5, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
                     >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                      <Image
                         src={img.src}
                         alt={img.alt}
+                        width={COL_WIDTH * 2}
+                        height={COL_WIDTH * 2}
                         loading="lazy"
-                        decoding="async"
-                        style={{ width: '100%', height: 'auto', display: 'block' }}
+                        className="w-full h-auto object-cover"
+                        sizes={`${COL_WIDTH}px`}
+                        quality={75}
                       />
                     </motion.button>
                   );
@@ -239,7 +241,7 @@ export default function NotFound() {
               textAlign: 'center',
             }}
           >
-            El caos también es parte del proceso.
+            El caos también es parte del proceso de creación.
           </p>
 
           {/* CTAs */}
