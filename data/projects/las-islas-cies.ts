@@ -195,14 +195,6 @@ export const lasIslasCies: ProjectWithLayout = {
       ],
     },
 
-    // Logos de las 4 islas
-    clientLogos: [
-      { src: '/logos/Las_Islas_Cies.png', alt: 'Las Islas Cíes' },
-      { src: '/logos/EU_ONS.png', alt: 'Isla de Ons' },
-      { src: '/logos/I_LOVE_LOBOS.png', alt: 'Isla de Lobos' },
-      { src: '/logos/I_LOVE_LA_GRACIOSA.png', alt: 'Isla de la Graciosa' },
-    ],
-
     // Quote cierre
     quoteBanner: {
       quote: 'El mejor SEO es tener algo que merezca la pena encontrar.',
