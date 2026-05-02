@@ -8,7 +8,7 @@ import styles from './RichText.module.css';
  * `texto`   → <span class="tag"> (pill con borde)
  */
 export function parseInline(text: string): React.ReactNode {
-  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/g);
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`|\n)/g);
   return parts.map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**')) {
       return <strong key={i}>{part.slice(2, -2)}</strong>;
@@ -18,6 +18,9 @@ export function parseInline(text: string): React.ReactNode {
     }
     if (part.startsWith('`') && part.endsWith('`')) {
       return <span key={i} className={styles.tag}>{part.slice(1, -1)}</span>;
+    }
+    if (part === '\n') {
+      return <br key={i} />;
     }
     return <Fragment key={i}>{part}</Fragment>;
   });
