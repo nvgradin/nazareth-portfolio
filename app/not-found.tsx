@@ -61,11 +61,11 @@ const PLACEHOLDER_POOL = [
   '/projects/pan-do-porrino/PandoPorrino_branding_versionsecundaria.jpg',
 ];
 
-const NUM_COLS = 9;
-const IMAGES_PER_COL = 6;
+const NUM_COLS = 7;
+const IMAGES_PER_COL = 4;
 const TOTAL_IMAGES = NUM_COLS * IMAGES_PER_COL;
 
-const COL_WIDTH = 280;
+const COL_WIDTH = 240;
 
 const IMAGES: { id: string; src: string; alt: string }[] = Array.from(
   { length: TOTAL_IMAGES },
@@ -163,7 +163,7 @@ export default function NotFound() {
           position: 'fixed',
           inset: 0,
           overflow: 'auto',
-          backgroundColor: '#E2DDD5',
+          backgroundColor: '#241E33',
         }}
       >
         <div
@@ -207,8 +207,8 @@ export default function NotFound() {
                         <Image
                           src={img.src}
                           alt={img.alt}
-                          width={560}
-                          height={400 + (globalIdx % 3) * 200}
+                          width={480}
+                          height={320 + (globalIdx % 3) * 160}
                           loading="lazy"
                           className="w-full h-auto object-cover"
                           sizes={`${COL_WIDTH}px`}
@@ -229,7 +229,7 @@ export default function NotFound() {
           position: 'fixed',
           top: 0, left: 0, right: 0,
           height: 220,
-          background: 'linear-gradient(to bottom, #E2DDD5 0%, transparent 100%)',
+          background: 'linear-gradient(to bottom, #241E33 0%, transparent 100%)',
           pointerEvents: 'none',
           zIndex: 9,
         }}
@@ -241,7 +241,7 @@ export default function NotFound() {
           position: 'fixed',
           bottom: 0, left: 0, right: 0,
           height: 220,
-          background: 'linear-gradient(to top, #E2DDD5 0%, transparent 100%)',
+          background: 'linear-gradient(to top, #241E33 0%, transparent 100%)',
           pointerEvents: 'none',
           zIndex: 9,
         }}
@@ -268,9 +268,9 @@ export default function NotFound() {
             gap: '12px',
             padding: '40px 56px 48px',
             borderRadius: '32px',
-            background: 'rgba(226, 221, 213, 0.72)',
-            backdropFilter: 'blur(16px)',
-            WebkitBackdropFilter: 'blur(16px)',
+            background: 'rgba(36, 30, 51, 0.78)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
           }}
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -283,7 +283,7 @@ export default function NotFound() {
               fontWeight: 300,
               lineHeight: 1,
               letterSpacing: '-0.02em',
-              color: 'var(--brand-primary-900, #241E33)',
+              color: 'var(--neutral-50, #F8F6F2)',
               margin: 0,
             }}
           >
@@ -294,7 +294,7 @@ export default function NotFound() {
             style={{
               fontFamily: 'var(--font-base)',
               fontSize: 'clamp(0.95rem, 1.5vw, 1.125rem)',
-              color: 'var(--brand-primary-500, #40394E)',
+              color: 'rgba(248, 246, 242, 0.65)',
               margin: 0,
               textAlign: 'center',
               maxWidth: '320px',
@@ -330,8 +330,8 @@ export default function NotFound() {
                 fontWeight: 400,
                 letterSpacing: '0.2em',
                 textTransform: 'uppercase',
-                backgroundColor: 'var(--brand-primary-900)',
-                color: 'var(--neutral-50)',
+                backgroundColor: 'var(--neutral-50, #F8F6F2)',
+                color: 'var(--brand-primary-900, #241E33)',
                 padding: '14px 32px',
                 borderRadius: 'var(--radius-full)',
                 textDecoration: 'none',
@@ -349,11 +349,11 @@ export default function NotFound() {
                 letterSpacing: '0.2em',
                 textTransform: 'uppercase',
                 backgroundColor: 'transparent',
-                color: 'var(--brand-primary-900)',
+                color: 'rgba(248, 246, 242, 0.75)',
                 padding: '13px 32px',
                 borderRadius: 'var(--radius-full)',
                 textDecoration: 'none',
-                border: '1px solid var(--brand-primary-900)',
+                border: '1px solid rgba(248, 246, 242, 0.3)',
               }}
             >
               Sobre mí
@@ -368,11 +368,11 @@ export default function NotFound() {
                 letterSpacing: '0.2em',
                 textTransform: 'uppercase',
                 backgroundColor: 'transparent',
-                color: 'var(--brand-primary-900)',
+                color: 'rgba(248, 246, 242, 0.75)',
                 padding: '13px 32px',
                 borderRadius: 'var(--radius-full)',
                 textDecoration: 'none',
-                border: '1px solid var(--brand-primary-900)',
+                border: '1px solid rgba(248, 246, 242, 0.3)',
               }}
             >
               Contacto
