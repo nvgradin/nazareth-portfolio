@@ -26,7 +26,7 @@ export const panDoPorrino: ProjectWithLayout = {
     hero: {
       title: 'Pan do Porriño',
       subtitle: 'El Camino del Pan do Porriño hacia la Denominación de Origen',
-      intro: 'En 2017 nació una iniciativa colectiva para dar reconocimiento al Pan do Porriño, un pan artesanal hecho de masa madre con propia receta, preservada durante los siglos y reconocido por su calidad desde 1600 que logró ser considerada como Marca Protegida y obtener la Denominación de Origen de su Bolla.',
+      intro: 'En 2017 nació una iniciativa colectiva para dar reconocimiento al Pan do Porriño, un pan artesanal hecho de masa madre con propia receta, preservada durante los siglos y *reconocido por su calidad desde 1600* que logró ser considerada como **Marca Protegida** y obtener la **Denominación de Origen** de su Bolla.',
       logo: '/projects/pan-do-porrino/Logotipo.png',
       roles: ['Branding', 'Marketing'],
       year: '2017',
