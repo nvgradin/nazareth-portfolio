@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { BrandingScroller } from '@/lib/project-layout.types';
+import { parseInline } from '@/components/ui';
 import styles from './BrandingScrollerSection.module.css';
 
 interface Props {
@@ -97,11 +98,11 @@ function DesktopLayout({ data }: { data: BrandingScroller }) {
         <div className={styles.container}>
           <div className={styles.textColumn}>
             <h2 className={styles.title}>{title}</h2>
-            <p className={styles.description}>{description}</p>
+            <p className={styles.description}>{parseInline(description)}</p>
             {bullets && bullets.length > 0 && (
               <ul className={styles.bullets}>
                 {bullets.map((item, i) => (
-                  <li key={i}>{item}</li>
+                  <li key={i}>{parseInline(item)}</li>
                 ))}
               </ul>
             )}
@@ -175,11 +176,11 @@ function MobileLayout({ data }: { data: BrandingScroller }) {
       {/* Bloque 1: texto sobre fondo crema */}
       <div className={styles.mobileTextBlock}>
         <h2 className={styles.title}>{title}</h2>
-        <p className={styles.description}>{description}</p>
+        <p className={styles.description}>{parseInline(description)}</p>
         {bullets && bullets.length > 0 && (
           <ul className={styles.bullets}>
             {bullets.map((item, i) => (
-              <li key={i}>{item}</li>
+              <li key={i}>{parseInline(item)}</li>
             ))}
           </ul>
         )}

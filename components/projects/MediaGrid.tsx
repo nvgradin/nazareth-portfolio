@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MediaGrid as MediaGridType, MediaGridImage } from '@/lib/project-layout.types';
 import { Lightbox } from '@/components/ui/Lightbox';
+import { parseInline } from '@/components/ui';
 import styles from './MediaGrid.module.css';
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
@@ -44,7 +45,7 @@ export function MediaGrid({ data }: Props) {
           transition={{ duration: 0.5, delay: 0.1, ease }}
         >
           <h3 className={styles.headerSubtitle}>{subtitle}</h3>
-          <p className={styles.headerBody}>{body}</p>
+          <p className={styles.headerBody}>{parseInline(body)}</p>
         </motion.div>
       </div>
 

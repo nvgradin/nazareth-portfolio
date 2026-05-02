@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { CenteredHeading as CenteredHeadingType } from '@/lib/project-layout.types';
-import { TextContainer } from '@/components/ui';
+import { TextContainer, parseInline } from '@/components/ui';
 import styles from './CenteredHeading.module.css';
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
@@ -49,7 +49,7 @@ export function CenteredHeading({ data }: Props) {
                   viewport={{ once: true, margin: '-80px' }}
                   transition={{ duration: 0.5, delay: 0.1 + i * 0.08, ease }}
                 >
-                  {paragraph}
+                  {parseInline(paragraph)}
                 </motion.p>
               ))
             ) : (
@@ -60,7 +60,7 @@ export function CenteredHeading({ data }: Props) {
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.5, delay: 0.1, ease }}
               >
-                {subtitle}
+                {parseInline(subtitle)}
               </motion.p>
             )
           )}
