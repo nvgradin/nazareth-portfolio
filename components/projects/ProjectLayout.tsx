@@ -91,6 +91,8 @@ export function ProjectLayout({ project }: Props) {
         />
       )}
 
+      {layout.sistemScaled && <SistemScaled data={layout.sistemScaled} />}
+
       {/* 6a) ArchitectureWebFlow: reemplaza editorial+web cuando existe */}
       {layout.architectureWebFlow && (
         <ArchitectureWebFlow data={layout.architectureWebFlow} />
@@ -170,8 +172,6 @@ export function ProjectLayout({ project }: Props) {
       {layout.reelsDeck && <ProjectReelsDeck data={layout.reelsDeck} />}
 
       {layout.funnelFlow && <FunnelFlow data={layout.funnelFlow} />}
-
-      {layout.sistemScaled && <SistemScaled data={layout.sistemScaled} />}
 
       {/* Staggered process (reservado para playground) */}
       {layout.staggeredProcess && <StaggeredProcess data={layout.staggeredProcess} />}
