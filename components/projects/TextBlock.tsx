@@ -12,11 +12,11 @@ interface Props {
 }
 
 export function TextBlock({ data }: Props) {
-  const { variant, label, title, intro, columns } = data;
+  const { variant, label, title, intro, columns, background } = data;
 
   if (variant === 'editorial') {
     return (
-      <section className={styles.block}>
+      <section className={styles.block} style={background ? { background } : undefined}>
         <div className={styles.editorialWrapper}>
           <div className={styles.editorialLeft}>
             {label && (

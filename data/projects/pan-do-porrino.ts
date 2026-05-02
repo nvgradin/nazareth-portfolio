@@ -26,7 +26,7 @@ export const panDoPorrino: ProjectWithLayout = {
     hero: {
       title: 'Pan do Porriño',
       subtitle: 'El Camino del Pan do Porriño hacia la Denominación de Origen',
-      intro: 'En 2017 nació la iniciativa de dar reconocimiento al Pan do Porriño, un pan artesanal hecho de masa madre con propia receta, preservada durante los siglos y reconocido por su calidad desde 1600. Entre varios impulsores — Galipad, Acipor, el Concello de O Porriño y los panaderos — iniciaron su camino para lograr el reconocimiento que merecía. Tuve el honor de colaborar creando la Identidad de Marca con la cual el Pan do Porriño logró convertirse en Marca Protegida y obtener la Denominación de Origen de su Bolla.',
+      intro: 'En 2017 nació una iniciativa colectiva para dar reconocimiento al Pan do Porriño, un pan artesanal hecho de masa madre con propia receta, preservada durante los siglos y reconocido por su calidad desde 1600 que logró ser considerada como Marca Protegida y obtener la Denominación de Origen de su Bolla.',
       logo: '/projects/pan-do-porrino/Logotipo.png',
       roles: ['Branding', 'Marketing'],
       year: '2017',
@@ -105,7 +105,7 @@ export const panDoPorrino: ProjectWithLayout = {
     // 3) Heading centrado
     heading: {
       title: 'Una identidad corporativa para un pan con siglos de legado',
-      subtitle: 'Un sistema visual que une herencia artesanal y lenguaje contemporáneo',
+      subtitle: 'Entre varios impulsores — Galipad, Acipor, el Concello de O Porriño y los panaderos locales — iniciaron su camino para lograr el reconocimiento que merecía. Mi labor: colaborar creando la Identidad de Marca del Pan do Porriño.',
     },
 
     // 4) Features
@@ -113,17 +113,17 @@ export const panDoPorrino: ProjectWithLayout = {
       {
         image: { type: 'image', src: '/projects/pan-do-porrino/showcase-center-bottom.jpg', alt: 'Construcción del logotipo de Pan do Porriño — símbolo, tipografía y paleta en conjunto' },
         title: 'Branding',
-        description: 'Definición de una identidad visual capaz de traducir la tradición del Pan do Porriño a un lenguaje contemporáneo, manteniendo su autenticidad y su vínculo con el territorio.',
+        description: 'Sistema visual para traducir la herencia artesanal del Pan do Porriño a un lenguaje contemporáneo, reconocible y coherente con su valor histórico.',
       },
       {
         image: { type: 'image', src: '/projects/pan-do-porrino/bento-4.png', alt: 'Piezas de comunicación para la II Feira do Pan do Porriño — cartelería y díptico' },
         title: 'Publicidad & Promoción',
-        description: 'Desarrollo de las piezas de comunicación para la II Feira do Pan do Porriño, asegurando coherencia visual entre soportes impresos, promocionales y expositivos.',
+        description: 'Desarrollo de piezas para la II Feira do Pan do Porriño, creando una presencia pública consistente en soportes impresos, promocionales y expositivos.',
       },
       {
         image: { type: 'image', src: '/projects/pan-do-porrino/bento-6.png', alt: 'Packaging especial de la Bolla — sistema de marca aplicado al producto físico' },
         title: 'Packaging',
-        description: 'Aplicación del sistema de marca a un packaging especial para la Bolla de Pan do Porriño, reforzando reconocimiento, singularidad de producto y valor percibido.',
+        description: 'Aplicación del sistema visual a una edición especial de la Bolla.',
       },
     ],
 
@@ -137,9 +137,9 @@ export const panDoPorrino: ProjectWithLayout = {
       title: 'BRANDING',
       description: 'Diseño de logotipo y sistema visual inspirado en la Bolla de Pan do Porriño y su carácter artesanal',
       bullets: [
-        'La identidad de Pan do Porriño parte de una idea simple: representar de forma directa aquello que hace único al producto. El símbolo sintetiza la silueta de la Bolla de Pan do Porriño, la pieza reconocida y protegida, reduciendo su forma a un gesto visual esencial, claro y memorable.',
-        'La tipografía REIS introduce el contrapunto artesanal. Su trazo irregular y sus transparencias evocan la materia, la harina y el carácter manual del proceso panadero, aportando una textura visual que equilibra la síntesis del símbolo.',
-        'La paleta cromática se construye alrededor del púrpura, no solo como un recurso diferenciador, sino como una alusión sutil a la noción de valor, prestigio y excepcionalidad. Es un código implícito que ayuda a elevar la percepción de un producto profundamente popular, pero históricamente reconocido por su calidad desde al menos 1600.',
+        'El símbolo sintetiza la silueta de la Bolla de Pan do Porriño en un gesto visual esencial, reconocible y fácil de memorizar.',
+        'La tipografía REIS introduce una textura más manual e imperfecta, en diálogo con la materia, la harina y el proceso artesanal.',
+        'El púrpura actúa como un código sutil de valor y singularidad, elevando la percepción de un producto popular pero históricamente reconocido por su calidad.',
       ],
       background: '#241E33',
       images: [
@@ -154,7 +154,7 @@ export const panDoPorrino: ProjectWithLayout = {
     mediaGrid: {
       title: 'Publicidad & Comunicación',
       subtitle: 'Campaña creativa para la II Feira do Pan do Porriño',
-      body: 'Con la identidad ya definida, el siguiente reto fue llevarla al terreno de la comunicación. Para la II Feira do Pan do Porriño desarrollé un conjunto de piezas promocionales y editoriales pensadas para dar visibilidad al evento y consolidar una imagen de marca coherente en todos los puntos de contacto. Desde soportes expositivos hasta piezas impresas y packaging especial, el sistema visual mantiene un mismo tono: artesanal, reconocible y contemporáneo. Más que adaptar un logo, el objetivo fue convertir la identidad en una presencia pública consistente.',
+      body: 'Con la identidad definida, el sistema se aplicó a piezas promocionales, editoriales y expositivas para la II Feira do Pan do Porriño, manteniendo una presencia de marca coherente en todos los soportes.',
       row1: [
         { src: '/projects/pan-do-porrino/Mockup_anuncio_pandoporrino.jpg', alt: 'Mockup de anuncio publicitario de Pan do Porriño — aplicación de marca en prensa' },
         { src: '/projects/pan-do-porrino/Mockup_diptico_pandoporrino.jpg', alt: 'Mockup del díptico oficial de la II Feira do Pan do Porriño' },
@@ -182,7 +182,20 @@ export const panDoPorrino: ProjectWithLayout = {
       { src: '/projects/pan-do-porrino/client-logos/panaderias_torneiros.png', alt: 'Panaderías Torneiros' },
     ],
 
-    // 7) Quote banner
+    // 7) Resultados
+    textBlock: {
+      variant: 'editorial',
+      label: 'Resultado',
+      title: 'Una marca al servicio de un reconocimiento colectivo',
+      background: '#FAF6F0',
+      columns: [
+        { text: 'La identidad visual formó parte de una iniciativa más amplia de puesta en valor del Pan do Porriño, acompañando su visibilidad pública y su consolidación como producto singular del territorio.' },
+        { text: 'Dentro de ese proceso colectivo, Pan do Porriño logró ser Marca Protegida y con Denominación de Origen.' },
+        { text: '' },
+      ],
+    },
+
+    // 8) Quote banner
     quoteBanner: {
       quote: [
         'Peregrino do Camiño,',

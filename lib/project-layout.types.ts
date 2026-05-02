@@ -282,6 +282,7 @@ export interface TextBlock {
   title: string;
   intro?: string;
   columns: TextBlockColumn[];
+  background?: string;
 }
 
 /** @deprecated Use TextBlock */
