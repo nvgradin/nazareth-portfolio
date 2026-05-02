@@ -124,8 +124,8 @@ export const trainfy: ProjectWithLayout = {
       },
       {
         image: { type: 'image', src: '/projects/trainfy/feature-branding.jpg', alt: 'Exploración de identidad visual para Trainfy — naming, paleta y sistema tipográfico' },
-        title: 'Diseño antes que código',
-        description: 'Venía de publicidad y creatividad, no de desarrollo. Eso me dio ventaja: apliqué *arquitectura de información*, flujos de usuario e identidad visual antes de escribir una línea de código. **El diseño no decoró el producto — lo definió.**',
+        title: 'Diseño y arquitectura en paralelo',
+        description: 'Mientras analizábamos la **arquitectura de datos y la lógica del producto**, definía **identidad, flujos de experiencia y sistema de interfaz**. Esas conversaciones ocurrían **a la vez**, no una después de la otra. Esa forma de trabajar hizo que el producto fuera más coherente desde dentro.',
       },
       {
         image: { type: 'image', src: '/projects/trainfy/feature-dev.jpg', alt: 'Stack técnico de Trainfy — React, Node.js y PostgreSQL en producción' },
@@ -149,24 +149,15 @@ export const trainfy: ProjectWithLayout = {
       accentColor: '#1E3A5F',
     },
 
-    // 5) Hero Image — pantalla de login a ancho completo
-    heroImage: {
-      src: '/projects/trainfy/Trainfy_login.png',
-      alt: 'Diseño de la pantalla de login de Trainfy — acceso a la comunidad deportiva',
-      background: '#212C3A',
-      borderRadius: 16,
-      caption: 'La pantalla de acceso marcaba el tono: una plataforma donde los deportistas no solo compran y venden material, sino que se encuentran.',
-    },
-
     // 6) Web Editorial + WebPanel (carrusel de mockups)
     web: {
       title: 'Lo que Trainfy\nLlegó a Hacer',
       subtitle: 'Una plataforma funcional\nconstruida en tres semanas.',
       content: '',
       columns: [
-        '**Cuatro meses** de bootcamp intensivo. **Tres semanas** de proyecto final. Equipo de tres personas. El resultado fue una plataforma real, no una demo vacía.',
-        'Trainfy permitía crear cuenta y perfil deportivo, publicar anuncios de *compra, venta e intercambio* de material, insertar espacios publicitarios y conectar con otros deportistas a través de un sistema de mensajería. No era perfecta — era la primera vez que construía algo así de cero — pero **funcionaba**.',
-        'Técnicamente se apoyó en **React** en el frontend, **Node.js** y **PostgreSQL** en el backend, y librerías como Redux, Axios, Bcrypt y Cloudinary. *Cada decisión técnica tenía una razón de UX detrás.*',
+        '**Cuatro meses** de bootcamp intensivo. **Tres semanas** de proyecto final. Equipo de tres personas.',
+        'Construimos un MVP con autenticación, perfiles de usuario, publicaciones de compra, venta e intercambio, mensajería entre deportistas y una estructura de base de datos pensada para sostener el producto desde su lógica interna.',
+        '**Stack**\nReact · Node.js · PostgreSQL · Redux · Axios · Bcrypt · Cloudinary',
       ],
     },
     webPanel: {
@@ -212,7 +203,7 @@ export const trainfy: ProjectWithLayout = {
           text: 'Trainfy no llegó a producción. Es un proyecto final de bootcamp, y así es como debe leerse: *como una demostración de capacidad*, no como un producto en el mercado.',
         },
         {
-          text: 'Lo que sí fue real: de una promoción de ~20 alumnos, **solo 2 salieron contratados** directamente desde la presentación final. Empecé a trabajar en una de esas empresas.',
+          text: 'De una promoción de unas 20 personas, solo 2 salimos contratadas directamente tras la presentación final. Yo empecé a trabajar en una de esas empresas.',
         },
         {
           text: 'Desde entonces no puedo diseñar sin pensar en la implementación, ni implementar sin pensar en la experiencia. Trainfy me enseñó que **esa tensión no es un problema**. Es exactamente donde quiero trabajar.',
