@@ -25,8 +25,8 @@ export const lasIslasCies: ProjectWithLayout = {
     hero: {
       title: 'Las Islas Cíes',
       subtitle: 'Navegar las islas antes de llegar a ellas.',
-      intro: 'Las Islas Cíes, hogar de la icónica Playa de Rodas, reconocida como la mejor playa del mundo por The Guardian, son un destino de gran la belleza natural: un paraíso. Mi misión fue reflejar esta esencia en la web. Por ello propuse convertirla en una guía digital que acompañara a los viajeros desde la planificación hasta la vivencia de su experiencia en este rincón único de Galicia. Dar vida a esta transformación, rediseñando la web completamente para modernizar su aspecto, mejorar la navegación y abrir la puerta a los viajeros para que puedan planificar su visita, descubrir las rutas y sus puntos de interés, para reservar su billete de barco y disfrutar plenamente su experiencia en Las Islas Cíes.',
-      result: '4 portales insulares lanzados en 8 meses. Un modelo que sigue siendo referencia para nuevos destinos.',
+      intro: 'Convertí lasislascies.com de venta de billetes una guía digital de referencia que acompañara a los viajeros desde su planificación hasta su experiencia.Un sistema de producto que paso a replicarse en 6 islas.',
+      result: '4 portales insulares lanzados en 8 meses. +2 portales replicados por el cliente usando mi sistema. Un modelo que sigue siendo referencia para nuevos destinos.',
       logo: '/projects/las-islas-cies/Logo.png',
       roles: ['Product Design & UX', 'Web', 'Estrategia', 'Contenido'],
       context: 'Proyecto freelance',
@@ -72,7 +72,7 @@ export const lasIslasCies: ProjectWithLayout = {
     // 3) Heading centrado
     heading: {
       title: 'Cómo lo abordé',
-      subtitle: 'La misión era clara: renovar la web para que fuera tan intuitiva y acogedora como las islas mismas. Desde el inicio, el reto fue diseñar una estructura que no solo organizara la información de manera clara, sino que también invitara a los usuarios a sumergirse en la experiencia que ofrecen las islas. A través de un enfoque creativo y funcional, reestructuré el contenido, optimicé los flujos de usuario y diseñé una interfaz visual inspirada en los colores y texturas del entorno natural. Cada decisión, desde la navegación hasta los elementos visuales, buscó capturar la esencia de las islas, facilitando al mismo tiempo que los visitantes encontraran lo que necesitaban con facilidad.',
+      subtitle: 'Las Islas Cíes son un destino de reconocimiento internacional: su Playa de Rodas fue declarada la mejor del mundo por The Guardian. Pero la web no estaba a la altura del activo: era una página simple de venta de billetes, sin contenido, sin estructura, sin identidad. El cliente vino a mí para diseño de merchandising. Pero al revisar sus webs, vi una oportunidad: convertirlas en los portales de referencia del destino, con contenido útil, arquitectura SEO sólida y un modelo de monetización ampliado. Le propuse diseñarlo como sistema replicable desde el inicio. Aprobó. Y lo construí como producto, no como proyecto aislado.',
     },
 
     // 4) Feature cards (3 columnas)
@@ -80,18 +80,18 @@ export const lasIslasCies: ProjectWithLayout = {
       {
         image: { type: 'image', src: '/projects/las-islas-cies/feature-ui-ux.jpg', alt: 'Placeholder feature 1' },
         title: 'De página de billetes a guía de destino',
-        description: 'Placeholder — descripción de la primera feature.',
+        description: 'La web original vendía billetes. Lo que construí era otra cosa: una guía digital diseñada para acompañar la experiencia del viajero antes de llegar a la isla.',
       },
       {
         image: { type: 'image', src: '/projects/las-islas-cies/feature-web.jpg', alt: 'Placeholder feature 2' },
-        title: 'Desarrollo Web',
+        title: 'Tranformación de web a producto escalable',
 
-        description: 'Placeholder — descripción de la segunda feature.',
+        description: 'Arquitectura de información modular. Diseño de componentes reutilizables. Estructura UX/UI preparada para replicarse sin rediseñar desde cero. Es un sistema escalable desde el primer día.',
       },
       {
         image: { type: 'image', src: '/projects/las-islas-cies/feature-marketing.jpg', alt: 'Placeholder feature 3' },
-        title: 'Tranformación de web a producto',
-        description: 'Placeholder — descripción de la tercera feature.',
+        title: 'SEO desde la arquitectura de contenido',
+        description: 'El dominio ya tenía años de posicionamiento. Lo que hice fue multiplicar exponencialmente sus puntos de entrada orgánicos con decenas de páginas indexables: cada ruta, playa, restaurante y experiencia respondía búsquedas reales.',
       },
     ],
 
@@ -110,8 +110,8 @@ export const lasIslasCies: ProjectWithLayout = {
       subtitle: 'Navegar las Islas\nantes de llegar a ellas.',
       content: '',
       columns: [
-        'La web original tenía una función: vender billetes. Lo que construí tenía otra: que el visitante pudiera conocer, planificar y soñar con las islas antes de comprar el billete.',
-        'Creé un sistema de fichas propio para rutas de senderismo, playas, puntos de interés y restaurantes. Rediseñé la home, la tienda, el blog — convertido en magazine. Integré el sistema de compra con las navieras. Añadí selector de idioma, newsletter, testimonios y sección de experiencias.',
+        'La web original tenía una función: vender billetes. Lo que construí tenía otra: que el visitante pudiera conocer, planificar y preparar toda la experiencia además de comprar su billete.',
+        'Creé un sistema de fichas propio para rutas de senderismo, playas, puntos de interés y restaurantes. Diseñé una arquitectura de contenido escalable en WordPress que permitió convertir una web simple en un sistema de portales preparado para crecer.',
         'Todo el contenido — redacción, estructura, jerarquía — lo desarrollé yo. El SEO fue consecuencia directa de esa arquitectura de contenido, no una capa añadida encima.',
       ],
     },
@@ -134,7 +134,7 @@ export const lasIslasCies: ProjectWithLayout = {
       setup: 'El mejor activo de un destino no es su belleza.',
       statement: 'Es cómo te invitan a descubrirlo.',
       accentColor: '#252851',
-      afterBranding: true,
+      afterWeb: true,
     },
 
     // Modelo escalable — 4 islas
@@ -180,18 +180,6 @@ export const lasIslasCies: ProjectWithLayout = {
           title: 'Isla de la Graciosa',
           description: 'Lanzamiento abril 2025',
         },
-      ],
-    },
-
-    // Bloque resultado
-    textBlock: {
-      variant: 'editorial',
-      label: 'Resultado',
-      title: 'Lo que se construyó',
-      columns: [
-        { text: 'Una web que era una página de billetes se convirtió en el portal de referencia de uno de los destinos más visitados de Galicia. Sin datos de analytics propios — el cliente gestionó eso — pero con un indicador claro: el primer verano, los billetes se agotaron.' },
-        { text: 'Y el modelo funcionó tan bien que se replicó tres veces más en menos de un año. Cuatro islas. Ocho meses. Un sistema.' },
-        { text: 'Columna 3 — rellena aquí.' },
       ],
     },
 

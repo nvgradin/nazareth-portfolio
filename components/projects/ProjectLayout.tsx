@@ -82,7 +82,7 @@ export function ProjectLayout({ project }: Props) {
       )}
 
       {/* Statement block — posición B: después del brandingScroller */}
-      {layout.statementBlock && layout.statementBlock.afterBranding && (
+      {layout.statementBlock && layout.statementBlock.afterBranding && !layout.statementBlock.afterWeb && (
         <StatementBlock
           label={layout.statementBlock.label}
           setup={layout.statementBlock.setup}
@@ -90,8 +90,6 @@ export function ProjectLayout({ project }: Props) {
           accentColor={layout.statementBlock.accentColor}
         />
       )}
-
-      {layout.sistemScaled && <SistemScaled data={layout.sistemScaled} />}
 
       {/* 6a) ArchitectureWebFlow: reemplaza editorial+web cuando existe */}
       {layout.architectureWebFlow && (
@@ -119,6 +117,18 @@ export function ProjectLayout({ project }: Props) {
       {layout.webPanel && !layout.web && (
         <WebPanel data={layout.webPanel} background={layout.bento?.background} />
       )}
+
+      {/* Statement block — posición C: después del web+webPanel */}
+      {layout.statementBlock && layout.statementBlock.afterWeb && (
+        <StatementBlock
+          label={layout.statementBlock.label}
+          setup={layout.statementBlock.setup}
+          statement={layout.statementBlock.statement}
+          accentColor={layout.statementBlock.accentColor}
+        />
+      )}
+
+      {layout.sistemScaled && <SistemScaled data={layout.sistemScaled} />}
 
       {/* 7) Hero Image — imagen destacada a ancho completo */}
       {layout.heroImage && <HeroImage data={layout.heroImage} />}
