@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { TextBlock as TextBlockType } from '@/lib/project-layout.types';
-import { TextContainer } from '@/components/ui';
+import { TextContainer, parseInline } from '@/components/ui';
 import styles from './TextBlock.module.css';
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
@@ -50,7 +50,7 @@ export function TextBlock({ data }: Props) {
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.5, delay: 0.1 + index * 0.08, ease }}
               >
-                {column.text}
+                {parseInline(column.text)}
               </motion.p>
             ))}
           </div>
@@ -98,7 +98,7 @@ export function TextBlock({ data }: Props) {
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.5, delay: 0.1 + index * 0.08, ease }}
               >
-                {column.text}
+                {parseInline(column.text)}
               </motion.p>
             ))}
           </div>
@@ -144,7 +144,7 @@ export function TextBlock({ data }: Props) {
               transition={{ duration: 0.5, delay: 0.15 + index * 0.1, ease }}
             >
               {column.subtitle && <h3 className={styles.subtitle}>{column.subtitle}</h3>}
-              <p className={styles.paragraphText}>{column.text}</p>
+              <p className={styles.paragraphText}>{parseInline(column.text)}</p>
             </motion.div>
           ))}
         </div>

@@ -3,6 +3,7 @@
 import { ReactNode, CSSProperties } from 'react';
 import { motion } from 'framer-motion';
 import { EditorialContent } from '@/lib/project-layout.types';
+import { parseInline } from '@/components/ui';
 import styles from './EditorialBlock.module.css';
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
@@ -87,7 +88,7 @@ export function EditorialBlock({ title, subtitle, content, columns, children, cl
                   </ul>
                 </>
               ) : (
-                <p className={styles.content}>{content}</p>
+                <p className={styles.content}>{parseInline(content as string)}</p>
               )}
             </motion.div>
           </div>
@@ -107,7 +108,7 @@ export function EditorialBlock({ title, subtitle, content, columns, children, cl
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.5, delay: 0.1 + i * 0.1, ease }}
               >
-                {text}
+                {parseInline(text)}
               </motion.p>
             ))}
           </div>

@@ -120,17 +120,17 @@ export const trainfy: ProjectWithLayout = {
       {
         image: { type: 'image', src: '/projects/trainfy/feature-ui-ux.jpg', alt: 'Proceso de redefinición del brief — de marketplace a comunidad deportiva' },
         title: 'Redefinir el brief',
-        description: 'El encargo pedía un marketplace. Nosotros lo elevamos a una comunidad deportiva. Esa decisión cambió la arquitectura, el diseño y el stack desde el primer día.',
+        description: 'El encargo pedía un marketplace. Nosotros lo elevamos a **una comunidad deportiva**. Esa decisión cambió la arquitectura, el diseño y el stack desde el primer día.',
       },
       {
         image: { type: 'image', src: '/projects/trainfy/feature-branding.jpg', alt: 'Exploración de identidad visual para Trainfy — naming, paleta y sistema tipográfico' },
         title: 'Diseño antes que código',
-        description: 'Venía de publicidad y creatividad, no de desarrollo. Eso me dio ventaja: apliqué arquitectura de información, flujos de usuario e identidad visual antes de escribir una línea de código. El diseño no decoró el producto — lo definió.',
+        description: 'Venía de publicidad y creatividad, no de desarrollo. Eso me dio ventaja: apliqué *arquitectura de información*, flujos de usuario e identidad visual antes de escribir una línea de código. **El diseño no decoró el producto — lo definió.**',
       },
       {
         image: { type: 'image', src: '/projects/trainfy/feature-dev.jpg', alt: 'Stack técnico de Trainfy — React, Node.js y PostgreSQL en producción' },
         title: 'De la marca al producto digital',
-        description: 'Primer proyecto fullstack real: branding, UI, componentes en React, base de datos en PostgreSQL. Por primera vez entendí un producto digital end-to-end. Eso cambió para siempre cómo diseño.',
+        description: 'Primer proyecto fullstack real: branding, UI, componentes en **React**, base de datos en **PostgreSQL**. Por primera vez entendí un producto digital *end-to-end*. Eso cambió para siempre cómo diseño.',
       },
     ],
 
@@ -164,9 +164,9 @@ export const trainfy: ProjectWithLayout = {
       subtitle: 'Una plataforma funcional\nconstruida en tres semanas.',
       content: '',
       columns: [
-        'Cuatro meses de bootcamp intensivo. Tres semanas de proyecto final. Equipo de tres personas. El resultado fue una plataforma real, no una demo vacía.',
-        'Trainfy permitía crear cuenta y perfil deportivo, publicar anuncios de compra, venta e intercambio de material, insertar espacios publicitarios y conectar con otros deportistas a través de un sistema de mensajería. No era perfecta — era la primera vez que construía algo así de cero — pero funcionaba.',
-        'Técnicamente se apoyó en React en el frontend, Node.js y PostgreSQL en el backend, y librerías como Redux para el estado, Axios para las peticiones HTTP, Bcrypt para la seguridad de contraseñas y Cloudinary para la gestión de imágenes. Cada decisión técnica tenía una razón de UX detrás.',
+        '**Cuatro meses** de bootcamp intensivo. **Tres semanas** de proyecto final. Equipo de tres personas. El resultado fue una plataforma real, no una demo vacía.',
+        'Trainfy permitía crear cuenta y perfil deportivo, publicar anuncios de *compra, venta e intercambio* de material, insertar espacios publicitarios y conectar con otros deportistas a través de un sistema de mensajería. No era perfecta — era la primera vez que construía algo así de cero — pero **funcionaba**.',
+        'Técnicamente se apoyó en **React** en el frontend, **Node.js** y **PostgreSQL** en el backend, y librerías como Redux, Axios, Bcrypt y Cloudinary. *Cada decisión técnica tenía una razón de UX detrás.*',
       ],
     },
     webPanel: {
@@ -209,13 +209,13 @@ export const trainfy: ProjectWithLayout = {
       title: 'Lo que se construyó en 3 semanas',
       columns: [
         {
-          text: 'Trainfy no llegó a producción. Es un proyecto final de bootcamp, y así es como debe leerse: como una demostración de capacidad, no como un producto en el mercado.',
+          text: 'Trainfy no llegó a producción. Es un proyecto final de bootcamp, y así es como debe leerse: *como una demostración de capacidad*, no como un producto en el mercado.',
         },
         {
-          text: 'Lo que sí fue real: de una promoción de ~20 alumnos, solo 2 salieron contratados directamente desde la presentación final. Empecé a trabajar en una de esas empresas.',
+          text: 'Lo que sí fue real: de una promoción de ~20 alumnos, **solo 2 salieron contratados** directamente desde la presentación final. Empecé a trabajar en una de esas empresas.',
         },
         {
-          text: 'Desde entonces no puedo diseñar sin pensar en la implementación, ni implementar sin pensar en la experiencia. Trainfy me enseñó que esa tensión no es un problema. Es exactamente donde quiero trabajar.',
+          text: 'Desde entonces no puedo diseñar sin pensar en la implementación, ni implementar sin pensar en la experiencia. Trainfy me enseñó que **esa tensión no es un problema**. Es exactamente donde quiero trabajar.',
         },
       ],
     },

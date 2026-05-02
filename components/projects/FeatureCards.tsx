@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FeatureCard } from '@/lib/project-layout.types';
+import { parseInline } from '@/components/ui';
 import styles from './FeatureCards.module.css';
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
@@ -34,7 +35,7 @@ export function FeatureCards({ data }: Props) {
               </div>
               <div className={styles.cardContent}>
                 <h3 className={styles.cardTitle}>{card.title}</h3>
-                <p className={styles.cardDescription}>{card.description}</p>
+                <p className={styles.cardDescription}>{parseInline(card.description)}</p>
               </div>
             </motion.article>
           ))}
