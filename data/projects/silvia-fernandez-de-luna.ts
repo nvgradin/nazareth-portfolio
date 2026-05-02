@@ -128,7 +128,6 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       setup: 'Llevar algo profundamente interno — una visión espiritual, un mundo intangible — y convertirlo en algo navegable, coherente y buscable en Google. Ese fue el verdadero reto. Y el verdadero resultado.',
       statement: 'Las mejores marcas no se diseñan. Se habitan.',
       accentColor: '#895900',
-      afterBranding: true,
     },
 
     // 7) WEB + WEBPANEL — editorial izquierda + carrusel mockups
