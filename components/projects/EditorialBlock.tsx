@@ -102,7 +102,7 @@ export function EditorialBlock({ title, subtitle, content, columns, children, cl
             {columns.map((text, i) => (
               <motion.p
                 key={i}
-                className={styles.columnText}
+                className={[styles.columnText, /`[^`]+`/.test(text) ? styles.columnTextTags : ''].join(' ')}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
