@@ -34,7 +34,7 @@
 }
 
 .title {
-  font-size: clamp(1rem, 1.5vw, 2.2rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
   font-family: var(--font-heading);
   font-weight: 400;
   margin: var(--space-24);

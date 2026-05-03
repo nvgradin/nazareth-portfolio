@@ -416,6 +416,7 @@ export interface ProjectLayout {
   clientLogos?: { src: string; alt: string; staticOnDesktop?: boolean }[];
   clientLogosStatic?: boolean;
   clientLogosLabel?: string;
+  clientLogosNote?: string;
   quoteBanner?: QuoteBanner;
   closing?: ClosingText;
 
