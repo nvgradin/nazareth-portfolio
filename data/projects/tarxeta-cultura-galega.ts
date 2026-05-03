@@ -24,7 +24,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
   layout: {
     hero: {
       title: 'Tarxeta Cultura Galega',
-      subtitle: 'Creatividad Estrategia de Marketing',
+      subtitle: 'Vive a cultura galega',
       intro: 'Tarxeta Cultura Galega es la iniciativa promovida por AGADIC con el objetivo de promocionar y potenciar el consumo de cultura gallega entre jóvenes de 18 a 30 años. La campaña subvenciona a través de bonos digitales la adquisición de libros en gallego y entradas a espectáculos de artes escénicas de la comunidad en galego. Una campaña de lanzamiento creada para la iniciativa de AGADIC en colaboración con la Xunta de Galicia, Marca Galicia y Afundación.',
       logo: '/projects/tarxetaculturagalega/logo.png',
       roles: ['Estrategia', 'Marketing'],
@@ -75,18 +75,18 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
     features: [
       {
         image: { type: 'image', src: '/projects/tarxetaculturagalega/bento-7.jpg', alt: 'Ilustración' },
-        title: 'Ilustración',
-        description: 'Placeholder — descripción de la ilustración.',
+        title: 'Concepto e Ilustración',
+        description: 'La descontextualización temporal de figuras icónicas gallegas.',
       },
       {
         image: { type: 'image', src: '/projects/tarxetaculturagalega/bento-3.jpg', alt: 'Publicidad & Design' },
-        title: 'Publicidad & Design',
-        description: 'Placeholder — descripción de publicidad y diseño.',
+        title: 'Publicidad y Diseño',
+        description: 'Aplicación del concepto a todos los soportes.',
       },
       {
         image: { type: 'image', src: '/projects/tarxetaculturagalega/bento-6.jpg', alt: 'Estrategia' },
-        title: 'Estrategia',
-        description: 'Placeholder — descripción de la estrategia.',
+        title: 'Estrategia de lanzamiento',
+        description: 'Conectar con el público joven en su propio lenguaje.',
       },
     ],
 
@@ -126,7 +126,20 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
       ],
     },
 
+    textBlock: {
+      variant: 'editorial',
+      label: 'Resultado',
+      title: 'Una iniciativa para promocionar la cultura gallega',
+      columns: [
+        { text: 'La campaña movilizó 300.000€ en el sector editorial y de artes escénicas en su primer año, tuvo presentación oficial con cobertura en medios y fue calificada institucionalmente como pionera.' },
+        { text: '' },
+        { text: '' },
+      ],
+    },
+
     clientLogosStatic: true,
+    clientLogosLabel: 'Organización y colaboradores',
+    clientLogosNote: 'Fue definida oficialmente como "iniciativa pionera e innovadora" por la Xunta de Galicia.',
 
     clientLogos: [
       { src: '/projects/tarxetaculturagalega/client-logos/logotipo_agadic.png', alt: 'AGADIC' },
@@ -138,11 +151,25 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
     ],
 
     quoteBanner: {
-      quote: 'Placeholder — cita inspiradora del proyecto.',
+      quote: 'Los Castelaos y Rosalías de hoy están aquí. ¿Te las vas a perder?',
       author: 'Tarxeta Cultura Galega',
       backgroundImage: { type: 'image', src: '/projects/tarxetaculturagalega/TCG_portada.jpg', alt: 'Tarxeta Cultura Galega' },
       imagePosition: 'center',
+      overlay: true,
     },
+
+    layoutOrder: [
+      'hero',
+      'bento',
+      'heading',
+      'features',
+      'introParallax',
+      'brandingScroller',
+      'mediaGrid',
+      'textBlock',
+      'clientLogos',
+      'quoteBanner',
+    ],
   },
 
   meta: {

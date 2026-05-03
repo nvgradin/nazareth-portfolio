@@ -72,24 +72,26 @@ export const lasIslasCies: ProjectWithLayout = {
     // 3) Heading centrado
     heading: {
       title: 'Cómo lo abordé',
-      subtitle: 'Las Islas Cíes son un destino de reconocimiento internacional: su Playa de Rodas fue declarada la mejor del mundo por The Guardian. Pero la web no estaba a la altura del activo: era una página simple de venta de billetes, sin contenido, sin estructura, sin identidad. El cliente vino a mí para diseño de merchandising. Pero al revisar sus webs, vi una oportunidad: convertirlas en los portales de referencia del destino, con contenido útil, arquitectura SEO sólida y un modelo de monetización ampliado. Le propuse diseñarlo como sistema replicable desde el inicio. Aprobó. Y lo construí como producto, no como proyecto aislado.',
+      subtitle: [
+        'Las Islas Cíes son un destino de reconocimiento internacional: su Playa de Rodas fue declarada la mejor del mundo por The Guardian. Pero la web no estaba a la altura del activo: era una página simple de venta de billetes, sin contenido, sin estructura, sin identidad.',
+        'El cliente vino a mí para diseño de merchandising. Pero al revisar sus webs, vi una oportunidad: convertirlas en los portales de referencia del destino, con contenido útil, arquitectura SEO sólida y un modelo de monetización ampliado. Le propuse diseñarlo como sistema replicable desde el inicio. Aprobó. Y lo construí como producto, no como proyecto aislado.',
+      ],
     },
 
     // 4) Feature cards (3 columnas)
     features: [
       {
-        image: { type: 'image', src: '/projects/las-islas-cies/feature-ui-ux.jpg', alt: 'Placeholder feature 1' },
+        image: { type: 'image', src: '/projects/las-islas-cies/feature-ui-ux.jpg', alt: 'Guía de destino Las Islas Cíes — navegación, rutas y experiencias del viajero' },
         title: 'De página de billetes a guía de destino',
-        description: 'La web original vendía billetes. Lo que construí era otra cosa: una guía digital diseñada para, además, acompañar la experiencia del viajero antes de llegar a la isla.',
+        description: 'La web original vendía billetes. Lo que construí era otra cosa: una guía digital diseñada para acompañar la experiencia del viajero antes de llegar a la isla.',
       },
       {
-        image: { type: 'image', src: '/projects/las-islas-cies/bento-4.jpg', alt: 'Placeholder feature 2' },
-        title: 'Tranformación de web a producto escalable',
-
+        image: { type: 'image', src: '/projects/las-islas-cies/bento-4.jpg', alt: 'Sistema de componentes reutilizables — arquitectura modular replicada en 4 portales insulares' },
+        title: 'Transformación de web a producto escalable',
         description: 'Arquitectura de información modular. Diseño de componentes reutilizables. Estructura UX/UI preparada para replicarse sin rediseñar desde cero. Es un sistema escalable desde el primer día.',
       },
       {
-        image: { type: 'image', src: '/projects/las-islas-cies/feature-marketing.jpg', alt: 'Placeholder feature 3' },
+        image: { type: 'image', src: '/projects/las-islas-cies/feature-marketing.jpg', alt: 'Arquitectura de contenido SEO — fichas de rutas, playas y experiencias indexables' },
         title: 'SEO desde la arquitectura de contenido',
         description: 'El dominio ya tenía años de posicionamiento. Lo que hice fue multiplicar exponencialmente sus puntos de entrada orgánicos con decenas de páginas indexables: cada ruta, playa, restaurante y experiencia respondía búsquedas reales.',
       },
@@ -107,12 +109,12 @@ export const lasIslasCies: ProjectWithLayout = {
     // Web editorial + galería
     web: {
       title: 'De web de billetes\na portal de destino',
-      subtitle: 'Navegar las Islas\nantes de llegar a ellas.',
+      subtitle: 'Una arquitectura de contenido\ndiseñada para escalar."',
       content: '',
       columns: [
         'La web original tenía una función: vender billetes. Lo que construí tenía otra: que el visitante pudiera conocer, planificar y preparar toda la experiencia además de comprar su billete.',
         'Creé un sistema de fichas propio para rutas de senderismo, playas, puntos de interés, restaurantes, donde dormir... Diseñé una arquitectura de contenido escalable en WordPress que permitió convertir una web simple en un sistema de portales preparado para crecer.',
-        'Dado el salto que hicimos de web de presencia para captar comisiones al vender billetes de las navieras, he trabajado en la búsqueda y creación de contenido necesario — redacción, estructura, jerarquía — completando la nueva guía.',
+        'Trabajé en la creación y expansión del contenido de cada portal: nuevas páginas, fichas, textos y búsqueda de material visual. En los portales construidos desde cero, el contenido fue desarrollado íntegramente por mí.',
       ],
     },
 
