@@ -25,7 +25,7 @@ export const lasIslasCies: ProjectWithLayout = {
     hero: {
       title: 'Las Islas Cíes',
       subtitle: 'Navegar las islas antes de llegar a ellas.',
-      intro: 'Convertí lasislascies.com de venta de billetes una guía digital de referencia que acompañara a los viajeros desde su planificación hasta su experiencia.Un sistema de producto que paso a replicarse en 6 islas.',
+      intro: 'Convertí la web centrada en la venta de billetes a una guía digital que acompaña a los viajeros desde su planificación hasta su experiencia. Un sistema de producto que se replicó en 6 islas.',
       result: '4 portales insulares lanzados en 8 meses. +2 portales replicados por el cliente usando mi sistema. Un modelo que sigue siendo referencia para nuevos destinos.',
       logo: '/projects/las-islas-cies/Logo.png',
       roles: ['Product Design & UX', 'Web', 'Estrategia', 'Contenido'],

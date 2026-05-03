@@ -20,15 +20,12 @@ const ALL_IMAGES = [
   // Trainfy
   { src: '/projects/trainfy/bento-1.jpg', alt: 'Trainfy' },
   { src: '/projects/trainfy/bento-3.jpg', alt: 'Trainfy' },
-  { src: '/projects/trainfy/bento-5.jpg', alt: 'Trainfy' },
-  { src: '/projects/trainfy/bento-7.jpg', alt: 'Trainfy' },
   { src: '/projects/trainfy/bento-8.jpg', alt: 'Trainfy' },
   { src: '/projects/trainfy/feature-branding.jpg', alt: 'Trainfy' },
   { src: '/projects/trainfy/feature-dev.jpg', alt: 'Trainfy' },
   { src: '/projects/trainfy/showcase-center-bottom.jpg', alt: 'Trainfy' },
   { src: '/projects/trainfy/showcase-left.jpg', alt: 'Trainfy' },
   { src: '/projects/trainfy/web-mockup-1.jpg', alt: 'Trainfy' },
-  { src: '/projects/trainfy/quote-bg.jpg', alt: 'Trainfy' },
   // Las Islas Cíes
   { src: '/projects/las-islas-cies/bento-1.jpg', alt: 'Las Islas Cíes' },
   { src: '/projects/las-islas-cies/bento-2.jpg', alt: 'Las Islas Cíes' },
@@ -52,6 +49,9 @@ const ALL_IMAGES = [
   { src: '/projects/pan-do-porrino/Mockup_diptico_pandoporrino.jpg', alt: 'Pan do Porriño' },
   { src: '/projects/pan-do-porrino/PandoPorrino_branding_versionsecundaria.jpg', alt: 'Pan do Porriño' },
   { src: '/projects/pan-do-porrino/packaging_new.png', alt: 'Pan do Porriño' },
+  // Tarxeta Cultura Galega
+  { src: '/projects/tarxeta-cultura-galega/bento-4.jpg', alt: 'Tarxeta Cultura Galega' },
+  { src: '/projects/tarxeta-cultura-galega/bento-7.jpg', alt: 'Tarxeta Cultura Galega' },
 ];
 
 // 6 columnas × 6 filas = 36 slots — llenamos con las 36 primeras (sin repetir)
