@@ -55,6 +55,10 @@
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: #1a0a00;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  display: block;
 }
 
 .image {

@@ -41,9 +41,19 @@ export function Lightbox({ image, onClose, onPrev, onNext }: Props) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.25 }}
-      onClick={onClose}
     >
-      <div className={styles.lightboxBackdrop} />
+      <div className={styles.lightboxBackdrop} onClick={onClose} />
+
+      <button
+        className={styles.lightboxClose}
+        onClick={(e) => { e.stopPropagation(); onClose(); }}
+        aria-label="Cerrar"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
 
       <button
         className={`${styles.lightboxArrow} ${styles.lightboxArrowLeft}`}

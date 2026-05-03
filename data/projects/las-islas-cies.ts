@@ -148,8 +148,13 @@ export const lasIslasCies: ProjectWithLayout = {
         { src: '/logos/Las_Islas_Cies.png', alt: 'Las Islas Cíes' },
         { src: '/logos/EU_ONS.png', alt: 'Isla de Ons' },
         { src: '/logos/I_LOVE_LOBOS.png', alt: 'Isla de Lobos' },
-        { src: '/logos/I_LOVE_LA_GRACIOSA.png', alt: 'Isla de la Graciosa', scale: 1.3 },
+        { src: '/logos/I_LOVE_LA_GRACIOSA.png', alt: 'Isla de la Graciosa', scale: 1.1 },
       ],
+      replicaNote: {
+        highlight: '+2 portales replicados después por el cliente',
+        islands: 'Isla de San Simón · Isla de Fuerteventura',
+        body: 'La arquitectura siguió creciendo sin mi intervención directa, lo que confirmó que el sistema era realmente replicable.',
+      },
       background: '#252851',
       steps: [
         {
@@ -158,6 +163,7 @@ export const lasIslasCies: ProjectWithLayout = {
           imageAlt: 'Web Las Islas Cíes',
           title: 'Las Islas Cíes',
           description: 'Lanzamiento octubre 2024',
+          detail: 'Transformación completa de web existente. Estrategia, contenido, diseño, desarrollo.',
         },
         {
           step: 2,
@@ -165,6 +171,7 @@ export const lasIslasCies: ProjectWithLayout = {
           imageAlt: 'Web Isla de Ons — placeholder',
           title: 'Isla de Ons',
           description: 'Lanzamiento diciembre 2024',
+          detail: 'Transformación completa de web existente. Mismo tratamiento sistémico.',
         },
         {
           step: 3,
@@ -172,6 +179,7 @@ export const lasIslasCies: ProjectWithLayout = {
           imageAlt: 'Web Isla de Lobos — placeholder',
           title: 'Isla de Lobos',
           description: 'Lanzamiento enero 2025',
+          detail: 'Construcción de cero. Contenido redactado íntegramente por mí.',
         },
         {
           step: 4,
@@ -179,6 +187,7 @@ export const lasIslasCies: ProjectWithLayout = {
           imageAlt: 'Web Isla de la Graciosa — placeholder',
           title: 'Isla de la Graciosa',
           description: 'Lanzamiento abril 2025',
+          detail: 'Construcción de cero. Propuesta de experiencias más amplia.',
         },
       ],
     },

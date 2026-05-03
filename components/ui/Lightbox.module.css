@@ -14,7 +14,7 @@
   z-index: 0;
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(8px);
-  pointer-events: none;
+  cursor: pointer;
 }
 
 .lightboxImageWrap {
@@ -32,7 +32,7 @@
 
 .lightboxArrow {
   position: absolute;
-  z-index: 2;
+  z-index: 10;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -57,3 +57,28 @@
 
 .lightboxArrowLeft  { left: var(--space-24); }
 .lightboxArrowRight { right: var(--space-24); }
+
+.lightboxClose {
+  position: absolute;
+  z-index: 10;
+  top: var(--space-24);
+  right: var(--space-24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--neutral-300-soft);
+  border-radius: var(--radius-full);
+  background-color: var(--neutral-50);
+  color: var(--brand-primary-900);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-default),
+              color var(--duration-fast) var(--ease-default);
+}
+
+.lightboxClose:hover {
+  background-color: var(--brand-primary-900);
+  color: var(--neutral-50);
+  border-color: var(--brand-primary-900);
+}

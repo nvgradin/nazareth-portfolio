@@ -55,6 +55,10 @@
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: #1a0a00;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  display: block;
 }
 
 .image {
@@ -82,36 +86,84 @@
   }
 }
 
-/* ── Stats animadas ── */
-.stats {
+/* ── Fila meta: stats+nota (izq) / logos (der) ── */
+.metaRow {
   display: flex;
-  align-items: center;
-  gap: var(--space-48);
-  padding: var(--space-32) var(--space-16) var(--space-16);
+  flex-direction: column;
+  gap: var(--space-32);
+  padding: 0 var(--space-16) var(--space-32);
 }
 
 @media (min-width: 768px) {
+  .metaRow {
+    padding: 0 var(--space-64) var(--space-32);
+  }
+}
+
+@media (min-width: 1024px) {
+  .metaRow {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-48);
+    padding: 0 var(--space-96) var(--space-32);
+    align-items: start;
+  }
+}
+
+.metaLeft {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+/* Logos: 2x2 en móvil y tablet, fila de 4 en desktop */
+.metaRight {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-16);
+  align-items: center;
+  justify-items: center;
+}
+
+@media (min-width: 1024px) {
+  .metaRight {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-24);
+  }
+}
+
+/* ── Stats animadas ── */
+.stats {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-32);
+  margin-top: 0;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
   .stats {
-    padding: var(--space-32) var(--space-64) var(--space-16);
+    justify-content: flex-start;
   }
 }
 
 @media (min-width: 1024px) {
   .stats {
-    padding: var(--space-32) var(--space-96) var(--space-16);
+    gap: var(--space-48);
+    margin-top: -88px;
   }
 }
 
 .stat {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
+  align-items: center;
+  gap: 6px;
 }
 
 .statValue {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(3.5rem, 7vw, 6rem);
   font-weight: 500;
   line-height: 1;
   color: var(--neutral-900, #1a1a1a);
@@ -120,44 +172,83 @@
 
 .statLabel {
   font-family: var(--font-accent);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--neutral-500, #888);
+  text-align: center;
 }
 
-/* ── Logos sobre fondo crema (dentro del editorial, antes del flow) ── */
-.editorialLogos {
+/* ── Nota +2 portales replicados ── */
+.replicaNote {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-32);
-  padding: var(--space-32) var(--space-16) var(--space-16);
+  flex-direction: column;
+  gap: 0.25em;
 }
 
-@media (min-width: 768px) {
-  .editorialLogos {
-    padding: var(--space-32) var(--space-64) var(--space-16);
-  }
+.replicaHighlight {
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+}
+
+.replicaArrow {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.replicaIslands {
+  font-family: var(--font-base);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  opacity: 0.5;
+  margin: 0;
+}
+
+.replicaBody {
+  font-family: var(--font-base);
+  font-size: 0.75rem;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  opacity: 0.45;
+  margin: 0;
+  margin-top: 0.25em;
+}
+
+/* ── Logos ── */
+.editorialLogoWrap {
+  position: relative;
+  width: 120px;
+  height: 48px;
+  flex-shrink: 0;
 }
 
 @media (min-width: 1024px) {
-  .editorialLogos {
-    padding: var(--space-32) var(--space-96) var(--space-16);
+  .editorialLogoWrap {
+    width: 140px;
+    height: 52px;
   }
 }
 
-.editorialLogoWrap {
-  position: relative;
-  width: 180px;
-  height: 64px;
-  flex-shrink: 0;
+@media (min-width: 1280px) {
+  .editorialLogoWrap {
+    width: 160px;
+    height: 56px;
+  }
 }
 
 .editorialLogo {
   object-fit: contain;
-  object-position: left center;
+  object-position: center center;
 }
 
 /* ── Texto del paso ── */
@@ -199,4 +290,13 @@
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.6);
   margin: 0;
+}
+
+.stepDetail {
+  font-family: var(--font-base);
+  font-size: clamp(0.75rem, 0.9vw, 0.875rem);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+  margin-top: 2px;
 }
