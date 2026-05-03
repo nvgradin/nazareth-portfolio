@@ -1,7 +1,7 @@
 .lightbox {
   position: fixed;
   inset: 0;
-  z-index: 50;
+  z-index: 200;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,6 +24,8 @@
   height: 80vh;
   max-width: 1200px;
   cursor: default;
+  margin-top: 52px;
+  transition: width 0.15s ease, height 0.15s ease;
 }
 
 .lightboxImage {
@@ -61,8 +63,8 @@
 .lightboxClose {
   position: absolute;
   z-index: 10;
-  top: var(--space-24);
-  right: var(--space-24);
+  top: -52px;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
