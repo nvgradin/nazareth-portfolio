@@ -30,6 +30,7 @@ export const panDoPorrino: ProjectWithLayout = {
       logo: '/projects/pan-do-porrino/Logotipo.png',
       roles: ['Branding', 'Marketing'],
       year: '2017',
+      heroBg: '/projects/pan-do-porrino/Bolla_Pan_do_Porrino.png',
     },
 
     // 2) Bento Gallery
@@ -128,7 +129,7 @@ export const panDoPorrino: ProjectWithLayout = {
     ],
 
     introParallax: {
-      src: '/projects/pan-do-porrino/Bolla Pan do Porrino.png',
+      src: '/projects/pan-do-porrino/Bolla_Pan_do_Porrino.png',
       alt: 'La Bolla de Pan do Porriño — la pieza artesanal cuya silueta inspira el símbolo de marca',
     },
 
@@ -167,6 +168,7 @@ export const panDoPorrino: ProjectWithLayout = {
     },
 
     // 6) Client logos
+    clientLogosLabel: 'Una iniciativa de',
     clientLogos: [
       { src: '/projects/pan-do-porrino/client-logos/Concello_de_porrino.png', alt: 'Concello de Porriño' },
       { src: '/projects/pan-do-porrino/client-logos/logotipo_acipor.png', alt: 'ACIPOR' },
@@ -187,7 +189,7 @@ export const panDoPorrino: ProjectWithLayout = {
       variant: 'editorial',
       label: 'Resultado',
       title: 'Una marca al servicio de un reconocimiento colectivo',
-      background: '#FAF6F0',
+      background: '#FCF7F3',
       columns: [
         { text: 'La identidad visual formó parte de una *iniciativa más amplia* de puesta en valor del Pan do Porriño, acompañando su visibilidad pública y su consolidación como producto singular del territorio.' },
         { text: 'Dentro de ese proceso colectivo, el Pan do Porriño logró consolidarse como **Marca Protegida** y obtener la **Denominación de Origen** de su Bolla.' },
@@ -217,8 +219,8 @@ export const panDoPorrino: ProjectWithLayout = {
       'features',
       'introParallax',
       'brandingScroller',
-      'textBlock',
       'mediaGrid',
+      'textBlock',
       'clientLogos',
       'quoteBanner',
     ],

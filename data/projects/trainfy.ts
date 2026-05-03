@@ -125,7 +125,7 @@ export const trainfy: ProjectWithLayout = {
       {
         image: { type: 'image', src: '/projects/trainfy/feature-branding.jpg', alt: 'Exploración de identidad visual para Trainfy — naming, paleta y sistema tipográfico' },
         title: 'Diseño y arquitectura en paralelo',
-        description: 'Mientras analizábamos la **arquitectura de datos y la lógica del producto**, definía **identidad, flujos de experiencia y sistema de interfaz**. Esas conversaciones ocurrían **a la vez**, no una después de la otra. Esa forma de trabajar hizo que el producto fuera más coherente desde dentro.',
+        description: 'Mientras analizábamos la **arquitectura de datos y la lógica del producto**, definía **identidad, flujos de experiencia y sistema de interfaz** a la vez. Esas conversaciones ocurrían **en paralelo**, no una después de la otra. Esa forma de trabajar hizo que el producto fuera más coherente desde dentro.',
       },
       {
         image: { type: 'image', src: '/projects/trainfy/feature-dev.jpg', alt: 'Stack técnico de Trainfy — React, Node.js y PostgreSQL en producción' },

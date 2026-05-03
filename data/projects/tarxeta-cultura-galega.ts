@@ -28,7 +28,8 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
       intro: 'Tarxeta Cultura Galega es la iniciativa promovida por AGADIC con el objetivo de promocionar y potenciar el consumo de cultura gallega entre jóvenes de 18 a 30 años. La campaña subvenciona a través de bonos digitales la adquisición de libros en gallego y entradas a espectáculos de artes escénicas de la comunidad en galego. Una campaña de lanzamiento creada para la iniciativa de AGADIC en colaboración con la Xunta de Galicia, Marca Galicia y Afundación.',
       logo: '/projects/tarxetaculturagalega/logo.png',
       roles: ['Estrategia', 'Marketing'],
-      year: '2017',
+      year: '2015',
+      heroBg: '/projects/tarxetaculturagalega/bento-7.jpg',
     },
 
     bento: {

@@ -80,10 +80,10 @@ export const lasIslasCies: ProjectWithLayout = {
       {
         image: { type: 'image', src: '/projects/las-islas-cies/feature-ui-ux.jpg', alt: 'Placeholder feature 1' },
         title: 'De página de billetes a guía de destino',
-        description: 'La web original vendía billetes. Lo que construí era otra cosa: una guía digital diseñada para acompañar la experiencia del viajero antes de llegar a la isla.',
+        description: 'La web original vendía billetes. Lo que construí era otra cosa: una guía digital diseñada para, además, acompañar la experiencia del viajero antes de llegar a la isla.',
       },
       {
-        image: { type: 'image', src: '/projects/las-islas-cies/feature-web.jpg', alt: 'Placeholder feature 2' },
+        image: { type: 'image', src: '/projects/las-islas-cies/bento-4.jpg', alt: 'Placeholder feature 2' },
         title: 'Tranformación de web a producto escalable',
 
         description: 'Arquitectura de información modular. Diseño de componentes reutilizables. Estructura UX/UI preparada para replicarse sin rediseñar desde cero. Es un sistema escalable desde el primer día.',
@@ -111,8 +111,8 @@ export const lasIslasCies: ProjectWithLayout = {
       content: '',
       columns: [
         'La web original tenía una función: vender billetes. Lo que construí tenía otra: que el visitante pudiera conocer, planificar y preparar toda la experiencia además de comprar su billete.',
-        'Creé un sistema de fichas propio para rutas de senderismo, playas, puntos de interés y restaurantes. Diseñé una arquitectura de contenido escalable en WordPress que permitió convertir una web simple en un sistema de portales preparado para crecer.',
-        'Todo el contenido — redacción, estructura, jerarquía — lo desarrollé yo. El SEO fue consecuencia directa de esa arquitectura de contenido, no una capa añadida encima.',
+        'Creé un sistema de fichas propio para rutas de senderismo, playas, puntos de interés, restaurantes, donde dormir... Diseñé una arquitectura de contenido escalable en WordPress que permitió convertir una web simple en un sistema de portales preparado para crecer.',
+        'Dado el salto que hicimos de web de presencia para captar comisiones al vender billetes de las navieras, he trabajado en la búsqueda y creación de contenido necesario — redacción, estructura, jerarquía — completando la nueva guía.',
       ],
     },
 
