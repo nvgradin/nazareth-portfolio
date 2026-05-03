@@ -1,30 +1,33 @@
+import dynamic from 'next/dynamic';
 import { ProjectWithLayout, LayoutSectionKey } from '@/lib/project-layout.types';
 import { ProjectHero } from './ProjectHero';
 import { BentoGallery } from './BentoGallery';
-import { CenteredHeading } from './CenteredHeading';
-import { FeatureCards } from './FeatureCards';
-import { ProjectReelsDeck } from './ProjectReelsDeck';
 import { EditorialBlock } from './EditorialBlock';
-import { ParallaxImage } from './ParallaxImage';
-import { ShowcaseTriptych } from './ShowcaseTriptych';
-import { BrandingScrollerSection } from './BrandingScrollerSection';
-import { ArchitectureWebFlow } from './ArchitectureWebFlow';
-import { ImageCompare } from './ImageCompare';
-import { WebPanel } from './WebPanel';
-import { ProcessSteps } from './ProcessSteps';
-import { LearningBlock } from './LearningBlock';
-import { TextBlock } from './TextBlock';
-import { MediaGrid } from './MediaGrid';
-import { QuoteBanner } from './QuoteBanner';
-import { ClosingText } from './ClosingText';
-import { ProjectLogos } from './ProjectLogos';
-import { ProjectVideoSection } from './ProjectVideoSection';
-import { FunnelFlow } from './FunnelFlow';
-import { HeroImage } from './HeroImage';
-import { StaggeredProcess } from './StaggeredProcess';
-import { StatementBlock } from './StatementBlock';
-import { SistemScaled } from './SistemScaled';
 import styles from './ProjectLayout.module.css';
+
+// Secciones opcionales — cargadas solo cuando el proyecto las necesita
+const CenteredHeading      = dynamic(() => import('./CenteredHeading').then(m => ({ default: m.CenteredHeading })));
+const FeatureCards         = dynamic(() => import('./FeatureCards').then(m => ({ default: m.FeatureCards })));
+const ParallaxImage        = dynamic(() => import('./ParallaxImage').then(m => ({ default: m.ParallaxImage })));
+const ImageCompare         = dynamic(() => import('./ImageCompare').then(m => ({ default: m.ImageCompare })));
+const HeroImage            = dynamic(() => import('./HeroImage').then(m => ({ default: m.HeroImage })));
+const StatementBlock       = dynamic(() => import('./StatementBlock').then(m => ({ default: m.StatementBlock })));
+const BrandingScrollerSection = dynamic(() => import('./BrandingScrollerSection').then(m => ({ default: m.BrandingScrollerSection })));
+const ArchitectureWebFlow  = dynamic(() => import('./ArchitectureWebFlow').then(m => ({ default: m.ArchitectureWebFlow })));
+const WebPanel             = dynamic(() => import('./WebPanel').then(m => ({ default: m.WebPanel })));
+const ShowcaseTriptych     = dynamic(() => import('./ShowcaseTriptych').then(m => ({ default: m.ShowcaseTriptych })));
+const ProjectReelsDeck     = dynamic(() => import('./ProjectReelsDeck').then(m => ({ default: m.ProjectReelsDeck })));
+const FunnelFlow           = dynamic(() => import('./FunnelFlow').then(m => ({ default: m.FunnelFlow })));
+const SistemScaled         = dynamic(() => import('./SistemScaled').then(m => ({ default: m.SistemScaled })));
+const StaggeredProcess     = dynamic(() => import('./StaggeredProcess').then(m => ({ default: m.StaggeredProcess })));
+const ProcessSteps         = dynamic(() => import('./ProcessSteps').then(m => ({ default: m.ProcessSteps })));
+const ProjectVideoSection  = dynamic(() => import('./ProjectVideoSection').then(m => ({ default: m.ProjectVideoSection })));
+const MediaGrid            = dynamic(() => import('./MediaGrid').then(m => ({ default: m.MediaGrid })));
+const TextBlock            = dynamic(() => import('./TextBlock').then(m => ({ default: m.TextBlock })));
+const LearningBlock        = dynamic(() => import('./LearningBlock').then(m => ({ default: m.LearningBlock })));
+const ProjectLogos         = dynamic(() => import('./ProjectLogos').then(m => ({ default: m.ProjectLogos })));
+const QuoteBanner          = dynamic(() => import('./QuoteBanner').then(m => ({ default: m.QuoteBanner })));
+const ClosingText          = dynamic(() => import('./ClosingText').then(m => ({ default: m.ClosingText })));
 
 interface Props {
   project: ProjectWithLayout;

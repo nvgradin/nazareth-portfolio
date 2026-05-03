@@ -36,6 +36,7 @@ const aboreto = Aboreto({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nazareth.design'),
   title: "Nazareth | Product & Experience Designer",
   description: "Digital Product & Experience Designer. UX/UI, estrategia y visión de negocio. Conectando marca, producto y negocio en proyectos digitales.",
   keywords: ["Product Designer", "UX Designer", "UI Designer", "Digital Experience", "Estrategia Digital"],
