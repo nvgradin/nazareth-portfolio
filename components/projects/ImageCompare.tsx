@@ -2,7 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import styles from './ImageCompare.module.css';
 
 interface ImageData {
@@ -90,6 +90,23 @@ export function ImageCompare({
         className={styles.inner}
         style={background ? { backgroundColor: background } : undefined}
       >
+        {/* Hint arriba del slider en móvil/tablet — en desktop absolute a la izquierda.
+            Usa visibility para que al ocultarse no colapse el espacio. */}
+        <motion.div
+          className={styles.hint}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: showHint ? 1 : 0, visibility: showHint ? 'visible' : 'hidden' }}
+          transition={{ delay: showHint ? 1.2 : 0, duration: 0.5, ease: 'easeIn' }}
+        >
+          <motion.span
+            animate={{ x: [-4, 4, -4] }}
+            transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            ↔
+          </motion.span>
+          <span>drag</span>
+        </motion.div>
+
         <div
           ref={containerRef}
           className={styles.container}
@@ -155,32 +172,8 @@ export function ImageCompare({
               </svg>
             </div>
           </div>
-
         </div>
 
-        {/* Hint de drag — izquierda del slider, centrado vertical */}
-        <AnimatePresence>
-          {showHint && (
-            <motion.div
-              className={styles.hint}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ delay: 1.2, duration: 0.8, ease: 'easeIn' }}
-            >
-              <motion.span
-                animate={{ x: [-4, 4, -4] }}
-                transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                ↔
-              </motion.span>
-              <span>drag</span>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-
-        {/* Caption dentro del panel, bajo el hint */}
         {caption && (
           <p className={styles.caption}>{caption}</p>
         )}

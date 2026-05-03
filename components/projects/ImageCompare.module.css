@@ -186,10 +186,6 @@
    ───────────────────────────────────────────── */
 
 .hint {
-  position: absolute;
-  left: calc(50% - 36% / 2 - var(--space-16));
-  top: var(--space-64);
-  transform: translateX(-100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -202,19 +198,19 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   white-space: nowrap;
+  /* Móvil/tablet: flujo normal, aparece arriba del slider, sin salto al desaparecer
+     → AnimatePresence con exit opacity 0 no colapsa el espacio mientras anima */
+  min-height: 36px;
+  justify-content: center;
 }
 
-@media (max-width: 1023px) {
+@media (min-width: 1024px) {
   .hint {
-    left: calc(50% - 50% / 2 - var(--space-16));
-    top: var(--space-64);
-  }
-}
-
-@media (max-width: 767px) {
-  .hint {
-    left: calc(50% - 80% / 2 - var(--space-12));
-    top: var(--space-48);
+    position: absolute;
+    left: calc(50% - 36% / 2 - var(--space-16));
+    top: 50%;
+    transform: translate(-100%, -50%);
+    min-height: unset;
   }
 }
 
@@ -236,4 +232,17 @@
   margin: 0;
   max-width: 480px;
   letter-spacing: 0.01em;
+  padding-inline: var(--space-24);
+}
+
+@media (min-width: 768px) {
+  .caption {
+    padding-inline: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .caption {
+    font-size: 0.75rem;
+  }
 }
