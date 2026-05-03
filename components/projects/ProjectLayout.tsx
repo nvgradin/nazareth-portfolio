@@ -230,7 +230,7 @@ export function ProjectLayout({ project }: Props) {
 
       case 'clientLogos':
         return layout.clientLogos && layout.clientLogos.length > 0
-          ? <ProjectLogos key="clientLogos" logos={layout.clientLogos} staticOnDesktop={layout.clientLogosStatic} />
+          ? <ProjectLogos key="clientLogos" logos={layout.clientLogos} staticOnDesktop={layout.clientLogosStatic} label={layout.clientLogosLabel} />
           : null;
 
       case 'quoteBanner':

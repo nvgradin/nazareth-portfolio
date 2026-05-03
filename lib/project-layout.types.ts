@@ -415,6 +415,7 @@ export interface ProjectLayout {
   staggeredProcess?: StaggeredProcessData;
   clientLogos?: { src: string; alt: string; staticOnDesktop?: boolean }[];
   clientLogosStatic?: boolean;
+  clientLogosLabel?: string;
   quoteBanner?: QuoteBanner;
   closing?: ClosingText;
 

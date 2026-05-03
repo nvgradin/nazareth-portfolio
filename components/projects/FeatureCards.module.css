@@ -109,6 +109,16 @@
   background-color: var(--neutral-300);
 }
 
+/* ── Tablet portrait (600–1023px): imagen apaisada, menos alta ── */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .card {
+    flex: 0 0 72vw;
+  }
+  .cardImage {
+    aspect-ratio: 4/3;
+  }
+}
+
 @media (min-width: 1024px) {
   .cardImage {
     aspect-ratio: 3/6;

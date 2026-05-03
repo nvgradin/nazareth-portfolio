@@ -102,7 +102,7 @@ export function SistemScaled({ data }: Props) {
 
         {/* Pasos — fondo azul Cíes */}
         <div
-          className={styles.flow}
+          className={[styles.flow, steps.length === 4 ? styles.flow4 : ''].join(' ')}
           style={{
             '--funnel-cols': steps.length,
             '--funnel-bg': background ?? DEFAULT_FLOW_BG,
@@ -132,6 +132,42 @@ export function SistemScaled({ data }: Props) {
                     sizes="100vw"
                     quality={90}
                   />
+                </button>
+                <div className={styles.stepText}>
+                  <span className={styles.stepNumber}>{String(step.step).padStart(2, '0')}</span>
+                  <h3 className={styles.stepTitle}>{step.title}</h3>
+                  <p className={styles.stepDesc}>{step.description}</p>
+                  {step.detail && <p className={styles.stepDetail}>{step.detail}</p>}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* TABLET (640–1023px, solo 4 pasos): 2 columnas, imagen+texto por paso */}
+          <div className={styles.tabletGrid}>
+            {steps.map((step, i) => (
+              <motion.div
+                key={i}
+                className={styles.tabletStep}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: EASE }}
+              >
+                <button
+                  className={styles.imageWrap}
+                  onClick={() => setLightboxIndex(i)}
+                  aria-label={`Ver ${step.title}`}
+                >
+                  <Image
+                    src={step.image}
+                    alt={step.imageAlt}
+                    fill
+                    className={styles.image}
+                    sizes="50vw"
+                    quality={90}
+                  />
+                  <span className={styles.zoomHint}>＋</span>
                 </button>
                 <div className={styles.stepText}>
                   <span className={styles.stepNumber}>{String(step.step).padStart(2, '0')}</span>
