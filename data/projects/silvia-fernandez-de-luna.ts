@@ -5,8 +5,8 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
   title: 'Silvia Fernández De Luna',
   excerpt: 'Las mejores marcas no se diseñan. Se habitan.',
 
-  categories: ['strategy', 'branding', 'web-dev', 'marketing', 'ux-ui', 'ai-automation'],
-  tags: ['Estrategia', 'Branding', 'Web', 'Marketing', 'Automatización & IA'],
+  categories: ['strategy', 'branding', 'web-dev', 'marketing', 'ux-ui', 'ai-driven'],
+  tags: ['Estrategia', 'Branding', 'Web', 'Marketing', 'AI-Driven Design & Automation'],
 
   thumbnail: {
     type: 'image',

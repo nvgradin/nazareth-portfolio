@@ -25,7 +25,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
     hero: {
       title: 'Tarxeta Cultura Galega',
       subtitle: 'Vive a cultura galega',
-      intro: 'Tarxeta Cultura Galega es la iniciativa promovida por AGADIC con el objetivo de promocionar y potenciar el consumo de cultura gallega entre jóvenes de 18 a 30 años. La campaña subvenciona a través de bonos digitales la adquisición de libros en gallego y entradas a espectáculos de artes escénicas de la comunidad en galego. Una campaña de lanzamiento creada para la iniciativa de AGADIC en colaboración con la Xunta de Galicia, Marca Galicia y Afundación.',
+      intro: 'Diseño del concepto creativo y desarrollo de campaña para una iniciativa institucional pionera orientada a incentivar el consumo cultural entre jóvenes.',
       logo: '/projects/tarxetaculturagalega/logo.png',
       roles: ['Estrategia', 'Marketing'],
       year: '2015',
@@ -39,15 +39,15 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
         {
           width: 1,
           cells: [
-            { src: '/projects/tarxetaculturagalega/bento-1.jpg', alt: 'Tarxeta Cultura Galega 1', ratio: 0.6 },
-            { src: '/projects/tarxetaculturagalega/bento-5.jpg', alt: 'Tarxeta Cultura Galega 5', ratio: 0.4 },
+            { src: '/projects/tarxetaculturagalega/TCG_Mupis.png', alt: 'Tarxeta Cultura Galega 1', ratio: 0.6 },
+            { src: '/projects/tarxetaculturagalega/bento-5.png', alt: 'Tarxeta Cultura Galega 5', ratio: 0.4 },
           ],
         },
         {
           width: 1,
           cells: [
             { src: '/projects/tarxetaculturagalega/bento-2.jpg', alt: 'Tarxeta Cultura Galega 2', ratio: 0.45 },
-            { src: '/projects/tarxetaculturagalega/bento-6.jpg', alt: 'Tarxeta Cultura Galega 6', ratio: 0.55 },
+            { src: '/projects/tarxetaculturagalega/Tarxeta-Bono-Cultura-Galega-Librería.png', alt: 'Tarxeta Cultura Galega 6', ratio: 0.55 },
           ],
         },
         {
@@ -60,7 +60,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
         {
           width: 1,
           cells: [
-            { src: '/projects/tarxetaculturagalega/bento-4.jpg', alt: 'Tarxeta Cultura Galega 4', ratio: 0.5 },
+            { src: '/projects/tarxetaculturagalega/TCG_Cartel.png', alt: 'Tarxeta Cultura Galega 4', ratio: 0.5 },
             { src: '/projects/tarxetaculturagalega/bento-8.jpg', alt: 'Tarxeta Cultura Galega 8', ratio: 0.5 },
           ],
         },
@@ -68,9 +68,13 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
     },
 
     heading: {
-      title: 'La Creación para Tarxeta Cultura Galega',
-      subtitle: 'He tenido la oportunidad de crear la Estrategia Creativa para la campaña de lanzamiento de la Tarxeta Cultura Galega. El objetivo es claro: promocionar y potenciar el consumo de cultura gallega entre jóvenes desde 18 a 30 años.',
-    },
+      title: 'Construcción de una campaña institucional\npara activar el acceso a la cultura entre jóvenes',
+      subtitle: [
+        'En 2015, distintas instituciones públicas y entidades culturales en Galicia se unieron para impulsar el consumo cultural entre la población joven.', 
+        'El desafío era acercar la cultura a los jóvenes de 18 a 30 años a travñes de un bono que potencie el consumo cultural de forma deseable, comprensible y relevante.',
+        'Actores implicados: Galipad Consulting, AGADIC, Xunta de Galicia, Afundación, Marca Galicia, Deputación de Pontevedra y la Red de librerías y espacios culturales.',
+        ],
+        },
 
     features: [
       {
@@ -84,7 +88,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
         description: 'Aplicación del concepto a todos los soportes.',
       },
       {
-        image: { type: 'image', src: '/projects/tarxetaculturagalega/bento-6.jpg', alt: 'Estrategia' },
+        image: { type: 'image', src: '/projects/tarxetaculturagalega/Tarxeta-Bono-Cultura-Galega-Librería.png', alt: 'Estrategia' },
         title: 'Estrategia de lanzamiento',
         description: 'Conectar con el público joven en su propio lenguaje.',
       },
@@ -105,8 +109,8 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
       background: '#364A4A',
       images: [
         { src: '/projects/tarxetaculturagalega/bento-2.jpg', alt: 'Tarxeta Cultura Galega — concepto' },
-        { src: '/projects/tarxetaculturagalega/bento-4.jpg', alt: 'Tarxeta Cultura Galega — ilustración' },
-        { src: '/projects/tarxetaculturagalega/bento-6.jpg', alt: 'Tarxeta Cultura Galega — campaña' },
+        { src: '/projects/tarxetaculturagalega/TCG_versiones_ollovidrioteatro1080.jpg', alt: 'Tarxeta Cultura Galega — ilustración' },
+        { src: '/projects/tarxetaculturagalega/TCG_versiones_juntos1080.jpg', alt: 'Tarxeta Cultura Galega — campaña' },
         { src: '/projects/tarxetaculturagalega/soloimagen.jpg', alt: 'Tarxeta Cultura Galega — detalle' },
       ],
     },
@@ -116,13 +120,13 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
       subtitle: 'Aplicaciones publicitarias de la campaña',
       body: 'A raíz de la descontextualización temporal de figuras importantes de la cultura gallega como Castelao o Rosalía, hemos propuesto diferentes cuestiones, todas creadas a partir de la ilustración de esos escenarios "hipotéticos" para lanzar cuestiones e impactar. Nuestra propuesta es la de hacer consciente de que los Castelaos y Rosalías de hoy, están aquí.',
       row1: [
-        { src: '/projects/tarxetaculturagalega/bento-5.jpg', alt: 'Publicidad Tarxeta Cultura Galega' },
-        { src: '/projects/tarxetaculturagalega/bento-7.jpg', alt: 'Creatividad Tarxeta Cultura Galega' },
+        { src: '/projects/tarxetaculturagalega/TCG_Bus.png', alt: 'Publicidad Tarxeta Cultura Galega' },
+        { src: '/projects/tarxetaculturagalega/TCG_Cartel.png', alt: 'Creatividad Tarxeta Cultura Galega' },
       ],
       row2: [
-        { src: '/projects/tarxetaculturagalega/bento-8.jpg', alt: 'Campaña Tarxeta Cultura Galega' },
-        { src: '/projects/tarxetaculturagalega/Mockup_TCG_Tarjetas_Horizontal3.jpg', alt: 'Mockup Tarxeta Cultura Galega' },
-        { src: '/projects/tarxetaculturagalega/bento-1.jpg', alt: 'Tarxeta Cultura Galega — piezas' },
+        { src: '/projects/tarxetaculturagalega/tarxeta_bono_cultura_galega_presentacion1.png', alt: 'Presentación Oficial Tarxeta Cultura Galega' },
+        { src: '/projects/tarxetaculturagalega/tarxetabonopresentacion3.jpg', alt: 'Presentación Oficial Tarxeta Cultura Galega' },
+        { src: '/projects/tarxetaculturagalega/Tarxeta-Bono-Cultura-Galega-Librería.png', alt: 'Tarxeta Cultura Galega — piezas' },
       ],
     },
 
@@ -131,9 +135,8 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
       label: 'Resultado',
       title: 'Una iniciativa para promocionar la cultura gallega',
       columns: [
+        { text: 'La Tarxeta Cultura Galega fue presentada oficialmente y posicionada como una iniciativa innovadora dentro del ecosistema cultural gallego, facilitando el acceso de jóvenes a la cultura a través de un modelo híbrido entre incentivo económico y experiencia.'},
         { text: 'La campaña movilizó 300.000€ en el sector editorial y de artes escénicas en su primer año, tuvo presentación oficial con cobertura en medios y fue calificada institucionalmente como pionera.' },
-        { text: '' },
-        { text: '' },
       ],
     },
 

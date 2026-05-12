@@ -21,7 +21,7 @@ const FILTERS: FilterDef[] = [
   { key: 'web',        label: 'Web',        categories: ['web-dev'] },
   { key: 'estrategia', label: 'Estrategia', categories: ['strategy'] },
   { key: 'marketing',     label: 'Marketing',      categories: ['marketing'] },
-  { key: 'ai-automation', label: 'AI & Automation', categories: ['ai-automation'] },
+  { key: 'ai-driven', label: 'AI-Driven Design & Automation', categories: ['ai-driven'] },
 ];
 
 interface Props {

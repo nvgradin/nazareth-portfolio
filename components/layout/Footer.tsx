@@ -14,7 +14,8 @@ export function Footer({ style }: { style?: React.CSSProperties }) {
           <span className={styles.legalDot}>·</span>
           <Link href="/privacidad" className={styles.legalLink}>Privacidad</Link>
         </nav>
-        <p className={styles.copy}>© 2026 Nazareth Gradín</p>
+        <p className={styles.copy}>© 2026 · A digital product designed and developed by Nazareth Gradín.
+Built with Next.js.</p>
       </div>
       <div className={styles.social}>
         <a
