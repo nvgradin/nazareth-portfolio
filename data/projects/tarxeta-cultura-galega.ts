@@ -39,7 +39,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
         {
           width: 1,
           cells: [
-            { src: '/projects/tarxetaculturagalega/TCG_Mupis.png', alt: 'Tarxeta Cultura Galega 1', ratio: 0.6 },
+            { src: '/projects/tarxetaculturagalega/TCG_Bus.png', alt: 'Tarxeta Cultura Galega 1', ratio: 0.6 },
             { src: '/projects/tarxetaculturagalega/bento-5.png', alt: 'Tarxeta Cultura Galega 5', ratio: 0.4 },
           ],
         },
@@ -71,7 +71,8 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
       title: 'Construcción de una campaña institucional\npara activar el acceso a la cultura entre jóvenes',
       subtitle: [
         'En 2015, distintas instituciones públicas y entidades culturales en Galicia se unieron para impulsar el consumo cultural entre la población joven.', 
-        'El desafío era acercar la cultura a los jóvenes de 18 a 30 años a travñes de un bono que potencie el consumo cultural de forma deseable, comprensible y relevante.',
+        'El objetivo era acercar la cultura a los jóvenes de 18 a 30 años creando un bono que potencie el consumo cultural de forma deseable, comprensible y relevante.',
+        'Mi rol fue el de diseñar el concepto creativo y desarrollar la campaña de lanzamiento, trabajando en estrecha colaboración con los equipos de consultoría y las instituciones involucradas.',
         'Actores implicados: Galipad Consulting, AGADIC, Xunta de Galicia, Afundación, Marca Galicia, Deputación de Pontevedra y la Red de librerías y espacios culturales.',
         ],
         },
@@ -103,13 +104,14 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
       title: 'CREATIVIDAD & CONCEPTO',
       description: 'Descontextualización temporal como motor creativo',
       bullets: [
-        '¿Cómo sería Castelao si viviera ahora? ¿Sería Castelao, también graffitero? ¿Cómo sería Rosalía de Castro? ¿Iría en bicicleta a Compostela? ¿Se harían selfies? ¿Serían Hipsters? ¿Quienes hoy están creando cultura gallega? Porque los Castelaos y Rosalías de ahora, están aquí. ¿Te las vas a perder?',
-        'Un movimiento que despierta la atención, que habla en el actual idioma para dar valor a la cultura presente, la creación de íconos de la futura cultura gallega.',
+        'La propuesta creativa se basa en la idea de descontextualizar temporalmente a figuras icónicas de la cultura gallega, como Castelao o Rosalía de Castro, para imaginar cómo serían si vivieran en la actualidad. Esta estrategia busca generar un impacto visual y conceptual que conecte con el público joven, invitándolos a reflexionar sobre la relevancia de la cultura gallega en su vida cotidiana y a descubrir a los "Castelaos y Rosalías" de hoy.',
+        '¿Cómo sería Castelao si viviera ahora? ¿Sería graffitero? ¿Cómo sería Rosalía de Castro? ¿Viviría en Santiago de Compostela? ¿Se harían selfies? ¿Serían Hipsters? ¿Quiénes están creando cultura gallega hoy? Porque los Castelaos y Rosalías de ahora, ya están aquí. ¿Te las vas a perder?',
+        'Un movimiento que llamara la atención, con el lema de "Vive a Cultura Galega" y que hable en el actual idioma para dar valor a la cultura presente, la creación de íconos de la futura cultura gallega.',
       ],
-      background: '#364A4A',
+      background: '#40394E',
       images: [
         { src: '/projects/tarxetaculturagalega/bento-2.jpg', alt: 'Tarxeta Cultura Galega — concepto' },
-        { src: '/projects/tarxetaculturagalega/TCG_versiones_ollovidrioteatro1080.jpg', alt: 'Tarxeta Cultura Galega — ilustración' },
+        { src: '/projects/tarxetaculturagalega/TCG_versiones_ollovidrioteatro1080.jpg', alt: 'Tarxeta Cultura Galega — Versión Ollo de vidrio' },
         { src: '/projects/tarxetaculturagalega/TCG_versiones_juntos1080.jpg', alt: 'Tarxeta Cultura Galega — campaña' },
         { src: '/projects/tarxetaculturagalega/soloimagen.jpg', alt: 'Tarxeta Cultura Galega — detalle' },
       ],
@@ -121,7 +123,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
       body: 'A raíz de la descontextualización temporal de figuras importantes de la cultura gallega como Castelao o Rosalía, hemos propuesto diferentes cuestiones, todas creadas a partir de la ilustración de esos escenarios "hipotéticos" para lanzar cuestiones e impactar. Nuestra propuesta es la de hacer consciente de que los Castelaos y Rosalías de hoy, están aquí.',
       row1: [
         { src: '/projects/tarxetaculturagalega/TCG_Bus.png', alt: 'Publicidad Tarxeta Cultura Galega' },
-        { src: '/projects/tarxetaculturagalega/TCG_Cartel.png', alt: 'Creatividad Tarxeta Cultura Galega' },
+        { src: '/projects/tarxetaculturagalega/Mockup_TCG_Valla_Publi.png', alt: 'Creatividad Tarxeta Cultura Galega' },
       ],
       row2: [
         { src: '/projects/tarxetaculturagalega/tarxeta_bono_cultura_galega_presentacion1.png', alt: 'Presentación Oficial Tarxeta Cultura Galega' },

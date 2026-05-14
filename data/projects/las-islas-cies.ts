@@ -10,7 +10,7 @@ export const lasIslasCies: ProjectWithLayout = {
 
   thumbnail: {
     type: 'image',
-    src: '/projects/las-islas-cies/hero.jpg',
+    src: '/projects/las-islas-cies/bento-2.jpg',
     alt: 'Las Islas Cíes',
   },
 
@@ -31,6 +31,7 @@ export const lasIslasCies: ProjectWithLayout = {
       roles: ['Product Design & UX', 'Web', 'Estrategia', 'Contenido'],
       context: 'Proyecto freelance',
       year: '2024 - 2025',
+      liveUrl: 'https://lasislascies.com',
       heroBg: '/projects/las-islas-cies/bento-2.jpg',
     },
 
@@ -161,35 +162,39 @@ export const lasIslasCies: ProjectWithLayout = {
       steps: [
         {
           step: 1,
-          image: '/projects/las-islas-cies/bento-2.jpg',
+          image: '/projects/las-islas-cies/bento-3.jpg',
           imageAlt: 'Web Las Islas Cíes',
           title: 'Las Islas Cíes',
           description: 'Lanzamiento octubre 2024',
           detail: 'Transformación completa de web existente. Estrategia, contenido, diseño, desarrollo.',
+          url: 'https://lasislascies.com',
         },
         {
           step: 2,
-          image: '/projects/las-islas-cies/bento-4.jpg',
-          imageAlt: 'Web Isla de Ons — placeholder',
+          image: '/projects/las-islas-cies/Isla-de-Ons.jpg',
+          imageAlt: 'Web Isla de Ons',
           title: 'Isla de Ons',
           description: 'Lanzamiento diciembre 2024',
           detail: 'Transformación completa de web existente. Mismo tratamiento sistémico.',
+          url: 'https://isladeons.es/',
         },
         {
           step: 3,
-          image: '/projects/las-islas-cies/bento-3.jpg',
-          imageAlt: 'Web Isla de Lobos — placeholder',
+          image: '/projects/las-islas-cies/Isla-de-Lobos.jpg',
+          imageAlt: 'Web Isla de Lobos',
           title: 'Isla de Lobos',
           description: 'Lanzamiento enero 2025',
           detail: 'Construcción de cero. Contenido redactado íntegramente por mí.',
+          url: 'https://laisladelobos.com/',
         },
         {
           step: 4,
-          image: '/projects/las-islas-cies/MockupWeb1_LasIslasCies.jpg',
-          imageAlt: 'Web Isla de la Graciosa — placeholder',
+          image: '/projects/las-islas-cies/Isla_de_la_graciosa.jpg',
+          imageAlt: 'Web Isla de la Graciosa',
           title: 'Isla de la Graciosa',
           description: 'Lanzamiento abril 2025',
           detail: 'Construcción de cero. Propuesta de experiencias más amplia.',
+          url: 'https://isladelagraciosa.com/',
         },
       ],
     },

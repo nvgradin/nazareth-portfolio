@@ -33,6 +33,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       roles: ['Estrategia', 'Branding', 'Web', 'Marketing'],
       context: 'Proyecto freelance · 3 años de colaboración',
       year: '2023 - 2026',
+      liveUrl: 'https://silviafernandezdeluna.com',
       heroBg: '/projects/silvia-fernandez-de-luna/fondo_SFDL_oroviejo_1920x2000.jpeg',
     },
 
