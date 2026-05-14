@@ -224,7 +224,7 @@
 .logoImage {
   width: auto;
   height: auto;
-  max-height: 160px;
+  max-height: var(--logo-max-height, 160px);
   object-fit: contain;
 }
 
@@ -330,4 +330,41 @@
 .resultArrow {
   flex-shrink: 0;
   opacity: 0.7;
+}
+
+/* Collaborator — enlace inline dentro del párrafo de context */
+.collaboratorLink {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: currentColor;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.collaboratorLink:hover {
+  opacity: 0.8;
+}
+
+/* Live URL — enlace al proyecto publicado */
+.liveLink {
+  display: inline-block;
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.liveLink:hover {
+  opacity: 1;
 }

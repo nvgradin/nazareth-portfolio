@@ -99,17 +99,25 @@ export interface BentoGallery {
  * Izquierda: logo, link proyectos, nombre proyecto, roles
  * Derecha: subtítulo (h2) + intro
  */
+export interface ProjectHeroCollaborator {
+  name: string;
+  url: string;
+}
+
 export interface ProjectHero {
   title: string;
   subtitle?: string;
   intro: string | string[];  // Un párrafo o varios
   result?: string;           // Resultado destacado, aparece bajo la intro con →
   logo: string;              // ruta al logotipo, ej: '/projects/trainfy/Logotipo.png'
+  logoSize?: number;         // max-height en px (default 160)
   roles: string[];           // categorías tipo 'BACKEND DEV', 'UI/UX DESIGN', etc.
   context?: string;          // texto libre bajo roles, ej: 'Proyecto final Bootcamp'
   team?: string;             // equipo o colaboración, ej: 'Equipo de 3'
   year?: string;             // ej: '2023' o '2022–2024'
   heroBg?: string;           // imagen de fondo para el hero en mobile
+  liveUrl?: string;          // enlace al proyecto real publicado
+  collaborators?: ProjectHeroCollaborator[]; // colaboradores con enlace
 }
 
 /**
@@ -489,6 +497,7 @@ export interface FunnelFlowStep {
   title: string;
   description: string;
   detail?: string;
+  url?: string;
 }
 
 export interface FunnelFlow {
@@ -535,6 +544,8 @@ export interface ProjectWithLayout {
   featured?: boolean;
   ambientColor?: string;    // Color de fondo hover en la card del grid
   ambientGradient?: string; // Gradiente opcional (sobreescribe ambientColor)
+  thumbnailOverlay?: number; // Intensidad del overlay de texto en ExploreCard (0–1, default ~0.5)
+  thumbnailOverlayColor?: string; // Color del overlay inferior en ExploreCard (hex, sobreescribe el negro)
   theme?: ProjectTheme;
 
   // Layout editorial

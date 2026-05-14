@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, useInView, animate, AnimatePresence } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import { SistemScaled as SistemScaledType } from '@/lib/project-layout.types';
@@ -138,6 +139,11 @@ export function SistemScaled({ data }: Props) {
                   <h3 className={styles.stepTitle}>{step.title}</h3>
                   <p className={styles.stepDesc}>{step.description}</p>
                   {step.detail && <p className={styles.stepDetail}>{step.detail}</p>}
+                  {step.url && (
+                    <Link href={step.url} target="_blank" rel="noopener noreferrer" className={styles.stepLink}>
+                      Ver web ↗
+                    </Link>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -174,6 +180,11 @@ export function SistemScaled({ data }: Props) {
                   <h3 className={styles.stepTitle}>{step.title}</h3>
                   <p className={styles.stepDesc}>{step.description}</p>
                   {step.detail && <p className={styles.stepDetail}>{step.detail}</p>}
+                  {step.url && (
+                    <Link href={step.url} target="_blank" rel="noopener noreferrer" className={styles.stepLink}>
+                      Ver web ↗
+                    </Link>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -219,6 +230,11 @@ export function SistemScaled({ data }: Props) {
                 <h3 className={styles.stepTitle}>{step.title}</h3>
                 <p className={styles.stepDesc}>{step.description}</p>
                 {step.detail && <p className={styles.stepDetail}>{step.detail}</p>}
+                {step.url && (
+                  <Link href={step.url} target="_blank" rel="noopener noreferrer" className={styles.stepLink}>
+                    Ver web ↗
+                  </Link>
+                )}
               </motion.div>
             ))}
           </div>

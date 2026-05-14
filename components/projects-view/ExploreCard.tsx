@@ -48,7 +48,14 @@ export function ExploreCard({ project, activeFilter }: Props) {
       />
 
       {/* Gradiente de texto */}
-      <div className={styles.textGradient} />
+      <div
+        className={styles.textGradient}
+        style={project.thumbnailOverlay !== undefined ? {
+          background: project.thumbnailOverlayColor
+            ? `linear-gradient(to top, ${project.thumbnailOverlayColor}e6 0%, ${project.thumbnailOverlayColor}80 40%, ${project.thumbnailOverlayColor}00 100%)`
+            : `linear-gradient(to top, rgba(0,0,0,${project.thumbnailOverlay}) 0%, rgba(0,0,0,${project.thumbnailOverlay * 0.6}) 40%, rgba(0,0,0,0) 100%)`
+        } : undefined}
+      />
 
       {isNew && <span className={styles.badge}>Nuevo</span>}
 

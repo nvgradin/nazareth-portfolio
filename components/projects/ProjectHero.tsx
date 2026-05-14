@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { ProjectHero as ProjectHeroType } from '@/lib/project-layout.types';
 import { parseInline } from '@/components/ui';
 import styles from './ProjectHero.module.css';
+import Link from 'next/link';
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
@@ -13,7 +14,7 @@ interface Props {
 }
 
 export function ProjectHero({ data }: Props) {
-  const { title, subtitle, intro, result, logo, roles, year, context, team, heroBg } = data;
+  const { title, subtitle, intro, result, logo, logoSize, roles, year, context, team, heroBg, liveUrl, collaborators } = data;
 
   return (
     <>
@@ -73,12 +74,13 @@ export function ProjectHero({ data }: Props) {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, ease }}
+              style={logoSize ? { '--logo-max-height': `${logoSize}px` } as React.CSSProperties : undefined}
             >
               <Image
                 src={logo}
                 alt={`${title} logo`}
-                width={160}
-                height={160}
+                width={logoSize ?? 160}
+                height={logoSize ?? 160}
                 className={styles.logoImage}
               />
             </motion.div>
@@ -101,9 +103,9 @@ export function ProjectHero({ data }: Props) {
               {roles.join(' | ')}
             </motion.p>
           )}
-          {(context || team) && (
+          {(context || team || collaborators?.length) && (
             <div className={styles.contextBlock}>
-              {context && (
+              {(context || collaborators?.length) && (
                 <motion.p
                   className={styles.context}
                   initial={{ opacity: 0, y: 12 }}
@@ -111,6 +113,12 @@ export function ProjectHero({ data }: Props) {
                   transition={{ duration: 0.5, delay: 0.33, ease }}
                 >
                   {context}
+                  {context && collaborators?.length ? ' ' : null}
+                  {collaborators?.map((c, i) => (
+                    <Link key={c.url} href={c.url} target="_blank" rel="noopener noreferrer" className={styles.collaboratorLink}>
+                      {c.name} ↗{i < (collaborators.length - 1) ? ', ' : ''}
+                    </Link>
+                  ))}
                 </motion.p>
               )}
               {team && (
@@ -134,6 +142,17 @@ export function ProjectHero({ data }: Props) {
             >
               {year}
             </motion.p>
+          )}
+          {liveUrl && (
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.45, ease }}
+            >
+              <Link href={liveUrl} target="_blank" rel="noopener noreferrer" className={styles.liveLink}>
+                Ir a {title} ↗
+              </Link>
+            </motion.div>
           )}
         </div>
 

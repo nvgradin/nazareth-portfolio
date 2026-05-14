@@ -55,25 +55,7 @@
   }
 }
 
-/* ── Imagen compartida móvil + desktop ── */
-.imageWrap {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: #1a0a00;
-  cursor: pointer;
-  border: none;
-  padding: 0;
-  display: block;
-}
-
-.image {
-  object-fit: cover;
-  object-position: top;
-}
-
-/* ── Fila textos desktop (oculta en móvil, los textos van dentro de mobileStep) ── */
+/* ── Fila textos desktop ── */
 .texts {
   display: none;
 }
@@ -99,6 +81,26 @@
     display: none;
   }
 }
+
+/* ── Imagen compartida móvil + desktop ── */
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #1a0a00;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  display: block;
+}
+
+.image {
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Con 4 pasos: ocultar desktopGrid en tablet, el tabletGrid ya incluye el texto */
 
 /* ── TABLET GRID: 2 columnas imagen+texto, solo con 4 pasos en 640–1023px ── */
 .tabletGrid {
@@ -345,4 +347,21 @@
   color: rgba(255, 255, 255, 0.4);
   margin: 0;
   margin-top: 2px;
+}
+
+.stepLink {
+  display: inline-block;
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  margin-top: 8px;
+  transition: color 0.2s ease;
+}
+
+.stepLink:hover {
+  color: rgba(255, 255, 255, 0.9);
 }
