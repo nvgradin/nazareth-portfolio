@@ -47,7 +47,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
           width: 1,
           cells: [
             { src: '/projects/tarxetaculturagalega/bento-6.jpg', alt: 'Tarxeta Cultura Galega 2', ratio: 0.45 },
-            { src: '/projects/tarxetaculturagalega/Tarxeta-Bono-Cultura-Galega-Librería.png', alt: 'Tarxeta Cultura Galega 6', ratio: 0.55 },
+            { src: '/projects/tarxetaculturagalega/Tarxeta-Bono-Cultura-Galega-Libreria.png', alt: 'Tarxeta Cultura Galega 6', ratio: 0.55 },
           ],
         },
         {
@@ -89,7 +89,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
         description: 'Aplicación del concepto a todos los soportes.',
       },
       {
-        image: { type: 'image', src: '/projects/tarxetaculturagalega/Tarxeta-Bono-Cultura-Galega-Librería.png', alt: 'Estrategia' },
+        image: { type: 'image', src: '/projects/tarxetaculturagalega/Tarxeta-Bono-Cultura-Galega-Libreria.png', alt: 'Estrategia' },
         title: 'Estrategia de lanzamiento',
         description: 'Conectar con el público joven en su propio lenguaje.',
       },
@@ -128,7 +128,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
       row2: [
         { src: '/projects/tarxetaculturagalega/tarxeta_bono_cultura_galega_presentacion1.png', alt: 'Presentación Oficial Tarxeta Cultura Galega' },
         { src: '/projects/tarxetaculturagalega/tarxetabonopresentacion3.jpg', alt: 'Presentación Oficial Tarxeta Cultura Galega' },
-        { src: '/projects/tarxetaculturagalega/Tarxeta-Bono-Cultura-Galega-Librería.png', alt: 'Tarxeta Cultura Galega — piezas' },
+        { src: '/projects/tarxetaculturagalega/Tarxeta-Bono-Cultura-Galega-Libreria.png', alt: 'Tarxeta Cultura Galega — piezas' },
       ],
     },
 
