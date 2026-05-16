@@ -105,15 +105,15 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
       description: 'Descontextualización temporal como motor creativo',
       bullets: [
         'La propuesta creativa se basa en la idea de descontextualizar temporalmente a figuras icónicas de la cultura gallega, como Castelao o Rosalía de Castro, para imaginar cómo serían si vivieran en la actualidad. Esta estrategia busca generar un impacto visual y conceptual que conecte con el público joven, invitándolos a reflexionar sobre la relevancia de la cultura gallega en su vida cotidiana y a descubrir a los "Castelaos y Rosalías" de hoy.',
-        '¿Cómo sería Castelao si viviera ahora? ¿Sería graffitero? ¿Cómo sería Rosalía de Castro? ¿Viviría en Santiago de Compostela? ¿Se harían selfies? ¿Serían Hipsters? ¿Quiénes están creando cultura gallega hoy? Porque los Castelaos y Rosalías de ahora, ya están aquí. ¿Te las vas a perder?',
-        'Un movimiento que llamara la atención, con el lema de "Vive a Cultura Galega" y que hable en el actual idioma para dar valor a la cultura presente, la creación de íconos de la futura cultura gallega.',
-      ],
-      background: '#40394E',
+        '¿Cómo sería Castelao si viviera ahora? ¿Sería graffitero? ¿Cómo sería Rosalía de Castro? ¿Viviría en Santiago de Compostela? ¿Se harían selfies? ¿Serían Hipsters? ¿Quiénes están creando cultura gallega hoy? Porque los Castelaos y Rosalías de ahora, ya están aquí. ¿Te las vas a perder?',      ],
+      background: '#0D1520',
+      imageMode: 'wide',
       images: [
-        { src: '/projects/tarxetaculturagalega/bento-2.jpg', alt: 'Tarxeta Cultura Galega — concepto' },
         { src: '/projects/tarxetaculturagalega/TCG_versiones_ollovidrioteatro1080.jpg', alt: 'Tarxeta Cultura Galega — Versión Ollo de vidrio' },
         { src: '/projects/tarxetaculturagalega/TCG_versiones_juntos1080.jpg', alt: 'Tarxeta Cultura Galega — campaña' },
         { src: '/projects/tarxetaculturagalega/soloimagen.jpg', alt: 'Tarxeta Cultura Galega — detalle' },
+        { src: '/projects/tarxetaculturagalega/bento-2.jpg', alt: 'Tarxeta Cultura Galega — concepto' },
+
       ],
     },
 
