@@ -7,7 +7,7 @@ export const ibizaObservatorio: ProjectWithLayout = {
   title: 'Ibiza Observatorio de Edificación',
   excerpt: 'El sector de la edificación en Ibiza tenía información. Lo que no tenía era un lugar donde encontrarla.',
 
-  categories: ['web-dev', 'strategy', 'ux-ui'],
+  categories: ['web-dev', 'strategy', 'ux-ui', 'ai-driven'],
   tags: ['WordPress', 'Arquitectura de información', 'Automatización', 'Desarrollo web'],
 
   thumbnail: {
@@ -127,6 +127,7 @@ export const ibizaObservatorio: ProjectWithLayout = {
 
     // 7) Web Panel (se renderiza automáticamente dentro de 'web')
     webPanel: {
+      background: '#0D1520',
       title: 'Ibiza Observatorio de Edificación',
       description: 'La primera plataforma de referencia del sector de la edificación en Ibiza.',
       mockups: [
@@ -140,6 +141,7 @@ export const ibizaObservatorio: ProjectWithLayout = {
 
     // 8) Funnel Flow — Automatización de contenido
     funnelFlow: {
+      background: '#0D1520',
       editorial: {
         title: 'Escalabilidad editorial y autonomía',
         subtitle: 'Publicar una vez. Aparecer en todas partes.',
