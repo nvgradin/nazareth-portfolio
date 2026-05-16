@@ -50,14 +50,21 @@ export function ProjectHero({ data }: Props) {
                 {roles.join(' · ')}
               </motion.p>
             )}
-            {(context || year) && (
+            {(context || collaborators?.length || year) && (
               <motion.p
                 className={styles.mobileBgMeta}
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.28, ease }}
               >
-                {[context, year].filter(Boolean).join(' — ')}
+                {context}
+                {context && collaborators?.length ? ' ' : null}
+                {collaborators?.map((c, i) => (
+                  <Link key={c.url} href={c.url} target="_blank" rel="noopener noreferrer" className={styles.mobileBgMetaLink}>
+                    {c.name} ↗{i < (collaborators.length - 1) ? ', ' : ''}
+                  </Link>
+                ))}
+                {year ? ` — ${year}` : null}
               </motion.p>
             )}
           </div>
@@ -74,14 +81,14 @@ export function ProjectHero({ data }: Props) {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, ease }}
-              style={logoSize ? { '--logo-max-height': `${logoSize}px` } as React.CSSProperties : undefined}
             >
               <Image
                 src={logo}
                 alt={`${title} logo`}
-                width={logoSize ?? 160}
-                height={logoSize ?? 160}
+                width={520}
+                height={320}
                 className={styles.logoImage}
+                style={logoSize ? { width: logoSize, height: 'auto' } : undefined}
               />
             </motion.div>
           )}
@@ -170,9 +177,13 @@ export function ProjectHero({ data }: Props) {
                 <Image
                   src={logo}
                   alt={`${title} logo`}
-                  width={120}
-                  height={120}
+                  width={520}
+                  height={320}
                   className={styles.mobileLogoImage}
+                  style={logoSize ? {
+                    '--mobile-logo-width': `${Math.round(logoSize * 0.75)}px`,
+                    '--tablet-logo-width': `${Math.round(logoSize * 1)}px`,
+                  } as React.CSSProperties : undefined}
                 />
               </motion.div>
             )}
