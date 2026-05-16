@@ -46,7 +46,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
         {
           width: 1,
           cells: [
-            { src: '/projects/tarxetaculturagalega/bento-2.jpg', alt: 'Tarxeta Cultura Galega 2', ratio: 0.45 },
+            { src: '/projects/tarxetaculturagalega/bento-6.jpg', alt: 'Tarxeta Cultura Galega 2', ratio: 0.45 },
             { src: '/projects/tarxetaculturagalega/Tarxeta-Bono-Cultura-Galega-Librería.png', alt: 'Tarxeta Cultura Galega 6', ratio: 0.55 },
           ],
         },
