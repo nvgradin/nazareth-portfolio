@@ -138,11 +138,11 @@ export function ProjectLayout({ project }: Props) {
               columns={layout.web.columns}
             >
               {layout.webPanel && (
-                <WebPanel data={layout.webPanel} background={layout.bento?.background} />
+                <WebPanel data={layout.webPanel} background={layout.webPanel.background ?? layout.bento?.background} />
               )}
             </EditorialBlock>
           : layout.webPanel
-            ? <WebPanel key="web" data={layout.webPanel} background={layout.bento?.background} />
+            ? <WebPanel key="web" data={layout.webPanel} background={layout.webPanel.background ?? layout.bento?.background} />
             : null;
 
       case 'editorial':

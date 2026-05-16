@@ -188,6 +188,7 @@ export interface BrandingScroller {
   paragraphs?: string[];
   background: string;
   images: BrandingScrollerImage[];
+  imageMode?: 'default' | 'wide';
 }
 
 /**
@@ -243,6 +244,7 @@ export interface WebPanel {
   description: string;
   bullets?: string[];
   mockups: Media[];
+  background?: string;
 }
 
 /**
