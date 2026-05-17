@@ -16,6 +16,7 @@ export function AboutThemeWatcher() {
       const els = document.querySelectorAll<HTMLElement>('[data-header-theme]');
       let active: HTMLElement | null = null;
       els.forEach((el) => {
+        if (getComputedStyle(el).display === 'none') return;
         const rect = el.getBoundingClientRect();
         if (rect.top <= scanY && rect.bottom > scanY) active = el;
       });

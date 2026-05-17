@@ -19,8 +19,7 @@ export function Header() {
   const pathname = usePathname();
   const { isDark } = useHeaderTheme();
   const { open } = useMobileMenu();
-  const isProjectPage = /^\/projects\/[^/]+/.test(pathname);
-  const isDarkBackground = !isProjectPage && isDark;
+  const isDarkBackground = isDark;
 
   const headerClasses = [
     styles.header,

@@ -16,6 +16,7 @@ export function ProjectThemeWatcher() {
       const els = document.querySelectorAll<HTMLElement>('[data-header-theme]');
       let active: HTMLElement | null = null;
       els.forEach((el) => {
+        if (getComputedStyle(el).display === 'none') return;
         const rect = el.getBoundingClientRect();
         if (rect.top <= scanY && rect.bottom > scanY) active = el;
       });
@@ -27,7 +28,10 @@ export function ProjectThemeWatcher() {
       if (raf === null) raf = requestAnimationFrame(update);
     };
 
-    update();
+    setDark(false); // reset al navegar a un proyecto — el hero siempre empieza dark
+    raf = requestAnimationFrame(() => {
+      raf = requestAnimationFrame(() => { update(); raf = null; });
+    });
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', onScroll);

@@ -17,6 +17,20 @@
   }
 }
 
+/* Marker para el watcher de tema — solo existe en mobile */
+.mobileThemeMarker {
+  display: none;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 1023px) {
+  .mobileThemeMarker {
+    display: block;
+  }
+}
+
 .mobileBgImage {
   object-fit: cover;
   object-position: center;

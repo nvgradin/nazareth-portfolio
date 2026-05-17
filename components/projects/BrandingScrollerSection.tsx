@@ -84,9 +84,9 @@ function DesktopLayout({ data }: { data: BrandingScroller }) {
       className={styles.wrapper}
       style={{ height: overflow > 0 ? `calc(100vh + ${overflow}px)` : '100vh' }}
     >
-      <div className={styles.sticky} style={{ backgroundColor: background }}>
+      <div className={styles.sticky} data-header-theme="dark" style={{ backgroundColor: background }}>
         <div className={styles.container}>
-          <div className={styles.textColumn} data-header-theme="dark">
+          <div className={styles.textColumn}>
             <h2 className={styles.title}>{title}</h2>
             <p className={styles.description}>{parseInline(description)}</p>
             {bullets && bullets.length > 0 && (
@@ -104,7 +104,7 @@ function DesktopLayout({ data }: { data: BrandingScroller }) {
               </div>
             )}
           </div>
-          <div ref={columnRef} className={styles.scrollerColumn} data-header-theme="light">
+          <div ref={columnRef} className={styles.scrollerColumn}>
             <div ref={trackRef} className={styles.track}>
               {images.map((img, i) => (
                 <div

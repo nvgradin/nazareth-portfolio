@@ -20,13 +20,15 @@ export function ProjectHero({ data }: Props) {
     <>
       {/* Mobile: imagen de fondo con gradiente — solo visible en < 1024px */}
       {heroBg && (
-        <div className={styles.mobileBgWrapper} data-header-theme="light">
+        <div className={styles.mobileBgWrapper}>
+          {/* Marker para el watcher — solo visible en mobile, ocupa 100vh */}
+          <div className={styles.mobileThemeMarker} data-header-theme="light" aria-hidden="true" />
           <Image
             src={heroBg}
             alt={`${title} — imagen de portada`}
             fill
             className={styles.mobileBgImage}
-            sizes="100vw"
+            sizes="(max-width: 1023px) 100vw, 1px"
             priority
           />
           <div className={styles.mobileBgGradient} />
@@ -89,6 +91,7 @@ export function ProjectHero({ data }: Props) {
                 height={320}
                 className={styles.logoImage}
                 style={logoSize ? { width: logoSize, height: 'auto' } : undefined}
+                priority
               />
             </motion.div>
           )}
