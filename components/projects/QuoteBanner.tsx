@@ -42,7 +42,7 @@ export function QuoteBanner({ data }: Props) {
   }, []);
 
   return (
-    <section ref={bannerRef} className={styles.banner}>
+    <section ref={bannerRef} className={styles.banner} data-header-theme="light">
       {/* Background image with parallax */}
       <div className={styles.bg}>
         <Image

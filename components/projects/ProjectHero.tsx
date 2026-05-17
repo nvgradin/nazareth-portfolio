@@ -20,7 +20,7 @@ export function ProjectHero({ data }: Props) {
     <>
       {/* Mobile: imagen de fondo con gradiente — solo visible en < 1024px */}
       {heroBg && (
-        <div className={styles.mobileBgWrapper}>
+        <div className={styles.mobileBgWrapper} data-header-theme="light">
           <Image
             src={heroBg}
             alt={`${title} — imagen de portada`}
@@ -71,7 +71,7 @@ export function ProjectHero({ data }: Props) {
         </div>
       )}
 
-    <section className={styles.hero}>
+    <section className={styles.hero} data-header-theme="dark">
       <div className={styles.container}>
         {/* Columna izquierda: Logo + Nombre + Roles + Context */}
         <div className={styles.left}>

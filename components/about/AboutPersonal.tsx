@@ -25,7 +25,7 @@ export default function AboutPersonal() {
   });
 
   return (
-    <section ref={sectionRef} className={styles.section}>
+    <section ref={sectionRef} className={styles.section} data-header-theme="light">
       <motion.div className={styles.bg} style={{ y: bgY }} />
       <div className={styles.overlay} />
       <div className={styles.inner}>

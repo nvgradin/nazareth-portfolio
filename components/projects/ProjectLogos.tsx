@@ -21,7 +21,7 @@ export function ProjectLogos({ logos, label = 'Con el apoyo de', staticOnDesktop
   const doubled = [...logos, ...logos];
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-header-theme="dark">
       {label && (
         <div className={styles.header}>
           <motion.p

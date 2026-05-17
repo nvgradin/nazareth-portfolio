@@ -40,7 +40,7 @@ const FREELANCE_DOUBLED = [...FREELANCE, ...FREELANCE];
 
 export default function AboutLogos() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-header-theme="dark">
 
       {/* ── Desktop: agencia estática + freelance marquee ── */}
       <div className={styles.desktopInner}>

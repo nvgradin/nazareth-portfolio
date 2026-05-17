@@ -15,7 +15,7 @@ export function CenteredHeading({ data }: Props) {
   const { label, title, subtitle } = data;
 
   return (
-    <section className={styles.heading}>
+    <section className={styles.heading} data-header-theme="dark">
       <div className={styles.container}>
         <TextContainer>
           {label && (

@@ -1,10 +1,8 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { useHeaderTheme } from '@/components/layout/HeaderThemeContext';
 import styles from './HomeBio.module.css';
 
 const ease = [0.4, 0, 0.2, 1] as const;
@@ -17,32 +15,8 @@ const fade = (delay = 0) => ({
 });
 
 export function HomeBio() {
-  const { setDark } = useHeaderTheme();
-  const ref = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const headerH = 52;
-    const bottomMargin = -(window.innerHeight - headerH);
-    // HomeBio tiene fondo claro — cuando entra bajo el header → texto oscuro (setDark false)
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setDark(!entry.isIntersecting);
-      },
-      {
-        rootMargin: `-${headerH}px 0px ${bottomMargin}px 0px`,
-        threshold: 0,
-      }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [setDark]);
-
   return (
-    <section ref={ref} className={styles.section}>
+    <section className={styles.section} data-header-theme="dark">
       <div className={styles.inner}>
         <div className={styles.top}>
 

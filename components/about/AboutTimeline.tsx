@@ -1,8 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { useHeaderTheme } from '@/components/layout/HeaderThemeContext';
 import styles from './AboutTimeline.module.css';
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
@@ -186,24 +184,8 @@ function FormacionVertical() {
 /* ─── Componente principal ─── */
 
 export default function AboutTimeline() {
-  const { setDark } = useHeaderTheme();
-  const ref = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const headerH = 52;
-    const bottomMargin = -(window.innerHeight - headerH);
-    const observer = new IntersectionObserver(
-      ([entry]) => { setDark(entry.isIntersecting); },
-      { rootMargin: `-${headerH}px 0px ${bottomMargin}px 0px`, threshold: 0 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [setDark]);
-
   return (
-    <section ref={ref} className={styles.section}>
+    <section className={styles.section} data-header-theme="light">
       <div className={styles.inner}>
 
         <motion.p

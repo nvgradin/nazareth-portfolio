@@ -16,7 +16,7 @@ export function TextBlock({ data }: Props) {
 
   if (variant === 'editorial') {
     return (
-      <section className={styles.block} style={background ? { background } : undefined}>
+      <section className={styles.block} data-header-theme="dark" style={background ? { background } : undefined}>
         <div className={styles.editorialWrapper}>
           <div className={styles.editorialLeft}>
             {label && (
@@ -61,7 +61,7 @@ export function TextBlock({ data }: Props) {
 
   if (variant === 'grid') {
     return (
-      <section className={styles.block}>
+      <section className={styles.block} data-header-theme="dark">
         <div className={styles.gridWrapper}>
           <div className={styles.gridHeader}>
             {label && (

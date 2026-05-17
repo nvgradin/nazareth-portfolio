@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import styles from './AboutStory.module.css';
 
+
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
 const CHAPTERS = [
@@ -87,10 +88,10 @@ function ParallaxImage({ src, alt }: { src: string; alt: string }) {
   );
 }
 
-// Acto I — full-width grid, centered text
+// Acto I — fondo claro
 function ActoI({ ch }: { ch: typeof CHAPTERS[0] }) {
   return (
-    <div className={styles.actoI}>
+    <div className={styles.actoI} data-header-theme="dark">
       <div className={styles.actoIGrid} />
       <div className={styles.actoIFadeTop} />
 
@@ -127,14 +128,14 @@ function ActoI({ ch }: { ch: typeof CHAPTERS[0] }) {
   );
 }
 
-// Acto II — full-width parallax bg
+// Acto II — fondo oscuro/imagen
 function ActoII({ ch }: { ch: typeof CHAPTERS[0] }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], ['8%', '-8%']);
 
   return (
-    <div ref={ref} className={styles.actoII}>
+    <div ref={ref} className={styles.actoII} data-header-theme="light">
       <div className={styles.actoIIBg}>
         <motion.div style={{ y, position: 'absolute', inset: '-10% 0', width: '100%', height: '120%' }}>
           <Image src={ch.image!} alt={ch.imageAlt} fill style={{ objectFit: 'cover', objectPosition: 'center' }} sizes="100vw" quality={90} />
@@ -171,10 +172,10 @@ function ActoII({ ch }: { ch: typeof CHAPTERS[0] }) {
   );
 }
 
-// Acto III — full-width image as background
+// Acto III — fondo oscuro/imagen
 function ActoIII({ ch }: { ch: typeof CHAPTERS[0] }) {
   return (
-    <div className={styles.actoIII}>
+    <div className={styles.actoIII} data-header-theme="light">
       <div className={styles.actoIIIBg}>
         <Image src={ch.image!} alt={ch.imageAlt} fill style={{ objectFit: 'cover', objectPosition: 'center' }} sizes="100vw" quality={90} />
         <div className={styles.actoIIIOverlay} />
@@ -212,11 +213,12 @@ function ActoIII({ ch }: { ch: typeof CHAPTERS[0] }) {
 
 type Chapter = typeof CHAPTERS[0] & { imageSide: 'right' | 'left' | 'center' | 'fullbg' };
 
-// Acto IV
+// Acto IV — fondo claro
 function ChapterAct({ ch }: { ch: Chapter }) {
   return (
     <motion.article
       className={`${styles.chapter} ${styles.chapterCenter}`}
+      data-header-theme="dark"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.12 }}

@@ -7,6 +7,7 @@ import AboutPillars from '@/components/about/AboutPillars';
 import AboutTimeline from '@/components/about/AboutTimeline';
 import AboutPersonal from '@/components/about/AboutPersonal';
 import AboutCTA from '@/components/about/AboutCTA';
+import { AboutThemeWatcher } from '@/components/about/AboutThemeWatcher';
 import { Footer } from '@/components/layout';
 import styles from './about.module.css';
 
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className={styles.page}>
+      <AboutThemeWatcher />
       <AboutHero />
       <AboutManifesto />
       <AboutStory />

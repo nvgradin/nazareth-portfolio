@@ -85,7 +85,7 @@ export function ImageCompare({
   }, []);
 
   return (
-    <section className={`${styles.section} ${className || ''}`}>
+    <section className={`${styles.section} ${className || ''}`} data-header-theme="light">
       <div
         className={styles.inner}
         style={background ? { backgroundColor: background } : undefined}

@@ -22,7 +22,7 @@ const SENTENCES = [
 
 export default function AboutManifesto() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-header-theme="dark">
       <div className={styles.inner}>
 
         <motion.p className={styles.eyebrow} {...fadeUp(0)}>

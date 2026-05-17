@@ -8,7 +8,7 @@ const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 export function HomeCTA() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-header-theme="light">
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 0.5, y: 0 }}

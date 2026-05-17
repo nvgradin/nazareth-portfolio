@@ -16,7 +16,7 @@ export function ClosingText({ data }: Props) {
   const paragraphs = Array.isArray(content) ? content : [content];
 
   return (
-    <section className={styles.section} style={background ? { backgroundColor: background } : undefined}>
+    <section className={styles.section} data-header-theme="light" style={background ? { backgroundColor: background } : undefined}>
       <div className={styles.container}>
         <TextContainer>
           {title && (

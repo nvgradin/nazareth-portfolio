@@ -15,7 +15,7 @@ const fade = (delay = 0) => ({
 
 export default function AboutCTA() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-header-theme="light">
       <div className={styles.inner}>
         <motion.p className={styles.eyebrow} {...fade(0)}>
           ¿Creamos?

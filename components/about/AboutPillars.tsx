@@ -92,7 +92,8 @@ function PillarCard({ pillar, i }: { pillar: typeof PILLARS[0]; i: number }) {
 }
 
 export default function AboutPillars() {
-  const [active, setActive] = useState(0); // start on first card (Negocio)
+  const sectionRef = useRef<HTMLElement>(null);
+  const [active, setActive] = useState(0);
 
   const prev = () => setActive((a) => Math.max(0, a - 1));
   const next = () => setActive((a) => Math.min(PILLARS.length - 1, a + 1));
@@ -115,7 +116,7 @@ export default function AboutPillars() {
   };
 
   return (
-    <section className={styles.section}>
+    <section ref={sectionRef} className={styles.section} data-header-theme="light">
       {/* Background image with overlay */}
       <div className={styles.bg}>
         <Image

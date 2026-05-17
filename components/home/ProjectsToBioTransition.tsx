@@ -7,7 +7,7 @@ const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
 export function ProjectsToBioTransition() {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} data-header-theme="light">
       <div className={styles.inner}>
 
         <motion.p

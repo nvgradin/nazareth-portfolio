@@ -14,7 +14,7 @@ interface Props {
 
 export function FeatureCards({ data }: Props) {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-header-theme="dark">
       <div className={styles.container}>
         <div className={styles.grid}>
           {data.map((card, index) => (

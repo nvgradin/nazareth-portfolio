@@ -14,7 +14,7 @@ const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 export function StatementBlock({ label, setup, statement, accentColor = '#1E3A5F' }: Props) {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-header-theme="dark">
       <div className={styles.inner}>
         {label && (
           <motion.p

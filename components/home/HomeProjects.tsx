@@ -36,6 +36,7 @@ export function HomeProjects() {
   return (
     <div
       className={styles.wrapper}
+      data-header-theme="light"
       style={{
         position: 'relative',
         width: '100%',

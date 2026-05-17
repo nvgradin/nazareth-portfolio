@@ -27,7 +27,7 @@ export function MediaGrid({ data }: Props) {
   return (
     <section className={styles.section} style={background ? { backgroundColor: background } : undefined}>
       {/* Header 2 columnas — mismo patrón que EditorialBlock */}
-      <div className={styles.header}>
+      <div className={styles.header} data-header-theme="dark">
         <motion.h2
           className={styles.headerTitle}
           initial={{ opacity: 0, x: -20 }}
@@ -50,7 +50,7 @@ export function MediaGrid({ data }: Props) {
       </div>
 
       {/* Grid full-bleed */}
-      <div className={styles.grid}>
+      <div className={styles.grid} data-header-theme="light">
         <div className={styles.row2}>
           {row1.map((img, i) => (
             <GridCell key={img.src} image={img} index={i} onClick={openLightbox} />

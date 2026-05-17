@@ -17,7 +17,7 @@ export function WebPanel({ data, background }: Props) {
   }));
 
   return (
-    <section className={styles.panel}>
+    <section className={styles.panel} data-header-theme="light">
       <div className={styles.inner}>
         <ImageGallery
           images={galleryImages}

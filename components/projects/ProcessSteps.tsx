@@ -7,7 +7,7 @@ interface Props {
 
 export function ProcessSteps({ data }: Props) {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-header-theme="light">
       <div className={styles.container}>
         <div className={styles.grid}>
           {data.map((step) => (

@@ -2,9 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useHeaderTheme } from '@/components/layout/HeaderThemeContext';
 import styles from './HomeHero.module.css';
 
 // Easing cinematográfico: arranca lento, frena suave
@@ -16,15 +14,8 @@ interface Props {
 }
 
 export function HomeHero({ animate = false, hidden = false }: Props) {
-  const { setDark } = useHeaderTheme();
-
-  useEffect(() => {
-    setDark(true);
-    return () => setDark(false);
-  }, [setDark]);
-
   return (
-    <section className={styles.hero} style={hidden ? { visibility: 'hidden' } : undefined}>
+    <section className={styles.hero} style={hidden ? { visibility: 'hidden' } : undefined} data-header-theme="light">
       {/* Fondo imagen */}
       <div className={styles.bg}>
         <Image

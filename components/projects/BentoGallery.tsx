@@ -76,6 +76,7 @@ export function BentoGallery({ data }: Props) {
   return (
     <section
       className={styles.bento}
+      data-header-theme="light"
       style={{ backgroundColor: background || '#1E3A5F' }}
     >
       {mode === 'fixed' ? (

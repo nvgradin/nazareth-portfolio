@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { HomeHero, IntroOverlay, HomeProjects, HomeBio, ProjectsToBioTransition, MarqueeDivider, HomeCTA } from '@/components/home';
 import { HomeLogos } from '@/components/home/HomeLogos';
+import { HomeThemeWatcher } from '@/components/home/HomeThemeWatcher';
 import { Footer } from '@/components/layout';
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
 
   return (
     <>
+      <HomeThemeWatcher />
       {/* Hero */}
       <div style={{ position: 'relative' }}>
         <HomeHero animate={heroReady} hidden={!heroReady} />

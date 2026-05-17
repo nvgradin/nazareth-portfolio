@@ -32,7 +32,7 @@ const DOUBLED = [...ALL_LOGOS, ...ALL_LOGOS];
 
 export function HomeLogos() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-header-theme="dark">
       <div className={styles.header}>
         <motion.p
           className={styles.eyebrow}

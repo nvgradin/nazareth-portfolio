@@ -1,21 +1,14 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useHeaderTheme } from '@/components/layout/HeaderThemeContext';
 import styles from './AboutHero.module.css';
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
 export default function AboutHero() {
   const ref = useRef<HTMLElement>(null);
-  const { setDark } = useHeaderTheme();
-
-  // En todos los dispositivos: about empieza con header morado
-  useEffect(() => {
-    setDark(false);
-  }, [setDark]);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -26,7 +19,7 @@ export default function AboutHero() {
   const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
 
   return (
-    <section ref={ref} className={styles.hero}>
+    <section ref={ref} className={styles.hero} data-header-theme="light">
 
       {/* Imagen con zoom-out de entrada + parallax de scroll */}
       <motion.div

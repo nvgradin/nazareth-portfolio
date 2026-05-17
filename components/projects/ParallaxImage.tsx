@@ -36,7 +36,7 @@ export function ParallaxImage({ src, alt, intensity = 150 }: Props) {
   }, [intensity]);
 
   return (
-    <div ref={containerRef} className={styles.container}>
+    <div ref={containerRef} className={styles.container} data-header-theme="light">
       <Image
         ref={imgRef}
         src={src}

@@ -28,7 +28,7 @@ export function StaggeredProcess({ data }: Props) {
   const [step1, step2, step3] = steps;
 
   return (
-    <section className={styles.section} ref={ref}>
+    <section className={styles.section} data-header-theme="light" ref={ref}>
       {/* Label con línea */}
       <div className={styles.labelRow}>
         <span className={styles.label}>{label}</span>

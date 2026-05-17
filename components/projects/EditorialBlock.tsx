@@ -33,7 +33,7 @@ export function EditorialBlock({ label, title, subtitle, content, columns, child
   const hasColumns = columns && columns.length > 0;
 
   return (
-    <section className={[styles.block, className].filter(Boolean).join(' ')} style={style}>
+    <section className={[styles.block, className].filter(Boolean).join(' ')} data-header-theme="dark" style={style}>
       <div className={styles.top}>
         {/* Modo columnas: title izq + subtitle ancla derecha alineado abajo */}
         {hasColumns ? (
