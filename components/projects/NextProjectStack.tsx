@@ -93,7 +93,7 @@ export function NextProjectStack({ stackProjects, from }: Props) {
               src={src}
               alt={item.project.title}
               fill
-              sizes="100vw"
+              sizes="(max-width: 768px) 90vw, 480px"
               className={styles.image}
               priority={isFront}
             />

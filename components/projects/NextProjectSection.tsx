@@ -41,7 +41,7 @@ export function NextProjectSection({ nextProject, href }: Props) {
             src={cover}
             alt={nextProject.title}
             fill
-            sizes="100vw"
+            sizes="(max-width: 767px) 100vw, 60vw"
             className={styles.image}
             priority={false}
           />

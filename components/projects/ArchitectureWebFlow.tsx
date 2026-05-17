@@ -34,7 +34,7 @@ export function ArchitectureWebFlow({ data }: Props) {
                     src={mod.image.src}
                     alt={mod.image.alt || ''}
                     fill
-                    sizes="100vw"
+                    sizes="(max-width: 767px) 100vw, 50vw"
                     style={{ objectFit: 'cover' }}
                   />
                 </div>

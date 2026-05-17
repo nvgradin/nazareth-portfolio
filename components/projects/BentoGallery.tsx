@@ -139,13 +139,14 @@ function Column({ column, totalWidth, colIndex, onImageClick }: { column: BentoC
           totalCells={column.cells.length}
           delay={colIndex * 0.1 + cellIndex * 0.08}
           onImageClick={onImageClick}
+          priority={colIndex < 2 && cellIndex === 0}
         />
       ))}
     </div>
   );
 }
 
-function CellComponent({ cell, totalCells, delay, onImageClick }: { cell: BentoCell; totalCells: number; delay: number; onImageClick: (src: string) => void }) {
+function CellComponent({ cell, totalCells, delay, onImageClick, priority }: { cell: BentoCell; totalCells: number; delay: number; onImageClick: (src: string) => void; priority?: boolean }) {
   const totalGaps = (totalCells - 1) * GAP;
   const gapDeduction = cell.ratio * totalGaps;
 
@@ -173,6 +174,7 @@ function CellComponent({ cell, totalCells, delay, onImageClick }: { cell: BentoC
         className={styles.image}
         sizes="(max-width: 768px) 100vw, 25vw"
         style={cell.objectPosition ? { objectPosition: cell.objectPosition } : undefined}
+        priority={priority}
       />
     </motion.div>
   );
@@ -251,6 +253,7 @@ function FreeGrid({ items, onImageClick }: { items: BentoFreeItem[]; onImageClic
               alt={item.alt}
               fill
               className={styles.image}
+              priority={index < 2}
               sizes={`${colSpan >= 2 ? '50vw' : '25vw'}`}
             />
           </motion.div>
