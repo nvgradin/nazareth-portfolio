@@ -68,11 +68,11 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
     },
 
     heading: {
-      title: 'Construcción de una campaña institucional\npara activar el acceso a la cultura entre jóvenes',
+      title: 'Construcción de la campaña institucional\npara activar el acceso a la cultura entre jóvenes',
       subtitle: [
-        'En 2015, distintas instituciones públicas y entidades culturales en Galicia se unieron para impulsar el consumo cultural entre la población joven.', 
+        'En 2015, la Consellería de Cultura Galega y las instituciones involucradas se unieron para impulsar el consumo cultural entre la población joven.', 
         'El objetivo era acercar la cultura a los jóvenes de 18 a 30 años creando un bono que potencie el consumo cultural de forma deseable, comprensible y relevante.',
-        'Mi rol fue el de diseñar el concepto creativo y desarrollar la campaña de lanzamiento, trabajando en estrecha colaboración con los equipos de consultoría y las instituciones involucradas.',
+        'Mi rol fue el de diseñar el concepto creativo y desarrollar la campaña de lanzamiento, encargada por Galipad Consulting y en colaboración con las instituciones involucradas.',
         'Actores implicados: Galipad Consulting, AGADIC, Xunta de Galicia, Afundación, Marca Galicia, Deputación de Pontevedra y la Red de librerías y espacios culturales.',
         ],
         },
