@@ -172,6 +172,13 @@ export function InfiniteVideoDeck({
     };
   }, [deckState, currentFront, items]);
 
+  // Mute + pause when deck leaves viewport
+  React.useEffect(() => {
+    if (inView) return;
+    setMuted(true);
+    if (deckState === 'watch') setDeckState('browse');
+  }, [inView, deckState]);
+
   // Sync video play/pause/mute/loop based on state and front card
   React.useEffect(() => {
     items.forEach((item, i) => {

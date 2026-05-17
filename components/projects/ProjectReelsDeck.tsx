@@ -21,8 +21,16 @@ export function ProjectReelsDeck({ data }: Props) {
   }));
 
   const [showHint, setShowHint] = useState(false);
+  const [cardHeight, setCardHeight] = useState(490);
   const sectionRef = useRef<HTMLElement>(null);
   const hintShown = useRef(false);
+
+  useEffect(() => {
+    const update = () => setCardHeight(window.innerHeight < 740 ? 390 : 490);
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -59,7 +67,7 @@ export function ProjectReelsDeck({ data }: Props) {
           autoPlayInterval={5000}
           showTitle
           cardWidth={300}
-          cardHeight={490}
+          cardHeight={cardHeight}
           cardRadius={0}
           yOffset={68}
           scaleStep={0.08}
