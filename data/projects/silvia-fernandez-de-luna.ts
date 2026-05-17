@@ -10,7 +10,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
 
   thumbnail: {
     type: 'image',
-    src: '/projects/silvia-fernandez-de-luna/hero.jpg',
+    src: '/projects/silvia-fernandez-de-luna/hero.webp',
     alt: 'Silvia Fernández De Luna',
   },
 

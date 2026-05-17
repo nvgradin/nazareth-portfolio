@@ -87,6 +87,20 @@
   line-height: 1;
 }
 
+/* Variant: no-mouse — arrow keys hint */
+.scrollHintKeys {
+  gap: 8px;
+}
+
+.scrollHintArrows {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+  line-height: 1;
+}
+
 /*
  * Cada card: absolute, pegada al fondo del stage.
  * transform-origin: center bottom → el scale encoge desde el borde inferior.
@@ -163,6 +177,38 @@
 
 /* Tablet (portrait y landscape) — hint inline centrado bajo el subtítulo */
 @media (min-width: 768px) and (min-height: 501px) and (max-width: 1280px) {
+  .scrollHint {
+    display: none;
+  }
+
+  .scrollHintInline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 28px;
+    color: var(--neutral-50);
+    opacity: 0.5;
+    font-family: var(--font-accent);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+
+  .scrollHintInline span:first-child {
+    font-size: 16px;
+    line-height: 1;
+  }
+}
+
+/* Desktop ancho y corto — ej. 1366×768 */
+@media (min-width: 1281px) and (max-height: 800px) {
+  .card {
+    bottom: -100px;
+  }
+
   .scrollHint {
     display: none;
   }

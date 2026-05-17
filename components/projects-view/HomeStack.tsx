@@ -30,7 +30,23 @@ const SLOTS_MOBILE_TALL: [number, number, number][] = [
   [-290, 0.58, 0.60],
 ];
 
-// Móvil landscape: cards apiladas más juntas (pantalla baja)
+// Desktop ancho y corto (ej. 1366×768): distancias comprimidas, frontal más baja
+const SLOTS_SHORT_DESKTOP: [number, number, number][] = [
+  [0,    1.00, 1.00],
+  [-120, 0.84, 0.86],
+  [-225, 0.70, 0.70],
+  [-315, 0.55, 0.55],
+];
+
+// Tablet portrait con pantalla alta (ej. 768×1366, 820×1180, 1024×1366)
+const SLOTS_TABLET_TALL: [number, number, number][] = [
+  [0,    1.00, 1.00],
+  [-200, 0.84, 0.86],
+  [-375, 0.70, 0.70],
+  [-525, 0.55, 0.55],
+];
+
+// Tablet landscape / portrait bajo (≤800px alto)
 const SLOTS_TABLET: [number, number, number][] = [
   [0,    1.00, 1.00],
   [-135, 0.84, 0.86],
@@ -63,36 +79,58 @@ export function HomeStack({ projects, disabled, exitingToGrid, enteringFromGrid,
   const [isTallMobile, setIsTallMobile] = useState(false);
   const [isLandscape, setIsLandscape] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
+  const [isTabletTall, setIsTabletTall] = useState(false);
+  const [isShortDesktop, setIsShortDesktop] = useState(false);
+  const [hasMouse, setHasMouse] = useState(true);
   useEffect(() => {
-    const mqW = window.matchMedia('(max-width: 767px)');
-    const mqH = window.matchMedia('(min-height: 750px)');
-    const mqL = window.matchMedia('(orientation: landscape) and (max-height: 500px)');
-    const mqT = window.matchMedia('(min-width: 768px) and (min-height: 501px) and (max-width: 1280px)');
+    const mqMouse = window.matchMedia('(hover: hover) and (pointer: fine)');
+    setHasMouse(mqMouse.matches);
+    const onMouseChange = (e: MediaQueryListEvent) => setHasMouse(e.matches);
+    mqMouse.addEventListener('change', onMouseChange);
+    return () => mqMouse.removeEventListener('change', onMouseChange);
+  }, []);
+  useEffect(() => {
+    const mqW  = window.matchMedia('(max-width: 767px)');
+    const mqH  = window.matchMedia('(min-height: 750px)');
+    const mqL  = window.matchMedia('(orientation: landscape) and (max-height: 500px)');
+    const mqT  = window.matchMedia('(min-width: 768px) and (min-height: 501px) and (max-width: 1280px)');
+    const mqTT = window.matchMedia('(min-width: 768px) and (max-width: 1280px) and (min-height: 900px) and (orientation: portrait)');
+    const mqSD = window.matchMedia('(min-width: 1281px) and (max-height: 800px)');
     const update = () => {
       setIsMobile(mqW.matches);
       setIsTallMobile(mqW.matches && mqH.matches);
       setIsLandscape(mqL.matches);
-      setIsTablet(mqT.matches);
+      setIsTabletTall(mqTT.matches);
+      setIsTablet(mqT.matches && !mqTT.matches);
+      setIsShortDesktop(mqSD.matches);
     };
     update();
     mqW.addEventListener('change', update);
     mqH.addEventListener('change', update);
     mqL.addEventListener('change', update);
     mqT.addEventListener('change', update);
+    mqTT.addEventListener('change', update);
+    mqSD.addEventListener('change', update);
     return () => {
       mqW.removeEventListener('change', update);
       mqH.removeEventListener('change', update);
       mqL.removeEventListener('change', update);
       mqT.removeEventListener('change', update);
+      mqTT.removeEventListener('change', update);
+      mqSD.removeEventListener('change', update);
     };
   }, []);
   const SLOTS = isLandscape
     ? SLOTS_LANDSCAPE
     : isMobile
       ? (isTallMobile ? SLOTS_MOBILE_TALL : SLOTS_MOBILE)
-      : isTablet
-        ? SLOTS_TABLET
-        : SLOTS_DESKTOP;
+      : isTabletTall
+        ? SLOTS_TABLET_TALL
+        : isTablet
+          ? SLOTS_TABLET
+          : isShortDesktop
+            ? SLOTS_SHORT_DESKTOP
+            : SLOTS_DESKTOP;
 
   // order[slot] = índice de proyecto en ese slot
   const [order, setOrder] = useState<number[]>(() => projects.map((_, i) => i));
@@ -187,13 +225,25 @@ export function HomeStack({ projects, disabled, exitingToGrid, enteringFromGrid,
       if (Math.abs(delta) > 40) rotate(delta > 0 ? 1 : -1);
     };
 
-    window.addEventListener('wheel',      onWheel,      { passive: false });
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        rotate(1);
+      } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        rotate(-1);
+      }
+    };
+
+    window.addEventListener('wheel',      onWheel,   { passive: false });
     window.addEventListener('touchstart', onTouchStart, { passive: true });
     window.addEventListener('touchend',   onTouchEnd,   { passive: true });
+    window.addEventListener('keydown',    onKeyDown);
     return () => {
       window.removeEventListener('wheel',      onWheel);
       window.removeEventListener('touchstart', onTouchStart);
       window.removeEventListener('touchend',   onTouchEnd);
+      window.removeEventListener('keydown',    onKeyDown);
       if (wheelTimer) clearTimeout(wheelTimer);
     };
   }, [rotate, disabled]);
@@ -213,9 +263,9 @@ export function HomeStack({ projects, disabled, exitingToGrid, enteringFromGrid,
       >
         <h2 className={styles.heading}>Proyectos</h2>
         <p className={styles.subtitle}>Diseño de producto, experiencias digitales y marca.</p>
-        {/* Hint inline — móvil y tablet, debajo del subtítulo */}
+        {/* Hint inline — móvil y tablet touch, debajo del subtítulo */}
         <AnimatePresence>
-          {showHint && (isMobile || isTablet) && (
+          {showHint && (isMobile || isTablet || isTabletTall || isShortDesktop) && (
             <motion.div
               className={styles.scrollHintInline}
               initial={{ opacity: 0 }}
@@ -250,19 +300,41 @@ export function HomeStack({ projects, disabled, exitingToGrid, enteringFromGrid,
       <AnimatePresence>
         {showHint && (
           <motion.div
-            className={styles.scrollHint}
+            className={`${styles.scrollHint}${!hasMouse ? ` ${styles.scrollHintKeys}` : ''}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ delay: 1.8, duration: 0.8, ease: 'easeIn' }}
           >
-            <motion.span
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
-            >
-              ↕
-            </motion.span>
-            <span>scroll</span>
+            {hasMouse ? (
+              <>
+                <motion.span
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                  ↕
+                </motion.span>
+                <span>scroll</span>
+              </>
+            ) : (
+              <>
+                <div className={styles.scrollHintArrows}>
+                  <motion.span
+                    animate={{ x: [-2, 2, -2] }}
+                    transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+                  >
+                    ←
+                  </motion.span>
+                  <motion.span
+                    animate={{ x: [2, -2, 2] }}
+                    transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+                  >
+                    →
+                  </motion.span>
+                </div>
+                <span>arrow keys</span>
+              </>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

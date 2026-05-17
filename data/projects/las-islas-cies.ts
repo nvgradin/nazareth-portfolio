@@ -3,7 +3,7 @@ import { ProjectWithLayout } from '@/lib/project-layout.types';
 export const lasIslasCies: ProjectWithLayout = {
   slug: 'las-islas-cies',
   title: 'Las Islas Cíes',
-  excerpt: 'Proyecto placeholder — contenido pendiente.',
+  excerpt: 'Navegar las islas antes de llegar a ellas.',
 
   categories: ['product-design', 'web-dev', 'ux-ui','strategy'],
   tags: ['Product Design & UX', 'Web Development', 'Estrategia'],
