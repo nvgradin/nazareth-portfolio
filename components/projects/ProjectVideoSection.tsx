@@ -66,6 +66,7 @@ export function ProjectVideoSection({ data }: Props) {
       >
         <div
           className={styles.stage}
+          data-header-theme="light"
           style={background ? { background } : undefined}
         >
           <button

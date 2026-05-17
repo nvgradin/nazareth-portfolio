@@ -86,7 +86,7 @@ function DesktopLayout({ data }: { data: BrandingScroller }) {
     >
       <div className={styles.sticky} style={{ backgroundColor: background }}>
         <div className={styles.container}>
-          <div className={styles.textColumn}>
+          <div className={styles.textColumn} data-header-theme="dark">
             <h2 className={styles.title}>{title}</h2>
             <p className={styles.description}>{parseInline(description)}</p>
             {bullets && bullets.length > 0 && (
@@ -104,7 +104,7 @@ function DesktopLayout({ data }: { data: BrandingScroller }) {
               </div>
             )}
           </div>
-          <div ref={columnRef} className={styles.scrollerColumn}>
+          <div ref={columnRef} className={styles.scrollerColumn} data-header-theme="light">
             <div ref={trackRef} className={styles.track}>
               {images.map((img, i) => (
                 <div
@@ -175,7 +175,7 @@ function NarrowLayout({ data }: { data: BrandingScroller }) {
   return (
     <>
       {/* Texto: fondo crema, flujo normal */}
-      <div className={styles.narrowText}>
+      <div className={styles.narrowText} data-header-theme="dark">
         <h2 className={styles.title}>{title}</h2>
         <p className={styles.description}>{parseInline(description)}</p>
         {bullets && bullets.length > 0 && (
@@ -195,7 +195,7 @@ function NarrowLayout({ data }: { data: BrandingScroller }) {
       </div>
 
       {/* Carrusel: fondo del proyecto, scroll horizontal con auto-scroll */}
-      <div className={styles.narrowCarousel} style={{ backgroundColor: background }}>
+      <div className={styles.narrowCarousel} data-header-theme="light" style={{ backgroundColor: background }}>
         <div ref={scrollRef} className={styles.narrowTrack}>
           {images.map((img, i) => (
             <div

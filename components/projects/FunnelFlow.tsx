@@ -53,6 +53,7 @@ export function FunnelFlow({ data }: Props) {
         {/* Pasos — fondo oscuro/color del proyecto */}
         <div
           className={styles.flow}
+          data-header-theme="light"
           style={{
             '--funnel-cols': steps.length,
             '--funnel-bg': background ?? DEFAULT_FLOW_BG,

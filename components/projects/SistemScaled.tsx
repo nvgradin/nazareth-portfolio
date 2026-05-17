@@ -104,6 +104,7 @@ export function SistemScaled({ data }: Props) {
         {/* Pasos — fondo azul Cíes */}
         <div
           className={[styles.flow, steps.length === 4 ? styles.flow4 : ''].join(' ')}
+          data-header-theme="light"
           style={{
             '--funnel-cols': steps.length,
             '--funnel-bg': background ?? DEFAULT_FLOW_BG,

@@ -47,6 +47,7 @@ export function ProjectReelsDeck({ data }: Props) {
     <section
       ref={sectionRef}
       className={styles.section}
+      data-header-theme="light"
       style={{ background: '#1a0e00' }}
     >
       <NebulaShaderBg />

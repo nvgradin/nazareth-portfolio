@@ -3,6 +3,7 @@ import { ProjectWithLayout, LayoutSectionKey } from '@/lib/project-layout.types'
 import { ProjectHero } from './ProjectHero';
 import { BentoGallery } from './BentoGallery';
 import { EditorialBlock } from './EditorialBlock';
+import { ProjectThemeWatcher } from './ProjectThemeWatcher';
 import styles from './ProjectLayout.module.css';
 
 // Secciones opcionales — cargadas solo cuando el proyecto las necesita
@@ -250,6 +251,7 @@ export function ProjectLayout({ project }: Props) {
 
   return (
     <article className={styles.layout}>
+      <ProjectThemeWatcher />
       {order.map(renderSection)}
     </article>
   );
