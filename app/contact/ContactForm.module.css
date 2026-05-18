@@ -341,7 +341,7 @@
 .success p {
   font-family: var(--font-base);
   font-size: 16px;
-  color: #241E33;
+  color: #241E33 !important;
   opacity: 1;
   margin: 0;
 }
@@ -349,7 +349,7 @@
 .successSubtext {
   font-family: var(--font-base);
   font-size: 13px;
-  color: #241E33;
-  opacity: 0.50;
+  color: #241E33 !important;
+  opacity: 0.65;
   margin: 0;
 }
