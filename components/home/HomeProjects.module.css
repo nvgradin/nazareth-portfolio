@@ -22,6 +22,7 @@
   }
 
 
+
   .center {
     position: relative !important;
     inset: unset !important;
@@ -58,6 +59,7 @@
   display: none;
 }
 
+
 @media (max-width: 767px) {
   .mobileCorner {
     display: block;
@@ -79,10 +81,10 @@
 
   /* Arriba derecha — más pequeña, más adentro, más baja que TL */
   .mobileCornerTR {
-    top: -2%;
-    right: 8vw;
-    width: 28vw;
-    max-width: 112px;
+    top: 36px;
+    right: 6vw;
+    width: 36vw;
+    max-width: 144px;
     opacity: 0.4;
   }
 
@@ -121,8 +123,8 @@
   .mobileCornerBL {
     bottom: 12%;
     left: 5vw;
-    width: 34vw;
-    max-width: 136px;
+    width: 26vw;
+    max-width: 104px;
     opacity: 0.44;
   }
 

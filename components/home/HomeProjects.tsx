@@ -14,8 +14,8 @@ const ITEMS = [
   { src: '/projects/las-islas-cies/bento-3.jpg',                                      x: '6vw',   y: '64vh',  w: 150, delay: 1.5,  dur: 9,   hideTablet: false },
   { src: '/projects/silvia-fernandez-de-luna/Silvia-Fernandez-De-Luna-Academia.webp', x: '55vw',  y: '14vh',  w: 170, delay: 0.3,  dur: 8.5, hideTablet: false },
   { src: '/projects/silvia-fernandez-de-luna/bento-6.png',                            x: '76vw',  y: '30vh',  w: 210, delay: 1.8,  dur: 7,   hideTablet: false },
-  { src: '/projects/amigo-secreto/amigosecreto.jpg',                                  x: '30vw',  y: '10vh',  w: 140, delay: 2.2,  dur: 11,  hideTablet: false },
-  { src: '/projects/trainfy/feature-branding.jpg',                                    x: '14vw',  y: '36vh',  w: 165, delay: 0.6,  dur: 8,   hideTablet: true  },
+  { src: '/projects/ibiza-observatorio/IbizaObservatorio_portada.jpeg',                                  x: '30vw',  y: '10vh',  w: 140, delay: 2.2,  dur: 11,  hideTablet: false },
+  { src: '/projects/ibiza-observatorio/bento-1.jpg',                                    x: '14vw',  y: '36vh',  w: 165, delay: 0.6,  dur: 8,   hideTablet: true  },
   { src: '/projects/trainfy/bento-2.png',                                             x: '70vw',  y: '76vh',  w: 145, delay: 1.1,  dur: 9.5, hideTablet: false },
   { src: '/projects/trainfy/editorial-full.jpg',                                      x: '48vw',  y: '46vh',  w: 155, delay: 2.5,  dur: 7,   hideTablet: true  },
 ];
@@ -23,11 +23,11 @@ const ITEMS = [
 // ─── Imágenes collage móvil ───────────────────────────────────────────────────
 const MOBILE_CORNERS = [
   { src: '/projects/silvia-fernandez-de-luna/Silvia-Fernandez-De-Luna-Academia.webp', cls: styles.mobileCornerTL, delay: 0,   dur: 8   }, // izq arriba
-  { src: '/projects/silvia-fernandez-de-luna/bento-3.jpg',                            cls: styles.mobileCornerTR, delay: 1.2, dur: 7   }, // der arriba
+  { src: '/projects/trainfy/editorial-full.jpg',                                      cls: styles.mobileCornerTR, delay: 1.2, dur: 7   }, // der arriba
   { src: '/projects/amigo-secreto/amigosecreto.jpg',                                  cls: styles.mobileCornerML, delay: 1.8, dur: 7.5 }, // izq centro
   { src: '/projects/las-islas-cies/bento-2.jpg',                                      cls: styles.mobileCornerMC, delay: 0.9, dur: 9   }, // centro bajo título
   { src: '/projects/las-islas-cies/bento-3.jpg',                                      cls: styles.mobileCornerMR, delay: 0.6, dur: 9   }, // der centro
-  { src: '/projects/trainfy/editorial-full.jpg',                                      cls: styles.mobileCornerBL, delay: 0.3, dur: 10  }, // izq abajo
+  { src: '/projects/silvia-fernandez-de-luna/bento-3.jpg',                            cls: styles.mobileCornerBL, delay: 0.3, dur: 10  }, // izq abajo
   { src: '/projects/trainfy/portada_trainfy.webp',                                    cls: styles.mobileCornerBR, delay: 2.1, dur: 8.5 }, // der abajo
 ];
 
