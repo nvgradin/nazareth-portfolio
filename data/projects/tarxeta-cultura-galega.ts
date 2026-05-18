@@ -11,7 +11,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
   thumbnail: {
     type: 'image',
     src: '/projects/tarxetaculturagalega/TCG_portada.jpg',
-    alt: 'Tarxeta Cultura Galega',
+    alt: 'Tarxeta Cultura Galega — campaña de lanzamiento institucional con ilustración de figuras icónicas gallegas',
   },
 
   theme: {
@@ -39,29 +39,29 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
         {
           width: 1,
           cells: [
-            { src: '/projects/tarxetaculturagalega/TCG_Bus.png', alt: 'Tarxeta Cultura Galega 1', ratio: 0.6 },
-            { src: '/projects/tarxetaculturagalega/bento-5.png', alt: 'Tarxeta Cultura Galega 5', ratio: 0.4 },
+            { src: '/projects/tarxetaculturagalega/TCG_Bus.png', alt: 'Publicidad exterior de la Tarxeta Cultura Galega — aplicación en autobús urbano', ratio: 0.6 },
+            { src: '/projects/tarxetaculturagalega/bento-5.png', alt: 'Ilustración de figura icónica gallega descontextualizada — concepto creativo de la campaña', ratio: 0.4 },
           ],
         },
         {
           width: 1,
           cells: [
-            { src: '/projects/tarxetaculturagalega/bento-6.jpg', alt: 'Tarxeta Cultura Galega 2', ratio: 0.45 },
-            { src: '/projects/tarxetaculturagalega/Tarxeta-Bono-Cultura-Galega-Libreria.png', alt: 'Tarxeta Cultura Galega 6', ratio: 0.55 },
+            { src: '/projects/tarxetaculturagalega/bento-6.jpg', alt: 'Tarjeta física del bono cultural — diseño del producto de la Tarxeta Cultura Galega', ratio: 0.45 },
+            { src: '/projects/tarxetaculturagalega/Tarxeta-Bono-Cultura-Galega-Libreria.png', alt: 'Tarxeta Cultura Galega en librería — aplicación del bono en punto de venta cultural', ratio: 0.55 },
           ],
         },
         {
           width: 1,
           cells: [
-            { src: '/projects/tarxetaculturagalega/bento-3.jpg', alt: 'Tarxeta Cultura Galega 3', ratio: 0.6 },
-            { src: '/projects/tarxetaculturagalega/bento-7.jpg', alt: 'Tarxeta Cultura Galega 7', ratio: 0.4 },
+            { src: '/projects/tarxetaculturagalega/bento-3.jpg', alt: 'Cartelería de la campaña Tarxeta Cultura Galega — aplicación de la ilustración en soporte publicitario', ratio: 0.6 },
+            { src: '/projects/tarxetaculturagalega/bento-7.jpg', alt: 'Ilustración central de la campaña — figura gallega icónica en clave contemporánea', ratio: 0.4 },
           ],
         },
         {
           width: 1,
           cells: [
-            { src: '/projects/tarxetaculturagalega/TCG_Cartel.png', alt: 'Tarxeta Cultura Galega 4', ratio: 0.5 },
-            { src: '/projects/tarxetaculturagalega/bento-8.jpg', alt: 'Tarxeta Cultura Galega 8', ratio: 0.5 },
+            { src: '/projects/tarxetaculturagalega/TCG_Cartel.png', alt: 'Cartel oficial de la Tarxeta Cultura Galega — versión para presentación institucional', ratio: 0.5 },
+            { src: '/projects/tarxetaculturagalega/bento-8.jpg', alt: 'Detalle de la campaña visual — concepto de descontextualización temporal de Castelao o Rosalía de Castro', ratio: 0.5 },
           ],
         },
       ],
@@ -79,17 +79,17 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
 
     features: [
       {
-        image: { type: 'image', src: '/projects/tarxetaculturagalega/bento-7.jpg', alt: 'Ilustración' },
+        image: { type: 'image', src: '/projects/tarxetaculturagalega/bento-7.jpg', alt: 'Ilustración de figura icónica gallega en clave actual — eje visual del concepto creativo' },
         title: 'Concepto e Ilustración',
         description: 'La descontextualización temporal de figuras icónicas gallegas.',
       },
       {
-        image: { type: 'image', src: '/projects/tarxetaculturagalega/bento-3.jpg', alt: 'Publicidad & Design' },
+        image: { type: 'image', src: '/projects/tarxetaculturagalega/bento-3.jpg', alt: 'Aplicación publicitaria de la campaña — cartelería con ilustración en soporte exterior' },
         title: 'Publicidad y Diseño',
         description: 'Aplicación del concepto a todos los soportes.',
       },
       {
-        image: { type: 'image', src: '/projects/tarxetaculturagalega/Tarxeta-Bono-Cultura-Galega-Libreria.png', alt: 'Estrategia' },
+        image: { type: 'image', src: '/projects/tarxetaculturagalega/Tarxeta-Bono-Cultura-Galega-Libreria.png', alt: 'Tarxeta Cultura Galega en librería — estrategia de lanzamiento en puntos culturales de Galicia' },
         title: 'Estrategia de lanzamiento',
         description: 'Conectar con el público joven en su propio lenguaje.',
       },
@@ -97,7 +97,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
 
     introParallax: {
       src: '/projects/tarxetaculturagalega/TCG_portada.jpg',
-      alt: 'Tarxeta Cultura Galega',
+      alt: 'Portada de la campaña Tarxeta Cultura Galega — ilustración institucional para la Xunta de Galicia',
     },
 
     brandingScroller: {
@@ -122,13 +122,13 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
       subtitle: 'Aplicaciones publicitarias de la campaña',
       body: 'A raíz de la descontextualización temporal de figuras importantes de la cultura gallega como Castelao o Rosalía, hemos propuesto diferentes cuestiones, todas creadas a partir de la ilustración de esos escenarios "hipotéticos" para lanzar cuestiones e impactar. Nuestra propuesta es la de hacer consciente de que los Castelaos y Rosalías de hoy, están aquí.',
       row1: [
-        { src: '/projects/tarxetaculturagalega/TCG_Bus.png', alt: 'Publicidad Tarxeta Cultura Galega' },
-        { src: '/projects/tarxetaculturagalega/Mockup_TCG_Valla_Publi.png', alt: 'Creatividad Tarxeta Cultura Galega' },
+        { src: '/projects/tarxetaculturagalega/TCG_Bus.png', alt: 'Tarxeta Cultura Galega en autobús urbano — publicidad exterior con ilustración de campaña' },
+        { src: '/projects/tarxetaculturagalega/Mockup_TCG_Valla_Publi.png', alt: 'Valla publicitaria de la Tarxeta Cultura Galega — aplicación del concepto en gran formato' },
       ],
       row2: [
         { src: '/projects/tarxetaculturagalega/tarxeta_bono_cultura_galega_presentacion1.png', alt: 'Presentación Oficial Tarxeta Cultura Galega' },
         { src: '/projects/tarxetaculturagalega/tarxetabonopresentacion3.jpg', alt: 'Presentación Oficial Tarxeta Cultura Galega' },
-        { src: '/projects/tarxetaculturagalega/Tarxeta-Bono-Cultura-Galega-Libreria.png', alt: 'Tarxeta Cultura Galega — piezas' },
+        { src: '/projects/tarxetaculturagalega/Tarxeta-Bono-Cultura-Galega-Libreria.png', alt: 'Tarxeta Cultura Galega en punto de venta — bono cultural en librería de Galicia' },
       ],
     },
 
@@ -158,7 +158,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
     quoteBanner: {
       quote: 'Los Castelaos y Rosalías de hoy están aquí. ¿Te las vas a perder?',
       author: 'Tarxeta Cultura Galega',
-      backgroundImage: { type: 'image', src: '/projects/tarxetaculturagalega/TCG_portada.jpg', alt: 'Tarxeta Cultura Galega' },
+      backgroundImage: { type: 'image', src: '/projects/tarxetaculturagalega/TCG_portada.jpg', alt: 'Ilustración de la Tarxeta Cultura Galega — figuras icónicas gallegas en clave contemporánea' },
       imagePosition: 'center',
       overlay: true,
     },

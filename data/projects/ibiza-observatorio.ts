@@ -48,29 +48,29 @@ export const ibizaObservatorio: ProjectWithLayout = {
         {
           width: 1,
           cells: [
-            { src: '/projects/ibiza-observatorio/bento-1.jpg', alt: 'Ibiza Observatorio portada', ratio: 0.55 },
-            { src: '/projects/ibiza-observatorio/prensa-ibizaobservatorio-edificacion.png', alt: 'Ibiza Observatorio Normativas', ratio: 0.45 },
+            { src: '/projects/ibiza-observatorio/bento-1.jpg', alt: 'Página de inicio de Ibiza Observatorio — sección hero con acceso a normativas y estadísticas', ratio: 0.55 },
+            { src: '/projects/ibiza-observatorio/prensa-ibizaobservatorio-edificacion.png', alt: 'Cobertura de prensa del lanzamiento de Ibiza Observatorio de Edificación', ratio: 0.45 },
           ],
         },
         {
           width: 1,
           cells: [
-            { src: PORTADA, alt: 'Ibiza Observatorio portada', ratio: 0.44 },
-            { src: '/projects/ibiza-observatorio/bento-5.jpg', alt: 'Ibiza Observatorio Normativas', ratio: 0.56 },
+            { src: PORTADA, alt: 'Portada de Ibiza Observatorio de Edificación — primera plataforma de referencia del sector en la isla', ratio: 0.44 },
+            { src: '/projects/ibiza-observatorio/bento-5.jpg', alt: 'Sección de notas técnicas — archivo de normativa urbanística y edificación en Ibiza', ratio: 0.56 },
           ],
         },
         {
           width: 1,
           cells: [
-            { src: '/projects/ibiza-observatorio/bento-4.png', alt: 'Ibiza Observatorio Info Vivienda', ratio: 0.6 },
-            { src: '/projects/ibiza-observatorio/ibiza-villa-santa-eulalia.jpeg', alt: 'Ibiza Observatorio Normativas', ratio: 0.4 },
+            { src: '/projects/ibiza-observatorio/bento-4.png', alt: 'Sección de información de vivienda — estadísticas del mercado residencial en Ibiza', ratio: 0.6 },
+            { src: '/projects/ibiza-observatorio/ibiza-villa-santa-eulalia.jpeg', alt: 'Villa residencial en Santa Eulalia, Ibiza — contexto visual del sector inmobiliario insular', ratio: 0.4 },
           ],
         },
         {
           width: 1,
           cells: [
-            { src: '/projects/ibiza-observatorio/IbizaObservatorio_Blog.jpg', alt: 'Ibiza Observatorio portada', ratio: 0.6 },
-            { src: '/projects/ibiza-observatorio/Fundadores Ibiza Observatorio Antonio Calvo y Juan Planells.webp', alt: 'Ibiza Observatorio detalle', ratio: 0.4 },
+            { src: '/projects/ibiza-observatorio/IbizaObservatorio_Blog.jpg', alt: 'Blog de Ibiza Observatorio — artículos técnicos generados automáticamente desde el CMS', ratio: 0.6 },
+            { src: '/projects/ibiza-observatorio/Fundadores Ibiza Observatorio Antonio Calvo y Juan Planells.webp', alt: 'Fundadores de Ibiza Observatorio — Antonio Calvo y Juan Planells, arquitectos técnicos ibicencos', ratio: 0.4 },
           ],
         },
       ],
@@ -131,8 +131,8 @@ export const ibizaObservatorio: ProjectWithLayout = {
       title: 'Ibiza Observatorio de Edificación',
       description: 'La primera plataforma de referencia del sector de la edificación en Ibiza.',
       mockups: [
-        { type: 'image', src: '/projects/ibiza-observatorio/mockup_ibizaobservatorio.jpg', alt: 'Ibiza Observatorio Normativas', },
-        { type: 'image', src: '/projects/ibiza-observatorio/bento-1.jpg', alt: 'Ibiza Observatorio Normativas', },
+        { type: 'image', src: '/projects/ibiza-observatorio/mockup_ibizaobservatorio.jpg', alt: 'Mockup de Ibiza Observatorio en dispositivo — vista general de la plataforma' },
+        { type: 'image', src: '/projects/ibiza-observatorio/bento-1.jpg', alt: 'Página de inicio de Ibiza Observatorio — acceso a normativas, estadísticas y notas técnicas' },
         { type: 'image', src: '/projects/ibiza-observatorio/IbizaObservatorio_Inicio.jpg', alt: 'Ibiza Observatorio — estadísticas' },
         { type: 'image', src: '/projects/ibiza-observatorio/bento-5.jpg', alt: 'Ibiza Observatorio — notas técnicas' },
         { type: 'image', src: '/projects/ibiza-observatorio/bento-6.jpg', alt: 'Ibiza Observatorio — info vivienda' },

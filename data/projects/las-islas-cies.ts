@@ -11,7 +11,7 @@ export const lasIslasCies: ProjectWithLayout = {
   thumbnail: {
     type: 'image',
     src: '/projects/las-islas-cies/bento-2.jpg',
-    alt: 'Las Islas Cíes',
+    alt: 'Vista aérea de la Playa de Rodas en Las Islas Cíes — considerada la mejor playa del mundo por The Guardian',
   },
 
   theme: {
@@ -42,29 +42,29 @@ export const lasIslasCies: ProjectWithLayout = {
         {
           width: 1,
           cells: [
-            { src: '/projects/las-islas-cies/bento-1.jpg', alt: 'Las Islas Cíes 1', ratio: 0.65 },
-            { src: '/projects/las-islas-cies/bento-5.jpg', alt: 'Las Islas Cíes 5', ratio: 0.35 },
+            { src: '/projects/las-islas-cies/bento-1.jpg', alt: 'Página de inicio del portal Las Islas Cíes — hero visual con acceso a rutas y billetes', ratio: 0.65 },
+            { src: '/projects/las-islas-cies/bento-5.jpg', alt: 'Sección de playas del portal — ficha de destino con información práctica y galería', ratio: 0.35 },
           ],
         },
         {
           width: 1,
           cells: [
-            { src: '/projects/las-islas-cies/bento-2.jpg', alt: 'Las Islas Cíes 2', ratio: 0.44 },
-            { src: '/projects/las-islas-cies/bento-6.jpg', alt: 'Las Islas Cíes 6', ratio: 0.56 },
+            { src: '/projects/las-islas-cies/bento-2.jpg', alt: 'Playa de Rodas de Las Islas Cíes — imagen principal del portal turístico', ratio: 0.44 },
+            { src: '/projects/las-islas-cies/bento-6.jpg', alt: 'Vista de la navegación interior del portal — sección de experiencias y actividades', ratio: 0.56 },
           ],
         },
         {
           width: 1,
           cells: [
-            { src: '/projects/las-islas-cies/bento-3.jpg', alt: 'Las Islas Cíes 3', ratio: 0.6 },
-            { src: '/projects/las-islas-cies/bento-7.jpg', alt: 'Las Islas Cíes 7', ratio: 0.4 },
+            { src: '/projects/las-islas-cies/bento-3.jpg', alt: 'Ficha de ruta de senderismo en Las Islas Cíes — contenido editorial indexable', ratio: 0.6 },
+            { src: '/projects/las-islas-cies/bento-7.jpg', alt: 'Mockup del portal Las Islas Cíes en dispositivo móvil — navegación responsive', ratio: 0.4 },
           ],
         },
         {
           width: 1,
           cells: [
-            { src: '/projects/las-islas-cies/bento-4.jpg', alt: 'Las Islas Cíes 4', ratio: 0.7 },
-            { src: '/projects/las-islas-cies/bento-8.webp', alt: 'Las Islas Cíes 8', ratio: 0.3 },
+            { src: '/projects/las-islas-cies/bento-4.jpg', alt: 'Sistema de diseño del portal — componentes reutilizables y arquitectura modular', ratio: 0.7 },
+            { src: '/projects/las-islas-cies/bento-8.webp', alt: 'Paisaje de Las Islas Cíes al atardecer — imagen de fondo del portal', ratio: 0.3 },
           ],
         },
       ],
@@ -100,8 +100,8 @@ export const lasIslasCies: ProjectWithLayout = {
 
     // Before/After
     imageCompare: {
-      before: { type: 'image', src: '/projects/las-islas-cies/before.jpg', alt: 'Diseño original Las Islas Cíes' },
-      after: { type: 'image', src: '/projects/las-islas-cies/after.jpg', alt: 'Rediseño Las Islas Cíes' },
+      before: { type: 'image', src: '/projects/las-islas-cies/before.jpg', alt: 'Web original de Las Islas Cíes — página de venta de billetes sin arquitectura de contenido' },
+      after: { type: 'image', src: '/projects/las-islas-cies/after.jpg', alt: 'Rediseño del portal Las Islas Cíes — guía de destino con navegación clara y contenido editorial' },
       labels: { before: 'Antes', after: 'Después' },
       background: '#252851',
       caption: 'La web original acumulaba información sin jerarquía ni propósito. El rediseño convirtió las Islas Cíes en una guía digital: clara, navegable y a la altura del destino.',
@@ -123,11 +123,11 @@ export const lasIslasCies: ProjectWithLayout = {
       title: 'De web de billetes a portal de destino',
       description: 'Navegar las Islas antes de llegar a ellas.',
       mockups: [
-        { type: 'image', src: '/projects/las-islas-cies/MockupWeb1_LasIslasCies.jpg', alt: 'Mockup Las Islas Cíes' },
-        { type: 'image', src: '/projects/las-islas-cies/bento-7.jpg', alt: 'Mockup Las Islas Cíes' },
-        { type: 'image', src: '/projects/las-islas-cies/bento-4.jpg', alt: 'Mockup Las Islas Cíes' },
-        { type: 'image', src: '/projects/las-islas-cies/bento-5.jpg', alt: 'Mockup Las Islas Cíes' },
-        { type: 'image', src: '/projects/las-islas-cies/bento-3.jpg', alt: 'Mockup Las Islas Cíes' },
+        { type: 'image', src: '/projects/las-islas-cies/MockupWeb1_LasIslasCies.jpg', alt: 'Mockup del portal Las Islas Cíes en escritorio — página de inicio con hero y navegación' },
+        { type: 'image', src: '/projects/las-islas-cies/bento-7.jpg', alt: 'Vista móvil del portal Las Islas Cíes — interfaz de navegación responsive' },
+        { type: 'image', src: '/projects/las-islas-cies/bento-4.jpg', alt: 'Sistema de componentes del portal — fichas reutilizables en la arquitectura modular' },
+        { type: 'image', src: '/projects/las-islas-cies/bento-5.jpg', alt: 'Sección de playas del portal Las Islas Cíes — galería y ficha de destino' },
+        { type: 'image', src: '/projects/las-islas-cies/bento-3.jpg', alt: 'Ficha de ruta de senderismo del portal — contenido SEO indexable con mapa y detalles' },
       ],
     },
 
@@ -148,7 +148,7 @@ export const lasIslasCies: ProjectWithLayout = {
         content: 'Desde el primer día lo diseñé como sistema replicable. La prueba llegó en menos de un año. Cada portal adaptado a su destino, manteniendo la arquitectura de contenido, el sistema de fichas y la integración con navieras locales. Un modelo de portal turístico insular que sigue siendo referencia.',
       },
       logos: [
-        { src: '/logos/Las_Islas_Cies.png', alt: 'Las Islas Cíes' },
+        { src: '/logos/Las_Islas_Cies.png', alt: 'Logo Las Islas Cíes' },
         { src: '/logos/EU_ONS.png', alt: 'Isla de Ons' },
         { src: '/logos/I_LOVE_LOBOS.png', alt: 'Isla de Lobos' },
         { src: '/logos/I_LOVE_LA_GRACIOSA.png', alt: 'Isla de la Graciosa', scale: 1.1 },
@@ -163,7 +163,7 @@ export const lasIslasCies: ProjectWithLayout = {
         {
           step: 1,
           image: '/projects/las-islas-cies/bento-3.jpg',
-          imageAlt: 'Web Las Islas Cíes',
+          imageAlt: 'Portal Las Islas Cíes — primer lanzamiento del sistema, octubre 2024',
           title: 'Las Islas Cíes',
           description: 'Lanzamiento octubre 2024',
           detail: 'Transformación completa de web existente. Estrategia, contenido, diseño, desarrollo.',
@@ -172,7 +172,7 @@ export const lasIslasCies: ProjectWithLayout = {
         {
           step: 2,
           image: '/projects/las-islas-cies/Isla-de-Ons.jpg',
-          imageAlt: 'Web Isla de Ons',
+          imageAlt: 'Portal Isla de Ons — segundo lanzamiento del sistema, diciembre 2024',
           title: 'Isla de Ons',
           description: 'Lanzamiento diciembre 2024',
           detail: 'Transformación completa de web existente. Mismo tratamiento sistémico.',
@@ -181,7 +181,7 @@ export const lasIslasCies: ProjectWithLayout = {
         {
           step: 3,
           image: '/projects/las-islas-cies/Isla-de-Lobos.jpg',
-          imageAlt: 'Web Isla de Lobos',
+          imageAlt: 'Portal Isla de Lobos — tercer lanzamiento, construido desde cero en enero 2025',
           title: 'Isla de Lobos',
           description: 'Lanzamiento enero 2025',
           detail: 'Construcción de cero. Contenido redactado íntegramente por mí.',
@@ -190,7 +190,7 @@ export const lasIslasCies: ProjectWithLayout = {
         {
           step: 4,
           image: '/projects/las-islas-cies/Isla_de_la_graciosa.jpg',
-          imageAlt: 'Web Isla de la Graciosa',
+          imageAlt: 'Portal Isla de la Graciosa — cuarto lanzamiento con propuesta de experiencias ampliada, abril 2025',
           title: 'Isla de la Graciosa',
           description: 'Lanzamiento abril 2025',
           detail: 'Construcción de cero. Propuesta de experiencias más amplia.',
@@ -203,7 +203,7 @@ export const lasIslasCies: ProjectWithLayout = {
     quoteBanner: {
       quote: 'El mejor SEO es tener algo que merezca la pena encontrar.',
       author: 'Nazareth, sobre Las Islas Cíes',
-      backgroundImage: { type: 'image', src: '/projects/las-islas-cies/bento-8.webp', alt: 'Quote Background' },
+      backgroundImage: { type: 'image', src: '/projects/las-islas-cies/bento-8.webp', alt: 'Paisaje costero de Las Islas Cíes al atardecer' },
       overlay: true,
     },
 

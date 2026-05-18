@@ -11,7 +11,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
   thumbnail: {
     type: 'image',
     src: '/projects/silvia-fernandez-de-luna/hero.webp',
-    alt: 'Silvia Fernández De Luna',
+    alt: 'Silvia Fernández De Luna — guía espiritual y terapeuta holística, retrato de marca',
   },
 
   theme: {
@@ -45,29 +45,29 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
         {
           width: 1,
           cells: [
-            { src: '/projects/silvia-fernandez-de-luna/bento-1.jpg', alt: 'Silvia Fernández De Luna 1', ratio: 0.65 },
-            { src: '/projects/silvia-fernandez-de-luna/bento-5.jpg', alt: 'Silvia Fernández De Luna 5', ratio: 0.35 },
+            { src: '/projects/silvia-fernandez-de-luna/bento-1.jpg', alt: 'Retrato de Silvia Fernández De Luna — imagen de marca principal', ratio: 0.65 },
+            { src: '/projects/silvia-fernandez-de-luna/bento-5.jpg', alt: 'Detalle de la Academia de Luna — plataforma online de formación holística', ratio: 0.35 },
           ],
         },
         {
           width: 1,
           cells: [
-            { src: '/projects/silvia-fernandez-de-luna/bento-2.jpg', alt: 'Silvia Fernández De Luna 2', ratio: 0.44 },
-            { src: '/projects/silvia-fernandez-de-luna/bento-6.png', alt: 'Silvia Fernández De Luna 6', ratio: 0.56 },
+            { src: '/projects/silvia-fernandez-de-luna/bento-2.jpg', alt: 'Sistema de identidad visual de Silvia Fernández De Luna — paleta, tipografía y logotipo', ratio: 0.44 },
+            { src: '/projects/silvia-fernandez-de-luna/bento-6.png', alt: 'Logotipo de Silvia Fernández De Luna — versiones y aplicaciones del sistema de marca', ratio: 0.56 },
           ],
         },
         {
           width: 1,
           cells: [
-            { src: '/projects/silvia-fernandez-de-luna/bento-3.jpg', alt: 'Silvia Fernández De Luna 3', ratio: 0.6 },
-            { src: '/projects/silvia-fernandez-de-luna/bento-7.png', alt: 'Silvia Fernández De Luna 7', ratio: 0.4 },
+            { src: '/projects/silvia-fernandez-de-luna/bento-3.jpg', alt: 'El Ágora — blog magazine de Silvia Fernández De Luna con paletas por categoría', ratio: 0.6 },
+            { src: '/projects/silvia-fernandez-de-luna/bento-7.png', alt: 'Comunidad Mujer Raíz — identidad visual de la comunidad online de Silvia', ratio: 0.4 },
           ],
         },
         {
           width: 1,
           cells: [
-            { src: '/projects/silvia-fernandez-de-luna/bento-4.png', alt: 'Silvia Fernández De Luna 4', ratio: 0.7 },
-            { src: '/projects/silvia-fernandez-de-luna/bento-8.jpg', alt: 'Silvia Fernández De Luna 8', ratio: 0.3 },
+            { src: '/projects/silvia-fernandez-de-luna/bento-4.png', alt: 'Página de servicios — sección Camminus del ecosistema digital de Silvia Fernández De Luna', ratio: 0.7 },
+            { src: '/projects/silvia-fernandez-de-luna/bento-8.jpg', alt: 'Detalle tipográfico del sistema de marca — jerarquía visual y fuentes corporativas', ratio: 0.3 },
           ],
         },
       ],
@@ -82,17 +82,17 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     // 4) FEATURES
     features: [
       {
-        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/SDFL-Camminus-scaled.webp', alt: 'Marketing' },
+        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/SDFL-Camminus-scaled.webp', alt: 'Sección Camminus del universo digital de Silvia Fernández De Luna — arquitectura de marca' },
         title: ' Construir un universo de marca',
         description: 'La arquitectura como lenguaje de marca. Las secciones de la web no se llaman Inicio o Servicios. Se llaman El Templo, Camminus, El Alma, El Ágora. Cada nombre es una decisión simbólica consciente — parte de un sistema que hace que navegar la web sea ya, en sí mismo, una experiencia de marca.',
       },
       {
-        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-web.jpg', alt: 'Web' },
+        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-web.jpg', alt: 'Web de Silvia Fernández De Luna — El Templo, página de inicio del ecosistema digital' },
         title: 'Primero la identidad, luego todo lo demás',
         description: 'Antes de escribir una línea de código, construimos los cimientos: completé el sistema de identidad y co-creé con Silvia una pieza audiovisual cinematográfica — su historia, en sus palabras, como núcleo emocional de toda su presencia digital. La web vino después. La marca, primero.',
       },
       {
-        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-marketing.jpg', alt: 'Estrategia' },
+        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-marketing.jpg', alt: 'Estrategia de marketing digital — funnels, email marketing y lanzamientos de Silvia Fernández De Luna' },
         title: 'Construir el modelo de negocio, no solo ejecutarlo',
         description: 'Silvia llegó con talento, vocación y un conocimiento profundo de su trabajo. El modelo de negocio lo construimos juntas. La Academia de Luna, la Comunidad Mujer Raíz, los funnels de lanzamiento para masterclasses: ninguna de esas piezas estaba en un briefing. Emergieron de conversaciones estratégicas sobre cómo convertir lo que Silvia hacía offline en algo que pudiera crecer, sostenerse y escalar.',
       },
@@ -101,7 +101,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     // 5) INTRO PARALLAX
     introParallax: {
       src: '/projects/silvia-fernandez-de-luna/Silvia Fernández De Luna El Alma.jpg',
-      alt: 'Silvia Fernández De Luna',
+      alt: 'Silvia Fernández De Luna en El Alma — sección biográfica de su web, retrato en espacio natural',
     },
 
     // 6) BRANDING SCROLLER
@@ -115,9 +115,9 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       ],
       background: '#2E1404',
       images: [
-        { src: '/projects/silvia-fernandez-de-luna/bento-6.png', alt: 'Branding Silvia Fernández De Luna', orientation: 'vertical' },
-        { src: '/projects/silvia-fernandez-de-luna/mockup_sfdl_blog.png', alt: 'Branding Silvia Fernández De Luna' },
-        { src: '/projects/silvia-fernandez-de-luna/bento-7.png', alt: 'Branding Silvia Fernández De Luna', orientation: 'vertical' },
+        { src: '/projects/silvia-fernandez-de-luna/bento-6.png', alt: 'Sistema de logotipo de Silvia Fernández De Luna — versiones positivo, negativo y monocromo', orientation: 'vertical' },
+        { src: '/projects/silvia-fernandez-de-luna/mockup_sfdl_blog.png', alt: 'El Ágora — sistema editorial del blog con categorías de color: alquimia, aromaterapia, salud' },
+        { src: '/projects/silvia-fernandez-de-luna/bento-7.png', alt: 'Identidad visual de la Comunidad Mujer Raíz — logotipo y paleta cromática de la comunidad online', orientation: 'vertical' },
       ],
     },
 
@@ -144,11 +144,11 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       title: 'Placeholder — título del panel web',
       description: 'Placeholder — descripción del panel web.',
       mockups: [
-        { type: 'image', src: '/projects/silvia-fernandez-de-luna/MockupWeb_Portada_SFDL.jpg', alt: 'Mockup web portada Silvia Fernández De Luna' },
-        { type: 'image', src: '/projects/silvia-fernandez-de-luna/bento-2.jpg', alt: 'Web Silvia Fernández De Luna' },
-        { type: 'image', src: '/projects/silvia-fernandez-de-luna/bento-3.jpg', alt: 'Web Silvia Fernández De Luna' },
-        { type: 'image', src: '/projects/silvia-fernandez-de-luna/bento-6.png', alt: 'Web Silvia Fernández De Luna' },
-        { type: 'image', src: '/projects/silvia-fernandez-de-luna/bento-8.jpg', alt: 'Web Silvia Fernández De Luna' },
+        { type: 'image', src: '/projects/silvia-fernandez-de-luna/MockupWeb_Portada_SFDL.jpg', alt: 'Mockup de El Templo — página de inicio de la web de Silvia Fernández De Luna' },
+        { type: 'image', src: '/projects/silvia-fernandez-de-luna/bento-2.jpg', alt: 'Sistema de identidad visual completo — paleta cromática y tipografía de marca' },
+        { type: 'image', src: '/projects/silvia-fernandez-de-luna/bento-3.jpg', alt: 'El Ágora — blog magazine con sistema de categorías visuales diferenciadas por color' },
+        { type: 'image', src: '/projects/silvia-fernandez-de-luna/bento-6.png', alt: 'Logotipo de Silvia Fernández De Luna — construcción y proporciones del símbolo de marca' },
+        { type: 'image', src: '/projects/silvia-fernandez-de-luna/bento-8.jpg', alt: 'Jerarquía tipográfica del sistema de marca — fuentes y pesos en contexto editorial' },
       ],
     },
 
@@ -237,7 +237,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     quoteBanner: {
       quote: 'Acompañar a las personas en su camino hacia el autoconocimiento es la labor más hermosa que existe.',
       author: 'Silvia Fernández De Luna',
-      backgroundImage: { type: 'image', src: '/projects/silvia-fernandez-de-luna/fondo_SFDL_oroviejo_1920x2000.jpeg', alt: 'Silvia Fernández De Luna' },
+      backgroundImage: { type: 'image', src: '/projects/silvia-fernandez-de-luna/fondo_SFDL_oroviejo_1920x2000.jpeg', alt: 'Fondo dorado del universo de marca de Silvia Fernández De Luna — textura oro viejo' },
       imagePosition: 'center',
     },
 
