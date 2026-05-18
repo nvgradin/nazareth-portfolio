@@ -46,6 +46,13 @@ export const metadata: Metadata = {
     description: "Digital Product & Experience Designer. UX/UI, estrategia y visión de negocio.",
     type: "website",
     locale: "es_ES",
+    images: [{ url: '/Home preview stack.png', width: 1200, height: 630, alt: 'Nazareth — Product & Experience Designer' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Nazareth | Product & Experience Designer",
+    description: "Digital Product & Experience Designer. UX/UI, estrategia y visión de negocio.",
+    images: ['/Home preview stack.png'],
   },
 };
 

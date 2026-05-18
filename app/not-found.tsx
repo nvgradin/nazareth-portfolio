@@ -50,8 +50,9 @@ const ALL_IMAGES = [
   { src: '/projects/pan-do-porrino/PandoPorrino_branding_versionsecundaria.jpg', alt: 'Pan do Porriño' },
   { src: '/projects/pan-do-porrino/packaging_new.png', alt: 'Pan do Porriño' },
   // Tarxeta Cultura Galega
-  { src: '/projects/tarxeta-cultura-galega/bento-4.jpg', alt: 'Tarxeta Cultura Galega' },
-  { src: '/projects/tarxeta-cultura-galega/bento-7.jpg', alt: 'Tarxeta Cultura Galega' },
+  { src: '/projects/tarxetaculturagalega/bento-7.jpg', alt: 'Tarxeta Cultura Galega' },
+  // Ibiza Observatorio
+  { src: '/projects/ibiza-observatorio/bento-1.jpg', alt: 'Ibiza Observatorio' },
 ];
 
 // 6 columnas × 6 filas = 36 slots — llenamos con las 36 primeras (sin repetir)

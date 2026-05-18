@@ -191,6 +191,9 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
   ambientColor: '#1B3A5C',
   ambientGradient: 'linear-gradient(135deg, #1B3A5C 0%, #2E6B8A 100%)',
 
+  seoTitle: 'Tarxeta Cultura Galega — Campaña Institucional & Branding | Nazareth',
+  seoDescription: 'Estrategia creativa, ilustración y campaña de lanzamiento para conectar la cultura gallega con los jóvenes de 18 a 30 años. Proyecto institucional por Nazareth.',
+
   status: 'published',
   order: 6,
   nextStack: ['trainfy', 'las-islas-cies', 'silvia-fernandez-de-luna'],

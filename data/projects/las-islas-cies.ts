@@ -232,6 +232,9 @@ export const lasIslasCies: ProjectWithLayout = {
   featured: true,
   ambientColor: '#252851',
 
+  seoTitle: 'Las Islas Cíes — UX/UI & Producto Digital | Nazareth',
+  seoDescription: 'De web de billetes a portal de destino. Rediseño de experiencia para el Parque Nacional de las Islas Atlánticas: UX, contenido y SEO orgánico. Por Nazareth.',
+
   status: 'published',
   order: 2,
   nextStack: ['silvia-fernandez-de-luna', 'ibiza-observatorio', 'trainfy'],

@@ -272,6 +272,9 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
   ambientColor: '#895900',
   ambientGradient: 'linear-gradient(135deg, #4f3a17 0%, #895900 100%)',
 
+  seoTitle: 'Silvia Fernández De Luna — Branding & Estrategia Digital | Nazareth',
+  seoDescription: 'Tres años construyendo el universo digital de una marca personal. Identidad, web, marketing y estrategia orgánica hasta el TOP 10 de Google. Por Nazareth.',
+
   status: 'published',
   order: 3,
   nextStack: ['ibiza-observatorio', 'trainfy', 'las-islas-cies'],

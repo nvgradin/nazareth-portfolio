@@ -219,6 +219,9 @@ export const ibizaObservatorio: ProjectWithLayout = {
   thumbnailOverlay: 0.72,
   thumbnailOverlayColor: '#293242',
 
+  seoTitle: 'Ibiza Observatorio de Edificación — Plataforma de Datos | Nazareth',
+  seoDescription: 'Diseño y desarrollo de una plataforma de datos para el sector de la edificación en Ibiza. Arquitectura de información, editorial y UX. Por Nazareth.',
+
   status: 'published',
   order: 4,
   nextStack: ['trainfy', 'las-islas-cies', 'silvia-fernandez-de-luna'],
