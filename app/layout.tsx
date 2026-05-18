@@ -36,22 +36,34 @@ const aboreto = Aboreto({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nazareth.design'),
-  title: "Nazareth | Product & Experience Designer",
-  description: "Digital Product & Experience Designer. UX/UI, estrategia y visión de negocio. Conectando marca, producto y negocio en proyectos digitales.",
-  keywords: ["Product Designer", "UX Designer", "UI Designer", "Digital Experience", "Estrategia Digital"],
-  authors: [{ name: "Nazareth" }],
+  metadataBase: new URL('https://nazarethgradin.com'),
+  title: "Nazareth Vaqueiro Gradín | Product & Experience Designer",
+  description: "Portfolio de Nazareth Andrea Vaqueiro Gradín, Product & Experience Designer. UX/UI, estrategia y visión de negocio. Conectando marca, producto y negocio en proyectos digitales.",
+  keywords: [
+    "Nazareth Vaqueiro Gradín",
+    "Nazareth Andrea Vaqueiro Gradín",
+    "Nazareth Gradín",
+    "Product Designer",
+    "UX Designer",
+    "UI Designer",
+    "Experience Designer",
+    "Diseñadora de producto",
+    "Estrategia Digital",
+  ],
+  authors: [{ name: "Nazareth Andrea Vaqueiro Gradín", url: "https://nazarethgradin.com" }],
   openGraph: {
-    title: "Nazareth | Product & Experience Designer",
-    description: "Digital Product & Experience Designer. UX/UI, estrategia y visión de negocio.",
+    title: "Nazareth Vaqueiro Gradín | Product & Experience Designer",
+    description: "Portfolio de Nazareth Andrea Vaqueiro Gradín, Product & Experience Designer. UX/UI, estrategia y visión de negocio.",
     type: "website",
     locale: "es_ES",
-    images: [{ url: '/Home preview stack.png', width: 1200, height: 630, alt: 'Nazareth — Product & Experience Designer' }],
+    url: "https://nazarethgradin.com",
+    siteName: "Nazareth Vaqueiro Gradín",
+    images: [{ url: '/Home preview stack.png', width: 1200, height: 630, alt: 'Nazareth Vaqueiro Gradín — Product & Experience Designer' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Nazareth | Product & Experience Designer",
-    description: "Digital Product & Experience Designer. UX/UI, estrategia y visión de negocio.",
+    title: "Nazareth Vaqueiro Gradín | Product & Experience Designer",
+    description: "Portfolio de Nazareth Andrea Vaqueiro Gradín, Product & Experience Designer. UX/UI, estrategia y visión de negocio.",
     images: ['/Home preview stack.png'],
   },
 };
@@ -64,10 +76,25 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        {/* Favicon claro (sin fondo, oscuro) */}
         <link rel="icon" href="/brand/favicon.png" media="(prefers-color-scheme: light)" />
-        {/* Favicon oscuro (fondo morado, icono crema) */}
         <link rel="icon" href="/brand/favicon_ng.png" media="(prefers-color-scheme: dark)" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Nazareth Andrea Vaqueiro Gradín",
+            "alternateName": ["Nazareth Vaqueiro Gradín", "Nazareth Gradín"],
+            "url": "https://nazarethgradin.com",
+            "email": "hola@nazarethgradin.com",
+            "jobTitle": "Product & Experience Designer",
+            "description": "Product & Experience Designer especializada en UX/UI, estrategia digital y visión de negocio.",
+            "sameAs": [
+              "https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin",
+              "https://www.instagram.com/nazarethgradin/"
+            ],
+          })}}
+        />
       </head>
       <body
         className={`${poppins.variable} ${abhayaLibre.variable} ${aboreto.variable}`}
