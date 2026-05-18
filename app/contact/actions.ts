@@ -37,24 +37,33 @@ export async function sendContactForm(data: ContactFormData): Promise<ActionResu
     colaboracion:`[Colaboración] ${data.name}`,
   };
 
-  const extraFields =
+  const field = (label: string, value: string | undefined, isLink = false) =>
+    value ? `
+      <tr>
+        <td style="padding:0 0 14px;">
+          <p style="margin:0 0 3px;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#7B6F8E;">${label}</p>
+          <p style="margin:0;font-size:14px;color:#241E33;">${isLink ? `<a href="${value}" style="color:#241E33;">${value}</a>` : value}</p>
+        </td>
+      </tr>` : '';
+
+  const extraRows =
     data.type === 'proyecto'
       ? [
-          data.projectType ? `<p><strong>¿Qué necesitas?</strong> ${data.projectType}</p>` : '',
-          data.company     ? `<p><strong>Empresa:</strong> ${data.company}</p>` : '',
-          data.projectUrl  ? `<p><strong>URL del proyecto:</strong> <a href="${data.projectUrl}">${data.projectUrl}</a></p>` : '',
-          data.budget      ? `<p><strong>Presupuesto estimado:</strong> ${data.budget}</p>` : '',
-          data.timeline    ? `<p><strong>¿Cuándo lanzar?</strong> ${data.timeline}</p>` : '',
+          field('Tipo de proyecto',     data.projectType),
+          field('Empresa / Proyecto',   data.company),
+          field('URL',                  data.projectUrl, true),
+          field('Presupuesto estimado', data.budget),
+          field('Plazo deseado',        data.timeline),
         ].join('')
       : data.type === 'consultoria'
       ? [
-          data.stage      ? `<p><strong>¿En qué punto estás?</strong> ${data.stage}</p>` : '',
-          data.projectUrl ? `<p><strong>URL de referencia:</strong> <a href="${data.projectUrl}">${data.projectUrl}</a></p>` : '',
+          field('Punto del proyecto',   data.stage),
+          field('URL de referencia',    data.projectUrl, true),
         ].join('')
       : data.type === 'colaboracion'
       ? [
-          data.company ? `<p><strong>Empresa:</strong> ${data.company}</p>` : '',
-          data.role    ? `<p><strong>Rol:</strong> ${data.role}</p>` : '',
+          field('Empresa / Proyecto',   data.company),
+          field('Rol',                  data.role),
         ].join('')
       : '';
 
@@ -78,23 +87,44 @@ export async function sendContactForm(data: ContactFormData): Promise<ActionResu
 
         <!-- Remitente -->
         <tr>
-          <td style="padding:24px 40px 0;">
-            <p style="margin:0;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#7B6F8E;">De</p>
-            <p style="margin:4px 0 0;font-size:15px;color:#241E33;">${data.name} &nbsp;<span style="color:#40394E;">&lt;${data.email}&gt;</span></p>
+          <td style="padding:28px 40px 0;">
+            <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="padding:0 0 14px;">
+                  <p style="margin:0 0 3px;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#7B6F8E;">Nombre</p>
+                  <p style="margin:0;font-size:16px;font-weight:500;color:#241E33;">${data.name}</p>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:0 0 14px;">
+                  <p style="margin:0 0 3px;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#7B6F8E;">Email</p>
+                  <p style="margin:0;font-size:15px;color:#241E33;"><a href="mailto:${data.email}" style="color:#241E33;text-decoration:none;">${data.email}</a></p>
+                </td>
+              </tr>
+            </table>
           </td>
         </tr>
 
         <!-- Divisor -->
-        <tr><td style="padding:20px 40px 0;"><hr style="border:none;border-top:1px solid #D6D0E0;margin:0;"></td></tr>
+        <tr><td style="padding:4px 40px 0;"><hr style="border:none;border-top:1px solid #D6D0E0;margin:0;"></td></tr>
 
-        <!-- Campos extra (empresa, tipo, etc.) -->
-        ${extraFields ? `<tr><td style="padding:20px 40px 0;">${extraFields.replace(/<p>/g, '<p style="margin:0 0 10px;font-size:14px;color:#241E33;">').replace(/<strong>/g, '<strong style="color:#40394E;font-weight:500;">')}</td></tr>` : ''}
+        <!-- Campos extra según tipo -->
+        ${extraRows ? `
+        <tr>
+          <td style="padding:20px 40px 0;">
+            <table width="100%" cellpadding="0" cellspacing="0">
+              ${extraRows}
+            </table>
+          </td>
+        </tr>
+        <tr><td style="padding:0 40px;"><hr style="border:none;border-top:1px solid #D6D0E0;margin:0;"></td></tr>
+        ` : ''}
 
         <!-- Mensaje -->
         <tr>
           <td style="padding:20px 40px 32px;">
-            <p style="margin:0 0 8px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#7B6F8E;">${messageLabel}</p>
-            <p style="margin:0;font-size:15px;line-height:1.65;color:#241E33;white-space:pre-wrap;">${data.message}</p>
+            <p style="margin:0 0 8px;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#7B6F8E;">${messageLabel}</p>
+            <p style="margin:0;font-size:15px;line-height:1.7;color:#241E33;white-space:pre-wrap;">${data.message}</p>
           </td>
         </tr>
 
