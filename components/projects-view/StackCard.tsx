@@ -9,9 +9,10 @@ import styles from './StackCard.module.css';
 interface Props {
   project: ProjectWithLayout;
   onRef?: (el: HTMLElement | null) => void;
+  priority?: boolean;
 }
 
-export function StackCard({ project, onRef }: Props) {
+export function StackCard({ project, onRef, priority = false }: Props) {
   const cardRef = useRef<HTMLDivElement>(null);
   const { trigger } = usePortal();
 
@@ -40,7 +41,7 @@ export function StackCard({ project, onRef }: Props) {
         fill
         className={styles.image}
         sizes="85vw"
-        priority
+        priority={priority}
       />
 
       <div className={styles.gradient} />

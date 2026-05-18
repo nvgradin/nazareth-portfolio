@@ -379,6 +379,7 @@ export function HomeStack({ projects, disabled, exitingToGrid, enteringFromGrid,
             <StackCard
               project={project}
               onRef={(el) => { cardEls.current.set(project.slug, el); }}
+              priority={slot === 0}
             />
           </motion.div>
         );

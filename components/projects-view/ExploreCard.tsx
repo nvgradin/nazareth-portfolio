@@ -11,9 +11,10 @@ import styles from './ExploreCard.module.css';
 interface Props {
   project: ProjectWithLayout;
   activeFilter?: FilterKey;
+  priority?: boolean;
 }
 
-export function ExploreCard({ project, activeFilter }: Props) {
+export function ExploreCard({ project, activeFilter, priority = false }: Props) {
   const [hovered, setHovered] = useState(false);
   const isNew = project.status === 'new';
   const cover = project.cover ?? project.thumbnail.src;
@@ -37,6 +38,7 @@ export function ExploreCard({ project, activeFilter }: Props) {
         fill
         sizes="(max-width: 768px) 100vw, 50vw"
         className={styles.image}
+        priority={priority}
       />
 
       {/* Overlay ambient en hover */}

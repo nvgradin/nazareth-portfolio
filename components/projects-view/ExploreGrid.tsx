@@ -143,7 +143,7 @@ export function ExploreGrid({ projects, exitingToStack, enteringFromStack, cardR
                   ease: [0.4, 0, 0.2, 1],
                 }}
               >
-                <ExploreCard project={project} activeFilter={active} />
+                <ExploreCard project={project} activeFilter={active} priority={index < 2} />
               </motion.div>
             ))
           )}

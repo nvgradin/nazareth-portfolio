@@ -98,7 +98,7 @@ export function IntroOverlay({ onDone }: Props) {
           alt=""
           fill
           priority
-          sizes="100vw"
+          sizes="(max-width: 768px) 768px, (max-width: 1280px) 1280px, 2560px"
           className={styles.bgImage}
         />
       </motion.div>
@@ -129,7 +129,7 @@ export function IntroOverlay({ onDone }: Props) {
             alt=""
             fill
             priority
-            sizes="100vw"
+            sizes="(max-width: 768px) 768px, (max-width: 1280px) 1280px, 2560px"
             className={styles.bgImage}
           />
         </motion.div>
