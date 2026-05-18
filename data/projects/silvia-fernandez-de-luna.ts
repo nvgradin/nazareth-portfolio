@@ -26,8 +26,8 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     // 1) HERO
     hero: {
       title: 'Silvia Fernández De Luna',
-      subtitle: 'De una visión espiritual a una marca reconocida. Tres años construyendo el universo de Silvia Fernández De Luna.',
-      intro: 'Silvia llegó con un nombre, una visión y un logotipo a medio hacer. Tenía claro quién era — guía, terapeuta, mentora holística — pero no cómo hacer que el mundo lo entendiera con la misma profundidad con la que ella lo vivía. El reto no era técnico. Era de traducción: convertir un universo interior en una marca que conectara, que perdurara y que creciera.',
+      subtitle: 'Construir una experiencia digital capaz de traducir profundidad, sensibilidad y evolución en un universo de marca coherente.',
+      intro: 'Silvia llegó con un nombre, una visión y un logotipo empezando a nacer. El reto era de traducción: convertir un universo interior en una marca que conectara, que perdurara y que creciera.',
       result: 'Prensa, ayuntamientos y TOP 10 de Google. Una marca construida desde cero, sin invertir un solo euro en SEM.',
       logo: '/projects/silvia-fernandez-de-luna/logo.png',
       roles: ['Estrategia', 'Branding', 'Web', 'Marketing'],
@@ -76,25 +76,25 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     // 3) HEADING
     heading: {
       title: 'El reto de partir de cero con un valor intangible',
-      subtitle: 'Silvia Fernández De Luna es guía espiritual, terapeuta holística y mentora. Silvia Conecta con las personas de forma natural, transmite autoridad y genera confianza desde el primer momento. Inspira, desafía y nos acompaña en nuestros procesos. Mi reto fue acompañar la creación digital del valor de la propuesta de Silvia, desde cero. Tomar algo tan sutil como la activación kundalini, los registros akáshicos, la aromaterapia terapéutica o el acompañamiento energético, y convertirlo en una marca digital que lo transmitiera con la misma autenticidad con la que Silvia lo vivía. Y crear el Universo de Silvia Fernández De Luna.',
+      subtitle: 'Silvia conecta con las personas de forma natural — transmite autoridad, genera confianza, inspira. El viaje fue crear su espacio digital. Tomar algo tan sutil como la activación kundalini o el acompañamiento energético y convertirlo en una marca digital coherente, buscable y habitable: ese fue el reto real. Un templo digital que se habita.',
     },
 
     // 4) FEATURES
     features: [
       {
-        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-marketing.jpg', alt: 'Marketing' },
+        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/SDFL-Camminus-scaled.webp', alt: 'Marketing' },
         title: ' Construir un universo de marca',
-        description: 'Desde el primer día propuse ir más allá del diseño. Las secciones de la web no se llaman Inicio o Servicios — se llaman El Templo, Camminus, El Alma, El Ágora. Cada nombre es parte de un sistema simbólico que traduce el mundo de Silvia en arquitectura digital.',
+        description: 'La arquitectura como lenguaje de marca. Las secciones de la web no se llaman Inicio o Servicios. Se llaman El Templo, Camminus, El Alma, El Ágora. Cada nombre es una decisión simbólica consciente — parte de un sistema que hace que navegar la web sea ya, en sí mismo, una experiencia de marca.',
       },
       {
         image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-web.jpg', alt: 'Web' },
         title: 'Primero la identidad, luego todo lo demás',
-        description: 'Antes del lanzamiento web, completé el sistema de marca (la ilustradora original no tenía base de branding) y co-creé con Silvia una pieza audiovisual cinematográfica — su historia como punto de partida. La marca necesitaba voz y alma antes de tener web.',
+        description: 'Antes de escribir una línea de código, construimos los cimientos: completé el sistema de identidad y co-creé con Silvia una pieza audiovisual cinematográfica — su historia, en sus palabras, como núcleo emocional de toda su presencia digital. La web vino después. La marca, primero.',
       },
       {
-        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-estrategia.jpg', alt: 'Estrategia' },
-        title: 'Estrategia de crecimiento desde el modelo de negocio',
-        description: 'No solo ejecuté — propuse. La Academia de Luna, la Comunidad Mujer Raíz, los funnels de conversión para masterclasses, el sistema de email marketing: muchas de esas decisiones nacieron de conversaciones estratégicas sobre cómo escalar lo que Silvia hacía offline al mundo digital.',
+        image: { type: 'image', src: '/projects/silvia-fernandez-de-luna/feature-marketing.jpg', alt: 'Estrategia' },
+        title: 'Construir el modelo de negocio, no solo ejecutarlo',
+        description: 'Silvia llegó con talento, vocación y un conocimiento profundo de su trabajo. El modelo de negocio lo construimos juntas. La Academia de Luna, la Comunidad Mujer Raíz, los funnels de lanzamiento para masterclasses: ninguna de esas piezas estaba en un briefing. Emergieron de conversaciones estratégicas sobre cómo convertir lo que Silvia hacía offline en algo que pudiera crecer, sostenerse y escalar.',
       },
     ],
 
@@ -109,18 +109,15 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       title: 'Crear el Universo de Marca',
       description: 'Una identidad que habla el mismo idioma que Silvia',
       bullets: [
-        'Completé y sistematicé la identidad visual: tipografía, gama cromática, logotipo y todas sus versiones. Pero el verdadero trabajo fue más profundo — crear un lenguaje de marca propio que se extendiera a cada rincón del proyecto.',
-        'La web no tiene secciones estándar. Tiene El Templo (inicio), Camminus (servicios), El Alma (biografía), El Ágora (blog), Eventum (eventos), Contactus. La Academia de Luna tiene logo propio. Cada nombre es una decisión simbólica consciente que traduce el universo interior de Silvia en arquitectura digital.',
-        'Esa coherencia llegó hasta el último detalle: en El Ágora, cada categoría del blog tiene su propia paleta — negro para alquimia, oro viejo para aromaterapia, verde para salud... Lo que empezó como un blog simple se convirtió en un magazine visual con carácter propio y con coherencia de marca que comunica a nivel inconsciente.',
+        'Sistema de identidad: Tipografía, paleta, logotipo y todas sus versiones. Pero el trabajo real fue crear un lenguaje de marca que se extendiera a cada rincón del proyecto.',
+        'Arquitectura simbólica: La web no tiene secciones estándar. Tiene El Templo, Camminus, El Alma, El Ágora, Eventum. Cada nombre es una decisión consciente — navegar la web ya es experiencia de marca.',
+        'Coherencia hasta el último detalle: En El Ágora, cada categoría del blog tiene su propia paleta: negro para alquimia, oro viejo para aromaterapia, verde para salud... Un blog que se convirtió en magazine visual.',
       ],
       background: '#2E1404',
       images: [
-        { src: '/projects/silvia-fernandez-de-luna/bento-1.jpg', alt: 'Branding Silvia Fernández De Luna' },
-        { src: '/projects/silvia-fernandez-de-luna/bento-4.png', alt: 'Branding Silvia Fernández De Luna' },
         { src: '/projects/silvia-fernandez-de-luna/bento-6.png', alt: 'Branding Silvia Fernández De Luna', orientation: 'vertical' },
-        { src: '/projects/silvia-fernandez-de-luna/bento-3.jpg', alt: 'Branding Silvia Fernández De Luna' },
+        { src: '/projects/silvia-fernandez-de-luna/mockup_sfdl_blog.png', alt: 'Branding Silvia Fernández De Luna' },
         { src: '/projects/silvia-fernandez-de-luna/bento-7.png', alt: 'Branding Silvia Fernández De Luna', orientation: 'vertical' },
-        { src: '/projects/silvia-fernandez-de-luna/bento-2.jpg', alt: 'Branding Silvia Fernández De Luna' },
       ],
     },
 
@@ -134,12 +131,12 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
     // 7) WEB + WEBPANEL — editorial izquierda + carrusel mockups
     web: {
       title: 'Un Templo digital que creció\ncon Silvia Fernández De Luna',
-      subtitle: 'De web de presentación a ecosistema digital completo\n— construido por fases, durante tres años.',
+      subtitle: 'De web de presencia a ecosistema digital\n— construido por fases, durante tres años.',
       content: '',
       columns: [
-        'La web de Silvia no sigue la arquitectura estándar. Sus secciones tienen nombres propios: El Templo es el inicio, Camminus es el camino de servicios, El Alma es su historia, El Ágora es el espacio de conocimiento compartido. Cada nombre es una decisión consciente de universo de marca',
-        'El sistema de identidad llegó hasta el último rincón. En El Ágora — el espacio editorial de Silvia — cada categoría del blog tiene su propia paleta: negro para alquimia, oro viejo para aromaterapia, verde para salud... Lo que empezó como un blog simple evolucionó hasta convertirse en un magazine visual con carácter propio. No porque lo exigiera la tecnología, sino porque la coherencia de marca comunica a nivel inconsciente.',
-        'El crecimiento fue 100% orgánico. Sin inversión en publicidad de pago, trabajamos el SEO desde la estructura y el contenido. El resultado: Silvia aparece en el TOP 10 de Google para búsquedas como opus magnum alquimia — por detrás de la Wikipedia, por delante de todo lo demás.',
+        'El sistema de identidad llegó hasta el último rincón. En El Ágora — el espacio editorial de Silvia — cada categoría del blog tiene su propia paleta: negro para alquimia, oro viejo para aromaterapia, verde para salud...', 
+        'Lo que empezó como un blog simple evolucionó hasta convertirse en un magazine visual con carácter propio. La coherencia de marca comunica a nivel inconsciente.',
+        'El crecimiento fue 100% orgánico. Sin un solo euro en publicidad, Silvia aparece en el TOP 10 de Google para búsquedas como opus magnum alquimia — por detrás de la Wikipedia, por delante de todo lo demás.',
       ],
     },
 
@@ -225,16 +222,13 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       title: 'Lo que se construyó',
       columns: [
         {
-          text: 'Silvia Fernández De Luna acompaña a las personas en su camino hacia el autoconocimiento — desde sesiones terapéuticas individuales hasta retiros, masterclasses, una academia online y una comunidad propia. Un universo de trabajo profundo, muy real offline.',
+          text: 'Tres años después, Silvia Fernández De Luna es una marca reconocida en un nicho donde la credibilidad es difícil de construir.',
         },
         {
-          text: 'Lo que construimos juntas durante tres años no fue solo una web o una estrategia de contenido — fue la infraestructura completa de una marca personal que permite sostener, crecer y escalar con esencia.',
+          text: 'El Regreso al Templo en el Monasterio de Carboeiro llegó a las páginas de Faro de Vigo. Sus proyectos con ayuntamientos validan la marca en el terreno institucional. Y todo eso — sin invertir un euro en publicidad.',
         },
         {
-          text: 'Una marca personal en un nicho difícil — el bienestar espiritual — que logró ser tomada en serio. Silvia Fernández De Luna pasó de no tener presencia digital a aparecer en el TOP 10 de búsquedas en Google para términos como alquimia opus magnum — por detrás de la Wikipedia, por delante de todo lo demás - solo con trabajo orgánico.',
-        },
-        {
-          text: 'La coherencia de marca se refleja en cada detalle, dando paso a colaborar con ayuntamientos, hacer eco en prensa y generar una comunidad activa. El Regreso al Templo en el Monasterio de Carboeiro llegó a las páginas de Faro de Vigo. Esta consistencia ha permitido que Silvia Fernández De Luna se destaque en un mercado competitivo y construya una comunidad fiel y comprometida.',
+          text: 'Lo que construimos juntas no fue solo una web. Fue la infraestructura completa de una marca que puede sostener, crecer y escalar sin perder su esencia.',
         },
       ],
     },
