@@ -558,6 +558,7 @@ export interface ProjectWithLayout {
 
   // Estado
   status: ProjectStatus;
+  hidden?: boolean;
   order?: number;
 
   // Siguiente stack manual (3 slugs: [next, next+1, next+2])

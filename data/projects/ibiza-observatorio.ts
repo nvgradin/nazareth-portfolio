@@ -213,13 +213,13 @@ export const ibizaObservatorio: ProjectWithLayout = {
 
   tagline: 'El sector de la edificación en Ibiza tenía información. Lo que no tenía era un lugar donde encontrarla.',
   cover: PORTADA,
-  featured: false,
+  featured: true,
   ambientColor: '#293242',
   // Paleta propia ibiza: #4F5C77 (azul medio), #293242 (azul oscuro)
   thumbnailOverlay: 0.72,
   thumbnailOverlayColor: '#293242',
 
   status: 'published',
-  order: 7,
-  nextStack: ['las-islas-cies', 'silvia-fernandez-de-luna', 'trainfy'],
+  order: 4,
+  nextStack: ['trainfy', 'las-islas-cies', 'silvia-fernandez-de-luna'],
 };

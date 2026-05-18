@@ -30,6 +30,7 @@ export { trainfy, lasIslasCies, silviaFernandezDeLuna, amigoSecreto, panDoPorrin
 const isDev = process.env.NODE_ENV === 'development';
 
 function isVisible(p: ProjectWithLayout): boolean {
+  if (p.hidden) return false;
   return isDev || p.status === 'published';
 }
 

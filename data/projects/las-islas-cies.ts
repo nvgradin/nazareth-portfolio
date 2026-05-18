@@ -234,5 +234,5 @@ export const lasIslasCies: ProjectWithLayout = {
 
   status: 'published',
   order: 2,
-  nextStack: ['silvia-fernandez-de-luna', 'amigo-secreto', 'trainfy'],
+  nextStack: ['silvia-fernandez-de-luna', 'ibiza-observatorio', 'trainfy'],
 };
