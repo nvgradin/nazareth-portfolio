@@ -60,16 +60,56 @@ export async function sendContactForm(data: ContactFormData): Promise<ActionResu
 
   const messageLabel = data.type === 'consultoria' ? '¿En qué necesitas ayuda?' : 'Mensaje';
 
-  const htmlContent = `
-    <div style="font-family: sans-serif; max-width: 600px; color: #241E33;">
-      <h2 style="margin-bottom: 4px;">${subjectMap[data.type]}</h2>
-      <p style="color: #606E67; margin-top: 0;">${data.email}</p>
-      <hr style="border: none; border-top: 1px solid #E2DDD5; margin: 16px 0;" />
-      ${extraFields}
-      <p><strong>${messageLabel}:</strong></p>
-      <p style="white-space: pre-wrap;">${data.message}</p>
-    </div>
-  `;
+  const htmlContent = `<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="margin:0;padding:0;background:#EDE8F0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#EDE8F0;padding:40px 16px;">
+    <tr><td align="center">
+      <table width="100%" style="max-width:560px;background:#FFFFFF;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(36,30,51,0.10);">
+
+        <!-- Cabecera -->
+        <tr>
+          <td style="background:#241E33;padding:32px 40px;">
+            <p style="margin:0;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#7B6F8E;">Portfolio · Nazareth Gradín</p>
+            <h1 style="margin:8px 0 0;font-size:22px;font-weight:500;color:#FFFFFF;letter-spacing:-0.02em;">${subjectMap[data.type]}</h1>
+          </td>
+        </tr>
+
+        <!-- Remitente -->
+        <tr>
+          <td style="padding:24px 40px 0;">
+            <p style="margin:0;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#7B6F8E;">De</p>
+            <p style="margin:4px 0 0;font-size:15px;color:#241E33;">${data.name} &nbsp;<span style="color:#40394E;">&lt;${data.email}&gt;</span></p>
+          </td>
+        </tr>
+
+        <!-- Divisor -->
+        <tr><td style="padding:20px 40px 0;"><hr style="border:none;border-top:1px solid #D6D0E0;margin:0;"></td></tr>
+
+        <!-- Campos extra (empresa, tipo, etc.) -->
+        ${extraFields ? `<tr><td style="padding:20px 40px 0;">${extraFields.replace(/<p>/g, '<p style="margin:0 0 10px;font-size:14px;color:#241E33;">').replace(/<strong>/g, '<strong style="color:#40394E;font-weight:500;">')}</td></tr>` : ''}
+
+        <!-- Mensaje -->
+        <tr>
+          <td style="padding:20px 40px 32px;">
+            <p style="margin:0 0 8px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#7B6F8E;">${messageLabel}</p>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#241E33;white-space:pre-wrap;">${data.message}</p>
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td style="background:#EDE8F0;padding:20px 40px;border-top:1px solid #D6D0E0;">
+            <p style="margin:0;font-size:11px;color:#7B6F8E;">nazarethgradin.com · ${new Date().toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+          </td>
+        </tr>
+
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`;
 
   const res = await fetch('https://api.brevo.com/v3/smtp/email', {
     method: 'POST',

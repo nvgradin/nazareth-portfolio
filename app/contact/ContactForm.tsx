@@ -166,7 +166,8 @@ export function ContactForm({ type }: { type: ContactType }) {
         transition={{ duration: 0.5, ease }}
       >
         <span className={styles.successIcon}>✦</span>
-        <p>Mensaje enviado. Te respondo en 24-48h.</p>
+        <p>Mensaje enviado.</p>
+        <p className={styles.successSubtext}>Te respondo en 24–48h. Revisa también tu carpeta de spam.</p>
       </motion.div>
     );
   }

@@ -342,6 +342,14 @@
   font-family: var(--font-base);
   font-size: 16px;
   color: #241E33;
-  opacity: 0.80;
+  opacity: 1;
+  margin: 0;
+}
+
+.successSubtext {
+  font-family: var(--font-base);
+  font-size: 13px;
+  color: #241E33;
+  opacity: 0.50;
   margin: 0;
 }
