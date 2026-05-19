@@ -17,7 +17,11 @@ export function BrandingScrollerSection({ data }: Props) {
   useEffect(() => {
     setMounted(true);
     const check = () => {
-      setIsNarrow(window.innerWidth < 1024);
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      const isPortrait = h > w;
+      // Narrow layout: < 1024px cualquier orientación, o ≤ 1024px en portrait (cubre iPad Pro 1024×1366)
+      setIsNarrow(w < 1024 || (isPortrait && w <= 1024));
     };
     check();
     window.addEventListener('resize', check);

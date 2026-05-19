@@ -259,6 +259,33 @@
   }
 }
 
+/* Tablet portrait ancho: 768–1024px en portrait — cards más grandes */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .narrowCard {
+    width: 52vw;
+    height: 480px;
+    border-radius: 24px;
+  }
+  .narrowCardVertical {
+    width: 36vw;
+    height: 480px;
+  }
+  .narrowCardWide {
+    width: 68vw;
+    border-radius: 20px;
+  }
+  .narrowText {
+    padding: var(--space-64) var(--space-96);
+  }
+  .narrowTrack {
+    gap: var(--space-32);
+    padding-inline: var(--space-48);
+  }
+  .narrowCarousel {
+    padding-block: var(--space-32);
+  }
+}
+
 /* Landscape corto */
 @media (orientation: landscape) and (max-height: 500px) {
   .narrowCard {
