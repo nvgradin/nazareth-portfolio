@@ -10,7 +10,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
 
   thumbnail: {
     type: 'image',
-    src: '/projects/silvia-fernandez-de-luna/hero.webp',
+    src: '/projects/silvia-fernandez-de-luna/silviafernandezdeluna_comunidadmujerraiz.jpg',
     alt: 'Silvia Fernández De Luna — guía espiritual y terapeuta holística, retrato de marca',
   },
 
