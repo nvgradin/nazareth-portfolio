@@ -28,8 +28,9 @@ Built with Next.js.</p>
         </a>
         <a
           href="/Nazareth-Gradin-Product-Designer-CV.pdf"
-          download
-          aria-label="Descargar CV"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Ver CV"
           className={styles.cvBtn}
         >
           CV

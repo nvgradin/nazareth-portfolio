@@ -238,7 +238,6 @@ export default function AboutTimeline() {
         >
           <a
             href="/Nazareth-Gradin-Product-Designer-CV.pdf"
-            download
             target="_blank"
             rel="noopener noreferrer"
             className={styles.link}

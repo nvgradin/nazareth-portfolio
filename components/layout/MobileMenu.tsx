@@ -144,7 +144,7 @@ export function MobileMenu() {
                 <a href="https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={styles.iconBtn}>
                   <LinkedinLogo size={20} weight="regular" />
                 </a>
-                <a href="/Nazareth-Gradin-Product-Designer-CV.pdf" download aria-label="Descargar CV" className={styles.cvBtn}>
+                <a href="/Nazareth-Gradin-Product-Designer-CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ver CV" className={styles.cvBtn}>
                   CV
                 </a>
               </div>
