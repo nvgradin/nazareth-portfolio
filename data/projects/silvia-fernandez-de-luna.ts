@@ -32,9 +32,9 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       logo: '/projects/silvia-fernandez-de-luna/logo.png',
       roles: ['Estrategia', 'Branding', 'Web', 'Marketing'],
       context: 'Proyecto freelance · 3 años de colaboración',
-      year: '2023 - 2026',
+      year: '2023 - Actualidad',
       liveUrl: 'https://silviafernandezdeluna.com',
-      heroBg: '/projects/silvia-fernandez-de-luna/fondo_SFDL_oroviejo_1920x2000.jpeg',
+      heroBg: '/projects/silvia-fernandez-de-luna/mockup_sfdl_1600.png',
     },
 
     // 2) BENTO — se añade después del hero automáticamente
