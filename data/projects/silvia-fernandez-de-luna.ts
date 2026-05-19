@@ -34,7 +34,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       context: 'Proyecto freelance · 3 años de colaboración',
       year: '2023 - Actualidad',
       liveUrl: 'https://silviafernandezdeluna.com',
-      heroBg: '/projects/silvia-fernandez-de-luna/mockup_sfdl_1600.png',
+      heroBg: '/projects/silvia-fernandez-de-luna/hero.webp',
     },
 
     // 2) BENTO — se añade después del hero automáticamente
