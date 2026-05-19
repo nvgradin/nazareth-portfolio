@@ -11,7 +11,8 @@ export interface VideoSectionData {
     subtitle: string;
     content: string;
   };
-  src: string;
+  src?: string;
+  youtubeId?: string;
   poster?: string;
   background?: string;
 }
@@ -23,13 +24,11 @@ interface Props {
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 export function ProjectVideoSection({ data }: Props) {
-  const { editorial, src, poster, background } = data;
+  const { editorial, src, youtubeId, poster, background } = data;
   const [lightbox, setLightbox] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  function openLightbox() {
-    setLightbox(true);
-  }
+  function openLightbox() { setLightbox(true); }
 
   function closeLightbox() {
     videoRef.current?.pause();
@@ -37,11 +36,11 @@ export function ProjectVideoSection({ data }: Props) {
   }
 
   useEffect(() => {
-    if (lightbox) {
+    if (lightbox && src) {
       const t = setTimeout(() => videoRef.current?.play(), 150);
       return () => clearTimeout(t);
     }
-  }, [lightbox]);
+  }, [lightbox, src]);
 
   useEffect(() => {
     if (!lightbox) return;
@@ -109,14 +108,24 @@ export function ProjectVideoSection({ data }: Props) {
               transition={{ duration: 0.2, ease }}
               onClick={e => e.stopPropagation()}
             >
-              <video
-                ref={videoRef}
-                className={styles.lightboxVideo}
-                src={src}
-                poster={poster}
-                controls
-                playsInline
-              />
+              {youtubeId ? (
+                <iframe
+                  className={styles.lightboxVideo}
+                  src={`https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`}
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                  title="Vídeo del proyecto"
+                />
+              ) : (
+                <video
+                  ref={videoRef}
+                  className={styles.lightboxVideo}
+                  src={src}
+                  poster={poster}
+                  controls
+                  playsInline
+                />
+              )}
             </motion.div>
 
             <button

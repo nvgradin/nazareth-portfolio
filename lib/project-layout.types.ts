@@ -397,7 +397,8 @@ export interface ProjectLayout {
   // Sección audiovisual: editorial + vídeo centrado con play overlay
   videoSection?: {
     editorial: { title: string; subtitle: string; content: string };
-    src: string;
+    src?: string;
+    youtubeId?: string;
     poster?: string;
     background?: string;
   };
