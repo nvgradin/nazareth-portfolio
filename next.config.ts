@@ -29,10 +29,11 @@ const securityHeaders = [
       "img-src 'self' data: blob:",
       // next/font/google serves fonts from self in prod; keep fonts.gstatic as fallback for dev
       "font-src 'self' https://fonts.gstatic.com",
-      // Spotify embed iframe
-      "frame-src https://open.spotify.com",
-      // Spotify embed JS/assets
-      "connect-src 'self' https://open.spotify.com",
+      // Spotify + YouTube embed iframes
+      "frame-src https://open.spotify.com https://www.youtube-nocookie.com https://www.youtube.com",
+      // Spotify + YouTube assets
+      "connect-src 'self' https://open.spotify.com https://www.youtube.com",
+      "img-src 'self' data: blob: https://i.ytimg.com",
       "media-src 'self'",
       "object-src 'none'",
       "base-uri 'self'",

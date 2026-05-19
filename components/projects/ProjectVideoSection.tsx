@@ -112,7 +112,7 @@ export function ProjectVideoSection({ data }: Props) {
                 <iframe
                   className={styles.lightboxVideo}
                   src={`https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`}
-                  allow="autoplay; fullscreen"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   title="Vídeo del proyecto"
                 />
