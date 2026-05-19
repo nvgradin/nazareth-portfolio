@@ -30,6 +30,7 @@ export const panDoPorrino: ProjectWithLayout = {
       logo: '/projects/pan-do-porrino/Logotipo.png',
       roles: ['Branding', 'Marketing'],
       context: 'Iniciativa colectiva · Denominación de Origen',
+      result: 'El Pan do Porriño obtuvo su Marca Protegida y Denominación de Origen de la Bolla. Un producto con 400 años de historia, reconocido oficialmente por primera vez.',
       year: '2017',
       heroBg: '/projects/pan-do-porrino/Bolla_Pan_do_Porrino.png',
     },
