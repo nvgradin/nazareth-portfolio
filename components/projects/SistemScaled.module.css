@@ -275,9 +275,17 @@
 /* ── Logos ── */
 .editorialLogoWrap {
   position: relative;
-  width: 120px;
+  width: min(120px, 38vw);
   height: 48px;
   flex-shrink: 0;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .editorialLogoWrap {
+    width: min(140px, 28vw);
+    height: 52px;
+  }
 }
 
 @media (min-width: 1024px) {

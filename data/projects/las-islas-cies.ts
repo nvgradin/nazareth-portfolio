@@ -180,7 +180,7 @@ export const lasIslasCies: ProjectWithLayout = {
         },
         {
           step: 3,
-          image: '/projects/las-islas-cies/Isla-de-Lobos.jpg',
+          image: '/projects/las-islas-cies/Isla_de_Lobos.jpg',
           imageAlt: 'Portal Isla de Lobos — tercer lanzamiento, construido desde cero en enero 2025',
           title: 'Isla de Lobos',
           description: 'Lanzamiento enero 2025',
