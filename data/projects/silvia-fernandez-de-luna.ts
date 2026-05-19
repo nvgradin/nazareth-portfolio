@@ -210,7 +210,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
         subtitle: 'La Historia Álmica de Silvia Fernández De Luna',
         content: 'Antes de lanzar la web, necesitábamos que el mundo entendiera quién es Silvia. No sus servicios — ella. Co-escribí el guion junto a ella, diseñé la estructura narrativa, busqué localizaciones, grabé y edité. El resultado fue una pieza cinematográfica que sigue siendo el núcleo emocional de toda su presencia digital.',
       },
-      youtubeId: 'pm4YsmAB0uc',
+      youtubeId: 'YDbE_TLNFzo',
       poster: '/projects/silvia-fernandez-de-luna/La-Historia-Almica-de-Silvia-Fernandez-De-Luna.webp',
       background: 'linear-gradient(135deg, #1a2e2a, #4e6862, #2a3d39)',
     },
