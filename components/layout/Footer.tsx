@@ -27,7 +27,7 @@ Built with Next.js.</p>
           <LinkedinLogo size={18} weight="regular" />
         </a>
         <a
-          href="/CV_Nazareth_A_VAQUEIRO_GRADIN.pdf"
+          href="/Nazareth-Gradin-Product-Designer-CV.pdf"
           download
           aria-label="Descargar CV"
           className={styles.cvBtn}
