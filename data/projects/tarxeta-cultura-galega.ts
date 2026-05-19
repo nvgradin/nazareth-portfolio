@@ -28,6 +28,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
       intro: 'Diseño del concepto creativo y desarrollo de campaña para una iniciativa institucional pionera orientada a incentivar el consumo cultural entre jóvenes.',
       logo: '/projects/tarxetaculturagalega/logo.png',
       roles: ['Estrategia', 'Marketing'],
+      context: 'Proyecto institucional · Xunta de Galicia',
       year: '2015',
       heroBg: '/projects/tarxetaculturagalega/bento-7.jpg',
     },
