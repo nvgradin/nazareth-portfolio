@@ -126,21 +126,22 @@ function ExperienciaTimeline() {
 /* ─── Móvil/tablet portrait: lista vertical ─── */
 
 function ExperienciaVertical() {
+  const reversed = [...HITOS].reverse();
   return (
     <div className={styles.vList}>
       <div className={styles.vLine} />
-      {HITOS.map((hito, i) => {
-        const isLast = i === HITOS.length - 1;
+      {reversed.map((hito, i) => {
+        const isFirst = i === 0;
         return (
           <motion.div
-            key={i}
+            key={hito.period}
             className={styles.vItem}
             initial={{ opacity: 0, x: -12 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, delay: i * 0.07, ease: EASE_OUT }}
           >
-            <div className={`${styles.vDot} ${isLast ? styles.vDotActive : ''}`} />
+            <div className={`${styles.vDot} ${isFirst ? styles.vDotActive : ''}`} />
             <div className={styles.vContent}>
               <p className={styles.ePeriod}>{hito.period}</p>
               <p className={styles.eRole}>{hito.role}</p>
@@ -154,21 +155,22 @@ function ExperienciaVertical() {
 }
 
 function FormacionVertical() {
+  const reversed = [...FORMACION].reverse();
   return (
     <div className={styles.vList}>
       <div className={styles.vLine} />
-      {FORMACION.map((f, i) => {
-        const isLast = i === FORMACION.length - 1;
+      {reversed.map((f, i) => {
+        const isFirst = i === 0;
         return (
           <motion.div
-            key={i}
+            key={f.period}
             className={styles.vItem}
             initial={{ opacity: 0, x: -12 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, delay: i * 0.07, ease: EASE_OUT }}
           >
-            <div className={`${styles.vDot} ${isLast ? styles.vDotActive : ''}`} />
+            <div className={`${styles.vDot} ${isFirst ? styles.vDotActive : ''}`} />
             <div className={styles.vContent}>
               <p className={styles.fPeriod}>{f.period}</p>
               <p className={styles.fTitle}>{f.title}</p>
