@@ -133,12 +133,12 @@ export default function RootLayout({
               "@type": "OfferCatalog",
               "name": "Servicios de diseño digital",
               "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño web" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo web" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marketing digital" } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño UX/UI" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Product Design" } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Branding e identidad visual" } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estrategia digital" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño web" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo web con WordPress y Next.js" } },
               ],
             },
             "sameAs": [
