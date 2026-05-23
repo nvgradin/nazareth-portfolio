@@ -31,6 +31,7 @@ export const lasIslasCies: ProjectWithLayout = {
       roles: ['Product Design & UX', 'Web', 'Estrategia', 'Contenido'],
       context: 'Proyecto freelance',
       year: '2024 - 2025',
+      location: 'Vigo · Galicia',
       liveUrl: 'https://lasislascies.com',
       heroBg: '/projects/las-islas-cies/bento-2.jpg',
     },

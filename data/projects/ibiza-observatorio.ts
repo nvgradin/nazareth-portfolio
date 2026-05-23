@@ -36,6 +36,7 @@ export const ibizaObservatorio: ProjectWithLayout = {
       context: 'Proyecto en colaboración con',
       collaborators: [{ name: 'Emblanco', url: 'https://emblanco.com/' }],
       year: '2025',
+      location: 'Ibiza',
       liveUrl: 'https://ibizaobservatorio.com',
       heroBg: PORTADA,
     },

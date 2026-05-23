@@ -9,6 +9,7 @@ import { panDoPorrino } from './pan-do-porrino';
 import { tarxetaCulturaGalega } from './tarxeta-cultura-galega';
 import { ibizaObservatorio } from './ibiza-observatorio';
 import { viajeMarruecos } from './viaje-morocco';
+import { rawYogaStudio } from './raw-yoga-studio';
 
 // Registry: map de slug -> proyecto
 export const projectRegistry: Record<string, ProjectWithLayout> = {
@@ -20,13 +21,14 @@ export const projectRegistry: Record<string, ProjectWithLayout> = {
   'tarxeta-cultura-galega': tarxetaCulturaGalega,
   'ibiza-observatorio': ibizaObservatorio,
   'viaje-morocco': viajeMarruecos,
+  'raw-yoga-studio': rawYogaStudio,
 };
 
 // Array con todos los proyectos
 export const projects: ProjectWithLayout[] = Object.values(projectRegistry);
 
 // Re-exportar proyectos individuales
-export { trainfy, lasIslasCies, silviaFernandezDeLuna, amigoSecreto, panDoPorrino, tarxetaCulturaGalega, ibizaObservatorio, viajeMarruecos };
+export { trainfy, lasIslasCies, silviaFernandezDeLuna, amigoSecreto, panDoPorrino, tarxetaCulturaGalega, ibizaObservatorio, viajeMarruecos, rawYogaStudio };
 
 // En desarrollo se muestran todos los proyectos (incluidos drafts)
 const isDev = process.env.NODE_ENV === 'development';

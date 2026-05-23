@@ -31,6 +31,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
       context: 'Proyecto institucional · Xunta de Galicia',
       result: 'La campaña movilizó 300.000€ en el sector editorial y de artes escénicas en su primer año. Calificada oficialmente como "iniciativa pionera e innovadora" por la Xunta de Galicia.',
       year: '2015',
+      location: 'Galicia',
       heroBg: '/projects/tarxetaculturagalega/bento-7.jpg',
     },
 

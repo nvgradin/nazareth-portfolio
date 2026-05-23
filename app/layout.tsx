@@ -37,8 +37,8 @@ const aboreto = Aboreto({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nazarethgradin.com'),
-  title: "Nazareth Vaqueiro Gradín | Product & Experience Designer",
-  description: "Portfolio de Nazareth Andrea Vaqueiro Gradín, Product & Experience Designer. UX/UI, estrategia y visión de negocio. Conectando marca, producto y negocio en proyectos digitales.",
+  title: "Nazareth Gradín | Product & UX Designer en O Porriño · Vigo, Galicia",
+  description: "Portfolio de Nazareth Gradín, Product & Experience Designer en O Porriño · Vigo, Galicia. Diseño UX/UI, branding, estrategia digital y desarrollo web para marcas, agencias y proyectos digitales.",
   keywords: [
     "Nazareth Vaqueiro Gradín",
     "Nazareth Andrea Vaqueiro Gradín",
@@ -49,11 +49,17 @@ export const metadata: Metadata = {
     "Experience Designer",
     "Diseñadora de producto",
     "Estrategia Digital",
+    "diseñadora UX Vigo",
+    "diseñadora UX Galicia",
+    "diseñadora web O Porriño",
+    "diseñadora web Pontevedra",
+    "diseño producto digital Galicia",
+    "freelance UX designer Spain",
   ],
   authors: [{ name: "Nazareth Andrea Vaqueiro Gradín", url: "https://nazarethgradin.com" }],
   openGraph: {
-    title: "Nazareth Vaqueiro Gradín | Product & Experience Designer",
-    description: "Portfolio de Nazareth Andrea Vaqueiro Gradín, Product & Experience Designer. UX/UI, estrategia y visión de negocio.",
+    title: "Nazareth Gradín | Product & UX Designer en O Porriño · Vigo, Galicia",
+    description: "Portfolio de Nazareth Gradín, Product & Experience Designer en O Porriño · Vigo, Galicia. Diseño UX/UI, branding y estrategia digital.",
     type: "website",
     locale: "es_ES",
     url: "https://nazarethgradin.com",
@@ -62,8 +68,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Nazareth Vaqueiro Gradín | Product & Experience Designer",
-    description: "Portfolio de Nazareth Andrea Vaqueiro Gradín, Product & Experience Designer. UX/UI, estrategia y visión de negocio.",
+    title: "Nazareth Gradín | Product & UX Designer en O Porriño · Vigo, Galicia",
+    description: "Portfolio de Nazareth Gradín, Product & Experience Designer en O Porriño · Vigo, Galicia. Diseño UX/UI, branding y estrategia digital.",
     images: ['/Home preview stack.png'],
   },
 };
@@ -89,6 +95,52 @@ export default function RootLayout({
             "email": "hola@nazarethgradin.com",
             "jobTitle": "Product & Experience Designer",
             "description": "Product & Experience Designer especializada en UX/UI, estrategia digital y visión de negocio.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "O Porriño",
+              "addressRegion": "Pontevedra",
+              "addressCountry": "ES",
+            },
+            "sameAs": [
+              "https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin",
+              "https://www.instagram.com/nazarethgradin/"
+            ],
+          })}}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Nazareth Gradín — Product & Experience Designer",
+            "url": "https://nazarethgradin.com",
+            "email": "hola@nazarethgradin.com",
+            "description": "Diseñadora freelance especializada en UX/UI, branding, estrategia digital y desarrollo web. Proyectos para marcas, agencias y productos digitales.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "O Porriño",
+              "addressRegion": "Pontevedra",
+              "addressCountry": "ES",
+            },
+            "areaServed": [
+              { "@type": "City", "name": "O Porriño" },
+              { "@type": "City", "name": "Vigo" },
+              { "@type": "AdministrativeArea", "name": "Galicia" },
+              { "@type": "AdministrativeArea", "name": "Pontevedra" },
+              { "@type": "Country", "name": "España" },
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Servicios de diseño digital",
+              "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño UX/UI" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Product Design" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Branding e identidad visual" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estrategia digital" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño web" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo web con WordPress y Next.js" } },
+              ],
+            },
             "sameAs": [
               "https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin",
               "https://www.instagram.com/nazarethgradin/"

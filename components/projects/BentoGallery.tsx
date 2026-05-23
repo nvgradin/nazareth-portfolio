@@ -149,12 +149,13 @@ function Column({ column, totalWidth, colIndex, onImageClick }: { column: BentoC
 function CellComponent({ cell, totalCells, delay, onImageClick, priority }: { cell: BentoCell; totalCells: number; delay: number; onImageClick: (src: string) => void; priority?: boolean }) {
   const totalGaps = (totalCells - 1) * GAP;
   const gapDeduction = cell.ratio * totalGaps;
+  const isVideo = cell.src.endsWith('.mp4') || cell.src.endsWith('.webm');
 
   const cellStyle: React.CSSProperties = {
     position: 'relative',
     overflow: 'hidden',
     flex: `0 0 calc(${cell.ratio * 100}% - ${gapDeduction}px)`,
-    cursor: 'pointer',
+    cursor: isVideo ? 'default' : 'pointer',
   };
 
   return (
@@ -165,17 +166,37 @@ function CellComponent({ cell, totalCells, delay, onImageClick, priority }: { ce
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.5, delay, ease }}
-      onClick={() => onImageClick(cell.src)}
+      onClick={() => !isVideo && onImageClick(cell.src)}
     >
-      <Image
-        src={cell.src}
-        alt={cell.alt}
-        fill
-        className={styles.image}
-        sizes="(max-width: 768px) 100vw, 25vw"
-        style={cell.objectPosition ? { objectPosition: cell.objectPosition } : undefined}
-        priority={priority}
-      />
+      {isVideo ? (
+        <video
+          src={cell.src}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className={styles.video}
+          aria-label={cell.alt}
+        />
+      ) : (
+        <Image
+          src={cell.src}
+          alt={cell.alt}
+          fill
+          className={styles.image}
+          sizes="(max-width: 768px) 100vw, 25vw"
+          style={cell.objectPosition ? { objectPosition: cell.objectPosition } : undefined}
+          priority={priority}
+        />
+      )}
+      {cell.overlay && (
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: `rgba(0,0,0,${cell.overlay})`,
+          pointerEvents: 'none',
+        }} />
+      )}
     </motion.div>
   );
 }
@@ -196,26 +217,41 @@ function MobileList({ columns, onImageClick }: { columns: BentoColumn[]; onImage
 
   return (
     <div className={styles.mobileList}>
-      {mobileCells.map((cell, index) => (
-        <motion.div
-          key={index}
-          className={styles.mobileCell}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5, delay: index * 0.08, ease }}
-          onClick={() => onImageClick(cell.src)}
-          style={{ cursor: 'pointer' }}
-        >
-          <Image
-            src={cell.src}
-            alt={cell.alt}
-            fill
-            className={styles.image}
-            sizes="100vw"
-          />
-        </motion.div>
-      ))}
+      {mobileCells.map((cell, index) => {
+        const isVideo = cell.src.endsWith('.mp4') || cell.src.endsWith('.webm');
+        return (
+          <motion.div
+            key={index}
+            className={`${styles.mobileCell} ${isVideo ? styles.mobileCellVideo : ''}`}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.5, delay: index * 0.08, ease }}
+            onClick={() => !isVideo && onImageClick(cell.src)}
+            style={{ cursor: isVideo ? 'default' : 'pointer' }}
+          >
+            {isVideo ? (
+              <video
+                src={cell.src}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className={styles.video}
+                aria-label={cell.alt}
+              />
+            ) : (
+              <Image
+                src={cell.src}
+                alt={cell.alt}
+                fill
+                className={styles.image}
+                sizes="100vw"
+              />
+            )}
+          </motion.div>
+        );
+      })}
     </div>
   );
 }

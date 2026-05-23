@@ -37,6 +37,7 @@ export const viajeMarruecos: ProjectWithLayout = {
       result:
         'Nueva identidad visual coherente y web rediseñada que comunica autenticidad, confianza y la esencia del destino marroquí.',
       year: '2024',
+      location: 'Pontevedra',
       heroBg: '/projects/viaje-morocco/hero.jpg',
     },
 

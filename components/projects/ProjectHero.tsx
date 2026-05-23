@@ -14,7 +14,7 @@ interface Props {
 }
 
 export function ProjectHero({ data }: Props) {
-  const { title, subtitle, intro, result, logo, logoSize, roles, year, context, team, heroBg, liveUrl, collaborators } = data;
+  const { title, subtitle, intro, result, logo, logoSize, roles, year, location, context, team, heroBg, liveUrl, collaborators } = data;
 
   return (
     <>
@@ -66,7 +66,7 @@ export function ProjectHero({ data }: Props) {
                     {c.name} ↗{i < (collaborators.length - 1) ? ', ' : ''}
                   </Link>
                 ))}
-                {year ? ` — ${year}` : null}
+                {(year || location) ? ` — ${[year, location].filter(Boolean).join(' · ')}` : null}
               </motion.p>
             )}
           </div>
@@ -143,14 +143,14 @@ export function ProjectHero({ data }: Props) {
               )}
             </div>
           )}
-          {year && (
+          {(year || location) && (
             <motion.p
               className={styles.year}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4, ease }}
             >
-              {year}
+              {[year, location].filter(Boolean).join(' · ')}
             </motion.p>
           )}
           {liveUrl && (

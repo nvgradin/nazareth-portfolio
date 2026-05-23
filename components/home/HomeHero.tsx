@@ -84,7 +84,7 @@ export function HomeHero({ animate = false, hidden = false }: Props) {
           animate={animate ? { opacity: 1 } : {}}
           transition={{ delay: 1.5, duration: 1.0, ease: EASE }}
         >
-          Vigo, Galicia&nbsp;·&nbsp;Remote-friendly&nbsp;·&nbsp;Colaborando con agencias, marcas y proyectos digitales
+          O Porriño · Vigo, Galicia&nbsp;·&nbsp;Remote-friendly&nbsp;·&nbsp;Colaborando con agencias, marcas y proyectos digitales
         </motion.p>
 
       </div>

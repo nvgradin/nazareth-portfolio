@@ -49,6 +49,7 @@ export interface BentoCell {
   alt: string;
   ratio: number;  // 0.65 = 65% de la altura de la columna
   objectPosition?: string; // e.g. 'bottom', 'right center', '80% 50%'
+  overlay?: number; // 0.0–1.0 — darkening overlay sobre la imagen
 }
 
 /**
@@ -115,6 +116,7 @@ export interface ProjectHero {
   context?: string;          // texto libre bajo roles, ej: 'Proyecto final Bootcamp'
   team?: string;             // equipo o colaboración, ej: 'Equipo de 3'
   year?: string;             // ej: '2023' o '2022–2024'
+  location?: string;         // ej: 'Vigo' o 'O Porriño · Pontevedra'
   heroBg?: string;           // imagen de fondo para el hero en mobile
   liveUrl?: string;          // enlace al proyecto real publicado
   collaborators?: ProjectHeroCollaborator[]; // colaboradores con enlace

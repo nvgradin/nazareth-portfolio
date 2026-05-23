@@ -33,6 +33,7 @@ export const trainfy: ProjectWithLayout = {
       context: 'Proyecto final Bootcamp Fullstack Developer de Hack a Boss',
       team: 'Equipo de 3',
       year: '2019',
+      location: 'Vigo',
       heroBg: '/projects/trainfy/portada_trainfy_2560.png',
     },
 

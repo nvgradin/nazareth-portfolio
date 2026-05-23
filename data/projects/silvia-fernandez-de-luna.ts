@@ -33,6 +33,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
       roles: ['Estrategia', 'Branding', 'Web', 'Marketing'],
       context: 'Proyecto freelance · 3 años de colaboración',
       year: '2023 - Actualidad',
+      location: 'Cangas do Morrazo · Galicia',
       liveUrl: 'https://silviafernandezdeluna.com',
       heroBg: '/projects/silvia-fernandez-de-luna/hero.webp',
     },

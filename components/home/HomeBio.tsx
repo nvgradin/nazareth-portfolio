@@ -43,7 +43,7 @@ export function HomeBio() {
             </motion.div>
 
             <motion.p className={styles.micro} {...fade(0.45)}>
-              Vigo, Galicia · Remote-friendly · Colaborando con agencias, marcas y proyectos digitales
+              O Porriño · Vigo, Galicia · Remote-friendly · Colaborando con agencias, marcas y proyectos digitales
             </motion.p>
           </div>
 
