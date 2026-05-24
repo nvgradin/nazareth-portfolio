@@ -191,6 +191,7 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
   tagline: 'Cultura gallega para la generación que la está creando.',
   cover: '/projects/tarxetaculturagalega/TCG_portada.jpg',
   featured: false,
+  thumbnailOverlay: 0.55,
   ambientColor: '#1B3A5C',
   ambientGradient: 'linear-gradient(135deg, #1B3A5C 0%, #2E6B8A 100%)',
 

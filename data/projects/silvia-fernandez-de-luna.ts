@@ -270,6 +270,7 @@ export const silviaFernandezDeLuna: ProjectWithLayout = {
   tagline: 'Una marca que enseña, inspira y transforma.',
   cover: '/projects/silvia-fernandez-de-luna/Silvia-Fernandez-De-Luna-Academia.webp',
   featured: true,
+  thumbnailOverlay: 0.55,
   ambientColor: '#895900',
   ambientGradient: 'linear-gradient(135deg, #4f3a17 0%, #895900 100%)',
 

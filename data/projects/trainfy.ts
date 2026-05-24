@@ -243,6 +243,7 @@ export const trainfy: ProjectWithLayout = {
   tagline: 'Connect. Share. Move.',
   cover: '/projects/trainfy/portada_trainfy.webp',
   featured: true,
+  thumbnailOverlay: 0.55,
   ambientColor: '#1E3A5F',
 
   seoTitle: 'Trainfy — Product Design & Fullstack Dev | Nazareth',
