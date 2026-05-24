@@ -8,7 +8,7 @@ export const ibizaObservatorio: ProjectWithLayout = {
   excerpt: 'El sector de la edificación en Ibiza tenía información. Lo que no tenía era un lugar donde encontrarla.',
 
   categories: ['web-dev', 'strategy', 'ux-ui', 'ai-driven'],
-  tags: ['WordPress', 'Arquitectura de información', 'Automatización', 'Desarrollo web'],
+  tags: ['Web Development', 'Automatización'],
 
   thumbnail: {
     type: 'image',

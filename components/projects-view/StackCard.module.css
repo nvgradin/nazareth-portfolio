@@ -141,7 +141,7 @@
 
   .text {
     position: absolute;
-    top: 50%;
+    top: 44%;
     bottom: auto;
     left: 32px;
     right: 32px;
@@ -162,7 +162,7 @@
   .meta {
     flex-direction: column;
     align-items: center;
-    gap: 2px;
+    gap: 8px;
   }
 
   .category {
@@ -199,7 +199,7 @@
 
   .text {
     position: absolute;
-    top: 50%;
+    top: 44%;
     bottom: auto;
     left: 20px;
     right: 20px;
@@ -220,7 +220,7 @@
   .meta {
     flex-direction: column;
     align-items: center;
-    gap: 2px;
+    gap: 8px;
   }
 
   .category {

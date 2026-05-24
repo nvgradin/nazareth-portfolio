@@ -7,7 +7,7 @@ export const viajeMarruecos: ProjectWithLayout = {
     'Branding completo y rediseño web para una agencia de viajes especializada en rutas auténticas por Marruecos. Identidad visual, sistema de marca y experiencia digital desde cero.',
 
   categories: ['branding', 'ux-ui', 'web-dev'],
-  tags: ['Branding', 'Web Design', 'UX/UI'],
+  tags: ['Branding', 'Web Development'],
 
   thumbnail: {
     type: 'image',
@@ -31,7 +31,7 @@ export const viajeMarruecos: ProjectWithLayout = {
         'Una plataforma de viajes creada para transformar años de experiencia guiando rutas por Marruecos en una marca digital preparada para crecer, conectar y vender experiencias auténticas.',
       logo: '/projects/viaje-morocco/logo.png',
       logoSize: 160,
-      roles: ['Branding', 'Web Design', 'UX/UI', 'Product Design'],
+      roles: ['Branding', 'Web Development', 'UX/UI', 'Product Design'],
       context: 'Proyecto de rediseño · viajemorocco.com',
       liveUrl: 'https://viajemorocco.com',
       result:

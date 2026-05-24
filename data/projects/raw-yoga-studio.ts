@@ -7,7 +7,7 @@ export const rawYogaStudio: ProjectWithLayout = {
     'De una web de presencia simple a una plataforma digital que refleja la filosofía del estudio y convierte visitas en reservas.',
 
   categories: ['web-dev', 'ux-ui', 'branding'],
-  tags: ['Web Development', 'UX/UI', 'Product Designer'],
+  tags: ['Web Development', 'Product Designer'],
 
   thumbnail: {
     type: 'image',
