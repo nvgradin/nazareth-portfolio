@@ -64,7 +64,7 @@
   border-radius: var(--radius-full);
 }
 
-/* ── Info — título centrado, tagline+tags abajo ──────────────── */
+/* ── Info — título + tagline centrados, tags anclados abajo ──────────────── */
 .info {
   position: absolute;
   inset: 0;
@@ -74,7 +74,15 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 20px 24px;
+  padding: 20px 24px 36px;
+}
+
+/* Wrapper título + tagline — fluyen juntos con gap */
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .title {
@@ -92,12 +100,7 @@
   opacity: 0.8;
 }
 
-/* Tagline — anclado sobre los tags */
 .tagline {
-  position: absolute;
-  bottom: 38px;
-  left: 0;
-  right: 0;
   font-family: var(--font-heading);
   font-size: clamp(22px, 0.8vw, 25px);
   font-weight: 400;
@@ -108,7 +111,7 @@
   text-align: center;
 }
 
-/* Tags — anclados en la parte inferior */
+/* Tags — siempre anclados en la parte inferior */
 .tags {
   position: absolute;
   bottom: 20px;
@@ -119,11 +122,6 @@
   align-items: center;
   justify-content: center;
   gap: 0;
-}
-
-/* Wrapper solo para móvil — título + tagline juntos, tags siguen absolutos */
-.bottom {
-  display: contents;
 }
 
 .tag {
@@ -144,127 +142,39 @@
 }
 
 /* ── Tablet vertical (768–1024px portrait) — 2 columnas, cards más anchas ── */
+/* ── Tablet vertical (768–1024px portrait) ── */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  .info {
-    justify-content: center;
-    padding-bottom: 24px;
-  }
-
-  .bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .title {
-    font-size: 24px;
-  }
-
-  .tagline {
-    position: static;
-    font-size: 16px;
-  }
-
-  .tags {
-    bottom: 16px;
-  }
-
-  .tag {
-    font-size: 10px;
-  }
+  .title { font-size: 24px; }
+  .tagline { font-size: 16px; }
+  .tag { font-size: 10px; }
+  .tags { bottom: 16px; }
 }
 
-/* ── Móvil vertical (≤767px) — 1 columna, cards muy anchas ── */
+/* ── Móvil vertical (≤767px) ── */
 @media (max-width: 767px) and (orientation: portrait) {
-  .info {
-    justify-content: center;
-    padding-bottom: 20px;
-  }
-
-  .bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .title {
-    font-size: 22px;
-  }
-
-  .tagline {
-    position: static;
-    font-size: 15px;
-  }
-
-  .tags {
-    bottom: 16px;
-  }
-
-  .tag {
-    font-size: 9px;
-  }
+  .title { font-size: 22px; }
+  .tagline { font-size: 15px; }
+  .tag { font-size: 9px; }
+  .tags { bottom: 16px; }
 }
 
 /* ── Móvil vertical muy estrecho (≤390px) ── */
 @media (max-width: 390px) and (orientation: portrait) {
-  .info {
-    padding-bottom: 18px;
-  }
-
-  .bottom {
-    gap: 7px;
-  }
-
-  .title {
-    font-size: 19px;
-  }
-
-  .tagline {
-    font-size: 13px;
-  }
-
-  .tags {
-    bottom: 14px;
-  }
-
-  .tag {
-    font-size: 8px;
-  }
+  .title { font-size: 19px; }
+  .tagline { font-size: 13px; }
+  .bottom { gap: 7px; }
+  .tag { font-size: 8px; }
+  .tags { bottom: 14px; }
 }
 
 /* ── Móvil horizontal landscape ── */
 @media (orientation: landscape) and (max-height: 500px) {
-  .info {
-    padding: 12px 16px 44px;
-    justify-content: center;
-  }
-
-  .bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .title {
-    font-size: 14px;
-  }
-
-  .tagline {
-    position: static;
-    font-size: 11px;
-  }
-
-  .tags {
-    bottom: 14px;
-  }
-
-  .tag {
-    font-size: 8px;
-  }
-
+  .info { padding: 12px 16px 32px; }
+  .bottom { gap: 6px; }
+  .title { font-size: 14px; }
+  .tagline { font-size: 11px; }
+  .tag { font-size: 8px; }
+  .tags { bottom: 14px; }
   .textGradient {
     background: radial-gradient(
       ellipse at center,
@@ -275,32 +185,13 @@
   }
 }
 
-/* ── Móvil horizontal grande (844px+) — más espacio, textos más legibles ── */
+/* ── Móvil horizontal grande (844px+) ── */
 @media (orientation: landscape) and (max-height: 500px) and (min-width: 844px) {
-  .info {
-    padding-bottom: 48px;
-  }
-
-  .bottom {
-    gap: 8px;
-  }
-
-  .title {
-    font-size: 18px;
-  }
-
-  .tagline {
-    font-size: 14px;
-  }
-
-  .tags {
-    bottom: 16px;
-  }
-
-  .tag {
-    font-size: 9px;
-  }
-
+  .title { font-size: 18px; }
+  .tagline { font-size: 14px; }
+  .bottom { gap: 8px; }
+  .tag { font-size: 9px; }
+  .tags { bottom: 16px; }
   .textGradient {
     background: radial-gradient(
       ellipse at center,
