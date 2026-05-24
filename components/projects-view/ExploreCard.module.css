@@ -92,12 +92,19 @@
   opacity: 0.8;
 }
 
-/* Tagline + tags — anclados en la parte inferior */
-.tagline {
+/* Tagline + tags — agrupados en la parte inferior con gap real */
+.bottom {
   position: absolute;
-  bottom: 38px;
+  bottom: 20px;
   left: 0;
   right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.tagline {
   font-family: var(--font-heading);
   font-size: clamp(22px, 0.8vw, 25px);
   font-weight: 400;
@@ -110,10 +117,6 @@
 
 /* Tags — justo debajo del tagline */
 .tags {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -144,13 +147,13 @@
     font-size: 24px;
   }
 
-  .tagline {
-    font-size: 16px;
-    bottom: 36px;
+  .bottom {
+    bottom: 16px;
+    gap: 8px;
   }
 
-  .tags {
-    bottom: 16px;
+  .tagline {
+    font-size: 16px;
   }
 
   .tag {
@@ -164,13 +167,13 @@
     font-size: 22px;
   }
 
-  .tagline {
-    font-size: 15px;
-    bottom: 36px;
+  .bottom {
+    bottom: 16px;
+    gap: 8px;
   }
 
-  .tags {
-    bottom: 16px;
+  .tagline {
+    font-size: 15px;
   }
 
   .tag {
@@ -184,13 +187,13 @@
     font-size: 19px;
   }
 
-  .tagline {
-    font-size: 13px;
-    bottom: 32px;
+  .bottom {
+    bottom: 14px;
+    gap: 7px;
   }
 
-  .tags {
-    bottom: 14px;
+  .tagline {
+    font-size: 13px;
   }
 
   .tag {
@@ -208,13 +211,13 @@
     font-size: 14px;
   }
 
-  .tagline {
-    font-size: 11px;
-    bottom: 30px;
+  .bottom {
+    bottom: 14px;
+    gap: 6px;
   }
 
-  .tags {
-    bottom: 14px;
+  .tagline {
+    font-size: 11px;
   }
 
   .tag {
@@ -237,13 +240,13 @@
     font-size: 18px;
   }
 
-  .tagline {
-    font-size: 14px;
-    bottom: 34px;
+  .bottom {
+    bottom: 16px;
+    gap: 8px;
   }
 
-  .tags {
-    bottom: 16px;
+  .tagline {
+    font-size: 14px;
   }
 
   .tag {

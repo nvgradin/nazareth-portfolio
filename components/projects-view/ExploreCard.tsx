@@ -64,16 +64,18 @@ export function ExploreCard({ project, activeFilter, priority = false }: Props) 
       {/* Info superpuesta */}
       <div className={styles.info}>
         <h3 className={styles.title}>{project.title}</h3>
-        {project.tagline && (
-          <p className={styles.tagline}>{project.tagline}</p>
-        )}
-        <div className={styles.tags}>
-          {project.tags.map((tag, i) => (
-            <span key={tag} className={styles.tag}>
-              {i > 0 && <span className={styles.dot} aria-hidden="true">·</span>}
-              {tag}
-            </span>
-          ))}
+        <div className={styles.bottom}>
+          {project.tagline && (
+            <p className={styles.tagline}>{project.tagline}</p>
+          )}
+          <div className={styles.tags}>
+            {project.tags.map((tag, i) => (
+              <span key={tag} className={styles.tag}>
+                {i > 0 && <span className={styles.dot} aria-hidden="true">·</span>}
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </Link>
