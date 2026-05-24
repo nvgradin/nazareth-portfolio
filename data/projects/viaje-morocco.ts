@@ -294,6 +294,6 @@ export const viajeMarruecos: ProjectWithLayout = {
     'Branding completo y rediseño de web para Viaje Morocco: logotipo, sistema visual y experiencia digital para una agencia especializada en rutas auténticas por Marruecos. Por Nazareth Gradín, Product & Experience Designer.',
 
   status: 'published',
-  order: 8,
+  order: 5,
   nextStack: ['ibiza-observatorio', 'tarxeta-cultura-galega', 'pan-do-porrino'],
 };

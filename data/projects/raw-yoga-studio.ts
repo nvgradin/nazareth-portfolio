@@ -301,6 +301,6 @@ export const rawYogaStudio: ProjectWithLayout = {
     'Rediseño completo de la web de Raw Yoga Studio: nueva arquitectura de contenido, sistema de reservas y experiencia digital coherente con la filosofía del estudio. Por Nazareth Gradín.',
 
   status: 'published',
-  order: 9,
+  order: 6,
   nextStack: ['ibiza-observatorio', 'las-islas-cies', 'viaje-morocco'],
 };

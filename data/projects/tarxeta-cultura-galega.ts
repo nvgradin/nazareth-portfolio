@@ -199,6 +199,6 @@ export const tarxetaCulturaGalega: ProjectWithLayout = {
   seoDescription: 'Estrategia creativa, ilustración y campaña de lanzamiento para conectar la cultura gallega con los jóvenes de 18 a 30 años. Proyecto institucional por Nazareth.',
 
   status: 'published',
-  order: 6,
+  order: 8,
   nextStack: ['trainfy', 'las-islas-cies', 'silvia-fernandez-de-luna'],
 };

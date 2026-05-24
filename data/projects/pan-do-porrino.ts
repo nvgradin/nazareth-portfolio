@@ -246,6 +246,6 @@ export const panDoPorrino: ProjectWithLayout = {
   ambientColor: '#2C1A0E',
 
   status: 'published',
-  order: 5,
+  order: 7,
   nextStack: ['tarxeta-cultura-galega', 'trainfy', 'las-islas-cies'],
 };
