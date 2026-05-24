@@ -283,7 +283,7 @@ export const viajeMarruecos: ProjectWithLayout = {
     deliverables: ['Rediseño de logotipo', 'Sistema de identidad visual', 'Diseño web', 'Guía de viajes'],
   },
 
-  tagline: 'De la medina al píxel: una marca que transmite la magia de Marruecos.',
+  tagline: 'Un viaje a la magia de Marruecos desde la web.',
   cover: '/projects/viaje-morocco/hero.jpg',
   featured: false,
   ambientColor: '#6B4C3B',
