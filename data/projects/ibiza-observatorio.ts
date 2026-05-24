@@ -5,7 +5,7 @@ const PORTADA = '/projects/ibiza-observatorio/IbizaObservatorio_portada.jpeg';
 export const ibizaObservatorio: ProjectWithLayout = {
   slug: 'ibiza-observatorio',
   title: 'Ibiza Observatorio de Edificación',
-  excerpt: 'El sector de la edificación en Ibiza tenía información. Lo que no tenía era un lugar donde encontrarla.',
+  excerpt: 'Una plataforma digital diseñada para organizar información técnica de Ibiza.',
 
   categories: ['web-dev', 'strategy', 'ux-ui', 'ai-driven'],
   tags: ['Web Development', 'Automatización'],
@@ -212,13 +212,14 @@ export const ibizaObservatorio: ProjectWithLayout = {
     liveUrl: 'https://ibizaobservatorio.com',
   },
 
-  tagline: 'El sector de la edificación en Ibiza tenía información. Lo que no tenía era un lugar donde encontrarla.',
+  tagline: 'Una plataforma digital diseñada para organizar información técnica.',
   cover: PORTADA,
   featured: true,
   ambientColor: '#293242',
   // Paleta propia ibiza: #4F5C77 (azul medio), #293242 (azul oscuro)
   thumbnailOverlay: 0.72,
   thumbnailOverlayColor: '#293242',
+  thumbnailBaseOverlay: 0.25,
 
   seoTitle: 'Ibiza Observatorio de Edificación — Plataforma de Datos | Nazareth',
   seoDescription: 'Diseño y desarrollo de una plataforma de datos para el sector de la edificación en Ibiza. Arquitectura de información, editorial y UX. Por Nazareth.',

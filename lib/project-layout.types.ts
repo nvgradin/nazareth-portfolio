@@ -551,6 +551,7 @@ export interface ProjectWithLayout {
   ambientGradient?: string; // Gradiente opcional (sobreescribe ambientColor)
   thumbnailOverlay?: number; // Intensidad del overlay de texto en ExploreCard (0–1, default ~0.5)
   thumbnailOverlayColor?: string; // Color del overlay inferior en ExploreCard (hex, sobreescribe el negro)
+  thumbnailBaseOverlay?: number; // Overlay negro uniforme fijo sobre toda la imagen (0–1), antes del hover
   theme?: ProjectTheme;
 
   // Layout editorial

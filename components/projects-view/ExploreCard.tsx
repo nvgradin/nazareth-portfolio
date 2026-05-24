@@ -41,6 +41,14 @@ export function ExploreCard({ project, activeFilter, priority = false }: Props) 
         priority={priority}
       />
 
+      {/* Overlay base fijo — siempre visible, mejora legibilidad */}
+      {project.thumbnailBaseOverlay !== undefined && (
+        <div
+          className={styles.baseOverlay}
+          style={{ background: `rgba(0,0,0,${project.thumbnailBaseOverlay})` }}
+        />
+      )}
+
       {/* Overlay ambient en hover */}
       <motion.div
         className={styles.hoverBg}
