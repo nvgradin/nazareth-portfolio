@@ -239,7 +239,7 @@ export default function AboutTimeline() {
           transition={{ duration: 0.7, ease: EASE_OUT }}
         >
           <a
-            href="/Nazareth-Gradin-Product-Designer-CV.pdf"
+            href="/CV-Product-Designer-Nazareth-Andrea-Vaqueiro-Gradin.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.link}

@@ -26,7 +26,7 @@ export function Footer({ style }: { style?: React.CSSProperties }) {
           <LinkedinLogo size={18} weight="regular" />
         </a>
         <a
-          href="/Nazareth-Gradin-Product-Designer-CV.pdf"
+          href="/CV-Product-Designer-Nazareth-Andrea-Vaqueiro-Gradin.pdf"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Ver CV"

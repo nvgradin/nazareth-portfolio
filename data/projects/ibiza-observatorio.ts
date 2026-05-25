@@ -219,7 +219,7 @@ export const ibizaObservatorio: ProjectWithLayout = {
   // Paleta propia ibiza: #4F5C77 (azul medio), #293242 (azul oscuro)
   thumbnailOverlay: 0.72,
   thumbnailOverlayColor: '#293242',
-  thumbnailBaseOverlay: 0.25,
+  thumbnailBaseOverlay: 0.3,
 
   seoTitle: 'Ibiza Observatorio de Edificación — Plataforma de Datos | Nazareth',
   seoDescription: 'Diseño y desarrollo de una plataforma de datos para el sector de la edificación en Ibiza. Arquitectura de información, editorial y UX. Por Nazareth.',
