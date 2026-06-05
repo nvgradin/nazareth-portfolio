@@ -3,6 +3,7 @@ import styles from './Legal.module.css';
 
 export const metadata = {
   title: 'Aviso Legal — Nazareth Gradín',
+  robots: { index: false, follow: false },
 };
 
 export default function AvisoLegalPage() {

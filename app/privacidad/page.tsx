@@ -3,6 +3,7 @@ import styles from '../aviso-legal/Legal.module.css';
 
 export const metadata = {
   title: 'Política de Privacidad — Nazareth Gradín',
+  robots: { index: false, follow: false },
 };
 
 export default function PrivacidadPage() {
