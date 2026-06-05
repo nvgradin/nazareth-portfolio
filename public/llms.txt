@@ -1,0 +1,39 @@
+# Nazareth Gradín — Product & UX Designer
+
+> Portfolio profesional de Nazareth Andrea Vaqueiro Gradín. Product & Experience Designer especializada en UX/UI, estrategia digital, desarrollo web y consultoría de marketing. Basada en O Porriño · Vigo, Galicia. Disponible para proyectos remotos y presenciales en España y Europa.
+
+Nazareth Gradín es diseñadora de producto y experiencia digital con más de 15 años de trayectoria combinando estrategia de marca, diseño UX/UI y desarrollo web. Ha trabajado con marcas como Movistar, Reebok y Schweppes, y actualmente colabora con agencias, startups y proyectos digitales como freelance. Domina Figma, WordPress, Next.js y herramientas de automatización con IA.
+
+## Páginas principales
+
+- https://nazarethgradin.com/ : Home — presentación como Product & UX Designer, propuesta de valor y proyectos destacados
+- https://nazarethgradin.com/projects : Proyectos — portfolio completo con filtros por disciplina (Product Design, Branding, Web, Estrategia, Marketing, AI-Driven)
+- https://nazarethgradin.com/about : Sobre mí — recorrido profesional, formación, valores y forma de trabajar
+- https://nazarethgradin.com/contact : Contacto — formulario para proyectos, colaboraciones y consultas
+
+## Proyectos destacados
+
+- https://nazarethgradin.com/projects/trainfy : Trainfy — rediseño de brief de marketplace deportivo para construir una comunidad. Product design, branding y desarrollo fullstack en tres semanas.
+- https://nazarethgradin.com/projects/las-islas-cies : Las Islas Cíes — transformación de web de billetes en guía digital de destino. Sistema de producto replicado en 6 islas. Product design, UX, estrategia de contenido y SEO.
+- https://nazarethgradin.com/projects/silvia-fernandez-de-luna : Silvia Fernández De Luna — construcción de marca digital desde cero. Estrategia, branding, web, marketing y automatización con IA. TOP 10 Google sin inversión en SEM.
+- https://nazarethgradin.com/projects/ibiza-observatorio : Ibiza Observatorio de Edificación — plataforma de referencia del sector de la edificación en Ibiza. Arquitectura de información, desarrollo web WordPress, automatización CMS y SEO.
+- https://nazarethgradin.com/projects/viaje-morocco : Viaje Morocco — branding completo y rediseño web para agencia de viajes especializada en Marruecos. Identidad visual, sistema de marca y experiencia digital.
+- https://nazarethgradin.com/projects/raw-yoga-studio : Raw Yoga Studio — rediseño web para estudio de yoga. De web de presencia básica a plataforma con sistema de reservas, membresías y experiencia mobile-first.
+- https://nazarethgradin.com/projects/pan-do-porrino : Pan do Porriño — identidad de marca con la que el Pan do Porriño obtuvo su Denominación de Origen. Branding, comunicación y packaging.
+- https://nazarethgradin.com/projects/tarxeta-cultura-galega : Tarxeta Cultura Galega — concepto creativo y campaña de lanzamiento institucional para la Xunta de Galicia. Movilizó 300.000€ en su primer año.
+
+## Servicios
+
+- Diseño UX/UI y Product Design
+- Estrategia digital y consultoría de marca
+- Diseño web y desarrollo con WordPress y Next.js
+- Branding e identidad visual
+- Marketing digital y estrategia de contenido
+- Automatización con IA aplicada a procesos editoriales y de marketing
+
+## Datos de contacto
+
+- Web: https://nazarethgradin.com
+- Email: hola@nazarethgradin.com
+- LinkedIn: https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin
+- Ubicación: O Porriño · Vigo, Galicia, España — Remote-friendly
