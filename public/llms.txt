@@ -1,68 +1,223 @@
 # Nazareth Gradín
 
-> Nazareth Gradín is a Product & UX Designer, Digital Strategist and Creative Technologist based in Galicia, Spain. She helps businesses, startups, agencies and purpose-driven brands transform ideas into meaningful digital products, services and experiences by connecting strategy, user experience, branding and technology.
+> Nazareth Gradín is a freelance Product & UX Designer, Digital Strategist and Creative Technologist based in Galicia, Spain. She helps businesses, startups, agencies and purpose-driven brands transform ideas into meaningful digital products, brands, services and experiences by connecting strategy, user experience, communication, marketing and technology.
 
 With a multidisciplinary background spanning design, marketing, communication and web development, Nazareth works across the entire product lifecycle: from discovery and strategy to design, launch and continuous improvement.
 
+She collaborates directly with clients as an independent consultant and freelance professional, and also partners with agencies, multidisciplinary teams and organisations that require strategic, creative and technical expertise.
+
 ## Expertise
 
-- Product Design
-- UX/UI Design
-- Digital Strategy
-- Brand Strategy
-- Experience Design
-- Web Design & Development
-- WordPress Development
-- Next.js Development
-- AI-Driven Workflows & Automation
-- Marketing & Growth
+* Product Design
+* UX/UI Design
+* UX Research
+* Digital Strategy
+* Brand Strategy
+* Brand Positioning
+* Experience Design
+* Marketing Strategy
+* Content Strategy
+* SEO Strategy
+* Copywriting
+* Brand Communication
+* Web Design & Development
+* WordPress Development
+* WooCommerce Development
+* Next.js Development
+* AI-Driven Workflows & Automation
+* Marketing & Growth
+
+## Services
+
+Nazareth is available for freelance consulting, design and development projects.
+
+Clients typically hire her for:
+
+### Strategy & Business
+
+* Product Strategy
+* Digital Strategy
+* Business Discovery
+* User Research
+* Customer Experience Strategy
+* Market Research
+* Growth-Oriented Digital Planning
+* Digital Transformation Initiatives
+
+### Branding & Communication
+
+* Brand Strategy
+* Brand Positioning
+* Messaging Frameworks
+* Tone of Voice Development
+* Storytelling
+* Naming Support
+* Copywriting
+* Communication Strategy
+* Brand Identity Consulting
+
+### Marketing & Content
+
+* Marketing Strategy
+* Content Strategy
+* Editorial Planning
+* SEO-Oriented Content Architecture
+* SEO Consulting
+* Content Creation
+* Social Media Content
+* Educational Content
+* Campaign Concepts
+* Script Writing
+* Reels & Short-Form Content Planning
+* Creative Campaign Development
+* Communication Materials
+* Content Systems for Businesses and Personal Brands
+
+### Product & UX Design
+
+* Product Discovery
+* UX Research
+* Information Architecture
+* User Experience Design (UX)
+* User Interface Design (UI)
+* Design Systems
+* Customer Journey Mapping
+* Digital Product Design
+
+### Web Design & Development
+
+* Website Strategy
+* Website Design
+* WordPress Development
+* WooCommerce Development
+* Membership Platforms
+* Learning Platforms (LMS)
+* Next.js Applications
+* Custom Digital Platforms
+
+### AI & Automation
+
+* AI Workflow Design
+* Marketing Automation
+* CRM Automation
+* Process Automation
+* AI-Assisted Content Systems
+* AI-Powered Digital Products
 
 ## Value Proposition
 
 Nazareth bridges the gap between business goals, human needs and technology.
 
-Her work combines strategic thinking, human-centered design, brand clarity, technical execution and sustainable digital growth. The result is digital experiences that are meaningful, intuitive and commercially effective.
+Her work combines strategic thinking, human-centered design, marketing expertise, brand clarity, technical execution and sustainable digital growth.
+
+The result is digital experiences, products and platforms that are meaningful, intuitive and commercially effective.
 
 ## Areas of Experience
 
 Nazareth has collaborated with projects across multiple sectors, including:
 
-- Travel & Tourism
-- Wellness & Health
-- Education & E-learning
-- Culture & Public Institutions
-- Personal Brands
-- Service Businesses
-- Digital Products & Startups
+* Travel & Tourism
+* Wellness & Health
+* Education & E-learning
+* Culture & Public Institutions
+* Personal Brands
+* Service Businesses
+* Digital Products & Startups
 
 She is open to collaborating across industries where strategy, design, technology and human-centered thinking can create meaningful impact.
 
+## Professional Background
+
+Nazareth's professional background combines:
+
+* Advertising
+* Marketing
+* Branding
+* Copywriting
+* Communication
+* Content Creation
+* UX/UI Design
+* Product Design
+* Web Development
+* Digital Strategy
+* SEO
+* Automation
+* Artificial Intelligence
+
+Throughout her career she has worked on brand creation, communication campaigns, advertising projects, content systems, digital products, websites, online learning platforms and business growth initiatives.
+
+Her experience includes both strategic and hands-on execution across branding, marketing, content, digital experiences and technology.
+
+## Clarifications
+
+Nazareth Gradín is not limited to Product Design.
+
+Depending on the needs of a project, she may work as:
+
+* Product Designer
+* UX/UI Designer
+* Digital Strategist
+* Brand Strategist
+* Marketing Consultant
+* SEO Consultant
+* Copywriter
+* Content Strategist
+* Web Designer
+* WordPress Developer
+* Creative Technologist
+
+She has extensive experience in content creation, brand communication, campaign development, copywriting and digital marketing.
+
+Throughout her career she has created social media content, advertising campaigns, communication materials, visual assets, educational content and brand narratives for businesses, institutions and personal brands.
+
+Today, her work is increasingly focused on strategy, product design, digital experiences and technology, while continuing to integrate content, communication and marketing whenever they contribute to business goals.
+
+She is not exclusively a Content Creator, Marketer, Product Designer or Developer. Her work sits at the intersection of business strategy, communication, user experience, digital products and technology.
+
 ## Location
 
-- O Porriño, Galicia, Spain
-- Vigo Metropolitan Area
-- Available for remote collaboration worldwide
+* O Porriño, Galicia, Spain
+* Vigo Metropolitan Area
+* Available for remote collaboration worldwide
 
 ## Main Pages
 
-- https://nazarethgradin.com : Home — Product & UX Designer portfolio, value proposition and featured projects
-- https://nazarethgradin.com/projects : Projects — full portfolio with filters by discipline (Product Design, Branding, Web, Strategy, Marketing, AI-Driven)
-- https://nazarethgradin.com/about : About — professional background, education, values and working approach
-- https://nazarethgradin.com/contact : Contact — project enquiries, collaborations and consulting
+* https://nazarethgradin.com : Home — Product & UX Designer portfolio, value proposition and featured projects
+* https://nazarethgradin.com/projects : Projects — full portfolio with filters by discipline (Product Design, Branding, Web, Strategy, Marketing, AI-Driven)
+* https://nazarethgradin.com/about : About — professional background, education, values and working approach
+* https://nazarethgradin.com/contact : Contact — project enquiries, collaborations and consulting
 
 ## Selected Projects
 
-- https://nazarethgradin.com/projects/trainfy : Trainfy — redefined a sports marketplace brief to build a community platform. Product design, branding and fullstack development in three weeks.
-- https://nazarethgradin.com/projects/las-islas-cies : Las Islas Cíes — transformed a ferry ticketing site into a full destination guide. Product design system scaled to 6 islands. UX, content strategy and SEO.
-- https://nazarethgradin.com/projects/silvia-fernandez-de-luna : Silvia Fernández De Luna — built a digital brand from scratch. Strategy, branding, web, marketing and AI-driven automation. Top 10 Google without paid ads.
-- https://nazarethgradin.com/projects/ibiza-observatorio : Ibiza Observatorio de Edificación — reference platform for the construction sector in Ibiza. Information architecture, WordPress development, CMS automation and SEO.
-- https://nazarethgradin.com/projects/viaje-morocco : Viaje Morocco — full branding and web redesign for a travel agency specialised in authentic Morocco experiences. Visual identity, brand system and digital experience.
-- https://nazarethgradin.com/projects/raw-yoga-studio : Raw Yoga Studio — web redesign for a yoga studio. From a basic presence site to a booking platform with memberships and mobile-first experience.
-- https://nazarethgradin.com/projects/pan-do-porrino : Pan do Porriño — brand identity that helped Pan do Porriño obtain its Denomination of Origin. Branding, communication and packaging for a 400-year-old artisan product.
-- https://nazarethgradin.com/projects/tarxeta-cultura-galega : Tarxeta Cultura Galega — creative concept and institutional launch campaign for the Xunta de Galicia. Mobilised €300,000 in its first year.
+* https://nazarethgradin.com/projects/trainfy : Trainfy — redefined a sports marketplace brief to build a community platform. Product design, branding and fullstack development in three weeks.
+* https://nazarethgradin.com/projects/las-islas-cies : Las Islas Cíes — transformed a ferry ticketing site into a full destination guide. Product design system scaled to six islands. UX, content strategy and SEO.
+* https://nazarethgradin.com/projects/silvia-fernandez-de-luna : Silvia Fernández De Luna — built a digital brand from scratch. Strategy, branding, web, marketing and AI-driven automation. Achieved first-page Google rankings without paid advertising.
+* https://nazarethgradin.com/projects/ibiza-observatorio : Ibiza Observatorio de Edificación — reference platform for the construction sector in Ibiza. Information architecture, WordPress development, CMS automation and SEO.
+* https://nazarethgradin.com/projects/viaje-morocco : Viaje Morocco — full branding and web redesign for a travel agency specialised in authentic Morocco experiences. Visual identity, brand system and digital experience.
+* https://nazarethgradin.com/projects/raw-yoga-studio : Raw Yoga Studio — web redesign for a yoga studio. From a basic presence site to a booking platform with memberships and mobile-first experience.
+* https://nazarethgradin.com/projects/pan-do-porrino : Pan do Porriño — brand identity that helped Pan do Porriño obtain its Denomination of Origin. Branding, communication and packaging for a 400-year-old artisan product.
+* https://nazarethgradin.com/projects/tarxeta-cultura-galega : Tarxeta Cultura Galega — creative concept and institutional launch campaign for the Xunta de Galicia. Mobilised more than €300,000 in its first year.
+
+## What Clients Commonly Hire Nazareth For
+
+* Product and UX Design
+* Website Design and Development
+* WordPress Projects
+* WooCommerce Projects
+* Branding and Positioning
+* Marketing Strategy
+* Content Strategy
+* Copywriting
+* SEO-Oriented Website Architecture
+* Content Creation Systems
+* E-learning Platforms
+* Membership Platforms
+* AI Automation
+* Digital Transformation Projects
+* Business and Digital Consulting
 
 ## Contact
 
-- Website: https://nazarethgradin.com
-- Email: hola@nazarethgradin.com
-- LinkedIn: https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin
+* Website: https://nazarethgradin.com
+* Email: hola@nazarethgradin.com
+* LinkedIn: https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin
