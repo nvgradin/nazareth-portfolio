@@ -6,6 +6,7 @@ import { ProjectLayout } from '@/components/projects';
 import { ProjectEnd } from '@/components/projects/ProjectEnd';
 import { ProjectNav } from '@/components/layout/ProjectNav';
 import { getNextProjects, ProjectOrigin } from '@/lib/getNextProject';
+import { breadcrumbSchema, creativeWorkSchema } from '@/lib/schemas';
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -58,8 +59,18 @@ export default async function ProjectPage({ params, searchParams }: ProjectPageP
 
   const stackProjects = getNextProjects(slug, from, filter, 3);
 
+  const breadcrumb = breadcrumbSchema([
+    { name: 'Inicio', url: 'https://nazarethgradin.com' },
+    { name: 'Proyectos', url: 'https://nazarethgradin.com/projects' },
+    { name: project.title, url: `https://nazarethgradin.com/projects/${slug}` },
+  ]);
+
+  const creativeWork = creativeWorkSchema(project);
+
   return (
     <main style={{ backgroundColor: '#e2ddd5', overscrollBehavior: 'none', display: 'flex', flexDirection: 'column' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWork) }} />
       <ProjectLayout project={project} />
       <ProjectEnd stackProjects={stackProjects} from={from} />
       <Suspense>

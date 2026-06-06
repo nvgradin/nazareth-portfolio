@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { breadcrumbSchema } from '@/lib/schemas';
 
 export const metadata: Metadata = {
   title: 'Contacto | Nazareth',
@@ -11,6 +12,16 @@ export const metadata: Metadata = {
   },
 };
 
+const BREADCRUMB = breadcrumbSchema([
+  { name: 'Inicio', url: 'https://nazarethgradin.com' },
+  { name: 'Contacto', url: 'https://nazarethgradin.com/contact' },
+]);
+
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
+      {children}
+    </>
+  );
 }

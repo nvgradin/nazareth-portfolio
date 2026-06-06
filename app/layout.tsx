@@ -3,6 +3,7 @@ import { Poppins, Abhaya_Libre, Aboreto } from "next/font/google";
 import "./globals.css";
 import { Header, HeaderThemeProvider, MobileMenu } from "@/components/layout";
 import { MobileMenuProvider } from "@/components/layout/MobileMenuContext";
+import { personSchema, websiteSchema, professionalServiceSchema } from "@/lib/schemas";
 
 /* ═══════════════════════════════════════════════════════════════
    FONT CONFIGURATION
@@ -84,69 +85,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/brand/favicon.png" media="(prefers-color-scheme: light)" />
         <link rel="icon" href="/brand/favicon_ng.png" media="(prefers-color-scheme: dark)" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Nazareth Andrea Vaqueiro Gradín",
-            "alternateName": ["Nazareth Vaqueiro Gradín", "Nazareth Gradín"],
-            "url": "https://nazarethgradin.com",
-            "email": "hola@nazarethgradin.com",
-            "jobTitle": "Product & Experience Designer",
-            "description": "Product & Experience Designer especializada en UX/UI, estrategia digital y visión de negocio.",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "O Porriño",
-              "addressRegion": "Pontevedra",
-              "addressCountry": "ES",
-            },
-            "sameAs": [
-              "https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin",
-              "https://www.instagram.com/nazarethgradin/"
-            ],
-          })}}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Nazareth Gradín — Product & Experience Designer",
-            "url": "https://nazarethgradin.com",
-            "email": "hola@nazarethgradin.com",
-            "description": "Diseñadora freelance especializada en UX/UI, branding, estrategia digital y desarrollo web. Proyectos para marcas, agencias y productos digitales.",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "O Porriño",
-              "addressRegion": "Pontevedra",
-              "addressCountry": "ES",
-            },
-            "areaServed": [
-              { "@type": "City", "name": "O Porriño" },
-              { "@type": "City", "name": "Vigo" },
-              { "@type": "AdministrativeArea", "name": "Galicia" },
-              { "@type": "AdministrativeArea", "name": "Pontevedra" },
-              { "@type": "Country", "name": "España" },
-            ],
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Servicios de diseño digital",
-              "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño web" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo web" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marketing digital" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño UX/UI" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Branding e identidad visual" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estrategia digital" } },
-              ],
-            },
-            "sameAs": [
-              "https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin",
-              "https://www.instagram.com/nazarethgradin/"
-            ],
-          })}}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema()) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema()) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema()) }} />
       </head>
       <body
         className={`${poppins.variable} ${abhayaLibre.variable} ${aboreto.variable}`}
