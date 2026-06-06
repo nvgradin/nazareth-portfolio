@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { LinkedinLogo } from '@phosphor-icons/react';
+import { LinkedinLogo, WhatsappLogo } from '@phosphor-icons/react';
 import styles from './Footer.module.css';
 
 export function Footer({ style }: { style?: React.CSSProperties }) {
@@ -18,6 +18,15 @@ export function Footer({ style }: { style?: React.CSSProperties }) {
       </div>
       <div className={styles.social}>
         <a
+          href="/CV-Product-Designer-Nazareth-Andrea-Vaqueiro-Gradin.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Ver CV"
+          className={styles.cvBtn}
+        >
+          CV
+        </a>
+        <a
           href="https://www.linkedin.com/in/nazareth-andrea-vaqueiro-gradin/"
           target="_blank"
           rel="noopener noreferrer"
@@ -26,13 +35,12 @@ export function Footer({ style }: { style?: React.CSSProperties }) {
           <LinkedinLogo size={18} weight="regular" />
         </a>
         <a
-          href="/CV-Product-Designer-Nazareth-Andrea-Vaqueiro-Gradin.pdf"
+          href="https://wa.me/34630156301"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Ver CV"
-          className={styles.cvBtn}
+          aria-label="WhatsApp"
         >
-          CV
+          <WhatsappLogo size={18} weight="regular" />
         </a>
       </div>
     </footer>
