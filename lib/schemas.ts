@@ -30,16 +30,7 @@ export function personSchema() {
     alternateName: ['Nazareth Vaqueiro Gradín', 'Nazareth Gradín'],
     url: BASE_URL,
     email: 'hola@nazarethgradin.com',
-    jobTitle: [
-      'Product & UX Designer',
-      'Digital Strategist',
-      'Creative Technologist',
-      'Brand Strategist',
-      'Marketing Consultant',
-      'Web Designer',
-      'WordPress Developer',
-      'AI Automation Consultant',
-    ],
+    jobTitle: 'Product & UX Designer',
     description:
       'Freelance Product & UX Designer, Digital Strategist and Creative Technologist based in Galicia, Spain. Specialised in UX/UI design, brand strategy, digital strategy, web development and AI-driven workflows.',
     address: ADDRESS,
@@ -81,10 +72,7 @@ export function websiteSchema() {
     inLanguage: ['es', 'en'],
     potentialAction: {
       '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${BASE_URL}/projects?filter={search_term_string}`,
-      },
+      target: `${BASE_URL}/projects?filter={search_term_string}`,
       'query-input': 'required name=search_term_string',
     },
   };
@@ -103,21 +91,6 @@ export function professionalServiceSchema() {
     founder: { '@id': `${BASE_URL}/#person` },
     address: ADDRESS,
     areaServed: AREA_SERVED,
-    serviceType: [
-      'Product Design',
-      'UX/UI Design',
-      'Digital Strategy',
-      'Brand Strategy',
-      'Marketing Strategy',
-      'Content Strategy',
-      'Copywriting',
-      'SEO Strategy',
-      'Web Design',
-      'WordPress Development',
-      'WooCommerce Development',
-      'Next.js Development',
-      'AI Workflows & Automation',
-    ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Design & Digital Services',
