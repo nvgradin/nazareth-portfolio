@@ -33,6 +33,7 @@ export function personSchema() {
     jobTitle: 'Product & UX Designer',
     description:
       'Freelance Product & UX Designer, Digital Strategist and Creative Technologist based in Galicia, Spain. Specialised in UX/UI design, brand strategy, digital strategy, web development and AI-driven workflows.',
+    image: `${BASE_URL}/about/hero_about_2560.png`,
     address: ADDRESS,
     sameAs: SAME_AS,
     knowsAbout: [
