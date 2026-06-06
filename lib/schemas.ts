@@ -70,11 +70,6 @@ export function websiteSchema() {
       'Portfolio de Nazareth Gradín — Product & UX Designer, Digital Strategist y Creative Technologist en Galicia, España.',
     publisher: { '@id': `${BASE_URL}/#person` },
     inLanguage: ['es', 'en'],
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${BASE_URL}/projects?filter={search_term_string}`,
-      'query-input': 'required name=search_term_string',
-    },
   };
 }
 
