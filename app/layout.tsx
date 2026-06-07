@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header, HeaderThemeProvider, MobileMenu } from "@/components/layout";
 import { MobileMenuProvider } from "@/components/layout/MobileMenuContext";
 import { personSchema, websiteSchema, professionalServiceSchema } from "@/lib/schemas";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 /* ═══════════════════════════════════════════════════════════════
    FONT CONFIGURATION
@@ -82,6 +83,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <GoogleTagManager gtmId="GTM-NXXVGBD" />
       <head>
         <link rel="icon" href="/brand/favicon.png" media="(prefers-color-scheme: light)" />
         <link rel="icon" href="/brand/favicon_ng.png" media="(prefers-color-scheme: dark)" />
