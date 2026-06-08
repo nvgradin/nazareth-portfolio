@@ -295,5 +295,5 @@ export const viajeMarruecos: ProjectWithLayout = {
 
   status: 'published',
   order: 5,
-  nextStack: ['ibiza-observatorio', 'tarxeta-cultura-galega', 'pan-do-porrino'],
+  nextStack: ['raw-yoga-studio', 'tarxeta-cultura-galega', 'pan-do-porrino'],
 };

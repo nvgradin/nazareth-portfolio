@@ -226,5 +226,5 @@ export const ibizaObservatorio: ProjectWithLayout = {
 
   status: 'published',
   order: 4,
-  nextStack: ['trainfy', 'las-islas-cies', 'silvia-fernandez-de-luna'],
+  nextStack: ['viaje-morocco', 'las-islas-cies', 'silvia-fernandez-de-luna'],
 };

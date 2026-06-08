@@ -302,5 +302,5 @@ export const rawYogaStudio: ProjectWithLayout = {
 
   status: 'published',
   order: 6,
-  nextStack: ['ibiza-observatorio', 'las-islas-cies', 'viaje-morocco'],
+  nextStack: ['pan-do-porrino', 'las-islas-cies', 'viaje-morocco'],
 };
